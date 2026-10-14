@@ -1,0 +1,58 @@
+{
+  "opis": "Koło świata poza Polską jest puste, dopóki nie ma ludności. Żaden kontynent nie dostaje zmyślonej wagi. Europa wchodzi na koło tylko miejscami, które mają liczbę mieszkańców. Dziś jest to wyłącznie świat/polska. Reszta Europy i reszta świata zostają poza kołem.",
+  "kontynenty": [
+    {
+      "id": "afryka",
+      "nazwa": "Afryka",
+      "kolo": "puste",
+      "powod": "Brak ludności w danych. Koło świata poza Polską jest puste, dopóki nie ma ludności."
+    },
+    {
+      "id": "ameryka_polnocna",
+      "nazwa": "Ameryka Północna",
+      "kolo": "puste",
+      "powod": "Brak ludności w danych. Koło świata poza Polską jest puste, dopóki nie ma ludności."
+    },
+    {
+      "id": "ameryka_poludniowa",
+      "nazwa": "Ameryka Południowa",
+      "kolo": "puste",
+      "powod": "Brak ludności w danych. Koło świata poza Polską jest puste, dopóki nie ma ludności."
+    },
+    {
+      "id": "antarktyda",
+      "nazwa": "Antarktyda",
+      "kolo": "puste",
+      "powod": "Brak ludności w danych. Koło świata poza Polską jest puste, dopóki nie ma ludności."
+    },
+    {
+      "id": "australia_i_oceania",
+      "nazwa": "Australia i Oceania",
+      "kolo": "puste",
+      "powod": "Brak ludności w danych. Koło świata poza Polską jest puste, dopóki nie ma ludności."
+    },
+    {
+      "id": "azja",
+      "nazwa": "Azja",
+      "kolo": "puste",
+      "powod": "Brak ludności w danych. Koło świata poza Polską jest puste, dopóki nie ma ludności."
+    },
+    {
+      "id": "europa",
+      "nazwa": "Europa",
+      "kolo": "tylko_miejsca_z_ludnoscia",
+      "powod": "Na kole są tylko miejsca z liczbą mieszkańców. Dziś daje je wyłącznie Polska. Reszta Europy nie dostaje wagi."
+    }
+  ],
+  "panstwa": [
+    {
+      "id": "polska",
+      "nazwa": "Polska",
+      "kontynent": "europa",
+      "katalogi": [
+        "res://świat/polska/miasta",
+        "res://świat/polska/reszta_powiatu"
+      ]
+    }
+  ]
+}

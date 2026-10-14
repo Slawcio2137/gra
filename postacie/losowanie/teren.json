@@ -1,0 +1,17 @@
+{
+  "opis": "Schemat średnich cech terenu i szans statystyk według miejsca. Wartości są null, bo nie ma źródła. Nie wpisano twierdzeń w rodzaju „na wsi ludzie są bardziej uparci”.",
+  "miejsca": [
+    {
+      "miejsce": null,
+      "typ": "wies",
+      "srednie_cechy": null,
+      "szanse_statystyk": null
+    },
+    {
+      "miejsce": null,
+      "typ": "miasto",
+      "srednie_cechy": null,
+      "szanse_statystyk": null
+    }
+  ]
+}

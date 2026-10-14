@@ -1,0 +1,25 @@
+{
+  "to_jest": "regula_gry",
+  "opis": "Bramki miejsca urodzenia. Przycisk Reklama tylko otwiera kraj na tę sesję. Nie ma SDK reklamy ani sklepu. Koło ludności zostaje.",
+  "tryby": [
+    {
+      "id": "kontynent",
+      "dostep": "darmowy",
+      "przycisk": "Losowo na kontynencie",
+      "zablokowany": false
+    },
+    {
+      "id": "kraj",
+      "dostep": "reklama",
+      "przycisk": "Kraj",
+      "zablokowany_do_przycisku_reklama": true
+    },
+    {
+      "id": "wybor_miejsca",
+      "dostep": "premium",
+      "przycisk": "Wybór miejsca",
+      "zablokowany": true,
+      "sklep": null
+    }
+  ]
+}

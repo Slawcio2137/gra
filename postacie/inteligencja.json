@@ -1,0 +1,12 @@
+{
+  "opis": "Rodzaje inteligencji, osobno od cech charakteru. Żadna z tych nazw nie jest w postacie/cechy_charakteru.json. Waga 1, bo nie ma źródła różnych częstości. ile_obrotow to reguła losowania, nie iloraz inteligencji. Wynik to wylosowane rodzaje, bez punktów.",
+  "ile_obrotow": 3,
+  "rodzaje": [
+    {"id": "jezykowa", "nazwa": "Językowa", "waga": 1},
+    {"id": "logiczno_matematyczna", "nazwa": "Logiczno-matematyczna", "waga": 1},
+    {"id": "przestrzenna", "nazwa": "Przestrzenna", "waga": 1},
+    {"id": "pamieciowa", "nazwa": "Pamięciowa", "waga": 1},
+    {"id": "szybkosc_myslenia", "nazwa": "Szybkość myślenia", "waga": 1},
+    {"id": "muzyczna", "nazwa": "Muzyczna", "waga": 1, "uwaga": "To rodzaj inteligencji, nie cecha charakteru i nie talent wpisany przy osobowości."}
+  ]
+}
