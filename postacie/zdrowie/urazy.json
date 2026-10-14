@@ -1,0 +1,105 @@
+{
+  "opis": "Urazy wymienione w poleceniu. Czas, śmiertelność, długość kuracji i wagi metod są null, bo nie podpięto źródła z liczbą dla trzech metod. Prawdopodobieństwa skutku i urazu z wypadku są w pliku wypadki.json albo null. Statystyki obniżające szansę to same nazwy, bez wzoru.",
+  "metody": ["samoistnie", "minimalna_biedna_pomoc", "pelny_zestaw_lekow"],
+  "urazy": [
+    {
+      "id": "zlamana_reka",
+      "nazwa": "Złamana ręka",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": ["unieruchomienie", "lek przeciwbólowy"],
+      "skutek_do_konca_zycia": {"opis": null, "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji", "wytrzymalosc", "rownowaga"]
+    },
+    {
+      "id": "zlamana_noga",
+      "nazwa": "Złamana noga",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": ["unieruchomienie", "lek przeciwbólowy"],
+      "skutek_do_konca_zycia": {"opis": null, "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji", "wytrzymalosc", "rownowaga"]
+    },
+    {
+      "id": "zlamany_kark",
+      "nazwa": "Złamany kark",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": ["unieruchomienie"],
+      "skutek_do_konca_zycia": {"opis": "Może zostać trwałe porażenie.", "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji", "wytrzymalosc", "rownowaga"]
+    },
+    {
+      "id": "skrecenie",
+      "nazwa": "Skręcenie",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": ["unieruchomienie", "lek przeciwbólowy"],
+      "skutek_do_konca_zycia": {"opis": null, "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji", "rownowaga"]
+    },
+    {
+      "id": "naderwany_miesien_lub_staw",
+      "nazwa": "Naderwany mięsień lub staw",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": ["lek przeciwbólowy"],
+      "skutek_do_konca_zycia": {"opis": null, "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "sila", "wytrzymalosc", "rownowaga"]
+    },
+    {
+      "id": "zerwany_miesien_lub_staw",
+      "nazwa": "Zerwany mięsień lub staw",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": ["lek przeciwbólowy"],
+      "skutek_do_konca_zycia": {"opis": "Może zostać trwałe ograniczenie funkcji.", "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "sila", "wytrzymalosc", "rownowaga"]
+    },
+    {
+      "id": "wybite_oko",
+      "nazwa": "Wybite oko",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": [],
+      "skutek_do_konca_zycia": {"opis": "Utrata wzroku w tym oku.", "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji"]
+    },
+    {
+      "id": "wybite_oczy",
+      "nazwa": "Wybite oczy",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": [],
+      "skutek_do_konca_zycia": {"opis": "Utrata wzroku w obu oczach.", "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji"]
+    },
+    {
+      "id": "pekniety_bebenek_ucha",
+      "nazwa": "Pęknięty bębenek ucha",
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "leki": [],
+      "skutek_do_konca_zycia": {"opis": null, "prawdopodobienstwo_procent": null},
+      "statystyki_obnizajace_szanse": ["zwinnosc", "szybkosc_reakcji"]
+    }
+  ]
+}

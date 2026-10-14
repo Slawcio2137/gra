@@ -1,0 +1,101 @@
+{
+  "opis": "Krótka lista najczęstszych uczuleń i osobno uczuleń na leki. Bez dawek. Skutek i śmiertelność jak przy chorobach. Liczby null, gdy źródło nie podaje jednej wartości dla tej metody.",
+  "najczestsze": [
+    {
+      "id": "alergia_pokarmowa",
+      "nazwa": "Alergia pokarmowa",
+      "miejsce": [{"region": "ogółem", "grupa": "dzieci", "odsetek_procent": null}],
+      "uzasadnienie_listy": "WAO White Book on Allergy, Update 2013: wśród dzieci najczęstsze stany alergiczne to alergie pokarmowe, egzema i astma.",
+      "zrodlo": "World Allergy Organization, WAO White Book on Allergy: Update 2013",
+      "rok": 2013,
+      "url": "https://allergypaais.org/wp-content/themes/twentytwentyone/pdf/ExecSummary-2013-v6-hires.pdf",
+      "srodki_zaradcze": [],
+      "leki": ["lek przeciwalergiczny"],
+      "skutek": null,
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "egzema",
+      "nazwa": "Egzema",
+      "miejsce": [{"region": "ogółem", "grupa": "dzieci", "odsetek_procent": null}],
+      "uzasadnienie_listy": "WAO White Book on Allergy, Update 2013: egzema jest wśród najczęstszych stanów alergicznych u dzieci.",
+      "zrodlo": "World Allergy Organization, WAO White Book on Allergy: Update 2013",
+      "rok": 2013,
+      "url": "https://allergypaais.org/wp-content/themes/twentytwentyone/pdf/ExecSummary-2013-v6-hires.pdf",
+      "srodki_zaradcze": [],
+      "leki": ["lek przeciwalergiczny"],
+      "skutek": null,
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "astma_alergiczna",
+      "nazwa": "Astma",
+      "miejsce": [{"region": "ogółem", "grupa": "dzieci", "odsetek_procent": null}],
+      "uzasadnienie_listy": "WAO White Book on Allergy, Update 2013: astma jest wśród najczęstszych stanów alergicznych u dzieci.",
+      "zrodlo": "World Allergy Organization, WAO White Book on Allergy: Update 2013",
+      "rok": 2013,
+      "url": "https://allergypaais.org/wp-content/themes/twentytwentyone/pdf/ExecSummary-2013-v6-hires.pdf",
+      "srodki_zaradcze": [],
+      "leki": ["lek na astmę"],
+      "skutek": null,
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "alergiczny_niezyt_nosa",
+      "nazwa": "Alergiczny nieżyt nosa",
+      "miejsce": [{"region": "ogółem", "odsetek_procent": null}],
+      "uzasadnienie_listy": "Ten sam raport WAO wymienia nieżyt nosa wśród głównych chorób alergicznych. Jednego odsetka dla świata nie wpisano.",
+      "zrodlo": "World Allergy Organization, WAO White Book on Allergy: Update 2013",
+      "rok": 2013,
+      "url": "https://allergypaais.org/wp-content/themes/twentytwentyone/pdf/ExecSummary-2013-v6-hires.pdf",
+      "srodki_zaradcze": [],
+      "leki": ["lek przeciwalergiczny"],
+      "skutek": null,
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ],
+  "najczestsze_na_leki": [
+    {
+      "id": "uczulenie_nlpz",
+      "nazwa": "Uczulenie na niesteroidowe leki przeciwzapalne",
+      "grupa_leku": "niesteroidowy lek przeciwzapalny",
+      "miejsce": [{"region": "ogółem", "odsetek_procent": null}],
+      "uzasadnienie_listy": "Doña i in., Allergy 2020: NLPZ są głównymi czynnikami wywołującymi reakcje nadwrażliwości na leki. Odsetka populacji nie wpisano, bo przegląd podaje zakres z różnych badań.",
+      "zrodlo": "Doña i in., Progress in understanding hypersensitivity reactions to nonsteroidal anti-inflammatory drugs, Allergy, 2020",
+      "rok": 2020,
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/all.14032",
+      "skutek": null,
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "uczulenie_beta_laktamy",
+      "nazwa": "Uczulenie na antybiotyki beta-laktamowe",
+      "grupa_leku": "antybiotyk beta-laktamowy",
+      "miejsce": [{"region": "ogółem", "grupa": "dzieci", "odsetek_procent": null}],
+      "uzasadnienie_listy": "Gomes i in., Allergy 2016: u dzieci antybiotyki beta-laktamowe są grupą leków najczęściej wiązaną z nadwrażliwością, a NLPZ są następne. Odsetka populacji nie wpisano.",
+      "zrodlo": "Gomes i in., Drug hypersensitivity in children, Allergy, 2016",
+      "rok": 2016,
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/all.12774",
+      "skutek": null,
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ]
+}

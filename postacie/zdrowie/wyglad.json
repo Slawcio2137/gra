@@ -1,0 +1,5 @@
+{
+  "opis": "Etykiety kategorii. Bohater ich nie dostaje: u niego wyglad_naturalny i sylwetka są null. Bez procentów.",
+  "wyglad_naturalny": [],
+  "sylwetka": ["szczupla", "przecietna", "tezsza"]
+}

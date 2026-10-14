@@ -1,0 +1,35 @@
+{
+    "id":  "3064011",
+    "nazwa":  "Poznań",
+    "typ":  "miasto",
+    "dostep_transportu_publicznego":  null,
+    "cena_transportu_publicznego":  null,
+    "panstwo":  "Polska",
+    "wojewodztwo":  "Wielkopolskie",
+    "powiat_id":  "3064",
+    "powiat_nazwa":  "Poznań",
+    "liczba_mieszkancow":  534239,
+    "powierzchnia_km2":  262,
+    "stan_podzialu":  "2026-01-01",
+    "zrodlo_ludnosci":  "GUS, Powierzchnia i ludność w przekroju terytorialnym w 2026 r., tabl. 19",
+    "reszta_powiatu":  null,
+    "przestepczosc":  {
+                          "zakres":  "niedostepny",
+                          "rok":  null,
+                          "zrodlo":  null,
+                          "na_1000_mieszkancow":  {
+                                                      "kradziez_cudzej_rzeczy":  null,
+                                                      "zgwalcenie":  null,
+                                                      "rozboj_kradziez_i_wymuszenie_rozbojnicze":  null,
+                                                      "bojka_i_pobicie":  null
+                                                  },
+                          "liczba":  {
+                                         "kradziez_cudzej_rzeczy":  null,
+                                         "zgwalcenie":  null,
+                                         "rozboj_kradziez_i_wymuszenie_rozbojnicze":  null,
+                                         "bojka_i_pobicie":  null
+                                     },
+                          "kategoria_niedostepna":  "Atak z niebezpiecznym narzędziem albo bronią nie jest osobną kategorią w danych Policji publikowanych przez GUS. Najbliższe oficjalne nazwy to rozbój oraz bójka i pobicie, i też tylko dla całego powiatu.",
+                          "uwaga":  "To miasto jest całym powiatem (miasto na prawach powiatu). Gdy dojdą dane Policji, będą dotyczyły całego miasta, a nie samego centrum i nie osobnych wsi."
+                      }
+}

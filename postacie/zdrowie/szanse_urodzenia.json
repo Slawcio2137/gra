@@ -1,0 +1,63 @@
+{
+  "opis": "Orientacja i płeć odczuwana nie są chorobami. Szansa nie jest wpisana przy bohaterze. Jeden cytowany spis, bez uśredniania z innymi badaniami. Spis mierzy deklaracje osób od 16. roku życia, nie szansę urodzenia. Polska nie dostaje liczb z Anglii i Walii.",
+  "orientacja": {
+    "zrodlo": "Office for National Statistics, Sexual orientation, England and Wales: Census 2021",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/bulletins/sexualorientationenglandandwales/census2021",
+    "rok": 2021,
+    "kraj": "Anglia i Walia",
+    "co_mierzy": "Odsetek usual residents w wieku 16 lat i więcej. Pytanie dobrowolne, dlatego udziały nie sumują się do 100.",
+    "hetero": {
+      "procent_deklaracji": 89.4,
+      "szansa_urodzenia_procent": null,
+      "kategoria_w_spisie": "straight or heterosexual"
+    },
+    "homo": {
+      "procent_deklaracji": 1.5,
+      "szansa_urodzenia_procent": null,
+      "kategoria_w_spisie": "gay or lesbian"
+    },
+    "bi": {
+      "procent_deklaracji": 1.3,
+      "szansa_urodzenia_procent": null,
+      "kategoria_w_spisie": "bisexual"
+    },
+    "inna": {
+      "procent_deklaracji": 0.3,
+      "szansa_urodzenia_procent": null,
+      "kategoria_w_spisie": "other sexual orientation"
+    },
+    "brak_odpowiedzi_procent": 7.5,
+    "polska": {
+      "procent_deklaracji": null,
+      "szansa_urodzenia_procent": null,
+      "zrodlo": null,
+      "rok": null
+    }
+  },
+  "plec_odczuwana": {
+    "uwaga": "Spis nie podaje odsetka osób, które czują się kobietą albo mężczyzną, ani szansy urodzenia. ONS 26.03.2025 odradza używania osobnych odsetków trans kobiet i trans mężczyzn do szacowania liczebności tych grup, więc tych odsetków tu nie ma.",
+    "zrodlo": "Office for National Statistics, Census 2021 gender identity estimates for England and Wales, additional guidance, 26 marca 2025",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/genderidentity/articles/census2021genderidentityestimatesforenglandandwalesadditionalguidanceonuncertaintyandappropriateuse/2025-03-26",
+    "rok_danych": 2021,
+    "rok_publikacji_wskazowek": 2025,
+    "kraj": "Anglia i Walia",
+    "kobieta": {
+      "procent": null,
+      "szansa_urodzenia_procent": null
+    },
+    "mezczyzna": {
+      "procent": null,
+      "szansa_urodzenia_procent": null
+    },
+    "tozsamosc_taka_jak_plec_przypisana_przy_urodzeniu_procent": 93.46,
+    "tozsamosc_inna_niz_plec_przypisana_przy_urodzeniu_procent": 0.54,
+    "brak_odpowiedzi_procent": 6.0,
+    "co_mierzy": "Odpowiedzi osób od 16. roku życia, czy tożsamość płciowa jest taka sama jak płeć wpisana przy urodzeniu. To nie jest szansa urodzenia się kobietą albo mężczyzną.",
+    "polska": {
+      "procent": null,
+      "szansa_urodzenia_procent": null,
+      "zrodlo": null,
+      "rok": null
+    }
+  }
+}

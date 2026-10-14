@@ -1,0 +1,36 @@
+{
+    "id":  "1411",
+    "nazwa":  "makowski",
+    "typ":  "wies",
+    "dostep_transportu_publicznego":  null,
+    "cena_transportu_publicznego":  null,
+    "srednia_odleglosc_ludzi_od_miasta_powiatowego_km":  null,
+    "srednia_odleglosc_metoda":  "Nie ma punktów ludności z odległością do siedziby powiatu. Nie liczone z powierzchni ani z linii prostej.",
+    "panstwo":  "Polska",
+    "wojewodztwo":  "Mazowieckie",
+    "miasto_powiatowe_poza_powiatem":  false,
+    "siedziba_nazwa":  "Maków Mazowiecki",
+    "siedziba_id":  "1411011",
+    "liczba_mieszkancow":  32204,
+    "stan_podzialu":  "2026-01-01",
+    "zrodlo_ludnosci":  "GUS, Powierzchnia i ludność w przekroju terytorialnym w 2026 r., tabl. 19, bez siedziby powiatu",
+    "przestepczosc":  {
+                          "zakres":  "niedostepny",
+                          "rok":  null,
+                          "zrodlo":  null,
+                          "na_1000_mieszkancow":  {
+                                                      "kradziez_cudzej_rzeczy":  null,
+                                                      "zgwalcenie":  null,
+                                                      "rozboj_kradziez_i_wymuszenie_rozbojnicze":  null,
+                                                      "bojka_i_pobicie":  null
+                                                  },
+                          "liczba":  {
+                                         "kradziez_cudzej_rzeczy":  null,
+                                         "zgwalcenie":  null,
+                                         "rozboj_kradziez_i_wymuszenie_rozbojnicze":  null,
+                                         "bojka_i_pobicie":  null
+                                     },
+                          "kategoria_niedostepna":  "Atak z niebezpiecznym narzędziem albo bronią nie jest osobną kategorią w danych Policji publikowanych przez GUS. Najbliższe oficjalne nazwy to rozbój oraz bójka i pobicie, i też tylko dla całego powiatu.",
+                          "uwaga":  "To są gminy powiatu bez miasta powiatowego. Policja nie podaje przestępstw osobno dla tych gmin ani dla wsi, więc liczby zostają puste. Nie dzieliłem statystyki całego powiatu na oko."
+                      }
+}

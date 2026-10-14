@@ -1,0 +1,100 @@
+{
+  "opis": "Jedna cena na kraj, waluta PLN. Ceny nie są kopiowane na inne kraje. Brak opublikowanej jednej ceny grupy oznacza null.",
+  "najtansza_pomoc": [
+    {
+      "id": "bandaz",
+      "nazwa": "Bandaż",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "id": "podstawowy_antybiotyk",
+      "nazwa": "Podstawowy antybiotyk",
+      "grupa": "antybiotyk",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null,
+      "uwaga": "Wykaz refundacyjny podaje ceny opakowań, nie jedną cenę grupy. Dawki nie są tu wpisane."
+    }
+  ],
+  "leki_na_choroby": [
+    {
+      "choroba_id": "nadcisnienie_tetnicze",
+      "grupa_leku": "lek przeciwnadciśnieniowy",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "choroby_stawow",
+      "grupa_leku": "lek przeciwbólowy",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "choroby_tarczycy",
+      "grupa_leku": "lek na tarczycę",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "choroba_niedokrwienna_serca",
+      "grupa_leku": "lek na chorobę niedokrwienną serca",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "cukrzyca",
+      "grupa_leku": "lek przeciwcukrzycowy",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "choroby_drog_oddechowych_inne_niz_astma",
+      "grupa_leku": null,
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "covid_19",
+      "grupa_leku": null,
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null
+    },
+    {
+      "choroba_id": "malaria",
+      "grupa_leku": "lek profilaktyczny",
+      "kraj": "Polska",
+      "cena": null,
+      "waluta": "PLN",
+      "zrodlo": null,
+      "rok": null,
+      "uwaga": "Malaria w tych danych dotyczy regionów z raportu WHO, nie Polski. Ceny dla innych krajów nie są przepisane z Polski."
+    }
+  ]
+}

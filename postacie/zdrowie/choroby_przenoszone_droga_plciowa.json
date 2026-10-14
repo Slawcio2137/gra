@@ -1,0 +1,52 @@
+{
+  "opis": "Osobny plik. To nie są choroby od urodzenia. Najczęstsze uleczalne zakażenia według WHO. Nazwy środków, bez instrukcji i dawek. Liczby zachorowań null, bo w tym zbiorze nie podpięto tabeli zapadalności.",
+  "zrodlo_listy": "WHO, Sexually transmitted infections, health topic: the most common and curable STIs are trichomonas, chlamydia, gonorrhoea and syphilis.",
+  "url": "https://www.who.int/health-topics/sexually-transmitted-infections",
+  "rok": null,
+  "choroby": [
+    {
+      "id": "rzesistkowica",
+      "nazwa": "Rzęsistkowica",
+      "miejsce": [{"region": "ogółem", "odsetek_procent": null}],
+      "srodki_zaradcze": [{"nazwa": "prezerwatywa", "grupa": "środek bariery"}],
+      "leki": ["lek przeciwpierwotniakowy"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "chlamydioza",
+      "nazwa": "Chlamydioza",
+      "miejsce": [{"region": "ogółem", "odsetek_procent": null}],
+      "srodki_zaradcze": [{"nazwa": "prezerwatywa", "grupa": "środek bariery"}],
+      "leki": ["antybiotyk"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "rzeżączka",
+      "nazwa": "Rzeżączka",
+      "miejsce": [{"region": "ogółem", "odsetek_procent": null}],
+      "srodki_zaradcze": [{"nazwa": "prezerwatywa", "grupa": "środek bariery"}],
+      "leki": ["antybiotyk"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "kila",
+      "nazwa": "Kiła",
+      "miejsce": [{"region": "ogółem", "odsetek_procent": null}],
+      "srodki_zaradcze": [{"nazwa": "prezerwatywa", "grupa": "środek bariery"}],
+      "leki": ["antybiotyk"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "opis": "Kurs to ile złotych kosztuje 1 jednostka waluty. Złoty ma kurs 1. Kwota w walucie B = kwota_A * (kurs_A / kurs_B).",
+  "baza": "PLN",
+  "wartosc_bazy": 1,
+  "numer_tabeli": "200/A/NBP/2026",
+  "data": "2026-10-14",
+  "zrodlo": "https://api.nbp.pl/api/exchangerates/tables/A/2026-10-14/?format=json",
+  "oplata_wymiany": {
+    "opis": "Jedna opłata za każdą wymianę, ta sama dla wszystkich par. To spread tabeli dewiz Erste Bank Polska (wcześniej Santander Bank Polska), nie marża kantoru. Bank w tej tabeli podaje spread walutowy 7% dla euro, dolara i większości pozostałych walut: (kurs sprzedaży − kurs kupna) / kurs średni banku. Kupno i sprzedaż stoją symetrycznie, po 3,5% od tego kursu średniego. Przy jednej wymianie wzór zabiera tę jedną stronę.",
+    "rodzaj": "jedna strona spreadu tabeli dewizowej banku wobec kursu średniego banku",
+    "instytucja": "Erste Bank Polska",
+    "tabela": "200c/26, kursy kupna/sprzedaży dewiz",
+    "data": "2026-10-14",
+    "zrodlo": "https://www.erste.pl/przydatne-informacje/kursy-walut",
+    "co_podaje_zrodlo": "Spread walutowy 7% (ułamek 0,07). Frank w tej samej tabeli ma osobno 2% do 31 grudnia 2026 roku. Tych wyjątków nie uśredniam.",
+    "procent": 3.5,
+    "ulamek": 0.035,
+    "jednostka": "procent kwoty po przeliczeniu",
+    "wzor": "kwota_B = kwota_A * (kurs_A / kurs_B) * (1 - 0.035)"
+  },
+  "kursy": [
+    {
+      "kod": "PLN",
+      "kurs": 1
+    },
+    {
+      "kod": "THB",
+      "kurs": 0.1162
+    },
+    {
+      "kod": "USD",
+      "kurs": 3.9042
+    },
+    {
+      "kod": "AUD",
+      "kurs": 2.7362
+    },
+    {
+      "kod": "HKD",
+      "kurs": 0.4975
+    },
+    {
+      "kod": "CAD",
+      "kurs": 2.7466
+    },
+    {
+      "kod": "NZD",
+      "kurs": 2.1939
+    },
+    {
+      "kod": "SGD",
+      "kurs": 3.0456
+    },
+    {
+      "kod": "EUR",
+      "kurs": 4.3706
+    },
+    {
+      "kod": "HUF",
+      "kurs": 0.012016
+    },
+    {
+      "kod": "CHF",
+      "kurs": 4.6835
+    },
+    {
+      "kod": "GBP",
+      "kurs": 5.1775
+    },
+    {
+      "kod": "UAH",
+      "kurs": 0.0868
+    },
+    {
+      "kod": "JPY",
+      "kurs": 0.024638
+    },
+    {
+      "kod": "CZK",
+      "kurs": 0.1793
+    },
+    {
+      "kod": "DKK",
+      "kurs": 0.5847
+    },
+    {
+      "kod": "ISK",
+      "kurs": 0.03209
+    },
+    {
+      "kod": "NOK",
+      "kurs": 0.4112
+    },
+    {
+      "kod": "SEK",
+      "kurs": 0.3918
+    },
+    {
+      "kod": "RON",
+      "kurs": 0.8179
+    },
+    {
+      "kod": "TRY",
+      "kurs": 0.0790
+    },
+    {
+      "kod": "ILS",
+      "kurs": 1.2711
+    },
+    {
+      "kod": "CLP",
+      "kurs": 0.003974
+    },
+    {
+      "kod": "PHP",
+      "kurs": 0.0621
+    },
+    {
+      "kod": "MXN",
+      "kurs": 0.2125
+    },
+    {
+      "kod": "ZAR",
+      "kurs": 0.2368
+    },
+    {
+      "kod": "BRL",
+      "kurs": 0.7767
+    },
+    {
+      "kod": "MYR",
+      "kurs": 0.9563
+    },
+    {
+      "kod": "IDR",
+      "kurs": 0.00021811
+    },
+    {
+      "kod": "INR",
+      "kurs": 0.04107
+    },
+    {
+      "kod": "KRW",
+      "kurs": 0.002923
+    },
+    {
+      "kod": "CNY",
+      "kurs": 0.5833
+    },
+    {
+      "kod": "XDR",
+      "kurs": 5.2840
+    }
+  ]
+}

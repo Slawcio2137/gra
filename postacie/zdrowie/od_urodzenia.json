@@ -1,0 +1,64 @@
+{
+  "opis": "Krótka lista częstych wad i chorób wrodzonych oraz kalectwo wrodzone. To nie są choroby przenoszone drogą płciową. Czas, śmiertelność i częstość są null, gdy brak jednej opublikowanej liczby z rokiem.",
+  "wady": [
+    {
+      "id": "wada_serca",
+      "nazwa": "Wada serca",
+      "uzasadnienie_listy": "WHO wymienia wady serca wśród najczęstszych ciężkich zaburzeń wrodzonych.",
+      "zrodlo": "WHO, Congenital disorders",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/birth-defects",
+      "rok": null,
+      "czestosc": null,
+      "miejsce": [{"region": "ogółem"}],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "wada_cewy_nerwowej",
+      "nazwa": "Wada cewy nerwowej",
+      "uzasadnienie_listy": "WHO wymienia wady cewy nerwowej wśród najczęstszych ciężkich zaburzeń wrodzonych.",
+      "zrodlo": "WHO, Congenital disorders",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/birth-defects",
+      "rok": null,
+      "czestosc": null,
+      "miejsce": [{"region": "ogółem"}],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "zespol_downa",
+      "nazwa": "Zespół Downa",
+      "uzasadnienie_listy": "WHO wymienia zespół Downa wśród najczęstszych ciężkich zaburzeń wrodzonych.",
+      "zrodlo": "WHO, Congenital disorders",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/birth-defects",
+      "rok": null,
+      "czestosc": null,
+      "miejsce": [{"region": "ogółem"}],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "kalectwo_wrodzone",
+      "nazwa": "Kalectwo wrodzone",
+      "uzasadnienie_listy": "Osobna kategoria niepełnosprawności od urodzenia, nie katalog zespołów.",
+      "zrodlo": null,
+      "rok": null,
+      "czestosc": null,
+      "miejsce": [],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ]
+}

@@ -1,0 +1,4712 @@
+{
+  "head" : {
+    "vars" : [ "teryt", "powiatLabel", "seatLabel" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3001"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat chodzieski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Chodzież"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3018"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ostrzeszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ostrzeszów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3019"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pilski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Piła"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3022"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat rawicki"
+      },
+      "seatLabel" : {
+        "type" : "literal",
+        "value" : "Q52898"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3023"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat słupecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Słupca"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3031"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat złotowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Złotów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2211"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pucki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Puck"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2006"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kolneński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kolno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3209"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat koszaliński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Koszalin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1605"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat krapkowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Krapkowice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1607"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nyski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nysa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1609"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat opolski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Opole"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1611"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat strzelecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Strzelce Opolskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1002"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kutnowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kutno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2412"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat rybnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Rybnik"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1437"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat żuromiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Żuromin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2209"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat malborski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Malbork"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2008"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat moniecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mońki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2607"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ostrowiecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ostrowiec Świętokrzyski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1818"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat stalowowolski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Stalowa Wola"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1401"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat białobrzeski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Białobrzegi"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1806"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kolbuszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kolbuszowa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1411"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat makowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Maków Mazowiecki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1211"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowotarski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowy Targ"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2415"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wodzisławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wodzisław Śląski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1409"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lipski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lipsko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1402"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ciechanowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ciechanów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1430"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat szydłowiecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Szydłowiec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1438"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat żyrardowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Żyrardów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1413"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat mławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mława"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1410"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łosicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łosice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1412"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat miński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mińsk Mazowiecki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1406"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat grójecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Grójec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1209"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat myślenicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Myślenice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1205"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gorlicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gorlice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1001"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bełchatowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bełchatów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2014"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zambrowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zambrów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2007"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łomżyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łomża"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2013"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wysokomazowiecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wysokie Mazowieckie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2004"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat grajewski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Grajewo"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2010"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat siemiatycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Siemiatycze"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2009"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sejneński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sejny"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2813"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat olecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Olecko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2416"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zawierciański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zawiercie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2803"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat działdowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Działdowo"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1414"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowodworski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowy Dwór Mazowiecki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1416"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ostrowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ostrów Mazowiecka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2609"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sandomierski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sandomierz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1017"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wieluński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wieluń"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2406"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kłobucki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kłobuck"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2404"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat częstochowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Częstochowa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1217"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tatrzański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zakopane"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1802"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat brzozowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Brzozów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3218"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łobeski"
+      },
+      "seatLabel" : {
+        "type" : "literal",
+        "value" : "Q196163"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3217"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wałecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wałcz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1215"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat suski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sucha Beskidzka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1808"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat leżajski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Leżajsk"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2605"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat konecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Końskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1815"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ropczycko-sędziszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ropczyce"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1821"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat leski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lesko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1805"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat jasielski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Jasło"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1218"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wadowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wadowice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2409"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat myszkowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Myszków"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1216"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tarnowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tarnów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2216"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sztumski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sztum"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2213"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat starogardzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Starogard Gdański"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2611"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat starachowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Starachowice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3002"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat czarnkowsko-trzcianecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Czarnków"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3004"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gostyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gostyń"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3006"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat jarociński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Jarocin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3010"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat koniński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Konin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3012"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat krotoszyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Krotoszyn"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3008"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kępiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kępno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3015"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowotomyski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowy Tomyśl"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3029"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wolsztyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wolsztyn"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3028"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wągrowiecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wągrowiec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3030"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wrzesiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Września"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3025"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat średzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Środa Wielkopolska"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3026"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat śremski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Śrem"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2812"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowomiejski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowe Miasto Lubawskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3206"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gryfiński"
+      },
+      "seatLabel" : {
+        "type" : "literal",
+        "value" : "Q186441"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1601"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat brzeski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Brzeg"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1604"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kluczborski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kluczbork"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1610"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat prudnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Prudnik"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1004"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łęczycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łęczyca"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2817"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat szczycieński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Szczytno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3215"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat szczecinecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Szczecinek"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2202"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat chojnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Chojnice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1018"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wieruszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wieruszów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1016"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tomaszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tomaszów Mazowiecki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1219"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wielicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wieliczka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1804"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat jarosławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Jarosław"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1403"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat garwoliński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Garwolin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1432"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat warszawski zachodni"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ożarów Mazowiecki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1427"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sierpecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sierpc"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1421"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pruszkowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pruszków"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1424"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pułtuski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pułtusk"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1434"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wołomiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wołomin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1420"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat płoński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Płońsk"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1429"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sokołowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sokołów Podlaski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1404"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gostyniński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gostynin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2819"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat węgorzewski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Węgorzewo"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2401"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat będziński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Będzin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1202"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat brzeski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Brzesko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1014"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sieradzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sieradz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2001"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat augustowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Augustów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1428"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sochaczewski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sochaczew"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1020"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zgierski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zgierz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1009"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pajęczański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pajęczno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1405"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat grodziski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Grodzisk Mazowiecki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2005"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat hajnowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Hajnówka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2002"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat białostocki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Białystok"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2801"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bartoszycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bartoszyce"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1011"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat poddębicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Poddębice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2805"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ełcki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ełk"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2212"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat słupski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Słupsk"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2215"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wejherowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wejherowo"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2408"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat mikołowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mikołów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2403"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat cieszyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Cieszyn"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1013"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat rawski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Rawa Mazowiecka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1015"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat skierniewicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Skierniewice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1010"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat piotrkowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Piotrków Trybunalski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1007"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat opoczyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Opoczno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2606"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat opatowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Opatów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1811"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat mielecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mielec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1214"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat proszowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Proszowice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1201"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bocheński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bochnia"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1208"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat miechowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Miechów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1803"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat dębicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Dębica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1807"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat krośnieński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Krosno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2802"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat braniewski"
+      },
+      "seatLabel" : {
+        "type" : "literal",
+        "value" : "Q160814"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1008"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pabianicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pabianice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2204"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gdański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pruszcz Gdański"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1019"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zduńskowolski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zduńska Wola"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1006"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łódzki wschodni"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łódź"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2613"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat włoszczowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Włoszczowa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1814"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat przeworski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Przeworsk"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1816"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat rzeszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Rzeszów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2402"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bielski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bielsko-Biała"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1207"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat limanowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Limanowa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1817"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sanocki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sanok"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3202"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat choszczeński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Choszczno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3203"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat drawski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Drawsko Pomorskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3207"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kamieński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kamień Pomorski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1606"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat namysłowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Namysłów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2814"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat olsztyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Olsztyn"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2806"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat giżycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Giżycko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2612"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat staszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Staszów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3007"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kaliski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kalisz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3009"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kolski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Koło"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3011"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kościański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kościan"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3013"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat leszczyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Leszno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3017"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ostrowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ostrów Wielkopolski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3020"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pleszewski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pleszew"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1801"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bieszczadzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ustrzyki Dolne"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1435"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wyszkowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wyszków"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1602"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat głubczycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Głubczyce"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1603"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kędzierzyńsko-kozielski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kędzierzyn-Koźle"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1608"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat oleski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Olesno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2405"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gliwicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gliwice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2816"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat piski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pisz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3205"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gryficki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gryfice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3211"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat policki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Police"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1422"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat przasnyski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Przasnysz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1415"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ostrołęcki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ostrołęka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1812"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat niżański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nisko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1813"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat przemyski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Przemyśl"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0215"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat oławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Oława"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1436"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zwoleński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zwoleń"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1425"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat radomski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Radom"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1433"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat węgrowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Węgrów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2205"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kartuski"
+      },
+      "seatLabel" : {
+        "type" : "literal",
+        "value" : "Q640355"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2011"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sokólski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sokółka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1419"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat płocki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Płock"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1407"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kozienicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kozienice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1819"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat strzyżowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Strzyżów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1418"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat piaseczyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Piaseczno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2808"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kętrzyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kętrzyn"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2012"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat suwalski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Suwałki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1204"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat dąbrowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Dąbrowa Tarnowska"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2807"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat iławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Iława"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1012"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat radomszczański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Radomsko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2201"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bytowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bytów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2804"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat elbląski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Elbląg"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1005"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łowicz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1003"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łaski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łask"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2208"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lęborski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lębork"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2206"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kościerski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kościerzyna"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2407"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lubliniecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lubliniec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2413"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tarnogórski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tarnowskie Góry"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1021"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat brzeziński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Brzeziny"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1809"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lubaczowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lubaczów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1210"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowosądecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowy Sącz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1206"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat krakowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kraków"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2601"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat buski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Busko-Zdrój"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2603"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kazimierski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kazimierza Wielka"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3216"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat świdwiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Świdwin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1212"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat olkuski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Olkusz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2214"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tczewski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tczew"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3212"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pyrzycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pyrzyce"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3204"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat goleniowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Goleniów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3021"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat poznański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Poznań"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2608"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pińczowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pińczów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3003"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gnieźnieński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gniezno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3014"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat międzychodzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Międzychód"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3016"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat obornicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Oborniki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3024"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat szamotulski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Szamotuły"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3027"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat turecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Turek"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1426"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat siedlecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Siedlce"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2411"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat raciborski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Racibórz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2410"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat pszczyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Pszczyna"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2815"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ostródzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ostróda"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3210"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat myśliborski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Myślibórz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1417"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat otwocki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Otwock"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0403"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bydgoski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bydgoszcz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0613"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat parczewski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Parczew"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2003"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bielski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bielsk Podlaski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1423"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat przysuski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Przysucha"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2210"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowodworski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowy Dwór Gdański"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2203"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat człuchowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Człuchów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2810"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat mrągowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mrągowo"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2811"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nidzicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nidzica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1203"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat chrzanowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Chrzanów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1408"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat legionowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Legionowo"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2414"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bieruńsko-lędziński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bieruń"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2809"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lidzbarski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lidzbark Warmiński"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1820"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tarnobrzeski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tarnobrzeg"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1213"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat oświęcimski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Oświęcim"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2604"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kielecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kielce"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2602"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat jędrzejowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Jędrzejów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "1810"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łańcucki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łańcut"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3208"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kołobrzeski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kołobrzeg"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3214"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat stargardzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Stargard"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2207"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kwidzyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kwidzyn"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3201"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat białogardzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Białogard"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3213"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sławieński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sławno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2610"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat skarżyski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Skarżysko-Kamienna"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0207"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kamiennogórski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kamienna Góra"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0222"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wołowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wołów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0810"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat żagański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Żagań"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0416"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tucholski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tuchola"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0216"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat polkowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Polkowice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0608"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lubartowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lubartów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0408"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lipnowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lipno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0417"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wąbrzeski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wąbrzeźno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0601"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bialski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Biała Podlaska"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0805"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat słubicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Słubice"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0203"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat głogowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Głogów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "3005"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat grodziski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Grodzisk Wielkopolski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0217"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat strzeliński"
+      },
+      "seatLabel" : {
+        "type" : "literal",
+        "value" : "Q719954"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0808"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat świebodziński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Świebodzin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0410"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nakielski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nakło nad Notecią"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0202"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat dzierżoniowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Dzierżoniów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0209"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat legnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Legnica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2818"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gołdapski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gołdap"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "2417"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat żywiecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Żywiec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0402"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat brodnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Brodnica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0213"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat milicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Milicz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0604"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat hrubieszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Hrubieszów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0214"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat oleśnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Oleśnica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0206"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat karkonoski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Jelenia Góra"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0208"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kłodzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kłodzko"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0211"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lubiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lubin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0212"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lwówecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lwówek Śląski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0225"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zgorzelecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zgorzelec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0226"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat złotoryjski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Złotoryja"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0412"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat rypiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Rypin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0618"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat tomaszowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Tomaszów Lubelski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0610"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łęczyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łęczna"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0801"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat gorzowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Gorzów Wielkopolski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0802"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat krośnieński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Krosno Odrzańskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0812"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wschowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wschowa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0205"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat jaworski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Jawor"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0605"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat janowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Janów Lubelski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0220"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat trzebnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Trzebnica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0401"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat aleksandrowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Aleksandrów Kujawski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0418"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat włocławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Włocławek"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0614"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat puławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Puławy"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0616"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat rycki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ryki"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0617"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat świdnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Świdnik"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0607"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat kraśnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Kraśnik"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0405"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat golubsko-dobrzyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Golub-Dobrzyń"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0406"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat grudziądzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Grudziądz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0407"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat inowrocławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Inowrocław"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0602"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat biłgorajski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Biłgoraj"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0409"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat mogileński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Mogilno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0223"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wrocławski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wrocław"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0224"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat ząbkowicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Ząbkowice Śląskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0404"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat chełmiński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Chełmno"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0414"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat świecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Świecie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0603"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat chełmski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Chełm"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0612"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat opolski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Opole Lubelskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0615"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat radzyński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Radzyń Podlaski"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0803"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat międzyrzecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Międzyrzecz"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0804"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat nowosolski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Nowa Sól"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0806"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat strzelecko-drezdenecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Strzelce Krajeńskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0807"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sulęciński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sulęcin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0809"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zielonogórski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zielona Góra"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0811"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat żarski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Żary"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0419"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat żniński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Żnin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0413"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat sępoleński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Sępólno Krajeńskie"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0204"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat górowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Góra"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0218"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat średzki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Środa Śląska"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0619"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat włodawski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Włodawa"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0609"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lubelski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lublin"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0611"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat łukowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Łuków"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0221"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat wałbrzyski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Wałbrzych"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0201"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat bolesławiecki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Bolesławiec"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0415"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat toruński"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Toruń"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0411"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat radziejowski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Radziejów"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0219"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat świdnicki"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Świdnica"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0606"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat krasnostawski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Krasnystaw"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0620"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat zamojski"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Zamość"
+      }
+    }, {
+      "teryt" : {
+        "type" : "literal",
+        "value" : "0210"
+      },
+      "powiatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "powiat lubański"
+      },
+      "seatLabel" : {
+        "xml:lang" : "pl",
+        "type" : "literal",
+        "value" : "Lubań"
+      }
+    } ]
+  }
+}

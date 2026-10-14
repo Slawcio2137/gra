@@ -1,0 +1,40 @@
+{
+  "id": "bohater",
+  "imie": null,
+  "nazwisko": null,
+  "wiek": null,
+  "pieniadze": null,
+  "zdrowie": null,
+  "zwinnosc": null,
+  "szybkosc_reakcji": null,
+  "sila": null,
+  "wytrzymalosc": null,
+  "rownowaga": null,
+  "orientacja": null,
+  "orientacja_opis": "Dozwolone wartości: hetero, homo, bi. Bi jest trzecią możliwością, bo sam podział hetero/homo jest dziurawy. To nie jest choroba. Szansa urodzenia nie jest cechą bohatera.",
+  "ples": null,
+  "ples_opis": "Dozwolone wartości: kobieta, mezczyzna. Chodzi o to, jak ktoś się czuje. To nie jest choroba. Szansa urodzenia nie jest cechą bohatera.",
+  "wyglad_naturalny": null,
+  "sylwetka": null,
+  "miejsce": null,
+  "rola": "glowny_bohater",
+  "posiadane": {
+    "bronie": [],
+    "ksiazki": [],
+    "komputery": [],
+    "pojazdy": {
+      "samochody": [],
+      "samoloty": [],
+      "jachty": [],
+      "inne_statki": []
+    },
+    "budynki": {
+      "domy_jednorodzinne": [],
+      "wiezowce": [],
+      "mieszkania": []
+    },
+    "firmy": [],
+    "akcje": [],
+    "inne": []
+  }
+}
