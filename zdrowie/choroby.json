@@ -1,0 +1,241 @@
+{
+  "opis": "Choroby zależne od miejsca. Trzy metody leczenia mają null, gdy źródło nie podaje dni, śmiertelności ani wag. Nowotwory są osobno w tym pliku, bez typów histologicznych i bez listy narządów.",
+  "choroby": [
+    {
+      "id": "nadcisnienie_tetnicze",
+      "nazwa": "Nadciśnienie tętnicze",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 20.0,
+        "rok": 2023,
+        "co_mierzy": "Odsetek osób ze stwierdzoną przez lekarza chorobą.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r.",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/2/8/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023.pdf"
+      }],
+      "srodki_zaradcze": [],
+      "leki": ["lek przeciwnadciśnieniowy"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "choroby_stawow",
+      "nazwa": "Choroby stawów",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 12.8,
+        "rok": 2023,
+        "co_mierzy": "Odsetek osób ze stwierdzoną przez lekarza chorobą.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r.",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/2/8/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023.pdf"
+      }],
+      "srodki_zaradcze": [],
+      "leki": ["lek przeciwbólowy", "lek przeciwzapalny"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "choroby_tarczycy",
+      "nazwa": "Choroby tarczycy",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 8.1,
+        "rok": 2023,
+        "co_mierzy": "Odsetek osób ze stwierdzoną przez lekarza chorobą.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r. – wyniki wstępne, 30.10.2024",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/30/1/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023_wyniki_wstepne.pdf"
+      }],
+      "srodki_zaradcze": [],
+      "leki": ["lek na tarczycę"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "choroba_niedokrwienna_serca",
+      "nazwa": "Choroba niedokrwienna serca",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 7.3,
+        "rok": 2023,
+        "co_mierzy": "Odsetek osób ze stwierdzoną przez lekarza chorobą.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r.",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/2/8/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023.pdf"
+      }],
+      "srodki_zaradcze": [],
+      "leki": ["lek na chorobę niedokrwienną serca"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "cukrzyca",
+      "nazwa": "Cukrzyca",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 6.9,
+        "rok": 2023,
+        "co_mierzy": "Odsetek osób ze stwierdzoną przez lekarza chorobą.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r.",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/2/8/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023.pdf"
+      }],
+      "srodki_zaradcze": [],
+      "leki": ["lek przeciwcukrzycowy"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "choroby_drog_oddechowych_inne_niz_astma",
+      "nazwa": "Choroby dróg oddechowych inne niż astma",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 4.6,
+        "rok": 2023,
+        "co_mierzy": "Odsetek osób ze stwierdzoną przez lekarza chorobą, w tym zapalenie płuc.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r.",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/2/8/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023.pdf"
+      }],
+      "srodki_zaradcze": [],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "covid_19",
+      "nazwa": "COVID-19",
+      "miejsce": [{
+        "kraj": "Polska",
+        "odsetek_osob_procent": 14.6,
+        "rok": 2023,
+        "co_mierzy": "Odsetek badanej populacji w wieku 15 lat lub więcej, która zachorowała w 2023 r.",
+        "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r. – wyniki wstępne, 30.10.2024",
+        "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/30/1/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023_wyniki_wstepne.pdf"
+      }],
+      "srodki_zaradcze": ["szczepionka"],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "malaria",
+      "nazwa": "Malaria",
+      "miejsce": [
+        {
+          "region": "Region Afrykański WHO",
+          "udzial_przypadkow_procent": 94,
+          "udzial_zgonow_procent": 95,
+          "zapadalnosc_na_1000_ludnosci_zagrozonej": 227,
+          "umieralnosc_na_100000_ludnosci_zagrozonej": 52,
+          "rok": 2023,
+          "co_mierzy": "Udział w przypadkach i zgonach na malarię na świecie oraz zapadalność i umieralność w regionie. To nie jest śmiertelność trzech metod leczenia.",
+          "zrodlo": "WHO, World malaria report 2024, regional briefing",
+          "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4"
+        },
+        {
+          "region": "Region Wschodniego Obszaru Morza Śródziemnego WHO",
+          "udzial_przypadkow_procent": 4,
+          "udzial_zgonow_procent": 3,
+          "rok": 2023,
+          "zrodlo": "WHO, World malaria report 2024",
+          "url": "https://www.who.int/publications/b/76893"
+        },
+        {
+          "region": "Region Ameryk WHO",
+          "udzial_przypadkow_procent": null,
+          "rok": 2023,
+          "zrodlo": "WHO, World malaria report 2024, regional briefing",
+          "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4"
+        },
+        {
+          "region": "Region Azji Południowo-Wschodniej WHO",
+          "udzial_przypadkow_procent": null,
+          "rok": 2023,
+          "zrodlo": "WHO, World malaria report 2024, regional briefing",
+          "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4"
+        },
+        {
+          "region": "Region Zachodniego Pacyfiku WHO",
+          "udzial_przypadkow_procent": null,
+          "rok": 2023,
+          "zrodlo": "WHO, World malaria report 2024, regional briefing",
+          "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4"
+        }
+      ],
+      "swiat_2023": {
+        "szacowane_przypadki": 263000000,
+        "zapadalnosc_na_1000_ludnosci_zagrozonej": 60.4,
+        "szacowane_zgony": 597000,
+        "umieralnosc_na_100000": 13.7,
+        "kraje_endemiczne": 83,
+        "rok": 2023,
+        "zrodlo": "WHO, World malaria report 2024",
+        "url": "https://www.who.int/publications/b/76893"
+      },
+      "srodki_zaradcze": [
+        {"id": "moskitiera", "nazwa": "Moskitiera", "uwaga": "W raporcie WHO jako siatki traktowane środkiem owadobójczym. Bez instrukcji wytwarzania."},
+        {"id": "lek_profilaktyczny", "nazwa": "Lek profilaktyczny", "grupa": "lek profilaktyczny", "uwaga": "W raporcie WHO jako chemioprofilaktyka. Bez dawki i bez nazwy substancji."}
+      ],
+      "leki": ["lek przeciwmalaryczny"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ],
+  "nowotwory": [
+    {
+      "id": "nowotwor_niezlosliwy",
+      "nazwa": "Nowotwór niezłośliwy",
+      "miejsce": [{"kraj": "Polska", "zachorowania": null, "rok": null, "zrodlo": null}],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "rak_skory",
+      "nazwa": "Rak skóry",
+      "uwaga": "Jeden worek, bez typów histologicznych. Rejestr publikuje typy osobno, więc liczby worka są null.",
+      "miejsce": [{"kraj": "Polska", "zachorowania": null, "rok": null, "zrodlo": null}],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "inne_nowotwory_zlosliwe",
+      "nazwa": "Inne nowotwory złośliwe",
+      "uwaga": "Jedna grupa, bez listy narządów. Liczby poniżej dotyczą wszystkich nowotworów złośliwych łącznie, nie reszty po odjęciu raka skóry.",
+      "miejsce": [{
+        "kraj": "Polska",
+        "nowe_zachorowania_lacznie": 181300,
+        "zgony_lacznie": 96062,
+        "udzial_w_zgonach_mezczyzn_procent": 23,
+        "udzial_w_zgonach_kobiet_procent": 20,
+        "nowe_rozpoznania_na_100000": 79,
+        "rok": 2022,
+        "co_mierzy": "Wszystkie nowotwory złośliwe w Krajowym Rejestrze Nowotworów. Udział w zgonach to odsetek wszystkich zgonów, nie śmiertelność metody leczenia.",
+        "zrodlo": "Narodowy Instytut Onkologii, Krajowy Rejestr Nowotworów, Nowotwory złośliwe w Polsce w 2022 roku",
+        "url": "https://onkokurier.pl/wp-content/uploads/2025/02/onkokurier-Nowotwory-zlosliwe-w-Polsce-NIO-PIB-rejestr-nowotworow.pdf"
+      }],
+      "leki": [],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ]
+}

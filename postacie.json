@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bohater",
+    "nazwa": "Główny bohater",
+    "typ": "postac",
+    "plik": "res://postacie/bohater.json"
+  },
+  {
+    "id": "rodzina",
+    "nazwa": "Rodzina",
+    "typ": "folder",
+    "plik": "res://postacie/rodzina/rodzina.json"
+  },
+  {
+    "id": "przyjaciele",
+    "nazwa": "Przyjaciele",
+    "typ": "folder",
+    "plik": "res://postacie/przyjaciele/przyjaciele.json"
+  },
+  {
+    "id": "znajomi",
+    "nazwa": "Znajomi",
+    "typ": "folder",
+    "plik": "res://postacie/znajomi/znajomi.json"
+  }
+]

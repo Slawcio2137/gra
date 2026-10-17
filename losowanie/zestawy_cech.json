@@ -1,0 +1,90 @@
+{
+  "to_jest": "regula_gry",
+  "opis": "Reguła gry, nie badanie. Zestaw ma dwie strony. Gdy wypadnie choć jedna cecha z jednej strony, każda cecha z drugiej strony traci procent tego zestawu jeden raz: waga razy (1 - procent/100). Kolejna cecha z tej samej strony już nie mnoży spadku. Pary z wykluczenia_cech.json zostają. Jeśli ta sama para jest i tu, i tam, zostaje waga pary (0 albo 0.1), bo jest mocniejsza.",
+  "zestawy": [
+    {
+      "numer": 1,
+      "nazwa": "Ciepło i chłód",
+      "procent": 70,
+      "strona_a": ["Łagodny", "Życzliwy", "Empatyczny", "Opiekuńczy", "Uprzejmy", "Pogodny"],
+      "strona_b": ["Oschły", "Złośliwy", "Agresywny", "Drażliwy", "Wybuchowy"]
+    },
+    {
+      "numer": 2,
+      "nazwa": "Spokój i porywczość",
+      "procent": 80,
+      "strona_a": ["Spokojny", "Cierpliwy", "Łagodny", "Ostrożny", "Pogodny"],
+      "strona_b": ["Wybuchowy", "Impulsywny", "Agresywny", "Drażliwy"]
+    },
+    {
+      "numer": 3,
+      "nazwa": "Otwartość i zamknięcie",
+      "procent": 60,
+      "strona_a": ["Towarzyski", "Ufny", "Pogodny", "Odważny"],
+      "strona_b": ["Zamknięty w sobie", "Skryty", "Podejrzliwy", "Nieśmiały", "Ostrożny"]
+    },
+    {
+      "numer": 4,
+      "nazwa": "Pewność i wycofanie",
+      "procent": 50,
+      "strona_a": ["Pewny siebie", "Odważny", "Dominujący", "Towarzyski"],
+      "strona_b": ["Nieśmiały", "Uległy", "Skromny", "Ostrożny", "Zamknięty w sobie"]
+    },
+    {
+      "numer": 5,
+      "nazwa": "Dawanie i trzymanie",
+      "procent": 40,
+      "strona_a": ["Hojny", "Opiekuńczy", "Życzliwy", "Empatyczny", "Uprzejmy", "Lojalny"],
+      "strona_b": ["Oschły", "Podejrzliwy", "Niezależny"]
+    },
+    {
+      "numer": 6,
+      "nazwa": "Obowiązek i luz",
+      "procent": 60,
+      "strona_a": ["Obowiązkowy", "Wytrwały", "Cierpliwy", "Ambitny", "Lojalny"],
+      "strona_b": ["Niedbały", "Zmienny", "Wygodny", "Impulsywny"]
+    },
+    {
+      "numer": 7,
+      "nazwa": "Nacisk i ustępowanie",
+      "procent": 70,
+      "strona_a": ["Dominujący", "Agresywny", "Pewny siebie", "Ambitny", "Rywalizujący", "Uparty"],
+      "strona_b": ["Uległy", "Łagodny", "Skromny", "Nieśmiały", "Cierpliwy"]
+    },
+    {
+      "numer": 8,
+      "nazwa": "Jasność i ciężar",
+      "procent": 50,
+      "strona_a": ["Optymistyczny", "Pogodny", "Ufny", "Towarzyski", "Odważny", "Życzliwy"],
+      "strona_b": ["Pesymistyczny", "Drażliwy", "Podejrzliwy", "Zamknięty w sobie", "Oschły"]
+    },
+    {
+      "numer": 9,
+      "nazwa": "Więź i dystans",
+      "procent": 30,
+      "strona_a": ["Lojalny", "Opiekuńczy", "Empatyczny", "Życzliwy", "Ufny", "Uprzejmy"],
+      "strona_b": ["Niezależny", "Oschły", "Skryty", "Podejrzliwy", "Rywalizujący"]
+    },
+    {
+      "numer": 10,
+      "nazwa": "Rywalizacja i troska",
+      "procent": 60,
+      "strona_a": ["Rywalizujący", "Dominujący", "Ambitny", "Agresywny"],
+      "strona_b": ["Opiekuńczy", "Łagodny", "Życzliwy", "Uległy", "Skromny", "Empatyczny"]
+    },
+    {
+      "numer": 11,
+      "nazwa": "Stałość i chwiejność",
+      "procent": 20,
+      "strona_a": ["Wytrwały", "Uparty", "Obowiązkowy", "Lojalny", "Cierpliwy", "Spokojny"],
+      "strona_b": ["Zmienny", "Impulsywny", "Wybuchowy", "Wygodny", "Drażliwy"]
+    },
+    {
+      "numer": 12,
+      "nazwa": "Rozpęd i hamulec",
+      "procent": 30,
+      "strona_a": ["Odważny", "Pewny siebie", "Impulsywny", "Agresywny"],
+      "strona_b": ["Ostrożny", "Nieśmiały", "Skromny", "Zamknięty w sobie", "Cierpliwy", "Spokojny"]
+    }
+  ]
+}

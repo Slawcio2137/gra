@@ -1,0 +1,126 @@
+{
+  "opis": "Najczęstsze czynniki zachorowania i kuracji, nie pełna lista. Higiena jest jednym z nich. Współczynnik wpływu na kurację jest null, gdy źródło nie publikuje mnożnika. Wpływ na rozgrywkę nie jest tu zapisany.",
+  "czynniki": [
+    {
+      "id": "woda",
+      "nazwa": "Woda pitna",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "procent": 88.6755462509034,
+          "rok": 2024,
+          "co_mierzy": "Bezpiecznie zarządzana woda pitna, wskaźnik SH.H2O.SMDW.ZS. To nie jest mnożnik kuracji.",
+          "zrodlo": "WHO/UNICEF JMP przez Bank Światowy",
+          "url": "https://api.worldbank.org/v2/country/POL/indicator/SH.H2O.SMDW.ZS?format=json&date=2024:2024"
+        }
+      ]
+    },
+    {
+      "id": "higiena",
+      "nazwa": "Higiena",
+      "wspolczynnik_wplywu": null,
+      "uwaga": "Brak wody i higieny utrudnia kurację. Mnożnika nie ma.",
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "procent": null,
+          "rok": 2024,
+          "co_mierzy": "Podstawowe miejsce do mycia rąk z mydłem i wodą, wskaźnik SH.STA.HYGN.ZS.",
+          "zrodlo": "WHO/UNICEF JMP przez Bank Światowy",
+          "url": "https://api.worldbank.org/v2/country/POL/indicator/SH.STA.HYGN.ZS?format=json&date=2024:2024"
+        }
+      ]
+    },
+    {
+      "id": "wlasne_zachowanie",
+      "nazwa": "Własne zachowanie",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "procent": 51.3,
+          "rok": 2023,
+          "co_mierzy": "Odsetek respondentów w wieku 15 lat lub więcej, którzy wskazali własne zachowanie jako najważniejszy czynnik stanu zdrowia. To nie jest mnożnik kuracji.",
+          "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r. – wyniki wstępne, 30.10.2024",
+          "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/30/1/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023_wyniki_wstepne.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dostep_do_leczenia",
+      "nazwa": "Dostęp do leczenia",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "procent": 37.0,
+          "rok": 2023,
+          "co_mierzy": "Odsetek respondentów w wieku 15 lat lub więcej, którzy wskazali jakość opieki zdrowotnej jako najważniejszy czynnik stanu zdrowia. To nie jest mnożnik kuracji ani waga metody leczenia.",
+          "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r. – wyniki wstępne, 30.10.2024",
+          "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/30/1/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023_wyniki_wstepne.pdf"
+        }
+      ]
+    },
+    {
+      "id": "szczepienia",
+      "nazwa": "Szczepienia",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "procent": 42.9,
+          "rok": 2023,
+          "co_mierzy": "Odsetek badanej populacji w wieku powyżej 14 lat, która zaszczepiła się przeciw COVID-19. To pokrycie jednego szczepienia, nie mnożnik wszystkich chorób.",
+          "zrodlo": "GUS, Ochrona zdrowia w gospodarstwach domowych w 2023 r. – wyniki wstępne, 30.10.2024",
+          "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5513/30/1/1/ochrona_zdrowia_w_gospodarstwach_domowych_w_2023_wyniki_wstepne.pdf"
+        }
+      ]
+    },
+    {
+      "id": "palenie_tytoniu",
+      "nazwa": "Palenie tytoniu",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "procent": 21,
+          "rok": 2023,
+          "co_mierzy": "Odsetek dorosłych, którzy codziennie palą papierosy. W raporcie odsetek palących mężczyzn i kobiet wyrównał się. To nie jest mnożnik kuracji.",
+          "zrodlo": "Narodowy Instytut Onkologii, Krajowy Rejestr Nowotworów, Nowotwory złośliwe w Polsce w 2022 roku",
+          "url": "https://onkokurier.pl/wp-content/uploads/2025/02/onkokurier-Nowotwory-zlosliwe-w-Polsce-NIO-PIB-rejestr-nowotworow.pdf"
+        }
+      ]
+    },
+    {
+      "id": "niedozywienie",
+      "nazwa": "Niedożywienie",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": null,
+          "region": null,
+          "procent": null,
+          "rok": null,
+          "zrodlo": null,
+          "uwaga": "Czynnik nazwany, bo w zdrowiu publicznym jest uznawany. Nie ma tu dopisanego odsetka ani mnożnika, bo w tym zbiorze nie podpięto jednej opublikowanej liczby."
+        }
+      ]
+    },
+    {
+      "id": "ubostwo",
+      "nazwa": "Ubóstwo",
+      "wspolczynnik_wplywu": null,
+      "miejsca": [
+        {
+          "kraj": null,
+          "region": null,
+          "procent": null,
+          "rok": null,
+          "zrodlo": null,
+          "uwaga": "Czynnik nazwany. Odsetka i mnożnika kuracji nie wpisano."
+        }
+      ]
+    }
+  ]
+}

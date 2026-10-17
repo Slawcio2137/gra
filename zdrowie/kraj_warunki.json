@@ -1,0 +1,27 @@
+{
+  "opis": "Dane do gry. Brak wody i higieny utrudnia kurację. Nie ma tu mnożnika utrudnienia.",
+  "kraje": [
+    {
+      "kraj": "Polska",
+      "dostep_do_biezacej_wody": {
+        "procent": 88.6755462509034,
+        "rok": 2024,
+        "wskaznik": "SH.H2O.SMDW.ZS",
+        "co_mierzy": "Odsetek ludności korzystającej z bezpiecznie zarządzanej wody pitnej: ujęcie ulepszone na terenie posesji, dostępne gdy potrzeba, wolne od zanieczyszczenia kałem i priorytetowymi substancjami chemicznymi. To nie jest osobno opublikowany odsetek samego kranu.",
+        "zrodlo": "WHO/UNICEF Joint Monitoring Programme (JMP), seria Banku Światowego",
+        "url": "https://api.worldbank.org/v2/country/POL/indicator/SH.H2O.SMDW.ZS?format=json&date=2024:2024",
+        "data_aktualizacji_api": "2026-10-08"
+      },
+      "higiena": {
+        "procent": null,
+        "rok": 2024,
+        "wskaznik": "SH.STA.HYGN.ZS",
+        "co_mierzy": "Odsetek ludności z podstawowym miejscem do mycia rąk, z mydłem i wodą.",
+        "zrodlo": "WHO/UNICEF JMP, seria Banku Światowego",
+        "url": "https://api.worldbank.org/v2/country/POL/indicator/SH.STA.HYGN.ZS?format=json&date=2024:2024",
+        "uwaga": "Dla Polski w latach 2015–2024 API zwraca null."
+      },
+      "wplyw_na_kuracje": "Brak wody i higieny utrudnia kurację. Opublikowanego współczynnika utrudnienia nie ma, więc mnożnika nie wpisano."
+    }
+  ]
+}

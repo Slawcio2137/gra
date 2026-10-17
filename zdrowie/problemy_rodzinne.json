@@ -1,0 +1,45 @@
+{
+  "opis": "Kilka problemów rodzinnych. Miejsce i wpływ wyglądu to nazwy zależności, bez mnożnika. Częstość null, bo nie podpięto źródła z rokiem. Bez instrukcji przemocy ani hejtu.",
+  "problemy": [
+    {
+      "id": "przemoc",
+      "nazwa": "Przemoc",
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "miejsce": "miejsce_zamieszkania",
+      "wplyw_wygladu": "wyglad_naturalny",
+      "mnoznik": null
+    },
+    {
+      "id": "zaniedbanie",
+      "nazwa": "Zaniedbanie",
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "miejsce": "miejsce_zamieszkania",
+      "wplyw_wygladu": "wyglad_naturalny",
+      "mnoznik": null
+    },
+    {
+      "id": "alkohol_w_domu",
+      "nazwa": "Alkohol w domu",
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "miejsce": "miejsce_zamieszkania",
+      "wplyw_wygladu": "sylwetka",
+      "mnoznik": null
+    },
+    {
+      "id": "rozstanie_rodzicow",
+      "nazwa": "Rozstanie rodziców",
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "miejsce": "miejsce_zamieszkania",
+      "wplyw_wygladu": "sylwetka",
+      "mnoznik": null
+    }
+  ]
+}

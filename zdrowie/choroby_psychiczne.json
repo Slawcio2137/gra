@@ -1,0 +1,64 @@
+{
+  "opis": "Kilka częstych chorób psychicznych. To dane do gry, nie poradnik. Wpływ na postać nie jest tu liczony. Bez dawek i bez metod samobójstwa.",
+  "przyczyny_dozwolone": [
+    "smierc_bliskiej_osoby",
+    "traumatyczne_wydarzenie",
+    "hejt",
+    "problemy_rodzinne"
+  ],
+  "choroby": [
+    {
+      "id": "depresja",
+      "nazwa": "Depresja",
+      "przyczyny": ["smierc_bliskiej_osoby", "traumatyczne_wydarzenie", "hejt", "problemy_rodzinne"],
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "leki": ["lek przeciwdepresyjny"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "zaburzenia_lekowe",
+      "nazwa": "Zaburzenia lękowe",
+      "przyczyny": ["smierc_bliskiej_osoby", "traumatyczne_wydarzenie", "hejt", "problemy_rodzinne"],
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "leki": ["lek przeciwlękowy"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "zaburzenie_stresowe_pourazowe",
+      "nazwa": "Zaburzenie stresowe pourazowe",
+      "przyczyny": ["smierc_bliskiej_osoby", "traumatyczne_wydarzenie"],
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "leki": ["lek przeciwdepresyjny"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    },
+    {
+      "id": "schizofrenia",
+      "nazwa": "Schizofrenia",
+      "przyczyny": [],
+      "czestosc": null,
+      "zrodlo": null,
+      "rok": null,
+      "uwaga": "Żadnej przyczyny z listy nie wpisano, bo nie ma tu źródła, które by ją z tą chorobą łączyło.",
+      "leki": ["lek przeciwpsychotyczny"],
+      "czas_wyzdrowienia_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "smiertelnosc_procent": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "dlugosc_kuracji_dni": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null},
+      "prawdopodobienstwo_metody": {"samoistnie": null, "minimalna_biedna_pomoc": null, "pelny_zestaw_lekow": null}
+    }
+  ]
+}

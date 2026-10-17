@@ -1,0 +1,134 @@
+[
+  {
+    "kod": "PLN",
+    "nazwa": "złoty"
+  },
+  {
+    "kod": "THB",
+    "nazwa": "bat (Tajlandia)"
+  },
+  {
+    "kod": "USD",
+    "nazwa": "dolar amerykański"
+  },
+  {
+    "kod": "AUD",
+    "nazwa": "dolar australijski"
+  },
+  {
+    "kod": "HKD",
+    "nazwa": "dolar Hongkongu"
+  },
+  {
+    "kod": "CAD",
+    "nazwa": "dolar kanadyjski"
+  },
+  {
+    "kod": "NZD",
+    "nazwa": "dolar nowozelandzki"
+  },
+  {
+    "kod": "SGD",
+    "nazwa": "dolar singapurski"
+  },
+  {
+    "kod": "EUR",
+    "nazwa": "euro"
+  },
+  {
+    "kod": "HUF",
+    "nazwa": "forint (Węgry)"
+  },
+  {
+    "kod": "CHF",
+    "nazwa": "frank szwajcarski"
+  },
+  {
+    "kod": "GBP",
+    "nazwa": "funt szterling"
+  },
+  {
+    "kod": "UAH",
+    "nazwa": "hrywna (Ukraina)"
+  },
+  {
+    "kod": "JPY",
+    "nazwa": "jen (Japonia)"
+  },
+  {
+    "kod": "CZK",
+    "nazwa": "korona czeska"
+  },
+  {
+    "kod": "DKK",
+    "nazwa": "korona duńska"
+  },
+  {
+    "kod": "ISK",
+    "nazwa": "korona islandzka"
+  },
+  {
+    "kod": "NOK",
+    "nazwa": "korona norweska"
+  },
+  {
+    "kod": "SEK",
+    "nazwa": "korona szwedzka"
+  },
+  {
+    "kod": "RON",
+    "nazwa": "lej rumuński"
+  },
+  {
+    "kod": "TRY",
+    "nazwa": "lira turecka"
+  },
+  {
+    "kod": "ILS",
+    "nazwa": "nowy izraelski szekel"
+  },
+  {
+    "kod": "CLP",
+    "nazwa": "peso chilijskie"
+  },
+  {
+    "kod": "PHP",
+    "nazwa": "peso filipińskie"
+  },
+  {
+    "kod": "MXN",
+    "nazwa": "peso meksykańskie"
+  },
+  {
+    "kod": "ZAR",
+    "nazwa": "rand (Republika Południowej Afryki)"
+  },
+  {
+    "kod": "BRL",
+    "nazwa": "real (Brazylia)"
+  },
+  {
+    "kod": "MYR",
+    "nazwa": "ringgit (Malezja)"
+  },
+  {
+    "kod": "IDR",
+    "nazwa": "rupia indonezyjska"
+  },
+  {
+    "kod": "INR",
+    "nazwa": "rupia indyjska"
+  },
+  {
+    "kod": "KRW",
+    "nazwa": "won południowokoreański"
+  },
+  {
+    "kod": "CNY",
+    "nazwa": "yuan renminbi (Chiny)"
+  },
+  {
+    "kod": "XDR",
+    "nazwa": "SDR (MFW)"
+  }
+]

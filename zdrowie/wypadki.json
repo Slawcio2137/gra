@@ -1,0 +1,153 @@
+{
+  "opis": "Wypadki są osobno od urazów i zależą od miejsca. Potrącenie pieszego w Polsce jest możliwe i nie ma ustawionego zera. W miejscu bez ruchu drogowego prawdopodobieństwo jest null, nie zerem. Liczba ze źródła jest liczbą zdarzeń w roku, nie szansą postaci. Szansa urazu po wypadku jest null.",
+  "wypadki": [
+    {
+      "id": "potracenie_pieszego",
+      "nazwa": "Potrącenie pieszego",
+      "statystyki_obnizajace_prawdopodobienstwo": ["zwinnosc", "szybkosc_reakcji", "wytrzymalosc", "rownowaga"],
+      "urazy": [
+        {"id": "zlamana_reka", "prawdopodobienstwo_procent": null},
+        {"id": "zlamana_noga", "prawdopodobienstwo_procent": null},
+        {"id": "zlamany_kark", "prawdopodobienstwo_procent": null},
+        {"id": "skrecenie", "prawdopodobienstwo_procent": null},
+        {"id": "naderwany_miesien_lub_staw", "prawdopodobienstwo_procent": null},
+        {"id": "zerwany_miesien_lub_staw", "prawdopodobienstwo_procent": null}
+      ],
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "wystepuje": true,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "najechanie_na_pieszego": {
+            "liczba_zdarzen": 4556,
+            "udzial_w_wypadkach_drogowych_procent": 21.2,
+            "zabici": 421,
+            "ranni": 4381,
+            "rok": 2024,
+            "co_mierzy": "Policyjna kategoria „najechanie na pieszego”. To liczba zdarzeń w roku, nie szansa jednej osoby i nie sam filtr na samochód osobowy."
+          },
+          "wypadki_z_udzialem_pieszych": {
+            "liczba": 4719,
+            "zabici_piesi": 428,
+            "ranni_piesi": 4395,
+            "rok": 2024
+          },
+          "zrodlo": "Komenda Główna Policji, Wypadki drogowe w 2024 roku",
+          "url": "https://statystyka.policja.pl/download/20/447022/Wypadkidrogowe2024.pdf"
+        },
+        {
+          "kraj": null,
+          "region": "miejsce_bez_ruchu_drogowego",
+          "wystepuje": null,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "uwaga": "Brak opublikowanej liczby. Nie wpisano zera."
+        }
+      ]
+    },
+    {
+      "id": "upadek",
+      "nazwa": "Upadek",
+      "statystyki_obnizajace_prawdopodobienstwo": ["zwinnosc", "szybkosc_reakcji", "wytrzymalosc", "rownowaga"],
+      "urazy": [
+        {"id": "zlamana_reka", "prawdopodobienstwo_procent": null},
+        {"id": "zlamana_noga", "prawdopodobienstwo_procent": null},
+        {"id": "zlamany_kark", "prawdopodobienstwo_procent": null},
+        {"id": "skrecenie", "prawdopodobienstwo_procent": null},
+        {"id": "naderwany_miesien_lub_staw", "prawdopodobienstwo_procent": null}
+      ],
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "wystepuje": true,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "liczba": null,
+          "zrodlo": null,
+          "rok": null
+        }
+      ]
+    },
+    {
+      "id": "uderzenie",
+      "nazwa": "Uderzenie",
+      "statystyki_obnizajace_prawdopodobienstwo": ["zwinnosc", "szybkosc_reakcji"],
+      "urazy": [
+        {"id": "wybite_oko", "prawdopodobienstwo_procent": null},
+        {"id": "wybite_oczy", "prawdopodobienstwo_procent": null},
+        {"id": "pekniety_bebenek_ucha", "prawdopodobienstwo_procent": null},
+        {"id": "zlamana_reka", "prawdopodobienstwo_procent": null}
+      ],
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "wystepuje": true,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "liczba": null,
+          "zrodlo": null,
+          "rok": null
+        }
+      ]
+    },
+    {
+      "id": "przeciazenie",
+      "nazwa": "Przeciążenie",
+      "statystyki_obnizajace_prawdopodobienstwo": ["sila", "wytrzymalosc"],
+      "urazy": [
+        {"id": "naderwany_miesien_lub_staw", "prawdopodobienstwo_procent": null},
+        {"id": "zerwany_miesien_lub_staw", "prawdopodobienstwo_procent": null}
+      ],
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "wystepuje": true,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "liczba": null,
+          "zrodlo": null,
+          "rok": null
+        }
+      ]
+    },
+    {
+      "id": "atak_krokodyla",
+      "nazwa": "Atak krokodyla",
+      "statystyki_obnizajace_prawdopodobienstwo": ["zwinnosc", "szybkosc_reakcji", "wytrzymalosc"],
+      "urazy": [
+        {"id": "zlamana_reka", "prawdopodobienstwo_procent": null},
+        {"id": "zlamana_noga", "prawdopodobienstwo_procent": null}
+      ],
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "wystepuje": false,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "uwaga": "Zdarzenia nie ma. Nie wpisano statystycznego zera, bo nie ma opublikowanej liczby ataków."
+        },
+        {
+          "region": "Afryka Subsaharyjska i Madagaskar",
+          "wystepuje": true,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "co_mierzy": "Zasięg występowania krokodyla nilowego, nie odsetek ataków.",
+          "zrodlo": "Crocodile Specialist Group, Nile Crocodile Crocodylus niloticus, Combrink, Lippai i Fergusson, 2019",
+          "rok": 2019,
+          "url": "https://www.iucncsg.org/365_docs/attachments/protarea/7386996acf2d72b2379d0f905b2c3200.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ukaszenie_zmii",
+      "nazwa": "Ukąszenie żmii",
+      "statystyki_obnizajace_prawdopodobienstwo": ["zwinnosc", "szybkosc_reakcji"],
+      "urazy": [],
+      "miejsca": [
+        {
+          "kraj": "Polska",
+          "wystepuje": true,
+          "prawdopodobienstwo_dla_postaci_procent": null,
+          "uwaga": "Żmija zygzakowata jest jadowitym wężem w Polsce, więc zdarzenia nie wyłączono i nie ustawiono zera. Częstości ukąszeń źródło nie podaje.",
+          "zrodlo": "Czajka, Wiatrzyk i Lutyńska, Przegląd Epidemiologiczny 2013; 67: 729–733. W Polsce brak dokładnych danych epidemiologicznych o częstości ukąszeń.",
+          "rok": 2013,
+          "url": "https://www.przeglepidemiol.pzh.gov.pl/pdf-180296-100869?filename=Mechanizm-dzialania-jadu-.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "opis": "Miejsce na jedno losowanie ze startu. Ten plik nie jest wylosowaną postacią. Szablon postacie/bohater.json zostaje z null i skrypt go nie nadpisuje.",
+  "wylosowano": false,
+  "miejsce": null,
+  "cechy_charakteru": null,
+  "inteligencje": null,
+  "choroby_wrodzone": null,
+  "zarobki_rodziny": null,
+  "srednie_cechy_terenu": null
+}

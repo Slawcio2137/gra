@@ -1,0 +1,19 @@
+{
+  "opis": "Średnie zarobki miejsca, osobno wieś i miasto, tylko ze źródła. Typy są te same co w danych miejsc: wies i miasto. Koło kwot kręci się wokół średniej tylko wtedy, gdy średnia jest liczbą. Jak średniej nie ma, kwot się nie losuje.",
+  "wies": {
+    "srednia": null,
+    "waluta": null,
+    "rok": null,
+    "zrodlo": null,
+    "url": null
+  },
+  "miasto": {
+    "srednia": null,
+    "waluta": null,
+    "rok": null,
+    "zrodlo": null,
+    "url": null
+  },
+  "kolo": null,
+  "uwaga": "GUS podaje przeciętny miesięczny dochód rozporządzalny gospodarstw domowych oraz to, że w miastach jest on wyższy niż na wsi. To nie jest przeciętne wynagrodzenie (zarobki) miejsca. Tej kwoty tu nie przepisano. Koło zarobków zostaje puste."
+}

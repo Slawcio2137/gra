@@ -1,0 +1,8 @@
+{
+  "to_jest": "regula_gry",
+  "opis": "Koło precyzyjne statystyk. To nie jest fakt GUS ani badanie. Każda statystyka to jedna liczba od 1 do 100. Waga liczby n = n * (101 - n). Środek wypada częściej niż skraj. Nie ma worków nisko, średnio i wysoko.",
+  "min": 1,
+  "max": 100,
+  "wzor": "n * (101 - n)",
+  "statystyki": ["sila", "zwinnosc", "szybkosc_reakcji", "wytrzymalosc", "rownowaga"]
+}

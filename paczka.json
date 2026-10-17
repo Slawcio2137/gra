@@ -1,0 +1,17 @@
+{
+    "nazwa":  "Polska — miasta powiatowe i reszta powiatów",
+    "stan_podzialu":  "2026-01-01",
+    "zrodlo_ludnosci":  "GUS, Powierzchnia i ludność w przekroju terytorialnym w 2026 r., tablice 2 i 19",
+    "zrodlo_podzialu":  "GUS TERC, stan na 2026-01-01",
+    "zrodlo_siedzib":  "Wikidata, właściwość P36",
+    "liczba_miast":  335,
+    "liczba_reszta_powiatu":  314,
+    "siedziba_w_powiecie":  269,
+    "siedziba_poza_powiatem":  45,
+    "przestępstwa":  "Puste. GUS/Policja podają je dla całego powiatu, nie dla miasta osobno i nie dla wsi. API BDL było w chwili zbierania zablokowane limitem, więc nie wpisałem też liczb całego powiatu.",
+    "czas_dojazdu":  "Nie ma tego pola przy miejscu. Cena paliwa jest raz w kraj.json. Przy miejscu sa puste pola transportu publicznego.",
+    "aktualizacja":  "Ten zestaw nie pobiera się sam. Można go później dołożyć do gry jako paczkę danych. Odświeżenie wymaga ponownego odczytu tablic GUS, nie dzieje się w tle.",
+    "problemy":  [
+
+                 ]
+}

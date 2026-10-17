@@ -1,0 +1,21 @@
+{
+    "nazwa": "Polska",
+    "cena_paliwa": {
+        "pb95": null,
+        "olej_napedowy": null,
+        "jednostka": "zl/l",
+        "zrodlo": null,
+        "data": null,
+        "uwaga": "Liczby nie wpisane. Biuletyn Komisji Europejskiej (Weekly Oil Bulletin) podaje ceny, ale plik z tabelą nie został tu odczytany. Nie przepisano cen z omówień wtórnych."
+    },
+    "cena_pradu": {
+        "wartosc": 0.9198,
+        "jednostka": "zl/kWh",
+        "zakres": "gospodarstwo_domowe",
+        "rok": 2025,
+        "co_obejmuje": "energia i dystrybucja, z akcyzą, bez VAT",
+        "zrodlo": "Prezes URE, Informacja nr 15/2026, średnia cena energii elektrycznej dla odbiorcy w gospodarstwie domowym",
+        "data": "2026-03-26",
+        "uwaga": "To nie jest cennik ładowania samochodu."
+    }
+}

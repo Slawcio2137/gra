@@ -1,0 +1,22 @@
+{
+  "samochod": {
+    "naped": null,
+    "zuzycie_na_100_km": null,
+    "jednostka": null
+  },
+  "samolot": {
+    "naped": null,
+    "zuzycie_na_100_km": null,
+    "jednostka": null
+  },
+  "jacht": {
+    "naped": null,
+    "zuzycie_na_100_km": null,
+    "jednostka": null
+  },
+  "inny_statek": {
+    "naped": null,
+    "zuzycie_na_100_km": null,
+    "jednostka": null
+  }
+}

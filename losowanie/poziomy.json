@@ -1,0 +1,52 @@
+{
+  "to_jest": "regula_gry",
+  "opis": "Ile pól zapisuje karta osoby. To nie jest statystyka z badania. Pełna pula chorób i miejsc nie wchodzi do karty NPC. Start liczy bohatera i rodzeństwo. Przyjaciela i znajomego gra losuje dopiero, gdy ktoś zawoła funkcję.",
+  "bohater": {
+    "ile_pol": 20,
+    "pola": [
+      "miejsce",
+      "plec",
+      "orientacja",
+      "wyglad_naturalny",
+      "sylwetka",
+      "cecha_1",
+      "cecha_2",
+      "cecha_3",
+      "inteligencja_1",
+      "inteligencja_2",
+      "inteligencja_3",
+      "zdrowie_skrot",
+      "choroby_wypadly",
+      "zwinnosc",
+      "szybkosc_reakcji",
+      "sila",
+      "wytrzymalosc",
+      "rownowaga",
+      "wiek",
+      "rola"
+    ]
+  },
+  "rodzenstwo": {
+    "ile_pol": 5,
+    "liczba_osob_wagi_rowne": [0, 1, 2, 3],
+    "pola": ["miejsce", "plec", "cecha_1", "cecha_2", "rola"]
+  },
+  "przyjaciele": {
+    "ile_pol": 8,
+    "pola": [
+      "plec",
+      "orientacja",
+      "wyglad_naturalny",
+      "sylwetka",
+      "cecha_1",
+      "cecha_2",
+      "inteligencja_1",
+      "rola"
+    ]
+  },
+  "znajomi": {
+    "ile_pol": 3,
+    "pola": ["plec", "cecha_1", "rola"]
+  },
+  "zarobki_rodziny": null
+}
