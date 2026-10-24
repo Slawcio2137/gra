@@ -1,5 +1,5 @@
 {
-	"opis": "Lista usterek ofert samochodów. Sprzedawca może ujawnić część / nic. Pozalewowe często ukryte. Wykrywanie: ocena własna (inteligencja, znajomość pojazdów, internet) lub ekspert. Usterki z vmax_delta obniżają efektywną prędkość max. Awaria silnika: nie_jezdzi. Propozycja do poprawki.",
+	"opis": "Lista usterek ofert samochodów. Sprzedawca może ujawnić część / nic. Pozalewowe często ukryte. Wykrywanie: ocena własna (inteligencja, znajomość pojazdów, internet) lub ekspert. Usterki z vmax_delta obniżają efektywną prędkość max. Awaria silnika: nie_jezdzi. Rabat ceny wywoławczej od deklarowanych: jak w zakupy/usterki_dobr.json (wplyw_na_cene). Propozycja do poprawki.",
 	"propozycja_do_poprawki": true,
 	"usterki": [
 		{"id": "wyciek_oleju", "nazwa": "Wyciek oleju", "powaga": 2, "szansa_w_uzywanym": 0.18, "szansa_ukrycia": 0.35},

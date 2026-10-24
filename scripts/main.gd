@@ -2085,11 +2085,11 @@ func _buduj_pelna_karte_oferty(
 					spr_txt += " · źródło: %s" % zrd
 				wiersz.add_child(_napis_ekranu(spr_txt, 16))
 			var znane_u: Array = []
-			var dek_u: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
-			var wyk_u: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
-			for uid in dek_u:
+			var dek_u_auto: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
+			var wyk_u_auto: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
+			for uid in dek_u_auto:
 				znane_u.append(uid)
-			for uid in wyk_u:
+			for uid in wyk_u_auto:
 				if not znane_u.has(uid):
 					znane_u.append(uid)
 			var vmax_ui := _rynek_zakupow.tekst_vmax_oferty(o, znane_u)
@@ -2097,10 +2097,16 @@ func _buduj_pelna_karte_oferty(
 				wiersz.add_child(_napis_ekranu("Prędkość maksymalna: %s km/h" % vmax_ui, 16))
 			if bool(o.get("nie_jezdzi", false)) or bool(o.get("do_naprawy", false)):
 				wiersz.add_child(_napis_ekranu("Nie jeździ — do naprawy (laweta / mechanik / złom).", 16))
-			if not dek_u.is_empty():
-				wiersz.add_child(_napis_ekranu("Usterki (sprzedawca): %s" % _join_tekstow(dek_u), 16))
-			if not wyk_u.is_empty():
-				wiersz.add_child(_napis_ekranu("Usterki wykryte: %s" % _join_tekstow(wyk_u), 16))
+		var dek_u: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
+		var wyk_u: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
+		var seg_u := str(o.get("segment", ""))
+		if not dek_u.is_empty():
+			var linia_dek := "Usterki (sprzedawca): %s" % _join_tekstow(_rynek_zakupow.nazwy_usterek(dek_u, kat_id, seg_u))
+			if bool(o.get("szacunek_usterek", false)):
+				linia_dek += " (szacunek)"
+			wiersz.add_child(_napis_ekranu(linia_dek, 16))
+		if not wyk_u.is_empty():
+			wiersz.add_child(_napis_ekranu("Usterki wykryte: %s" % _join_tekstow(_rynek_zakupow.nazwy_usterek(wyk_u, kat_id, seg_u)), 16))
 		if kat_id != "samochod" or str(o.get("stan", "")) != "nowy":
 			if _jest_liczba(o.get("stan_deklarowany")):
 				var dek := int(o["stan_deklarowany"])
@@ -2134,7 +2140,7 @@ func _buduj_pelna_karte_oferty(
 					msg += " — rozjazd względem deklaracji sprzedawcy."
 				var uw: Array = w.get("usterki_wykryte", []) if w.get("usterki_wykryte") is Array else []
 				if not uw.is_empty():
-					msg += " · wykryto: %s" % _join_tekstow(uw)
+					msg += " · wykryto: %s" % _join_tekstow(_rynek_zakupow.nazwy_usterek(uw, kat_id, str(o.get("segment", ""))))
 				_pokaz_komunikat_zakupu(msg, w)
 				SkryptZapisu.zapisz(_swiat)
 				_zaplanuj_stos()

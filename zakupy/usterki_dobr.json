@@ -1,0 +1,76 @@
+{
+	"opis": "Usterki ofert używanych (nie auta). Sprzedawca deklaruje część / ukrywa resztę. Ocena przy odbiorze osobistym (lub z pomocą) może ujawnić ukryte. Wpływ na cenę: tylko usterki deklarowane obniżają cenę wywoławczą (propozycja). Flag szacunek = szacunek (nie medyczne %).",
+	"propozycja_do_poprawki": true,
+	"wplyw_na_cene": {
+		"propozycja_do_poprawki": true,
+		"opis": "Rabat ceny wywoławczej = suma(powaga deklarowanych) * procent_per_powaga, clamp do max_rabat. Ukryte nie obniżają ceny ogłoszenia.",
+		"procent_per_powaga": 0.035,
+		"max_rabat": 0.42
+	},
+	"wykrywanie": {
+		"propozycja_do_poprawki": true,
+		"opis": "Szansa wykrycia ukrytej = clamp(baza + inteligencja*waga + internet + ekspert, 0, 0.98). Bez znajomości pojazdów / szkoły mechanik (to nie auta).",
+		"baza": 0.18,
+		"waga_inteligencji_logicznej_0_100": 0.0045,
+		"bonus_internet": 0.1,
+		"bonus_ekspert": 0.32,
+		"bonus_dobre_wyniki_szkoly": 0.08
+	},
+	"kategorie": {
+		"telefon": {
+			"usterki": [
+				{"id": "zbita_szybka", "nazwa": "Zbita szybka", "powaga": 3, "szansa_w_uzywanym": 0.22, "szansa_ukrycia": 0.2},
+				{"id": "porysowany_ekran", "nazwa": "Porysowany ekran", "powaga": 2, "szansa_w_uzywanym": 0.28, "szansa_ukrycia": 0.25},
+				{"id": "poodzierana_obudowa", "nazwa": "Poodzierana obudowa", "powaga": 1, "szansa_w_uzywanym": 0.3, "szansa_ukrycia": 0.15},
+				{"id": "slaba_bateria", "nazwa": "Słaba bateria", "powaga": 3, "szansa_w_uzywanym": 0.26, "szansa_ukrycia": 0.45},
+				{"id": "glosnik_trzeszczy", "nazwa": "Głośnik trzeszczy", "powaga": 2, "szansa_w_uzywanym": 0.12, "szansa_ukrycia": 0.4},
+				{"id": "mikrofon_slab", "nazwa": "Słaby mikrofon", "powaga": 2, "szansa_w_uzywanym": 0.1, "szansa_ukrycia": 0.5},
+				{"id": "port_luzny", "nazwa": "Luźny port ładowania", "powaga": 2, "szansa_w_uzywanym": 0.14, "szansa_ukrycia": 0.35},
+				{"id": "po_zalaniu", "nazwa": "Ślady zalania", "powaga": 4, "szansa_w_uzywanym": 0.06, "szansa_ukrycia": 0.8, "ukrywane_preferencyjnie": true}
+			]
+		},
+		"laptop": {
+			"usterki": [
+				{"id": "bateria_nie_trzyma", "nazwa": "Bateria nie trzyma", "powaga": 3, "szansa_w_uzywanym": 0.28, "szansa_ukrycia": 0.35},
+				{"id": "przegrzewanie", "nazwa": "Przegrzewanie", "powaga": 3, "szansa_w_uzywanym": 0.18, "szansa_ukrycia": 0.4},
+				{"id": "uszkodzony_dysk", "nazwa": "Uszkodzony dysk/SSD", "powaga": 4, "szansa_w_uzywanym": 0.08, "szansa_ukrycia": 0.55, "szacunek": true, "opis": "Szacunek stanu nośnika — nie lab % zdrowia."},
+				{"id": "martwe_piksele", "nazwa": "Martwe piksele", "powaga": 2, "szansa_w_uzywanym": 0.1, "szansa_ukrycia": 0.3},
+				{"id": "glosny_wentylator", "nazwa": "Głośny wentylator", "powaga": 2, "szansa_w_uzywanym": 0.2, "szansa_ukrycia": 0.25},
+				{"id": "brak_portu", "nazwa": "Brak / uszkodzony port", "powaga": 2, "szansa_w_uzywanym": 0.12, "szansa_ukrycia": 0.2},
+				{"id": "klawiatura_zuzyta", "nazwa": "Zużyta klawiatura", "powaga": 2, "szansa_w_uzywanym": 0.16, "szansa_ukrycia": 0.3},
+				{"id": "zawiasy_luzne", "nazwa": "Luźne zawiasy", "powaga": 2, "szansa_w_uzywanym": 0.14, "szansa_ukrycia": 0.35}
+			]
+		},
+		"komputer": {
+			"usterki": [
+				{"id": "przegrzewanie", "nazwa": "Przegrzewanie", "powaga": 3, "szansa_w_uzywanym": 0.2, "szansa_ukrycia": 0.35},
+				{"id": "uszkodzony_dysk", "nazwa": "Uszkodzony dysk/SSD", "powaga": 4, "szansa_w_uzywanym": 0.1, "szansa_ukrycia": 0.5, "szacunek": true, "opis": "Szacunek stanu nośnika — nie lab % zdrowia."},
+				{"id": "glosny_wentylator", "nazwa": "Głośny wentylator", "powaga": 2, "szansa_w_uzywanym": 0.24, "szansa_ukrycia": 0.2},
+				{"id": "brak_portu", "nazwa": "Brak / uszkodzony port", "powaga": 2, "szansa_w_uzywanym": 0.1, "szansa_ukrycia": 0.25},
+				{"id": "zasilacz_szumi", "nazwa": "Szumiący zasilacz", "powaga": 2, "szansa_w_uzywanym": 0.15, "szansa_ukrycia": 0.3},
+				{"id": "kurz_w_obudowie", "nazwa": "Dużo kurzu w obudowie", "powaga": 1, "szansa_w_uzywanym": 0.3, "szansa_ukrycia": 0.4}
+			]
+		},
+		"rower": {
+			"usterki": [
+				{"id": "krzywe_kolo", "nazwa": "Krzywe koło", "powaga": 3, "szansa_w_uzywanym": 0.2, "szansa_ukrycia": 0.25},
+				{"id": "zuzyte_klocki", "nazwa": "Zużyte klocki hamulcowe", "powaga": 2, "szansa_w_uzywanym": 0.28, "szansa_ukrycia": 0.2},
+				{"id": "rdza_ramy", "nazwa": "Rdza na ramie", "powaga": 3, "szansa_w_uzywanym": 0.16, "szansa_ukrycia": 0.3},
+				{"id": "luz_w_suporcie", "nazwa": "Luz w suporcie", "powaga": 2, "szansa_w_uzywanym": 0.14, "szansa_ukrycia": 0.4},
+				{"id": "zuzyty_naped", "nazwa": "Zużyty napęd (łańcuch/kaseta)", "powaga": 2, "szansa_w_uzywanym": 0.22, "szansa_ukrycia": 0.25},
+				{"id": "przebita_dęka", "nazwa": "Słaba / łatana dętka", "powaga": 1, "szansa_w_uzywanym": 0.18, "szansa_ukrycia": 0.35}
+			]
+		},
+		"sprzet": {
+			"usterki": [
+				{"id": "trzeszczenie", "nazwa": "Trzeszczenie / szum", "powaga": 2, "szansa_w_uzywanym": 0.22, "szansa_ukrycia": 0.35, "podkategorie": ["sluchawki", "mikrofon"]},
+				{"id": "zuzyte_klawisze", "nazwa": "Zużyte klawisze", "powaga": 2, "szansa_w_uzywanym": 0.26, "szansa_ukrycia": 0.2, "podkategorie": ["klawiatura"]},
+				{"id": "sensor_slaby", "nazwa": "Słaby / nierówny sensor", "powaga": 2, "szansa_w_uzywanym": 0.2, "szansa_ukrycia": 0.4, "podkategorie": ["mysz"]},
+				{"id": "uszkodzony_kabel", "nazwa": "Uszkodzony / luźny kabel", "powaga": 2, "szansa_w_uzywanym": 0.18, "szansa_ukrycia": 0.25, "podkategorie": ["sluchawki", "klawiatura", "mysz", "mikrofon"]},
+				{"id": "brak_poduszki", "nazwa": "Zużyte nauszniki / poduszki", "powaga": 1, "szansa_w_uzywanym": 0.24, "szansa_ukrycia": 0.15, "podkategorie": ["sluchawki"]},
+				{"id": "przycisk_zacina", "nazwa": "Przycisk się zacina", "powaga": 2, "szansa_w_uzywanym": 0.16, "szansa_ukrycia": 0.3, "podkategorie": ["mysz", "klawiatura", "mikrofon"]},
+				{"id": "brak_oryg_opakowania", "nazwa": "Brak oryginalnego opakowania", "powaga": 1, "szansa_w_uzywanym": 0.35, "szansa_ukrycia": 0.1, "podkategorie": ["sluchawki", "klawiatura", "mysz", "mikrofon"]}
+			]
+		}
+	}
+}

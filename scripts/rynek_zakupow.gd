@@ -13,6 +13,7 @@ const PLIK_DIALOGI_TARG := "res://postacie/dialogi_targowanie.json"
 const PLIK_KATALOG_AUT := "res://pojazdy/katalog_aut_pl.json"
 const PLIK_KATALOG_INDEX := "res://pojazdy/katalog_aut_index.json"
 const PLIK_USTERKI_AUT := "res://pojazdy/usterki_aut.json"
+const PLIK_USTERKI_DOBR := "res://zakupy/usterki_dobr.json"
 const PLIK_INDEKS_MIAST := "res://świat/polska/indeks.json"
 const PLACEHOLDER_DIR := "res://grafika/zakupy/"
 
@@ -22,6 +23,7 @@ var _dryf: Variant = null
 var _dialogi_targ: Variant = null
 var _katalog_aut: Variant = null
 var _usterki_aut: Variant = null
+var _usterki_dobr: Variant = null
 var _indeks_miast_po_id: Variant = null
 
 
@@ -1691,6 +1693,14 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 		oferta["przebieg_km"] = null
 	else:
 		oferta["przebieg_km"] = przebieg_km
+	var usterki := _losuj_usterki_dobra(kat, stan, rng, str(oferta.get("segment", "")))
+	oferta["usterki_rzeczywiste"] = usterki.get("rzeczywiste", [])
+	oferta["usterki_deklarowane"] = usterki.get("deklarowane", [])
+	oferta["usterki_ukryte"] = usterki.get("ukryte", [])
+	oferta["usterki_wykryte"] = []
+	if bool(usterki.get("ma_szacunek", false)):
+		oferta["szacunek_usterek"] = true
+	_naloz_rabat_usterek_na_cene(oferta)
 	return oferta
 
 
@@ -1967,6 +1977,7 @@ func _losuj_samochod(
 		"obrazek": placeholder_sciezka("samochod"),
 	}
 	_naloz_efekty_vmax_na_oferte(oferta, usterki.get("rzeczywiste", []), vmax)
+	_naloz_rabat_usterek_na_cene(oferta)
 	return oferta
 
 
@@ -2770,12 +2781,65 @@ func usterki_katalog() -> Dictionary:
 	return _usterki_aut
 
 
+func usterki_dobr_katalog() -> Dictionary:
+	if _usterki_dobr is Dictionary:
+		return _usterki_dobr
+	var surowe: Variant = _czytaj_json_plik(PLIK_USTERKI_DOBR)
+	if surowe is Dictionary:
+		_usterki_dobr = surowe
+		return surowe
+	_usterki_dobr = {"kategorie": {}}
+	return _usterki_dobr
+
+
+## Lista meta-usterek dla kategorii oferty (auta = usterki_aut; reszta = usterki_dobr).
+func lista_usterek_meta(kategoria: String, segment: String = "") -> Array:
+	if kategoria == "samochod":
+		var kat_a := usterki_katalog()
+		return kat_a.get("usterki", []) if kat_a.get("usterki") is Array else []
+	var root := usterki_dobr_katalog()
+	var kategorie: Dictionary = root.get("kategorie", {}) if root.get("kategorie") is Dictionary else {}
+	var blok: Variant = kategorie.get(kategoria, {})
+	if not (blok is Dictionary):
+		return []
+	var lista: Array = blok.get("usterki", []) if blok.get("usterki") is Array else []
+	if kategoria != "sprzet" or segment == "":
+		return lista
+	var przefiltrowane: Array = []
+	for u in lista:
+		if not (u is Dictionary):
+			continue
+		var pods: Array = u.get("podkategorie", []) if u.get("podkategorie") is Array else []
+		if pods.is_empty() or pods.has(segment):
+			przefiltrowane.append(u)
+	return przefiltrowane
+
+
+func nazwa_usterki(uid: String, kategoria: String = "", segment: String = "") -> String:
+	var meta := _meta_usterki(uid, kategoria, segment)
+	var n := str(meta.get("nazwa", ""))
+	return n if n != "" else uid
+
+
+func nazwy_usterek(ids: Array, kategoria: String = "", segment: String = "") -> Array:
+	var out: Array = []
+	for uid_v in ids:
+		out.append(nazwa_usterki(str(uid_v), kategoria, segment))
+	return out
+
+
 func _losuj_usterki_auta(stan: String, rng: RandomNumberGenerator, tier_tani: bool = false) -> Dictionary:
-	var out := {"rzeczywiste": [], "deklarowane": [], "ukryte": []}
+	return _losuj_usterki_z_listy(lista_usterek_meta("samochod"), stan, rng, tier_tani)
+
+
+func _losuj_usterki_dobra(kategoria: String, stan: String, rng: RandomNumberGenerator, segment: String = "") -> Dictionary:
+	return _losuj_usterki_z_listy(lista_usterek_meta(kategoria, segment), stan, rng, false)
+
+
+func _losuj_usterki_z_listy(lista: Array, stan: String, rng: RandomNumberGenerator, tier_tani: bool = false) -> Dictionary:
+	var out := {"rzeczywiste": [], "deklarowane": [], "ukryte": [], "ma_szacunek": false}
 	if stan != "uzywany":
 		return out
-	var kat := usterki_katalog()
-	var lista: Array = kat.get("usterki", []) if kat.get("usterki") is Array else []
 	for u in lista:
 		if not (u is Dictionary):
 			continue
@@ -2788,10 +2852,12 @@ func _losuj_usterki_auta(stan: String, rng: RandomNumberGenerator, tier_tani: bo
 		if uid == "":
 			continue
 		out["rzeczywiste"].append(uid)
+		if bool(u.get("szacunek", false)):
+			out["ma_szacunek"] = true
 		var ukryj_sz := float(u.get("szansa_ukrycia", 0.3))
 		if bool(u.get("ukrywane_preferencyjnie", false)):
 			ukryj_sz = maxf(ukryj_sz, 0.8)
-		# Sprzedawca: część wpisze, część nic; pozalewowe często ukryte.
+		# Sprzedawca: część wpisze, część nic; pozalewowe / zalanie często ukryte.
 		if rng.randf() < ukryj_sz:
 			out["ukryte"].append(uid)
 		else:
@@ -2799,35 +2865,82 @@ func _losuj_usterki_auta(stan: String, rng: RandomNumberGenerator, tier_tani: bo
 	return out
 
 
-## Wykrywa ukryte usterki (m.in. pozalewowe) wg znajomości pojazdów / IQ / szkoły / eksperta.
+## Rabat ceny wywoławczej od deklarowanych usterek (ukryte nie obniżają ogłoszenia). Propozycja.
+func _naloz_rabat_usterek_na_cene(oferta: Dictionary) -> void:
+	if str(oferta.get("stan", "")) != "uzywany":
+		return
+	if not _liczba(oferta.get("cena_zl")):
+		return
+	var dek: Array = oferta.get("usterki_deklarowane", []) if oferta.get("usterki_deklarowane") is Array else []
+	if dek.is_empty():
+		return
+	var kat := str(oferta.get("kategoria", ""))
+	var segment := str(oferta.get("segment", ""))
+	var rabat := rabat_ceny_z_usterek(dek, kat, segment)
+	if rabat <= 0.0:
+		return
+	var przed := float(oferta["cena_zl"])
+	var po := przed * (1.0 - rabat)
+	var zaokr := zaokraglij_cene(kat, po)
+	oferta["cena_zl"] = zaokr
+	oferta["cena_wyjsciowa"] = zaokr
+	oferta["rabat_usterek"] = rabat
+	oferta["cena_przed_rabatem_usterek"] = zaokraglij_cene(kat, przed)
+
+
+func rabat_ceny_z_usterek(usterki_ids: Array, kategoria: String = "", segment: String = "") -> float:
+	if usterki_ids.is_empty():
+		return 0.0
+	var conf: Dictionary = {}
+	var root := usterki_dobr_katalog()
+	if root.get("wplyw_na_cene") is Dictionary:
+		conf = root["wplyw_na_cene"]
+	var per := float(conf.get("procent_per_powaga", 0.035))
+	var max_r := float(conf.get("max_rabat", 0.42))
+	var suma_powagi := 0
+	for uid_v in usterki_ids:
+		var meta := _meta_usterki(str(uid_v), kategoria, segment)
+		suma_powagi += int(meta.get("powaga", 1))
+	return clampf(float(suma_powagi) * per, 0.0, max_r)
+
+
+## Wykrywa ukryte usterki przy ocenie (odbiór osobisty / ekspert). Auta: znajomość pojazdów + mechanik.
 func wykryj_usterki(swiat: Dictionary, oferta: Dictionary, z_ekspertem: bool = false) -> Array:
 	var ukryte: Array = oferta.get("usterki_ukryte", []) if oferta.get("usterki_ukryte") is Array else []
 	if ukryte.is_empty():
 		return []
 	var juz: Array = oferta.get("usterki_wykryte", []) if oferta.get("usterki_wykryte") is Array else []
-	var kat := usterki_katalog()
-	var wyk: Dictionary = kat.get("wykrywanie", {}) if kat.get("wykrywanie") is Dictionary else {}
-	var znaj := _poziom_znajomosci_pojazdow(swiat)
+	var kat_oferty := str(oferta.get("kategoria", ""))
+	var segment := str(oferta.get("segment", ""))
+	var jest_auto := kat_oferty == "samochod"
+	var wyk: Dictionary = {}
+	if jest_auto:
+		var kat_a := usterki_katalog()
+		wyk = kat_a.get("wykrywanie", {}) if kat_a.get("wykrywanie") is Dictionary else {}
+	else:
+		var root := usterki_dobr_katalog()
+		wyk = root.get("wykrywanie", {}) if root.get("wykrywanie") is Dictionary else {}
 	var intel := _inteligencja_logiczna_bohatera(swiat)
 	var internet := bool(swiat.get("bohater", {}).get("dostep_do_internetu", true)) if swiat.get("bohater") is Dictionary else true
-	var szkola := _ma_szkole_mechanik(swiat)
 	var dobre_wyniki := _dobre_wyniki_szkoly(swiat)
-	var baza := float(wyk.get("baza", 0.12))
-	baza += znaj * float(wyk.get("waga_znajomosci_0_100", 0.006))
-	baza += intel * float(wyk.get("waga_inteligencji_logicznej_0_100", 0.0035))
+	var baza := float(wyk.get("baza", 0.18 if not jest_auto else 0.12))
+	if jest_auto:
+		var znaj := _poziom_znajomosci_pojazdow(swiat)
+		baza += znaj * float(wyk.get("waga_znajomosci_0_100", 0.006))
+		if _ma_szkole_mechanik(swiat):
+			baza += float(wyk.get("bonus_szkola_mechanik", 0.22))
+	baza += intel * float(wyk.get("waga_inteligencji_logicznej_0_100", 0.0035 if jest_auto else 0.0045))
 	if internet:
-		baza += float(wyk.get("bonus_internet", 0.08))
+		baza += float(wyk.get("bonus_internet", 0.08 if jest_auto else 0.1))
 	if z_ekspertem:
-		baza += float(wyk.get("bonus_ekspert", 0.28))
-	if szkola:
-		baza += float(wyk.get("bonus_szkola_mechanik", 0.22))
+		baza += float(wyk.get("bonus_ekspert", 0.28 if jest_auto else 0.32))
 	if dobre_wyniki:
-		baza += float(wyk.get("bonus_dobre_wyniki_szkoly", 0.12))
+		baza += float(wyk.get("bonus_dobre_wyniki_szkoly", 0.12 if jest_auto else 0.08))
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	var nowe: Array = []
 	var po_id := {}
-	for u in (kat.get("usterki", []) if kat.get("usterki") is Array else []):
+	for u in lista_usterek_meta(kat_oferty, segment):
 		if u is Dictionary:
 			po_id[str(u.get("id", ""))] = u
 	for uid_v in ukryte:
@@ -2836,8 +2949,10 @@ func wykryj_usterki(swiat: Dictionary, oferta: Dictionary, z_ekspertem: bool = f
 			continue
 		var szansa := clampf(baza, 0.0, 0.98)
 		var meta: Variant = po_id.get(uid, {})
-		if meta is Dictionary and str(meta.get("id", "")) == "pozalewowe":
-			szansa *= float(wyk.get("pozalewowe_mnoznik_trudnosci", 0.65))
+		if meta is Dictionary:
+			var mid := str(meta.get("id", ""))
+			if mid == "pozalewowe" or mid == "po_zalaniu":
+				szansa *= float(wyk.get("pozalewowe_mnoznik_trudnosci", 0.65 if jest_auto else 0.7))
 		if rng.randf() <= szansa:
 			nowe.append(uid)
 	if not nowe.is_empty():
@@ -3122,11 +3237,25 @@ func _losuj_dialog(dialogi: Dictionary, tag: String, rng: RandomNumberGenerator)
 	return pula[rng.randi_range(0, pula.size() - 1)]
 
 
-func _meta_usterki(uid: String) -> Dictionary:
+func _meta_usterki(uid: String, kategoria: String = "", segment: String = "") -> Dictionary:
+	if kategoria != "":
+		for u in lista_usterek_meta(kategoria, segment):
+			if u is Dictionary and str(u.get("id", "")) == uid:
+				return u
+	# Fallback: najpierw auta, potem wszystkie kategorie dóbr.
 	var kat := usterki_katalog()
 	for u in (kat.get("usterki", []) if kat.get("usterki") is Array else []):
 		if u is Dictionary and str(u.get("id", "")) == uid:
 			return u
+	var root := usterki_dobr_katalog()
+	var kategorie: Dictionary = root.get("kategorie", {}) if root.get("kategorie") is Dictionary else {}
+	for _kid in kategorie.keys():
+		var blok: Variant = kategorie[_kid]
+		if not (blok is Dictionary):
+			continue
+		for u2 in (blok.get("usterki", []) if blok.get("usterki") is Array else []):
+			if u2 is Dictionary and str(u2.get("id", "")) == uid:
+				return u2
 	return {}
 
 
