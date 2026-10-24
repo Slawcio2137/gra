@@ -7,6 +7,14 @@ export_presets.cfg
 *.tmp
 *~
 
+# Build / Android
+build/
+*.apk
+*.apk.idsig
+
+# itch.io (lokalne — sekrety / login)
+scripts/itch.env
+
 # OS
 Thumbs.db
 Desktop.ini
