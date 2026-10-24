@@ -1,0 +1,16 @@
+{
+	"opis": "Sprzęt peryferyjny — osobna zakładka w Zakupach: słuchawki, klawiatura, mysz, mikrofon.",
+	"kategoria": "sprzet",
+	"propozycja_do_poprawki": true,
+	"podkategorie": ["sluchawki", "klawiatura", "mysz", "mikrofon"],
+	"modele": [
+		{"id": "sluch_budzet", "podkategoria": "sluchawki", "marka": "Sony-like", "model": "WH-budżet", "cena_zl": 199, "szacunek": true, "zrodlo": "https://www.x-kom.pl/", "waga": 10},
+		{"id": "sluch_gaming", "podkategoria": "sluchawki", "marka": "HyperX-like", "model": "Cloud", "cena_zl": 349, "szacunek": true, "zrodlo": "https://hyperx.com/", "waga": 7},
+		{"id": "klaw_membran", "podkategoria": "klawiatura", "marka": "Logitech-like", "model": "K120", "cena_zl": 79, "szacunek": true, "zrodlo": "https://www.logitech.com/", "waga": 11},
+		{"id": "klaw_mech", "podkategoria": "klawiatura", "marka": "Keychron-like", "model": "mech 75%", "cena_zl": 429, "szacunek": true, "zrodlo": "https://www.keychron.com/", "waga": 5},
+		{"id": "mysz_biuro", "podkategoria": "mysz", "marka": "Logitech-like", "model": "M185", "cena_zl": 69, "szacunek": true, "zrodlo": "https://www.logitech.com/", "waga": 12},
+		{"id": "mysz_gaming", "podkategoria": "mysz", "marka": "Razer-like", "model": "DeathAdder-like", "cena_zl": 249, "szacunek": true, "zrodlo": "https://www.razer.com/", "waga": 6},
+		{"id": "mikro_usb", "podkategoria": "mikrofon", "marka": "Fifine-like", "model": "USB desk", "cena_zl": 159, "szacunek": true, "zrodlo": "https://fifine.com/", "waga": 8},
+		{"id": "mikro_streamer", "podkategoria": "mikrofon", "marka": "Blue-like", "model": "Yeti-like", "cena_zl": 549, "szacunek": true, "zrodlo": "https://www.bluemic.com/", "waga": 4}
+	]
+}

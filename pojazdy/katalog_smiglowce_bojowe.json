@@ -1,0 +1,62 @@
+{
+	"opis": "Śmigłowce bojowe / uderzeniowe — dane katalogowe. Ceny wojskowe często niejawne: tylko szacunek + źródło publiczne albo null. Odblokowanie wiekiem: TODO fala 2.",
+	"kategoria": "smiglowiec_bojowy",
+	"propozycja_do_poprawki": true,
+	"uwaga_cen": "Nie wymyślać cen bez źródła. Gdy brak wiarygodnej publicznej kotwicy → cena_zl null.",
+	"modele": [
+		{
+			"id": "ah64e_apache",
+			"marka": "Boeing",
+			"model": "AH-64E Apache Guardian",
+			"typ": "uderzeniowy",
+			"cena_usd": 52000000,
+			"cena_zl": null,
+			"szacunek": true,
+			"zrodlo": "https://www.gao.gov/",
+			"zrodlo_opis": "Rząd wielkości unit cost AH-64E w publicznych raportach US DoD/GAO (ok. 50+ mln USD w zależności od roku/pakietu). PLN nie przeliczono — cena_zl null do decyzji gracza.",
+			"zuzycie": {"paliwo_jednostka": "lb/h", "szacunek": true, "uwaga": "bez konkretnej liczby bez źródła lotniczego"},
+			"czas_oczekiwania": {"lata": 4, "tygodnie": 0, "opis": "produkcja/eksport — szacunek, nie oferta cywilna"},
+			"waga": 3,
+			"uwaga_gry": "Kategoria rzadka; zakup cywilny zwykle niemożliwy — stub danych."
+		},
+		{
+			"id": "eurocopter_tiger",
+			"marka": "Airbus Helicopters",
+			"model": "Tiger (HAD/HAP)",
+			"typ": "uderzeniowy",
+			"cena_usd": null,
+			"cena_zl": null,
+			"szacunek": true,
+			"zrodlo": "https://www.airbus.com/en/products-services/helicopters/military-helicopters/tiger",
+			"zrodlo_opis": "Airbus Tiger — brak jednej publicznej ceny unit cost w cenniku; media podają różne kwoty kontraktów. cena null.",
+			"czas_oczekiwania": {"lata": 5, "tygodnie": 0, "opis": "szacunek kolejki / kontraktu"},
+			"waga": 2
+		},
+		{
+			"id": "mi24_hind",
+			"marka": "Mil",
+			"model": "Mi-24 / Mi-35",
+			"typ": "uderzeniowy_transportowy",
+			"cena_usd": null,
+			"cena_zl": null,
+			"szacunek": true,
+			"zrodlo": "https://en.wikipedia.org/wiki/Mil_Mi-24",
+			"zrodlo_opis": "Mi-24 — brak wiarygodnej stałej ceny jednostkowej w otwartych źródłach dla tej wersji gry; cena null.",
+			"czas_oczekiwania": {"lata": 3, "tygodnie": 20, "opis": "szacunek"},
+			"waga": 2
+		},
+		{
+			"id": "aw129_mangusta",
+			"marka": "Leonardo",
+			"model": "AW129 Mangusta / AH-129D",
+			"typ": "uderzeniowy",
+			"cena_usd": null,
+			"cena_zl": null,
+			"szacunek": true,
+			"zrodlo": "https://helicopters.leonardo.com/",
+			"zrodlo_opis": "Leonardo AW129 — cena kontraktowa niepubliczna jako stały MSRP; null.",
+			"czas_oczekiwania": {"lata": 4, "tygodnie": 10, "opis": "szacunek"},
+			"waga": 1
+		}
+	]
+}

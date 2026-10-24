@@ -1,0 +1,59 @@
+{
+	"opis": "3–5 eventów przykładowych (framework + teksty). Nie pełna masa eventów — to Fala 1.",
+	"propozycja_do_poprawki": true,
+	"eventy": [
+		{
+			"id": "zaczepka_w_klasie",
+			"nazwa": "Zaczepka w klasie",
+			"typ": "szkola",
+			"opis": "Ktoś zaczepia Cię na przerwie.",
+			"opcje": [
+				{"id": "odpowiedz", "tekst": "Odpowiedz ripostą", "efekt": {"psychika": -5, "hejt": false}},
+				{"id": "ignoruj", "tekst": "Zignoruj", "efekt": {"psychika": -2}},
+				{"id": "powiedz_nauczycielowi", "tekst": "Powiedz nauczycielowi", "efekt": {"psychika": 1, "relacja_klasa": -3}},
+				{"id": "powiedz_rodzicom", "tekst": "Powiedz rodzicom", "efekt": {"psychika": 2, "wsparcie_rodzicow": true}}
+			],
+			"reakcje_rodzicow": {
+				"wsparcie": {"tekst": "Rodzice Cię wspierają.", "mnoznik_spadku_hejt": 0.6},
+				"bagatelizacja": {"tekst": "Rodzice mówią, że to nic takiego.", "mnoznik_spadku_hejt": 1.0}
+			},
+			"hejt_przyklad": {
+				"opis": "Jeśli zaczepka przechodzi w hejt: spadek psychiki; wsparcie rodziców −40% spadku.",
+				"spadek_psychiki": 15,
+				"wsparcie_rodzicow_redukcja": 0.4
+			}
+		},
+		{
+			"id": "urodziny_przyjaciela",
+			"nazwa": "Urodziny przyjaciela",
+			"typ": "towarzyskie",
+			"opis": "Przyjaciel zaprasza na urodziny w środku tygodnia.",
+			"opcje": [
+				{"id": "idz", "tekst": "Idź (poproś rodziców)", "efekt": {"psychika": 8, "wymaga_zgody": true}},
+				{"id": "wymowka", "tekst": "Wymówka — nie idę", "efekt": {"psychika": -4, "relacja_przyjaciel": -5}},
+				{"id": "odmowa_uczciwa", "tekst": "Szczerze odmów", "efekt": {"psychika": -1, "relacja_przyjaciel": -2}}
+			]
+		},
+		{
+			"id": "zabawa_zamiast_nauki",
+			"nazwa": "Zaproszenie do zabawy zamiast nauki",
+			"typ": "szkola",
+			"opis": "Koledzy wołają na dwór, a Ty miałeś się uczyć.",
+			"opcje": [
+				{"id": "zabawa", "tekst": "Idź się bawić", "efekt": {"psychika": 6, "wiedza_pkt": -3}},
+				{"id": "nauka", "tekst": "Zostań przy nauce", "efekt": {"psychika": -2, "wiedza_pkt": 4}},
+				{"id": "kompromis", "tekst": "Godzina zabawy, potem nauka", "efekt": {"psychika": 3, "wiedza_pkt": 1}}
+			]
+		},
+		{
+			"id": "hejt_przyklad",
+			"nazwa": "Hejt w klasie (przykład)",
+			"typ": "szkola",
+			"opis": "Krąży głupia plotka o Tobie.",
+			"opcje": [
+				{"id": "sam", "tekst": "Radź sobie sam", "efekt": {"psychika": -15, "hejt": true}},
+				{"id": "rodzice", "tekst": "Poproś rodziców o wsparcie", "efekt": {"psychika": -9, "hejt": true, "wsparcie_rodzicow": true, "uwaga": "−40% spadku przy wsparciu"}}
+			]
+		}
+	]
+}

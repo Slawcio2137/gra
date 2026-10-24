@@ -1,0 +1,45 @@
+{
+	"opis": "Kieszonkowe od dziadków — niższe schodki niż rodzice. Snap jak rodzice, ale lista przesunięta w dół. Propozycja do poprawki, nie GUS.",
+	"propozycja_do_poprawki": true,
+	"to_nie_gus": true,
+	"mnoznik_względem_rodzicow": 0.45,
+	"uwaga": "Kwoty tygodniowe niższe: start od 5 zł, rzadko powyżej 150 bez bogatych dziadków.",
+	"wiek": {
+		"minimalny_wiek_lat": 4,
+		"tekst_za_male": "Jesteś jeszcze za małe, żeby prosić dziadków o kieszonkowe.",
+		"mnoznik_wieku": [
+			{"od_lat": 4, "do_lat": 7, "mnoznik": 0.7, "propozycja_do_poprawki": true},
+			{"od_lat": 8, "do_lat": 12, "mnoznik": 0.9, "propozycja_do_poprawki": true},
+			{"od_lat": 13, "do_lat": 99, "mnoznik": 1.0, "propozycja_do_poprawki": true}
+		]
+	},
+	"kwoty_propozycja": {
+		"propozycja_do_poprawki": true,
+		"wedlug_przedzialu": [
+			{"przedzialy": ["do_placy_minimalnej"], "zl": 5, "etykieta": "drobne"},
+			{"przedzialy": ["od_minimalnej_do_mediany"], "zl": 10, "etykieta": "mała"},
+			{"przedzialy": ["od_mediany_do_przecietnego"], "zl": 15, "etykieta": "mała"},
+			{"przedzialy": ["od_przecietnego_do_dwoch_median"], "zl": 25, "etykieta": "średnia"},
+			{"przedzialy": ["powyzej_dwoch_median"], "zl": 40, "etykieta": "większa"}
+		],
+		"gdy_brak_przedzialu_zl": 5
+	},
+	"dozwolone_kwoty": {
+		"propozycja_do_poprawki": true,
+		"opis": "Niższe schodki niż rodzice: 5,10,15,20,25,30,40,50,60,80,100,120,150.",
+		"lista_wzorcowa": [5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100, 120, 150],
+		"limit_max_zl": 150,
+		"snap": "najblizsza"
+	},
+	"charakter": {
+		"hojny_mnoznik": 1.3,
+		"oszczedny_mnoznik": 0.7,
+		"odmowa_cechy": ["oszczedny", "skapy", "surowy", "wredny"],
+		"propozycja_do_poprawki": true
+	},
+	"event_tygodniowy": {
+		"id": "dziadkowie_daja_kieszonkowe",
+		"opis": "Gdy aktywne — mała wypłata co tydzień (niższa niż rodzice).",
+		"tekst_ok": "Dziadkowie dają kieszonkowe: +%d zł."
+	}
+}

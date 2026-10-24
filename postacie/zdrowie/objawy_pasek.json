@@ -1,0 +1,17 @@
+{
+	"opis": "Objawy choroby: emotki + napisy pod spodem. Prosty pasek. Leki / rodzice / NFZ vs prywatny — stub wyboru.",
+	"propozycja_do_poprawki": true,
+	"objawy": [
+		{"id": "katar", "emoji": "🤧", "napis": "katar"},
+		{"id": "nudnosci", "emoji": "🤢", "napis": "nudności"},
+		{"id": "goraczka", "emoji": "🤒", "napis": "gorączka"},
+		{"id": "bol_glowy", "emoji": "🤕", "napis": "ból głowy"},
+		{"id": "kaszel", "emoji": "😷", "napis": "kaszel"}
+	],
+	"leczenie_stub": [
+		{"id": "leki_domowe", "nazwa": "Leki z domowej apteczki"},
+		{"id": "rodzice", "nazwa": "Rodzice załatwiają"},
+		{"id": "nfz", "nazwa": "NFZ (kolejka)"},
+		{"id": "prywatny", "nazwa": "Prywatnie (drożej, szybciej)"}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"opis": "Komputery i laptopy z podziałem segmentów: gaming / biuro / budżet.",
+	"propozycja_do_poprawki": true,
+	"segmenty": ["gaming", "biuro", "budzet"],
+	"komputer": [
+		{"id": "pc_budzet_office", "marka": "Gotowiec", "model": "Biuro Mini", "segment": "budzet", "cena_zl": 1899, "szacunek": true, "zrodlo": "https://www.x-kom.pl/", "zrodlo_opis": "Gotowce biurowe — rząd cen PL szacunek.", "waga": 10},
+		{"id": "pc_biuro_dell", "marka": "Dell", "model": "OptiPlex-like", "segment": "biuro", "cena_zl": 3200, "szacunek": true, "zrodlo": "https://www.dell.com/", "zrodlo_opis": "Dell biurowy — szacunek.", "waga": 8},
+		{"id": "pc_gaming_mid", "marka": "ASUS", "model": "ROG-like mid", "segment": "gaming", "cena_zl": 5500, "szacunek": true, "zrodlo": "https://rog.asus.com/", "zrodlo_opis": "PC gaming mid — szacunek PL.", "waga": 7},
+		{"id": "pc_gaming_high", "marka": "Lenovo", "model": "Legion-like", "segment": "gaming", "cena_zl": 8900, "szacunek": true, "zrodlo": "https://www.lenovo.com/", "zrodlo_opis": "PC gaming wyższy — szacunek.", "waga": 4}
+	],
+	"laptop": [
+		{"id": "lap_budzet_ideapad", "marka": "Lenovo", "model": "IdeaPad 3", "segment": "budzet", "cena_zl": 2199, "szacunek": true, "zrodlo": "https://www.lenovo.com/pl/", "zrodlo_opis": "IdeaPad budżet — szacunek PL.", "waga": 11},
+		{"id": "lap_biuro_hp", "marka": "HP", "model": "Pavilion", "segment": "biuro", "cena_zl": 3499, "szacunek": true, "zrodlo": "https://www.hp.com/pl-pl/", "zrodlo_opis": "HP Pavilion — szacunek.", "waga": 9},
+		{"id": "lap_gaming_tuf", "marka": "ASUS", "model": "TUF Gaming", "segment": "gaming", "cena_zl": 4799, "szacunek": true, "zrodlo": "https://www.asus.com/pl/", "zrodlo_opis": "ASUS TUF — szacunek.", "waga": 7},
+		{"id": "lap_biuro_macbook", "marka": "Apple", "model": "MacBook Air", "segment": "biuro", "cena_zl": 5299, "szacunek": true, "zrodlo": "https://www.apple.com/pl/macbook-air/", "zrodlo_opis": "MacBook Air — rząd cen PL szacunek.", "waga": 5}
+	]
+}

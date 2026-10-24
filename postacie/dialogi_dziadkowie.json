@@ -1,0 +1,54 @@
+{
+	"opis": "Framework dialogu z dziadkami przy prośbie o pieniądze. Pula ~20; UI pokazuje 4–5. Inteligencja → sprytniejsze; podejrzliwość rośnie przy częstych prośbach.",
+	"propozycja_do_poprawki": true,
+	"pokazuj_odpowiedzi": {"min": 4, "max": 5},
+	"podejrzliwosc": {
+		"baza": 0,
+		"za_prosbe": 8,
+		"spadek_na_tydzien_bez_prosby": 3,
+		"prog_wysoki": 55,
+		"propozycja_do_poprawki": true
+	},
+	"klamstwo": {
+		"szansa_wykrycia_baza": 0.25,
+		"za_podejrzliwosc": 0.004,
+		"przerwa_tygodnie_od": 12,
+		"przerwa_tygodnie_do": 40,
+		"przerwa_do_roku_gdy_cechy": ["wredny", "porywczy", "surowy"],
+		"przerwa_max_tygodnie": 52,
+		"propozycja_do_poprawki": true
+	},
+	"telefon_do_rodzicow": {
+		"szansa_baza": 0.12,
+		"za_podejrzliwosc": 0.003,
+		"propozycja_do_poprawki": true
+	},
+	"odpowiedzi": [
+		{"id": "ok_maly", "tekst": "Weź, tylko nie wydawaj na głupoty.", "ton": "hojne", "wymaga_inteligencji": 0},
+		{"id": "ok_cieplo", "tekst": "Dla wnuczka zawsze coś się znajdzie.", "ton": "hojne", "wymaga_inteligencji": 0},
+		{"id": "ok_warunek", "tekst": "Dobra, ale powiedz mamie, że dostałeś.", "ton": "ostrozne", "wymaga_inteligencji": 0},
+		{"id": "na_co", "tekst": "A na co ci to konkretnie?", "ton": "dopytanie", "wymaga_inteligencji": 0, "pytanie": "na_co"},
+		{"id": "na_co_ostro", "tekst": "Bo rodzice już dają kieszonkowe — po co jeszcze?", "ton": "dopytanie", "wymaga_inteligencji": 1, "pytanie": "na_co"},
+		{"id": "gdzie_jedzie", "tekst": "Dokąd niby jedziesz z tymi pieniędzmi?", "ton": "dopytanie", "wymaga_inteligencji": 0, "pytanie": "gdzie"},
+		{"id": "co_rodzice", "tekst": "Co na to rodzice? Wiedzą, że prosisz?", "ton": "dopytanie", "wymaga_inteligencji": 1, "pytanie": "rodzice"},
+		{"id": "odmowa_miekka", "tekst": "Dziś nie, wnusiu. Innym razem.", "ton": "odmowa", "wymaga_inteligencji": 0},
+		{"id": "odmowa_twarda", "tekst": "Nie. Za często ostatnio.", "ton": "odmowa", "wymaga_inteligencji": 0, "min_podejrzliwosc": 40},
+		{"id": "podejrzenie", "tekst": "Coś tu nie gra. Mówisz prawdę?", "ton": "podejrzenie", "wymaga_inteligencji": 1, "min_podejrzliwosc": 35},
+		{"id": "spryt_handel", "tekst": "Dostaniesz połowę — resztę jak pokażesz rachunek.", "ton": "sprytne", "wymaga_inteligencji": 2},
+		{"id": "spryt_test", "tekst": "Najpierw powiedz, ile masz w skarbonce. Potem pogadamy.", "ton": "sprytne", "wymaga_inteligencji": 2},
+		{"id": "telefon_hint", "tekst": "Zaraz zadzwonię do twojej mamy i sprawdzę.", "ton": "telefon", "wymaga_inteligencji": 1, "min_podejrzliwosc": 45},
+		{"id": "ok_jednoraz", "tekst": "Tym razem tak. Następnym nie licz.", "ton": "hojne", "wymaga_inteligencji": 0},
+		{"id": "lekcja", "tekst": "Pieniądze trzeba szanować. Weź mało i naucz się liczyć.", "ton": "lekcja", "wymaga_inteligencji": 1},
+		{"id": "porownanie", "tekst": "Jak ja miałem twoje lata, to… no dobra, weź.", "ton": "hojne", "wymaga_inteligencji": 0},
+		{"id": "klamstwo_wylap", "tekst": "To nie brzmi uczciwie. Na razie koniec z dawaniem.", "ton": "wykrycie", "wymaga_inteligencji": 1, "min_podejrzliwosc": 50},
+		{"id": "zgoda_warunek_nauka", "tekst": "Dostaniesz, jak najpierw odrobisz lekcje.", "ton": "warunek", "wymaga_inteligencji": 1},
+		{"id": "zgoda_cukierek", "tekst": "Weź na lody. Tylko nie mów dziadkowi, że dałam więcej.", "ton": "hojne", "wymaga_inteligencji": 0},
+		{"id": "odmowa_zdrowie", "tekst": "Leki są drogie, wnusiu. Dziś naprawdę nie mogę.", "ton": "odmowa", "wymaga_inteligencji": 0}
+	],
+	"opcje_gracza_przyklad": [
+		{"id": "prawda", "tekst": "Mówię prawdę.", "klamstwo": false},
+		{"id": "klamstwo_gry", "tekst": "Na grę / gadżet (kłamstwo).", "klamstwo": true},
+		{"id": "klamstwo_prezent", "tekst": "Na prezent dla kogoś (kłamstwo).", "klamstwo": true},
+		{"id": "wycofaj", "tekst": "Nieważne, nieważne.", "klamstwo": false}
+	]
+}

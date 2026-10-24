@@ -58,6 +58,10 @@ func placeholder_sciezka(kategoria: String) -> String:
 		"laptop": PLACEHOLDER_DIR + "laptop.png",
 		"komputer": PLACEHOLDER_DIR + "komputer.png",
 		"rower": PLACEHOLDER_DIR + "rower.png",
+		"sprzet": PLACEHOLDER_DIR + "ogolny.png",
+		"samolot": PLACEHOLDER_DIR + "ogolny.png",
+		"smiglowiec_bojowy": PLACEHOLDER_DIR + "ogolny.png",
+		"ksiazka": PLACEHOLDER_DIR + "ogolny.png",
 	}
 	var sciezka := str(mapa.get(kategoria, PLACEHOLDER_DIR + "ogolny.png"))
 	if FileAccess.file_exists(sciezka):
@@ -126,11 +130,21 @@ func aktywuj_zakladke_samochodow(swiat: Dictionary, miasta: Array, miasto_gracza
 	miasto = _wzbogac_jedno_miasto(miasto)
 	var ile := _wylosuj_ile_aut_dla_miasta(miasto, ziarno + 101, true)
 	stan["baza_ogloszen_aut"] = baza_ogloszen_aut(_ludnosc_miasta(miasto))
+	var woj := str(miasto.get("wojewodztwo", ""))
+	var baza_woj := baza_ogloszen_aut_wojewodztwa(miasta_wzb, woj)
+	stan["baza_ogloszen_aut_wojewodztwo"] = baza_woj
 	var rng := RandomNumberGenerator.new()
 	rng.seed = ziarno + 101
 	for _i in ile:
 		# Lokalna pula = wyłącznie używane w mieście gracza (ludnosc/5000 nie liczy nowych).
 		bez_aut.append(_losuj_samochod(miasto, rng, miasto_gracza_id, conf, "uzywany", "miasto", miasta_wzb))
+	# Województwo: liczba ≈ suma baz miast (cap próbki), nie jedna liczba z miasta gracza.
+	var pasmo_woj: Vector2i = pasmo_ogloszen_aut(baza_woj, 0.30)
+	var ile_woj := rng.randi_range(pasmo_woj.x, pasmo_woj.y)
+	# Cap generacji startowej — pełna suma może być duża; reszta do odświeżeń.
+	ile_woj = mini(ile_woj, 40)
+	for _w in ile_woj:
+		bez_aut.append(_losuj_samochod(miasto, rng, miasto_gracza_id, conf, "uzywany", "wojewodztwo", miasta_wzb, true))
 	# Szerszy zasięg (powiat→…→zagranica) — poza limitem miasta, też tylko używane.
 	var ile_szerszych := clampi(int(round(float(ile) * 0.9)), 4, 28)
 	for _j in ile_szerszych:
@@ -148,6 +162,22 @@ func baza_ogloszen_aut(ludnosc: int) -> int:
 	if ludnosc <= 0:
 		return 1
 	return maxi(1, int(round(float(ludnosc) / 5000.0)))
+
+
+## Przy zasięgu województwo: suma baz miast w województwie (lub próbka z capem).
+func baza_ogloszen_aut_wojewodztwa(miasta: Array, wojewodztwo: String, cap_probki: int = 120) -> int:
+	if wojewodztwo.strip_edges() == "":
+		return 1
+	var suma_lud := 0
+	for m in miasta:
+		if not (m is Dictionary):
+			continue
+		if str(m.get("wojewodztwo", "")) != wojewodztwo:
+			continue
+		suma_lud += _ludnosc_miasta(m)
+	var baza := baza_ogloszen_aut(suma_lud)
+	# Próbka realistyczna — nie generuj tysięcy ofert naraz.
+	return clampi(baza, 1, maxi(1, cap_probki))
 
 
 func pasmo_ogloszen_aut(baza: int, rozbieznosc: float = 0.30) -> Vector2i:
@@ -359,12 +389,14 @@ func etykieta_napedu(naped_id: String) -> String:
 			return naped_id
 
 
-## odbior_filtr: "" = bez filtra, "osobisty", "wysylka". Oferta "oba" przechodzi oba.
+## odbior_filtr: "" = bez filtra, "osobisty", "wysylka"/"dostawa". Oferta "oba" przechodzi oba.
 func _pasuje_odbior(sposob: String, filtr: String) -> bool:
 	if filtr == "":
 		return true
 	if sposob == "" or sposob == "oba":
 		return true
+	if filtr == "wysylka" or filtr == "dostawa":
+		return sposob == "wysylka" or sposob == "dostawa" or sposob == "oba"
 	return sposob == filtr
 
 
@@ -510,12 +542,13 @@ func tryb_oceny_stanu(oferta: Dictionary) -> String:
 	var kat := str(oferta.get("kategoria", ""))
 	var s := str(oferta.get("sposob_odbioru", "oba"))
 	if kat == "samochod":
-		if s == "wysylka":
+		if s == "wysylka" or s == "dostawa":
 			return "po_dostawie"
+		# osobisty / oba → ocena przed zakupem (przy oba: odbiór osobisty dostępny)
 		return "przed_zakupem"
 	if s == "osobisty" or s == "oba" or s == "":
 		return "przed_zakupem"
-	if s == "wysylka":
+	if s == "wysylka" or s == "dostawa":
 		return "po_dostawie"
 	return ""
 
@@ -943,12 +976,19 @@ func efekt_wygody_tydzien(swiat: Dictionary) -> Dictionary:
 	var dryf: Dictionary = conf.get("dryf_tury", {}) if conf.get("dryf_tury") is Dictionary else {}
 	var udzial := float(dryf.get("udzial_odleglosci", 0.5))
 	var delta := roundi(udzial * float(docelowe - obecne))
-	var nowe := clampi(obecne + delta, 0, 100)
+	# Góra 100; dół może < 0 (depresja / hejt). Clamp dolny z dryf JSON lub −100.
+	var clamp_widoczny: Array = conf.get("clamp_widocznej", [-100, 100]) if conf.get("clamp_widocznej") is Array else [-100, 100]
+	var lo := int(clamp_widoczny[0]) if clamp_widoczny.size() >= 1 else -100
+	var hi := int(clamp_widoczny[1]) if clamp_widoczny.size() >= 2 else 100
+	var nowe := clampi(obecne + delta, lo, hi)
 	delta = nowe - obecne
 	out["delta"] = delta
 	if delta == 0:
+		_aktualizuj_flage_depresji_dryf(bohater)
+		swiat["bohater"] = bohater
 		return out
 	bohater[metryka] = nowe
+	_aktualizuj_flage_depresji_dryf(bohater)
 	swiat["bohater"] = bohater
 	var napis: Dictionary = conf.get("napis_tygodnia", {}) if conf.get("napis_tygodnia") is Dictionary else {}
 	var prefiks := str(napis.get("prefiks", "Samopoczucie"))
@@ -956,6 +996,20 @@ func efekt_wygody_tydzien(swiat: Dictionary) -> Dictionary:
 	out["tekst"] = "%s: %s" % [prefiks, znak_delta]
 	out["zastosowano"] = true
 	return out
+
+
+## Po dłuższym czasie psychika < 0 → flaga depresji (pogłębianie stub).
+func _aktualizuj_flage_depresji_dryf(bohater: Dictionary) -> void:
+	var psych := int(bohater.get("psychika", 50))
+	var t := int(bohater.get("tygodnie_psychika_ponizej_0", 0))
+	if psych < 0:
+		t += 1
+	else:
+		t = 0
+	bohater["tygodnie_psychika_ponizej_0"] = t
+	if t >= 4:
+		bohater["depresja"] = true
+		bohater["depresja_stub"] = true
 
 
 ## Pełne lokum startowe rodziny: lokalizacja, typ, metraż, stan, wygoda od zarobków.
@@ -1355,6 +1409,13 @@ func _generuj_start(miasta: Array, miasto_gracza_id: String, ziarno: int, conf: 
 		# Auta NIE tu — dopiero po aktywacji zakładki Samochód (ludnosc/5000 ±30%).
 		if rng.randf() < 0.35:
 			out.append(_losuj_dobro("ksiazka", miasto, rng, miasto_gracza_id, conf))
+		if rng.randf() < 0.32:
+			out.append(_losuj_dobro("sprzet", miasto, rng, miasto_gracza_id, conf))
+		# Samoloty / śmigłowce: rzadkie wpisy katalogowe (odblokowanie wiekiem — TODO).
+		if mid_m == miasto_gracza_id and rng.randf() < 0.08:
+			out.append(_losuj_dobro("samolot", miasto, rng, miasto_gracza_id, conf))
+		if mid_m == miasto_gracza_id and rng.randf() < 0.03:
+			out.append(_losuj_dobro("smiglowiec_bojowy", miasto, rng, miasto_gracza_id, conf))
 	return out
 
 
@@ -1392,8 +1453,10 @@ func _przewin_pule(stare: Array, miasta: Array, miasto_gracza_id: String, ziarno
 			zostaje.append(_losuj_dobro("laptop", miasto, rng, miasto_gracza_id, conf))
 		elif roll < 0.90:
 			zostaje.append(_losuj_dobro("komputer", miasto, rng, miasto_gracza_id, conf))
-		elif roll < 0.96:
+		elif roll < 0.94:
 			zostaje.append(_losuj_dobro("rower", miasto, rng, miasto_gracza_id, conf))
+		elif roll < 0.98:
+			zostaje.append(_losuj_dobro("sprzet", miasto, rng, miasto_gracza_id, conf))
 		else:
 			zostaje.append(_losuj_dobro("ksiazka", miasto, rng, miasto_gracza_id, conf))
 	zostaje.append_array(auta)
@@ -1560,19 +1623,40 @@ func _losuj_nieruchomosc(kat: String, miasto: Dictionary, miasto_gracza_id: Stri
 func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, miasto_gracza_id: String = "", conf: Dictionary = {}) -> Dictionary:
 	if kat == "samochod":
 		return _losuj_samochod(miasto, rng, miasto_gracza_id, conf)
+	if kat == "samolot" or kat == "smiglowiec_bojowy":
+		return _losuj_z_katalogu_pojazdu_specjalnego(kat, miasto, rng, miasto_gracza_id, conf)
 	var dane := wczytaj()
+	var z_kat := _dobierz_z_katalogu_dobra(kat, rng)
 	var marki: Array = []
 	var modele: Array = []
 	if dane.get("pule_marek") is Dictionary and dane["pule_marek"].get(kat) is Array:
 		marki = dane["pule_marek"][kat]
 	if dane.get("pule_modeli") is Dictionary and dane["pule_modeli"].get(kat) is Array:
 		modele = dane["pule_modeli"][kat]
-	var marka := str(marki[rng.randi_range(0, marki.size() - 1)]) if not marki.is_empty() else kat
-	var model := str(modele[rng.randi_range(0, modele.size() - 1)]) if not modele.is_empty() else ""
+	var marka := str(z_kat.get("marka", ""))
+	var model := str(z_kat.get("model", z_kat.get("nazwa", "")))
+	if marka == "":
+		marka = str(marki[rng.randi_range(0, marki.size() - 1)]) if not marki.is_empty() else kat
+	if model == "":
+		model = str(modele[rng.randi_range(0, modele.size() - 1)]) if not modele.is_empty() else ""
 	var stan := "nowy" if rng.randf() < 0.4 else "uzywany"
 	var stany := _losuj_stany_jakosci(stan, rng)
-	var przebieg_km := _losuj_przebieg_km(kat, stan, rng)
-	var cena_dobra: Variant = _cena_dobra(kat, stan, rng, int(stany.get("stan_deklarowany", 80)), przebieg_km)
+	var uzywa_lat := _kategoria_uzywa_lat(kat)
+	var lata := 0
+	var przebieg_km := 0
+	if uzywa_lat:
+		lata = _losuj_lata_od_zakupu(stan, rng)
+	else:
+		przebieg_km = _losuj_przebieg_km(kat, stan, rng)
+	var cena_dobra: Variant = null
+	if z_kat.get("cena_zl") is int or z_kat.get("cena_zl") is float:
+		cena_dobra = _cena_z_katalogu_wiekiem(float(z_kat["cena_zl"]), stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
+		cena_dobra = _cena_lub_null(zaokraglij_cene(kat, cena_dobra), cena_dobra)
+	else:
+		cena_dobra = _cena_dobra(kat, stan, rng, int(stany.get("stan_deklarowany", 80)), przebieg_km)
+		if uzywa_lat and (cena_dobra is int or cena_dobra is float):
+			cena_dobra = _cena_z_katalogu_wiekiem(float(cena_dobra), stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
+			cena_dobra = _cena_lub_null(zaokraglij_cene(kat, cena_dobra), cena_dobra)
 	var mid := str(miasto.get("id", ""))
 	var to_gracz := mid != "" and mid == miasto_gracza_id
 	var conf_uzyte: Dictionary = conf
@@ -1586,6 +1670,7 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 		"nazwa": ("%s %s" % [marka, model]).strip_edges(),
 		"marka": marka,
 		"model": model,
+		"segment": str(z_kat.get("segment", z_kat.get("podkategoria", ""))),
 		"stan": stan,
 		"stan_rzeczywisty": stany.get("stan_rzeczywisty"),
 		"stan_deklarowany": stany.get("stan_deklarowany"),
@@ -1601,7 +1686,151 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 		"propozycja_do_poprawki": true,
 		"obrazek": placeholder_sciezka(kat),
 	}
+	if uzywa_lat:
+		oferta["lata_od_zakupu"] = lata
+		oferta["przebieg_km"] = null
+	else:
+		oferta["przebieg_km"] = przebieg_km
 	return oferta
+
+
+func _kategoria_uzywa_lat(kat: String) -> bool:
+	var dane := wczytaj()
+	if dane.get("katalogi_dobr") is Dictionary and dane["katalogi_dobr"].get("wiek_zamiast_przebiegu") is Array:
+		return kat in dane["katalogi_dobr"]["wiek_zamiast_przebiegu"]
+	return kat in ["telefon", "rower", "laptop", "komputer", "sprzet"]
+
+
+func _losuj_lata_od_zakupu(stan: String, rng: RandomNumberGenerator) -> int:
+	var dane := wczytaj()
+	var conf: Dictionary = dane.get("lata_od_zakupu", {}) if dane.get("lata_od_zakupu") is Dictionary else {}
+	if stan == "nowy":
+		return int(conf.get("nowy", 0))
+	var u: Variant = conf.get("uzywany", {"od": 1, "do": 8})
+	if u is Dictionary:
+		return rng.randi_range(int(u.get("od", 1)), int(u.get("do", 8)))
+	return rng.randi_range(1, 8)
+
+
+func _cena_z_katalogu_wiekiem(baza: float, stan: String, lata: int, stan_dekl: int, rng: RandomNumberGenerator) -> float:
+	var dane := wczytaj()
+	var conf: Dictionary = dane.get("lata_od_zakupu", {}) if dane.get("lata_od_zakupu") is Dictionary else {}
+	var v := baza
+	if stan == "uzywany":
+		var za_rok := float(conf.get("mnoznik_ceny_za_rok", 0.08))
+		var mn := float(conf.get("mnoznik_min", 0.35))
+		v *= maxf(mn, 1.0 - float(lata) * za_rok)
+		v *= 0.85 + 0.15 * (float(clampi(stan_dekl, 0, 100)) / 100.0)
+		v *= rng.randf_range(0.92, 1.08)
+	return v
+
+
+func _dobierz_z_katalogu_dobra(kat: String, rng: RandomNumberGenerator) -> Dictionary:
+	var dane := wczytaj()
+	var sciezka := ""
+	if dane.get("katalogi_dobr") is Dictionary:
+		sciezka = str(dane["katalogi_dobr"].get(kat, ""))
+	if sciezka == "" or not FileAccess.file_exists(sciezka):
+		return {}
+	var plik := FileAccess.open(sciezka, FileAccess.READ)
+	if plik == null:
+		return {}
+	var surowe: Variant = JSON.parse_string(plik.get_as_text())
+	if not (surowe is Dictionary):
+		return {}
+	var lista: Array = []
+	if kat == "komputer" and surowe.get("komputer") is Array:
+		lista = surowe["komputer"]
+	elif kat == "laptop" and surowe.get("laptop") is Array:
+		lista = surowe["laptop"]
+	elif kat == "ksiazka" and surowe.get("tytuly") is Array:
+		lista = surowe["tytuly"]
+	elif surowe.get("modele") is Array:
+		lista = surowe["modele"]
+	if lista.is_empty():
+		return {}
+	var wagi := {}
+	var po_id := {}
+	for i in lista.size():
+		var m: Variant = lista[i]
+		if not (m is Dictionary):
+			continue
+		var id := str(m.get("id", "i%d" % i))
+		var w := float(m.get("waga", 1))
+		if w <= 0.0:
+			continue
+		wagi[id] = w
+		po_id[id] = m
+	if wagi.is_empty():
+		return lista[rng.randi_range(0, lista.size() - 1)]
+	# Losowanie wagowe lokalne (bez Losowanie).
+	var suma := 0.0
+	for k in wagi.keys():
+		suma += float(wagi[k])
+	var r := rng.randf() * suma
+	var acc := 0.0
+	for k2 in wagi.keys():
+		acc += float(wagi[k2])
+		if r <= acc:
+			return po_id[k2]
+	return po_id[wagi.keys()[0]]
+
+
+func _losuj_z_katalogu_pojazdu_specjalnego(
+	kat: String,
+	miasto: Dictionary,
+	rng: RandomNumberGenerator,
+	miasto_gracza_id: String,
+	conf: Dictionary
+) -> Dictionary:
+	var rekord := _dobierz_z_katalogu_dobra(kat, rng)
+	var stan := "nowy" if rng.randf() < 0.55 else "uzywany"
+	var stany := _losuj_stany_jakosci(stan, rng)
+	var lata := 0 if stan == "nowy" else rng.randi_range(1, 15)
+	var cena: Variant = null
+	if rekord.get("cena_zl") is int or rekord.get("cena_zl") is float:
+		cena = _cena_z_katalogu_wiekiem(float(rekord["cena_zl"]), stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
+		cena = _cena_lub_null(zaokraglij_cene(kat, cena), cena)
+	elif rekord.get("cena_usd") is int or rekord.get("cena_usd") is float:
+		# Szacunek PLN ≈ USD * 4 — tylko gdy katalog ma USD i brak PLN.
+		cena = _cena_z_katalogu_wiekiem(float(rekord["cena_usd"]) * 4.0, stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
+		cena = _cena_lub_null(zaokraglij_cene(kat, cena), cena)
+	else:
+		cena = _cena_dobra(kat, stan, rng, int(stany.get("stan_deklarowany", 80)), 0)
+	var mid := str(miasto.get("id", ""))
+	var to_gracz := mid != "" and mid == miasto_gracza_id
+	var conf_uzyte: Dictionary = conf
+	if conf_uzyte.is_empty():
+		conf_uzyte = _nieruchomosci_conf()
+	var odl := _losuj_odleglosc(to_gracz, rng, conf_uzyte)
+	var czas: Dictionary = rekord.get("czas_oczekiwania", {}) if rekord.get("czas_oczekiwania") is Dictionary else {}
+	return {
+		"id": "d_%s_%d" % [kat, rng.randi()],
+		"kategoria": kat,
+		"nieruchomosc": false,
+		"nazwa": ("%s %s" % [str(rekord.get("marka", "")), str(rekord.get("model", ""))]).strip_edges(),
+		"marka": str(rekord.get("marka", "")),
+		"model": str(rekord.get("model", "")),
+		"stan": stan,
+		"stan_rzeczywisty": stany.get("stan_rzeczywisty"),
+		"stan_deklarowany": stany.get("stan_deklarowany"),
+		"stan_klamstwo": bool(stany.get("stan_klamstwo", false)),
+		"stan_ujawniony": false,
+		"lata_od_zakupu": lata if stan == "uzywany" else 0,
+		"czas_oczekiwania": czas if stan == "nowy" else {},
+		"szacunek": bool(rekord.get("szacunek", true)),
+		"zrodlo": str(rekord.get("zrodlo", "")),
+		"miasto_id": mid,
+		"miasto_nazwa": str(miasto.get("nazwa", "")),
+		"miasto_gracza": to_gracz,
+		"odleglosc_km": odl,
+		"cena_zl": cena,
+		"cena_wyjsciowa": cena,
+		"sposob_odbioru": "osobisty",
+		"propozycja_do_poprawki": true,
+		"obrazek": placeholder_sciezka(kat),
+		"uwaga_odblokowanie": "Wiek/licencja — TODO fala 2",
+	}
 
 
 func _losuj_samochod(
@@ -1928,16 +2157,21 @@ func _losuj_sposob_odbioru(rng: RandomNumberGenerator) -> String:
 	return "oba"
 
 
-## Używane: odbiór osobisty ZAWSZE dostępny (osobisty lub oba). Nowe: może salonowa wysyłka.
+## Używane: odbiór osobisty i/lub dostawa (osobisty / dostawa / oba). Nowe: salonowa wysyłka.
 func _losuj_sposob_odbioru_auta(stan: String, rng: RandomNumberGenerator, region_id: String = "miasto") -> String:
 	if region_id == "wysylka_zagranica":
 		return "wysylka" if stan == "nowy" else "oba"
 	if stan == "uzywany":
-		return "osobisty" if rng.randf() < 0.62 else "oba"
-	var r := rng.randf()
-	if r < 0.4:
+		var r := rng.randf()
+		if r < 0.45:
+			return "osobisty"
+		if r < 0.70:
+			return "oba" # osobisty + dostawa
+		return "dostawa"
+	var r2 := rng.randf()
+	if r2 < 0.4:
 		return "osobisty"
-	if r < 0.7:
+	if r2 < 0.7:
 		return "oba"
 	return "wysylka"
 

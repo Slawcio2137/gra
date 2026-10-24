@@ -213,6 +213,8 @@ func _on_nastepna_tura() -> void:
 	_swiat["event_odpowiedz_tekst"] = ""
 	_odswiez_flage_jedzenia_sam()
 	_wyplata_kieszonkowego_tydzien()
+	_wyplata_kieszonkowego_dziadkow_tydzien()
+	_efekt_konserwacji_auta_tydzien()
 	_losuj_eventy_tury()
 	_fallback_nauki_szkolnej()
 	_efekt_wygody_tydzien()
@@ -325,6 +327,13 @@ func _nowa_gra() -> void:
 	wynik["zarobki_rodziny"] = rodzina.get("zarobki", null)
 	if not _jest_liczba(wynik.get("pieniadze")):
 		wynik["pieniadze"] = 0
+	var dziad := Dziadkowie.new()
+	var dziadkowie_stan: Dictionary = dziad.losuj(rodzina, _losowanie, miejsce)
+	rodzina["dziadkowie"] = dziadkowie_stan
+	var zan := ZainteresowaniaLos.new()
+	wynik["zainteresowanie"] = zan.losuj_dominujace(_losowanie)
+	var syl := Sylwetka.new()
+	wynik["sylwetka"] = syl.do_zapisu()
 	var rodzenstwo := _losowanie.losuj_rodzenstwo(wynik)
 	_uzupelnij_normy_bohatera(wynik)
 	_jedzenie.ustaw_z_losowania(wynik, rodzina)
@@ -913,6 +922,14 @@ func _ekran_postac() -> void:
 		zm_f if zm_f != "" else "—",
 		zm_p if zm_p != "" else "—"
 	], 16))
+	var syl_txt := _opis_sylwetki(bohater)
+	if syl_txt != "":
+		_tresc_biala().add_child(_napis_ekranu(syl_txt, 16))
+	var zan_txt := _opis_zainteresowania(bohater)
+	if zan_txt != "":
+		_tresc_biala().add_child(_napis_ekranu(zan_txt, 16))
+	if bool(bohater.get("depresja", false)):
+		_tresc_biala().add_child(_napis_ekranu("Flaga: depresja (stub — pogłębianie w Fali 2).", 14))
 	# Docelowe tylko w trybie deweloperskim — nigdy na pasku / w normalnej grze.
 	if DostepStatystyk.POKAZ_STATYSTYKI:
 		var doc_dev := _tekst_liczby(_bohater().get("zadowolenie_docelowe"))
@@ -928,6 +945,16 @@ func _ekran_rodzina() -> void:
 	_tresc_biala().add_child(_napis_ekranu(_opis_rodzica(rodzina.get("matka")), 16))
 	_tresc_biala().add_child(_napis_ekranu("Ojciec", 18))
 	_tresc_biala().add_child(_napis_ekranu(_opis_rodzica(rodzina.get("ojciec")), 16))
+	_tresc_biala().add_child(_napis_ekranu("Dziadkowie", 18))
+	_tresc_biala().add_child(_napis_ekranu(_opis_dziadkow(rodzina.get("dziadkowie")), 16))
+	var prosba_d := Button.new()
+	prosba_d.text = "Poproś dziadków o kieszonkowe"
+	prosba_d.custom_minimum_size = Vector2(0, 48)
+	prosba_d.pressed.connect(_on_kieszonkowe_dziadkowie)
+	_tresc_biala().add_child(prosba_d)
+	var wynik_d := _napis_ekranu(str(_swiat.get("ostatnie_kieszonkowe_dziadkowie_tekst", "")), 15)
+	wynik_d.visible = str(_swiat.get("ostatnie_kieszonkowe_dziadkowie_tekst", "")) != ""
+	_tresc_biala().add_child(wynik_d)
 	var zarobki := _tekst_zarobkow(rodzina.get("zarobki"))
 	var etykieta_gosp := "Zarobki rodziny (suma rodziców)"
 	if rodzina.get("zarobki") is Dictionary and str(rodzina["zarobki"].get("dochód_gospodarstwa", "")) == "suma_przedzialow_rodzicow":
@@ -1088,6 +1115,112 @@ func _cechy_listy_z_karty(karta: Dictionary) -> String:
 			nazwy.append(nazwa)
 		numer += 1
 	return ", ".join(nazwy)
+
+
+func _opis_sylwetki(bohater: Dictionary) -> String:
+	var blok: Variant = bohater.get("sylwetka", {})
+	if not (blok is Dictionary):
+		return ""
+	var syl := Sylwetka.new()
+	syl.z_zapisu(blok)
+	return syl.tekst_stanu()
+
+
+func _opis_zainteresowania(bohater: Dictionary) -> String:
+	var z: Variant = bohater.get("zainteresowanie", {})
+	if not (z is Dictionary):
+		return ""
+	var nazwa := str(z.get("nazwa", ""))
+	if nazwa == "":
+		return ""
+	return "Zainteresowanie (dominujące): %s" % nazwa
+
+
+func _opis_dziadkow(blok: Variant) -> String:
+	if not (blok is Dictionary):
+		return "Brak w zapisie (Start jeszcze raz)."
+	var lista: Variant = blok.get("lista", [])
+	if not (lista is Array) or lista.is_empty():
+		return "Brak żyjących dziadków w wylosowanym zestawie."
+	var linie: PackedStringArray = []
+	for o in lista:
+		if not (o is Dictionary):
+			continue
+		linie.append(_opis_rodzica(o))
+	return "\n".join(linie)
+
+
+func _on_kieszonkowe_dziadkowie() -> void:
+	if _swiat.is_empty():
+		return
+	var rodzina: Variant = _swiat.get("rodzina", {})
+	if not (rodzina is Dictionary):
+		return
+	var stan_d: Dictionary = {}
+	if rodzina.get("dziadkowie") is Dictionary:
+		stan_d = rodzina["dziadkowie"]
+	if stan_d.get("lista") is Array and (stan_d["lista"] as Array).is_empty():
+		_swiat["ostatnie_kieszonkowe_dziadkowie_tekst"] = "Nie masz dziadków w zapisie."
+		_zaplanuj_stos()
+		return
+	var dziad := Dziadkowie.new()
+	var inteligencja := 1
+	var boh := _bohater()
+	if boh.get("inteligencja") is Array and not (boh["inteligencja"] as Array).is_empty():
+		inteligencja = 2
+	elif _jest_liczba(boh.get("inteligencja")):
+		inteligencja = clampi(int(boh["inteligencja"]) / 33, 0, 3)
+	var wynik: Dictionary = dziad.popros_o_kieszonkowe(
+		stan_d, rodzina, inteligencja, int(_swiat.get("tydzien", 0)), false
+	)
+	rodzina["dziadkowie"] = stan_d
+	_swiat["rodzina"] = rodzina
+	_swiat["ostatnie_kieszonkowe_dziadkowie_tekst"] = str(wynik.get("tekst", ""))
+	if bool(wynik.get("ok", false)) and _jest_liczba(wynik.get("kwota")):
+		_dodaj_pieniadze(int(wynik["kwota"]))
+		_dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
+	SkryptZapisu.zapisz(_swiat)
+	_odswiez_pasek_statystyk(true)
+	_zaplanuj_stos()
+
+
+func _wyplata_kieszonkowego_dziadkow_tydzien() -> void:
+	var rodzina: Variant = _swiat.get("rodzina", {})
+	if not (rodzina is Dictionary) or not (rodzina.get("dziadkowie") is Dictionary):
+		return
+	var stan_d: Dictionary = rodzina["dziadkowie"]
+	var dziad := Dziadkowie.new()
+	var wynik: Dictionary = dziad.wyplata_tygodniowa(stan_d, int(_swiat.get("tydzien", 0)))
+	rodzina["dziadkowie"] = stan_d
+	_swiat["rodzina"] = rodzina
+	if bool(wynik.get("ok", false)) and _jest_liczba(wynik.get("kwota")):
+		_dodaj_pieniadze(int(wynik["kwota"]))
+		_dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
+		var kom := str(_swiat.get("komunikat_tury", ""))
+		var dopisek := str(wynik.get("tekst", ""))
+		_swiat["komunikat_tury"] = (kom + "\n" + dopisek).strip_edges() if kom != "" else dopisek
+
+
+func _efekt_konserwacji_auta_tydzien() -> void:
+	var auto: Variant = _swiat.get("auto", null)
+	if not (auto is Dictionary):
+		return
+	var stan_k: Dictionary = {}
+	if auto.get("konserwacja") is Dictionary:
+		stan_k = auto["konserwacja"]
+	else:
+		var k := KonserwacjaAuta.new()
+		stan_k = k.stan_startowy()
+	var kon := KonserwacjaAuta.new()
+	var tydzien := int(_swiat.get("tydzien", 1))
+	var zima := tydzien <= 8 or tydzien >= 48
+	var efekt: Dictionary = kon.efekt_tury(stan_k, zima)
+	auto["konserwacja"] = stan_k
+	_swiat["auto"] = auto
+	if efekt.get("teksty") is Array and not (efekt["teksty"] as Array).is_empty():
+		var kom := str(_swiat.get("komunikat_tury", ""))
+		var dop := " · ".join(PackedStringArray(efekt["teksty"]))
+		_swiat["komunikat_tury"] = (kom + "\n" + dop).strip_edges() if kom != "" else dop
 
 
 func _on_kieszonkowe() -> void:
@@ -1595,7 +1728,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		var opcje_odbior := OptionButton.new()
 		opcje_odbior.add_item("Wszystkie (bez filtra)", 0)
 		opcje_odbior.add_item("Tylko odbiór osobisty", 1)
-		opcje_odbior.add_item("Tylko wysyłka", 2)
+		opcje_odbior.add_item("Tylko wysyłka / dostawa", 2)
 		opcje_odbior.select(0)
 		opcje_odbior.custom_minimum_size = Vector2(0, 40)
 		opcje_odbior.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -1816,6 +1949,10 @@ func _buduj_skrot_karty_oferty(
 		))
 		if kat_id == "samochod" and _jest_liczba(o.get("przebieg_km")):
 			wiersz.add_child(_napis_ekranu("Przebieg: %d km" % int(o["przebieg_km"]), 16))
+		elif _jest_liczba(o.get("lata_od_zakupu")):
+			wiersz.add_child(_napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
+		if str(o.get("segment", "")) != "":
+			wiersz.add_child(_napis_ekranu("Segment: %s" % str(o["segment"]), 15))
 	var b_sz := Button.new()
 	b_sz.text = "Szczegóły / kup"
 	b_sz.custom_minimum_size = Vector2(0, 44)
@@ -1922,6 +2059,16 @@ func _buduj_pelna_karte_oferty(
 			],
 			16
 		))
+		if _jest_liczba(o.get("lata_od_zakupu")) and kat_id != "samochod":
+			wiersz.add_child(_napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
+		if str(o.get("segment", "")) != "":
+			wiersz.add_child(_napis_ekranu("Segment: %s" % str(o["segment"]), 16))
+		if o.get("czas_oczekiwania") is Dictionary and not (o["czas_oczekiwania"] as Dictionary).is_empty():
+			var cz: Dictionary = o["czas_oczekiwania"]
+			wiersz.add_child(_napis_ekranu(
+				"Czas oczekiwania (fabryka): %d lat + %d tyg." % [int(cz.get("lata", 0)), int(cz.get("tygodnie", 0))],
+				16
+			))
 		if kat_id == "samochod":
 			if _jest_liczba(o.get("przebieg_km")):
 				wiersz.add_child(_napis_ekranu("Przebieg: %d km" % int(o["przebieg_km"]), 16))
@@ -2029,8 +2176,10 @@ func _etykieta_odbioru(sposob: String) -> String:
 			return "odbiór osobisty"
 		"wysylka":
 			return "wysyłka"
+		"dostawa":
+			return "dostawa"
 		"oba":
-			return "odbiór osobisty / wysyłka"
+			return "odbiór osobisty / dostawa"
 		_:
 			return "odbiór osobisty —"
 

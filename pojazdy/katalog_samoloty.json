@@ -1,0 +1,78 @@
+{
+	"opis": "Odrzutowce / lekkie odrzutowce biznesowe — dane do Zakupów. Odblokowanie wiekiem: TODO fala 2. Ceny USD→PLN szacunkowe (kurs ~4 zł).",
+	"kategoria": "samolot",
+	"propozycja_do_poprawki": true,
+	"uwaga_odblokowanie": "W grze na razie katalog + wpis w Zakupach; wiek/licencja później.",
+	"modele": [
+		{
+			"id": "cessna_citation_m2",
+			"marka": "Cessna",
+			"model": "Citation M2",
+			"typ": "lekki_odrzutowiec",
+			"cena_usd": 5400000,
+			"cena_zl": 21600000,
+			"szacunek": true,
+			"zrodlo": "https://cessna.txtav.com/en/citation/m2",
+			"zrodlo_opis": "Cessna Citation M2 — cena katalogowa rzędu ~5–5.5 mln USD (szacunek rynkowy / materiały Textron; nie cennik PL).",
+			"zuzycie": {"paliwo_jednostka": "lb/h", "paliwo_okolo": 1000, "szacunek": true},
+			"czas_oczekiwania": {"lata": 1, "tygodnie": 20, "opis": "kolejka fabryczna nowych — szacunek"},
+			"waga": 8
+		},
+		{
+			"id": "embraer_phenom_300e",
+			"marka": "Embraer",
+			"model": "Phenom 300E",
+			"typ": "lekki_odrzutowiec",
+			"cena_usd": 10500000,
+			"cena_zl": 42000000,
+			"szacunek": true,
+			"zrodlo": "https://www.embraer.com/global/en/aircraft/executive-jets/phenom-300e",
+			"zrodlo_opis": "Embraer Phenom 300E — rząd wielkości ~9–11 mln USD (szacunek z zestawień biznes-jet, nie oficjalny cennik PL).",
+			"zuzycie": {"paliwo_jednostka": "lb/h", "paliwo_okolo": 1600, "szacunek": true},
+			"czas_oczekiwania": {"lata": 2, "tygodnie": 10, "opis": "kolejka fabryczna — szacunek"},
+			"waga": 10
+		},
+		{
+			"id": "bombardier_challenger_350",
+			"marka": "Bombardier",
+			"model": "Challenger 350",
+			"typ": "super_midsize",
+			"cena_usd": 26900000,
+			"cena_zl": 107600000,
+			"szacunek": true,
+			"zrodlo": "https://businessaircraft.bombardier.com/en/aircraft/challenger-3500",
+			"zrodlo_opis": "Bombardier Challenger 350/3500 — rząd ~26–28 mln USD (szacunek z publicznych zestawień list price).",
+			"zuzycie": {"paliwo_jednostka": "lb/h", "paliwo_okolo": 2400, "szacunek": true},
+			"czas_oczekiwania": {"lata": 2, "tygodnie": 26, "opis": "kolejka fabryczna — szacunek"},
+			"waga": 6
+		},
+		{
+			"id": "gulfstream_g280",
+			"marka": "Gulfstream",
+			"model": "G280",
+			"typ": "super_midsize",
+			"cena_usd": 24500000,
+			"cena_zl": 98000000,
+			"szacunek": true,
+			"zrodlo": "https://www.gulfstream.com/en/aircraft/gulfstream-g280/",
+			"zrodlo_opis": "Gulfstream G280 — rząd ~24–25 mln USD (szacunek list price / media branżowe).",
+			"zuzycie": {"paliwo_jednostka": "lb/h", "paliwo_okolo": 2300, "szacunek": true},
+			"czas_oczekiwania": {"lata": 3, "tygodnie": 0, "opis": "kolejka fabryczna — szacunek"},
+			"waga": 5
+		},
+		{
+			"id": "dassault_falcon_2000lxs",
+			"marka": "Dassault",
+			"model": "Falcon 2000LXS",
+			"typ": "large_cabin",
+			"cena_usd": 34000000,
+			"cena_zl": 136000000,
+			"szacunek": true,
+			"zrodlo": "https://www.dassaultfalcon.com/en/aircraft/falcon-2000lxs/",
+			"zrodlo_opis": "Dassault Falcon 2000LXS — rząd ~33–36 mln USD (szacunek).",
+			"zuzycie": {"paliwo_jednostka": "lb/h", "paliwo_okolo": 2800, "szacunek": true},
+			"czas_oczekiwania": {"lata": 3, "tygodnie": 12, "opis": "kolejka fabryczna — szacunek"},
+			"waga": 4
+		}
+	]
+}

@@ -21,11 +21,19 @@
 			"wygoda_100": {"offset": 30, "docelowe": 80}
 		}
 	},
+	"clamp_widocznej": [-100, 100],
+	"uwaga_clamp": "Góra 100; dół może < 0. Po ≥4 tygodniach z psychiką <0 → flaga depresji (stub pogłębiania).",
+	"depresja": {
+		"tygodnie_ponizej_0": 4,
+		"flaga": "depresja",
+		"pogłębianie_stub": true,
+		"propozycja_do_poprawki": true
+	},
 	"dryf_tury": {
 		"propozycja_do_poprawki": true,
 		"wzor": "nowe = obecne + 0.5 * (docelowe - obecne)",
 		"udzial_odleglosci": 0.5,
-		"zaokraglenie": "roundi: delta = roundi(0.5 * (docelowe - obecne)); nowe = clamp(obecne + delta, 0, 100). Połowa od zera w górę (0.5→1, −0.5→−1).",
+		"zaokraglenie": "roundi: delta = roundi(0.5 * (docelowe - obecne)); nowe = clamp(obecne + delta, dol, 100). Dół z clamp_widocznej (może <0).",
 		"przyklad": "obecne 50, docelowe 80 → +15 → 65"
 	},
 	"napis_tygodnia": {

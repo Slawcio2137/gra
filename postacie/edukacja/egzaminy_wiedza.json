@@ -1,0 +1,24 @@
+{
+	"opis": "Stub egzaminu ósmoklasisty i matury — poziom wiedzy jak etapy kucharza (JSON etapów).",
+	"propozycja_do_poprawki": true,
+	"poziom_wiedzy": {
+		"etapy": ["brak podstaw", "słaby", "średni", "dobry", "bardzo dobry"],
+		"punkty_w_etapie_max": 100
+	},
+	"egzaminy": [
+		{
+			"id": "osmoklasisty",
+			"nazwa": "Egzamin ósmoklasisty",
+			"wiek_typowy": 14,
+			"stub": true,
+			"wzor": "wynik ≈ f(poziom_wiedzy, inteligencja, nauka_tygodnie) — bez pełnej symulacji w Fali 1"
+		},
+		{
+			"id": "matura",
+			"nazwa": "Matura",
+			"wiek_typowy": 18,
+			"stub": true,
+			"wzor": "jak ósmoklasisty + profil szkoły"
+		}
+	]
+}

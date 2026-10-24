@@ -54,14 +54,32 @@
 			"id": "ksiazka",
 			"nazwa": "Książka",
 			"stan_uzywany_nowy": true,
-			"stany_nieruchomosci": []
+			"stany_nieruchomosci": [],
+			"katalog": "res://zakupy/katalog_ksiazki.json"
+		},
+		{
+			"id": "sprzet",
+			"nazwa": "Sprzęt",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"katalog": "res://zakupy/katalog_sprzet.json",
+			"uwaga": "Słuchawki, klawiatura, mysz, mikrofon — osobna zakładka."
 		},
 		{
 			"id": "samolot",
 			"nazwa": "Samolot",
 			"stan_uzywany_nowy": true,
 			"stany_nieruchomosci": [],
-			"uwaga": "Kategoria sensowna rzadko; oferty przykładowe z ceną null."
+			"katalog": "res://pojazdy/katalog_samoloty.json",
+			"uwaga": "Odrzutowce — dane + wpis; odblokowanie wiekiem w TODO fala 2."
+		},
+		{
+			"id": "smiglowiec_bojowy",
+			"nazwa": "Śmigłowiec bojowy",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"katalog": "res://pojazdy/katalog_smiglowce_bojowe.json",
+			"uwaga": "Dane katalogowe; ceny militarne często null + szacunek. Odblokowanie wiekiem: TODO."
 		},
 		{
 			"id": "dom",
@@ -110,14 +128,32 @@
 		"laptop": ["Lenovo", "ASUS", "HP", "Dell", "Apple", "Acer"],
 		"komputer": ["Gotowiec (składak)", "Dell", "HP", "Lenovo", "ASUS"],
 		"samochod": ["Toyota", "Skoda", "Volkswagen", "Hyundai", "Kia", "Dacia"],
-		"rower": ["Kross", "Romet", "Giant", "Merida", "Author"]
+		"rower": ["Kross", "Romet", "Giant", "Merida", "Author"],
+		"sprzet": ["Sony-like", "Logitech-like", "HyperX-like", "Razer-like"],
+		"samolot": ["Cessna", "Embraer", "Bombardier", "Gulfstream", "Dassault"],
+		"smiglowiec_bojowy": ["Boeing", "Airbus Helicopters", "Mil", "Leonardo"]
 	},
 	"pule_modeli": {
 		"telefon": ["A15", "Redmi Note", "Galaxy A", "iPhone SE", "G84", "Pixel-like"],
 		"laptop": ["IdeaPad", "VivoBook", "Pavilion", "Inspiron", "MacBook Air", "Swift"],
-		"komputer": ["biurowy", "domowy", "mini-PC"],
+		"komputer": ["biurowy", "domowy", "mini-PC", "gaming"],
 		"samochod": ["(modele z katalog_aut_pl.json)"],
-		"rower": ["miejski", "trekking", "MTB"]
+		"rower": ["miejski", "trekking", "MTB"],
+		"sprzet": ["słuchawki", "klawiatura", "mysz", "mikrofon"],
+		"samolot": ["(katalog_samoloty.json)"],
+		"smiglowiec_bojowy": ["(katalog_smiglowce_bojowe.json)"]
+	},
+	"katalogi_dobr": {
+		"telefon": "res://zakupy/katalog_telefony.json",
+		"rower": "res://zakupy/katalog_rowery.json",
+		"komputer": "res://zakupy/katalog_komputery.json",
+		"laptop": "res://zakupy/katalog_komputery.json",
+		"ksiazka": "res://zakupy/katalog_ksiazki.json",
+		"sprzet": "res://zakupy/katalog_sprzet.json",
+		"samolot": "res://pojazdy/katalog_samoloty.json",
+		"smiglowiec_bojowy": "res://pojazdy/katalog_smiglowce_bojowe.json",
+		"wiek_zamiast_przebiegu": ["telefon", "rower", "laptop", "komputer", "sprzet"],
+		"uwaga": "Używane: lata_od_zakupu zamiast przebiegu_km. Nowe = 0."
 	},
 	"nieruchomosci": {
 		"opis": "Parametry losowania mieszkań/domów. Limit ofert na miasto × turę. Cena ze wzoru.",
@@ -354,8 +390,18 @@
 		"rower": {"nowy": [600, 3500], "uzywany": [150, 1500]},
 		"samochod": {"nowy": [60000, 180000], "uzywany": [2500, 90000]},
 		"ksiazka": {"nowy": [25, 89], "uzywany": [5, 40]},
-		"samolot": {"nowy": null, "uzywany": null},
+		"sprzet": {"nowy": [50, 600], "uzywany": [20, 350]},
+		"samolot": {"nowy": [20000000, 140000000], "uzywany": [8000000, 90000000], "uwaga": "Szacunek z katalog_samoloty; militarne osobno często null."},
+		"smiglowiec_bojowy": {"nowy": null, "uzywany": null, "uwaga": "Ceny militarne — nie zmyślać; null gdy brak źródła."},
 		"uwaga_auta_tanie": "Tier ~2500+ zł „jeżdżące”; uszkodzone taniej (kotwice AAA Auto / Otomoto, szacunek)."
+	},
+	"lata_od_zakupu": {
+		"propozycja_do_poprawki": true,
+		"opis": "Dla telefon/rower/PC/sprzęt: zamiast przebiegu. Nowe = 0.",
+		"nowy": 0,
+		"uzywany": {"od": 1, "do": 8},
+		"mnoznik_ceny_za_rok": 0.08,
+		"mnoznik_min": 0.35
 	},
 	"auta": {
 		"propozycja_do_poprawki": true,
@@ -375,8 +421,11 @@
 			"propozycja_do_poprawki": true
 		},
 		"zakladka_flaga": "rynek_zakupow.zakladka_samochodow_aktywna",
-		"odbior_uzywany": "zawsze_osobisty_lub_oba",
-		"ocena_stanu": "kazdy_auto; osobisty=przed_zakupem; wysylka=po_dostawie_lub_ogledzinach",
+		"odbior_uzywany": "osobisty_dostawa_lub_oba",
+		"dostawa_uzywane": true,
+		"pula_wojewodztwo": "suma baz miast w województwie (ludnosc/5000) lub próbka realistyczna",
+		"ocena_stanu": "kazdy_auto; osobisty=przed_zakupem; dostawa/wysylka=po_dostawie_lub_ogledzinach",
+		"konserwacja": "res://pojazdy/konserwacja_aut.json",
 		"usterki": "res://pojazdy/usterki_aut.json",
 		"znajomosc_pojazdow": "res://postacie/znajomosc_pojazdow.json",
 		"kotwice_tanich": {
@@ -405,7 +454,9 @@
 			"telefon": 10,
 			"laptop": 50,
 			"komputer": 50,
-			"samolot": 1000
+			"sprzet": 10,
+			"samolot": 100000,
+			"smiglowiec_bojowy": 100000
 		},
 		"domyslny_krok_zl": 10,
 		"samochod_regula": {

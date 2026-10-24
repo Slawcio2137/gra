@@ -1,0 +1,21 @@
+{
+	"opis": "Zainteresowania jak cechy: koło, jedno dominujące. Start ogólne; doprecyzowanie z wiekiem (TODO fala 2).",
+	"propozycja_do_poprawki": true,
+	"jedno_dominujace": true,
+	"start_ogolne": [
+		{"id": "kosmos", "nazwa": "Kosmos", "waga": 12, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "pojazdy", "nazwa": "Pojazdy", "waga": 14, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "zwierzeta", "nazwa": "Zwierzęta", "waga": 11, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "gry", "nazwa": "Gry", "waga": 13, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "sport", "nazwa": "Sport", "waga": 12, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "muzyka", "nazwa": "Muzyka", "waga": 10, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "rysowanie", "nazwa": "Rysowanie", "waga": 9, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "przyroda", "nazwa": "Przyroda", "waga": 10, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "historia", "nazwa": "Historia", "waga": 7, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"},
+		{"id": "gotowanie", "nazwa": "Gotowanie", "waga": 8, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"}
+	],
+	"doprecyzowanie_z_wiekiem": {
+		"stub": true,
+		"opis": "Od ~10–12 lat koło może zawęzić ogólne → konkret (np. pojazdy→samoloty). Fala 2."
+	}
+}

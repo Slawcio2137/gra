@@ -1,0 +1,14 @@
+{
+	"opis": "Telefony: używane jak auta, zamiast przebiegu lata_od_zakupu. Nowe = 0.",
+	"kategoria": "telefon",
+	"propozycja_do_poprawki": true,
+	"wiek_zamiast_przebiegu": "lata_od_zakupu",
+	"modele": [
+		{"id": "samsung_a15", "marka": "Samsung", "model": "Galaxy A15", "segment": "budzet", "cena_zl": 799, "szacunek": true, "zrodlo": "https://www.samsung.com/pl/", "zrodlo_opis": "Samsung A15 — rząd cen PL szacunek.", "waga": 12},
+		{"id": "xiaomi_redmi_note", "marka": "Xiaomi", "model": "Redmi Note 13", "segment": "budzet", "cena_zl": 999, "szacunek": true, "zrodlo": "https://www.mi.com/pl/", "zrodlo_opis": "Redmi Note — szacunek PL.", "waga": 11},
+		{"id": "motorola_g84", "marka": "Motorola", "model": "moto g84", "segment": "sredni", "cena_zl": 1199, "szacunek": true, "zrodlo": "https://www.motorola.pl/", "zrodlo_opis": "moto g — szacunek.", "waga": 8},
+		{"id": "apple_iphone_se", "marka": "Apple", "model": "iPhone SE", "segment": "premium", "cena_zl": 2499, "szacunek": true, "zrodlo": "https://www.apple.com/pl/", "zrodlo_opis": "iPhone SE — rząd cen PL szacunek.", "waga": 7},
+		{"id": "nothing_phone_2a", "marka": "Nothing", "model": "Phone (2a)", "segment": "sredni", "cena_zl": 1599, "szacunek": true, "zrodlo": "https://nothing.tech/", "zrodlo_opis": "Nothing Phone — szacunek.", "waga": 5},
+		{"id": "realme_12", "marka": "Realme", "model": "12", "segment": "budzet", "cena_zl": 899, "szacunek": true, "zrodlo": "https://www.realme.com/pl/", "zrodlo_opis": "Realme — szacunek.", "waga": 6}
+	]
+}

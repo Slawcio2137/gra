@@ -1,0 +1,14 @@
+{
+	"opis": "Rowery jak auta używane: zamiast przebiegu lata_od_zakupu (lata). Nowe = 0.",
+	"kategoria": "rower",
+	"propozycja_do_poprawki": true,
+	"wiek_zamiast_przebiegu": "lata_od_zakupu",
+	"modele": [
+		{"id": "kross_trans_4_0", "marka": "Kross", "model": "Trans 4.0", "segment": "trekking", "cena_zl": 2499, "szacunek": true, "zrodlo": "https://www.kross.pl/", "zrodlo_opis": "Kross trekking — rząd cen PL (szacunek cennika).", "waga": 10},
+		{"id": "romet_wagant", "marka": "Romet", "model": "Wagant 1", "segment": "miejski", "cena_zl": 1299, "szacunek": true, "zrodlo": "https://romet.pl/", "zrodlo_opis": "Romet miejski — szacunek.", "waga": 9},
+		{"id": "giant_escape", "marka": "Giant", "model": "Escape 3", "segment": "fitness", "cena_zl": 3199, "szacunek": true, "zrodlo": "https://www.giant-bicycles.com/", "zrodlo_opis": "Giant Escape — rząd cen EU/PL szacunek.", "waga": 8},
+		{"id": "merida_crossway", "marka": "Merida", "model": "Crossway 20", "segment": "trekking", "cena_zl": 2899, "szacunek": true, "zrodlo": "https://www.merida-bikes.com/", "zrodlo_opis": "Merida Crossway — szacunek.", "waga": 8},
+		{"id": "author_horizon", "marka": "Author", "model": "Horizon", "segment": "MTB", "cena_zl": 2799, "szacunek": true, "zrodlo": "https://www.author.eu/", "zrodlo_opis": "Author MTB — szacunek.", "waga": 7},
+		{"id": "cube_aim", "marka": "Cube", "model": "Aim", "segment": "MTB", "cena_zl": 3499, "szacunek": true, "zrodlo": "https://www.cube.eu/", "zrodlo_opis": "Cube Aim — szacunek.", "waga": 6}
+	]
+}

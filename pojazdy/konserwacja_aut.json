@@ -1,0 +1,30 @@
+{
+	"opis": "Stub konserwacji auta: olej, filtry, opony; zima → rdza; brak oleju → zatarcie. Naprawa: samodzielnie / YT / przyjaciel mechanik.",
+	"propozycja_do_poprawki": true,
+	"progi": {
+		"olej_ostrzezenie": 25,
+		"olej_krytyczny": 8,
+		"filtry_zuzycie_tydzien": 1.2,
+		"opony_zuzycie_tydzien": 0.8,
+		"olej_zuzycie_tydzien": 1.5
+	},
+	"efekty": {
+		"brak_oleju_szansa_zatarcia": 0.08,
+		"zima_bez_konserwacji_szansa_rdzy": 0.05,
+		"zima_z_konserwacja_szansa_rdzy": 0.01,
+		"propozycja_do_poprawki": true
+	},
+	"naprawy": {
+		"samodzielnie": {"szansa_sukcesu": 0.45, "koszt_mnoznik": 0.35, "ryzyko_pogorszenia": 0.2},
+		"youtube": {"szansa_sukcesu": 0.55, "koszt_mnoznik": 0.4, "ryzyko_pogorszenia": 0.12},
+		"przyjaciel_mechanik": {"szansa_sukcesu": 0.82, "koszt_mnoznik": 0.65, "ryzyko_pogorszenia": 0.03},
+		"warsztat": {"szansa_sukcesu": 0.95, "koszt_mnoznik": 1.0, "ryzyko_pogorszenia": 0.0},
+		"propozycja_do_poprawki": true
+	},
+	"start_stanu": {
+		"olej": 80,
+		"filtry": 75,
+		"opony": 70,
+		"konserwacja_zima": false
+	}
+}

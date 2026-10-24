@@ -1,0 +1,25 @@
+{
+	"opis": "Sylwetka jak wprawa gotowania: etapy + punkty X/100 + zielony pasek. Praca fizyczna / fuchy domowe podnoszą.",
+	"propozycja_do_poprawki": true,
+	"etapy": [
+		"wątła",
+		"przeciętna",
+		"sprawna",
+		"wytrenowana",
+		"bardzo silna"
+	],
+	"punkty_w_etapie_max": 100,
+	"postep": {
+		"punkty_za_fuche_domowa": 4,
+		"punkty_za_prace_fizyczna": 6,
+		"propozycja_do_poprawki": true
+	},
+	"regres": {
+		"bazowy_spadek_punktow_na_tydzien": 2,
+		"propozycja_do_poprawki": true
+	},
+	"ui": {
+		"pasek_kolor": "zielony",
+		"pokazuj_etap_i_punkty": true
+	}
+}

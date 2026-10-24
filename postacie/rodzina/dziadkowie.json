@@ -1,0 +1,30 @@
+{
+	"opis": "Losowanie dziadków (babcia/dziadek od matki i/lub ojca). Sensowny zestaw: nie zawsze wszyscy żyją. Lokalizacja: najczęściej to samo miasto / sąsiednie.",
+	"propozycja_do_poprawki": true,
+	"to_nie_gus": true,
+	"zestawy": [
+		{"id": "oboje_matki", "babcia_matki": true, "dziadek_matki": true, "babcia_ojca": false, "dziadek_ojca": false, "waga": 18},
+		{"id": "oboje_ojca", "babcia_matki": false, "dziadek_matki": false, "babcia_ojca": true, "dziadek_ojca": true, "waga": 14},
+		{"id": "wszyscy_czterej", "babcia_matki": true, "dziadek_matki": true, "babcia_ojca": true, "dziadek_ojca": true, "waga": 22},
+		{"id": "trzy_babcie_dziadek", "babcia_matki": true, "dziadek_matki": true, "babcia_ojca": true, "dziadek_ojca": false, "waga": 16},
+		{"id": "tylko_babcie", "babcia_matki": true, "dziadek_matki": false, "babcia_ojca": true, "dziadek_ojca": false, "waga": 12},
+		{"id": "jedna_linia_babcia", "babcia_matki": true, "dziadek_matki": false, "babcia_ojca": false, "dziadek_ojca": false, "waga": 10},
+		{"id": "brak", "babcia_matki": false, "dziadek_matki": false, "babcia_ojca": false, "dziadek_ojca": false, "waga": 8}
+	],
+	"lokalizacja": {
+		"propozycja_do_poprawki": true,
+		"wagi": {
+			"to_samo_miasto": 55,
+			"sasiednie_miasto": 30,
+			"inne_w_wojewodztwie": 12,
+			"daleko": 3
+		},
+		"uwaga": "Sąsiednie = inne miasto w tym samym powiecie/województwie gdy dostępne w indeksie."
+	},
+	"zarobki": {
+		"opis": "Uproszczone: emerytura / część czasu praca. Mnożnik względem rodzica tej linii.",
+		"propozycja_do_poprawki": true,
+		"mnoznik_emerytura": 0.55,
+		"szansa_jeszcze_pracuje": 0.22
+	}
+}

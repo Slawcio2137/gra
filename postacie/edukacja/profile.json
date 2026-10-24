@@ -16,7 +16,10 @@
         {"id": "geograficzny", "nazwa": "Geograficzny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["przestrzenna"]},
         {"id": "spoleczno_prawny", "nazwa": "Społeczno-prawny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["jezykowa"]},
         {"id": "ekonomiczny", "nazwa": "Ekonomiczny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["logiczno_matematyczna"]},
-        {"id": "politechniczny", "nazwa": "Politechniczny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["logiczno_matematyczna", "przestrzenna"]}
+        {"id": "politechniczny", "nazwa": "Politechniczny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["logiczno_matematyczna", "przestrzenna"]},
+        {"id": "sportowy", "nazwa": "Sportowy", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": []},
+        {"id": "artystyczny", "nazwa": "Artystyczny / plastyczny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["przestrzenna"]},
+        {"id": "medialny", "nazwa": "Medialny", "waga": null, "zrodlo": null, "warunek": "Oceny z przedmiotów tego kierunku, rodzaj inteligencji i czy taka szkoła jest w okolicy. Bez progu punktów.", "pasuje_inteligencja": ["jezykowa"]}
       ]
     },
     {

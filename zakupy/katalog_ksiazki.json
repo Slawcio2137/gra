@@ -1,0 +1,14 @@
+{
+	"opis": "Książki — przykładowa pula tytułów / gatunków do losowania ofert.",
+	"kategoria": "ksiazka",
+	"propozycja_do_poprawki": true,
+	"gatunki": ["beletrystyka", "popularnonaukowa", "podrecznik", "komiks", "biografia"],
+	"tytuly": [
+		{"id": "lektura_szkolna", "nazwa": "Lektura szkolna (używana)", "gatunek": "podrecznik", "cena_zl": 19, "szacunek": true, "waga": 12},
+		{"id": "powiesc_pl", "nazwa": "Powieść współczesna PL", "gatunek": "beletrystyka", "cena_zl": 42, "szacunek": true, "waga": 10},
+		{"id": "kosmos_pop", "nazwa": "Kosmos dla laika", "gatunek": "popularnonaukowa", "cena_zl": 49, "szacunek": true, "waga": 6},
+		{"id": "auta_historia", "nazwa": "Historia motoryzacji", "gatunek": "popularnonaukowa", "cena_zl": 59, "szacunek": true, "waga": 5},
+		{"id": "komiks_tom", "nazwa": "Komiks — tom 1", "gatunek": "komiks", "cena_zl": 35, "szacunek": true, "waga": 7},
+		{"id": "biografia_sport", "nazwa": "Biografia sportowca", "gatunek": "biografia", "cena_zl": 45, "szacunek": true, "waga": 4}
+	]
+}

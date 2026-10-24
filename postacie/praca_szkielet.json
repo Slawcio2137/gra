@@ -1,0 +1,16 @@
+{
+	"opis": "Szkielet pracy / fuch. Większość 18+, mało 16+. Fuchy domowe: kilkadziesiąt zł + zmęczenie + sylwetka.",
+	"propozycja_do_poprawki": true,
+	"zrodla_odblokowania": [
+		{"id": "ogloszenie", "nazwa": "Ogłoszenie"},
+		{"id": "rodzic", "nazwa": "Rodzic załatwił"},
+		{"id": "internet", "nazwa": "Internet"},
+		{"id": "fucha_wujka", "nazwa": "Fucha u wujka / ojca w domu"}
+	],
+	"prace": [
+		{"id": "fucha_ogrod", "nazwa": "Pielenie / ogród", "wiek_min": 12, "placa_zl": [20, 60], "zmeczenie": 12, "sylwetka_pkt": 4, "zrodlo": ["fucha_wujka", "rodzic"], "szacunek": true},
+		{"id": "fucha_snieg", "nazwa": "Odśnieżanie", "wiek_min": 13, "placa_zl": [30, 80], "zmeczenie": 18, "sylwetka_pkt": 5, "zrodlo": ["fucha_wujka", "ogloszenie"], "szacunek": true},
+		{"id": "pomoc_sklep", "nazwa": "Pomoc w sklepie", "wiek_min": 16, "placa_zl": [80, 180], "zmeczenie": 22, "sylwetka_pkt": 2, "zrodlo": ["ogloszenie", "rodzic", "internet"], "szacunek": true},
+		{"id": "praca_biuro_junior", "nazwa": "Drobna praca biurowa", "wiek_min": 18, "placa_zl": [200, 450], "zmeczenie": 15, "sylwetka_pkt": 0, "zrodlo": ["internet", "ogloszenie", "rodzic"], "szacunek": true}
+	]
+}
