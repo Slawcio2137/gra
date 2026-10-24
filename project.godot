@@ -32,3 +32,4 @@ window/handheld/orientation=1
 
 environment/defaults/default_clear_color=Color(0.141176, 0.219608, 0.266667, 1)
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
