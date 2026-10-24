@@ -1,0 +1,21 @@
+{
+  "opis": "Ułamki diet według kraju. Skrypt nie trzyma procentu Polski w kodzie. Brak klucza kraju daje puste ułamki (null), bez wyjątku i bez podstawiania Polski.",
+  "kraje": {
+    "polska": {
+      "ulamek_wegetarian": 0.01,
+      "procent_w_cytacie": 1,
+      "ulamek_wegan": null,
+      "rok": 2014,
+      "zrodlo": {
+        "tytul": "Zachowania żywieniowe Polaków",
+        "kto": "CBOS, opracował Michał Feliksiak",
+        "data": "sierpień 2014",
+        "numer": "115/2014",
+        "url": "https://www.cbos.pl/SPISKOM.POL/2014/K_115_14.PDF",
+        "badanie": "Aktualne problemy i wydarzenia (290), wywiady bezpośrednie CAPI, 3–9 lipca 2014, próba 943 dorosłych mieszkańców Polski.",
+        "cytat": "tych, którzy w ogóle nie jedzą mięsa, jest bardzo mało – wegetarianie stanowią 1% społeczeństwa.",
+        "weganie": "Ten komunikat nie podaje osobnego ułamka wegan. Pole ulamek_wegan zostaje null."
+      }
+    }
+  }
+}

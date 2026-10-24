@@ -1,0 +1,63 @@
+{
+	"opis": "Lista usterek ofert samochodów. Sprzedawca może ujawnić część / nic. Pozalewowe często ukryte. Wykrywanie: ocena własna (inteligencja, znajomość pojazdów, internet) lub ekspert. Usterki z vmax_delta obniżają efektywną prędkość max. Awaria silnika: nie_jezdzi. Propozycja do poprawki.",
+	"propozycja_do_poprawki": true,
+	"usterki": [
+		{"id": "wyciek_oleju", "nazwa": "Wyciek oleju", "powaga": 2, "szansa_w_uzywanym": 0.18, "szansa_ukrycia": 0.35},
+		{"id": "korozja_progow", "nazwa": "Korozja progów", "powaga": 3, "szansa_w_uzywanym": 0.22, "szansa_ukrycia": 0.4},
+		{"id": "bicie_sprzegla", "nazwa": "Bicie sprzęgła", "powaga": 3, "szansa_w_uzywanym": 0.12, "szansa_ukrycia": 0.45, "vmax_delta": -10},
+		{"id": "blad_elektroniki", "nazwa": "Błąd elektroniki", "powaga": 2, "szansa_w_uzywanym": 0.15, "szansa_ukrycia": 0.5},
+		{"id": "luz_w_zawieszeniu", "nazwa": "Luz w zawieszeniu", "powaga": 2, "szansa_w_uzywanym": 0.2, "szansa_ukrycia": 0.3},
+		{"id": "zuzyte_hamulce", "nazwa": "Zużyte hamulce", "powaga": 2, "szansa_w_uzywanym": 0.16, "szansa_ukrycia": 0.25},
+		{"id": "dymienie", "nazwa": "Dymienie z wydechu", "powaga": 3, "szansa_w_uzywanym": 0.1, "szansa_ukrycia": 0.4, "vmax_delta": -15},
+		{"id": "hałas_lozyska", "nazwa": "Hałas łożyska", "powaga": 2, "szansa_w_uzywanym": 0.14, "szansa_ukrycia": 0.35},
+		{
+			"id": "spadek_mocy",
+			"nazwa": "Spadek mocy silnika",
+			"powaga": 3,
+			"szansa_w_uzywanym": 0.08,
+			"szansa_ukrycia": 0.4,
+			"vmax_delta": -20,
+			"opis": "Usterka obniżająca moc — UI: vmax_katalog (−delta), efektywna = katalog + delta."
+		},
+		{
+			"id": "pozalewowe",
+			"nazwa": "Pozalewowe",
+			"powaga": 5,
+			"szansa_w_uzywanym": 0.06,
+			"szansa_ukrycia": 0.85,
+			"ukrywane_preferencyjnie": true,
+			"vmax_delta": -25,
+			"opis": "Ślady zalania / powódź. Sprzedawcy często ukrywają; wykrycie wymaga wysokiej znajomości pojazdów lub eksperta."
+		},
+		{
+			"id": "awaria_silnika",
+			"nazwa": "Poważna awaria silnika",
+			"powaga": 5,
+			"szansa_w_uzywanym": 0.025,
+			"szansa_ukrycia": 0.2,
+			"nie_jezdzi": true,
+			"opis": "Auto nie jeździ. Opcje: Laweta, Mechanik (koszt propozycja/kotwica), Złom (usunięcie + drobne złotówki).",
+			"naprawa": {
+				"propozycja_do_poprawki": true,
+				"mechanik_koszt_od_zl": 2500,
+				"mechanik_koszt_do_zl": 12000,
+				"laweta_koszt_zl": 450,
+				"zlom_wykup_od_zl": 200,
+				"zlom_wykup_do_zl": 900
+			}
+		}
+	],
+	"wykrywanie": {
+		"propozycja_do_poprawki": true,
+		"opis": "Szansa wykrycia ukrytej usterki = clamp(baza + znajomosc*waga_znaj + inteligencja*waga_int + internet + ekspert + szkola_mechanik, 0, 0.98).",
+		"baza": 0.12,
+		"waga_znajomosci_0_100": 0.006,
+		"waga_inteligencji_logicznej_0_100": 0.0035,
+		"bonus_internet": 0.08,
+		"bonus_ekspert": 0.28,
+		"bonus_szkola_mechanik": 0.22,
+		"bonus_dobre_wyniki_szkoly": 0.12,
+		"pozalewowe_mnoznik_trudnosci": 0.65,
+		"cechy_szkoly_mechanik": ["szkola_branzowa_mechanik", "mechanik", "technik_pojazdów_samochodowych"]
+	}
+}

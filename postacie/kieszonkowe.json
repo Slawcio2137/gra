@@ -1,0 +1,97 @@
+{
+  "opis": "Na początku pieniądze bohatera głównie stąd. Rodzice mogą odmówić, dać na prośbę albo dać stałą kwotę. Wysokość zależy od zarobków, charakteru i wieku. Wagi decyzji null → decyzja z charakteru bez procentów. Kwoty złotówkowe poniżej to propozycje do poprawki, nie GUS. Tura = tydzień: stała kwota wypłaca automatycznie przy Następna tura TYLKO po udanej prośbie (kieszonkowe_aktywne). Na Start nie płaci.",
+  "uwaga_dla_ai_i_gracza": "Kwoty do przeglądu z graczem później — nie zmieniać bez pytania.",
+  "kwota": null,
+  "zrodlo": null,
+  "na_poczatku_pieniadze_bohatera_glownie_stad": true,
+  "nie_plac_przed_prosba": true,
+  "po_udanej_prosbie_tryb": "stala_kwota",
+  "tryby_w_zapisie": {
+    "odmowa": "Brak wypłaty (ani przy prośbie, ani co tydzień).",
+    "na_prosbe": "Tylko przy przycisku prośby — nie co tydzień (po udanej prośbie gra i tak przechodzi na stałą).",
+    "stala_kwota": "Równoważne stale_daje: co tydzień (Następna tura) kwota — dopiero gdy kieszonkowe_aktywne."
+  },
+  "decyzje": [
+    {"id": "odmowa", "nazwa": "Odmawiają", "waga": null, "zrodlo": null},
+    {"id": "na_prosbe", "nazwa": "Dają na prośbę", "waga": null, "zrodlo": null},
+    {"id": "stala_kwota", "nazwa": "Stała kwota", "waga": null, "zrodlo": null}
+  ],
+  "reguly_kierunku": [
+    {"id": "zalezy_od_zarobkow", "tekst": "Wyższe zarobki → wyższe kieszonkowe."},
+    {"id": "czesciej_odmowa", "tekst": "Oszczędny albo skąpy → odmowa.", "gdy_cecha": ["oszczedny", "skapy", "surowy"]},
+    {"id": "czesciej_daje", "tekst": "Hojny → daje.", "gdy_cecha": ["hojny"]}
+  ],
+  "decyzja_z_charakteru": {
+    "opis": "Bez procentów. Hojny → stała kwota. Oszczędny/skąpy/surowy → odmowa. Inaczej → też stała kwota po prośbie.",
+    "hojny": "stala_kwota",
+    "odmowa_cechy": ["oszczedny", "skapy", "surowy"],
+    "domyslnie": "stala_kwota"
+  },
+  "wiek": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "minimalny_wiek_lat": 5,
+    "tekst_za_male": "Jesteś jeszcze za małe na kieszonkowe.",
+    "mnoznik_wieku": [
+      {"od_lat": 5, "do_lat": 7, "mnoznik": 0.6, "propozycja_do_poprawki": true},
+      {"od_lat": 8, "do_lat": 11, "mnoznik": 0.85, "propozycja_do_poprawki": true},
+      {"od_lat": 12, "do_lat": 15, "mnoznik": 1.0, "propozycja_do_poprawki": true},
+      {"od_lat": 16, "do_lat": 99, "mnoznik": 1.15, "propozycja_do_poprawki": true}
+    ]
+  },
+  "charakter_kwota": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "opis": "Hojny wyżej w widełkach, oszczędny niżej (odmowa i tak z reguły charakteru).",
+    "hojny_mnoznik": 1.25,
+    "oszczedny_mnoznik": 0.75,
+    "neutralny_mnoznik": 1.0
+  },
+  "podwyzka": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "opis": "Osobny przycisk: Poproś o podniesienie kieszonkowego. Tylko gdy już aktywne.",
+    "mnoznik": 1.25,
+    "max_mnoznik_od_bazy": 2.0,
+    "odmowa_gdy_cechy": ["oszczedny", "skapy", "surowy"],
+    "tekst_odmowa": "Rodzice nie chcą podnieść kieszonkowego.",
+    "tekst_ok": "Podwyżka kieszonkowego: teraz %d zł/tydzień."
+  },
+  "jednorazowo": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "opis": "Poproś o pieniądze na coś — poza kieszonkowym, nie włącza wypłaty tygodniowej.",
+    "mnoznik_bazy": 2.0,
+    "minimalny_wiek_lat": 5,
+    "tekst_za_male": "Jesteś jeszcze za małe, żeby prosić o pieniądze na zakupy.",
+    "odmowa_gdy_cechy": ["oszczedny", "skapy", "surowy"],
+    "tekst_odmowa": "Rodzice odmawiają jednorazowej kwoty.",
+    "tekst_ok": "Dostajesz jednorazowo: +%d zł (nie kieszonkowe)."
+  },
+  "kwoty_propozycja": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "nie_gus": true,
+    "opis": "Baza z przedziału zarobków, potem mnożniki wieku/charakteru, na końcu SNAP do dozwolone_kwoty. Bez kwot typu 35.",
+    "wedlug_przedzialu": [
+      {"przedzialy": ["do_placy_minimalnej"], "zl": 10, "etykieta": "mała", "propozycja_do_poprawki": true},
+      {"przedzialy": ["od_minimalnej_do_mediany"], "zl": 20, "etykieta": "mała", "propozycja_do_poprawki": true},
+      {"przedzialy": ["od_mediany_do_przecietnego"], "zl": 30, "etykieta": "średnia", "propozycja_do_poprawki": true},
+      {"przedzialy": ["od_przecietnego_do_dwoch_median"], "zl": 50, "etykieta": "średnia", "propozycja_do_poprawki": true},
+      {"przedzialy": ["powyzej_dwoch_median"], "zl": 80, "etykieta": "duża", "propozycja_do_poprawki": true}
+    ],
+    "gdy_brak_przedzialu_zl": 10
+  },
+  "dozwolone_kwoty": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "opis": "Tylko te kwoty. Losowanie i podwyżka wybierają wyłącznie z listy (snap do najbliższej dozwolonej). Bez co 1 zł. Bez 35.",
+    "regula": "Od 10 do 100 co 10. Potem: 120, 150, 200, 300, 400, 500. Potem ten sam schemat przesunięty: 600, 800, 1000, 1200, 1500, 2000, 3000, 4000, 5000; potem ×10 (6000, 8000, 10000, …) aż do limit_max_zl.",
+    "lista_wzorcowa": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 150, 200, 300, 400, 500, 600, 800, 1000, 1200, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 10000],
+    "cykl_po_100": [120, 150, 200, 300, 400, 500, 600, 800, 1000],
+    "mnozniki_rzedu": [1, 10, 100, 1000],
+    "limit_max_zl": 100000,
+    "snap": "najblizsza",
+    "podwyzka_snap": "najblizsza_wyzsza_albo_najblizsza"
+  }
+}

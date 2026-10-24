@@ -1,0 +1,31 @@
+{
+	"opis": "Znajomość pojazdów — jak wprawa gotowania, ale NIE SPADA: tylko rośnie (research telefon, doświadczenia, szkoła, oględziny). Szybciej przy wysokiej inteligencji logicznej. Propozycja do poprawki.",
+	"propozycja_do_poprawki": true,
+	"to_nie_pomiar": true,
+	"nie_spada": true,
+	"etapy": [
+		"brak doświadczenia",
+		"początkujący",
+		"średni",
+		"zaawansowany",
+		"biegły",
+		"ekspert amatorski"
+	],
+	"punkty_w_etapie_max": 100,
+	"na_ostatnim_etapie_zostaje": 100,
+	"postep": {
+		"punkty_za_research_telefon": 2,
+		"punkty_za_ogledziny": 4,
+		"punkty_za_zakup_doswiadczenie": 3,
+		"punkty_za_tydzien_szkoly_mechanik": 6,
+		"propozycja_do_poprawki": true
+	},
+	"inteligencja_logiczna": {
+		"opis": "Mnożnik postępu: 1 + (int_logiczna - 50) / 200, clamp 0.75…1.4",
+		"baza": 50,
+		"dzielnik": 200,
+		"mnoznik_min": 0.75,
+		"mnoznik_max": 1.4,
+		"propozycja_do_poprawki": true
+	}
+}

@@ -1,0 +1,625 @@
+{
+  "opis": "Imiona według kraju. Polska: top 50 żeńskich i męskich z rejestru PESEL (osoby żyjące). Waga = liczba wystąpień pierwszego imienia ze źródła (nie wymyślona). Brak kraju = null.",
+  "kraje": {
+    "polska": {
+      "stan_na": "2026-01-20",
+      "top_n": 50,
+      "wagi_udzialu": "liczby_wystapien_pesel",
+      "zrodlo": {
+        "kto": "Ministerstwo Cyfryzacji",
+        "tytul": "Lista imion występujących w rejestrze PESEL — osoby żyjące (imię pierwsze)",
+        "rok": 2026,
+        "link": "https://dane.gov.pl/pl/dataset/1667,lista-imion-wystepujacych-w-rejestrze-pesel-osoby-zyjace",
+        "zasoby": [
+          "https://api.dane.gov.pl/resources/1159670,lista-imion-zenskich-w-rejestrze-pesel-stan-na-20012026-imie-pierwsze/file",
+          "https://api.dane.gov.pl/resources/1159669,lista-imion-meskich-w-rejestrze-pesel-stan-na-20012026-imie-pierwsze/file"
+        ],
+        "cytat": "Zestawienie imion żeńskich i męskich występujących w rejestrze PESEL wraz z liczbą wystąpień. Dane statystyczne zostały opracowane na podstawie informacji zgromadzonych w rejestrze PESEL. Pojedyncze wystąpienia oraz dane dot. osób zmarłych nie zostały umieszczone na liście. Stan na 20.01.2026, imię pierwsze."
+      },
+      "zenskie": [
+        {
+          "id": "anna",
+          "nazwa": "Anna",
+          "waga": 1063756,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 1063756."
+        },
+        {
+          "id": "katarzyna",
+          "nazwa": "Katarzyna",
+          "waga": 602474,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 602474."
+        },
+        {
+          "id": "małgorzata",
+          "nazwa": "Małgorzata",
+          "waga": 572067,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 572067."
+        },
+        {
+          "id": "maria",
+          "nazwa": "Maria",
+          "waga": 566902,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 566902."
+        },
+        {
+          "id": "agnieszka",
+          "nazwa": "Agnieszka",
+          "waga": 544968,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 544968."
+        },
+        {
+          "id": "ewa",
+          "nazwa": "Ewa",
+          "waga": 469822,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 469822."
+        },
+        {
+          "id": "barbara",
+          "nazwa": "Barbara",
+          "waga": 467697,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 467697."
+        },
+        {
+          "id": "magdalena",
+          "nazwa": "Magdalena",
+          "waga": 434117,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 434117."
+        },
+        {
+          "id": "elżbieta",
+          "nazwa": "Elżbieta",
+          "waga": 404679,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 404679."
+        },
+        {
+          "id": "joanna",
+          "nazwa": "Joanna",
+          "waga": 401861,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 401861."
+        },
+        {
+          "id": "aleksandra",
+          "nazwa": "Aleksandra",
+          "waga": 390147,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 390147."
+        },
+        {
+          "id": "krystyna",
+          "nazwa": "Krystyna",
+          "waga": 383140,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 383140."
+        },
+        {
+          "id": "monika",
+          "nazwa": "Monika",
+          "waga": 376767,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 376767."
+        },
+        {
+          "id": "zofia",
+          "nazwa": "Zofia",
+          "waga": 360466,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 360466."
+        },
+        {
+          "id": "natalia",
+          "nazwa": "Natalia",
+          "waga": 320219,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 320219."
+        },
+        {
+          "id": "julia",
+          "nazwa": "Julia",
+          "waga": 314539,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 314539."
+        },
+        {
+          "id": "teresa",
+          "nazwa": "Teresa",
+          "waga": 312053,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 312053."
+        },
+        {
+          "id": "karolina",
+          "nazwa": "Karolina",
+          "waga": 295011,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 295011."
+        },
+        {
+          "id": "marta",
+          "nazwa": "Marta",
+          "waga": 289122,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 289122."
+        },
+        {
+          "id": "danuta",
+          "nazwa": "Danuta",
+          "waga": 286032,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 286032."
+        },
+        {
+          "id": "beata",
+          "nazwa": "Beata",
+          "waga": 278457,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 278457."
+        },
+        {
+          "id": "dorota",
+          "nazwa": "Dorota",
+          "waga": 266291,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 266291."
+        },
+        {
+          "id": "alicja",
+          "nazwa": "Alicja",
+          "waga": 254745,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 254745."
+        },
+        {
+          "id": "jolanta",
+          "nazwa": "Jolanta",
+          "waga": 233614,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 233614."
+        },
+        {
+          "id": "hanna",
+          "nazwa": "Hanna",
+          "waga": 231647,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 231647."
+        },
+        {
+          "id": "zuzanna",
+          "nazwa": "Zuzanna",
+          "waga": 231506,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 231506."
+        },
+        {
+          "id": "iwona",
+          "nazwa": "Iwona",
+          "waga": 230870,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 230870."
+        },
+        {
+          "id": "halina",
+          "nazwa": "Halina",
+          "waga": 226656,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 226656."
+        },
+        {
+          "id": "paulina",
+          "nazwa": "Paulina",
+          "waga": 224208,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 224208."
+        },
+        {
+          "id": "grażyna",
+          "nazwa": "Grażyna",
+          "waga": 223100,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 223100."
+        },
+        {
+          "id": "jadwiga",
+          "nazwa": "Jadwiga",
+          "waga": 218462,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 218462."
+        },
+        {
+          "id": "justyna",
+          "nazwa": "Justyna",
+          "waga": 216299,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 216299."
+        },
+        {
+          "id": "wiktoria",
+          "nazwa": "Wiktoria",
+          "waga": 209093,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 209093."
+        },
+        {
+          "id": "janina",
+          "nazwa": "Janina",
+          "waga": 198471,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 198471."
+        },
+        {
+          "id": "irena",
+          "nazwa": "Irena",
+          "waga": 196353,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 196353."
+        },
+        {
+          "id": "bożena",
+          "nazwa": "Bożena",
+          "waga": 194754,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 194754."
+        },
+        {
+          "id": "maja",
+          "nazwa": "Maja",
+          "waga": 188657,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 188657."
+        },
+        {
+          "id": "renata",
+          "nazwa": "Renata",
+          "waga": 185837,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 185837."
+        },
+        {
+          "id": "agata",
+          "nazwa": "Agata",
+          "waga": 184481,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 184481."
+        },
+        {
+          "id": "sylwia",
+          "nazwa": "Sylwia",
+          "waga": 181946,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 181946."
+        },
+        {
+          "id": "urszula",
+          "nazwa": "Urszula",
+          "waga": 180127,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 180127."
+        },
+        {
+          "id": "patrycja",
+          "nazwa": "Patrycja",
+          "waga": 169495,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 169495."
+        },
+        {
+          "id": "oliwia",
+          "nazwa": "Oliwia",
+          "waga": 166399,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 166399."
+        },
+        {
+          "id": "emilia",
+          "nazwa": "Emilia",
+          "waga": 165157,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 165157."
+        },
+        {
+          "id": "izabela",
+          "nazwa": "Izabela",
+          "waga": 159119,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 159119."
+        },
+        {
+          "id": "helena",
+          "nazwa": "Helena",
+          "waga": 155762,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 155762."
+        },
+        {
+          "id": "weronika",
+          "nazwa": "Weronika",
+          "waga": 151660,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 151660."
+        },
+        {
+          "id": "aneta",
+          "nazwa": "Aneta",
+          "waga": 151255,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 151255."
+        },
+        {
+          "id": "ewelina",
+          "nazwa": "Ewelina",
+          "waga": 148020,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 148020."
+        },
+        {
+          "id": "martyna",
+          "nazwa": "Martyna",
+          "waga": 143235,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 143235."
+        }
+      ],
+      "meskie": [
+        {
+          "id": "piotr",
+          "nazwa": "Piotr",
+          "waga": 682516,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 682516."
+        },
+        {
+          "id": "krzysztof",
+          "nazwa": "Krzysztof",
+          "waga": 631898,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 631898."
+        },
+        {
+          "id": "tomasz",
+          "nazwa": "Tomasz",
+          "waga": 533217,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 533217."
+        },
+        {
+          "id": "andrzej",
+          "nazwa": "Andrzej",
+          "waga": 513749,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 513749."
+        },
+        {
+          "id": "paweł",
+          "nazwa": "Paweł",
+          "waga": 502076,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 502076."
+        },
+        {
+          "id": "michał",
+          "nazwa": "Michał",
+          "waga": 492326,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 492326."
+        },
+        {
+          "id": "jan",
+          "nazwa": "Jan",
+          "waga": 462503,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 462503."
+        },
+        {
+          "id": "marcin",
+          "nazwa": "Marcin",
+          "waga": 447274,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 447274."
+        },
+        {
+          "id": "jakub",
+          "nazwa": "Jakub",
+          "waga": 433692,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 433692."
+        },
+        {
+          "id": "adam",
+          "nazwa": "Adam",
+          "waga": 400572,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 400572."
+        },
+        {
+          "id": "łukasz",
+          "nazwa": "Łukasz",
+          "waga": 382274,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 382274."
+        },
+        {
+          "id": "mateusz",
+          "nazwa": "Mateusz",
+          "waga": 377592,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 377592."
+        },
+        {
+          "id": "grzegorz",
+          "nazwa": "Grzegorz",
+          "waga": 369675,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 369675."
+        },
+        {
+          "id": "marek",
+          "nazwa": "Marek",
+          "waga": 369240,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 369240."
+        },
+        {
+          "id": "stanisław",
+          "nazwa": "Stanisław",
+          "waga": 348827,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 348827."
+        },
+        {
+          "id": "wojciech",
+          "nazwa": "Wojciech",
+          "waga": 335544,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 335544."
+        },
+        {
+          "id": "mariusz",
+          "nazwa": "Mariusz",
+          "waga": 283705,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 283705."
+        },
+        {
+          "id": "dariusz",
+          "nazwa": "Dariusz",
+          "waga": 279482,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 279482."
+        },
+        {
+          "id": "maciej",
+          "nazwa": "Maciej",
+          "waga": 267055,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 267055."
+        },
+        {
+          "id": "rafał",
+          "nazwa": "Rafał",
+          "waga": 260326,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 260326."
+        },
+        {
+          "id": "robert",
+          "nazwa": "Robert",
+          "waga": 256984,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 256984."
+        },
+        {
+          "id": "kamil",
+          "nazwa": "Kamil",
+          "waga": 251233,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 251233."
+        },
+        {
+          "id": "zbigniew",
+          "nazwa": "Zbigniew",
+          "waga": 249852,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 249852."
+        },
+        {
+          "id": "szymon",
+          "nazwa": "Szymon",
+          "waga": 244928,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 244928."
+        },
+        {
+          "id": "dawid",
+          "nazwa": "Dawid",
+          "waga": 239942,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 239942."
+        },
+        {
+          "id": "kacper",
+          "nazwa": "Kacper",
+          "waga": 232125,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 232125."
+        },
+        {
+          "id": "jacek",
+          "nazwa": "Jacek",
+          "waga": 227193,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 227193."
+        },
+        {
+          "id": "jerzy",
+          "nazwa": "Jerzy",
+          "waga": 222479,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 222479."
+        },
+        {
+          "id": "bartosz",
+          "nazwa": "Bartosz",
+          "waga": 205155,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 205155."
+        },
+        {
+          "id": "artur",
+          "nazwa": "Artur",
+          "waga": 198335,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 198335."
+        },
+        {
+          "id": "ryszard",
+          "nazwa": "Ryszard",
+          "waga": 189300,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 189300."
+        },
+        {
+          "id": "józef",
+          "nazwa": "Józef",
+          "waga": 188007,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 188007."
+        },
+        {
+          "id": "jarosław",
+          "nazwa": "Jarosław",
+          "waga": 187945,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 187945."
+        },
+        {
+          "id": "tadeusz",
+          "nazwa": "Tadeusz",
+          "waga": 186094,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 186094."
+        },
+        {
+          "id": "sebastian",
+          "nazwa": "Sebastian",
+          "waga": 186060,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 186060."
+        },
+        {
+          "id": "damian",
+          "nazwa": "Damian",
+          "waga": 183835,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 183835."
+        },
+        {
+          "id": "sławomir",
+          "nazwa": "Sławomir",
+          "waga": 180911,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 180911."
+        },
+        {
+          "id": "patryk",
+          "nazwa": "Patryk",
+          "waga": 180227,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 180227."
+        },
+        {
+          "id": "antoni",
+          "nazwa": "Antoni",
+          "waga": 176680,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 176680."
+        },
+        {
+          "id": "filip",
+          "nazwa": "Filip",
+          "waga": 176647,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 176647."
+        },
+        {
+          "id": "roman",
+          "nazwa": "Roman",
+          "waga": 174380,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 174380."
+        },
+        {
+          "id": "mirosław",
+          "nazwa": "Mirosław",
+          "waga": 173239,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 173239."
+        },
+        {
+          "id": "janusz",
+          "nazwa": "Janusz",
+          "waga": 173146,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 173146."
+        },
+        {
+          "id": "daniel",
+          "nazwa": "Daniel",
+          "waga": 171875,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 171875."
+        },
+        {
+          "id": "karol",
+          "nazwa": "Karol",
+          "waga": 165804,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 165804."
+        },
+        {
+          "id": "przemysław",
+          "nazwa": "Przemysław",
+          "waga": 165034,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 165034."
+        },
+        {
+          "id": "aleksander",
+          "nazwa": "Aleksander",
+          "waga": 162886,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 162886."
+        },
+        {
+          "id": "henryk",
+          "nazwa": "Henryk",
+          "waga": 150311,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 150311."
+        },
+        {
+          "id": "adrian",
+          "nazwa": "Adrian",
+          "waga": 149545,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 149545."
+        },
+        {
+          "id": "mikołaj",
+          "nazwa": "Mikołaj",
+          "waga": 141540,
+          "cytat": "Liczba wystąpień pierwszego imienia w rejestrze PESEL (osoby żyjące), stan 20.01.2026: 141540."
+        }
+      ]
+    }
+  }
+}

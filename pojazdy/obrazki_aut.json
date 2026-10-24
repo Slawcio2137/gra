@@ -1,0 +1,7 @@
+{
+  "opis": "Manifest paczki obrazków aut. Osobno od katalogu nazw, statystyk i cen. W instalacji nie ma plików zdjęć modeli. Dopóki pobrane jest false, oferta pokazuje szary znak zapytania z pliku w grze. Nazwa i cena zostają w danych katalogu.",
+  "placeholder_plik": "res://grafika/znak_zapytania.png",
+  "id": "obrazki_aut",
+  "pobrane": false,
+  "pliki": []
+}

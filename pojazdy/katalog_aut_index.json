@@ -1,0 +1,31 @@
+﻿{
+    "opis":  "Indeks paczek katalogu aut. Pełny katalog wszystkich nowych SKU dostępnych w Europie = osobna fala danych (tysiące wariantów), nie ten commit.",
+    "uwaga_kompletnosci":  "Cel gry: mocno powiększona pula popularnych PL/EU (rząd 80–150+), nie udawana kompletność rynku EU.",
+    "napedy":  [
+                   {
+                       "id":  "spalinowy",
+                       "nazwa":  "Spalinowy"
+                   },
+                   {
+                       "id":  "lpg",
+                       "nazwa":  "Z gazem (LPG)"
+                   },
+                   {
+                       "id":  "hybryda",
+                       "nazwa":  "Hybryda"
+                   },
+                   {
+                       "id":  "elektryczny",
+                       "nazwa":  "Elektryczny"
+                   }
+               ],
+    "paczki":  [
+                   "res://pojazdy/katalog_aut_pl.json",
+                   "res://pojazdy/katalog_aut_fr_psa_renault.json",
+                   "res://pojazdy/katalog_aut_pl_popularne.json",
+                   "res://pojazdy/katalog_aut_asia.json",
+                   "res://pojazdy/katalog_aut_premium_ev.json",
+                   "res://pojazdy/katalog_aut_uzywane_kotwice.json",
+                   "res://pojazdy/katalog_aut_dopelnienie.json"
+               ]
+}

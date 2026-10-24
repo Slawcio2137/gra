@@ -1,0 +1,357 @@
+{
+  "opis": "Jedzenie. Na starcie decydują rodzice, ale suwaki i diety zapisują się także wtedy. Rodziców to denerwuje, dopóki się nie przyzwyczają. Kwestia zostaje zdaniem bohatera i nie cofa zmiany. Koszt dania jest w złotych. W domu 0 zł, bo gracz powiedział, że jedzenie w domu jest darmowe. Poza domem bez źródła ceny nie da się kupić.",
+  "kto_decyduje": "rodzice",
+  "odblokowanie_jedzenie_samemu": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "opis": "Jedzenie poza domem zablokowane na start. Odblokowanie gdy wiek >= prog_wiek_lat ALBO flaga odblokowane_jedzenie_samemu (event discovery pozniej).",
+    "prog_wiek_lat": 8,
+    "tekst_zablokowane": "Jeszcze nie jesz samemu poza domem."
+  },
+  "jakosc_zdrowotna_poza_domem": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "to_nie_medyczne_procenty": true,
+    "opis": "Osobno od smaku i ceny. Skala jakości zdrowotnej jedzenia poza domem — widoczna przy jedzeniu samemu, gdy odblokowane. Bez medycznych %.",
+    "min": 0,
+    "max": 100,
+    "domyslnie": 50,
+    "krok": 5,
+    "etykieta_min": "słabe dla zdrowia",
+    "etykieta_max": "lepsze dla zdrowia",
+    "pole_zapisu": "jakosc_zdrowotna_poza_domem",
+    "uwaga": "Propozycja do poprawki. Nie jest faktem medycznym ani procentem ryzyka."
+  },
+  "jakosc_pozycji": {
+    "propozycja_do_poprawki": true,
+    "opis": "Krótka „jakość” przy pozycjach jedzenia (dom i sam) — analogicznie do budżetu jakości drobiazgów. Osobno od ceny.",
+    "min": 0,
+    "max": 100,
+    "domyslnie": 50,
+    "pole_zapisu_prefiks": "jakosc_pozycji_"
+  },
+  "bohater_zapisuje_suwaki_i_diety_takze_przy_rodzinie": true,
+  "kwestia_nie_cofa_zmiany": true,
+  "zakres_bohatera": ["pozycja"],
+  "zakres_rodzicow": ["cena", "skladniki", "diety"],
+  "kwestia": {
+    "id": "ale_to_ja_robie_jedzenie",
+    "tresc": "Ale to ja robię jedzenie...",
+    "kiedy": "Bohater zmienia ustawienia jedzenia w domu i skutek dla rodziców albo bohatera jest ujemny. Bez ujemnego skutku zdania nie ma. Zmiany nie cofa."
+  },
+  "zdenerwowanie_rodzicow": {
+    "opis": "Spadek zadowolenia, gdy bohater zatwierdza zmianę suwaka albo diety różną od ustawienia rodziców ze startu, albo kupuje jedzenie poza domem. Za każdym razem, dopóki po_ilu_razach_spadek_znika jest null. To liczby od gracza, nie z badania.",
+    "podane_przez_gracza": true,
+    "to_nie_statystyka": true,
+    "po_ilu_razach_spadek_znika": null,
+    "gdy_spadek_null": {
+      "traktuj_jak": 1,
+      "napis": "nieustawione, na razie 1",
+      "podane_przez_gracza": true,
+      "to_nie_statystyka": true
+    },
+    "pierwszenstwo": "Najpierw cecha z widełkami (nadopiekuńczy). Potem pierwsza cecha rodzica, która ma wpisaną liczbę spadku. Inaczej napis nieustawione i traktuj_jak.",
+    "cechy": [
+      {"id": "zwyczajnie", "nazwa": "Zwyczajnie", "spadek": 1, "podane_przez_gracza": true, "to_nie_statystyka": true},
+      {"id": "nadopiekuńczy", "nazwa": "Nadopiekuńczy", "spadek_widelki": [3, 4], "rowne_kolo": true, "podane_przez_gracza": true, "to_nie_statystyka": true, "uwaga": "Gracz podał 3 i 4. Równe koło między tymi dwiema liczbami. Widełki gracza, nie statystyka."},
+      {"id": "uparty", "nazwa": "Uparty", "spadek": null},
+      {"id": "lagodny", "nazwa": "Łagodny", "spadek": null},
+      {"id": "odwazny", "nazwa": "Odważny", "spadek": null},
+      {"id": "ostrozny", "nazwa": "Ostrożny", "spadek": null},
+      {"id": "szczery", "nazwa": "Szczery", "spadek": null},
+      {"id": "skryty", "nazwa": "Skryty", "spadek": null},
+      {"id": "towarzyski", "nazwa": "Towarzyski", "spadek": null},
+      {"id": "zamkniety", "nazwa": "Zamknięty w sobie", "spadek": null},
+      {"id": "cierpliwy", "nazwa": "Cierpliwy", "spadek": null},
+      {"id": "impulsywny", "nazwa": "Impulsywny", "spadek": null},
+      {"id": "hojny", "nazwa": "Hojny", "spadek": null},
+      {"id": "oszczedny", "nazwa": "Oszczędny", "spadek": null},
+      {"id": "ufny", "nazwa": "Ufny", "spadek": null},
+      {"id": "podejrzliwy", "nazwa": "Podejrzliwy", "spadek": null},
+      {"id": "optymistyczny", "nazwa": "Optymistyczny", "spadek": null},
+      {"id": "pesymistyczny", "nazwa": "Pesymistyczny", "spadek": null},
+      {"id": "spokojny", "nazwa": "Spokojny", "spadek": null},
+      {"id": "wybuchowy", "nazwa": "Wybuchowy", "spadek": null},
+      {"id": "ambitny", "nazwa": "Ambitny", "spadek": null},
+      {"id": "wygodny", "nazwa": "Wygodny", "spadek": null},
+      {"id": "lojalny", "nazwa": "Lojalny", "spadek": null},
+      {"id": "niezalezny", "nazwa": "Niezależny", "spadek": null},
+      {"id": "empatyczny", "nazwa": "Empatyczny", "spadek": null},
+      {"id": "oschly", "nazwa": "Oschły", "spadek": null},
+      {"id": "obowiazkowy", "nazwa": "Obowiązkowy", "spadek": null},
+      {"id": "niedbaly", "nazwa": "Niedbały", "spadek": null},
+      {"id": "skromny", "nazwa": "Skromny", "spadek": null},
+      {"id": "pewny_siebie", "nazwa": "Pewny siebie", "spadek": null},
+      {"id": "niesmialy", "nazwa": "Nieśmiały", "spadek": null},
+      {"id": "dominujacy", "nazwa": "Dominujący", "spadek": null},
+      {"id": "ulegly", "nazwa": "Uległy", "spadek": null},
+      {"id": "zyczliwy", "nazwa": "Życzliwy", "spadek": null},
+      {"id": "zlosliwy", "nazwa": "Złośliwy", "spadek": null},
+      {"id": "pogodny", "nazwa": "Pogodny", "spadek": null},
+      {"id": "drazliwy", "nazwa": "Drażliwy", "spadek": null},
+      {"id": "wytrwaly", "nazwa": "Wytrwały", "spadek": null},
+      {"id": "zmienny", "nazwa": "Zmienny", "spadek": null},
+      {"id": "opiekunczy", "nazwa": "Opiekuńczy", "spadek": null, "uwaga": "To nie jest nadopiekuńczy. Spadek pusty, dopóki gracz go nie wpisze."},
+      {"id": "rywalizujacy", "nazwa": "Rywalizujący", "spadek": null},
+      {"id": "uprzejmy", "nazwa": "Uprzejmy", "spadek": null},
+      {"id": "agresywny", "nazwa": "Agresywny", "spadek": null}
+    ]
+  },
+  "skala_wplywu": {
+    "min": -3,
+    "max": 3,
+    "do_poprawki": true,
+    "to_nie_statystyka": true,
+    "opis": "Skala całkowita do poprawki przez gracza, nie fakt medyczny. Pieniądze bohatera są w złotych przy daniu, nie na tej skali.",
+    "statystyki": ["samopoczucie", "zdrowie", "zeby", "sylwetka", "kondycja", "zadowolenie_rodzicow", "zdrowe_zywienie"]
+  },
+  "wyswietlanie_wplywu": "przy_wyborze",
+  "tryby_wyswietlania": {
+    "wylaczone": "Opisy przy opcjach są w danych, ale niewidoczne. Nie kasować ich. Zbiorcze plusy i minusy oraz złotówki zostają.",
+    "ciagle": "Opis widać przy opcji cały czas.",
+    "przy_wyborze": "Opis widać tylko, gdy gracz zmienia tę opcję."
+  },
+  "zbiorcze_wplywy": {
+    "widoczne_zawsze": true,
+    "nie_zaleza_od_trybu_napisow": true,
+    "opis": "Suma wpływu zmian suwaków i diet, których gracz jeszcze nie zatwierdził. Pieniądze widać jako złotówki."
+  },
+  "zebatka": {
+    "id": "zebatka_jedzenie",
+    "kontekst": "jedzenie",
+    "otwiera": "tryb_napisow",
+    "nie_na_glownym_panelu": true,
+    "opis": "Zębatka obok rozwijania ustawień jedzenia. Tylko tryb napisów."
+  },
+  "warzywa_osobny_przelacznik": false,
+  "warzywa_wynikaja_z": ["dbanie_o_skladniki", "diety", "pozycje"],
+  "konflikt": {
+    "opis": "Zatwierdzenie zapisuje suwaki i diety także przy rodzicach. Kwestia nie cofa zmiany.",
+    "gary_zostaja": false,
+    "wplyw": null
+  },
+  "suwaki": {
+    "cena": {
+      "min": 0,
+      "max": 100,
+      "start": null,
+      "start_powod": "Zarobki są null. Startowej liczby suwaka nie ustawiono.",
+      "jednostka": null,
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "uwaga_skali": "0 i 100 to końce suwaka w grze, nie cena w złotych i nie norma żywienia.",
+      "etykieta_min": "tanio",
+      "etykieta_max": "drogo",
+      "wplyw": "W stronę tanio: zdrowie, zęby, sylwetka, kondycja i samopoczucie łatwiej w dół. W stronę drogo: samopoczucie łatwiej w górę. Samo drogo nie podnosi zdrowia, zębów, sylwetki ani kondycji. Portfel liczy się w złotych przy daniu, nie plusami przy tym suwaku. Przy rodzicach ruszenie ceny ich denerwuje, także gdy bohater gotuje.",
+      "wplyw_min": {
+        "samopoczucie": -1,
+        "zdrowie": -2,
+        "zeby": -1,
+        "sylwetka": -1,
+        "kondycja": -1,
+        "do_poprawki": true,
+        "to_nie_statystyka": true
+      },
+      "wplyw_max": {
+        "samopoczucie": 2,
+        "do_poprawki": true,
+        "to_nie_statystyka": true
+      }
+    },
+    "dbanie_o_skladniki": {
+      "min": 0,
+      "max": 100,
+      "start": null,
+      "start_powod": "Bez cechy albo liczby w ziarnie suwak składników zostaje null.",
+      "jednostka": null,
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "uwaga_skali": "0 i 100 to końce suwaka w grze, nie norma żywienia.",
+      "etykieta_min": "nieważne",
+      "etykieta_max": "pilnuję składników odżywczych",
+      "wplyw": "W stronę pilnuję składników: zdrowie, zęby, sylwetka i kondycja w górę, na talerzu więcej warzyw. W stronę nieważne: te same rzeczy w dół. Ten suwak sam nie rusza złotówek.",
+      "wplyw_min": {
+        "samopoczucie": -1,
+        "zdrowie": -2,
+        "zeby": -1,
+        "sylwetka": -1,
+        "kondycja": -1,
+        "do_poprawki": true,
+        "to_nie_statystyka": true
+      },
+      "wplyw_max": {
+        "zdrowie": 3,
+        "zeby": 1,
+        "sylwetka": 2,
+        "kondycja": 2,
+        "do_poprawki": true,
+        "to_nie_statystyka": true
+      }
+    }
+  },
+  "diety": {
+    "regula": "Wegetariańska i wegańska to przełączniki przy diecie ogólnej. Wegańska jest ostrzejsza. Jak obie włączone, zostaje wegańska, a wegetariańska nie jest osobnym stanem. W dniach gotowania własnego rodzice nie złoszczą się o dietę własną. Dieta ogólna może ich złosić. Cena zostaje osobno.",
+    "gdy_obie_wlaczone": "weganska",
+    "wegetarianska": {
+      "wlaczona": false,
+      "wyklucza": ["mieso"],
+      "wplyw_tekst": "Bez mięsa. Zdrowie idzie za suwakiem składników, nie za samą nazwą diety."
+    },
+    "weganska": {
+      "wlaczona": false,
+      "wyklucza": ["mieso", "nabial"],
+      "wplyw_tekst": "Bez mięsa i nabiału. Ostrzejsza niż wegetariańska. Wegetariańska nie zostaje wtedy osobnym stanem. Zdrowie idzie za suwakiem składników."
+    }
+  },
+  "gotowanie_dla_rodziny": {
+    "opis": "Ile dni w tygodniu bohater gotuje sam, dla rodziny. 0–7, skok na liczby, nie płynny suwak.",
+    "dni": 0,
+    "min": 0,
+    "max": 7,
+    "tura": "tydzien",
+    "plik_wprawy": "res://postacie/gotowanie_wprawa.json",
+    "plik_cech": "res://postacie/gotowanie_cechy.json",
+    "dieta_wlasna_nie_zlosci_w_dni_gotowania": true,
+    "cena_zostaje_przy_rodzinie": true,
+    "cena_dalej_denerwuje": true,
+    "uwaga_gdy_podnosi_powyzej_zera": "Uwaga: powrotne wyłączenie tej opcji osłabia relacje z rodzicami, oraz prowadzi do powolnej utraty wprawy w gotowaniu."
+  },
+  "dieta_ogolna_suwak": {
+    "min": 0,
+    "max": 100,
+    "start": null,
+    "propozycja_do_poprawki": true,
+    "to_nie_statystyka": true,
+    "uwaga": "Koniec suwaka nie jest normą żywienia. Zmiana diety ogólnej dalej może złosić rodziców. Cena zostaje osobno."
+  },
+  "dieta_gotowania_wlasnego_suwak": {
+    "min": 0,
+    "max": 100,
+    "start": null,
+    "propozycja_do_poprawki": true,
+    "to_nie_statystyka": true,
+    "uwaga": "Przy dniach gotowania własnego rodzice nie złoszczą się o tę dietę. Cena dalej ich dotyczy."
+  },
+  "pozycje": [
+    {
+      "id": "przekaska_dom",
+      "nazwa": "Słona przekąska",
+      "gdzie": "dom",
+      "cena_zl": 0,
+      "podane_przez_gracza": true,
+      "uwaga_ceny": "Jedzenie w domu jest darmowe. Tak powiedział gracz.",
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "jakosc_propozycja": 40,
+      "wplyw": {"samopoczucie": 2, "sylwetka": -1, "do_poprawki": true, "to_nie_statystyka": true}
+    },
+    {
+      "id": "slodkie_dom",
+      "nazwa": "Coś słodkiego",
+      "gdzie": "dom",
+      "cena_zl": 0,
+      "podane_przez_gracza": true,
+      "uwaga_ceny": "Jedzenie w domu jest darmowe. Tak powiedział gracz.",
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "jakosc_propozycja": 30,
+      "wplyw": {"samopoczucie": 3, "sylwetka": -2, "do_poprawki": true, "to_nie_statystyka": true}
+    },
+    {
+      "id": "cieple_dom",
+      "nazwa": "Coś ciepłego",
+      "gdzie": "dom",
+      "cena_zl": 0,
+      "podane_przez_gracza": true,
+      "uwaga_ceny": "Jedzenie w domu jest darmowe. Tak powiedział gracz.",
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "propozycja_do_poprawki": true,
+      "jakosc_propozycja": 55,
+      "zalezy_od_suwaka_skladnikow_odzywczych": true,
+      "prog_wysoki": 50,
+      "uwaga_progu": "Gracz powiedział: wysoki suwak = zdrowe, niski = niezdrowe. Próg 50 to propozycja, nie norma żywienia.",
+      "wplyw_wspolny": {"samopoczucie": 1, "propozycja_do_poprawki": true, "to_nie_statystyka": true},
+      "gdy_zdrowe": {"zdrowe_zywienie": 1, "propozycja_do_poprawki": true, "to_nie_statystyka": true},
+      "gdy_niezdrowe": {"zdrowe_zywienie": -1, "propozycja_do_poprawki": true, "to_nie_statystyka": true},
+      "nie_rusza_sylwetki_od_razu": true
+    },
+    {
+      "id": "warzywa_dom",
+      "nazwa": "Warzywa",
+      "gdzie": "dom",
+      "cena_zl": 0,
+      "podane_przez_gracza": true,
+      "uwaga_ceny": "Jedzenie w domu jest darmowe. Tak powiedział gracz.",
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "propozycja_do_poprawki": true,
+      "jakosc_propozycja": 80,
+      "nie_rusza_sylwetki_od_razu": true,
+      "minus_samopoczucia_maly": true,
+      "wplyw": {"samopoczucie": -1, "zdrowe_zywienie": 1, "propozycja_do_poprawki": true, "to_nie_statystyka": true}
+    },
+    {
+      "id": "przekaska_sam",
+      "nazwa": "Słona przekąska",
+      "gdzie": "sam",
+      "cena_zl": null,
+      "zrodlo_ceny": null,
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "jakosc_propozycja": 40,
+      "wplyw": {"samopoczucie": 2, "sylwetka": -1, "do_poprawki": true, "to_nie_statystyka": true},
+      "zadowolenie_rodzicow": "Spadek jak przy zatwierdzeniu suwaka. Nie ma sztywnego -2."
+    },
+    {
+      "id": "slodkie_sam",
+      "nazwa": "Coś słodkiego",
+      "gdzie": "sam",
+      "cena_zl": null,
+      "zrodlo_ceny": null,
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "jakosc_propozycja": 30,
+      "wplyw": {"samopoczucie": 3, "sylwetka": -2, "do_poprawki": true, "to_nie_statystyka": true},
+      "zadowolenie_rodzicow": "Spadek jak przy zatwierdzeniu suwaka. Nie ma sztywnego -2."
+    },
+    {
+      "id": "cieple_sam",
+      "nazwa": "Coś ciepłego",
+      "gdzie": "sam",
+      "cena_zl": null,
+      "zrodlo_ceny": null,
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "jakosc_propozycja": 55,
+      "wplyw": {"samopoczucie": 1, "sylwetka": -1, "do_poprawki": true, "to_nie_statystyka": true},
+      "zadowolenie_rodzicow": "Spadek jak przy zatwierdzeniu suwaka. Nie ma sztywnego -2."
+    },
+    {
+      "id": "warzywa_sam",
+      "nazwa": "Warzywa",
+      "gdzie": "sam",
+      "cena_zl": null,
+      "zrodlo_ceny": null,
+      "do_poprawki": true,
+      "to_nie_statystyka": true,
+      "jakosc_propozycja": 75,
+      "wplyw": {"samopoczucie": 1, "sylwetka": 2, "do_poprawki": true, "to_nie_statystyka": true},
+      "zadowolenie_rodzicow": "Spadek jak przy zatwierdzeniu suwaka. Nie ma sztywnego -2."
+    }
+  ],
+  "warunki_z_rodzicow": {
+    "opis": "Reguły kierunku, nie procenty. Funkcja stosuje regułę tylko gdy flaga albo próg zamożności już jest w ziarnie. Jak zarobki są null, suwak zostaje null. Ułamek diety kraju jest w pliku diet, nie tutaj.",
+    "waga_wegetarian": null,
+    "waga_wegan": null,
+    "waga_dba_o_zdrowie": null,
+    "prog_zamoznosci": null,
+    "zrodlo": null,
+    "reguly": {
+      "biedniejsi": "suwak ceny w stronę tanio, bez zgadywanej liczby",
+      "dba_o_zdrowie": "suwak składników w górę, bez zgadywanej liczby",
+      "wegetarianie": "włączona dieta wegetariańska",
+      "weganie": "wegańska, a wegetariańska nie jest wtedy osobnym stanem"
+    }
+  }
+}

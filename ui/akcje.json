@@ -1,0 +1,141 @@
+{
+	"opis": "Zakładki pionowego UI 2×4. tryb dzieci otwiera wybory w białym ekranie. tryb ekran wypełnia biały ekran. Mapa: uproszczony graf miast (Majątek→Transport→Mapa).",
+	"siatka": [
+		["ustawienia", "szkola", "praca", "majatek"],
+		["jedzenie", "zdrowie", "osoby", "zakupy"]
+	],
+	"akcje": [
+		{
+			"id": "ustawienia",
+			"nazwa": "Ustawienia",
+			"ikona": "res://grafika/ikony/zakladki/ustawienia.png",
+			"kolor": "#5b6b7a",
+			"tryb": "ekran",
+			"tresc": "ustawienia_gry"
+		},
+		{
+			"id": "szkola",
+			"nazwa": "Nauka",
+			"ikona": "res://grafika/ikony/zakladki/szkola.png",
+			"kolor": "#4a7ab0",
+			"tryb": "ekran",
+			"tresc": "szkola"
+		},
+		{
+			"id": "praca",
+			"nazwa": "Praca",
+			"ikona": "res://grafika/ikony/zakladki/praca.png",
+			"kolor": "#6a6db0",
+			"tryb": "ekran",
+			"tresc": "praca"
+		},
+		{
+			"id": "majatek",
+			"nazwa": "Majątek",
+			"ikona": "res://grafika/ikony/zakladki/majatek.png",
+			"kolor": "#a07850",
+			"tryb": "dzieci",
+			"dzieci": [
+				{
+					"id": "majatek_pieniadze",
+					"nazwa": "Pieniądze",
+					"kolor": "#a07850",
+					"tryb": "ekran",
+					"tresc": "majatek"
+				},
+				{
+					"id": "transport",
+					"nazwa": "Transport",
+					"kolor": "#8aa0a8",
+					"tryb": "ekran",
+					"tresc": "transport",
+					"dzieci": [
+						{
+							"id": "mapa",
+							"nazwa": "Mapa",
+							"kolor": "#8aa0a8",
+							"tryb": "ekran",
+							"tresc": "mapa"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "jedzenie",
+			"nazwa": "Jedzenie",
+			"ikona": "res://grafika/ikony/zakladki/jedzenie.png",
+			"kolor": "#5f8a5a",
+			"tryb": "dzieci",
+			"dzieci": [
+				{
+					"id": "jedzenie_dom",
+					"nazwa": "Dom",
+					"kolor": "#5f8a5a",
+					"tryb": "ekran",
+					"tresc": "jedzenie_dom"
+				},
+				{
+					"id": "jedzenie_sam",
+					"nazwa": "Samemu",
+					"kolor": "#5f8a5a",
+					"tryb": "ekran",
+					"tresc": "jedzenie_sam"
+				}
+			]
+		},
+		{
+			"id": "zdrowie",
+			"nazwa": "Zdrowie",
+			"ikona": "res://grafika/ikony/zakladki/zdrowie.png",
+			"kolor": "#b06a6a",
+			"tryb": "ekran",
+			"tresc": "zdrowie"
+		},
+		{
+			"id": "osoby",
+			"nazwa": "Osoby",
+			"ikona": "res://grafika/ikony/zakladki/osoby.png",
+			"kolor": "#7a6aa0",
+			"tryb": "dzieci",
+			"dzieci": [
+				{
+					"id": "postac",
+					"nazwa": "Postać",
+					"kolor": "#7a6aa0",
+					"tryb": "ekran",
+					"tresc": "postac"
+				},
+				{
+					"id": "rodzina",
+					"nazwa": "Rodzina",
+					"kolor": "#c4a574",
+					"tryb": "ekran",
+					"tresc": "rodzina"
+				},
+				{
+					"id": "przyjaciele",
+					"nazwa": "Przyjaciele",
+					"kolor": "#7a8aa0",
+					"tryb": "ekran",
+					"tresc": "przyjaciele"
+				},
+				{
+					"id": "znajomi",
+					"nazwa": "Znajomi",
+					"kolor": "#8a7aa0",
+					"tryb": "ekran",
+					"tresc": "znajomi"
+				}
+			]
+		},
+		{
+			"id": "zakupy",
+			"nazwa": "Zakupy",
+			"ikona": "res://grafika/ikony/zakladki/zakupy.png",
+			"kolor": "#b0a04a",
+			"tryb": "ekran",
+			"tresc": "zakupy"
+		}
+	]
+}

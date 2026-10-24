@@ -1,0 +1,12 @@
+{
+	"opis": "Losowanie rodziny. Liczba rodzeństwa: prawdziwe wagi krajowe w wielkosc_rodziny_kraje.json (nie równe 0–3). Imiona: postacie/imiona/imiona_kraje.json.",
+	"liczba_rodzenstwa": {
+		"plik_krajowy": "res://postacie/rodzina/wielkosc_rodziny_kraje.json",
+		"wagi_rowne_zastepcze": false,
+		"uwaga": "Stare równe 0–3 usunięte z użycia gdy kraj ma wagi ze źródła. Brak kraju → null / 0, bez zgadywania."
+	},
+	"imiona": {
+		"plik_krajowy": "res://postacie/imiona/imiona_kraje.json",
+		"uwaga": "Imię + płeć z koła; waga z PESEL gdy kraj wypełniony."
+	}
+}

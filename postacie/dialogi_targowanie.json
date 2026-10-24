@@ -1,0 +1,77 @@
+{
+	"opis": "Pula dialogów targowania (używane). Struktura uniwersalna: id, tekst, tagi — da się dokładać tu i w innych dialogach. Propozycja do poprawki / uzupełnienia.",
+	"propozycja_do_poprawki": true,
+	"schemat": {
+		"id": "string",
+		"tekst": "string",
+		"tagi": ["string"]
+	},
+	"prog_bardzo_zanizona_procent_ceny": 55,
+	"wpisy": [
+		{
+			"id": "akceptacja_1",
+			"tekst": "Dobra, niech będzie. Umowa stoi.",
+			"tagi": ["targowanie", "akceptacja"]
+		},
+		{
+			"id": "akceptacja_2",
+			"tekst": "No… niech będzie. Bierz.",
+			"tagi": ["targowanie", "akceptacja"]
+		},
+		{
+			"id": "akceptacja_3",
+			"tekst": "OK, schodzę. Ale to już moje ostatnie słowo.",
+			"tagi": ["targowanie", "akceptacja"]
+		},
+		{
+			"id": "odmowa_1",
+			"tekst": "Za mało. Możesz podbić ofertę, to pogadamy.",
+			"tagi": ["targowanie", "odmowa", "kolejna_runda"]
+		},
+		{
+			"id": "odmowa_2",
+			"tekst": "Nie, to nie przejdzie. Daj coś sensowniejszego.",
+			"tagi": ["targowanie", "odmowa", "kolejna_runda"]
+		},
+		{
+			"id": "odmowa_3",
+			"tekst": "Hmm, nie. Jak podniesiesz propozycję, jeszcze raz posłucham.",
+			"tagi": ["targowanie", "odmowa", "kolejna_runda"]
+		},
+		{
+			"id": "obraza_jaja",
+			"tekst": "Jaja sobie ze mnie robisz?",
+			"tagi": ["targowanie", "obraza", "koniec"]
+		},
+		{
+			"id": "obraza_czas",
+			"tekst": "Nie chce mi się tracić na ciebie czasu.",
+			"tagi": ["targowanie", "obraza", "koniec"]
+		},
+		{
+			"id": "obraza_do_widzenia",
+			"tekst": "Do widzenia.",
+			"tagi": ["targowanie", "obraza", "koniec"]
+		},
+		{
+			"id": "obraza_spadaj",
+			"tekst": "Spadaj.",
+			"tagi": ["targowanie", "obraza", "koniec"]
+		},
+		{
+			"id": "obraza_slot_1",
+			"tekst": "",
+			"tagi": ["targowanie", "obraza", "koniec", "do_wpisania"]
+		},
+		{
+			"id": "obraza_slot_2",
+			"tekst": "",
+			"tagi": ["targowanie", "obraza", "koniec", "do_wpisania"]
+		},
+		{
+			"id": "obraza_slot_3",
+			"tekst": "",
+			"tagi": ["targowanie", "obraza", "koniec", "do_wpisania"]
+		}
+	]
+}

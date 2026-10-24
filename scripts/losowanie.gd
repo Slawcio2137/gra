@@ -12,6 +12,9 @@ const PLIK_ZAROBKOW := "res://postacie/losowanie/zarobki.json"
 const PLIK_TERENU := "res://postacie/losowanie/teren.json"
 const PLIK_WYNIKU := "res://postacie/wylosowana.json"
 const PLIK_RODZENSTWA := "res://postacie/rodzina/wylosowane.json"
+const PLIK_LOSOWANIA_RODZINY := "res://postacie/rodzina/losowanie_rodziny.json"
+const PLIK_WIELKOSCI_RODZINY := "res://postacie/rodzina/wielkosc_rodziny_kraje.json"
+const PLIK_IMION_KRAJE := "res://postacie/imiona/imiona_kraje.json"
 const PLIK_POZIOMY := "res://postacie/losowanie/poziomy.json"
 const PLIK_WYKLUCZEN := "res://postacie/losowanie/wykluczenia_cech.json"
 const PLIK_ZESTAWOW := "res://postacie/losowanie/zestawy_cech.json"
@@ -28,8 +31,12 @@ var _pamiec := {}
 var _wagi_stat: Dictionary = {}
 
 
-func losuj_kolo(wagi: Dictionary) -> String:
-	_seed_raz()
+## Jedno koło: suma wag nieujemnych, dokładnie jeden id.
+## generator pusty: dotychczasowy randf, po jednym seedzie gry.
+## Podany generator nie woła randomize(), więc inne losowanie nie rusza urodzenia.
+func losuj_kolo(wagi: Dictionary, generator: RandomNumberGenerator = null) -> String:
+	if generator == null:
+		_seed_raz()
 	var suma := 0.0
 	var ids: Array[String] = []
 	for klucz in wagi.keys():
@@ -40,7 +47,11 @@ func losuj_kolo(wagi: Dictionary) -> String:
 		suma += waga
 	if ids.is_empty() or suma <= 0.0:
 		return ""
-	var los := randf() * suma
+	var los := 0.0
+	if generator != null:
+		los = generator.randf() * suma
+	else:
+		los = randf() * suma
 	var przebyte := 0.0
 	for id in ids:
 		przebyte += float(wagi[id])
@@ -163,17 +174,63 @@ func losuj_choroby(miejsce: Dictionary, rodzice: Variant = null) -> Dictionary:
 
 
 func losuj_rodzenstwo(bohater: Dictionary) -> Array:
-	var ile_txt := losuj_kolo({"0": 1.0, "1": 1.0, "2": 1.0, "3": 1.0})
-	var ile := 0
-	if ile_txt != "":
-		ile = int(ile_txt)
-	var lista: Array = []
 	var miejsce: Variant = bohater.get("miejsce", {})
 	if not (miejsce is Dictionary):
 		miejsce = {}
-	for _i in ile:
-		lista.append(_jedno_rodzenstwo(miejsce))
+	var kraj := _kraj_z_miejsca(miejsce)
+	var ile := _ile_rodzenstwa_kraj(kraj)
+	var lista: Array = []
+	for i in ile:
+		lista.append(_jedno_rodzenstwo(miejsce, i + 1, kraj))
 	return lista
+
+
+func _kraj_z_miejsca(miejsce: Dictionary) -> String:
+	for klucz in ["kraj_id", "kraj", "panstwo_id", "panstwo"]:
+		var wartosc: Variant = miejsce.get(klucz)
+		if wartosc != null and str(wartosc).strip_edges() != "":
+			return str(wartosc).strip_edges().to_lower()
+	return "polska"
+
+
+## Rodzeństwo = dzieci_w_rodzinie - 1. Wagi tylko ze źródła krajowego; brak kraju → 0.
+func _ile_rodzenstwa_kraj(kraj: String) -> int:
+	var dane: Variant = _czytaj_json(PLIK_WIELKOSCI_RODZINY)
+	if not (dane is Dictionary) or not (dane.get("kraje") is Dictionary):
+		return 0
+	var kraje: Dictionary = dane["kraje"]
+	if kraj == "" or not kraje.has(kraj) or not (kraje[kraj] is Dictionary):
+		return 0
+	var blok: Dictionary = kraje[kraj]
+	var pozycje: Variant = blok.get("pozycje", [])
+	if not (pozycje is Array):
+		return 0
+	var wagi := {}
+	var po_id := {}
+	for pozycja in pozycje:
+		if not (pozycja is Dictionary):
+			continue
+		var waga: Variant = pozycja.get("waga")
+		if not (waga is int or waga is float) or float(waga) <= 0.0:
+			continue
+		if str(pozycja.get("cytat", "")) == "":
+			continue
+		var id := str(pozycja.get("id", ""))
+		if id == "":
+			continue
+		wagi[id] = float(waga)
+		po_id[id] = pozycja
+	if wagi.is_empty():
+		return 0
+	var id_w := losuj_kolo(wagi)
+	if id_w == "" or not po_id.has(id_w):
+		return 0
+	var wybrany: Dictionary = po_id[id_w]
+	if wybrany.get("rodzenstwo") is int or wybrany.get("rodzenstwo") is float:
+		return int(wybrany["rodzenstwo"])
+	if wybrany.get("dzieci_w_rodzinie") is int or wybrany.get("dzieci_w_rodzinie") is float:
+		return maxi(0, int(wybrany["dzieci_w_rodzinie"]) - 1)
+	return 0
 
 
 func losuj_przyjaciela() -> Dictionary:
@@ -195,6 +252,8 @@ func losuj_znajomego() -> Dictionary:
 	return karta
 
 
+## Średnia miejsca. Ziarno rodziców (praca, dom, puste zarobki) jest osobno, w ZiarnoRodzicow.
+## Tamto koło jest raz na start rodziny i zostaje w zapisie. To nie jest losowanie co turę.
 func losuj_zarobki(typ: String) -> Variant:
 	var dane: Variant = _czytaj_json(PLIK_ZAROBKOW)
 	if not (dane is Dictionary):
@@ -329,7 +388,7 @@ func _losuj_liste(sciezka: String, klucz: String, ile_nadpisane: int = -1) -> Ar
 
 
 func _jedna_choroba(wada: Dictionary, miejsce: Dictionary, rodzice: Variant) -> Dictionary:
-	var wpis := _czestosc_dla_miejsca(wada, miejsce)
+	var wpis: Variant = _czestosc_dla_miejsca(wada, miejsce)
 	var wynik := {
 		"id": wada.get("id"),
 		"nazwa": wada.get("nazwa"),
@@ -449,6 +508,8 @@ func _czytaj_katalog(katalog: String, kontynent: String, panstwo_id: String) -> 
 			"panstwo": str(dane.get("panstwo", "")),
 			"panstwo_id": panstwo_id,
 			"kontynent": kontynent,
+			"powiat_id": str(dane.get("powiat_id", "")),
+			"wojewodztwo": str(dane.get("wojewodztwo", "")),
 		})
 
 
@@ -778,7 +839,7 @@ func _skrot_zdrowia(choroby: Dictionary) -> String:
 	return ", ".join(nazwy)
 
 
-func _jedno_rodzenstwo(miejsce_bohatera: Dictionary) -> Dictionary:
+func _jedno_rodzenstwo(miejsce_bohatera: Dictionary, numer: int = 1, kraj: String = "polska") -> Dictionary:
 	var karta := _karta("rodzenstwo")
 	_wpisz(karta, "miejsce", _miejsce_jak_bohater(miejsce_bohatera))
 	_wpisz_plec(karta)
@@ -787,7 +848,51 @@ func _jedno_rodzenstwo(miejsce_bohatera: Dictionary) -> Dictionary:
 		ile = 2
 	_wpisz_cechy(karta, ile)
 	_wpisz(karta, "rola", "rodzenstwo")
+	var plec_id := ""
+	var plec: Variant = karta.get("plec")
+	if plec is Dictionary:
+		plec_id = str(plec.get("id", ""))
+	var imie: Variant = _losuj_imie_kraj(kraj, "zenskie" if plec_id == "kobieta" else "meskie")
+	karta["imie"] = imie
+	var nazwa_imienia := ""
+	if imie is Dictionary and str(imie.get("nazwa", "")) != "":
+		nazwa_imienia = str(imie["nazwa"])
+	if plec_id == "kobieta":
+		karta["etykieta"] = ("%s (siostra)" % nazwa_imienia) if nazwa_imienia != "" else ("Siostra %d" % numer)
+	else:
+		karta["etykieta"] = ("%s (brat)" % nazwa_imienia) if nazwa_imienia != "" else ("Brat %d" % numer)
 	return karta
+
+
+func _losuj_imie_kraj(kraj: String, klucz_listy: String) -> Variant:
+	var dane: Variant = _czytaj_json(PLIK_IMION_KRAJE)
+	if not (dane is Dictionary) or not (dane.get("kraje") is Dictionary):
+		return {"id": null, "nazwa": null, "kolo": false, "powod": "Brak pliku imion."}
+	var kraje: Dictionary = dane["kraje"]
+	if kraj == "" or not kraje.has(kraj) or not (kraje[kraj] is Dictionary):
+		return {"id": null, "nazwa": null, "kolo": false, "powod": "Brak kraju w imionach."}
+	var lista: Variant = kraje[kraj].get(klucz_listy, [])
+	if not (lista is Array):
+		return {"id": null, "nazwa": null, "kolo": false, "powod": "Brak listy."}
+	var wagi := {}
+	var nazwy := {}
+	for pozycja in lista:
+		if not (pozycja is Dictionary) or not pozycja.has("id"):
+			continue
+		var waga: Variant = pozycja.get("waga")
+		if not (waga is int or waga is float) or float(waga) <= 0.0:
+			continue
+		if str(pozycja.get("cytat", "")) == "":
+			continue
+		var id := str(pozycja["id"])
+		wagi[id] = float(waga)
+		nazwy[id] = str(pozycja.get("nazwa", id))
+	if wagi.is_empty():
+		return {"id": null, "nazwa": null, "kolo": false, "powod": "Brak wag imion."}
+	var id_w := losuj_kolo(wagi)
+	if id_w == "":
+		return {"id": null, "nazwa": null, "kolo": false, "powod": "Koło puste."}
+	return {"id": id_w, "nazwa": nazwy.get(id_w, id_w), "kolo": true, "powod": ""}
 
 
 func _miejsce_jak_bohater(miejsce: Dictionary) -> Dictionary:

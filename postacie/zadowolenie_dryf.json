@@ -1,0 +1,38 @@
+{
+	"propozycja_do_poprawki": true,
+	"opis": "Zadowolenie widoczne = psychika (nastrój). Ukryte zadowolenie_docelowe ustala kierunek dryfu. Wygoda mieszkania nie daje już ±2 do psychiki — przestawia docelowe.",
+	"metryka_widoczna": "psychika",
+	"metryka_docelowa": "zadowolenie_docelowe",
+	"ukryte_w_ui": ["zadowolenie_docelowe"],
+	"baza_docelowego": 50,
+	"wygoda_offset": {
+		"propozycja_do_poprawki": true,
+		"wzor": "offset = -20 + wygoda * 0.5  (liniowo: wygoda 0 → −20, wygoda 100 → +30)",
+		"wygoda_min": 0,
+		"wygoda_max": 100,
+		"offset_min": -20,
+		"offset_max": 30,
+		"wspolczynnik": 0.5,
+		"offset_przy_zerze": -20,
+		"clamp_docelowego": [0, 100],
+		"przyklady": {
+			"wygoda_0": {"offset": -20, "docelowe": 30},
+			"wygoda_40": {"offset": 0, "docelowe": 50},
+			"wygoda_100": {"offset": 30, "docelowe": 80}
+		}
+	},
+	"dryf_tury": {
+		"propozycja_do_poprawki": true,
+		"wzor": "nowe = obecne + 0.5 * (docelowe - obecne)",
+		"udzial_odleglosci": 0.5,
+		"zaokraglenie": "roundi: delta = roundi(0.5 * (docelowe - obecne)); nowe = clamp(obecne + delta, 0, 100). Połowa od zera w górę (0.5→1, −0.5→−1).",
+		"przyklad": "obecne 50, docelowe 80 → +15 → 65"
+	},
+	"napis_tygodnia": {
+		"propozycja_do_poprawki": true,
+		"prefiks": "Samopoczucie",
+		"pokazuj_gdy_delta_niezerowa": true,
+		"nie_pokazuj_docelowego": true,
+		"uwaga": "Gracz widzi tylko zmianę widocznej psychiki, bez słowa „docelowe”."
+	}
+}

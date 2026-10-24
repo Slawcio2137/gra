@@ -1,0 +1,78 @@
+{
+	"opis": "Koło wielkości rodziny z dziećmi według kraju. Cel: ile dzieci w rodzinie (z dziećmi), potem rodzeństwo bohatera = dzieci_w_rodzinie - 1. Brak kraju = null.",
+	"regula_rodzenstwa": {
+		"opis": "Bohater jest jednym z dzieci. Liczba RODZEŃSTWA = dzieci_w_rodzinie - 1.",
+		"przyklad": "Rodzina z 2 dzieci → 1 rodzeństwo. Rodzina z 1 dzieckiem → 0 rodzeństwa."
+	},
+	"kraje": {
+		"polska": {
+			"rok": 2021,
+			"zbiorowosc": "rodziny_z_dziecmi",
+			"uwaga": "Wagi tylko wśród rodzin z dziećmi (NSP 2021). Rodziny bez dzieci nie wchodzą do koła — bohater jest dzieckiem.",
+			"zrodlo": {
+				"kto": "Główny Urząd Statystyczny",
+				"tytul": "Rodziny w Polsce w świetle wyników NSP 2021 — Tablica 4.3. Rodziny z dziećmi według liczby dzieci i miejsca zamieszkania w latach 2011 i 2021",
+				"rok": 2023,
+				"link": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/7/2/1/rodziny_w_polsce_w_swietle_wynikow_nsp2021.pdf",
+				"bdl": {
+					"podgrupa": "P4227 Rodziny według liczby dzieci",
+					"link": "https://bdl.stat.gov.pl/bdl/dane/podgrup/wymiary/31/647/4227",
+					"zmienne": {
+						"z_1_dzieckiem": 1641731,
+						"z_2_dzieci": 1641732,
+						"z_3_dzieci": 1641733,
+						"z_4_i_wiecej": 1641734,
+						"rodziny_z_dziecmi_razem": 1641730
+					}
+				},
+				"cytat": "Według wyników NSP 2021 liczba rodzin z dziećmi wyniosła 7 796 031. W 2021 r. ponad połowa (54,1%) rodzin posiadała 1 dziecko, ponad 1/3 rodzin – 2 dzieci. Tablica 4.3 (2021, ogółem): z 1 dzieckiem 4 219 462; z 2 dzieci 2 745 835; z 3 dzieci 647 883; z 4 i więcej dzieci 182 851. Potwierdzone API BDL unit-level=0 (POLSKA), rok 2021."
+			},
+			"pozycje": [
+				{
+					"id": "1_dziecko",
+					"dzieci_w_rodzinie": 1,
+					"rodzenstwo": 0,
+					"waga": 4219462,
+					"cytat": "BDL / NSP 2021 Tablica 4.3: rodziny z 1 dzieckiem — 4 219 462 (54,1% rodzin z dziećmi)."
+				},
+				{
+					"id": "2_dzieci",
+					"dzieci_w_rodzinie": 2,
+					"rodzenstwo": 1,
+					"waga": 2745835,
+					"cytat": "BDL / NSP 2021 Tablica 4.3: rodziny z 2 dzieci — 2 745 835 (35,2%)."
+				},
+				{
+					"id": "3_dzieci",
+					"dzieci_w_rodzinie": 3,
+					"rodzenstwo": 2,
+					"waga": 647883,
+					"cytat": "BDL / NSP 2021 Tablica 4.3: rodziny z 3 dzieci — 647 883 (8,3%)."
+				},
+				{
+					"id": "4_i_wiecej_dzieci",
+					"dzieci_w_rodzinie": 4,
+					"dzieci_w_rodzinie_min": 4,
+					"dzieci_w_rodzinie_max_w_zrodle": null,
+					"rodzenstwo": 3,
+					"rodzenstwo_min": 3,
+					"limit_jawny": true,
+					"ogon_nie_rozbity": true,
+					"waga": 182851,
+					"cytat": "BDL / NSP 2021 Tablica 4.3: rodziny z 4 i więcej dzieci — 182 851 (2,3%). Źródło nie rozbija 5, 6, 7… Osobno. W grze: stałe 3 rodzeństwa (= min. dla 4 dzieci), bez wymyślania ogona.",
+					"szukano_rozbicia": {
+						"wynik": "brak_lepszego_niz_4_plus",
+						"max_rodzenstwa_w_grze": 3,
+						"gdzie": [
+							"GUS PDF „Rodziny w Polsce w świetle wyników NSP 2021” — Tablica 4.3 i 4.5: koszyk „z 4 i więcej dzieci” (bez 5 / 6+ osobno)",
+							"BDL podgrupa P4227 „Rodziny według liczby dzieci” — zmienne tylko: 1, 2, 3, 4 i więcej (1641734=182851)",
+							"Eurostat ilc_lvph05 (PL 2021) — n_child: 1, 2, 3, GE4 („4 children or more”); brak 5 / 6+",
+							"Eurostat lfst_hhnhtych / household composition — publikowane podsumowania agregują „3 or more”, bez otwartego rozbicia 4/5/6+ dla PL"
+						],
+						"uwaga": "Nie wymyślono 5, 6, 10 dzieci. Koszyk 4+ zostaje z jawnym limitem rodzeństwo=3."
+					}
+				}
+			]
+		}
+	}
+}

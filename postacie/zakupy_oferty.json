@@ -1,0 +1,528 @@
+{
+	"opis": "Kategorie zakupów + pule do losowania. Oferty nieruchomości/dóbr generuje rynek_zakupow.gd (nie statyczny katalog 200 budynków). Współczynniki cen: propozycja_do_poprawki; kotwice mieszkań z NBP BaRN (IV kw. 2024) gdy dostępne.",
+	"propozycja_do_poprawki": true,
+	"to_nie_gus": true,
+	"generator": "res://scripts/rynek_zakupow.gd",
+	"obrazki_paczka": "res://zakupy/obrazki_paczka.json",
+	"kategorie": [
+		{
+			"id": "drobiazgi",
+			"nazwa": "Drobiazgi (budżet jakości)",
+			"rodzaj": "budzet_jakosci",
+			"opis": "Suwak budżetu jakości drobiazgów — tu, nie na głównej liście sklepów."
+		},
+		{
+			"id": "telefon",
+			"nazwa": "Telefon",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"pula_marek": true
+		},
+		{
+			"id": "samochod",
+			"nazwa": "Samochód",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"pula_marek": true,
+			"katalog_index": "res://pojazdy/katalog_aut_index.json",
+			"katalog": "res://pojazdy/katalog_aut_*.json",
+			"uwaga_ceny": "Ceny z paczek katalog_aut_*.json (MSRP/cennik lub mediana używanych + źródło). W puli zawsze liczba (nie „—”). Format UI: spacje co 3 cyfry. Pełny katalog wszystkich nowych EU = osobna fala danych.",
+			"filtr_ui": "cena, zasięg (miasto→powiat→województwo→PL→sąsiedzi→wysyłka zagranica), odbiór osobisty, przebieg; przy nowych: multi-marki (puste=wszystkie) + napęd + szukaj marki"
+		},
+		{
+			"id": "rower",
+			"nazwa": "Rower",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"pula_marek": true
+		},
+		{
+			"id": "komputer",
+			"nazwa": "Komputer",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"pula_marek": true
+		},
+		{
+			"id": "laptop",
+			"nazwa": "Laptop",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"pula_marek": true
+		},
+		{
+			"id": "ksiazka",
+			"nazwa": "Książka",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": []
+		},
+		{
+			"id": "samolot",
+			"nazwa": "Samolot",
+			"stan_uzywany_nowy": true,
+			"stany_nieruchomosci": [],
+			"uwaga": "Kategoria sensowna rzadko; oferty przykładowe z ceną null."
+		},
+		{
+			"id": "dom",
+			"nazwa": "Dom",
+			"stan_uzywany_nowy": false,
+			"nieruchomosc": true,
+			"stany_nieruchomosci": ["do_remontu", "do_odswiezenia", "po_remoncie", "surowy"]
+		},
+		{
+			"id": "mieszkanie",
+			"nazwa": "Mieszkanie",
+			"stan_uzywany_nowy": false,
+			"nieruchomosc": true,
+			"stany_nieruchomosci": ["do_remontu", "do_odswiezenia", "po_remoncie"],
+			"uwaga": "Bez stanu „surowy” — nie pasuje do mieszkania."
+		},
+		{
+			"id": "apartament",
+			"nazwa": "Apartament",
+			"stan_uzywany_nowy": false,
+			"nieruchomosc": true,
+			"stany_nieruchomosci": ["do_remontu", "do_odswiezenia", "po_remoncie"],
+			"uwaga": "Rzadziej na rynku; start: głównie przy wysokich zarobkach."
+		},
+		{
+			"id": "willa",
+			"nazwa": "Willa",
+			"stan_uzywany_nowy": false,
+			"nieruchomosc": true,
+			"stany_nieruchomosci": ["do_remontu", "do_odswiezenia", "po_remoncie", "surowy"],
+			"uwaga": "Bardzo rzadka; start: praktycznie tylko przy bardzo wysokich zarobkach."
+		}
+	],
+	"etykiety_stanu": {
+		"nowy": "Nowy",
+		"uzywany": "Używany",
+		"do_remontu": "Do remontu",
+		"do_odswiezenia": "Do odświeżenia",
+		"po_remoncie": "Po remoncie",
+		"surowy": "Surowy",
+		"swiezo_po_remoncie": "Świeżo po remoncie"
+	},
+	"pule_marek": {
+		"opis": "Krótkie listy PL-realistyczne do losowania nazw. Nie katalog 200 SKU.",
+		"telefon": ["Samsung", "Xiaomi", "Apple", "Motorola", "Realme", "Nothing"],
+		"laptop": ["Lenovo", "ASUS", "HP", "Dell", "Apple", "Acer"],
+		"komputer": ["Gotowiec (składak)", "Dell", "HP", "Lenovo", "ASUS"],
+		"samochod": ["Toyota", "Skoda", "Volkswagen", "Hyundai", "Kia", "Dacia"],
+		"rower": ["Kross", "Romet", "Giant", "Merida", "Author"]
+	},
+	"pule_modeli": {
+		"telefon": ["A15", "Redmi Note", "Galaxy A", "iPhone SE", "G84", "Pixel-like"],
+		"laptop": ["IdeaPad", "VivoBook", "Pavilion", "Inspiron", "MacBook Air", "Swift"],
+		"komputer": ["biurowy", "domowy", "mini-PC"],
+		"samochod": ["(modele z katalog_aut_pl.json)"],
+		"rower": ["miejski", "trekking", "MTB"]
+	},
+	"nieruchomosci": {
+		"opis": "Parametry losowania mieszkań/domów. Limit ofert na miasto × turę. Cena ze wzoru.",
+		"limit_ofert_na_miasto": {"od": 3, "do": 6, "propozycja_do_poprawki": true},
+		"limit_ofert_samochodow_na_miasto": {
+			"uwaga": "Zastąpione: baza = ludnosc/5000 ±30% po aktywacji zakładki Samochód. Bez sztywnego 10–18.",
+			"propozycja_do_poprawki": true
+		},
+		"odswiezanie_tur": {
+			"co_ile_tur": 1,
+			"znika_udzial": 0.35,
+			"dochodzi_udzial": 0.4,
+			"propozycja_do_poprawki": true
+		},
+		"zasieg_szukania_km": {
+			"min": 5,
+			"max": 2500,
+			"domyslnie": 25,
+			"propozycja_do_poprawki": true,
+			"uwaga": "Suwak km + poziomy dyskretne. Odległość — przybliżenie gry, nie GIS."
+		},
+		"zasieg_szukania_poziomy": [
+			{"id": "miasto", "nazwa": "Miasto", "min_km": 1, "max_km": 35},
+			{"id": "powiat", "nazwa": "Powiat", "min_km": 5, "max_km": 80},
+			{"id": "wojewodztwo", "nazwa": "Województwo", "min_km": 15, "max_km": 250},
+			{"id": "polska", "nazwa": "Cała Polska", "min_km": 20, "max_km": 800},
+			{"id": "sasiedzi", "nazwa": "Sąsiednie kraje", "min_km": 80, "max_km": 1500},
+			{"id": "wysylka_zagranica", "nazwa": "Wysyłka z zagranicy", "min_km": 200, "max_km": 2500}
+		],
+		"metraz_m2": {
+			"mieszkanie": {"przedzialy": [[25, 38], [39, 52], [53, 70], [71, 95]], "wagi": [2, 4, 3, 1]},
+			"dom": {"przedzialy": [[70, 100], [101, 140], [141, 180], [181, 240]], "wagi": [2, 4, 3, 1]},
+			"apartament": {"przedzialy": [[45, 60], [61, 80], [81, 105], [106, 140]], "wagi": [2, 4, 3, 1]},
+			"willa": {"przedzialy": [[160, 220], [221, 280], [281, 360], [361, 480]], "wagi": [3, 4, 2, 1]},
+			"propozycja_do_poprawki": true
+		},
+		"pokoje": {
+			"mieszkanie": {"od": 1, "do": 4},
+			"dom": {"od": 3, "do": 6},
+			"apartament": {"od": 2, "do": 5},
+			"willa": {"od": 5, "do": 10},
+			"propozycja_do_poprawki": true
+		},
+		"stany": {
+			"mieszkanie": ["do_remontu", "do_odswiezenia", "po_remoncie"],
+			"dom": ["do_remontu", "do_odswiezenia", "po_remoncie", "surowy"],
+			"apartament": ["do_remontu", "do_odswiezenia", "po_remoncie"],
+			"willa": ["do_remontu", "do_odswiezenia", "po_remoncie", "surowy"],
+			"wagi_propozycja": {
+				"do_remontu": 2,
+				"do_odswiezenia": 4,
+				"po_remoncie": 3,
+				"surowy": 1
+			}
+		},
+		"rynek_wagi_typu": {
+			"propozycja_do_poprawki": true,
+			"mieszkanie": 0.64,
+			"dom": 0.28,
+			"apartament": 0.06,
+			"willa": 0.02,
+			"uwaga": "Willa rzadka na rynku; apartament rzadszy niż mieszkanie/dom."
+		},
+		"lokalizacja": {
+			"szansa_miasto_gracza": 0.55,
+			"propozycja_do_poprawki": true
+		},
+		"wygoda_clamp_typu": {
+			"propozycja_do_poprawki": true,
+			"opis": "Wygoda 100 bardzo trudna — praktycznie tylko willa i apartament (top metraż + top stan + wysokie zarobki). Zwykłe mieszkanie/dom mają niższy sufit.",
+			"mieszkanie": 82,
+			"dom": 86,
+			"apartament": 100,
+			"willa": 100,
+			"dom_jednorodzinny": 86
+		},
+		"wygoda_0_100": {
+			"propozycja_do_poprawki": true,
+			"baza": 40,
+			"za_m2_powyzej_40": 0.35,
+			"mnozniki_stanu": {
+				"do_remontu": -18,
+				"do_odswiezenia": -6,
+				"po_remoncie": 12,
+				"surowy": -28,
+				"swiezo_po_remoncie": 12
+			},
+			"za_km_od_centrum": -0.45,
+			"bonus_miasto_gracza": 4,
+			"clamp": [0, 100],
+			"uwaga": "Sufit per typ: nieruchomosci.wygoda_clamp_typu (mieszkanie/dom niżej; apartament/willa do 100)."
+		},
+		"cena": {
+			"propozycja_do_poprawki": true,
+			"flaga": "wzór gry; rząd wielkości kotwiczony w NBP BaRN gdy kotwica != null",
+			"wzór": "cena = round(metraz_m2 * cena_m2_bazowa * mnoznik_stanu * mnoznik_lokalizacji * (0.92 + 0.16*rand))",
+			"mnozniki_stanu": {
+				"do_remontu": 0.78,
+				"do_odswiezenia": 0.92,
+				"po_remoncie": 1.08,
+				"surowy": 0.65,
+				"swiezo_po_remoncie": 1.08
+			},
+			"mnozniki_lokalizacji": {
+				"miasto_gracza_centrum": 1.12,
+				"miasto_gracza_obrzeza": 1.0,
+				"inne_miasto": 0.9
+			},
+			"kotwice_nbp_barn": {
+				"opis": "Średnie ceny transakcyjne mkw. mieszkań — IV kw. 2024, baza BaRN NBP. Poziomy zł/m² z zestawień cytujących NBP (Bankier); oficjalny PDF NBP poniżej. Dom: brak osobnej kotwicy NBP → null.",
+				"rok": 2024,
+				"kwartal": 4,
+				"link_nbp_pdf": "https://nbp.pl/wp-content/uploads/2025/03/Informacja-o-cenach-mieszkan-w-IV-2024.pdf",
+				"link_nbp_strona": "https://nbp.pl/sytuacja-na-rynku-mieszkaniowym-w-polsce-2/",
+				"cytat": "NBP, Informacja o cenach mieszkań… w IV kwartale 2024 r. (BaRN). Poziomy transakcyjne RW/RP w 17 miastach — zestawienie prasowe Bankier na podstawie NBP (Warszawa RW 15 745 zł/m²; 7 miast RW śr. ok. 13 169; RP śr. ok. 14 265).",
+				"mieszkanie_zl_za_m2": {
+					"rynek_wtorny_7_miast": 13169,
+					"rynek_pierwotny_7_miast": 14265,
+					"domyslna_kotwica_gry": 11000,
+					"uwaga": "domyslna_kotwica_gry ≈ rząd wielkości RW poza top-7; propozycja do poprawki przy pełnej tabeli BaRN."
+				},
+				"dom_zl_za_m2": null,
+				"dom_mnoznik_względem_mieszkania": {
+					"wartosc": 0.85,
+					"propozycja_do_poprawki": true,
+					"uwaga": "Brak oficjalnej kotwicy cen domów w otwartym NBP BaRN — mnożnik propozycja."
+				}
+			}
+		},
+		"remont": {
+			"propozycja_do_poprawki": true,
+			"opis": "W Majątku: koszt ≈ metraż * stawka; wygoda +delta (clamp 100).",
+			"stawka_zl_za_m2": {
+				"do_remontu": 1200,
+				"do_odswiezenia": 450,
+				"surowy": 1800,
+				"po_remoncie": 0
+			},
+			"delta_wygody": {
+				"do_remontu": 22,
+				"do_odswiezenia": 10,
+				"surowy": 30,
+				"po_remoncie": 0
+			}
+		},
+		"lokum_startowe": {
+			"propozycja_do_poprawki": true,
+			"to_nie_gus": true,
+			"opis": "Pełny obiekt lokum rodziny na Start: lokalizacja miasto/poza, typ, metraż, pokoje, stan, wygoda. Kierunek miasto↔poza i mieszkanie↔dom to reguły gry (nie % GUS). Wygoda idzie do dryfu przez lokum_startowe.",
+			"lokalizacja": {
+				"propozycja_do_poprawki": true,
+				"urodzony_miasto_szansa_mieszkac_w_miescie": 0.78,
+				"urodzony_reszta_szansa_mieszkac_w_miescie": 0.32,
+				"uwaga": "Kierunek: urodzenie w mieście powiatowym → waga w stronę mieszkania w mieście; reszta powiatu/wieś → waga w stronę poza. To nie jest udział GUS — brak źródła w zapisie."
+			},
+			"typ_wagi": {
+				"propozycja_do_poprawki": true,
+				"miasto": {"mieszkanie": 0.68, "dom": 0.20, "apartament": 0.09, "willa": 0.03},
+				"poza": {"mieszkanie": 0.24, "dom": 0.66, "apartament": 0.02, "willa": 0.08},
+				"apartament_min_poziom_zarobkow": 0.72,
+				"willa_min_poziom_zarobkow": 0.88,
+				"uwaga": "Mieszkanie częściej w mieście, dom/willa częściej poza. Apartament przy wysokich zarobkach; willa rzadko i głównie przy bardzo wysokich."
+			},
+			"zarobki_poziom": {
+				"propozycja_do_poprawki": true,
+				"wzor": "srodek = (od_zl+do_zl)/2 gospodarstwa (albo mediana/przeciętne); poziom = clamp((srodek - min) / (max - min), 0, 1)",
+				"min_zl_gospodarstwa": 9000,
+				"max_zl_gospodarstwa": 30000,
+				"uwaga": "Przedział gry wokół typowych sum dwóch rodziców z wielkich grup ISCO (GUS 2024). Nie rozkład GUS gospodarstw."
+			},
+			"metraz_od_zarobkow": {
+				"propozycja_do_poprawki": true,
+				"wzor": "metraz = lerp(zakres_min, zakres_max, poziom) + szum; wyższy poziom → większy metraż",
+				"mieszkanie": {"od": [28, 40], "do": [62, 92]},
+				"dom": {"od": [78, 105], "do": [145, 220]},
+				"apartament": {"od": [48, 62], "do": [90, 125]},
+				"willa": {"od": [160, 200], "do": [280, 420]}
+			},
+			"stan_od_zarobkow": {
+				"propozycja_do_poprawki": true,
+				"poziomy": [
+					{"do": 0.28, "wagi": {"do_remontu": 4, "do_odswiezenia": 4, "po_remoncie": 1, "surowy": 1}},
+					{"do": 0.55, "wagi": {"do_remontu": 2, "do_odswiezenia": 5, "po_remoncie": 3, "surowy": 0}},
+					{"do": 0.78, "wagi": {"do_remontu": 1, "do_odswiezenia": 3, "po_remoncie": 5, "surowy": 0}},
+					{"do": 1.01, "wagi": {"do_remontu": 0, "do_odswiezenia": 2, "po_remoncie": 6, "surowy": 0}}
+				]
+			},
+			"wygoda_od_zarobkow": {
+				"propozycja_do_poprawki": true,
+				"wzor": "wygoda = baza_typu + poziom*za_poziom + (metraz-baza_m2)*za_m2 + mnoznik_stanu; clamp min…sufit_typu",
+				"baza_typu": {"mieszkanie": 40, "dom": 48, "apartament": 58, "willa": 66, "dom_jednorodzinny": 48},
+				"baza_m2": {"mieszkanie": 40, "dom": 100, "apartament": 55, "willa": 180, "dom_jednorodzinny": 100},
+				"za_poziom_zarobkow": 30,
+				"za_m2_powyzej_bazy": 0.22,
+				"mnozniki_stanu": {
+					"do_remontu": -16,
+					"do_odswiezenia": -5,
+					"po_remoncie": 10,
+					"surowy": -24
+				},
+				"clamp_min": 18,
+				"clamp": [18, 100],
+				"uwaga": "Sufit per typ z nieruchomosci.wygoda_clamp_typu — mieszkanie≈82, dom≈86, apartament/willa do 100."
+			},
+			"cena_szacunkowa": {
+				"propozycja_do_poprawki": true,
+				"licz_ze_wzoru_rynku": true,
+				"uwaga": "Opcjonalnie: ta sama kotwica co oferty rynku; null gdy wzór się nie uda."
+			}
+		},
+		"wygoda_efekt_zadowolenia_tydzien": {
+			"propozycja_do_poprawki": true,
+			"to_nie_gus": true,
+			"opis": "Stary model ±2 usunięty. Dryf: postacie/zadowolenie_dryf.json — wygoda przestawia ukryte zadowolenie_docelowe (offset −20…+30), psychika dryfuje 50% dystansu co turę. Pełne lokum startowe: nieruchomosci.lokum_startowe; tu mapa awaryjna gdy brak obiektu.",
+			"metryka": "psychika",
+			"reguly_dryfu": "res://postacie/zadowolenie_dryf.json",
+			"lokum_rodziny_wygoda": {
+				"propozycja_do_poprawki": true,
+				"mieszkanie": 48,
+				"dom_jednorodzinny": 58,
+				"apartament": 72,
+				"willa": 88,
+				"domyslnie": 50,
+				"uwaga": "Awaryjnie gdy brak lokum_startowe.wygoda. Start buduje pełny obiekt z wygodą od zarobków."
+			}
+		}
+	},
+	"dobra_cena_propozycja": {
+		"propozycja_do_poprawki": true,
+		"to_nie_gus": true,
+		"telefon": {"nowy": [800, 4500], "uzywany": [200, 2200]},
+		"laptop": {"nowy": [1800, 7000], "uzywany": [500, 3500]},
+		"komputer": {"nowy": [1500, 6000], "uzywany": [400, 2800]},
+		"rower": {"nowy": [600, 3500], "uzywany": [150, 1500]},
+		"samochod": {"nowy": [60000, 180000], "uzywany": [2500, 90000]},
+		"ksiazka": {"nowy": [25, 89], "uzywany": [5, 40]},
+		"samolot": {"nowy": null, "uzywany": null},
+		"uwaga_auta_tanie": "Tier ~2500+ zł „jeżdżące”; uszkodzone taniej (kotwice AAA Auto / Otomoto, szacunek)."
+	},
+	"auta": {
+		"propozycja_do_poprawki": true,
+		"szansa_tieru_taniego": 0.18,
+		"baza_ogloszen": "ludnosc / 5000 — TYLKO używane (pula lokalna); nowe z katalogu wszędzie, bez limitu miasta",
+		"pula_lokalna": "tylko_uzywane",
+		"nowe": "katalog_globalny + opcjonalnie sprowadzenie/import (szacunek+zrodlo)",
+		"filtr_marek": "multi-wybór; puste = wszystkie",
+		"rozbieznosc_ilosciowa": 0.30,
+		"mnoznik_spalania_vmax": 1.55,
+		"odswiezanie_tur": {
+			"znika_od": 0.15,
+			"znika_do": 0.35,
+			"dochodzi_od": 0.15,
+			"dochodzi_do": 0.35,
+			"tylko_po_aktywacji_zakladki": true,
+			"propozycja_do_poprawki": true
+		},
+		"zakladka_flaga": "rynek_zakupow.zakladka_samochodow_aktywna",
+		"odbior_uzywany": "zawsze_osobisty_lub_oba",
+		"ocena_stanu": "kazdy_auto; osobisty=przed_zakupem; wysylka=po_dostawie_lub_ogledzinach",
+		"usterki": "res://pojazdy/usterki_aut.json",
+		"znajomosc_pojazdow": "res://postacie/znajomosc_pojazdow.json",
+		"kotwice_tanich": {
+			"opis": "Mediany AAA Auto (android.com.pl) + przykłady Otomoto/Autoplac do 5 tys.",
+			"peugeot_206_mediana_zl": 4600,
+			"skoda_fabia_mediana_zl": 11500,
+			"przyklad_otomoto_fabia_uszkodzona_zl": 2500,
+			"zrodla": [
+				"https://android.com.pl/moto/494686-najtansze-auta-uzywane-w-polsce/",
+				"https://www.otomoto.pl/osobowe/oferta/skoda-fabia-ID6I9H0f.html",
+				"https://autoplac.pl/oferty/samochody-osobowe/cena-do-5-tysiecy"
+			]
+		}
+	},
+	"zaokraglanie_cen": {
+		"propozycja_do_poprawki": true,
+		"opis": "Po wyliczeniu ceny: zaokraglij_cene. Auta: 3 pierwsze znaczące + reguły progów (nie zwykły krok 100).",
+		"kroki_zl": {
+			"ksiazka": 5,
+			"rower": 50,
+			"samochod": 100,
+			"mieszkanie": 1000,
+			"dom": 1000,
+			"apartament": 5000,
+			"willa": 5000,
+			"telefon": 10,
+			"laptop": 50,
+			"komputer": 50,
+			"samolot": 1000
+		},
+		"domyslny_krok_zl": 10,
+		"samochod_regula": {
+			"opis": "3 pierwsze znaczące cyfry; >9 900 zł setki odpadają (do tysięcy); >999 000 zł tysiące odpadają (do dziesiątek tysięcy). UI: spacje co 3 cyfry.",
+			"przyklady": [
+				{"wejscie": 1234, "wynik": 1230, "tekst": "1 230 zł"},
+				{"wejscie": 2500, "wynik": 2500, "tekst": "2 500 zł"},
+				{"wejscie": 45540, "wynik": 46000, "tekst": "46 000 zł"},
+				{"wejscie": 123456, "wynik": 123000, "tekst": "123 000 zł"},
+				{"wejscie": 1100000, "wynik": 1100000, "tekst": "1 100 000 zł"},
+				{"wejscie": 1234567, "wynik": 1230000, "tekst": "1 230 000 zł"}
+			]
+		}
+	},
+	"stan_jakosci": {
+		"propozycja_do_poprawki": true,
+		"opis": "Używane dobra: stan_rzeczywisty i stan_deklarowany 0–100. Cena przy wystawieniu głównie od deklarowanego. Nowe: wysoki stan, bez kłamstwa.",
+		"nowy": {
+			"rzeczywisty_od": 95,
+			"rzeczywisty_do": 100,
+			"kłamstwo_szansa": 0.0
+		},
+		"uzywany": {
+			"rzeczywisty_od": 35,
+			"rzeczywisty_do": 92,
+			"kłamstwo_szansa": 0.28,
+			"kłamstwo_delta_od": 5,
+			"kłamstwo_delta_do": 22,
+			"uwaga": "Deklarowany może być wyżej niż rzeczywisty; nigdy niżej przy kłamstwie."
+		},
+		"mnoznik_ceny_od_deklarowanego": {
+			"propozycja_do_poprawki": true,
+			"wzor": "mnoznik = baza_min + (baza_max - baza_min) * (stan_deklarowany / 100)",
+			"baza_min": 0.55,
+			"baza_max": 1.05
+		},
+		"etykiety_progow": [
+			{"do": 20, "id": "fatalny", "nazwa": "Fatalny"},
+			{"do": 40, "id": "slaby", "nazwa": "Słaby"},
+			{"do": 60, "id": "sredni", "nazwa": "Średni"},
+			{"do": 80, "id": "dobry", "nazwa": "Dobry"},
+			{"do": 100, "id": "bardzo_dobry", "nazwa": "Bardzo dobry"}
+		]
+	},
+	"przebieg_auta": {
+		"propozycja_do_poprawki": true,
+		"opis": "przebieg_km: nowe = 0; używane = wylosowany przebieg wpływający na cenę (spadek z przebiegiem — rząd wielkości jak na rynku wtórnym PL).",
+		"nowy_km": 0,
+		"uzywany_km": {"od": 25000, "do": 320000},
+		"wplyw_na_cene": {
+			"propozycja_do_poprawki": true,
+			"wzor": "mnoznik = clamp(1 - (przebieg_km / bazowe_km) * spadek_przy_bazie, min_mnoznik, 1)",
+			"bazowe_km": 200000,
+			"spadek_przy_bazie": 0.42,
+			"min_mnoznik": 0.42,
+			"kotwica": "Przy medianach AAA Auto (wysoki przebieg ≈ niższa mediana w segmencie tanich); wzór gry, nie regresja Otomoto."
+		}
+	},
+	"ocena_stanu": {
+		"propozycja_do_poprawki": true,
+		"opis": "Każdy samochód: ocena możliwa. Odbiór osobisty = przed zakupem; sama wysyłka = po dostawie / po oględzinach. Budynki zawsze osobisty.",
+		"szum_wlasnej_oceny": {"od": -8, "do": 8},
+		"szum_z_pomoca": {"od": -3, "do": 3},
+		"pomoc": {
+			"opis": "Zgoda zależy od relacji + charakteru. pomocny nie ma w cechach — używamy życzliwy/opiekuńczy/empatyczny/uprzejmy.",
+			"cechy_chetniej": {
+				"zyczliwy": 0.18,
+				"opiekunczy": 0.22,
+				"empatyczny": 0.15,
+				"uprzejmy": 0.12,
+				"lojalny": 0.1
+			},
+			"cechy_rzadziej": {
+				"wygodny": -0.2,
+				"oszczedny": -0.08,
+				"oschly": -0.15,
+				"zamkniety": -0.12,
+				"zlosliwy": -0.2
+			},
+			"baza_szansy": {
+				"rodzic": 0.62,
+				"przyjaciel": 0.48,
+				"znajomy": 0.28
+			},
+			"relacja_bonus": {
+				"propozycja_do_poprawki": true,
+				"wzor": "bonus = (relacja_0_100 - 50) / 200",
+				"domyslna_relacja": 55
+			},
+			"wyniki_wagi": {
+				"zgoda_teraz": 0.45,
+				"odroczenie": 0.35,
+				"odmowa": 0.2
+			},
+			"odroczenie_tygodnie_wagi": {
+				"1": 0.4,
+				"2": 0.3,
+				"3": 0.2,
+				"4": 0.1
+			}
+		}
+	},
+	"targowanie": {
+		"propozycja_do_poprawki": true,
+		"opis": "Tylko używane. Dialogi: postacie/dialogi_targowanie.json. Próg bardzo zaniżonej oferty w JSON.",
+		"dialogi": "res://postacie/dialogi_targowanie.json",
+		"tylko_uzywane": true,
+		"max_rund": 3,
+		"prog_bardzo_zanizona_procent_ceny": 55,
+		"akceptacja_min_procent_ceny": 82,
+		"odmowa_min_procent_ceny": 55,
+		"suwak_procent_od": 50,
+		"suwak_procent_do": 100
+	},
+	"filtr_ceny": {
+		"opis": "Suwak min–max. Oferty z cena_zl null zawsze widać.",
+		"gdy_brak_liczb": "ukryj_suwak_albo_pokaz_pauzy"
+	},
+	"oferty": []
+}

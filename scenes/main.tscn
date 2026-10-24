@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmainntrldemo01"]
+[gd_scene load_steps=6 format=3 uid="uid://bmainntrldemo01"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/start.png" id="3_start"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/ustawienia.png" id="4_ustawienia"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/powrot.png" id="5_powrot"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/wyjscie.png" id="6_wyjscie"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -11,140 +15,374 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_main")
 
-[node name="BirthPanel" type="VBoxContainer" parent="."]
+[node name="TloOkna" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.141176, 0.219608, 0.266667, 1)
+
+[node name="MenuEkran" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -600.0
-offset_top = -280.0
-offset_right = -80.0
-offset_bottom = 280.0
+offset_left = -200.0
+offset_top = -240.0
+offset_right = 200.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 14
+alignment = 1
 
-[node name="BirthTitle" type="Label" parent="BirthPanel"]
+[node name="StartButton" type="Button" parent="MenuEkran"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+alignment = 1
+text = "Start"
+icon = ExtResource("3_start")
+expand_icon = true
+
+[node name="WczytajButton" type="Button" parent="MenuEkran"]
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Miejsce urodzenia"
+alignment = 1
+text = "Wczytaj"
 
-[node name="ButtonTrybSam" type="Button" parent="BirthPanel"]
+[node name="UstawieniaButton" type="Button" parent="MenuEkran"]
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-toggle_mode = true
-disabled = true
-text = "Wybór miejsca"
+theme_override_font_sizes/font_size = 22
+alignment = 1
+text = "Ustawienia"
+icon = ExtResource("4_ustawienia")
+expand_icon = true
 
-[node name="ButtonTrybKontynent" type="Button" parent="BirthPanel"]
+[node name="StatystykiButton" type="Button" parent="MenuEkran"]
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-toggle_mode = true
-text = "Losowo na kontynencie"
+theme_override_font_sizes/font_size = 22
+alignment = 1
+text = "Statystyki"
 
-[node name="ButtonTrybSwiat" type="Button" parent="BirthPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-toggle_mode = true
-disabled = true
-text = "Kraj"
-
-[node name="ButtonReklama" type="Button" parent="BirthPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Reklama"
-
-[node name="CityFilter" type="LineEdit" parent="BirthPanel"]
-visible = false
-layout_mode = 2
-placeholder_text = "Szukaj miasta albo wpisz id"
-theme_override_font_sizes/font_size = 18
-
-[node name="CityList" type="ItemList" parent="BirthPanel"]
-visible = false
-custom_minimum_size = Vector2(480, 220)
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-
-[node name="ContinentPick" type="OptionButton" parent="BirthPanel"]
+[node name="BrakZapisu" type="Label" parent="MenuEkran"]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-
-[node name="CountryPick" type="OptionButton" parent="BirthPanel"]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-
-[node name="BirthHint" type="Label" parent="BirthPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Darmowy jest kontynent. Kraj otwiera przycisk Reklama na tę sesję, bez prawdziwej reklamy. Wybór miejsca jest premium i zostaje zablokowany, bez sklepu."
+horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="StartButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 80.0
-offset_top = -28.0
-offset_right = 280.0
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "Start"
-
-[node name="GameRoot" type="VBoxContainer" parent="."]
+[node name="Gra" type="Control" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = -32.0
-offset_bottom = -32.0
-theme_override_constants/separation = 16
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="StatusLabel" type="Label" parent="GameRoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Gra wystartowała. Kliknij akcję albo rozwiń opcje."
-autowrap_mode = 3
+[node name="Margines" type="MarginContainer" parent="Gra"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 64
 
-[node name="ActionButton" type="Button" parent="GameRoot"]
+[node name="Kolumna" type="VBoxContainer" parent="Gra/Margines"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Akcja"
-
-[node name="OptionsButton" type="Button" parent="GameRoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Rozwiń opcje"
-
-[node name="OptionsPanel" type="VBoxContainer" parent="GameRoot"]
-visible = false
-layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="OptionSchool" type="Button" parent="GameRoot/OptionsPanel"]
+[node name="PasekStatystyk" type="PanelContainer" parent="Gra/Margines/Kolumna"]
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
-text = "Szkoła (jeszcze puste)"
+size_flags_horizontal = 3
 
-[node name="OptionShop" type="Button" parent="GameRoot/OptionsPanel"]
+[node name="PasekWnetrze" type="VBoxContainer" parent="Gra/Margines/Kolumna/PasekStatystyk"]
 layout_mode = 2
-text = "Sklep (jeszcze puste)"
+theme_override_constants/separation = 6
 
-[node name="OptionWork" type="Button" parent="GameRoot/OptionsPanel"]
+[node name="PasekGlowny" type="HBoxContainer" parent="Gra/Margines/Kolumna/PasekStatystyk/PasekWnetrze"]
 layout_mode = 2
-text = "Praca (jeszcze puste)"
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="GameRoot/ActionButton" to="." method="_on_action_pressed"]
-[connection signal="pressed" from="GameRoot/OptionsButton" to="." method="_on_options_pressed"]
+[node name="PasekRozwiniety" type="VBoxContainer" parent="Gra/Margines/Kolumna/PasekStatystyk/PasekWnetrze"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="UchwytPaska" type="ColorRect" parent="Gra/Margines/Kolumna/PasekStatystyk/PasekWnetrze"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+color = Color(0.35, 0.42, 0.48, 1)
+
+[node name="PrzyciskWszystkieStat" type="Button" parent="Gra/Margines/Kolumna"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+alignment = 1
+text = "Wszystkie statystyki ilościowe"
+
+[node name="Lokalizacja" type="Label" parent="Gra/Margines/Kolumna"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="SiatkaZakladek" type="GridContainer" parent="Gra/Margines/Kolumna"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="BialyEkran" type="PanelContainer" parent="Gra/Margines/Kolumna"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginesBialy" type="MarginContainer" parent="Gra/Margines/Kolumna/BialyEkran"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="KolumnaBiala" type="VBoxContainer" parent="Gra/Margines/Kolumna/BialyEkran/MarginesBialy"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="TytulBialy" type="Label" parent="Gra/Margines/Kolumna/BialyEkran/MarginesBialy/KolumnaBiala"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.18, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = " "
+
+[node name="ScrollBialy" type="ScrollContainer" parent="Gra/Margines/Kolumna/BialyEkran/MarginesBialy/KolumnaBiala"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TrescBiala" type="VBoxContainer" parent="Gra/Margines/Kolumna/BialyEkran/MarginesBialy/KolumnaBiala/ScrollBialy"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="DolSuwaka" type="VBoxContainer" parent="Gra/Margines/Kolumna/BialyEkran/MarginesBialy/KolumnaBiala"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="NastepnaTura" type="Button" parent="Gra/Margines/Kolumna"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+alignment = 1
+text = "Następna tura"
+
+[node name="PanelUstawien" type="PanelContainer" parent="."]
+visible = false
+z_index = 30
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margines" type="MarginContainer" parent="PanelUstawien"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 72
+
+[node name="ScrollUstawien" type="ScrollContainer" parent="PanelUstawien/Margines"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Kolumna" type="VBoxContainer" parent="PanelUstawien/Margines/ScrollUstawien"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Tytul" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+text = "Ustawienia"
+
+[node name="Proporcje" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+autowrap_mode = 3
+text = "Ekran pionowy (telefon)."
+
+[node name="SzerokoscOpis" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+visible = false
+layout_mode = 2
+text = ""
+
+[node name="Szerokosc1" type="Button" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+toggle_mode = true
+alignment = 0
+text = "1/3"
+
+[node name="Szerokosc2" type="Button" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+toggle_mode = true
+alignment = 0
+text = "2/3"
+
+[node name="Szerokosc3" type="Button" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+toggle_mode = true
+alignment = 0
+text = "3/3"
+
+[node name="PanelAlphaOpis" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+text = "Przejrzystość panelu: 0% przejrzystości"
+
+[node name="PanelAlpha" type="HSlider" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="PrzyciskiAlphaOpis" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+text = "Przejrzystość przycisków: 25%"
+
+[node name="PrzyciskiAlpha" type="HSlider" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.75
+
+[node name="NapisyAlphaOpis" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+text = "Przejrzystość napisów: 0%"
+
+[node name="NapisyAlpha" type="HSlider" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="KolorNapisowOpis" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+text = "Kolor napisów"
+
+[node name="KolorNapisow" type="ColorPickerButton" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+edit_alpha = false
+color = Color(1, 1, 1, 1)
+
+[node name="KolorTlaOpis" type="Label" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+layout_mode = 2
+text = "Kolor tła za napisami"
+
+[node name="KolorTla" type="ColorPickerButton" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+edit_alpha = false
+color = Color(0.45, 0.45, 0.48, 1)
+
+[node name="ZamknijUstawienia" type="Button" parent="PanelUstawien/Margines/ScrollUstawien/Kolumna"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+alignment = 1
+text = "Zamknij"
+
+[node name="UstawieniaGry" type="Button" parent="."]
+visible = false
+z_index = 40
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 64.0
+focus_mode = 0
+tooltip_text = "Ustawienia"
+icon = ExtResource("4_ustawienia")
+expand_icon = false
+theme_override_constants/icon_max_width = 28
+
+[node name="Powrot" type="Button" parent="."]
+visible = false
+z_index = 40
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -8.0
+focus_mode = 0
+tooltip_text = "Powrót do poprzedniego / ekranu głównego"
+icon = ExtResource("5_powrot")
+expand_icon = false
+theme_override_constants/icon_max_width = 28
+
+[node name="Wyjscie" type="Button" parent="."]
+z_index = 40
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -8.0
+offset_bottom = -8.0
+focus_mode = 0
+tooltip_text = "Wyjście"
+icon = ExtResource("6_wyjscie")
+expand_icon = false
+theme_override_constants/icon_max_width = 28
+
+[connection signal="pressed" from="MenuEkran/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MenuEkran/WczytajButton" to="." method="_on_wczytaj_pressed"]
+[connection signal="pressed" from="MenuEkran/UstawieniaButton" to="." method="_on_ustawienia_pressed"]
+[connection signal="pressed" from="UstawieniaGry" to="." method="_on_ustawienia_pressed"]
+[connection signal="pressed" from="Powrot" to="." method="_on_powrot"]
+[connection signal="pressed" from="Wyjscie" to="." method="_on_wyjscie"]
+[connection signal="pressed" from="PanelUstawien/Margines/ScrollUstawien/Kolumna/ZamknijUstawienia" to="." method="_on_zamknij_ustawienia"]
+[connection signal="pressed" from="Gra/Margines/Kolumna/NastepnaTura" to="." method="_on_nastepna_tura"]
+[connection signal="pressed" from="Gra/Margines/Kolumna/PrzyciskWszystkieStat" to="." method="_on_wszystkie_stat"]

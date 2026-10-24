@@ -1,0 +1,581 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/jedzenie_ustawienia.gd" id="1_jedzenie"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/zebatka.png" id="2_zebatka"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/kropka_mala.png" id="3_mala"]
+[ext_resource type="Texture2D" path="res://grafika/ikony/kolko_biale.png" id="4_kolko"]
+
+[node name="JedzenieUstawienia" type="VBoxContainer"]
+offset_right = 1216.0
+offset_bottom = 640.0
+theme_override_constants/separation = 6
+script = ExtResource("1_jedzenie")
+
+[node name="Gora" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Zatwierdz" type="Button" parent="Gora"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+alignment = 1
+text = "Zatwierdź"
+
+[node name="Zamknij" type="Button" parent="Gora"]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+alignment = 1
+text = "Zamknij"
+
+[node name="Zbiorcze" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+text = "Wynik zmian: brak niezatwierdzonych zmian"
+
+[node name="Kwestia" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+
+[node name="Rzad" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RozwinJedzenie" type="Button" parent="Rzad"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+alignment = 1
+text = "Ustawienia jedzenia"
+
+[node name="ZebatkaJedzenie" type="Button" parent="Rzad"]
+custom_minimum_size = Vector2(44, 34)
+layout_mode = 2
+expand_icon = true
+icon = ExtResource("2_zebatka")
+
+[node name="PanelZebatki" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 28
+
+[node name="Wnetrze" type="VBoxContainer" parent="PanelZebatki"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Akapit" type="Label" parent="PanelZebatki/Wnetrze"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+text = "Kiedy widać opis wpływu przy opcjach. Napis jest mniejszy i zaczyna się od lewej."
+
+[node name="TrybWylaczone" type="HBoxContainer" parent="PanelZebatki/Wnetrze"]
+layout_mode = 2
+
+[node name="Przycisk" type="Button" parent="PanelZebatki/Wnetrze/TrybWylaczone"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+toggle_mode = true
+alignment = 0
+theme_override_font_sizes/font_size = 13
+text = "Wyłączone"
+
+[node name="Kropki" type="CenterContainer" parent="PanelZebatki/Wnetrze/TrybWylaczone"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+
+[node name="Mala" type="TextureRect" parent="PanelZebatki/Wnetrze/TrybWylaczone/Kropki"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Biala" type="TextureRect" parent="PanelZebatki/Wnetrze/TrybWylaczone/Kropki"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="TrybCiagle" type="HBoxContainer" parent="PanelZebatki/Wnetrze"]
+layout_mode = 2
+
+[node name="Przycisk" type="Button" parent="PanelZebatki/Wnetrze/TrybCiagle"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+toggle_mode = true
+alignment = 0
+theme_override_font_sizes/font_size = 13
+text = "Ciągle"
+
+[node name="Kropki" type="CenterContainer" parent="PanelZebatki/Wnetrze/TrybCiagle"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+
+[node name="Mala" type="TextureRect" parent="PanelZebatki/Wnetrze/TrybCiagle/Kropki"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Biala" type="TextureRect" parent="PanelZebatki/Wnetrze/TrybCiagle/Kropki"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="TrybPrzyWyborze" type="HBoxContainer" parent="PanelZebatki/Wnetrze"]
+layout_mode = 2
+
+[node name="Przycisk" type="Button" parent="PanelZebatki/Wnetrze/TrybPrzyWyborze"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+toggle_mode = true
+button_pressed = true
+alignment = 0
+theme_override_font_sizes/font_size = 13
+text = "Przy wyborze"
+
+[node name="Kropki" type="CenterContainer" parent="PanelZebatki/Wnetrze/TrybPrzyWyborze"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+
+[node name="Mala" type="TextureRect" parent="PanelZebatki/Wnetrze/TrybPrzyWyborze/Kropki"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Biala" type="TextureRect" parent="PanelZebatki/Wnetrze/TrybPrzyWyborze/Kropki"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="Scroll" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="PanelJedzenia" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="CenaNazwa" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+text = "Cena"
+
+[node name="Cena" type="HSlider" parent="Scroll/PanelJedzenia"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+
+[node name="CenaOpis" type="Label" parent="Scroll/PanelJedzenia"]
+visible = false
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="SkladnikiNazwa" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+text = "Suwak składników odżywczych"
+
+[node name="Skladniki" type="HSlider" parent="Scroll/PanelJedzenia"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+
+[node name="SkladnikiOpis" type="Label" parent="Scroll/PanelJedzenia"]
+visible = false
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="DietaOgolnaNazwa" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+text = "Dieta ogólna"
+
+[node name="DietaOgolna" type="HSlider" parent="Scroll/PanelJedzenia"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+
+[node name="Wegetarianska" type="CheckButton" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+alignment = 0
+text = "Wegetariańska"
+
+[node name="WegetarianskaOpis" type="Label" parent="Scroll/PanelJedzenia"]
+visible = false
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Weganska" type="CheckButton" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+alignment = 0
+text = "Wegańska"
+
+[node name="WeganskaOpis" type="Label" parent="Scroll/PanelJedzenia"]
+visible = false
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="DietaWlasnaNazwa" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+text = "Dieta gotowania własnego"
+
+[node name="DietaWlasna" type="HSlider" parent="Scroll/PanelJedzenia"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+
+[node name="DniTytul" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+text = "Ile dni w tygodniu gotujesz"
+
+[node name="Dni" type="HBoxContainer" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="D0" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D0"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "0"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D0"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D0/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D0/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D0/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D1" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D1"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "1"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D1"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D1/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D1/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D1/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D2" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D2"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "2"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D2"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D2/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D2/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D2/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D3" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D3"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "3"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D3"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D3/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D3/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D3/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D4" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D4"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "4"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D4"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D4/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D4/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D4/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D5" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D5"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "5"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D5"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D5/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D5/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D5/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D6" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D6"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "6"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D6"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D6/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D6/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D6/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="D7" type="VBoxContainer" parent="Scroll/PanelJedzenia/Dni"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Liczba" type="Button" parent="Scroll/PanelJedzenia/Dni/D7"]
+layout_mode = 2
+flat = true
+alignment = 1
+text = "7"
+
+[node name="KropkaKlik" type="Button" parent="Scroll/PanelJedzenia/Dni/D7"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+flat = true
+
+[node name="Srodek" type="CenterContainer" parent="Scroll/PanelJedzenia/Dni/D7/KropkaKlik"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Mala" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D7/KropkaKlik/Srodek"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_mala")
+
+[node name="Duza" type="TextureRect" parent="Scroll/PanelJedzenia/Dni/D7/KropkaKlik/Srodek"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_kolko")
+
+[node name="EfektGotowania" type="RichTextLabel" parent="Scroll/PanelJedzenia"]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="UwagaGotowania" type="Label" parent="Scroll/PanelJedzenia"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.616, 0.024, 0.063, 1)
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 3
+text = "Uwaga: powrotne wyłączenie tej opcji osłabia relacje z rodzicami, oraz prowadzi do powolnej utraty wprawy w gotowaniu."
+
+[node name="WprawaNapis" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 3
+text = "Wprawa: brak doświadczenia, 0/100."
+
+[node name="PieniadzeStan" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+text = "Złotówki: nieustawione"
+
+[node name="LicznikPrzyzwyczajenia" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+autowrap_mode = 3
+text = "Ile już razy: 0."
+
+[node name="SpadekCharakter" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Komunikat" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="PozycjeUwaga" type="Label" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+autowrap_mode = 3
+text = "Co i gdzie je. Plusy i minusy przy daniach są do poprawki. To nie jest statystyka. Poza domem bez ceny: — zł, brak ceny."
+
+[node name="Pozycje" type="VBoxContainer" parent="Scroll/PanelJedzenia"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8

@@ -1,0 +1,859 @@
+{
+	"opis": "Pracujący według ISCO-08: wielkie grupy (1-digit) z zagnieżdżonymi zawodami 2-digit (lfsa_egai2d). Matka/ojciec losują grupę wagą grupy, potem konkretny zawód wagą 2-digit. UI pokazuje nazwę zawodu. Wagi = tys. osób BAEL/LFS przez Eurostat.",
+	"kraje": {
+		"polska": {
+			"rok": 2024,
+			"wiek": "15-64",
+			"jednostka_wagi": "tys_osob",
+			"podzial_plec": true,
+			"poziom_losowania": "grupa_potem_zawod_2digit",
+			"uwaga_kola": "Osobne koła kobiet/mężczyzn. Najpierw wielka grupa (waga grupy), potem zawód 2-digit wewnątrz. Reszta grupy → inne tylko gdy suma dzieci < waga grupy ze źródła.",
+			"zrodlo": {
+				"kto": "Eurostat (dane krajowe LFS/BAEL dla Polski)",
+				"tytul": "Employed persons by detailed occupation (ISCO-08 two digit level) — lfsa_egai2d; major groups also consistent with lfsa_egais",
+				"rok": 2024,
+				"link": "https://ec.europa.eu/eurostat/databrowser/view/lfsa_egai2d/default/table",
+				"api": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsa_egai2d?geo=PL&age=Y15-64&time=2024&unit=THS_PER&freq=A&sex=F|M",
+				"cytat": "Poland, 2024, age 15–64, unit thousand persons. ISCO-08 two-digit occupations (OCxx) from lfsa_egai2d, Sex=F and Sex=M separately. Major-group residuals may appear as inne when group total exceeds published 2-digit sum. NRP/TOTAL excluded from game wheel. Polish occupation labels: GUS Klasyfikacja zawodów i specjalności (ISCO-08)."
+			},
+			"kontekst_sektor_nie_waga_kola": {
+				"nace_f_budownictwo": {
+					"waga_tys": 1285.1,
+					"plec": "T",
+					"wiek": "15-64",
+					"rok": 2024,
+					"zrodlo": "Eurostat lfsa_egan2",
+					"link": "https://ec.europa.eu/eurostat/databrowser/view/lfsa_egan2/default/table",
+					"cytat": "PL 2024 Y15-64 EMP Sex=T NACE Rev.2 F Construction: 1285.1 tys. osób (sektor PKD, nie zawód ISCO).",
+					"uzycie_w_grze": null,
+					"uwaga": "To NIE jest waga zawodu w kole. Brak tabeli ISCO×NACE → nie da się z sektora wyciągnąć „50–60% fizycznych” ani zsumować murarz+pomocniczy. Wklejki AI o 1,2–1,3 mln / 50–60% fizycznych / 17,3–17,8 mln pracujących: sektor F ≈1,29 mln potwierdzony; procent fizycznych = null; TOTAL Y15-64 z lfsa_egais ≈16771 tys. (nie 17,3–17,8)."
+				},
+				"pracujacy_total_y15_64": {
+					"waga_tys": 16771.3,
+					"rok": 2024,
+					"zrodlo": "Eurostat lfsa_egais",
+					"link": "https://ec.europa.eu/eurostat/databrowser/view/lfsa_egais/default/table",
+					"cytat": "PL 2024 Y15-64 EMP Sex=T ISCO TOTAL: 16771.3 tys.",
+					"uzycie_w_grze": null
+				}
+			},
+			"wspolne": null,
+			"kobiety": [
+				{
+					"id": "przedstawiciele_wladz",
+					"nazwa": "Kierownicy",
+					"isco08": "OC1",
+					"waga": 511.9,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC1: 511.9 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc12",
+							"nazwa": "Kierownicy do spraw zarządzania i handlu",
+							"isco08": "OC12",
+							"waga": 178.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC12 Administrative and commercial managers: 178.9 tys."
+						},
+						{
+							"id": "oc14",
+							"nazwa": "Kierownicy w hotelarstwie, gastronomii, handlu i innych usługach",
+							"isco08": "OC14",
+							"waga": 121.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC14 Hospitality, retail and other services managers: 121.9 tys."
+						},
+						{
+							"id": "oc13",
+							"nazwa": "Kierownicy do spraw produkcji i usług",
+							"isco08": "OC13",
+							"waga": 120.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC13 Production and specialised services managers: 120.2 tys."
+						},
+						{
+							"id": "oc11",
+							"nazwa": "Przedstawiciele władz publicznych i wyżsi urzędnicy",
+							"isco08": "OC11",
+							"waga": 89.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC11 Chief executives, senior officials and legislators: 89.9 tys."
+						},
+						{
+							"id": "oc1_inne",
+							"nazwa": "Inne zawody w grupie Kierownicy",
+							"isco08": "OC1",
+							"waga": 1,
+							"cytat": "Reszta wagi grupy OC1 po top 2-digit ze źródła lfsa_egai2d (grupa 511.9 − suma dzieci 510.9 = 1 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "specjalisci",
+					"nazwa": "Specjaliści",
+					"isco08": "OC2",
+					"waga": 2376.7,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC2: 2376.7 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc24",
+							"nazwa": "Specjaliści do spraw ekonomicznych i zarządzania",
+							"isco08": "OC24",
+							"waga": 695,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC24 Business and administration professionals: 695 tys."
+						},
+						{
+							"id": "oc23",
+							"nazwa": "Specjaliści nauczania i wychowania",
+							"isco08": "OC23",
+							"waga": 682.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC23 Teaching professionals: 682.6 tys."
+						},
+						{
+							"id": "oc22",
+							"nazwa": "Specjaliści do spraw zdrowia",
+							"isco08": "OC22",
+							"waga": 490.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC22 Health professionals: 490.1 tys."
+						},
+						{
+							"id": "oc26",
+							"nazwa": "Specjaliści z dziedziny prawa, dziedzin społecznych i kultury",
+							"isco08": "OC26",
+							"waga": 238,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC26 Legal, social and cultural professionals: 238 tys."
+						},
+						{
+							"id": "oc21",
+							"nazwa": "Specjaliści nauk fizycznych, matematycznych i technicznych",
+							"isco08": "OC21",
+							"waga": 185,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC21 Science and engineering professionals: 185 tys."
+						},
+						{
+							"id": "oc25",
+							"nazwa": "Specjaliści do spraw technologii informacyjno-komunikacyjnych",
+							"isco08": "OC25",
+							"waga": 85.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC25 Information and communications technology professionals: 85.4 tys."
+						},
+						{
+							"id": "oc2_inne",
+							"nazwa": "Inne zawody w grupie Specjaliści",
+							"isco08": "OC2",
+							"waga": 0.6,
+							"cytat": "Reszta wagi grupy OC2 po top 2-digit ze źródła lfsa_egai2d (grupa 2376.7 − suma dzieci 2376.1 = 0.6 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "technicy",
+					"nazwa": "Technicy i inny średni personel",
+					"isco08": "OC3",
+					"waga": 1157.7,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC3: 1157.7 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc33",
+							"nazwa": "Średni personel do spraw biznesu i administracji",
+							"isco08": "OC33",
+							"waga": 658.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC33 Business and administration associate professionals: 658.8 tys."
+						},
+						{
+							"id": "oc34",
+							"nazwa": "Średni personel z dziedziny prawa, spraw społecznych i kultury",
+							"isco08": "OC34",
+							"waga": 185.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC34 Legal, social, cultural and related associate professionals: 185.3 tys."
+						},
+						{
+							"id": "oc32",
+							"nazwa": "Średni personel do spraw zdrowia",
+							"isco08": "OC32",
+							"waga": 154.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC32 Health associate professionals: 154.7 tys."
+						},
+						{
+							"id": "oc31",
+							"nazwa": "Średni personel nauk fizycznych, chemicznych i technicznych",
+							"isco08": "OC31",
+							"waga": 146.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC31 Science and engineering associate professionals: 146.2 tys."
+						},
+						{
+							"id": "oc35",
+							"nazwa": "Technicy technologii informacyjno-komunikacyjnych",
+							"isco08": "OC35",
+							"waga": 12.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC35 Information and communications technicians: 12.7 tys."
+						}
+					]
+				},
+				{
+					"id": "biurowi",
+					"nazwa": "Pracownicy biurowi",
+					"isco08": "OC4",
+					"waga": 834.2,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC4: 834.2 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc41",
+							"nazwa": "Sekretarki i operatorzy urządzeń biurowych",
+							"isco08": "OC41",
+							"waga": 496.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC41 General and keyboard clerks: 496.8 tys."
+						},
+						{
+							"id": "oc43",
+							"nazwa": "Pracownicy do spraw finansowo-statystycznych",
+							"isco08": "OC43",
+							"waga": 182.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC43 Numerical and material recording clerks: 182.4 tys."
+						},
+						{
+							"id": "oc42",
+							"nazwa": "Pracownicy obsługi klienta",
+							"isco08": "OC42",
+							"waga": 123.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC42 Customer services clerks: 123.4 tys."
+						},
+						{
+							"id": "oc44",
+							"nazwa": "Pozostali pracownicy obsługi biura",
+							"isco08": "OC44",
+							"waga": 31.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC44 Other clerical support workers: 31.3 tys."
+						},
+						{
+							"id": "oc4_inne",
+							"nazwa": "Inne zawody w grupie Pracownicy biurowi",
+							"isco08": "OC4",
+							"waga": 0.3,
+							"cytat": "Reszta wagi grupy OC4 po top 2-digit ze źródła lfsa_egai2d (grupa 834.2 − suma dzieci 833.9 = 0.3 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "uslugi_sprzedawcy",
+					"nazwa": "Pracownicy usług i sprzedawcy",
+					"isco08": "OC5",
+					"waga": 1414,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC5: 1414 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc52",
+							"nazwa": "Sprzedawcy",
+							"isco08": "OC52",
+							"waga": 861.5,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC52 Sales workers: 861.5 tys."
+						},
+						{
+							"id": "oc51",
+							"nazwa": "Pracownicy usług osobistych",
+							"isco08": "OC51",
+							"waga": 340.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC51 Personal service workers: 340.6 tys."
+						},
+						{
+							"id": "oc53",
+							"nazwa": "Opiekunowie osób",
+							"isco08": "OC53",
+							"waga": 176.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC53 Personal care workers: 176.6 tys."
+						},
+						{
+							"id": "oc54",
+							"nazwa": "Pracownicy usług ochrony",
+							"isco08": "OC54",
+							"waga": 35.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC54 Protective services workers: 35.4 tys."
+						}
+					]
+				},
+				{
+					"id": "rolnicy",
+					"nazwa": "Rolnicy, ogrodnicy, leśnicy i rybacy",
+					"isco08": "OC6",
+					"waga": 368,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC6: 368 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc61",
+							"nazwa": "Rolnicy produkcji towarowej",
+							"isco08": "OC61",
+							"waga": 365,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC61 Market-oriented skilled agricultural workers: 365 tys."
+						},
+						{
+							"id": "oc6_inne",
+							"nazwa": "Inne zawody w grupie Rolnicy, ogrodnicy, leśnicy i rybacy",
+							"isco08": "OC6",
+							"waga": 3,
+							"cytat": "Reszta wagi grupy OC6 po top 2-digit ze źródła lfsa_egai2d (grupa 368 − suma dzieci 365 = 3 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "robotnicy",
+					"nazwa": "Robotnicy przemysłowi i rzemieślnicy",
+					"isco08": "OC7",
+					"waga": 282.7,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC7: 282.7 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc75",
+							"nazwa": "Robotnicy przetwórstwa spożywczego, drewna i tekstyliów",
+							"isco08": "OC75",
+							"waga": 197.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC75 Food processing, wood working, garment and other craft and related trades workers: 197.4 tys."
+						},
+						{
+							"id": "oc72",
+							"nazwa": "Robotnicy obróbki metali i mechanicy maszyn",
+							"isco08": "OC72",
+							"waga": 37.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC72 Metal, machinery and related trades workers: 37.3 tys."
+						},
+						{
+							"id": "oc73",
+							"nazwa": "Rzemieślnicy i robotnicy poligraficzni",
+							"isco08": "OC73",
+							"waga": 24.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC73 Handicraft and printing workers: 24.4 tys."
+						},
+						{
+							"id": "oc71",
+							"nazwa": "Fizyczny pracownik budowlany",
+							"isco08": "OC71",
+							"waga": 13.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC71 Building and related trades workers, excluding electricians: 13.8 tys. (status u = niska wiarygodność w API). W grze: jeden zawód zamiast murarz/dekarz/tynkarz. OC93 (pomocniczy w górnictwie/przemysłu/budownictwie/transporcie) NIE doliczono — brak rozbicia sektorowego w lfsa_egai2d.",
+							"uwaga_gry": "Nie rozbijamy na 200 zawodów. Waga = wyłącznie OC71 ze źródła, bez sumowania z OC93 ani z NACE F."
+						},
+						{
+							"id": "oc7_inne",
+							"nazwa": "Inne zawody w grupie Robotnicy przemysłowi i rzemieślnicy",
+							"isco08": "OC7",
+							"waga": 9.8,
+							"cytat": "Reszta wagi grupy OC7 po top 2-digit ze źródła lfsa_egai2d (grupa 282.7 − suma dzieci 272.9 = 9.8 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "operatorzy",
+					"nazwa": "Operatorzy i monterzy maszyn i urządzeń",
+					"isco08": "OC8",
+					"waga": 237.6,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC8: 237.6 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc81",
+							"nazwa": "Operatorzy maszyn i urządzeń wydobywczych i przetwórczych",
+							"isco08": "OC81",
+							"waga": 132.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC81 Stationary plant and machine operators: 132.6 tys."
+						},
+						{
+							"id": "oc82",
+							"nazwa": "Monterzy",
+							"isco08": "OC82",
+							"waga": 68.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC82 Assemblers: 68.1 tys."
+						},
+						{
+							"id": "oc83",
+							"nazwa": "Kierowcy i operatorzy pojazdów",
+							"isco08": "OC83",
+							"waga": 36.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC83 Drivers and mobile plant operators: 36.4 tys."
+						},
+						{
+							"id": "oc8_inne",
+							"nazwa": "Inne zawody w grupie Operatorzy i monterzy maszyn i urządzeń",
+							"isco08": "OC8",
+							"waga": 0.5,
+							"cytat": "Reszta wagi grupy OC8 po top 2-digit ze źródła lfsa_egai2d (grupa 237.6 − suma dzieci 237.1 = 0.5 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "prace_proste",
+					"nazwa": "Pracownicy wykonujący prace proste",
+					"isco08": "OC9",
+					"waga": 487.4,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC9: 487.4 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc91",
+							"nazwa": "Pomoce domowe i sprzątaczki",
+							"isco08": "OC91",
+							"waga": 268.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC91 Cleaners and helpers: 268.6 tys."
+						},
+						{
+							"id": "oc93",
+							"nazwa": "Robotnicy pomocniczy w górnictwie, przemyśle, budownictwie i transporcie",
+							"isco08": "OC93",
+							"waga": 102.5,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC93 Labourers in mining, construction, manufacturing and transport: 102.5 tys."
+						},
+						{
+							"id": "oc94",
+							"nazwa": "Pracownicy przygotowujący posiłki",
+							"isco08": "OC94",
+							"waga": 65.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC94 Food preparation assistants: 65.2 tys."
+						},
+						{
+							"id": "oc96",
+							"nazwa": "Robotnicy niewykwalifikowani zbierający odpady i pokrewni",
+							"isco08": "OC96",
+							"waga": 39.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC96 Refuse workers and other elementary workers: 39.7 tys."
+						},
+						{
+							"id": "oc92",
+							"nazwa": "Robotnicy pomocniczy w rolnictwie, leśnictwie i rybołówstwie",
+							"isco08": "OC92",
+							"waga": 10.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC92 Agricultural, forestry and fishery labourers: 10.8 tys."
+						},
+						{
+							"id": "oc9_inne",
+							"nazwa": "Inne zawody w grupie Pracownicy wykonujący prace proste",
+							"isco08": "OC9",
+							"waga": 0.6,
+							"cytat": "Reszta wagi grupy OC9 po top 2-digit ze źródła lfsa_egai2d (grupa 487.4 − suma dzieci 486.8 = 0.6 tys.). Sex=F."
+						}
+					]
+				},
+				{
+					"id": "sily_zbrojne",
+					"nazwa": "Siły zbrojne",
+					"isco08": "OC0",
+					"waga": 18.6,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=F OC0: 18.6 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": []
+				}
+			],
+			"mezczyzni": [
+				{
+					"id": "przedstawiciele_wladz",
+					"nazwa": "Kierownicy",
+					"isco08": "OC1",
+					"waga": 705.8,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC1: 705.8 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc13",
+							"nazwa": "Kierownicy do spraw produkcji i usług",
+							"isco08": "OC13",
+							"waga": 263.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC13 Production and specialised services managers: 263.1 tys."
+						},
+						{
+							"id": "oc12",
+							"nazwa": "Kierownicy do spraw zarządzania i handlu",
+							"isco08": "OC12",
+							"waga": 159.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC12 Administrative and commercial managers: 159.2 tys."
+						},
+						{
+							"id": "oc14",
+							"nazwa": "Kierownicy w hotelarstwie, gastronomii, handlu i innych usługach",
+							"isco08": "OC14",
+							"waga": 151.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC14 Hospitality, retail and other services managers: 151.1 tys."
+						},
+						{
+							"id": "oc11",
+							"nazwa": "Przedstawiciele władz publicznych i wyżsi urzędnicy",
+							"isco08": "OC11",
+							"waga": 131.5,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC11 Chief executives, senior officials and legislators: 131.5 tys."
+						},
+						{
+							"id": "oc1_inne",
+							"nazwa": "Inne zawody w grupie Kierownicy",
+							"isco08": "OC1",
+							"waga": 0.9,
+							"cytat": "Reszta wagi grupy OC1 po top 2-digit ze źródła lfsa_egai2d (grupa 705.8 − suma dzieci 704.9 = 0.9 tys.). Sex=M."
+						}
+					]
+				},
+				{
+					"id": "specjalisci",
+					"nazwa": "Specjaliści",
+					"isco08": "OC2",
+					"waga": 1569,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC2: 1569 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc25",
+							"nazwa": "Specjaliści do spraw technologii informacyjno-komunikacyjnych",
+							"isco08": "OC25",
+							"waga": 392.4,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC25 Information and communications technology professionals: 392.4 tys."
+						},
+						{
+							"id": "oc24",
+							"nazwa": "Specjaliści do spraw ekonomicznych i zarządzania",
+							"isco08": "OC24",
+							"waga": 388.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC24 Business and administration professionals: 388.3 tys."
+						},
+						{
+							"id": "oc21",
+							"nazwa": "Specjaliści nauk fizycznych, matematycznych i technicznych",
+							"isco08": "OC21",
+							"waga": 374.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC21 Science and engineering professionals: 374.3 tys."
+						},
+						{
+							"id": "oc23",
+							"nazwa": "Specjaliści nauczania i wychowania",
+							"isco08": "OC23",
+							"waga": 166.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC23 Teaching professionals: 166.2 tys."
+						},
+						{
+							"id": "oc26",
+							"nazwa": "Specjaliści z dziedziny prawa, dziedzin społecznych i kultury",
+							"isco08": "OC26",
+							"waga": 142.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC26 Legal, social and cultural professionals: 142.3 tys."
+						},
+						{
+							"id": "oc22",
+							"nazwa": "Specjaliści do spraw zdrowia",
+							"isco08": "OC22",
+							"waga": 104,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC22 Health professionals: 104 tys."
+						},
+						{
+							"id": "oc2_inne",
+							"nazwa": "Inne zawody w grupie Specjaliści",
+							"isco08": "OC2",
+							"waga": 1.5,
+							"cytat": "Reszta wagi grupy OC2 po top 2-digit ze źródła lfsa_egai2d (grupa 1569 − suma dzieci 1567.5 = 1.5 tys.). Sex=M."
+						}
+					]
+				},
+				{
+					"id": "technicy",
+					"nazwa": "Technicy i inny średni personel",
+					"isco08": "OC3",
+					"waga": 1118.2,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC3: 1118.2 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc31",
+							"nazwa": "Średni personel nauk fizycznych, chemicznych i technicznych",
+							"isco08": "OC31",
+							"waga": 461.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC31 Science and engineering associate professionals: 461.3 tys."
+						},
+						{
+							"id": "oc33",
+							"nazwa": "Średni personel do spraw biznesu i administracji",
+							"isco08": "OC33",
+							"waga": 435.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC33 Business and administration associate professionals: 435.3 tys."
+						},
+						{
+							"id": "oc35",
+							"nazwa": "Technicy technologii informacyjno-komunikacyjnych",
+							"isco08": "OC35",
+							"waga": 94.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC35 Information and communications technicians: 94.8 tys."
+						},
+						{
+							"id": "oc34",
+							"nazwa": "Średni personel z dziedziny prawa, spraw społecznych i kultury",
+							"isco08": "OC34",
+							"waga": 70,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC34 Legal, social, cultural and related associate professionals: 70 tys."
+						},
+						{
+							"id": "oc32",
+							"nazwa": "Średni personel do spraw zdrowia",
+							"isco08": "OC32",
+							"waga": 56.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC32 Health associate professionals: 56.8 tys."
+						}
+					]
+				},
+				{
+					"id": "biurowi",
+					"nazwa": "Pracownicy biurowi",
+					"isco08": "OC4",
+					"waga": 502,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC4: 502 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc43",
+							"nazwa": "Pracownicy do spraw finansowo-statystycznych",
+							"isco08": "OC43",
+							"waga": 322.5,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC43 Numerical and material recording clerks: 322.5 tys."
+						},
+						{
+							"id": "oc41",
+							"nazwa": "Sekretarki i operatorzy urządzeń biurowych",
+							"isco08": "OC41",
+							"waga": 107.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC41 General and keyboard clerks: 107.6 tys."
+						},
+						{
+							"id": "oc44",
+							"nazwa": "Pozostali pracownicy obsługi biura",
+							"isco08": "OC44",
+							"waga": 43.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC44 Other clerical support workers: 43.9 tys."
+						},
+						{
+							"id": "oc42",
+							"nazwa": "Pracownicy obsługi klienta",
+							"isco08": "OC42",
+							"waga": 28,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC42 Customer services clerks: 28 tys."
+						}
+					]
+				},
+				{
+					"id": "uslugi_sprzedawcy",
+					"nazwa": "Pracownicy usług i sprzedawcy",
+					"isco08": "OC5",
+					"waga": 669.8,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC5: 669.8 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc52",
+							"nazwa": "Sprzedawcy",
+							"isco08": "OC52",
+							"waga": 291.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC52 Sales workers: 291.9 tys."
+						},
+						{
+							"id": "oc54",
+							"nazwa": "Pracownicy usług ochrony",
+							"isco08": "OC54",
+							"waga": 199.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC54 Protective services workers: 199.9 tys."
+						},
+						{
+							"id": "oc51",
+							"nazwa": "Pracownicy usług osobistych",
+							"isco08": "OC51",
+							"waga": 150.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC51 Personal service workers: 150.7 tys."
+						},
+						{
+							"id": "oc53",
+							"nazwa": "Opiekunowie osób",
+							"isco08": "OC53",
+							"waga": 27,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC53 Personal care workers: 27 tys."
+						},
+						{
+							"id": "oc5_inne",
+							"nazwa": "Inne zawody w grupie Pracownicy usług i sprzedawcy",
+							"isco08": "OC5",
+							"waga": 0.3,
+							"cytat": "Reszta wagi grupy OC5 po top 2-digit ze źródła lfsa_egai2d (grupa 669.8 − suma dzieci 669.5 = 0.3 tys.). Sex=M."
+						}
+					]
+				},
+				{
+					"id": "rolnicy",
+					"nazwa": "Rolnicy, ogrodnicy, leśnicy i rybacy",
+					"isco08": "OC6",
+					"waga": 617.7,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC6: 617.7 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc61",
+							"nazwa": "Rolnicy produkcji towarowej",
+							"isco08": "OC61",
+							"waga": 602.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC61 Market-oriented skilled agricultural workers: 602.2 tys."
+						},
+						{
+							"id": "oc62",
+							"nazwa": "Leśnicy, rybacy i myśliwi",
+							"isco08": "OC62",
+							"waga": 14,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC62 Market-oriented skilled forestry, fishery and hunting workers: 14 tys."
+						},
+						{
+							"id": "oc6_inne",
+							"nazwa": "Inne zawody w grupie Rolnicy, ogrodnicy, leśnicy i rybacy",
+							"isco08": "OC6",
+							"waga": 1.5,
+							"cytat": "Reszta wagi grupy OC6 po top 2-digit ze źródła lfsa_egai2d (grupa 617.7 − suma dzieci 616.2 = 1.5 tys.). Sex=M."
+						}
+					]
+				},
+				{
+					"id": "robotnicy",
+					"nazwa": "Robotnicy przemysłowi i rzemieślnicy",
+					"isco08": "OC7",
+					"waga": 2114.7,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC7: 2114.7 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc71",
+							"nazwa": "Fizyczny pracownik budowlany",
+							"isco08": "OC71",
+							"waga": 901.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC71 Building and related trades workers, excluding electricians: 901.1 tys. W grze: jeden zawód (murarz/dekarz/tynkarz itd. w źródle to ta sama 2-cyfrowa grupa). OC93 NIE doliczono — miesza górnictwo/przemysł/transport.",
+							"uwaga_gry": "Nie rozbijamy na 200 zawodów. Waga = wyłącznie OC71 ze źródła."
+						},
+						{
+							"id": "oc72",
+							"nazwa": "Robotnicy obróbki metali i mechanicy maszyn",
+							"isco08": "OC72",
+							"waga": 661.2,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC72 Metal, machinery and related trades workers: 661.2 tys."
+						},
+						{
+							"id": "oc75",
+							"nazwa": "Robotnicy przetwórstwa spożywczego, drewna i tekstyliów",
+							"isco08": "OC75",
+							"waga": 279.6,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC75 Food processing, wood working, garment and other craft and related trades workers: 279.6 tys."
+						},
+						{
+							"id": "oc74",
+							"nazwa": "Elektryk",
+							"isco08": "OC74",
+							"waga": 228.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC74 Electrical and electronic trades workers: 228.1 tys. Najdrobniejsza dostępna pozycja z liczbą (elektryk + pokrewne elektryczne/elektroniczne w ISCO 74). Osobno od OC71.",
+							"uwaga_gry": "UI: Elektryk. Sex=F OC74 w API 2024 bez wartości / niska wiarygodność — nie dopisano osobnej wagi kobiet."
+						},
+						{
+							"id": "oc73",
+							"nazwa": "Rzemieślnicy i robotnicy poligraficzni",
+							"isco08": "OC73",
+							"waga": 44.8,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC73 Handicraft and printing workers: 44.8 tys."
+						}
+					]
+				},
+				{
+					"id": "operatorzy",
+					"nazwa": "Operatorzy i monterzy maszyn i urządzeń",
+					"isco08": "OC8",
+					"waga": 1299.2,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC8: 1299.2 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc83",
+							"nazwa": "Kierowcy i operatorzy pojazdów",
+							"isco08": "OC83",
+							"waga": 894.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC83 Drivers and mobile plant operators: 894.1 tys."
+						},
+						{
+							"id": "oc81",
+							"nazwa": "Operatorzy maszyn i urządzeń wydobywczych i przetwórczych",
+							"isco08": "OC81",
+							"waga": 327.1,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC81 Stationary plant and machine operators: 327.1 tys."
+						},
+						{
+							"id": "oc82",
+							"nazwa": "Monterzy",
+							"isco08": "OC82",
+							"waga": 77.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC82 Assemblers: 77.9 tys."
+						},
+						{
+							"id": "oc8_inne",
+							"nazwa": "Inne zawody w grupie Operatorzy i monterzy maszyn i urządzeń",
+							"isco08": "OC8",
+							"waga": 0.1,
+							"cytat": "Reszta wagi grupy OC8 po top 2-digit ze źródła lfsa_egai2d (grupa 1299.2 − suma dzieci 1299.1 = 0.1 tys.). Sex=M."
+						}
+					]
+				},
+				{
+					"id": "prace_proste",
+					"nazwa": "Pracownicy wykonujący prace proste",
+					"isco08": "OC9",
+					"waga": 220.6,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC9: 220.6 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc93",
+							"nazwa": "Robotnicy pomocniczy w górnictwie, przemyśle, budownictwie i transporcie",
+							"isco08": "OC93",
+							"waga": 100.5,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC93 Labourers in mining, construction, manufacturing and transport: 100.5 tys."
+						},
+						{
+							"id": "oc96",
+							"nazwa": "Robotnicy niewykwalifikowani zbierający odpady i pokrewni",
+							"isco08": "OC96",
+							"waga": 56.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC96 Refuse workers and other elementary workers: 56.7 tys."
+						},
+						{
+							"id": "oc91",
+							"nazwa": "Pomoce domowe i sprzątaczki",
+							"isco08": "OC91",
+							"waga": 28.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC91 Cleaners and helpers: 28.3 tys."
+						},
+						{
+							"id": "oc92",
+							"nazwa": "Robotnicy pomocniczy w rolnictwie, leśnictwie i rybołówstwie",
+							"isco08": "OC92",
+							"waga": 25.9,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC92 Agricultural, forestry and fishery labourers: 25.9 tys."
+						},
+						{
+							"id": "oc9_inne",
+							"nazwa": "Inne zawody w grupie Pracownicy wykonujący prace proste",
+							"isco08": "OC9",
+							"waga": 9.2,
+							"cytat": "Reszta wagi grupy OC9 po top 2-digit ze źródła lfsa_egai2d (grupa 220.6 − suma dzieci 211.4 = 9.2 tys.). Sex=M."
+						}
+					]
+				},
+				{
+					"id": "sily_zbrojne",
+					"nazwa": "Siły zbrojne",
+					"isco08": "OC0",
+					"waga": 139.6,
+					"cytat": "Eurostat lfsa_egai2d / lfsa_egais PL 2024 Y15-64 EMP Sex=M OC0: 139.6 tys. (grupa). Zawody 2-digit z lfsa_egai2d.",
+					"zawody": [
+						{
+							"id": "oc03",
+							"nazwa": "Żołnierze szeregowi",
+							"isco08": "OC03",
+							"waga": 63.3,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC03 Armed forces occupations, other ranks: 63.3 tys."
+						},
+						{
+							"id": "oc02",
+							"nazwa": "Podoficerowie sił zbrojnych",
+							"isco08": "OC02",
+							"waga": 43.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC02 Non-commissioned armed forces officers: 43.7 tys."
+						},
+						{
+							"id": "oc01",
+							"nazwa": "Oficerowie sił zbrojnych",
+							"isco08": "OC01",
+							"waga": 27.7,
+							"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC01 Commissioned armed forces officers: 27.7 tys."
+						},
+						{
+							"id": "oc0_inne",
+							"nazwa": "Inne zawody w grupie Siły zbrojne",
+							"isco08": "OC0",
+							"waga": 4.9,
+							"cytat": "Reszta wagi grupy OC0 po top 2-digit ze źródła lfsa_egai2d (grupa 139.6 − suma dzieci 134.7 = 4.9 tys.). Sex=M."
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "opis": "Klasy kształtu nadwozia. Małe png to rysunek klasy, nie zdjęcie modelu i nie plik z chmury. Ścieżka oferty bez paczki offline to placeholder szary_znak_zapytania, nie ten png.",
+  "png_nie_jest_zdjeciem_modelu": true,
+  "oferta_bez_paczki": "szary_znak_zapytania",
+  "klasy": [
+    {"id": "hatchback", "nazwa": "Hatchback", "rysunek_ksztaltu": "res://pojazdy/sprites/hatchback.png", "zdjecie_modelu": null, "uzywac_w_ofercie": false},
+    {"id": "sedan", "nazwa": "Sedan", "rysunek_ksztaltu": "res://pojazdy/sprites/sedan.png", "zdjecie_modelu": null, "uzywac_w_ofercie": false},
+    {"id": "kombi", "nazwa": "Kombi", "rysunek_ksztaltu": "res://pojazdy/sprites/kombi.png", "zdjecie_modelu": null, "uzywac_w_ofercie": false},
+    {"id": "suv", "nazwa": "SUV", "rysunek_ksztaltu": "res://pojazdy/sprites/suv.png", "zdjecie_modelu": null, "uzywac_w_ofercie": false},
+    {"id": "van", "nazwa": "Van", "rysunek_ksztaltu": "res://pojazdy/sprites/van.png", "zdjecie_modelu": null, "uzywac_w_ofercie": false},
+    {"id": "dostawczy", "nazwa": "Dostawczy", "rysunek_ksztaltu": "res://pojazdy/sprites/dostawczy.png", "zdjecie_modelu": null, "uzywac_w_ofercie": false}
+  ]
+}

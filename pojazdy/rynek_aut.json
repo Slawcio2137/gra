@@ -1,0 +1,48 @@
+{
+  "opis": "Salon / paczka obrazków. Cennik modeli do losowania: paczki res://pojazdy/katalog_aut_*.json (indeks katalog_aut_index.json).",
+  "cennik_modeli": "res://pojazdy/katalog_aut_index.json",
+  "obrazki": "res://pojazdy/obrazki_aut.json",
+  "komentarz_katalogu": "Rekordy salonu mogą zostać puste — zakupowa pula aut idzie z katalog_aut_pl.json przez rynek_zakupow.gd. Obrazek osobno (paczka).",
+  "paczka_offline": {
+    "id": "obrazki_aut",
+    "plik": "res://pojazdy/obrazki_aut.json",
+    "uwaga": "Czy paczka jest pobrana, czyta manifest obrazki_aut.json. W tym pliku nie ma zdjęć ani flagi pobrania."
+  },
+  "obrazek": {
+    "placeholder": "szary_znak_zapytania",
+    "paczka_offline": "obrazki_aut",
+    "lokalny_plik_w_instalacji": null
+  },
+  "salony": [
+    {"id": "salon_osobowych", "nazwa": "Salon osobowych"},
+    {"id": "salon_uzywanych", "nazwa": "Salon używanych"},
+    {"id": "salon_dostawczych", "nazwa": "Salon dostawczych"}
+  ],
+  "schemat_oferty": {
+    "id": null,
+    "salon_id": null,
+    "marka": null,
+    "model": null,
+    "klasa_nadwozia": null,
+    "paliwo": null,
+    "rok": null,
+    "przebieg": null,
+    "przebieg_km": null,
+    "stan": null,
+    "stan_rzeczywisty": null,
+    "stan_deklarowany": null,
+    "spalanie": null,
+    "cena": null,
+    "waga": null,
+    "zrodlo": null,
+    "obrazek": {
+      "placeholder": "szary_znak_zapytania",
+      "paczka_offline": "obrazki_aut",
+      "lokalny_plik_w_instalacji": null,
+      "plik_paczki": null
+    }
+  },
+  "paliwa_nazwy": ["benzyna", "diesel", "lpg", "hybryda", "elektryczny"],
+  "uwaga_paliw": "Same nazwy rodzaju paliwa. Żadna nie jest wpisana w rekord, bo pełnej oferty jeszcze nie ma.",
+  "rekordy": []
+}

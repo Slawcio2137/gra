@@ -1,10 +1,508 @@
 {
-  "opis": "Miejsce na jedno losowanie ze startu. Ten plik nie jest wylosowaną postacią. Szablon postacie/bohater.json zostaje z null i skrypt go nie nadpisuje.",
-  "wylosowano": false,
-  "miejsce": null,
-  "cechy_charakteru": null,
-  "inteligencje": null,
-  "choroby_wrodzone": null,
-  "zarobki_rodziny": null,
-  "srednie_cechy_terenu": null
+	"cecha_1": {
+		"id": "lagodny",
+		"nazwa": "Łagodny"
+	},
+	"cecha_2": {
+		"id": "empatyczny",
+		"nazwa": "Empatyczny"
+	},
+	"cecha_3": {
+		"id": "towarzyski",
+		"nazwa": "Towarzyski"
+	},
+	"choroby_wypadly": [],
+	"inteligencja_1": {
+		"id": "pamieciowa",
+		"nazwa": "Pamięciowa",
+		"wartosc": 52
+	},
+	"inteligencja_2": {
+		"id": "logiczno_matematyczna",
+		"nazwa": "Logiczno-matematyczna",
+		"wartosc": 56
+	},
+	"inteligencja_3": {
+		"id": "muzyczna",
+		"nazwa": "Muzyczna",
+		"wartosc": 54
+	},
+	"miejsce": {
+		"id": "0419",
+		"kontynent": "europa",
+		"ludnosc": 53942,
+		"nazwa": "żniński",
+		"panstwo": "Polska",
+		"panstwo_id": "polska",
+		"typ": "wies"
+	},
+	"opis": "Jedno losowanie na start. Szablon postacie/bohater.json nie został zmieniony.",
+	"orientacja": {
+		"id": "hetero",
+		"nazwa": "Hetero"
+	},
+	"pieniadze": 0,
+	"plec": {
+		"id": "kobieta",
+		"nazwa": "Kobieta"
+	},
+	"psychika": 50,
+	"rola": "bohater",
+	"rownowaga": 52,
+	"sila": 39,
+	"sylwetka": {
+		"id": "przecietna",
+		"nazwa": "przecietna"
+	},
+	"szybkosc_reakcji": 76,
+	"wiek": 3,
+	"wyglad_naturalny": null,
+	"wylosowano": true,
+	"wytrzymalosc": 5,
+	"zadowolenie_docelowe": 73,
+	"zarobki_rodziny": {
+		"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23). | GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+		"do_zl": 22150.83,
+		"dochód_gospodarstwa": "suma_przedzialow_rodzicow",
+		"kolo": true,
+		"kraj": "polska",
+		"kwota": null,
+		"matka": {
+			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+			"do_zl": 9906.23,
+			"grupa_nazwa": "Specjaliści",
+			"isco08_grupa": "OC2",
+			"kolo": true,
+			"kraj": "polska",
+			"kwota": null,
+			"mediana_zl": 9071.01,
+			"od_zl": 9071.01,
+			"plec_stat": "kobiety",
+			"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
+			"przecietne_zl": 9906.23,
+			"przedzial_id": null,
+			"waga": null,
+			"zarobki_z": "grupa_OC2",
+			"zrodlo": {
+				"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+				"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+				"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+				"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+				"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+				"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+				"kto": "Główny Urząd Statystyczny",
+				"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+				"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+				"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+				"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+				"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+				"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+			}
+		},
+		"mediana_zl": 19462.84,
+		"miasto": null,
+		"od_zl": 19462.84,
+		"ojciec": {
+			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+			"do_zl": 12244.6,
+			"grupa_nazwa": "Specjaliści",
+			"isco08_grupa": "OC2",
+			"kolo": true,
+			"kraj": "polska",
+			"kwota": null,
+			"mediana_zl": 10391.83,
+			"od_zl": 10391.83,
+			"plec_stat": "mezczyzni",
+			"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
+			"przecietne_zl": 12244.6,
+			"przedzial_id": null,
+			"waga": null,
+			"zarobki_z": "grupa_OC2",
+			"zrodlo": {
+				"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+				"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+				"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+				"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+				"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+				"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+				"kto": "Główny Urząd Statystyczny",
+				"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+				"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+				"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+				"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+				"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+				"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+			}
+		},
+		"powod": "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie.",
+		"przecietne_zl": 22150.83,
+		"przedzial_id": null,
+		"waga": null,
+		"wies": null,
+		"zarobki_z": "suma_rodzicow",
+		"zrodlo": {
+			"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+			"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+			"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+			"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+			"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+			"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+			"kto": "Główny Urząd Statystyczny",
+			"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+			"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+			"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+			"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+			"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+			"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+		}
+	},
+	"zdrowie_skrot": "Koło chorób nic nie wypuściło.",
+	"ziarno_rodzicow": {
+		"charakter": [
+			{
+				"id": "optymistyczny",
+				"nazwa": "Optymistyczny"
+			},
+			{
+				"id": "wygodny",
+				"nazwa": "Wygodny"
+			},
+			{
+				"id": "pewny_siebie",
+				"nazwa": "Pewny siebie"
+			}
+		],
+		"dom": {
+			"id": "dom_jednorodzinny",
+			"kolo": true,
+			"nazwa": "Dom jednorodzinny",
+			"powod": "",
+			"propozycja_do_poprawki": true
+		},
+		"kieszonkowe": {
+			"decyzja": null,
+			"kierunki": [
+				"zalezy_od_zarobkow"
+			],
+			"kwota": null,
+			"losowanie_kwoty": "stoi",
+			"na_poczatku_pieniadze_bohatera_glownie_stad": true,
+			"opis_losowania": "Puste nie znaczy, że kwota jest losowana z danych. Losowanie stoi, aż będzie źródło.",
+			"powod": "Jest przedział zarobków ze źródła, nie ma jednej kwoty. Przelicznika kieszonkowego nie ma. Kwota zostaje null.",
+			"reguly": [
+				{
+					"id": "zalezy_od_zarobkow",
+					"tekst": "Wyższe zarobki → wyższe kieszonkowe."
+				},
+				{
+					"gdy_cecha": [
+						"oszczedny",
+						"skapy",
+						"surowy"
+					],
+					"id": "czesciej_odmowa",
+					"tekst": "Oszczędny albo skąpy → odmowa."
+				},
+				{
+					"gdy_cecha": [
+						"hojny"
+					],
+					"id": "czesciej_daje",
+					"tekst": "Hojny → daje."
+				}
+			],
+			"wagi_decyzji": {
+				"na_prosbe": null,
+				"odmowa": null,
+				"stala_kwota": null
+			}
+		},
+		"kolo": true,
+		"kraj_rodziny": "polska",
+		"lokum": {
+			"cena_zl": 1565000,
+			"id": "lokum_start_dom_1290478468",
+			"kategoria": "dom",
+			"lokalizacja": "poza",
+			"lokalizacja_opis": "poza miastem (żniński)",
+			"lokum_rodziny": true,
+			"metraz_m2": 167,
+			"miasto_id": "0419",
+			"miasto_nazwa": "żniński",
+			"nazwa": "Dom jednorodzinny, 167 m²",
+			"nieruchomosc": true,
+			"obrazek": "res://grafika/zakupy/dom.png",
+			"pokoje": 6,
+			"poziom_zarobkow": 0.56,
+			"propozycja_do_poprawki": true,
+			"stan": "po_remoncie",
+			"typ": "dom_jednorodzinny",
+			"typ_nazwa": "Dom jednorodzinny",
+			"typ_urodzenia": "wies",
+			"wygoda": 86,
+			"zrodlo": "lokum_startowe"
+		},
+		"matka": {
+			"charakter": [
+				{
+					"id": "optymistyczny",
+					"nazwa": "Optymistyczny"
+				},
+				{
+					"id": "wygodny",
+					"nazwa": "Wygodny"
+				}
+			],
+			"imie": {
+				"id": "zofia",
+				"kolo": true,
+				"nazwa": "Zofia",
+				"powod": ""
+			},
+			"praca": {
+				"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC22 Health professionals: 490.1 tys.",
+				"grupa_id": "specjalisci",
+				"grupa_isco08": "OC2",
+				"grupa_nazwa": "Specjaliści",
+				"id": "oc22",
+				"isco08": "OC22",
+				"kolo": true,
+				"nazwa": "Specjaliści do spraw zdrowia",
+				"powod": "",
+				"zawod": "Specjaliści do spraw zdrowia"
+			},
+			"rola": "matka",
+			"zarobki": {
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+				"do_zl": 9906.23,
+				"grupa_nazwa": "Specjaliści",
+				"isco08_grupa": "OC2",
+				"kolo": true,
+				"kraj": "polska",
+				"kwota": null,
+				"mediana_zl": 9071.01,
+				"od_zl": 9071.01,
+				"plec_stat": "kobiety",
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
+				"przecietne_zl": 9906.23,
+				"przedzial_id": null,
+				"waga": null,
+				"zarobki_z": "grupa_OC2",
+				"zrodlo": {
+					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+					"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+					"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+					"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"kto": "Główny Urząd Statystyczny",
+					"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+					"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+					"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+					"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+					"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+					"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+				}
+			}
+		},
+		"nie_co_ture": true,
+		"ojciec": {
+			"charakter": [
+				{
+					"id": "pewny_siebie",
+					"nazwa": "Pewny siebie"
+				}
+			],
+			"imie": {
+				"id": "paweł",
+				"kolo": true,
+				"nazwa": "Paweł",
+				"powod": ""
+			},
+			"praca": {
+				"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC23 Teaching professionals: 166.2 tys.",
+				"grupa_id": "specjalisci",
+				"grupa_isco08": "OC2",
+				"grupa_nazwa": "Specjaliści",
+				"id": "oc23",
+				"isco08": "OC23",
+				"kolo": true,
+				"nazwa": "Specjaliści nauczania i wychowania",
+				"powod": "",
+				"zawod": "Specjaliści nauczania i wychowania"
+			},
+			"rola": "ojciec",
+			"zarobki": {
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+				"do_zl": 12244.6,
+				"grupa_nazwa": "Specjaliści",
+				"isco08_grupa": "OC2",
+				"kolo": true,
+				"kraj": "polska",
+				"kwota": null,
+				"mediana_zl": 10391.83,
+				"od_zl": 10391.83,
+				"plec_stat": "mezczyzni",
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
+				"przecietne_zl": 12244.6,
+				"przedzial_id": null,
+				"waga": null,
+				"zarobki_z": "grupa_OC2",
+				"zrodlo": {
+					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+					"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+					"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+					"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"kto": "Główny Urząd Statystyczny",
+					"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+					"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+					"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+					"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+					"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+					"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+				}
+			}
+		},
+		"osobne_od_cech_bohatera": true,
+		"praca": {
+			"id": null,
+			"kolo": false,
+			"nazwa": null,
+			"powod": "prace osobno u matki i ojca"
+		},
+		"raz_na_start_rodziny": true,
+		"szansa_diety": {
+			"brak_kraju": false,
+			"kraj_id": "polska",
+			"rok": 2014.0,
+			"szansa": 0.01,
+			"ulamek_wegan": null,
+			"ulamek_wegetarian": 0.01,
+			"zrodlo": {
+				"badanie": "Aktualne problemy i wydarzenia (290), wywiady bezpośrednie CAPI, 3–9 lipca 2014, próba 943 dorosłych mieszkańców Polski.",
+				"cytat": "tych, którzy w ogóle nie jedzą mięsa, jest bardzo mało – wegetarianie stanowią 1% społeczeństwa.",
+				"data": "sierpień 2014",
+				"kto": "CBOS, opracował Michał Feliksiak",
+				"numer": "115/2014",
+				"tytul": "Zachowania żywieniowe Polaków",
+				"url": "https://www.cbos.pl/SPISKOM.POL/2014/K_115_14.PDF",
+				"weganie": "Ten komunikat nie podaje osobnego ułamka wegan. Pole ulamek_wegan zostaje null."
+			}
+		},
+		"trzymac_w_zapisie": true,
+		"wyzywienie": {
+			"biedniejsi": null,
+			"dba_o_zdrowie": null,
+			"kolo": false,
+			"powod": "Brak wag. Reguł jedzenia nie losowano.",
+			"prog_zamoznosci": null,
+			"waga_dba_o_zdrowie": null,
+			"waga_wegan": null,
+			"waga_wegetarian": null,
+			"weganie": null,
+			"wegetarianie": null
+		},
+		"zarobki": {
+			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23). | GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+			"do_zl": 22150.83,
+			"dochód_gospodarstwa": "suma_przedzialow_rodzicow",
+			"kolo": true,
+			"kraj": "polska",
+			"kwota": null,
+			"matka": {
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+				"do_zl": 9906.23,
+				"grupa_nazwa": "Specjaliści",
+				"isco08_grupa": "OC2",
+				"kolo": true,
+				"kraj": "polska",
+				"kwota": null,
+				"mediana_zl": 9071.01,
+				"od_zl": 9071.01,
+				"plec_stat": "kobiety",
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
+				"przecietne_zl": 9906.23,
+				"przedzial_id": null,
+				"waga": null,
+				"zarobki_z": "grupa_OC2",
+				"zrodlo": {
+					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+					"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+					"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+					"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"kto": "Główny Urząd Statystyczny",
+					"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+					"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+					"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+					"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+					"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+					"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+				}
+			},
+			"mediana_zl": 19462.84,
+			"miasto": null,
+			"od_zl": 19462.84,
+			"ojciec": {
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
+				"do_zl": 12244.6,
+				"grupa_nazwa": "Specjaliści",
+				"isco08_grupa": "OC2",
+				"kolo": true,
+				"kraj": "polska",
+				"kwota": null,
+				"mediana_zl": 10391.83,
+				"od_zl": 10391.83,
+				"plec_stat": "mezczyzni",
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
+				"przecietne_zl": 12244.6,
+				"przedzial_id": null,
+				"waga": null,
+				"zarobki_z": "grupa_OC2",
+				"zrodlo": {
+					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+					"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+					"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+					"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+					"kto": "Główny Urząd Statystyczny",
+					"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+					"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+					"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+					"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+					"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+					"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+				}
+			},
+			"powod": "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie.",
+			"przecietne_zl": 22150.83,
+			"przedzial_id": null,
+			"waga": null,
+			"wies": null,
+			"zarobki_z": "suma_rodzicow",
+			"zrodlo": {
+				"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+				"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+				"cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+				"cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+				"cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+				"cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+				"kto": "Główny Urząd Statystyczny",
+				"miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+				"seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+				"tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+				"url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+				"url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+				"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
+			}
+		}
+	},
+	"zmeczenie": 20,
+	"zmeczenie_fizyczne": 20,
+	"zmeczenie_psychiczne": 15,
+	"zwinnosc": 64
 }

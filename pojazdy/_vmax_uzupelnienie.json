@@ -1,0 +1,642 @@
+{
+	"opis": "Partia vmax (km/h) z cytatem źródła. Tylko wpisy z wiarygodnym źródłem; reszta katalogu zostaje null. predkosc_max_propozycja=true = szacunek/typowa wersja bazowa (flaga).",
+	"aktualizacja": "2026-10-24",
+	"wpisy": {
+		"toyota_yaris_hybrid": {
+			"predkosc_max_kmh": 175,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://scene7.toyota.eu/is/content/toyotaeurope/Yaris-PDF-Guidepdf",
+			"predkosc_max_zrodlo_opis": "Toyota Yaris Product Guide MY26 — MAX SPEED 175 km/h (Hybrid 115/130)"
+		},
+		"toyota_yaris_cross_hybrid": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/content/dam/toyota/nmsc/poland/cars/yaris-cross/pdf/Toyota_Yaris_Cross_Specyfikacja.pdf",
+			"predkosc_max_zrodlo_opis": "Toyota PL / EU — Yaris Cross Hybrid typowo 170 km/h (homologacja)"
+		},
+		"toyota_corolla_sedan_hybrid": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.eu/content/dam/toyota/nmsc/shared/pdf/corolla/Corolla-Sedan-Product-Info.pdf",
+			"predkosc_max_zrodlo_opis": "Toyota Corolla Hybrid sedan — 180 km/h (EU product info)"
+		},
+		"toyota_corolla_hatch_hybrid": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/corolla",
+			"predkosc_max_zrodlo_opis": "Toyota Corolla Hatch Hybrid — 180 km/h (EU/PL spec)"
+		},
+		"toyota_corolla_ts": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/corolla-touring-sports",
+			"predkosc_max_zrodlo_opis": "Toyota Corolla Touring Sports Hybrid — 180 km/h"
+		},
+		"toyota_c_hr_hybrid": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/c-hr",
+			"predkosc_max_zrodlo_opis": "Toyota C-HR Hybrid — 180 km/h (EU)"
+		},
+		"toyota_rav4_hybrid": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/rav4",
+			"predkosc_max_zrodlo_opis": "Toyota RAV4 Hybrid — 180 km/h (elektroniczne ograniczenie EU)"
+		},
+		"toyota_camry": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/camry",
+			"predkosc_max_zrodlo_opis": "Toyota Camry Hybrid — 180 km/h"
+		},
+		"toyota_aygo_x": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/aygo-x",
+			"predkosc_max_zrodlo_opis": "Toyota Aygo X 1.0 — 170 km/h (EU)"
+		},
+		"toyota_aygo_x_gazoo": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/aygo-x",
+			"predkosc_max_zrodlo_opis": "Toyota Aygo X Comfort — 170 km/h"
+		},
+		"toyota_bz4x": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/bz4x",
+			"predkosc_max_zrodlo_opis": "Toyota bZ4X — 160 km/h (FWD EU)"
+		},
+		"toyota_hilux": {
+			"predkosc_max_kmh": 175,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/hilux",
+			"predkosc_max_zrodlo_opis": "Toyota Hilux — typowo ~175 km/h zależnie od skrzyni/napędu (szacunek wersji bazowej)"
+		},
+		"toyota_land_cruiser": {
+			"predkosc_max_kmh": 175,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.toyota.pl/nowe-samochody/land-cruiser",
+			"predkosc_max_zrodlo_opis": "Toyota Land Cruiser 250 — typowo 175 km/h (szacunek wersji EU)"
+		},
+		"dacia_sandero_tce": {
+			"predkosc_max_kmh": 174,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://kup.dacia.pl/CarExportBrochureManager.axd?FileId=82116_0",
+			"predkosc_max_zrodlo_opis": "Dacia PL konfigurator MY23 Sandero TCe 90 — Prędkość maksymalna 174 km/h"
+		},
+		"dacia_sandero_stepway": {
+			"predkosc_max_kmh": 169,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://fleetmagazine.pt/wp-content/uploads/2020/12/Ficha-Tecnica-Novos-Dacia-Sandero-e-Sandero-Stepway.pdf",
+			"predkosc_max_zrodlo_opis": "Dacia Sandero Stepway TCe 90 — ~169–175 km/h wg ficha técnica (szacunek Stepway)"
+		},
+		"dacia_sandero_ecog": {
+			"predkosc_max_kmh": 183,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://fleetmagazine.pt/wp-content/uploads/2020/12/Ficha-Tecnica-Novos-Dacia-Sandero-e-Sandero-Stepway.pdf",
+			"predkosc_max_zrodlo_opis": "Dacia Sandero Eco-G 100 — 183 km/h (ficha técnica)"
+		},
+		"dacia_duster_ecog": {
+			"predkosc_max_kmh": 168,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.dacia.pl/samochody/duster",
+			"predkosc_max_zrodlo_opis": "Dacia Duster Eco-G — typowo ~168 km/h (szacunek wersji bazowej)"
+		},
+		"dacia_jogger_hybrid": {
+			"predkosc_max_kmh": 164,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.dacia.pl/samochody/jogger",
+			"predkosc_max_zrodlo_opis": "Dacia Jogger Hybrid 140 — 164 km/h (EU)"
+		},
+		"dacia_jogger_tce": {
+			"predkosc_max_kmh": 172,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.dacia.pl/samochody/jogger",
+			"predkosc_max_zrodlo_opis": "Dacia Jogger TCe — typowo ~172 km/h (szacunek)"
+		},
+		"dacia_spring_electric": {
+			"predkosc_max_kmh": 125,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.dacia.pl/samochody/spring",
+			"predkosc_max_zrodlo_opis": "Dacia Spring Electric — 125 km/h (ograniczenie elektroniczne)"
+		},
+		"dacia_bigster": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.dacia.pl/samochody/bigster",
+			"predkosc_max_zrodlo_opis": "Dacia Bigster — szacunek ~180 km/h (brak pełnej ficha w paczce)"
+		},
+		"skoda_fabia_mpi": {
+			"predkosc_max_kmh": 179,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/fabia",
+			"predkosc_max_zrodlo_opis": "Škoda Fabia 1.0 MPI 80 KM — 179 km/h (cennik/tech. EU)"
+		},
+		"skoda_fabia_tsi_lpg": {
+			"predkosc_max_kmh": 195,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/fabia",
+			"predkosc_max_zrodlo_opis": "Škoda Fabia 1.0 TSI — typowo 195 km/h (benzyna; LPG zbliżone, flaga)"
+		},
+		"skoda_octavia_tsi": {
+			"predkosc_max_kmh": 223,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/octavia",
+			"predkosc_max_zrodlo_opis": "Škoda Octavia 1.5 TSI 150 KM — 223 km/h"
+		},
+		"skoda_octavia_mhev": {
+			"predkosc_max_kmh": 223,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/octavia",
+			"predkosc_max_zrodlo_opis": "Škoda Octavia 1.5 TSI mHEV — 223 km/h"
+		},
+		"skoda_octavia_combi": {
+			"predkosc_max_kmh": 223,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/octavia",
+			"predkosc_max_zrodlo_opis": "Škoda Octavia Combi — zależnie od silnika; kotwica 1.5 TSI ~223 (flaga)"
+		},
+		"skoda_superb": {
+			"predkosc_max_kmh": 224,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/superb",
+			"predkosc_max_zrodlo_opis": "Škoda Superb — typowo 220–250 zależnie od silnika (szacunek 2.0 TSI/1.5)"
+		},
+		"skoda_karoq": {
+			"predkosc_max_kmh": 198,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/karoq",
+			"predkosc_max_zrodlo_opis": "Škoda Karoq 1.5 TSI — ~198 km/h (szacunek wersji popularnej)"
+		},
+		"skoda_kodiaq": {
+			"predkosc_max_kmh": 210,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/kodiaq",
+			"predkosc_max_zrodlo_opis": "Škoda Kodiaq — typowo ~210 km/h (szacunek)"
+		},
+		"skoda_kamiq": {
+			"predkosc_max_kmh": 194,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/kamiq",
+			"predkosc_max_zrodlo_opis": "Škoda Kamiq 1.0 TSI 110 — 194 km/h"
+		},
+		"skoda_scala": {
+			"predkosc_max_kmh": 201,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/scala",
+			"predkosc_max_zrodlo_opis": "Škoda Scala 1.0 TSI 110 — 201 km/h"
+		},
+		"skoda_elroq": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.skoda-auto.pl/modele/elroq",
+			"predkosc_max_zrodlo_opis": "Škoda Elroq EV — typowo 160 km/h (ograniczenie MEB, szacunek)"
+		},
+		"vw_golf_tsi": {
+			"predkosc_max_kmh": 224,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/golf.html",
+			"predkosc_max_zrodlo_opis": "VW Golf 1.5 TSI 150 — 224 km/h (EU)"
+		},
+		"vw_golf_pure": {
+			"predkosc_max_kmh": 214,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/golf.html",
+			"predkosc_max_zrodlo_opis": "VW Golf Pure eTSI — typowo ~214 km/h (szacunek mHEV)"
+		},
+		"vw_polo": {
+			"predkosc_max_kmh": 188,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/polo.html",
+			"predkosc_max_zrodlo_opis": "VW Polo 1.0 TSI 95 — 188 km/h"
+		},
+		"vw_t_roc": {
+			"predkosc_max_kmh": 200,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/t-roc.html",
+			"predkosc_max_zrodlo_opis": "VW T-Roc 1.5 TSI — ~200 km/h (szacunek)"
+		},
+		"vw_t_cross": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/t-cross.html",
+			"predkosc_max_zrodlo_opis": "VW T-Cross 1.0 TSI — ~180 km/h (szacunek)"
+		},
+		"vw_taigo": {
+			"predkosc_max_kmh": 183,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/taigo.html",
+			"predkosc_max_zrodlo_opis": "VW Taigo 1.0 TSI — ~183 km/h (szacunek)"
+		},
+		"vw_tiguan": {
+			"predkosc_max_kmh": 210,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/tiguan.html",
+			"predkosc_max_zrodlo_opis": "VW Tiguan — typowo ~210 km/h (szacunek silnika bazowego)"
+		},
+		"vw_passat": {
+			"predkosc_max_kmh": 222,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/passat.html",
+			"predkosc_max_zrodlo_opis": "VW Passat — typowo ~222 km/h (szacunek)"
+		},
+		"vw_caddy": {
+			"predkosc_max_kmh": 182,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/caddy.html",
+			"predkosc_max_zrodlo_opis": "VW Caddy — typowo ~182 km/h (szacunek)"
+		},
+		"vw_id3": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/id3.html",
+			"predkosc_max_zrodlo_opis": "VW ID.3 — 160 km/h (ograniczenie elektroniczne)"
+		},
+		"vw_id4": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.volkswagen.pl/pl/modele/id4.html",
+			"predkosc_max_zrodlo_opis": "VW ID.4 — 160 km/h (ograniczenie elektroniczne)"
+		},
+		"kia_picanto": {
+			"predkosc_max_kmh": 161,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/picanto/",
+			"predkosc_max_zrodlo_opis": "Kia Picanto 1.0 — 161 km/h (EU)"
+		},
+		"kia_ceed": {
+			"predkosc_max_kmh": 210,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/ceed/",
+			"predkosc_max_zrodlo_opis": "Kia Ceed 1.5 T-GDI — 210 km/h"
+		},
+		"kia_ceed_cennik": {
+			"predkosc_max_kmh": 210,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/ceed/",
+			"predkosc_max_zrodlo_opis": "Kia Ceed — kotwica 1.5 T-GDI 210 km/h (flaga gdy wariant nieokreślony)"
+		},
+		"kia_stonic": {
+			"predkosc_max_kmh": 173,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/stonic/",
+			"predkosc_max_zrodlo_opis": "Kia Stonic 1.0 T-GDI — 173–185 zależnie od mocy; 173 dla 100 KM"
+		},
+		"kia_sportage_tgdi": {
+			"predkosc_max_kmh": 201,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/sportage/",
+			"predkosc_max_zrodlo_opis": "Kia Sportage 1.6 T-GDI — 201 km/h"
+		},
+		"kia_sportage_hybrid": {
+			"predkosc_max_kmh": 193,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/sportage/",
+			"predkosc_max_zrodlo_opis": "Kia Sportage Hybrid — 193 km/h"
+		},
+		"kia_niao": {
+			"predkosc_max_kmh": 162,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/niro/",
+			"predkosc_max_zrodlo_opis": "Kia Niro Hybrid — 162 km/h"
+		},
+		"kia_ev3": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/ev3/",
+			"predkosc_max_zrodlo_opis": "Kia EV3 — 170 km/h"
+		},
+		"kia_sorento": {
+			"predkosc_max_kmh": 193,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.kia.com/pl/samochody-nowe/sorento/",
+			"predkosc_max_zrodlo_opis": "Kia Sorento Hybrid — typowo ~193 km/h (szacunek)"
+		},
+		"hyundai_i10": {
+			"predkosc_max_kmh": 156,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/i10.html",
+			"predkosc_max_zrodlo_opis": "Hyundai i10 1.0 — 156 km/h"
+		},
+		"hyundai_i20": {
+			"predkosc_max_kmh": 185,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/i20.html",
+			"predkosc_max_zrodlo_opis": "Hyundai i20 — typowo 173–191; kotwica 185 (flaga)"
+		},
+		"hyundai_i20_cennik": {
+			"predkosc_max_kmh": 185,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/i20.html",
+			"predkosc_max_zrodlo_opis": "Hyundai i20 — kotwica ~185 km/h (flaga)"
+		},
+		"hyundai_i30": {
+			"predkosc_max_kmh": 200,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/i30.html",
+			"predkosc_max_zrodlo_opis": "Hyundai i30 1.5 T-GDI — ~200 km/h (szacunek)"
+		},
+		"hyundai_tucson_tgdi": {
+			"predkosc_max_kmh": 201,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/tucson.html",
+			"predkosc_max_zrodlo_opis": "Hyundai Tucson 1.6 T-GDI — 201 km/h"
+		},
+		"hyundai_kona": {
+			"predkosc_max_kmh": 191,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/kona.html",
+			"predkosc_max_zrodlo_opis": "Hyundai Kona spalinowy — typowo ~191 km/h (szacunek)"
+		},
+		"hyundai_kona_electric": {
+			"predkosc_max_kmh": 172,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/kona-electric.html",
+			"predkosc_max_zrodlo_opis": "Hyundai Kona Electric — 172 km/h (64 kWh)"
+		},
+		"hyundai_santa_fe": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.hyundai.com/pl/pl/modele/santa-fe.html",
+			"predkosc_max_zrodlo_opis": "Hyundai Santa Fe Hybrid — typowo ~180 km/h (szacunek)"
+		},
+		"opel_corsa": {
+			"predkosc_max_kmh": 188,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.opel.pl/samochody/corsa.html",
+			"predkosc_max_zrodlo_opis": "Opel Corsa 1.2 — 188 km/h (100 KM)"
+		},
+		"opel_mokka": {
+			"predkosc_max_kmh": 188,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.opel.pl/samochody/mokka.html",
+			"predkosc_max_zrodlo_opis": "Opel Mokka 1.2 — ~188 km/h (szacunek)"
+		},
+		"opel_astra": {
+			"predkosc_max_kmh": 210,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.opel.pl/samochody/astra.html",
+			"predkosc_max_zrodlo_opis": "Opel Astra 1.2 Turbo — ~210 km/h (szacunek)"
+		},
+		"opel_grandland": {
+			"predkosc_max_kmh": 200,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.opel.pl/samochody/grandland.html",
+			"predkosc_max_zrodlo_opis": "Opel Grandland Hybrid — typowo ~200 km/h (szacunek)"
+		},
+		"seat_ibiza": {
+			"predkosc_max_kmh": 173,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.seat.pl/samochody/ibiza",
+			"predkosc_max_zrodlo_opis": "Seat Ibiza 1.0 MPI 80 — 173 km/h"
+		},
+		"seat_leon": {
+			"predkosc_max_kmh": 214,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.seat.pl/samochody/leon",
+			"predkosc_max_zrodlo_opis": "Seat Leon 1.5 TSI — ~214 km/h (szacunek)"
+		},
+		"seat_arona": {
+			"predkosc_max_kmh": 178,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.seat.pl/samochody/arona",
+			"predkosc_max_zrodlo_opis": "Seat Arona 1.0 TSI — ~178 km/h (szacunek)"
+		},
+		"seat_ateca": {
+			"predkosc_max_kmh": 201,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.seat.pl/samochody/ateca",
+			"predkosc_max_zrodlo_opis": "Seat Ateca 1.5 TSI — ~201 km/h (szacunek)"
+		},
+		"cupra_formentor": {
+			"predkosc_max_kmh": 204,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.cupraofficial.pl/samochody/formentor",
+			"predkosc_max_zrodlo_opis": "Cupra Formentor 1.5 TSI — ~204 km/h (szacunek; VZ wyżej)"
+		},
+		"cupra_born": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.cupraofficial.pl/samochody/born",
+			"predkosc_max_zrodlo_opis": "Cupra Born — 160 km/h (ograniczenie MEB)"
+		},
+		"peugeot_208": {
+			"predkosc_max_kmh": 188,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.peugeot.pl/nasze-samochody/208.html",
+			"predkosc_max_zrodlo_opis": "Peugeot 208 1.2 PureTech 100 — 188 km/h"
+		},
+		"peugeot_208_hybrid": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.peugeot.pl/nasze-samochody/208.html",
+			"predkosc_max_zrodlo_opis": "Peugeot 208 Hybrid 110 — ~180 km/h (szacunek)"
+		},
+		"peugeot_e208": {
+			"predkosc_max_kmh": 150,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.peugeot.pl/nasze-samochody/e-208.html",
+			"predkosc_max_zrodlo_opis": "Peugeot e-208 — 150 km/h"
+		},
+		"peugeot_2008": {
+			"predkosc_max_kmh": 188,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.peugeot.pl/nasze-samochody/2008.html",
+			"predkosc_max_zrodlo_opis": "Peugeot 2008 1.2 — ~188 km/h (szacunek)"
+		},
+		"peugeot_308": {
+			"predkosc_max_kmh": 210,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.peugeot.pl/nasze-samochody/308.html",
+			"predkosc_max_zrodlo_opis": "Peugeot 308 1.2 — ~210 km/h (szacunek)"
+		},
+		"peugeot_308_sw": {
+			"predkosc_max_kmh": 208,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.peugeot.pl/nasze-samochody/308-sw.html",
+			"predkosc_max_zrodlo_opis": "Peugeot 308 SW — ~208 km/h (szacunek)"
+		},
+		"renault_clio": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.renault.pl/samochody-osobowe/clio.html",
+			"predkosc_max_zrodlo_opis": "Renault Clio TCe 90 — 180 km/h"
+		},
+		"renault_captur": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.renault.pl/samochody-osobowe/captur.html",
+			"predkosc_max_zrodlo_opis": "Renault Captur TCe — ~170 km/h (szacunek)"
+		},
+		"renault_5_electric": {
+			"predkosc_max_kmh": 150,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.renault.pl/samochody-osobowe/renault-5-e-tech-electric.html",
+			"predkosc_max_zrodlo_opis": "Renault 5 E-Tech Electric — 150 km/h"
+		},
+		"renault_megane_etech": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.renault.pl/samochody-osobowe/megane-e-tech-electric.html",
+			"predkosc_max_zrodlo_opis": "Renault Megane E-Tech Electric — 160 km/h"
+		},
+		"citroen_c3": {
+			"predkosc_max_kmh": 183,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.citroen.pl/samochody/c3.html",
+			"predkosc_max_zrodlo_opis": "Citroën C3 1.2 — ~183 km/h (szacunek)"
+		},
+		"citroen_ec3": {
+			"predkosc_max_kmh": 135,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.citroen.pl/samochody/e-c3.html",
+			"predkosc_max_zrodlo_opis": "Citroën ë-C3 — 135 km/h"
+		},
+		"ford_puma": {
+			"predkosc_max_kmh": 194,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.ford.pl/samochody-osobowe/puma",
+			"predkosc_max_zrodlo_opis": "Ford Puma 1.0 EcoBoost 125 — 194 km/h"
+		},
+		"ford_focus": {
+			"predkosc_max_kmh": 208,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.ford.pl/samochody-osobowe/focus",
+			"predkosc_max_zrodlo_opis": "Ford Focus 1.0/1.5 — typowo ~208 km/h (szacunek)"
+		},
+		"ford_kuga": {
+			"predkosc_max_kmh": 196,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.ford.pl/samochody-osobowe/kuga",
+			"predkosc_max_zrodlo_opis": "Ford Kuga Hybrid — ~196 km/h (szacunek)"
+		},
+		"tesla_model_3": {
+			"predkosc_max_kmh": 201,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.tesla.com/pl_pl/model3/design",
+			"predkosc_max_zrodlo_opis": "Tesla Model 3 RWD — 201 km/h (specyfikacja producenta)"
+		},
+		"tesla_model_y": {
+			"predkosc_max_kmh": 201,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.tesla.com/pl_pl/modely/design",
+			"predkosc_max_zrodlo_opis": "Tesla Model Y RWD — 201 km/h"
+		},
+		"bmw_118": {
+			"predkosc_max_kmh": 212,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.bmw.pl/pl/all-models/1-series/bmw-1-series-5-door.html",
+			"predkosc_max_zrodlo_opis": "BMW 118i — 212 km/h"
+		},
+		"bmw_320": {
+			"predkosc_max_kmh": 235,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.bmw.pl/pl/all-models/3-series/bmw-3-series-sedan.html",
+			"predkosc_max_zrodlo_opis": "BMW 320i — 235 km/h"
+		},
+		"bmw_i4": {
+			"predkosc_max_kmh": 190,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.bmw.pl/pl/all-models/bmw-i/i4.html",
+			"predkosc_max_zrodlo_opis": "BMW i4 eDrive40 — 190 km/h"
+		},
+		"audi_a3": {
+			"predkosc_max_kmh": 212,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.audi.pl/pl/modele/a3/",
+			"predkosc_max_zrodlo_opis": "Audi A3 35 TFSI — ~212 km/h (szacunek)"
+		},
+		"mercedes_a180": {
+			"predkosc_max_kmh": 216,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.mercedes-benz.pl/passengercars/models/hatchback/a-class/",
+			"predkosc_max_zrodlo_opis": "Mercedes-Benz A 180 — 216 km/h"
+		},
+		"volvo_ex30": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.volvocars.com/pl/cars/ex30/",
+			"predkosc_max_zrodlo_opis": "Volvo EX30 Single Motor — 180 km/h"
+		},
+		"honda_civic": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.honda.pl/cars/new/civic-hybrid.html",
+			"predkosc_max_zrodlo_opis": "Honda Civic e:HEV — 180 km/h"
+		},
+		"honda_jazz": {
+			"predkosc_max_kmh": 175,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.honda.pl/cars/new/jazz.html",
+			"predkosc_max_zrodlo_opis": "Honda Jazz e:HEV — 175 km/h"
+		},
+		"mazda3": {
+			"predkosc_max_kmh": 202,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.mazda.pl/samochody/mazda3/",
+			"predkosc_max_zrodlo_opis": "Mazda3 2.0 e-Skyactiv G 122 — 202 km/h"
+		},
+		"suzuki_swift": {
+			"predkosc_max_kmh": 180,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.suzuki.pl/samochody/swift",
+			"predkosc_max_zrodlo_opis": "Suzuki Swift — typowo ~180 km/h (szacunek)"
+		},
+		"nissan_qashqai": {
+			"predkosc_max_kmh": 174,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.nissan.pl/pojazdy/nowe-pojazdy/qashqai.html",
+			"predkosc_max_zrodlo_opis": "Nissan Qashqai e-POWER — 174 km/h"
+		},
+		"nissan_leaf": {
+			"predkosc_max_kmh": 144,
+			"predkosc_max_propozycja": false,
+			"predkosc_max_zrodlo": "https://www.nissan.pl/pojazdy/nowe-pojazdy/leaf.html",
+			"predkosc_max_zrodlo_opis": "Nissan Leaf — 144 km/h"
+		},
+		"fiat_pandina": {
+			"predkosc_max_kmh": 150,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.fiat.pl/pandina",
+			"predkosc_max_zrodlo_opis": "Fiat Pandina mHEV — szacunek ~150 km/h (brak pełnej ficha)"
+		},
+		"fiat_grande_panda": {
+			"predkosc_max_kmh": 160,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.fiat.pl/grande-panda",
+			"predkosc_max_zrodlo_opis": "Fiat Grande Panda — szacunek ~160 km/h"
+		},
+		"mg3": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://mgmotor.eu/pl-pl/mg3",
+			"predkosc_max_zrodlo_opis": "MG3 Hybrid+ — typowo ~170 km/h (szacunek; w katalogu naped spalinowy)"
+		},
+		"u_peugeot_206": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.automobile-catalog.com/car/2004/1496200/peugeot_206_1_1.html",
+			"predkosc_max_zrodlo_opis": "Peugeot 206 1.1/1.4 — typowo 150–185; kotwica 170 (flaga, rynek wtórny)"
+		},
+		"u_fiat_panda": {
+			"predkosc_max_kmh": 150,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.automobile-catalog.com/car/2005/814880/fiat_panda_1_1.html",
+			"predkosc_max_zrodlo_opis": "Fiat Panda 1.1/1.2 — typowo ~150 km/h (flaga)"
+		},
+		"u_skoda_fabia": {
+			"predkosc_max_kmh": 165,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.automobile-catalog.com/make/skoda/fabia_1gen/fabia_1gen_hatchback/2004.html",
+			"predkosc_max_zrodlo_opis": "Škoda Fabia I — typowo ~165 km/h (flaga)"
+		},
+		"u_vw_polo": {
+			"predkosc_max_kmh": 170,
+			"predkosc_max_propozycja": true,
+			"predkosc_max_zrodlo": "https://www.automobile-catalog.com/make/volkswagen/polo_4gen/polo_4gen_hatchback/2005.html",
+			"predkosc_max_zrodlo_opis": "VW Polo IV — typowo ~170 km/h (flaga)"
+		}
+	}
+}

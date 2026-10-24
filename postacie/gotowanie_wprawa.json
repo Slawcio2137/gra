@@ -1,0 +1,51 @@
+{
+  "opis": "Współczynniki wprawy w gotowaniu i plusów za dni. Propozycja do poprawki, nie pomiar i nie badanie.",
+  "propozycja_do_poprawki": true,
+  "to_nie_pomiar": true,
+  "etapy": [
+    "brak doświadczenia",
+    "początkujący",
+    "średni",
+    "zaawansowany",
+    "biegły"
+  ],
+  "nazwy_etapow_propozycja": true,
+  "punkty_w_etapie_max": 100,
+  "na_ostatnim_etapie_zostaje": 100,
+  "bazowy_koszt": {
+    "energia_na_dzien_gotowania": 15,
+    "czas_porcji_tygodnia_na_dzien": 1,
+    "propozycja_do_poprawki": true,
+    "opis": "Energia 15 na każdy dzień gotowania w tygodniu. Czas: 1 porcja tygodnia na każdy taki dzień."
+  },
+  "postep": {
+    "punkty_za_dzien": 3,
+    "propozycja_do_poprawki": true
+  },
+  "powrot": {
+    "bonus_gdy_daleko_od_szczytu": 2.0,
+    "bonus_przy_szczycie": 1.0,
+    "propozycja_do_poprawki": true,
+    "opis": "Po spadku mnożnik punktów jest 2 daleko od utraconego szczytu i spada liniowo do 1 przy tym szczycie."
+  },
+  "regres": {
+    "bazowy_spadek_punktow_na_tydzien": 10,
+    "mnoznik_dni": [1.0, 0.9, 0.7, 0.4, 0.2, 0.08, 0.0, 0.0],
+    "wspolczynnik_etapu": 0.45,
+    "wspolczynnik_tygodni_regresu": 0.2,
+    "wspolczynnik_tygodni_od_gotowania": 0.1,
+    "propozycja_do_poprawki": true,
+    "wzor": "spadek = 10 * mnoznik_dni[dni] * (1 + tygodnie_od_gotowania * 0.1) / ((1 + etap * 0.45) * (1 + tygodnie_regresu * 0.2))"
+  },
+  "koszt_z_wprawa": {
+    "obnizka_na_etap": 0.08,
+    "obnizka_na_pelne_punkty_etapu": 0.15,
+    "mnoznik_min": 0.4,
+    "propozycja_do_poprawki": true,
+    "wzor": "mnoznik = max(0.4, 1 - etap * 0.08 - (punkty/100) * 0.15)"
+  },
+  "plusy_zadowolenia_za_dni": [0, 1, 1, 2, 2, 3, 3, 4],
+  "minus_dodatkowy_przy_obnizeniu": 1,
+  "plusy_propozycja_do_poprawki": true,
+  "opis_plusow": "0 dni = 0 plusów, 7 dni = 4 plusy. Wartości pośrednie to propozycja. Przy obniżeniu minusów jest tyle, ile ubyło plusów, i jeszcze jeden."
+}

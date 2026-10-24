@@ -1,0 +1,133 @@
+{
+  "opis": "Zarobki według kraju. Polska: (1) ogólny rozkład przedziałów ogółem — tylko gdy brak zawodu; (2) wielkie grupy ISCO/KZiS — mediana i przeciętne brutto z GUS, osobno dla kobiet i mężczyzn. Matka/ojciec biorą wartości swojej wielkiej grupy po wylosowaniu zawodu. Rozkładu % przedziałów wewnątrz grupy GUS w informacji sygnalnej nie podaje — koła przedziałów wewnątrz zawodu nie kręcimy. Null tylko gdy brak danych.",
+  "kraje": {
+    "polska": {
+      "waluta": "PLN",
+      "rok": 2024,
+      "miesiac": "październik",
+      "wies": null,
+      "miasto": null,
+      "powod_wies_miasto": "Ta publikacja nie daje osobnej płacy dla wsi i miasta. Zostaje null.",
+      "poziom_zarobkow_zawodu": "wielka_grupa_isco_1digit",
+      "uwaga_mapowania": "Zawody w grze są 2-digit (lfsa_egai2d). Osobnych kwot GUS dla 2-digit w informacji sygnalnej nie ma. Mapowanie: OC1x→OC1 … OC9x→OC9. Średnie grupy 3-digit (tablice analityczne) nie są tu wpisane — bez wag zatrudnienia wewnątrz 2-digit nie losujemy ich z głowy. Pole zapisu: zarobki_z = grupa_OCN.",
+      "zrodlo": {
+        "kto": "Główny Urząd Statystyczny",
+        "tytul": "Struktura wynagrodzeń według zawodów za październik 2024 r.",
+        "seria": "Informacja sygnalna / Analizy i raporty statystyczne",
+        "miejsce_i_rok_wydania": "Bydgoszcz, Warszawa 2025–2026",
+        "url_sygnalna": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/struktura-wynagrodzen-wedlug-zawodow-za-pazdziernik-2024-r-,5,9.html",
+        "url_pdf_analizy": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/4/12/1/analizy_i_raporty_statystycznne_struktura_wynagrodzen_wedlug_zawodow.pdf",
+        "zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób.",
+        "cytat_przecietne": "W październiku 2024 r. w podmiotach o liczbie pracujących 10 i więcej osób wyniosło ono 8944,79 zł brutto. Wówczas wynagrodzenia równe przeciętnemu lub niższe niż przeciętne otrzymywało 65,3% ogółu zatrudnionych w badanych podmiotach.",
+        "cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
+        "cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
+        "cytat_udzialy": "Wynagrodzenie równe lub niższe od minimalnej płacy otrzymywało 6,7% zatrudnionych. Od minimalnego wynagrodzenia brutto do mediany: 43,3%. Pomiędzy medianą a przeciętnym: 15,3%. Od przeciętnego do dwukrotności mediany (14809,38 zł): 25,5%. Jeszcze wyższe: 9,2%.",
+        "cytat_wielkie_grupy_mediana": "Tablica 2. Mediana wynagrodzeń brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety).",
+        "cytat_wielkie_grupy_przecietne": "Tablica 1. Przeciętne miesięczne wynagrodzenia brutto według wielkich grup zawodów za październik 2024 r. (ogółem / mężczyźni / kobiety)."
+      },
+      "wielkie_grupy": {
+        "OC1": {
+          "nazwa": "Przedstawiciele władz publicznych, wyżsi urzędnicy i kierownicy",
+          "ogolem": { "mediana_zl": 12185.73, "przecietne_zl": 15213.78 },
+          "mezczyzni": { "mediana_zl": 13116.76, "przecietne_zl": 16743.67 },
+          "kobiety": { "mediana_zl": 11300.0, "przecietne_zl": 13483.36 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 1 — mediana 12185,73 zł (M 13116,76 / K 11300,00); przeciętne 15213,78 zł (M 16743,67 / K 13483,36)."
+        },
+        "OC2": {
+          "nazwa": "Specjaliści",
+          "ogolem": { "mediana_zl": 9466.17, "przecietne_zl": 10734.04 },
+          "mezczyzni": { "mediana_zl": 10391.83, "przecietne_zl": 12244.6 },
+          "kobiety": { "mediana_zl": 9071.01, "przecietne_zl": 9906.23 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23)."
+        },
+        "OC3": {
+          "nazwa": "Technicy i inny średni personel",
+          "ogolem": { "mediana_zl": 7811.76, "przecietne_zl": 8701.93 },
+          "mezczyzni": { "mediana_zl": 8451.16, "przecietne_zl": 9521.35 },
+          "kobiety": { "mediana_zl": 7428.01, "przecietne_zl": 8042.57 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 3 — mediana 7811,76 zł (M 8451,16 / K 7428,01); przeciętne 8701,93 zł (M 9521,35 / K 8042,57)."
+        },
+        "OC4": {
+          "nazwa": "Pracownicy biurowi",
+          "ogolem": { "mediana_zl": 6418.75, "przecietne_zl": 6993.97 },
+          "mezczyzni": { "mediana_zl": 6410.0, "przecietne_zl": 7017.7 },
+          "kobiety": { "mediana_zl": 6423.78, "przecietne_zl": 6977.94 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 4 — mediana 6418,75 zł (M 6410,00 / K 6423,78); przeciętne 6993,97 zł (M 7017,70 / K 6977,94)."
+        },
+        "OC5": {
+          "nazwa": "Pracownicy usług i sprzedawcy",
+          "ogolem": { "mediana_zl": 5281.03, "przecietne_zl": 5863.53 },
+          "mezczyzni": { "mediana_zl": 5643.61, "przecietne_zl": 6319.16 },
+          "kobiety": { "mediana_zl": 5158.45, "przecietne_zl": 5630.42 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 5 — mediana 5281,03 zł (M 5643,61 / K 5158,45); przeciętne 5863,53 zł (M 6319,16 / K 5630,42)."
+        },
+        "OC6": {
+          "nazwa": "Rolnicy, ogrodnicy, leśnicy i rybacy",
+          "ogolem": { "mediana_zl": 5521.64, "przecietne_zl": 6264.42 },
+          "mezczyzni": { "mediana_zl": 5400.0, "przecietne_zl": 6297.28 },
+          "kobiety": { "mediana_zl": 5750.05, "przecietne_zl": 6169.81 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 6 — mediana 5521,64 zł (M 5400,00 / K 5750,05); przeciętne 6264,42 zł (M 6297,28 / K 6169,81)."
+        },
+        "OC7": {
+          "nazwa": "Robotnicy przemysłowi i rzemieślnicy",
+          "ogolem": { "mediana_zl": 6414.06, "przecietne_zl": 7077.3 },
+          "mezczyzni": { "mediana_zl": 6671.8, "przecietne_zl": 7302.53 },
+          "kobiety": { "mediana_zl": 5443.42, "przecietne_zl": 5758.02 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 7 — mediana 6414,06 zł (M 6671,80 / K 5443,42); przeciętne 7077,30 zł (M 7302,53 / K 5758,02)."
+        },
+        "OC8": {
+          "nazwa": "Operatorzy i monterzy maszyn i urządzeń",
+          "ogolem": { "mediana_zl": 6734.42, "przecietne_zl": 7476.61 },
+          "mezczyzni": { "mediana_zl": 7088.8, "przecietne_zl": 7799.23 },
+          "kobiety": { "mediana_zl": 5730.0, "przecietne_zl": 6149.7 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 8 — mediana 6734,42 zł (M 7088,80 / K 5730,00); przeciętne 7476,61 zł (M 7799,23 / K 6149,70)."
+        },
+        "OC9": {
+          "nazwa": "Pracownicy wykonujący prace proste",
+          "ogolem": { "mediana_zl": 5501.66, "przecietne_zl": 5725.36 },
+          "mezczyzni": { "mediana_zl": 5733.48, "przecietne_zl": 6168.31 },
+          "kobiety": { "mediana_zl": 5397.7, "przecietne_zl": 5489.69 },
+          "cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 9 — mediana 5501,66 zł (M 5733,48 / K 5397,70); przeciętne 5725,36 zł (M 6168,31 / K 5489,69)."
+        }
+      },
+      "przedzialy": [
+        {
+          "id": "do_placy_minimalnej",
+          "od_zl": null,
+          "do_zl": 4300.0,
+          "waga": 6.7,
+          "cytat": "wynagrodzenie za październik 2024 r. w wysokości równej lub niższej od minimalnej płacy otrzymywało 6,7% zatrudnionych. Wykres: do 4300,00 zł.",
+          "uwaga": "Rozkład ogółem (bez zawodu). Nie używany, gdy rodzic ma zawód z mapowaną grupą."
+        },
+        {
+          "id": "od_minimalnej_do_mediany",
+          "od_zl": 4300.01,
+          "do_zl": 7404.69,
+          "waga": 43.3,
+          "cytat": "Wynagrodzenie mieszczące się w przedziale od minimalnego wynagrodzenia brutto do mediany wynagrodzeń otrzymywało 43,3% zatrudnionych w badanych podmiotach. Wykres: 4300,01 – 7404,69."
+        },
+        {
+          "id": "od_mediany_do_przecietnego",
+          "od_zl": 7404.7,
+          "do_zl": 8944.79,
+          "waga": 15.3,
+          "cytat": "Wynagrodzenie pomiędzy wartością mediany a przeciętnym miesięcznym wynagrodzeniem brutto otrzymało 15,3% zatrudnionych. Wykres: 7404,70 – 8944,79."
+        },
+        {
+          "id": "od_przecietnego_do_dwoch_median",
+          "od_zl": 8944.8,
+          "do_zl": 14809.38,
+          "waga": 25.5,
+          "cytat": "Od przeciętnego miesięcznego wynagrodzenia do dwukrotności mediany (14809,38 zł) otrzymywało 25,5% zatrudnionych. Wykres: 8944,80 – 14809,38."
+        },
+        {
+          "id": "powyzej_dwoch_median",
+          "od_zl": 14809.39,
+          "do_zl": null,
+          "waga": 9.2,
+          "cytat": "9,2% zatrudnionych w podmiotach o liczbie pracujących 10 i więcej osób otrzymywało jeszcze wyższe wynagrodzenia. Wykres: od 14809,39 zł."
+        }
+      ]
+    }
+  }
+}

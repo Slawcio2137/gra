@@ -1,0 +1,295 @@
+{
+  "opis": "Eventy „dziecko się dowiaduje” na napisach tygodnia. Teksty do gracza. Max 1–2 na turę. Wagi to propozycja do poprawki, nie GUS. Reszta setek akcji = kolejna fala.",
+  "max_na_ture": 2,
+  "wagi_propozycja_do_poprawki": true,
+  "to_nie_gus": true,
+  "pula": [
+    {
+      "id": "zakupy_z_matka",
+      "tekst": "Matka zabrała cię na zakupy. Dowiadywałeś się, że rzeczy kupuje się za pieniądze — i że zakupy w ogóle istnieją.",
+      "pytanie": false,
+      "flagi": ["wie_o_zakupach", "wie_o_pieniadzach"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "ojciec_placa_karta",
+      "tekst": "Ojciec zapłacił kartą. Dowiadywałeś się, że można płacić kartą, telefonem albo podobnie — nie tylko gotówką.",
+      "pytanie": false,
+      "flagi": ["wie_o_platnosci_karta"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "kolega_o_kieszonkowym",
+      "tekst": "Od kolegów dowiedziałeś się o kieszonkowym. Czy chcesz poprosić rodziców i powiedzieć, że inni dostają (albo że rodzeństwo dostaje)?",
+      "pytanie": true,
+      "opcje": [
+        {
+          "id": "tak",
+          "nazwa": "Tak",
+          "skutek": "argument_kieszonkowe",
+          "tekst_sukces": "Udało ci się. Rodzice ustępują przy argumencie „inni dostają”.",
+          "tekst_odmowa": "Rodzice odmawiają mimo argumentu o innych dzieciach."
+        },
+        {
+          "id": "nie",
+          "nazwa": "Nie",
+          "tekst": "Na razie nic nie mówisz rodzicom o kieszonkowym."
+        }
+      ],
+      "flagi": ["slyszal_o_kieszonkowym"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "oszczedzanie_podstawowka",
+      "tekst": "W podstawówce dowiedziałeś się, czym jest oszczędzanie — odkładanie pieniędzy na później.",
+      "pytanie": false,
+      "wymaga_wiek_min": 7,
+      "wymaga_etap": "podstawowka",
+      "flagi": ["wie_o_oszczedzaniu"],
+      "waga": 1,
+      "propozycja_do_poprawki": true,
+      "uwaga": "Nie przedszkole. Około 7 lat / podstawówka."
+    },
+    {
+      "id": "pomoc_w_gotowaniu",
+      "tekst": "Mama albo tata zaprasza cię do pomocy w gotowaniu. Chcesz pomóc?",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak", "flagi": ["pomagal_w_gotowaniu"], "tekst": "Pomagasz w kuchni. Trochę wprawy i bliżej rodziców."},
+        {"id": "nie", "nazwa": "Nie", "tekst": "Odmawiasz pomocy w gotowaniu."}
+      ],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "wizyta_u_lekarza",
+      "tekst": "Byłeś u lekarza. Temat zdrowia i wizyt lekarskich staje się dla ciebie czymś znanym.",
+      "pytanie": false,
+      "flagi": ["wie_o_lekarzu", "temat_zdrowie"],
+      "odblokuj_pytania": ["zdrowie"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "pierwszy_dzien_przedszkola",
+      "tekst": "Pierwszy dzień przedszkola. Możesz pytać o naukę i o to, co tam się dzieje.",
+      "pytanie": false,
+      "wymaga_wiek_max": 6,
+      "flagi": ["byl_w_przedszkolu", "temat_nauka"],
+      "odblokuj_pytania": ["nauka"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "rodzice_bez_czasu_jedynak",
+      "tekst": "Rodzice nie mają teraz czasu na zabawę z tobą. Nudzi cię to — nastrój i psychika trochę spadają.",
+      "pytanie": false,
+      "tylko_jedynak": true,
+      "zamiast": "plac_zabaw",
+      "skutki": {"nastroj": -1, "psychika": -1},
+      "propozycja_do_poprawki": true,
+      "waga": 1,
+      "uwaga": "Zamiast placu zabaw, gdy jesteś jedynakiem."
+    },
+    {
+      "id": "urodziny_zaproszenie",
+      "tekst": "Urodziny. Kolega albo koleżanka (częściej ta sama płeć co ty) zaprasza cię na swoje urodziny.",
+      "pytanie": false,
+      "flagi": ["byl_na_urodzinach"],
+      "preferuj_ta_sama_plec": true,
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "poznanie_kogos",
+      "tekst": "Poznałeś kogoś w przedszkolu albo szkole — albo rodzice zaprosili kogoś z dzieckiem. Ta osoba ląduje w Osoby przy tej osobie, nie na głównej liście rodziny.",
+      "pytanie": false,
+      "skutek": "dodaj_znajomego_dziecka",
+      "flagi": ["poznal_kogos"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "awaria_pradu",
+      "tekst": "Była awaria prądu. Dowiadywałeś się, czym jest prąd — i możesz o to pytać.",
+      "pytanie": false,
+      "flagi": ["wie_o_pradzie", "temat_prad"],
+      "odblokuj_pytania": ["prad"],
+      "czestosc": {
+        "propozycja_do_poprawki": true,
+        "to_nie_oficjalny_procent": true,
+        "notatka_gracza": "Gracz mówił: raz na rok / parę lat. Bez oficjalnego % awarii w PL.",
+        "prog_rzadki_tura": 0.004,
+        "skala": 1.0,
+        "uwaga": "Rzadki próg zastępczy. Nie wpisywać GUS ani oficjalnych %."
+      },
+      "waga": 0.25,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "rodzic_zmeczony_z_pracy",
+      "tekst": "Rodzic wraca zmęczony z pracy. Możesz zapytać, ile zarabiają — ale mogą nie odpowiedzieć, zwłaszcza przy wysokich zarobkach.",
+      "pytanie": true,
+      "opcje": [
+        {
+          "id": "tak",
+          "nazwa": "Tak, pytam",
+          "skutek": "pytanie_zarobki",
+          "tekst_odpowiedz": "Rodzic krótko odpowiada albo omija temat.",
+          "tekst_milczenie": "Rodzic nie chce mówić o zarobkach."
+        },
+        {"id": "nie", "nazwa": "Nie", "tekst": "Nie pytasz o zarobki."}
+      ],
+      "flagi": ["widzial_zmeczonego_rodzica"],
+      "odblokuj_pytania": ["zarobki_rodzicow"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "telefon_ogladanie",
+      "tekst": "Przy telefonie albo oglądaniu dowiedziałeś się, czym jest telefon. Temat telefonu staje się dostępny.",
+      "pytanie": false,
+      "flagi": ["wie_o_telefonie", "temat_telefon"],
+      "odblokuj_pytania": ["telefon"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "prosba_o_slodycze",
+      "tekst": "Słodyczy standardowo jest mało. Prosisz o kupno. Przy odmowie możesz naciskać albo popłakać się (to wpływa na zadowolenie rodziców).",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak — proszę", "skutek": "prosba_slodycze", "tekst_ok": "Dostajesz trochę słodyczy.", "tekst_odmowa": "Rodzice odmawiają słodyczy."},
+        {"id": "naciskaj", "nazwa": "Naciskam / płaczę", "skutek": "nacisk_slodycze", "tekst": "Naciskasz. Zadowolenie rodziców spada.", "skutki": {"zadowolenie_rodzicow": -1}},
+        {"id": "nie", "nazwa": "Nie proszę", "tekst": "Nie prosisz o słodycze."}
+      ],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "wycieczka_klasowa",
+      "tekst": "Wycieczka klasowa albo teatr w podstawówce. Dowiadywałeś się o transporcie publicznym.",
+      "pytanie": false,
+      "wymaga_wiek_min": 7,
+      "wymaga_etap": "podstawowka",
+      "flagi": ["wie_o_transporcie_publicznym"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "zgubienie_waznego",
+      "tekst": "Zgubiłeś coś ważnego (telefon, portfel albo pieniądze) — o ile to masz — i nie da się tego łatwo znaleźć. Czujesz niemoc.",
+      "pytanie": false,
+      "wymaga_ma": ["telefon", "portfel", "pieniadze"],
+      "wymaga_ma_tryb": "ktokolwiek",
+      "skutki": {"nastroj": -1},
+      "flagi": ["zgubil_cos_waznego"],
+      "waga": 0.8,
+      "propozycja_do_poprawki": true,
+      "uwaga": "Nie zgubiona zabawka. Tylko coś ważnego, jeśli postać to ma."
+    },
+    {
+      "id": "nauka_liczenia_przy_zakupach",
+      "tekst": "Przy zakupach uczysz się liczyć: ceny, reszta, ile sztuk. Temat liczenia przy zakupach jest odblokowany.",
+      "pytanie": false,
+      "flagi": ["temat_liczenie_zakupy"],
+      "odblokuj_pytania": ["liczenie"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "zakaz_wyjscia_samemu",
+      "tekst": "Rodzice mówią ci, że nie wolno wychodzić samemu. Temat zakazu wyjścia jest znany.",
+      "pytanie": false,
+      "flagi": ["wie_o_zakazie_wyjscia", "temat_zakaz_wyjscia"],
+      "odblokuj_pytania": ["zakaz_wyjscia"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "sam_zaplace",
+      "tekst": "Pierwszy raz myślisz: „sam zapłacę” — o ile płatność własna jest już odblokowana.",
+      "pytanie": false,
+      "wymaga_flagi": ["wie_o_pieniadzach"],
+      "flagi": ["temat_sam_zaplace"],
+      "odblokuj_pytania": ["sam_zaplace"],
+      "waga": 1,
+      "propozycja_do_poprawki": true
+    },
+    {
+      "id": "nauka_czytania",
+      "tekst": "Mama albo tata proponuje ci naukę czytania. Jesteś chętny?",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak", "skutek": "nauka_dom_czytanie", "tekst": "Uczysz się czytać w domu."},
+        {"id": "nie", "nazwa": "Nie", "tekst": "Nie chcesz teraz. I tak nauczysz się w podstawówce około 7 lat."}
+      ],
+      "flagi_gdy_tak": ["uczy_sie_czytac_w_domu"],
+      "flagi_gdy_nie_albo_pozniej": ["nauczy_sie_czytac_w_szkole"],
+      "wiek_szkolny_fallback": 7,
+      "zalezy_od_charakteru_rodzicow": true,
+      "waga": 1,
+      "propozycja_do_poprawki": true,
+      "szablon_nauki": true
+    },
+    {
+      "id": "nauka_pisania",
+      "tekst": "Mama albo tata proponuje ci naukę pisania. Jesteś chętny?",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak", "skutek": "nauka_dom_pisanie", "tekst": "Uczysz się pisać w domu."},
+        {"id": "nie", "nazwa": "Nie", "tekst": "Nie teraz. W podstawówce i tak dojdziesz do pisania."}
+      ],
+      "flagi_gdy_tak": ["uczy_sie_pisac_w_domu"],
+      "wiek_szkolny_fallback": 7,
+      "zalezy_od_charakteru_rodzicow": true,
+      "waga": 1,
+      "propozycja_do_poprawki": true,
+      "szablon_nauki": true
+    },
+    {
+      "id": "nauka_liczenia_dom",
+      "tekst": "Mama albo tata proponuje ci naukę liczenia. Jesteś chętny?",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak", "skutek": "nauka_dom_liczenie", "tekst": "Liczycie razem w domu."},
+        {"id": "nie", "nazwa": "Nie", "tekst": "Odmawiasz. Liczenia i tak nauczysz się w szkole."}
+      ],
+      "flagi_gdy_tak": ["uczy_sie_liczyc_w_domu"],
+      "wiek_szkolny_fallback": 7,
+      "zalezy_od_charakteru_rodzicow": true,
+      "waga": 1,
+      "propozycja_do_poprawki": true,
+      "szablon_nauki": true
+    },
+    {
+      "id": "nauka_rysowania",
+      "tekst": "Rodzic proponuje ci wspólne rysowanie i naukę rysunku. Chcesz?",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak", "flagi": ["uczy_sie_rysowac"], "tekst": "Rysujecie razem."},
+        {"id": "nie", "nazwa": "Nie", "tekst": "Wolisz nie rysować teraz."}
+      ],
+      "zalezy_od_charakteru_rodzicow": true,
+      "waga": 0.8,
+      "propozycja_do_poprawki": true,
+      "szablon_nauki": true
+    },
+    {
+      "id": "nauka_spiewu",
+      "tekst": "Mama albo tata proponuje ci naukę śpiewu albo piosenki. Jesteś chętny?",
+      "pytanie": true,
+      "opcje": [
+        {"id": "tak", "nazwa": "Tak", "flagi": ["uczy_sie_spiewac"], "tekst": "Śpiewacie razem."},
+        {"id": "nie", "nazwa": "Nie", "tekst": "Nie tym razem."}
+      ],
+      "zalezy_od_charakteru_rodzicow": true,
+      "waga": 0.7,
+      "propozycja_do_poprawki": true,
+      "szablon_nauki": true
+    }
+  ]
+}

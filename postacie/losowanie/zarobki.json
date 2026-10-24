@@ -15,5 +15,5 @@
     "url": null
   },
   "kolo": null,
-  "uwaga": "GUS podaje przeciętny miesięczny dochód rozporządzalny gospodarstw domowych oraz to, że w miastach jest on wyższy niż na wsi. To nie jest przeciętne wynagrodzenie (zarobki) miejsca. Tej kwoty tu nie przepisano. Koło zarobków zostaje puste."
+  "uwaga": "Wieś i miasto zostają null. Rozkład płac kraju, bez podziału wieś/miasto, jest w postacie/losowanie/zarobki_kraje.json. Stąd koło nie bierze średniej miejsca."
 }

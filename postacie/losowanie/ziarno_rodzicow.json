@@ -1,0 +1,80 @@
+{
+  "opis": "Ziarno rodziców: rodzaj pracy, zarobki, typ domu, reguły wyżywienia i odesłanie do kieszonkowego. Osobne od cech bohatera. Pełne losowanie odpala się raz na starcie rodziny. Wynik trzyma się w zapisie gry, nie co turę. To nie jest karta rodziców na każdy tydzień.",
+  "kiedy": "raz_na_start_rodziny",
+  "osobne_od": "cechy_bohatera",
+  "nie_co_ture": true,
+  "trzymac_w_zapisie": true,
+  "praca": {
+    "opis": "Wagi zawodów przeniesione do zawody_kraje.json (klucz kraju). Matka i ojciec losują osobno z kół kobiety/mężczyźni. Tu zostaje tylko odsyłacz — bez wag w tym pliku.",
+    "plik_krajowy": "res://postacie/losowanie/zawody_kraje.json",
+    "zrodlo": null,
+    "pozycje": []
+  },
+  "zarobki": {
+    "plik": "res://postacie/losowanie/zarobki.json",
+    "plik_krajowy": "res://postacie/losowanie/zarobki_kraje.json",
+    "kwota": null,
+    "waga_wies": null,
+    "waga_miasto": null,
+    "mnoznik_wies_miasto": null,
+    "zrodlo": null,
+    "uwaga": "Po zawodzie: zarobki matki/ojca z wielkiej grupy ISCO (GUS mediana–przeciętne wg płci) w zarobki_kraje.json → wielkie_grupy. Gospodarstwo = suma przedziałów rodziców (zarobki_z / dochód_gospodarstwa). Ogólne przedziały kraju tylko awaryjnie, gdy brak zawodu. Wieś/miasto: null."
+  },
+  "dom": {
+    "opis": "Mieszkanie, dom jednorodzinny i apartament. Apartament to mieszkanie wyższego standardu w budynku wielorodzinnym, nie cały wieżowiec i nie liczba pięter.",
+    "definicja_nsp": "NSP 2021 dzieli budynki mieszkalne na jednorodzinne oraz wielomieszkaniowe. Wielomieszkaniowy to budynek, w którym wydzielone są minimum trzy mieszkania. Jednorodzinny to budynek wolnostojący albo w zabudowie bliźniaczej, szeregowej lub grupowej. Apartamentu jako osobnej liczby w tej definicji nie ma.",
+    "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/5/2/1/warunki_mieszkaniowe_w_polsce_w_swietle_wynikow_narodowego_spisu_powszechnego_ludnosci_i_mieszkan_2021.pdf",
+    "czemu_waga_null": "GUS nie wydziela apartamentu jako osobnej liczby, więc wagi nie ma. W wyciągu tej publikacji procenty nie zgadzają się między akapitami. Mieszkanie w spisie jest lokalem i bywa też w domu jednorodzinnym, więc pary graczowej nie przepisano jako wagi. Żadnej liczby nie wpisano.",
+    "zrodlo": null,
+    "pozycje": [
+      {
+        "id": "mieszkanie",
+        "nazwa": "Mieszkanie",
+        "waga": null,
+        "zrodlo": null,
+        "uwaga": "Zwykłe mieszkanie. W NSP to nie jest osobna para wobec domu."
+      },
+      {
+        "id": "dom_jednorodzinny",
+        "nazwa": "Dom jednorodzinny",
+        "waga": null,
+        "zrodlo": null
+      },
+      {
+        "id": "apartament",
+        "nazwa": "Apartament",
+        "waga": null,
+        "zrodlo": null,
+        "uwaga": "Mieszkanie wyższego standardu w budynku wielorodzinnym. Nie cały wieżowiec i nie liczba pięter. GUS nie wydziela apartamentu jako osobnej liczby, więc wagi nie ma."
+      }
+    ]
+  },
+  "wyzywienie": {
+    "opis": "Reguły jedzenia z rodziców. To nie są procenty. Wagi null, losowanie ich nie kręci. Ułamek diety kraju czyta szansa_diety z pliku diet, nie liczba wpisana tutaj. Funkcja jedzenia stosuje regułę tylko gdy flaga albo próg już tu jest.",
+    "plik_diet": "res://postacie/losowanie/diety_kraje.json",
+    "biedniejsi": null,
+    "dba_o_zdrowie": null,
+    "wegetarianie": null,
+    "weganie": null,
+    "prog_zamoznosci": null,
+    "waga_wegetarian": null,
+    "waga_wegan": null,
+    "waga_dba_o_zdrowie": null,
+    "zrodlo": null,
+    "uwaga": "Ułamka nie ma w tym pliku. Kraj rodziny idzie przez szansa_diety. Brak kraju w pliku diet daje null, bez podstawiania Polski. Wagi dalej null, koło się nie kręci."
+  },
+  "charakter_rodzicow": {
+    "opis": "Cechy rodziców pod reguły kieszonkowego i jedzenia. Pusta lista, waga null. Koło się nie kręci.",
+    "waga": null,
+    "zrodlo": null,
+    "cechy": []
+  },
+  "kieszonkowe": {
+    "plik": "res://postacie/kieszonkowe.json",
+    "kwota": null,
+    "waga": null,
+    "zrodlo": null,
+    "losowanie_kwoty": "stoi",
+    "uwaga": "Puste nie znaczy „losowane z danych”. Losowanie stoi, aż będzie źródło."
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "opis": "Pytania dziecka. Zawsze jest wybór rozmówcy. Temat bazowy jest od startu. Zainteresowanie odblokowuje dodatkowe tematy. Odpowiedź dorosłego jest krótka albo odsyła do książki, nie jest wykładem. Waga jest null: nie ma częstości pytania.",
+  "waga": null,
+  "uwaga_wagi": "Pole waga przy tematach jest null. Nie wymyślono, jak często dziecko o to pyta.",
+  "odpowiedz_moze_byc": "Krótko albo: sięgnij po książkę.",
+  "rozmowcy": [
+    {"id": "rodzic", "nazwa": "Rodzic", "zawsze": true},
+    {"id": "rodzenstwo", "nazwa": "Rodzeństwo", "zawsze": true},
+    {"id": "przyjaciel", "nazwa": "Przyjaciel", "zawsze": true},
+    {
+      "id": "nauczyciel",
+      "nazwa": "Nauczyciel",
+      "tresc_wspolna": true,
+      "widocznosc": {
+        "przedszkole": "Przedszkolanka",
+        "szkola": "Nauczyciel"
+      },
+      "uwaga": "Jedna treść. Etykieta zależy od etapu: przedszkole albo szkoła. To nie są dwie kopie odpowiedzi."
+    },
+    {
+      "id": "internet",
+      "nazwa": "Internet",
+      "na_starcie": false,
+      "wymaga": ["dostep_do_internetu", "wie_co_to_internet"],
+      "uwaga": "Nie ma go na starcie. Wchodzi dopiero, gdy postać ma dostęp do internetu oraz wie, co to jest. Oba warunki naraz."
+    }
+  ],
+  "zainteresowania_uwaga": "W projekcie nie było pliku zainteresowań. To krótka lista id, nie wagi i nie częstości.",
+  "zainteresowania": [
+    {"id": "zwierzeta", "nazwa": "Zwierzęta"},
+    {"id": "auta", "nazwa": "Auta"},
+    {"id": "rysowanie", "nazwa": "Rysowanie"},
+    {"id": "matematyka", "nazwa": "Matematyka"},
+    {"id": "muzyka", "nazwa": "Muzyka"},
+    {"id": "gotowanie", "nazwa": "Gotowanie"},
+    {"id": "sport", "nazwa": "Sport"},
+    {"id": "kosmos", "nazwa": "Kosmos"},
+    {"id": "przyroda", "nazwa": "Przyroda"}
+  ],
+  "tematy_bazowe": [
+    {
+      "id": "seks_slowo",
+      "nazwa": "Seks jako usłyszane słowo",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "To słowo dorosłych. Teraz nie rozwijam.",
+        "Chodzi o bliskość dorosłych. Książka, gdy będziesz starszy.",
+        "Nie każde słowo z podwórka trzeba od razu rozumieć.",
+        "Jak będziesz chciał, wrócimy do tego.",
+        "Sięgnij po książkę dla dzieci o ciele, bez wykładu."
+      ]
+    },
+    {
+      "id": "skad_dzieci",
+      "nazwa": "Skąd biorą się dzieci",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Rosną w brzuchu mamy.",
+        "Potrzeba dwojga dorosłych i czasu.",
+        "Książka pokaże to krócej niż gadanie.",
+        "Nie dzisiaj cały wykład.",
+        "Jak dorośniesz, będzie dokładniej."
+      ]
+    },
+    {
+      "id": "czytanie",
+      "nazwa": "Czytanie",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Litery składają się w słowa. Czyta się po trochu.",
+        "Najpierw obrazek, potem krótki napis.",
+        "Sięgnij po cienką książkę, nie po grubą.",
+        "Możemy przeczytać jedną stronę razem.",
+        "Błąd w czytaniu nic nie psuje. Czytasz jeszcze raz."
+      ]
+    },
+    {
+      "id": "liczenie",
+      "nazwa": "Liczenie",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Liczy się po jednym, na palcach albo na przedmiotach.",
+        "Zero to puste miejsce. Nic tam nie leży.",
+        "Dodawanie to dokładanie. Odejmowanie to zabieranie.",
+        "Sięgnij po książkę z obrazkami liczb.",
+        "Nie musisz umieć dużych liczb od razu."
+      ]
+    },
+    {
+      "id": "jak_dziala_samochod",
+      "nazwa": "Jak działa samochód",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Silnik kręci kołami. Kierownica skręca.",
+        "Bez paliwa albo prądu auto stoi.",
+        "Hamulec zatrzymuje. Pasy trzymają.",
+        "Sięgnij po książkę o maszynach, z obrazkiem.",
+        "Dokładniej powiemy, gdy będziesz przy aucie."
+      ]
+    },
+    {
+      "id": "skad_pieniadze",
+      "nazwa": "Skąd pieniądze",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Pieniądze biorą się z pracy.",
+        "Najpierw się zarabia, potem wydaje.",
+        "Nie każde życzenie da się kupić.",
+        "Sięgnij po książkę o sklepie i pracy.",
+        "W domu mówimy, na co starcza, bez wykładu."
+      ]
+    },
+    {
+      "id": "klutnie",
+      "nazwa": "Dlaczego ludzie się kłócą",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Bo chcą różnych rzeczy albo są zmęczeni.",
+        "Kłótnia mija. Ludzie potem gadają.",
+        "Można powiedzieć, że jest ci przykro, bez krzyku.",
+        "To nie twoja wina, że dorośli podnoszą głos.",
+        "Jak chcesz, poczytamy krótką opowieść o zgodzie."
+      ]
+    },
+    {
+      "id": "smierc",
+      "nazwa": "Śmierć",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Ciało przestaje działać. Człowiek już nie wraca.",
+        "Wolno być smutnym i pytać dalej.",
+        "Nie musisz tego rozumieć od razu.",
+        "Sięgnij po krótką książkę o stracie, gdy będziesz chciał.",
+        "Jesteś bezpieczny. To nie jest twoja wina."
+      ]
+    },
+    {
+      "id": "przeklenstwo",
+      "nazwa": "Przekleństwo",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "To ostre słowo. W domu go nie używamy.",
+        "Słyszałeś je, bo ktoś był zły. Nie musisz powtarzać.",
+        "Da się powiedzieć to samo zwykłym słowem.",
+        "Jak wypowiesz, poprawimy i idziemy dalej.",
+        "Książka tego nie musi tłumaczyć."
+      ]
+    },
+    {
+      "id": "alkohol",
+      "nazwa": "Alkohol",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "To picie dla dorosłych. Dziecku szkodzi.",
+        "Po alkoholu głowa gorzej myśli i ciało gorzej słucha.",
+        "Nie próbujesz. Koniec tematu na teraz.",
+        "Sięgnij po książkę później, nie dzisiaj wykład.",
+        "Jak zobaczysz butelkę, zostawiasz ją dorosłym."
+      ]
+    },
+    {
+      "id": "papierosy",
+      "nazwa": "Papierosy",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Dym szkodzi płucom i zębom. Dziecku bardziej.",
+        "To nawyk dorosłych, nie zabawka.",
+        "Nie bierzesz, nawet na spróbowanie.",
+        "Książka o ciele powie resztę krócej niż ja.",
+        "Jak ktoś pali obok, odsuwasz się."
+      ]
+    },
+    {
+      "id": "policja",
+      "nazwa": "Policja",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Policja pilnuje, żeby ludziom nie działa się krzywda.",
+        "Jak jesteś zgubiony, szukasz policjanta albo innego dorosłego.",
+        "Nie każdy mundur znaczy kłopoty.",
+        "Mówisz prawdę. Nie musisz opowiadać więcej, niż wiesz.",
+        "Sięgnij po książkę o mieście, tam bywa policjant na obrazku."
+      ]
+    },
+    {
+      "id": "krew",
+      "nazwa": "Krew",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Krew jest w ciele. Jak leci, przykładasz czyste i wołasz dorosłego.",
+        "Mała ranka zwykle przestaje. Duża nie jest do oglądania samemu.",
+        "Nie boisz się powiedzieć, że boli.",
+        "Sięgnij po książkę o ciele, bez wykładu.",
+        "Cudzej krwi nie dotykasz gołą ręką."
+      ]
+    },
+    {
+      "id": "czyjs_placz",
+      "nazwa": "Czyjś płacz",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Ktoś płacze, bo jest mu źle albo bardzo mocno coś czuje.",
+        "Możesz być obok. Nie musisz naprawiać.",
+        "Pytasz, czy chce przytulenia, i słuchasz odpowiedzi.",
+        "Dorośli też płaczą. To nie twoja wina.",
+        "Jak płacz nie mija, wołasz innego dorosłego."
+      ]
+    },
+    {
+      "id": "jednego_rodzica_nie_ma",
+      "nazwa": "Czemu jednego rodzica nie ma",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Rodziny są różne. U jednych jest dwoje, u innych jedno.",
+        "Brak kogoś nie znaczy, że jesteś gorszy.",
+        "Mogę powiedzieć tyle, ile da się powiedzieć krótko.",
+        "Wolno tęsknić i pytać jeszcze raz.",
+        "Książka o różnych domach, gdy będziesz chciał, nie wykład."
+      ]
+    },
+    {
+      "id": "potwory_w_nocy",
+      "nazwa": "Potwory w nocy",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "W pokoju nie ma potwora. Cień umie udawać.",
+        "Możemy zajrzeć pod łóżko i zgasić to razem.",
+        "Zostawiam drzwi uchylone, jeśli tak spokojniej.",
+        "Strach w nocy mija rano. To nie jest wstyd.",
+        "Sięgnij po krótką, spokojną bajkę, nie po straszną."
+      ]
+    },
+    {
+      "id": "szkola",
+      "nazwa": "Szkoła",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "W szkole uczysz się z innymi i wracasz do domu.",
+        "Nauczyciel mówi, co robić. Wolno pytać.",
+        "Nie musisz lubić wszystkiego od pierwszego dnia.",
+        "Jak ktoś dokucza, mówisz dorosłemu.",
+        "Sięgnij po książkę o pierwszym dniu, jak chcesz zobaczyć, jak to bywa."
+      ]
+    },
+    {
+      "id": "telefon",
+      "nazwa": "Telefon",
+      "pytanie": "Do czego służy telefon?",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        {
+          "id": "do_dzwonienia",
+          "rozmowca": "rodzic",
+          "tresc": "Do dzwonienia.",
+          "waga": null,
+          "odblokowuje": "dlaczego_uzywasz_mimo_ze_nie_dzwonisz"
+        },
+        {"id": "do_pisania", "rozmowca": "rodzic", "tresc": "Do pisania z ludźmi.", "waga": null},
+        {"id": "do_zdjec", "rozmowca": "rodzic", "tresc": "Do zdjęć.", "waga": null},
+        {"id": "do_grania", "rozmowca": "rodzic", "tresc": "Do grania.", "waga": null},
+        {"id": "do_internetu", "rozmowca": "rodzic", "tresc": "Do internetu.", "waga": null},
+        {"id": "do_filmow", "rozmowca": "rodzic", "tresc": "Do oglądania filmów.", "waga": null},
+        {"id": "nie_wiem", "rozmowca": "rodzic", "tresc": "Nie wiem.", "waga": null},
+        {"id": "pytasz_zanim_wezmiesz", "rozmowca": "rodzic", "tresc": "Najpierw pytasz, zanim weźmiesz czyjś."},
+        {"id": "nie_wszystko_z_ekranu", "rozmowca": "rodzic", "tresc": "Nie wszystko z ekranu jest prawdą."},
+        {"id": "rozladowanie", "rozmowca": "rodzic", "tresc": "Jak się rozładuje, świat dalej jest."},
+        {"id": "krotko", "rozmowca": "rodzic", "tresc": "Resztę doczytasz później. Teraz krótko."}
+      ],
+      "dopytania": [
+        {
+          "id": "dlaczego_uzywasz_mimo_ze_nie_dzwonisz",
+          "pytanie": "Dlaczego go używasz, mimo że nie dzwonisz?",
+          "waga": null,
+          "na_starcie": false,
+          "wymaga_odpowiedzi": "do_dzwonienia",
+          "gdy": "Gdy rodzic odpowie: do dzwonienia.",
+          "odpowiedzi": [
+            {"id": "bo_obrazki", "rozmowca": "rodzic", "tresc": "Bo pokazuje obrazki i wiadomości."},
+            {"id": "nie_tylko_dzwonienie", "rozmowca": "rodzic", "tresc": "Dzwonienie to nie jedyne użycie."},
+            {"id": "pozniej", "rozmowca": "rodzic", "tresc": "Dokładniej później. Teraz tyle."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "czy_zwierzeta_umieraja",
+      "nazwa": "Czy zwierzęta umierają",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Tak. Zwierzęta też kończą życie.",
+        "Wolno je lubić i być smutnym, gdy odchodzą.",
+        "Opieka za życia jest ważniejsza niż długie gadanie.",
+        "Sięgnij po krótką książkę o zwierzęciu, bez wykładu.",
+        "Nie musisz oglądać, jak to wygląda."
+      ]
+    },
+    {
+      "id": "czemu_jestesmy_biedni",
+      "nazwa": "Czemu jesteśmy biedni",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Pieniędzy jest mało wobec tego, co trzeba kupić.",
+        "To nie jest twoja wina i nie jest karą.",
+        "Najpierw jedzenie i dom, potem reszta.",
+        "Nie obiecuję, że jutro będzie bogato.",
+        "Książka tego nie naprawi. Mogę tylko powiedzieć krótko."
+      ]
+    },
+    {
+      "id": "milosc",
+      "nazwa": "Miłość",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Miłość to troska. Jest do rodziny, do przyjaciela i później do kogoś bliskiego.",
+        "Nie boli, gdy jest spokojna. Jak boli, to nie jest w porządku.",
+        "Wolno lubić kogoś i nic z tym nie robić od razu.",
+        "Sięgnij po bajkę o przyjaźni, nie po wykład.",
+        "Pytaj dalej, gdy przyjdzie następne pytanie."
+      ]
+    },
+    {
+      "id": "wojna",
+      "nazwa": "Wojna",
+      "bazowy": true,
+      "zainteresowanie": null,
+      "waga": null,
+      "odpowiedzi": [
+        "Wojna to walka krajów. Ludzie przez nią tracą dom i zdrowie.",
+        "Tu, w domu, jesteś pilnowany.",
+        "Nie oglądasz tego sam na ekranie.",
+        "Krótko: to złe, bo krzywdzi. Reszta później, z książki dla twojego wieku.",
+        "Wolno się bać i pytać, czy u nas jest spokojnie."
+      ]
+    }
+  ],
+  "tematy_z_zainteresowan": [
+    {"id": "czemu_kot_mruczy", "nazwa": "Czemu kot mruczy", "bazowy": false, "zainteresowanie": "zwierzeta", "waga": null, "odpowiedzi": ["Mruczy, gdy jest mu dobrze albo gdy sam siebie uspokaja.", "Nie każdy mruk znaczy to samo. Patrzysz, czy kot jest miękki, czy spięty.", "Sięgnij po książkę o kotach."]},
+    {"id": "czy_ryba_spi", "nazwa": "Czy ryba śpi", "bazowy": false, "zainteresowanie": "zwierzeta", "waga": null, "odpowiedzi": ["Odpoczywa, choć nie zamyka oczu jak człowiek.", "W akwarium zostawiasz jej ciemność na noc.", "Reszta jest w książce o rybach, krótko."]},
+    {"id": "czemu_pies_merda", "nazwa": "Czemu pies merda ogonem", "bazowy": false, "zainteresowanie": "zwierzeta", "waga": null, "odpowiedzi": ["Ogonem mówi. Często, że cię widzi. Czasem, że jest niespokojny.", "Najpierw patrzysz na całe ciało, nie tylko na ogon.", "Książka o psach pokaże to na obrazku."]},
+    {"id": "co_je_kon", "nazwa": "Co je koń", "bazowy": false, "zainteresowanie": "zwierzeta", "waga": null, "odpowiedzi": ["Trawę, siano i to, co koń zna. Nie słodycze z ręki.", "Obce jedzenie może mu zaszkodzić.", "Sięgnij po książkę o stajni."]},
+    {"id": "czemu_auto_ma_kola", "nazwa": "Czemu auto ma koła", "bazowy": false, "zainteresowanie": "auta", "waga": null, "odpowiedzi": ["Koło toczy się łatwiej niż płoza po asfalcie.", "Cztery trzymają auto równo. Zapasowe czeka na dziurę.", "Obrazek w książce o maszynach wystarczy."]},
+    {"id": "co_to_silnik", "nazwa": "Co to jest silnik", "bazowy": false, "zainteresowanie": "auta", "waga": null, "odpowiedzi": ["Silnik zamienia paliwo albo prąd w ruch.", "Bez niego koła same nie pojadą.", "Dokładny rysunek jest w książce, nie w jednym zdaniu."]},
+    {"id": "czemu_tankowac", "nazwa": "Czemu trzeba tankować", "bazowy": false, "zainteresowanie": "auta", "waga": null, "odpowiedzi": ["Bak albo bateria się kończy, jak jedzenie w brzuchu.", "Pusty bak znaczy postój.", "Pieniądze na paliwo schodzą. Kwoty tu nie ma."]},
+    {"id": "czemu_swiatla", "nazwa": "Czemu auto ma światła", "bazowy": false, "zainteresowanie": "auta", "waga": null, "odpowiedzi": ["Żeby widzieć drogę i żeby inni widzieli auto.", "W dzień też bywają włączone, gdy jest szaro.", "Reszta zasad jest na później, krótko: światła nie są zabawką."]},
+    {"id": "jak_narysowac_twarz", "nazwa": "Jak narysować twarz", "bazowy": false, "zainteresowanie": "rysowanie", "waga": null, "odpowiedzi": ["Kółko, potem oczy, nos i usta. Krzywo też się liczy.", "Patrzysz na człowieka i poprawiasz, nie od razu idealnie.", "Sięgnij po zeszyt i ołówek, nie po wykład."]},
+    {"id": "czemu_kolory_sie_mieszaja", "nazwa": "Czemu kolory się mieszają", "bazowy": false, "zainteresowanie": "rysowanie", "waga": null, "odpowiedzi": ["Farba na farbie daje trzeci kolor.", "Czysty pędzel trzyma kolor osobno.", "Spróbuj na kartce. Książka z obrazkiem pokaże pary."]},
+    {"id": "skad_farba", "nazwa": "Skąd się bierze farba", "bazowy": false, "zainteresowanie": "rysowanie", "waga": null, "odpowiedzi": ["Z pigmentu i tego, co go skleja. W tubce jest już gotowa.", "Ziemia, rośliny i kreda też umieją barwić.", "Dokładna receptura jest w książce, nie tutaj."]},
+    {"id": "czemu_dwa_plus_dwa", "nazwa": "Czemu dwa dodać dwa to cztery", "bazowy": false, "zainteresowanie": "matematyka", "waga": null, "odpowiedzi": ["Dwa i jeszcze dwa to cztery sztuki. Policz na palcach.", "Tak umówili się ludzie, żeby liczyć tak samo.", "Zeszyt w kratkę wystarczy. Bez wykładu."]},
+    {"id": "co_to_zero", "nazwa": "Co to jest zero", "bazowy": false, "zainteresowanie": "matematyka", "waga": null, "odpowiedzi": ["Zero znaczy: nic, pusto.", "Stoi też w większych liczbach i przesuwa miejsce.", "Książka z obrazkiem pustego koszyka to pokaże."]},
+    {"id": "czemu_godzina_ma_60", "nazwa": "Czemu godzina ma 60 minut", "bazowy": false, "zainteresowanie": "matematyka", "waga": null, "odpowiedzi": ["Tak podzielono godzinę dawno temu i tak zostało.", "Minuta to kawałek godziny. Sekunda to kawałek minuty.", "Zegar do oglądania wystarczy. Historia podziału jest w książce."]},
+    {"id": "po_co_liczyc_pieniadze", "nazwa": "Po co liczyć pieniądze", "bazowy": false, "zainteresowanie": "matematyka", "waga": null, "odpowiedzi": ["Żeby wiedzieć, czy starcza, zanim się wyda.", "Liczenie nie tworzy pieniędzy. Tylko je pokazuje.", "Ćwiczysz na monetach albo na obrazku, bez kwot z powietrza."]},
+    {"id": "skad_dzwiek", "nazwa": "Skąd się bierze dźwięk", "bazowy": false, "zainteresowanie": "muzyka", "waga": null, "odpowiedzi": ["Coś drga, powietrze niesie drganie do ucha.", "Mocniej uderzysz, głośniej słychać.", "Sięgnij po książkę o dźwięku albo po strunę w ręku."]},
+    {"id": "gitara_a_beben", "nazwa": "Czemu gitara brzmi inaczej niż bęben", "bazowy": false, "zainteresowanie": "muzyka", "waga": null, "odpowiedzi": ["Inny kształt i inne drganie dają inny głos.", "Struna śpiewa długo, skóra bębna uderza krótko.", "Posłuchaj obu. Wykład nie jest potrzebny."]},
+    {"id": "jak_zapamietac_piosenke", "nazwa": "Jak zapamiętać piosenkę", "bazowy": false, "zainteresowanie": "muzyka", "waga": null, "odpowiedzi": ["Powtarzasz kawałek, nie całość naraz.", "Melodia trzyma słowa. Słowa trzymają melodię.", "Śpiewnik albo nagranie, krótko i jeszcze raz."]},
+    {"id": "czemu_ciasto_rosnie", "nazwa": "Czemu ciasto rośnie", "bazowy": false, "zainteresowanie": "gotowanie", "waga": null, "odpowiedzi": ["Drożdże albo proszek puszczają bąbelki. Ciasto puchnie.", "Zimna kuchnia robi to wolniej.", "Przepis w książce kucharskiej, nie wykład."]},
+    {"id": "czemu_zupa_goraca", "nazwa": "Czemu zupa jest gorąca", "bazowy": false, "zainteresowanie": "gotowanie", "waga": null, "odpowiedzi": ["Garnek stał na ogniu. Ciepło przeszło do zupy.", "Dmuchasz i czekasz. Gorące parzy.", "Termometr nie jest potrzebny, żeby wiedzieć, że parzy."]},
+    {"id": "skad_chleb", "nazwa": "Skąd się bierze chleb", "bazowy": false, "zainteresowanie": "gotowanie", "waga": null, "odpowiedzi": ["Z mąki, wody i tego, co każe ciastu urosnąć. Potem pieczenie.", "Mąka jest ze zboża.", "Obrazki w książce: pole, młyn, piekarnik."]},
+    {"id": "czemu_boli_po_biegu", "nazwa": "Czemu boli po biegu", "bazowy": false, "zainteresowanie": "sport", "waga": null, "odpowiedzi": ["Mięśnie się zmęczyły. Odpoczynek i woda pomagają bardziej niż gadanie.", "Ból ostry albo w stawie to znak, żeby przestać i powiedzieć dorosłemu.", "Książka o ruchu powie resztę bez liczb."]},
+    {"id": "czemu_pilka_leci", "nazwa": "Czemu piłka leci", "bazowy": false, "zainteresowanie": "sport", "waga": null, "odpowiedzi": ["Kopnięcie albo rzut daje jej ruch. Powietrze i ziemia ją zatrzymują.", "Mocniej kopniesz, dalej poleci, aż spadnie.", "Wystarczy boisko. Wzór zostaje w książce."]},
+    {"id": "po_co_zasady_gry", "nazwa": "Po co są zasady gry", "bazowy": false, "zainteresowanie": "sport", "waga": null, "odpowiedzi": ["Żeby wszyscy grali w to samo i żeby było mniej krzywdy.", "Bez zasad wygrywa ten, kto krzyczy.", "Kartka z zasadami jest krótsza niż wykład."]},
+    {"id": "czemu_jest_noc", "nazwa": "Czemu jest noc", "bazowy": false, "zainteresowanie": "kosmos", "waga": null, "odpowiedzi": ["Ziemia się kręci. Twoja strona odwraca się od słońca.", "Księżyc i lampy świecą słabiej niż dzień.", "Sięgnij po książkę o niebie, z obrazkiem."]},
+    {"id": "czy_ksiezyc_swieci_sam", "nazwa": "Czy księżyc świeci sam", "bazowy": false, "zainteresowanie": "kosmos", "waga": null, "odpowiedzi": ["Nie. Odbija światło słońca.", "Dlatego bywa cienki albo pełny, zależnie od tego, skąd pada światło.", "Obrazek w książce jest lepszy niż długie tłumaczenie."]},
+    {"id": "jak_daleko_slonce", "nazwa": "Jak daleko jest słońce", "bazowy": false, "zainteresowanie": "kosmos", "waga": null, "odpowiedzi": ["Bardzo daleko. Bliżej niż inne gwiazdy, daleko poza drogę autem.", "Liczby odległości tu nie podaję. Są w książce o kosmosie.", "Nie patrzysz w słońce gołym okiem."]},
+    {"id": "czy_ktoz_na_ksiezycu", "nazwa": "Czy na księżycu ktoś mieszka", "bazowy": false, "zainteresowanie": "kosmos", "waga": null, "odpowiedzi": ["Ludzie tam byli i wrócili. Na stałe nikt tam nie mieszka.", "Nie ma tam powietrza do oddychania.", "Zdjęcie w książce wystarczy."]},
+    {"id": "czemu_liscie_spadaja", "nazwa": "Czemu liście spadają", "bazowy": false, "zainteresowanie": "przyroda", "waga": null, "odpowiedzi": ["Jesienią drzewo oszczędza siły i puszcza liście.", "Wiosną puszcza nowe.", "Spacer i książka o drzewach, nie wykład."]},
+    {"id": "skad_deszcz", "nazwa": "Skąd się bierze deszcz", "bazowy": false, "zainteresowanie": "przyroda", "waga": null, "odpowiedzi": ["Woda z ziemi idzie w górę jako para, zbiera się w chmurze i spada.", "Kałuża to ten sam obieg, tylko na dole.", "Obrazek obiegu wody w książce jest krótki."]},
+    {"id": "czemu_rzeka_plynie", "nazwa": "Czemu rzeka płynie", "bazowy": false, "zainteresowanie": "przyroda", "waga": null, "odpowiedzi": ["Woda spływa w dół, tam gdzie teren opada.", "Deszcz i źródła ją dokładają.", "Nie wchodzisz sam do nurtu. Reszta jest w książce."]},
+    {"id": "czemu_zimno_zima", "nazwa": "Czemu jest zimno zimą", "bazowy": false, "zainteresowanie": "przyroda", "waga": null, "odpowiedzi": ["Słońce grzeje twoją stronę ziemi słabiej i krócej.", "Śnieg odbija światło. Ubranie trzyma ciepło.", "Dokładniej: książka o porach roku."]}
+  ]
+}

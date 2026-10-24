@@ -1,0 +1,19 @@
+{
+	"opis": "Manifest paczki obrazków zakupów (nieruchomości + dobra). Dopóki pobrane=false, gra używa lokalnych placeholderów w grafika/zakupy/. Nie ściągamy gigabajtów ani nie ripujemy katalogów z sieci.",
+	"id": "obrazki_zakupow",
+	"pobrane": false,
+	"placeholder_dir": "res://grafika/zakupy/",
+	"docelowo": "w_chmurze",
+	"uwaga_copyright": "URL-e / id do pobrania później — tylko licencjonowane źródła. Teraz: lekkie placeholdery lokalne (~768 px).",
+	"pliki": [
+		{"id": "mieszkanie", "url": null, "lokalny_fallback": "res://grafika/zakupy/mieszkanie.png", "pobrane": false},
+		{"id": "apartament", "url": null, "lokalny_fallback": "res://grafika/zakupy/mieszkanie.png", "pobrane": false},
+		{"id": "dom", "url": null, "lokalny_fallback": "res://grafika/zakupy/dom.png", "pobrane": false},
+		{"id": "willa", "url": null, "lokalny_fallback": "res://grafika/zakupy/dom.png", "pobrane": false},
+		{"id": "telefon", "url": null, "lokalny_fallback": "res://grafika/zakupy/telefon.png", "pobrane": false},
+		{"id": "samochod", "url": null, "lokalny_fallback": "res://grafika/zakupy/samochod.png", "pobrane": false},
+		{"id": "laptop", "url": null, "lokalny_fallback": "res://grafika/zakupy/laptop.png", "pobrane": false},
+		{"id": "komputer", "url": null, "lokalny_fallback": "res://grafika/zakupy/komputer.png", "pobrane": false},
+		{"id": "rower", "url": null, "lokalny_fallback": "res://grafika/zakupy/rower.png", "pobrane": false}
+	]
+}

@@ -1,0 +1,109 @@
+{
+  "opis": "Drobiazgi istnieją, ale nie losuje się każdego z osobna co tydzień. Raz na turę jest jedno sito: czy cokolwiek z puli się dzieje. Jak sito przejdzie, jedno koło daje dokładnie jeden drobiazg. Choroby zostają w postacie/zdrowie i do tej puli nie wchodzą. 0,2% nie jest progiem puli: to była granica, poniżej której drobiazg można było pominąć.",
+  "kiedy": "raz_na_ture",
+  "tura": "tydzien",
+  "szansa_ze_cokolwiek": null,
+  "skala_progu": null,
+  "zrodlo_progu": null,
+  "uwaga_progu": "Użytkownik nie podał liczby. Dopóki szansa_ze_cokolwiek albo skala_progu jest null, funkcja zwraca nic i nie kręci koła.",
+  "choroby_poza_pula": true,
+  "wagi_sa_rowne_bo_brak_zrodla": true,
+  "uwaga_wag": "Waga 1 to równe koło zastępcze, nie statystyka. Flaga wagi_sa_rowne_bo_brak_zrodla ma to pokazywać.",
+  "pula": [
+    {
+      "id": "zgubione_klucze",
+      "nazwa": "Zgubione klucze",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Szukanie kluczy. Czas schodzi. Bez skutku zdrowotnego."
+    },
+    {
+      "id": "ptak_w_szybe",
+      "nazwa": "Ptak w szybę",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Szyba do obejrzenia. Bez wpisu do chorób."
+    },
+    {
+      "id": "plama_na_ubraniu",
+      "nazwa": "Plama na ubraniu",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Ubranie do prania. Samopoczucie trochę gorzej. Bez kwoty."
+    },
+    {
+      "id": "zgubiona_rekawiczka",
+      "nazwa": "Zgubiona rękawiczka",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Jedna rękawiczka zginęła. Drobny wydatek albo zimna dłoń. Bez choroby."
+    },
+    {
+      "id": "spozniony_autobus",
+      "nazwa": "Spóźniony autobus",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Spóźnienie bez skutku zdrowotnego."
+    },
+    {
+      "id": "rozladowany_telefon",
+      "nazwa": "Rozładowany telefon",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Telefon milczy, dopóki nie znajdzie się gniazdko. Bez awarii zdrowia."
+    },
+    {
+      "id": "zadrapanie_auta",
+      "nazwa": "Drobne zadrapanie auta",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Ślad na lakierze. Pieniądze mogą iść na poprawkę, bez kwoty. Bez urazu człowieka."
+    },
+    {
+      "id": "przeterminowany_jogurt",
+      "nazwa": "Przeterminowany jogurt",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Jogurt do wyrzucenia. Pieniądze trochę w dół. Bez choroby w tej puli."
+    },
+    {
+      "id": "rdza_jednej_sruby",
+      "nazwa": "Rdza jednej śruby",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Jedna śruba do obejrzenia. Nie rozbiera maszyny."
+    },
+    {
+      "id": "skarpetki_nie_do_pary",
+      "nazwa": "Skarpetki nie do pary",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Dwie różne skarpetki. Samopoczucie lekko gorsze albo śmiech. Bez reszty skutków."
+    },
+    {
+      "id": "peknieta_sznurowka",
+      "nazwa": "Pęknięta sznurówka",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "But do zawiązania albo sznurówka do wymiany. Bez kwoty."
+    },
+    {
+      "id": "rozlana_herbata",
+      "nazwa": "Rozlana herbata",
+      "waga": 1,
+      "zrodlo": null,
+      "skutek": "Plama do wytarcia. Czas schodzi. Bez oparzenia wpisanego jako uraz."
+    }
+  ],
+  "budzet_jakosci": {
+    "propozycja_do_poprawki": true,
+    "to_nie_gus": true,
+    "opis": "Ile gracz chce przeznaczyc na jakosc drobiazgow (cena/budzet). szansa_ze_cokolwiek nadal null — suwak bez losowania skutku.",
+    "ui": "Zakupy → Drobiazgi (budżet jakości) — nie na głównej liście kategorii sklepów.",
+    "min_zl": 0,
+    "max_zl": 100,
+    "domyslnie_zl": 0,
+    "krok_zl": 5,
+    "pole_zapisu": "budzet_jakosci_drobiazgow_zl"
+  }
+}

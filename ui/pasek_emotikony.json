@@ -1,0 +1,271 @@
+{
+	"opis": "Progi emotikonów i kolorów paska statystyk. To propozycje do poprawki przez gracza, nie fakty z badań.",
+	"propozycja_do_poprawki": true,
+	"psychika": {
+		"norma": 50,
+		"min": 0,
+		"max": 100,
+		"propozycja_do_poprawki": true,
+		"emotikony": [
+			{
+				"do": 20,
+				"emoji": "😞",
+				"opis": "bardzo nisko"
+			},
+			{
+				"do": 40,
+				"emoji": "😐",
+				"opis": "nisko"
+			},
+			{
+				"do": 60,
+				"emoji": "🙂",
+				"opis": "norma"
+			},
+			{
+				"do": 80,
+				"emoji": "😄",
+				"opis": "wysoko"
+			},
+			{
+				"do": 100,
+				"emoji": "🤩",
+				"opis": "bardzo wysoko"
+			}
+		],
+		"kolory_paska": [
+			{
+				"do": 20,
+				"kolor": "#c0392b"
+			},
+			{
+				"do": 40,
+				"kolor": "#e67e22"
+			},
+			{
+				"do": 60,
+				"kolor": "#f1c40f"
+			},
+			{
+				"do": 80,
+				"kolor": "#27ae60"
+			},
+			{
+				"do": 100,
+				"kolor": "#1e8449"
+			}
+		]
+	},
+	"zmeczenie": {
+		"norma": 20,
+		"min": 0,
+		"max": 100,
+		"ikona": "bateria",
+		"opis_ikony": "Bateria: pełna = wypoczęty (niskie zmęczenie), pusta = wyczerpany (wysokie zmęczenie). Da się zmienić.",
+		"propozycja_do_poprawki": true,
+		"uwaga": "Wyższe zmęczenie = gorzej. Kolor paska odwrotnie niż przy psychice.",
+		"emotikony": [
+			{
+				"do": 20,
+				"emoji": "🔋",
+				"opis": "wypoczęty"
+			},
+			{
+				"do": 40,
+				"emoji": "🔋",
+				"opis": "lekko zmęczony"
+			},
+			{
+				"do": 60,
+				"emoji": "🪫",
+				"opis": "zmęczony"
+			},
+			{
+				"do": 80,
+				"emoji": "🪫",
+				"opis": "bardzo zmęczony"
+			},
+			{
+				"do": 100,
+				"emoji": "🪫",
+				"opis": "wyczerpany"
+			}
+		],
+		"kolory_paska": [
+			{
+				"do": 20,
+				"kolor": "#1e8449"
+			},
+			{
+				"do": 40,
+				"kolor": "#27ae60"
+			},
+			{
+				"do": 60,
+				"kolor": "#f1c40f"
+			},
+			{
+				"do": 80,
+				"kolor": "#e67e22"
+			},
+			{
+				"do": 100,
+				"kolor": "#c0392b"
+			}
+		],
+		"id": "zmeczenie_fizyczne",
+		"nazwa": "Zmeczenie fizyczne",
+		"opis": "Obciazenie ciala. Wysokie = gorzej. Baza niska (~20)."
+	},
+	"pieniadze": {
+		"propozycja_do_poprawki": true,
+		"null_emoji": "👛",
+		"null_tekst": "—",
+		"progi": [
+			{
+				"do": 50,
+				"emoji": "👛",
+				"opis": "mało"
+			},
+			{
+				"do": 500,
+				"emoji": "👛",
+				"opis": "średnio"
+			},
+			{
+				"do": 5000,
+				"emoji": "💰",
+				"opis": "dużo"
+			},
+			{
+				"do": null,
+				"emoji": "🏆",
+				"opis": "naprawdę dużo / góra złota"
+			}
+		]
+	},
+	"zmeczenie_fizyczne": {
+		"norma": 20,
+		"min": 0,
+		"max": 100,
+		"ikona": "bateria",
+		"opis_ikony": "Bateria: pełna = wypoczęty (niskie zmęczenie), pusta = wyczerpany (wysokie zmęczenie). Da się zmienić.",
+		"propozycja_do_poprawki": true,
+		"uwaga": "Wyższe zmęczenie = gorzej. Kolor paska odwrotnie niż przy psychice.",
+		"emotikony": [
+			{
+				"do": 20,
+				"emoji": "🔋",
+				"opis": "wypoczęty"
+			},
+			{
+				"do": 40,
+				"emoji": "🔋",
+				"opis": "lekko zmęczony"
+			},
+			{
+				"do": 60,
+				"emoji": "🪫",
+				"opis": "zmęczony"
+			},
+			{
+				"do": 80,
+				"emoji": "🪫",
+				"opis": "bardzo zmęczony"
+			},
+			{
+				"do": 100,
+				"emoji": "🪫",
+				"opis": "wyczerpany"
+			}
+		],
+		"kolory_paska": [
+			{
+				"do": 20,
+				"kolor": "#1e8449"
+			},
+			{
+				"do": 40,
+				"kolor": "#27ae60"
+			},
+			{
+				"do": 60,
+				"kolor": "#f1c40f"
+			},
+			{
+				"do": 80,
+				"kolor": "#e67e22"
+			},
+			{
+				"do": 100,
+				"kolor": "#c0392b"
+			}
+		],
+		"id": "zmeczenie_fizyczne",
+		"nazwa": "Zmeczenie fizyczne",
+		"opis": "Obciazenie ciala. Wysokie = gorzej. Baza niska (~20)."
+	},
+	"zmeczenie_psychiczne": {
+		"id": "zmeczenie_psychiczne",
+		"nazwa": "Obciazenie psychiczne",
+		"norma": 15,
+		"min": 0,
+		"max": 100,
+		"propozycja_do_poprawki": true,
+		"to_nie_gus": true,
+		"opis": "Zmeczenie umyslu / obciazenie psychiczne — osobno od psychiki (nastroju). Wysokie = gorzej.",
+		"emotikony": [
+			{
+				"do": 20,
+				"emoji": "🔋",
+				"opis": "wypoczęty"
+			},
+			{
+				"do": 40,
+				"emoji": "🔋",
+				"opis": "lekko zmęczony"
+			},
+			{
+				"do": 60,
+				"emoji": "🪫",
+				"opis": "zmęczony"
+			},
+			{
+				"do": 80,
+				"emoji": "🪫",
+				"opis": "bardzo zmęczony"
+			},
+			{
+				"do": 100,
+				"emoji": "🪫",
+				"opis": "wyczerpany"
+			}
+		],
+		"kolory_paska": [
+			{
+				"do": 20,
+				"kolor": "#1e8449"
+			},
+			{
+				"do": 40,
+				"kolor": "#27ae60"
+			},
+			{
+				"do": 60,
+				"kolor": "#f1c40f"
+			},
+			{
+				"do": 80,
+				"kolor": "#e67e22"
+			},
+			{
+				"do": 100,
+				"kolor": "#c0392b"
+			}
+		]
+	},
+	"model_trzech": {
+		"opis": "psychika = nastroj (wyzej lepiej, norma ~50). zmeczenie_fizyczne = cialo (wyzej gorzej, norma ~20). zmeczenie_psychiczne = obciazenie umyslu (wyzej gorzej, norma ~15). Nie kasowac psychiki.",
+		"propozycja_do_poprawki": true
+	}
+}
