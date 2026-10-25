@@ -1,0 +1,19 @@
+{
+	"opis": "Pogłębianie depresji (Fala 2). Flaga + etapy. Propozycja gry, nie diagnoza medyczna.",
+	"propozycja_do_poprawki": true,
+	"uwaga": "Nie zastępuje prawdziwej pomocy. W grze: mechanika nastroju.",
+	"etapy": [
+		{"id": "objawy", "nazwa": "Objawy", "tygodnie_min": 4, "opis": "Psychika < 0 przez ≥4 tygodnie."},
+		{"id": "poglebiona", "nazwa": "Pogłębiona", "tygodnie_min": 8, "opis": "Dłuższy dołek — trudniej wrócić."},
+		{"id": "kryzys", "nazwa": "Kryzys", "tygodnie_min": 12, "opis": "Silne ograniczenia aktywności (stub)."}
+	],
+	"efekty": {
+		"objawy": {"mnoznik_przyrostu_psychiki": 0.7, "bonus_izolacja": -1},
+		"poglebiona": {"mnoznik_przyrostu_psychiki": 0.45, "kara_zajecia": -2, "bonus_izolacja": -2},
+		"kryzys": {"mnoznik_przyrostu_psychiki": 0.25, "blokada_imprez": true, "bonus_izolacja": -3}
+	},
+	"terapia_stub": {
+		"nfz": {"koszt_zl": 0, "czekanie_tygodnie": 6, "efekt_psychika": [2, 5], "szansa_miejsca": 0.35},
+		"prywatna": {"koszt_zl": [120, 250], "czekanie_tygodnie": 0, "efekt_psychika": [4, 9], "szansa_miejsca": 1.0}
+	}
+}

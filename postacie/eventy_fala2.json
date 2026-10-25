@@ -1,0 +1,228 @@
+{
+	"opis": "Solidny pakiet eventów Fali 2 (szkolne / rodzinne / miejskie / święta). Nie setki — ~20 kart.",
+	"propozycja_do_poprawki": true,
+	"eventy": [
+		{
+			"id": "klasowka_niespodzianka",
+			"nazwa": "Klasówka z niespodzianką",
+			"typ": "szkola",
+			"opis": "Nauczyciel ogłasza kartkówkę, o której nie wiedziałeś.",
+			"opcje": [
+				{"id": "pisz", "tekst": "Pisz co wiesz", "efekt": {"psychika": -2, "wiedza_pkt": 1}},
+				{"id": "sciaga", "tekst": "Ściąga (ryzyko)", "efekt": {"psychika": -6, "wiedza_pkt": -1, "ryzyko_szkola": true}},
+				{"id": "choroba", "tekst": "Udaj chorobę", "efekt": {"psychika": -4, "relacja_nauczyciel": -2}}
+			]
+		},
+		{
+			"id": "wycieczka_klasowa",
+			"nazwa": "Wycieczka klasowa",
+			"typ": "szkola",
+			"opis": "Klasa jedzie na wycieczkę — trzeba dopłacić.",
+			"opcje": [
+				{"id": "idz", "tekst": "Idź (poproś rodziców o kasę)", "efekt": {"psychika": 7, "wymaga_zgody": true}},
+				{"id": "zostan", "tekst": "Zostań w domu", "efekt": {"psychika": -5, "relacja_klasa": -3}}
+			]
+		},
+		{
+			"id": "hejt_internet",
+			"nazwa": "Hejt w internecie",
+			"typ": "szkola",
+			"opis": "Ktoś wrzucił głupi mem z Tobą.",
+			"opcje": [
+				{"id": "sam", "tekst": "Radź sobie sam", "efekt": {"psychika": -12, "hejt": true}},
+				{"id": "rodzice", "tekst": "Pokaż rodzicom", "efekt": {"psychika": -7, "hejt": true, "wsparcie_rodzicow": true}},
+				{"id": "zglos", "tekst": "Zgłoś adminowi", "efekt": {"psychika": -3, "ie_pkt": 1}}
+			],
+			"hejt_przyklad": {"spadek_psychiki": 12, "wsparcie_rodzicow_redukcja": 0.4}
+		},
+		{
+			"id": "plotka_klasa",
+			"nazwa": "Plotka w klasie",
+			"typ": "szkola",
+			"opis": "Krąży plotka — nieprawdziwa, ale boli.",
+			"opcje": [
+				{"id": "sprostu", "tekst": "Sprostuj głośno", "efekt": {"psychika": -1, "relacja_klasa": 1}},
+				{"id": "milcz", "tekst": "Milcz", "efekt": {"psychika": -5}},
+				{"id": "przyjaciel", "tekst": "Poproś przyjaciela o wsparcie", "efekt": {"psychika": 2, "ie_pkt": 1}}
+			]
+		},
+		{
+			"id": "urodziny_gracza",
+			"nazwa": "Twoje urodziny",
+			"typ": "rodzina",
+			"opis": "Dziś masz urodziny.",
+			"opcje": [
+				{"id": "dom", "tekst": "Imprezka w domu", "efekt": {"psychika": 10}},
+				{"id": "cicho", "tekst": "Cicho z rodziną", "efekt": {"psychika": 5}},
+				{"id": "odmowa", "tekst": "Nie chce mi się", "efekt": {"psychika": -2}}
+			]
+		},
+		{
+			"id": "swieta_rodzinne",
+			"nazwa": "Święta rodzinne",
+			"typ": "rodzina",
+			"opis": "Wielki stół, rozmowy, napięcia.",
+			"opcje": [
+				{"id": "pomagaj", "tekst": "Pomagaj w kuchni", "efekt": {"psychika": 4, "relacja_rodzice": 3}},
+				{"id": "telefon", "tekst": "Siedź w telefonie", "efekt": {"psychika": -3, "relacja_rodzice": -4}},
+				{"id": "rozmowa", "tekst": "Rozmawiaj z dziadkami", "efekt": {"psychika": 6, "ie_pkt": 1}}
+			]
+		},
+		{
+			"id": "wakacje_wybor",
+			"nazwa": "Wakacje — co robimy?",
+			"typ": "rodzina",
+			"opis": "Rodzice pytają o wakacje.",
+			"opcje": [
+				{"id": "wyjazd", "tekst": "Chcę wyjechać", "efekt": {"psychika": 8, "wymaga_zgody": true}},
+				{"id": "dom", "tekst": "Zostań w domu z kolegami", "efekt": {"psychika": 3}},
+				{"id": "oboz", "tekst": "Obóz / kolonie", "efekt": {"psychika": 6, "wiedza_pkt": 1}}
+			]
+		},
+		{
+			"id": "klotnia_rodzicow",
+			"nazwa": "Kłótnia rodziców",
+			"typ": "rodzina",
+			"opis": "Słyszysz podniesione głosy z salonu.",
+			"opcje": [
+				{"id": "pokoj", "tekst": "Zamknij się w pokoju", "efekt": {"psychika": -6}},
+				{"id": "mediacja", "tekst": "Spróbuj uspokoić (IE)", "efekt": {"psychika": -2, "ie_pkt": 2}},
+				{"id": "dziadkowie", "tekst": "Zadzwoń do dziadków", "efekt": {"psychika": 1}}
+			]
+		},
+		{
+			"id": "prezent_dziadkow",
+			"nazwa": "Prezent od dziadków",
+			"typ": "rodzina",
+			"opis": "Dziadkowie dają Ci coś „na zachętę”.",
+			"opcje": [
+				{"id": "podziekuj", "tekst": "Podziękuj ciepło", "efekt": {"psychika": 5, "ie_pkt": 1}},
+				{"id": "obojętnie", "tekst": "Kiwnij głową", "efekt": {"psychika": 1, "relacja_dziadkowie": -2}}
+			]
+		},
+		{
+			"id": "festiwal_miasto",
+			"nazwa": "Festiwal w mieście",
+			"typ": "miasto",
+			"opis": "Plakat: festiwal / dni miasta.",
+			"opcje": [
+				{"id": "idz", "tekst": "Idź z przyjaciółmi", "efekt": {"psychika": 7}},
+				{"id": "zostan", "tekst": "Zostań w domu", "efekt": {"psychika": -1}},
+				{"id": "wolontariat", "tekst": "Pomóż jako wolontariusz", "efekt": {"psychika": 4, "ie_pkt": 2}}
+			]
+		},
+		{
+			"id": "koncert_park",
+			"nazwa": "Koncert w parku",
+			"typ": "miasto",
+			"opis": "Darmowy koncert na świeżym powietrzu.",
+			"opcje": [
+				{"id": "idz", "tekst": "Idź", "efekt": {"psychika": 6}},
+				{"id": "nauka", "tekst": "Zostań przy nauce", "efekt": {"psychika": -1, "wiedza_pkt": 3}}
+			]
+		},
+		{
+			"id": "deszczowy_tydzien",
+			"nazwa": "Deszczowy tydzień",
+			"typ": "miasto",
+			"opis": "Pada bez przerwy — plany runęły.",
+			"opcje": [
+				{"id": "gry", "tekst": "Gry / książki", "efekt": {"psychika": 2}},
+				{"id": "spacery", "tekst": "Wyjdź mimo deszczu", "efekt": {"psychika": 3, "zmeczenie": 5}},
+				{"id": "marudzenie", "tekst": "Marudź", "efekt": {"psychika": -4}}
+			]
+		},
+		{
+			"id": "zaproszenie_impreza",
+			"nazwa": "Zaproszenie na imprezę",
+			"typ": "towarzyskie",
+			"opis": "Ktoś woła na imprezę w weekend.",
+			"opcje": [
+				{"id": "idz", "tekst": "Idź", "efekt": {"psychika": 8, "impreza": true}},
+				{"id": "nie", "tekst": "Odmów", "efekt": {"psychika": -2, "relacja_przyjaciel": -2}},
+				{"id": "warunek", "tekst": "Tylko jeśli bez alkoholu", "efekt": {"psychika": 3, "ie_pkt": 1}}
+			]
+		},
+		{
+			"id": "przyjaciel_w_dole",
+			"nazwa": "Przyjaciel w dołku",
+			"typ": "towarzyskie",
+			"opis": "Przyjaciel wygląda na przybitego.",
+			"opcje": [
+				{"id": "rozmowa", "tekst": "Porozmawiaj", "efekt": {"psychika": 2, "ie_pkt": 3, "relacja_przyjaciel": 5}},
+				{"id": "zart", "tekst": "Zrób głupi żart", "efekt": {"psychika": 1, "relacja_przyjaciel": -1}},
+				{"id": "ignoruj", "tekst": "Udawaj, że nie widzisz", "efekt": {"psychika": -3, "relacja_przyjaciel": -4}}
+			]
+		},
+		{
+			"id": "drzewko_rodzice_hejt",
+			"nazwa": "Rodzice o hejcie",
+			"typ": "rodzina",
+			"opis": "Opowiadasz o hejcie — reakcja rodziców.",
+			"opcje": [
+				{"id": "wsparcie", "tekst": "Wysłuchali i wspierają", "efekt": {"psychika": 4, "wsparcie_rodzicow": true}},
+				{"id": "bagatelizacja", "tekst": "„To nic takiego”", "efekt": {"psychika": -6}},
+				{"id": "kara_telefon", "tekst": "Zakaz telefonu „dla spokoju”", "efekt": {"psychika": -8}}
+			],
+			"reakcje_rodzicow": {
+				"wsparcie": {"tekst": "Rodzice Cię wspierają.", "mnoznik_spadku_hejt": 0.6},
+				"bagatelizacja": {"tekst": "Bagatelizują.", "mnoznik_spadku_hejt": 1.0},
+				"kara": {"tekst": "Kara zamiast wsparcia.", "mnoznik_spadku_hejt": 1.2}
+			}
+		},
+		{
+			"id": "długi_hejt",
+			"nazwa": "Długoterminowy hejt",
+			"typ": "szkola",
+			"opis": "Plotka wraca po tygodniach.",
+			"opcje": [
+				{"id": "sam", "tekst": "Znoś sam", "efekt": {"psychika": -10, "hejt": true}},
+				{"id": "rodzice", "tekst": "Znów do rodziców", "efekt": {"psychika": -6, "hejt": true, "wsparcie_rodzicow": true}},
+				{"id": "zmiana", "tekst": "Zmień towarzystwo", "efekt": {"psychika": -2, "relacja_klasa": -5, "ie_pkt": 1}}
+			],
+			"hejt_przyklad": {"spadek_psychiki": 10, "wsparcie_rodzicow_redukcja": 0.4}
+		},
+		{
+			"id": "szachy_zaproszenie",
+			"nazwa": "Zaproszenie do szachów",
+			"typ": "towarzyskie",
+			"opis": "Ktoś proponuje partię / klub.",
+			"opcje": [
+				{"id": "graj", "tekst": "Zagraj", "efekt": {"psychika": 3, "szachy": true}},
+				{"id": "nie", "tekst": "Nie teraz", "efekt": {"psychika": 0}}
+			]
+		},
+		{
+			"id": "zajecia_rekrutacja",
+			"nazwa": "Rekrutacja na zajęcia",
+			"typ": "szkola",
+			"opis": "Plakat: koła zainteresowań.",
+			"opcje": [
+				{"id": "zapisz", "tekst": "Zapisz się (później w Nauka)", "efekt": {"psychika": 2}},
+				{"id": "olewamy", "tekst": "Olej", "efekt": {"psychika": -1}}
+			]
+		},
+		{
+			"id": "choroba_lekka",
+			"nazwa": "Lekka choroba",
+			"typ": "zdrowie",
+			"opis": "Kaszel / katar — leżeć czy iść?",
+			"opcje": [
+				{"id": "lez", "tekst": "Leż w domu", "efekt": {"psychika": -1, "zmeczenie": -10}},
+				{"id": "idz_szkola", "tekst": "Idź do szkoły", "efekt": {"psychika": -3, "zmeczenie": 8}},
+				{"id": "lekarz", "tekst": "Do lekarza (stub)", "efekt": {"psychika": 1}}
+			]
+		},
+		{
+			"id": "sen_noca",
+			"nazwa": "Nie możesz spać",
+			"typ": "zdrowie",
+			"opis": "Myśli kręcą się w kółko.",
+			"opcje": [
+				{"id": "rozmowa", "tekst": "Pogadaj z kimś bliskim", "efekt": {"psychika": 3, "ie_pkt": 1}},
+				{"id": "telefon", "tekst": "Scrolluj do rana", "efekt": {"psychika": -4, "zmeczenie": 12}},
+				{"id": "spacer", "tekst": "Krótki spacer", "efekt": {"psychika": 2}}
+			]
+		}
+	]
+}

@@ -15,7 +15,9 @@
 		{"id": "gotowanie", "nazwa": "Gotowanie", "waga": 8, "zrodlo": "propozycja_gry", "cytat": "pula startowa gry"}
 	],
 	"doprecyzowanie_z_wiekiem": {
-		"stub": true,
-		"opis": "Od ~10–12 lat koło może zawęzić ogólne → konkret (np. pojazdy→samoloty). Fala 2."
+		"stub": false,
+		"wiek_min": 10,
+		"opis": "Od ~10 lat koło może zawęzić ogólne → konkret (np. pojazdy→samoloty). Propozycja gry.",
+		"propozycja_do_poprawki": true
 	}
 }

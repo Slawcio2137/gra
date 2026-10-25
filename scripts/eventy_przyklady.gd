@@ -1,12 +1,16 @@
 extends RefCounted
 class_name EventyPrzyklady
 
-## Framework 3–5 eventów przykładowych + hejt ze wsparciem rodziców (−40%).
+## Framework eventów Fali 1 + pakiet Fali 2 + hejt (−40% wsparcie rodziców, −IE).
 
 const PLIK := "res://postacie/eventy_przyklady.json"
+const PLIK_FALA2 := "res://postacie/eventy_fala2.json"
 const PLIK_OBJAWY := "res://postacie/zdrowie/objawy_pasek.json"
+const SkryptIE = preload("res://scripts/inteligencja_emocjonalna.gd")
+const SkryptDep = preload("res://scripts/depresja.gd")
 
 var dane: Dictionary = {}
+var dane_fala2: Dictionary = {}
 var objawy: Dictionary = {}
 var _wczytane := false
 
@@ -18,6 +22,9 @@ func wczytaj() -> void:
 	var s: Variant = _czytaj(PLIK)
 	if s is Dictionary:
 		dane = s
+	var s2: Variant = _czytaj(PLIK_FALA2)
+	if s2 is Dictionary:
+		dane_fala2 = s2
 	var o: Variant = _czytaj(PLIK_OBJAWY)
 	if o is Dictionary:
 		objawy = o
@@ -25,9 +32,12 @@ func wczytaj() -> void:
 
 func lista_eventow() -> Array:
 	wczytaj()
+	var out: Array = []
 	if dane.get("eventy") is Array:
-		return dane["eventy"]
-	return []
+		out.append_array(dane["eventy"])
+	if dane_fala2.get("eventy") is Array:
+		out.append_array(dane_fala2["eventy"])
+	return out
 
 
 func event_po_id(id: String) -> Dictionary:
@@ -57,7 +67,7 @@ func zastosuj_opcje(bohater: Dictionary, event_id: String, opcja_id: String) -> 
 	var efekt: Dictionary = opcja.get("efekt", {}) if opcja.get("efekt") is Dictionary else {}
 	var delta := int(efekt.get("psychika", 0))
 	# Hejt z eventu zaczepka / hejt_przyklad.
-	if bool(efekt.get("hejt", false)) or event_id == "hejt_przyklad":
+	if bool(efekt.get("hejt", false)) or event_id == "hejt_przyklad" or str(ev.get("typ", "")) == "hejt":
 		var hejt: Dictionary = {}
 		if ev.get("hejt_przyklad") is Dictionary:
 			hejt = ev["hejt_przyklad"]
@@ -70,9 +80,23 @@ func zastosuj_opcje(bohater: Dictionary, event_id: String, opcja_id: String) -> 
 			out["tekst"] = "Hejt: rodzice wspierają (−40%% spadku). Psychika %d." % -spadek
 		else:
 			out["tekst"] = "Hejt bez wsparcia. Psychika %d." % -spadek
+		# IE wysoka: dodatkowa redukcja (Fala 2).
+		var ie = SkryptIE.new()
+		var red_ie: float = ie.redukcja_hejt(bohater)
+		if red_ie > 0.0:
+			spadek = int(round(float(spadek) * (1.0 - red_ie)))
+			out["tekst"] += " IE −%d%%." % int(red_ie * 100.0)
 		delta = -spadek
 	else:
 		out["tekst"] = str(opcja.get("tekst", ""))
+	if efekt.has("wiedza_pkt"):
+		bohater["wiedza_pkt"] = int(bohater.get("wiedza_pkt", 0)) + int(efekt["wiedza_pkt"])
+	if efekt.has("ie_pkt"):
+		var ie2 = SkryptIE.new()
+		ie2.dodaj(bohater, int(efekt["ie_pkt"]))
+	if efekt.has("zmeczenie"):
+		var zm := int(bohater.get("zmeczenie_fizyczne", 0)) + int(efekt["zmeczenie"])
+		bohater["zmeczenie_fizyczne"] = clampi(zm, 0, 100)
 	var psych := 50
 	if bohater.get("psychika") is int or bohater.get("psychika") is float:
 		psych = int(bohater["psychika"])
@@ -86,20 +110,16 @@ func zastosuj_opcje(bohater: Dictionary, event_id: String, opcja_id: String) -> 
 
 
 func _aktualizuj_flage_depresji(bohater: Dictionary) -> void:
+	# Jak Fala 1: przy psychice <0 dolicz tydzień dołka, potem oceń etap (Fala 2).
 	var psych := int(bohater.get("psychika", 50))
-	var tygodnie_ponizej := int(bohater.get("tygodnie_psychika_ponizej_0", 0))
+	var tyg := int(bohater.get("tygodnie_psychika_ponizej_0", 0))
 	if psych < 0:
-		tygodnie_ponizej += 1
+		tyg += 1
 	else:
-		tygodnie_ponizej = 0
-	bohater["tygodnie_psychika_ponizej_0"] = tygodnie_ponizej
-	# Po dłuższym czasie <0 → flaga depresji (pogłębianie stub).
-	if tygodnie_ponizej >= 4:
-		bohater["depresja"] = true
-		bohater["depresja_stub"] = true
-	elif psych >= 0:
-		# Flaga nie znika automatycznie w Fali 1 — tylko stub.
-		pass
+		tyg = 0
+	bohater["tygodnie_psychika_ponizej_0"] = tyg
+	var dep = SkryptDep.new()
+	dep.aktualizuj(bohater)
 
 
 func lista_objawow() -> Array:

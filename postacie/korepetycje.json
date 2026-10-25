@@ -1,0 +1,12 @@
+{
+	"opis": "Korepetycje: koszt + efekt na poziom wiedzy (propozycja). Nie cennik MEN.",
+	"propozycja_do_poprawki": true,
+	"przedmioty": [
+		{"id": "matematyka", "nazwa": "Matematyka", "koszt_zajecia_zl": [40, 90], "wiedza_pkt": [2, 5], "szacunek": true},
+		{"id": "polski", "nazwa": "Język polski", "koszt_zajecia_zl": [35, 80], "wiedza_pkt": [2, 4], "szacunek": true},
+		{"id": "angielski", "nazwa": "Angielski", "koszt_zajecia_zl": [45, 100], "wiedza_pkt": [2, 5], "szacunek": true},
+		{"id": "fizyka", "nazwa": "Fizyka", "koszt_zajecia_zl": [50, 110], "wiedza_pkt": [3, 6], "szacunek": true},
+		{"id": "chemia", "nazwa": "Chemia", "koszt_zajecia_zl": [50, 110], "wiedza_pkt": [3, 6], "szacunek": true}
+	],
+	"limit_zajec_na_tydzien": 3
+}

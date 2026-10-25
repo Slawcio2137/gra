@@ -90,6 +90,57 @@ func napraw(stan: Dictionary, sposob: String, rng: RandomNumberGenerator = null)
 	return out
 
 
+## Serwis konkretnej części: olej / filtry / opony / rdza / zatarcie.
+func serwis(stan: Dictionary, czesc: String, sposob: String, rng: RandomNumberGenerator = null) -> Dictionary:
+	wczytaj()
+	if rng == null:
+		rng = RandomNumberGenerator.new()
+		rng.randomize()
+	var out := {"ok": false, "tekst": "", "koszt_zl": 0, "propozycja_do_poprawki": true}
+	var baza := {"olej": 120, "filtry": 90, "opony": 800, "rdza": 1500, "zatarcie": 4500}
+	var koszt_bazy := int(baza.get(czesc, 100))
+	var naprawy: Dictionary = dane.get("naprawy", {}) if dane.get("naprawy") is Dictionary else {}
+	var conf: Dictionary = naprawy.get(sposob, {}) if naprawy.get(sposob) is Dictionary else {"szansa_sukcesu": 0.5, "koszt_mnoznik": 1.0}
+	var mnoz := float(conf.get("koszt_mnoznik", 1.0))
+	var koszt := int(round(float(koszt_bazy) * mnoz))
+	out["koszt_zl"] = koszt
+	# Warsztat: zawsze udany (płacisz za pewność). Reszta wg szansy.
+	var szansa := 1.0 if sposob == "warsztat" else float(conf.get("szansa_sukcesu", 0.5))
+	if rng.randf() > szansa:
+		out["tekst"] = "Serwis %s (%s) nie wyszedł." % [czesc, sposob]
+		return out
+	match czesc:
+		"olej":
+			stan["olej"] = 100
+			stan["ostrzezenie_olej"] = false
+		"filtry":
+			stan["filtry"] = 100
+		"opony":
+			stan["opony"] = 100
+		"rdza":
+			stan["rdza"] = false
+		"zatarcie":
+			stan["zatarcie"] = false
+			stan["olej"] = mini(100, int(stan.get("olej", 0)) + 50)
+		_:
+			out["tekst"] = "Nieznana część."
+			return out
+	out["ok"] = true
+	out["tekst"] = "Serwis %s przez %s OK (−%d zł stub)." % [czesc, sposob, koszt]
+	return out
+
+
+func tekst_stanu(stan: Dictionary) -> String:
+	return "Olej %d · Filtry %d · Opony %d%s%s%s" % [
+		int(stan.get("olej", 0)),
+		int(stan.get("filtry", 0)),
+		int(stan.get("opony", 0)),
+		" · ZIMA OK" if bool(stan.get("konserwacja_zima", false)) else "",
+		" · RDZA" if bool(stan.get("rdza", false)) else "",
+		" · ZATARCIE" if bool(stan.get("zatarcie", false)) else "",
+	]
+
+
 func _czytaj(sciezka: String) -> Variant:
 	if not FileAccess.file_exists(sciezka):
 		return null

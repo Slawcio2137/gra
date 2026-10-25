@@ -1,0 +1,26 @@
+{
+	"opis": "Inteligencja emocjonalna jako osobna metryka 0–100 (propozycja gry). Nie IQ i nie oficjalny test psychologiczny.",
+	"propozycja_do_poprawki": true,
+	"start": {"min": 28, "max": 55, "szacunek": true},
+	"postep": {
+		"za_wsparcie_przyjaciela": 2,
+		"za_rozmowe_trudna": 3,
+		"za_impreze_bez_konfliktu": 1,
+		"za_terapie_stub": 4,
+		"max_tydzien": 6
+	},
+	"regres": {
+		"za_wybuch": -3,
+		"za_izolacje_tydzien": -1
+	},
+	"progi": {
+		"niska": 35,
+		"srednia": 55,
+		"wysoka": 75
+	},
+	"efekty": {
+		"opis": "Wysoka IE zmniejsza spadki psychiki przy hejcie (osobno od wsparcia rodziców).",
+		"redukcja_hejt_przy_wysokiej": 0.15,
+		"propozycja_do_poprawki": true
+	}
+}

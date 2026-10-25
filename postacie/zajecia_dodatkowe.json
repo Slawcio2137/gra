@@ -1,0 +1,14 @@
+{
+	"opis": "Zajęcia dodatkowe (sport, język, instrument…). Propozycja kosztów i efektów.",
+	"propozycja_do_poprawki": true,
+	"zajecia": [
+		{"id": "pilka", "nazwa": "Piłka nożna", "typ": "sport", "koszt_miesiac_zl": [80, 160], "sylwetka": true, "psychika": 2, "wiek_min": 6, "szacunek": true},
+		{"id": "plywanie", "nazwa": "Pływanie", "typ": "sport", "koszt_miesiac_zl": [100, 200], "sylwetka": true, "psychika": 2, "wiek_min": 5, "szacunek": true},
+		{"id": "jezyk_obcy", "nazwa": "Kurs języka", "typ": "jezyk", "koszt_miesiac_zl": [120, 250], "wiedza_pkt": 3, "wiek_min": 8, "szacunek": true},
+		{"id": "gitara", "nazwa": "Gitara", "typ": "instrument", "koszt_miesiac_zl": [90, 180], "psychika": 3, "wiek_min": 8, "szacunek": true},
+		{"id": "fortepian", "nazwa": "Fortepian", "typ": "instrument", "koszt_miesiac_zl": [140, 280], "psychika": 3, "wiek_min": 7, "szacunek": true},
+		{"id": "robotyka", "nazwa": "Koło robotyki", "typ": "techniczne", "koszt_miesiac_zl": [100, 220], "wiedza_pkt": 4, "wiek_min": 10, "szacunek": true},
+		{"id": "harcerstwo", "nazwa": "Harcerstwo", "typ": "spoleczne", "koszt_miesiac_zl": [30, 80], "psychika": 2, "ie_pkt": 1, "wiek_min": 8, "szacunek": true}
+	],
+	"max_aktywnych": 2
+}

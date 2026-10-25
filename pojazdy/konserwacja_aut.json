@@ -26,5 +26,9 @@
 		"filtry": 75,
 		"opony": 70,
 		"konserwacja_zima": false
+	},
+	"ui_fala2": {
+		"opis": "Pełniejszy UI: paski olej/filtry/opony, warsztat, YT tutorial, przyjaciel mechanik.",
+		"propozycja_do_poprawki": true
 	}
 }

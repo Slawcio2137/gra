@@ -49,6 +49,43 @@ func losuj_dominujace(los) -> Dictionary:
 	}
 
 
+## Fala 2: ogólne → konkret od ~10–12 lat (propozycja lokalna, nie oficjalne dane).
+func doprecyzuj_z_wiekiem(zain: Dictionary, wiek: int, los) -> Dictionary:
+	wczytaj()
+	if not bool(zain.get("ogolne", true)) or zain.get("doprecyzowanie") != null:
+		return zain
+	if wiek < 10:
+		return zain
+	var mapa := {
+		"pojazdy": [["samoloty", "Samoloty"], ["auta", "Auta"], ["rowery", "Rowery"]],
+		"sport": [["pilka", "Piłka"], ["plywanie", "Pływanie"], ["bieganie", "Bieganie"]],
+		"muzyka": [["gitara", "Gitara"], ["rap", "Rap"], ["klasyka", "Klasyka"]],
+		"gry": [["strategiczne", "Strategiczne"], ["fps", "FPS"], ["rpg", "RPG"]],
+		"kosmos": [["astronautyka", "Astronautyka"], ["astronomia", "Astronomia"]],
+		"zwierzeta": [["psy", "Psy"], ["koty", "Koty"], ["ptaki", "Ptaki"]],
+		"przyroda": [["las", "Las"], ["morze", "Morze"]],
+		"historia": [["XX_wiek", "XX wiek"], ["starozytnosc", "Starożytność"]],
+		"rysowanie": [["manga", "Manga"], ["realizm", "Realizm"]],
+		"gotowanie": [["wypieki", "Wypieki"], ["kuchnia_pl", "Kuchnia PL"]],
+	}
+	var id0 := str(zain.get("id", ""))
+	if not mapa.has(id0):
+		return zain
+	var opcje: Array = mapa[id0]
+	var wagi := {}
+	for i in opcje.size():
+		wagi[str(i)] = 1.0
+	var idx_s: String = los.losuj_kolo(wagi)
+	var idx := int(idx_s) if idx_s.is_valid_int() else 0
+	idx = clampi(idx, 0, opcje.size() - 1)
+	var para: Array = opcje[idx]
+	zain["doprecyzowanie"] = {"id": str(para[0]), "nazwa": str(para[1])}
+	zain["ogolne"] = false
+	zain["nazwa"] = "%s → %s" % [str(zain.get("nazwa", id0)), str(para[1])]
+	zain["propozycja_do_poprawki"] = true
+	return zain
+
+
 func _czytaj(sciezka: String) -> Variant:
 	if not FileAccess.file_exists(sciezka):
 		return null

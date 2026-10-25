@@ -1,0 +1,19 @@
+{
+	"opis": "Stub sprowadzania samolotów: licencje, wiek, hangar, koszty utrzymania. Katalog jest; tu odblokowania.",
+	"propozycja_do_poprawki": true,
+	"wiek_min_licencja": 17,
+	"licencje": [
+		{"id": "ppl", "nazwa": "PPL (stub)", "koszt_zl": [25000, 45000], "wiek_min": 17, "szacunek": true},
+		{"id": "ir", "nazwa": "IR (stub)", "koszt_zl": [15000, 30000], "wiek_min": 18, "wymaga": "ppl", "szacunek": true}
+	],
+	"hangar": {
+		"koszt_miesiac_zl": [2000, 8000],
+		"szacunek": true,
+		"opis": "Utrzymanie miejsca postojowego — propozycja."
+	},
+	"odblokowanie_smiglowcow_bojowych": {
+		"stub": true,
+		"wiek_min": 21,
+		"opis": "Katalog śmigłowców bojowych istnieje; odblokowanie wiekiem/fabułą — stub Fali 2."
+	}
+}

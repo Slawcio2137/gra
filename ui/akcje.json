@@ -1,5 +1,5 @@
 {
-	"opis": "Zakładki pionowego UI 2×4. tryb dzieci otwiera wybory w białym ekranie. tryb ekran wypełnia biały ekran. Mapa: uproszczony graf miast (Majątek→Transport→Mapa).",
+	"opis": "Zakładki pionowego UI 2×4. Fala 2: Nauka (korepetycje/zajęcia/szachy), Osoby (imprezy), Majątek (konserwacja/lotnictwo), Zdrowie (terapia).",
 	"siatka": [
 		["ustawienia", "szkola", "praca", "majatek"],
 		["jedzenie", "zdrowie", "osoby", "zakupy"]
@@ -18,8 +18,44 @@
 			"nazwa": "Nauka",
 			"ikona": "res://grafika/ikony/zakladki/szkola.png",
 			"kolor": "#4a7ab0",
-			"tryb": "ekran",
-			"tresc": "szkola"
+			"tryb": "dzieci",
+			"dzieci": [
+				{
+					"id": "szkola_glowna",
+					"nazwa": "Szkoła / przedszkole",
+					"kolor": "#4a7ab0",
+					"tryb": "ekran",
+					"tresc": "szkola"
+				},
+				{
+					"id": "korepetycje",
+					"nazwa": "Korepetycje",
+					"kolor": "#4a7ab0",
+					"tryb": "ekran",
+					"tresc": "korepetycje"
+				},
+				{
+					"id": "zajecia_dodatkowe",
+					"nazwa": "Zajęcia dodatkowe",
+					"kolor": "#4a7ab0",
+					"tryb": "ekran",
+					"tresc": "zajecia_dodatkowe"
+				},
+				{
+					"id": "szachy",
+					"nazwa": "Szachy / turnieje",
+					"kolor": "#4a7ab0",
+					"tryb": "ekran",
+					"tresc": "szachy"
+				},
+				{
+					"id": "eventy_przyklady",
+					"nazwa": "Eventy (pakiet)",
+					"kolor": "#4a7ab0",
+					"tryb": "ekran",
+					"tresc": "eventy_przyklady"
+				}
+			]
 		},
 		{
 			"id": "praca",
@@ -42,6 +78,20 @@
 					"kolor": "#a07850",
 					"tryb": "ekran",
 					"tresc": "majatek"
+				},
+				{
+					"id": "konserwacja_auta",
+					"nazwa": "Konserwacja auta",
+					"kolor": "#a07850",
+					"tryb": "ekran",
+					"tresc": "konserwacja_auta"
+				},
+				{
+					"id": "lotnictwo",
+					"nazwa": "Lotnictwo (stub)",
+					"kolor": "#a07850",
+					"tryb": "ekran",
+					"tresc": "lotnictwo"
 				},
 				{
 					"id": "transport",
@@ -89,8 +139,23 @@
 			"nazwa": "Zdrowie",
 			"ikona": "res://grafika/ikony/zakladki/zdrowie.png",
 			"kolor": "#b06a6a",
-			"tryb": "ekran",
-			"tresc": "zdrowie"
+			"tryb": "dzieci",
+			"dzieci": [
+				{
+					"id": "zdrowie_stan",
+					"nazwa": "Stan zdrowia",
+					"kolor": "#b06a6a",
+					"tryb": "ekran",
+					"tresc": "zdrowie"
+				},
+				{
+					"id": "terapia",
+					"nazwa": "Terapia / nastrój",
+					"kolor": "#b06a6a",
+					"tryb": "ekran",
+					"tresc": "terapia"
+				}
+			]
 		},
 		{
 			"id": "osoby",
@@ -126,6 +191,13 @@
 					"kolor": "#8a7aa0",
 					"tryb": "ekran",
 					"tresc": "znajomi"
+				},
+				{
+					"id": "imprezy",
+					"nazwa": "Imprezy / używki",
+					"kolor": "#9a6a8a",
+					"tryb": "ekran",
+					"tresc": "imprezy"
 				}
 			]
 		},

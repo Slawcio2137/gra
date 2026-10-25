@@ -1,0 +1,22 @@
+{
+	"opis": "Stub imprez / picia — konsekwencje kaca, relacji, szkoły, rodziców. Propozycja gry, nie oficjalne statystyki.",
+	"propozycja_do_poprawki": true,
+	"wiek_min_impreza": 14,
+	"wiek_min_alkohol": 18,
+	"imprezy": [
+		{"id": "urodziny_kolegi", "nazwa": "Urodziny kolegi", "koszt_zl": [20, 60], "psychika": [4, 10], "relacja_przyjaciel": 3, "ryzyko_rodzice": 0.15, "szacunek": true},
+		{"id": "ogródki", "nazwa": "Spotkanie w ogródkach", "koszt_zl": [10, 40], "psychika": [2, 7], "relacja_przyjaciel": 2, "ryzyko_rodzice": 0.1, "szacunek": true},
+		{"id": "dyskoteka", "nazwa": "Dyskoteka / klub", "koszt_zl": [40, 120], "psychika": [5, 12], "relacja_przyjaciel": 4, "ryzyko_rodzice": 0.35, "szacunek": true, "wiek_min": 16}
+	],
+	"picie": {
+		"opis": "Stub: jedno wydarzenie picia na imprezie (po 18 albo „na czarno” z ryzykiem).",
+		"efekty": {
+			"kac_psychika": [-8, -3],
+			"kac_zmeczenie": [15, 30],
+			"szkola_kara_szansa": 0.25,
+			"rodzice_konflikt_szansa": 0.4,
+			"relacja_przyjaciel": 2
+		},
+		"propozycja_do_poprawki": true
+	}
+}
