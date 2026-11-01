@@ -1,0 +1,5233 @@
+{
+	"kod_2": "21",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "211101",
+			"nazwa": "Astrofizyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211102",
+			"nazwa": "Astronom",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211103",
+			"nazwa": "Fizyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211104",
+			"nazwa": "Fizyk medyczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211190",
+			"nazwa": "Pozostali fizycy i astronomowie",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211201",
+			"nazwa": "Hydrometeorolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211202",
+			"nazwa": "Meteorolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211203",
+			"nazwa": "Synoptyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211204",
+			"nazwa": "Klimatolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211290",
+			"nazwa": "Pozostali meteorolodzy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211301",
+			"nazwa": "Chemik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211302",
+			"nazwa": "Chemik - technologia chemiczna",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211303",
+			"nazwa": "Agrochemik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211304",
+			"nazwa": "Perfumiarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211390",
+			"nazwa": "Pozostali chemicy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211401",
+			"nazwa": "Geofizyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211402",
+			"nazwa": "Geograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211403",
+			"nazwa": "Geolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211404",
+			"nazwa": "Hydrograf morski",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211405",
+			"nazwa": "Hydrolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211406",
+			"nazwa": "Oceanolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211407",
+			"nazwa": "Paleontolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "211490",
+			"nazwa": "Pozostali specjaliści nauk o Ziemi",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "212001",
+			"nazwa": "Aktuariusz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "212002",
+			"nazwa": "Matematyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "212003",
+			"nazwa": "Demograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "212004",
+			"nazwa": "Statystyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "212090",
+			"nazwa": "Pozostali matematycy, aktuariusze i statystycy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213101",
+			"nazwa": "Botanik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213102",
+			"nazwa": "Biochemik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213103",
+			"nazwa": "Biofizyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213104",
+			"nazwa": "Bioinżynier",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213105",
+			"nazwa": "Biolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213106",
+			"nazwa": "Biotechnolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213107",
+			"nazwa": "Genetyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213108",
+			"nazwa": "Mikrobiolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213109",
+			"nazwa": "Bioinformatyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213110",
+			"nazwa": "Fizjolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213190",
+			"nazwa": "Pozostali biolodzy i pokrewni",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213201",
+			"nazwa": "Doradca rolniczy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213202",
+			"nazwa": "Gleboznawca",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213203",
+			"nazwa": "Inżynier leśnictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213204",
+			"nazwa": "Inżynier ogrodnictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213205",
+			"nazwa": "Inżynier rolnictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213206",
+			"nazwa": "Inżynier rybactwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213207",
+			"nazwa": "Inżynier zootechniki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213208",
+			"nazwa": "Klasyfikator gruntów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213209",
+			"nazwa": "Rzeczoznawca rolniczy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213290",
+			"nazwa": "Pozostali specjaliści w zakresie rolnictwa, leśnictwa i pokrewni",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213301",
+			"nazwa": "Audytor środowiskowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213302",
+			"nazwa": "Ekolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213303",
+			"nazwa": "Specjalista ochrony środowiska",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "213390",
+			"nazwa": "Pozostali specjaliści do spraw ochrony środowiska",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214101",
+			"nazwa": "Inżynier normowania pracy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214102",
+			"nazwa": "Inżynier organizacji i planowania produkcji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214103",
+			"nazwa": "Inżynier utrzymania ruchu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214104",
+			"nazwa": "Inżynier zaopatrzenia, transportu i magazynowania",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214105",
+			"nazwa": "Konsultant komitetu technicznego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214107",
+			"nazwa": "Normalizator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214108",
+			"nazwa": "Specjalista do spraw audytu zabezpieczenia",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214109",
+			"nazwa": "Specjalista kontroli jakości",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214110",
+			"nazwa": "Towaroznawca",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214111",
+			"nazwa": "Główny technolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214190",
+			"nazwa": "Pozostali inżynierowie do spraw przemysłu i produkcji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214201",
+			"nazwa": "Inżynier budownictwa - budowle i drogi wodne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214202",
+			"nazwa": "Inżynier budownictwa - budownictwo ogólne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214203",
+			"nazwa": "Inżynier budownictwa - budownictwo przemysłowe",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214204",
+			"nazwa": "Inżynier budownictwa - linie, węzły i stacje kolejowe",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214205",
+			"nazwa": "Inżynier budownictwa - urządzenia, instalacje i sieci energetyczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214206",
+			"nazwa": "Inżynier budownictwa - wyburzanie obiektów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214207",
+			"nazwa": "Inżynier budowy dróg",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214208",
+			"nazwa": "Inżynier budowy mostów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214209",
+			"nazwa": "Inżynier geotechnik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214210",
+			"nazwa": "Rzeczoznawca budowlany",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214290",
+			"nazwa": "Pozostali inżynierowie budownictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214301",
+			"nazwa": "Inżynier inżynierii środowiska - gazowe urządzenia, instalacje i sieci energetyczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214302",
+			"nazwa": "Inżynier inżynierii środowiska - gospodarka wodna i hydrologia",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214303",
+			"nazwa": "Inżynier inżynierii środowiska - instalacje sanitarne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214304",
+			"nazwa": "Inżynier inżynierii środowiska - melioracje",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214305",
+			"nazwa": "Inżynier inżynierii środowiska - oczyszczanie miast i gospodarka odpadami",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214306",
+			"nazwa": "Inżynier inżynierii środowiska - systemy wodociągowe i kanalizacyjne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214307",
+			"nazwa": "Inżynier systemów bezpieczeństwa jądrowego i ochrony radiologicznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214390",
+			"nazwa": "Pozostali inżynierowie inżynierii środowiska",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214401",
+			"nazwa": "Inżynier mechanik - cieplno-mechaniczne urządzenia, instalacje i sieci energetyczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214402",
+			"nazwa": "Inżynier mechanik - maszyny i urządzenia do obróbki metali",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214403",
+			"nazwa": "Inżynier mechanik - maszyny i urządzenia energetyczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214404",
+			"nazwa": "Inżynier mechanik - maszyny i urządzenia przemysłowe",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214405",
+			"nazwa": "Inżynier mechanik - mechanika precyzyjna",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214406",
+			"nazwa": "Inżynier mechanik - środki transportu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214407",
+			"nazwa": "Inżynier mechanik - technologia mechaniczna",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214408",
+			"nazwa": "Inżynier mechanik lotniczy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214409",
+			"nazwa": "Inżynier mechanizacji rolnictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214410",
+			"nazwa": "Inżynier spawalnik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214411",
+			"nazwa": "Konstruktor form wtryskowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214412",
+			"nazwa": "Inżynier budownictwa okrętowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214413",
+			"nazwa": "Inżynier chłodnictwa i klimatyzacji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214490",
+			"nazwa": "Pozostali inżynierowie mechanicy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214501",
+			"nazwa": "Inżynier inżynierii chemicznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214502",
+			"nazwa": "Inżynier technologii chemicznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214503",
+			"nazwa": "Inżynier technologii żywności",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214504",
+			"nazwa": "Inżynier dekontaminacji – skażenia promieniotwórcze",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214505",
+			"nazwa": "Inżynier postępowania z odpadami promieniotwórczymi",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214506",
+			"nazwa": "Inżynier inżynierii materiałów syntetycznych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214507",
+			"nazwa": "Inżynier papiernictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214590",
+			"nazwa": "Pozostali inżynierowie chemicy i pokrewni",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214601",
+			"nazwa": "Inżynier górnik - górnictwo otworowe",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214602",
+			"nazwa": "Inżynier górnik - górnictwo odkrywkowe",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214603",
+			"nazwa": "Inżynier górnik - górnictwo podziemne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214604",
+			"nazwa": "Inżynier górnik - wiertnictwo",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214605",
+			"nazwa": "Inżynier hutnik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214607",
+			"nazwa": "Inżynier odlewnik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214608",
+			"nazwa": "Inżynier geofizyk - geofizyka górnicza",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214609",
+			"nazwa": "Inżynier geolog - geologia górnicza i poszukiwawcza",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214610",
+			"nazwa": "Inżynier geolog - hydrologia górnicza",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214690",
+			"nazwa": "Pozostali inżynierowie górnictwa i metalurgii",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214901",
+			"nazwa": "Audytor energetyczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214902",
+			"nazwa": "Inspektor dozoru technicznego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214903",
+			"nazwa": "Inżynier automatyki i robotyki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214904",
+			"nazwa": "Inżynier awionik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214905",
+			"nazwa": "Inżynier biocybernetyki i inżynierii biomedycznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214906",
+			"nazwa": "Inżynier energetyki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214907",
+			"nazwa": "Inżynier gospodarki przestrzennej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214908",
+			"nazwa": "Inżynier kliniczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214909",
+			"nazwa": "Inżynier poligrafii",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214910",
+			"nazwa": "Inżynier pożarnictwa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214911",
+			"nazwa": "Inżynier systemów zabezpieczeń technicznych osób i mienia",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214912",
+			"nazwa": "Inżynier technologii betonów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214913",
+			"nazwa": "Inżynier technologii ceramiki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214914",
+			"nazwa": "Inżynier technologii drewna",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214915",
+			"nazwa": "Inżynier technologii przetwórstwa skóry",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214916",
+			"nazwa": "Inżynier technologii szkła",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214917",
+			"nazwa": "Inżynier transportu drogowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214918",
+			"nazwa": "Inżynier transportu kolejowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214919",
+			"nazwa": "Inżynier włókiennik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214920",
+			"nazwa": "Kontroler kolejowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214921",
+			"nazwa": "Legalizator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214922",
+			"nazwa": "Metrolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214923",
+			"nazwa": "Nanotechnolog (inżynier nanostruktur)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214924",
+			"nazwa": "Specjalista do spraw ergonomii i projektowania form użytkowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214925",
+			"nazwa": "Specjalista do spraw pakowania i opakowań",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214926",
+			"nazwa": "Specjalista monitoringu systemów zabezpieczeń technicznych osób i mienia",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214927",
+			"nazwa": "Inżynier akustyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214928",
+			"nazwa": "Inżynier optyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214929",
+			"nazwa": "Inżynier procesu malowania",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214930",
+			"nazwa": "Rzeczoznawca samochodowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214931",
+			"nazwa": "Technolog – programista obrabiarek",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214932",
+			"nazwa": "Inżynier inżynierii materiałowej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214933",
+			"nazwa": "Zarządca energią",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214934",
+			"nazwa": "Inżynier inżynierii kosmicznej i satelitarnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214935",
+			"nazwa": "Rzeczoznawca do spraw zabezpieczeń przeciwpożarowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "214990",
+			"nazwa": "Pozostali inżynierowie gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215101",
+			"nazwa": "Inżynier elektroenergetyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215102",
+			"nazwa": "Inżynier elektroenergetyk kolejowych sieci i podstacji trakcyjnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215103",
+			"nazwa": "Inżynier elektryk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215104",
+			"nazwa": "Inżynier elektryk automatyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215105",
+			"nazwa": "Inżynier techniki świetlnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215106",
+			"nazwa": "Inżynier urządzeń i systemów energetyki odnawialnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215190",
+			"nazwa": "Pozostali inżynierowie elektrycy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215201",
+			"nazwa": "Inżynier elektronik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215202",
+			"nazwa": "Inżynier mechatronik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215203",
+			"nazwa": "Inżynier urządzeń zabezpieczenia i sterowania ruchem kolejowym",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215204",
+			"nazwa": "Optoelektronik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215205",
+			"nazwa": "Projektant układów scalonych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215290",
+			"nazwa": "Pozostali inżynierowie elektronicy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215301",
+			"nazwa": "Inżynier telekomunikacji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215302",
+			"nazwa": "Technolog inżynierii telekomunikacyjnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215303",
+			"nazwa": "Inżynier teleinformatyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "215390",
+			"nazwa": "Pozostali inżynierowie telekomunikacji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "216101",
+			"nazwa": "Architekt",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216102",
+			"nazwa": "Architekt wnętrz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216190",
+			"nazwa": "Pozostali architekci",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216201",
+			"nazwa": "Architekt krajobrazu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216202",
+			"nazwa": "Architekt zieleni wewnątrz budynków",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216290",
+			"nazwa": "Pozostali architekci krajobrazu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216301",
+			"nazwa": "Projektant biżuterii",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216302",
+			"nazwa": "Kostiumograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216303",
+			"nazwa": "Projektant mody",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216304",
+			"nazwa": "Projektant wzornictwa przemysłowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216305",
+			"nazwa": "Projektant ekspozycji towarów i usług (visual merchandiser)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216306",
+			"nazwa": "Projektant wyrobów skórzanych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216390",
+			"nazwa": "Pozostali projektanci wzornictwa przemysłowego i odzieży",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216401",
+			"nazwa": "Inżynier ruchu drogowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216402",
+			"nazwa": "Inżynier ruchu kolejowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216403",
+			"nazwa": "Urbanista",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216490",
+			"nazwa": "Pozostali urbaniści i inżynierowie ruchu drogowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216501",
+			"nazwa": "Inżynier geodeta - fotogrametria i teledetekcja",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216502",
+			"nazwa": "Inżynier geodeta - geodezja górnicza",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216503",
+			"nazwa": "Inżynier geodeta - geodezja inżynieryjno-przemysłowa",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216504",
+			"nazwa": "Inżynier geodeta - geodezja urządzania terenów rolnych i leśnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216505",
+			"nazwa": "Inżynier geodeta - geodezyjne pomiary podstawowe i satelitarne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216506",
+			"nazwa": "Inżynier geodeta - geomatyka",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216507",
+			"nazwa": "Inżynier geodeta - kataster i gospodarka nieruchomościami",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216508",
+			"nazwa": "Kartograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216590",
+			"nazwa": "Pozostali kartografowie i geodeci",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216601",
+			"nazwa": "Grafik komputerowy DTP",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216602",
+			"nazwa": "Grafik komputerowy multimediów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216603",
+			"nazwa": "Ilustrator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216604",
+			"nazwa": "Projektant grafiki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216605",
+			"nazwa": "Projektant grafiki stron internetowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216606",
+			"nazwa": "Specjalista do spraw animacji multimedialnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "216690",
+			"nazwa": "Pozostali projektanci grafiki i multimediów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		}
+	]
+}

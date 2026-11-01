@@ -1,0 +1,39 @@
+{
+	"nazwa": "Podlaskie",
+	"ogolem_zrodlo": 430691,
+	"sekcje": {
+		"A": 79329,
+		"B": 836,
+		"C": 66358,
+		"D": 3002,
+		"E": 4166,
+		"F": 27957,
+		"G": 59081,
+		"H": 21585,
+		"I": 6820,
+		"J": 9673,
+		"K": 7041,
+		"L": 4062,
+		"M": 14982,
+		"N": 9295,
+		"O": 35964,
+		"P": 35853,
+		"Q": 29782,
+		"R": 4608,
+		"S": 10297
+	},
+	"sekcje_zero_bo_nie_wystapily": [],
+	"sekcje_nieopublikowane": [],
+	"zrodlo": {
+		"kto": "Główny Urząd Statystyczny",
+		"tytul": "Pracujący w gospodarce narodowej w 2023 roku, tabl. 1. Pracujący według sekcji PKD i miejsca zamieszkania",
+		"stan": "2023-12-31",
+		"rok": 2023,
+		"url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/pracujacy-w-gospodarce-narodowej-w-2023-roku,7,21.html",
+		"plik": "https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/7/21/1/pracujacy_w_gospodarce_narodowej_w_2023.xlsx",
+		"jednostka": "osoby",
+		"plec": "ogółem",
+		"znak_kreska": "Zjawisko nie wystąpiło. W pliku gry jest 0.",
+		"znak_kropka": "Brak informacji albo tajemnica. Tej sekcji nie ma w wagach, nie wpisuję zera."
+	}
+}

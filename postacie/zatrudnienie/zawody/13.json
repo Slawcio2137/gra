@@ -1,0 +1,2321 @@
+{
+	"kod_2": "13",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "131101",
+			"nazwa": "Kierownik produkcji w przedsiębiorstwie rolnym",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131102",
+			"nazwa": "Kierownik przedsiębiorstwa usługowego związanego z leśnictwem",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131103",
+			"nazwa": "Kierownik w gospodarce leśnej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131104",
+			"nazwa": "Kierownik produkcji w przedsiębiorstwie ogrodniczym",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131105",
+			"nazwa": "Kierownik produkcji w przedsiębiorstwie hodowlanym",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131190",
+			"nazwa": "Pozostali kierownicy produkcji w rolnictwie i leśnictwie",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131201",
+			"nazwa": "Kierownik produkcji w zakładach akwakultury",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131202",
+			"nazwa": "Kierownik przedsiębiorstwa w rybołówstwie",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "131290",
+			"nazwa": "Pozostali kierownicy produkcji w zakładach akwakultury i rybołówstwie",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132102",
+			"nazwa": "Kierownik do spraw kontroli jakości",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132103",
+			"nazwa": "Kierownik produkcji w przemyśle",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132104",
+			"nazwa": "Kierownik małego przedsiębiorstwa w przemyśle przetwórczym",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132105",
+			"nazwa": "Kierownik utrzymania ruchu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132190",
+			"nazwa": "Pozostali kierownicy do spraw produkcji przemysłowej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132201",
+			"nazwa": "Kierownik działu ruchu zakładu górniczego lub zakładu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132202",
+			"nazwa": "Kierownik jednostki ratownictwa górniczego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132204",
+			"nazwa": "Kierownik ruchu zakładu górniczego lub zakładu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132290",
+			"nazwa": "Pozostali kierownicy w górnictwie",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132301",
+			"nazwa": "Kierownik budowy",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132302",
+			"nazwa": "Kierownik małego przedsiębiorstwa budowlanego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132390",
+			"nazwa": "Pozostali kierownicy do spraw budownictwa",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132401",
+			"nazwa": "Kierownik działu logistyki",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132402",
+			"nazwa": "Kierownik działu transportu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132403",
+			"nazwa": "Kierownik działu zakupów",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132404",
+			"nazwa": "Kierownik magazynu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132405",
+			"nazwa": "Kierownik przedsiębiorstwa spedycyjnego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132406",
+			"nazwa": "Kierownik przedsiębiorstwa transportowego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132407",
+			"nazwa": "Zawiadowca stacji",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132408",
+			"nazwa": "Kierownik punktu skupu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132409",
+			"nazwa": "Kierownik do spraw handlu zagranicznego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132410",
+			"nazwa": "Kierownik do spraw optymalizacji zasobów",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132411",
+			"nazwa": "Kierownik do spraw transportu rurociągowego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132412",
+			"nazwa": "Kierownik do spraw zarzadzania flotą samochodową",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "132490",
+			"nazwa": "Pozostali kierownicy do spraw logistyki i dziedzin pokrewnych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133001",
+			"nazwa": "Kierownik działu informatyki",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133002",
+			"nazwa": "Kierownik działu w przedsiębiorstwie telekomunikacyjnym",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133003",
+			"nazwa": "Kierownik przedsiębiorstwa informatycznego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133004",
+			"nazwa": "Kierownik przedsiębiorstwa telekomunikacyjnego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133005",
+			"nazwa": "Kierownik rozwoju technologii informatycznych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133006",
+			"nazwa": "Kierownik rozwoju technologii telekomunikacyjnych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133007",
+			"nazwa": "Kierownik sieci informatycznych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "133090",
+			"nazwa": "Pozostali kierownicy do spraw technologii informatycznych i telekomunikacyjnych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134101",
+			"nazwa": "Kierownik centrum rozrywki dla dzieci",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134102",
+			"nazwa": "Kierownik przedszkola",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134104",
+			"nazwa": "Kierownik żłobka / klubu dziecięcego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134105",
+			"nazwa": "Kierownik placówki wsparcia dziennego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134106",
+			"nazwa": "Dyrektor ośrodka adopcyjnego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134107",
+			"nazwa": "Dyrektor placówki opiekuńczo-wychowawczej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134190",
+			"nazwa": "Pozostali kierownicy / dyrektorzy w instytucjach opieki nad dziećmi",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134201",
+			"nazwa": "Kierownik hospicjum",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134202",
+			"nazwa": "Kierownik komórki organizacyjnej podmiotu leczniczego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134204",
+			"nazwa": "Kierownik podmiotu leczniczego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134205",
+			"nazwa": "Pielęgniarka oddziałowa",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134206",
+			"nazwa": "Położna oddziałowa",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134207",
+			"nazwa": "Lekarz ordynator oddziału",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134290",
+			"nazwa": "Pozostali kierownicy w instytucjach opieki zdrowotnej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134301",
+			"nazwa": "Kierownik domu spokojnej starości",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134390",
+			"nazwa": "Pozostali kierownicy w instytucjach opieki nad osobami starszymi",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134402",
+			"nazwa": "Kierownik domu pomocy społecznej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134403",
+			"nazwa": "Kierownik działu w instytucjach pomocy społecznej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134404",
+			"nazwa": "Kierownik ośrodka pomocy rodzinie",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134490",
+			"nazwa": "Pozostali kierownicy w instytucjach pomocy społecznej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134501",
+			"nazwa": "Dyrektor szkoły",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134502",
+			"nazwa": "Dziekan",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134503",
+			"nazwa": "Kierownik warsztatów szkolnych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134504",
+			"nazwa": "Kierownik praktycznej nauki zawodu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134590",
+			"nazwa": "Pozostali kierownicy w instytucjach edukacyjnych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134601",
+			"nazwa": "Kierownik agencji doradztwa finansowego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134602",
+			"nazwa": "Kierownik agencji ubezpieczeniowej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134603",
+			"nazwa": "Kierownik działu operacji finansowych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134605",
+			"nazwa": "Kierownik placówki bankowej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134690",
+			"nazwa": "Pozostali kierownicy instytucji finansowych i ubezpieczeniowych",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134901",
+			"nazwa": "Dyrektor aresztu śledczego / zakładu karnego",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134902",
+			"nazwa": "Dyrektor zakładu dla nieletnich",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134903",
+			"nazwa": "Kierownik agencji ochrony mienia i osób",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134904",
+			"nazwa": "Kierownik firmy audytorskiej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134905",
+			"nazwa": "Kierownik kancelarii prawnej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134906",
+			"nazwa": "Kierownik agencji filmowej / telewizyjnej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134907",
+			"nazwa": "Kierownik archiwum",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134908",
+			"nazwa": "Kierownik biblioteki",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134909",
+			"nazwa": "Kierownik galerii sztuki",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134910",
+			"nazwa": "Kierownik muzeum",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134911",
+			"nazwa": "Komendant policji (powiatowy, miejski, rejonowy, komisariatu)",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134912",
+			"nazwa": "Komendant straży gminnej / miejskiej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134913",
+			"nazwa": "Komendant powiatowy / miejski państwowej straży pożarnej",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134914",
+			"nazwa": "Kierownik rewiru / posterunku policji",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134915",
+			"nazwa": "Kierownik wydawnictwa",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134916",
+			"nazwa": "Prezes / dyrektor sądu",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "134990",
+			"nazwa": "Pozostali kierownicy w instytucjach usług wyspecjalizowanych gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "1",
+			"wielka_grupa_nazwa": "KIEROWNICY",
+			"zarobki": {
+				"mediana_zl": 12000
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		}
+	]
+}

@@ -1,0 +1,1021 @@
+{
+	"kod_2": "42",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "421101",
+			"nazwa": "Asystent usług pocztowych",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421102",
+			"nazwa": "Asystent usług telekomunikacyjnych",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421103",
+			"nazwa": "Kasjer bankowy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421104",
+			"nazwa": "Kasjer walutowy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421105",
+			"nazwa": "Kontroler pocztowy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421106",
+			"nazwa": "Kontroler rozliczeń pieniężnych",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421107",
+			"nazwa": "Skarbnik bankowy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421108",
+			"nazwa": "Technik usług pocztowych i finansowych*",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421190",
+			"nazwa": "Pozostali kasjerzy bankowi i pokrewni",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421201",
+			"nazwa": "Bukmacher",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421202",
+			"nazwa": "Krupier",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421203",
+			"nazwa": "Pracownik kolektury",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421290",
+			"nazwa": "Pozostali bukmacherzy, krupierzy i pokrewni",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421301",
+			"nazwa": "Pracownik instytucji pożyczkowej",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421302",
+			"nazwa": "Pracownik lombardu",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421401",
+			"nazwa": "Inkasent",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421402",
+			"nazwa": "Poborca skarbowy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421403",
+			"nazwa": "Windykator",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "421490",
+			"nazwa": "Pozostali windykatorzy i pokrewni",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422101",
+			"nazwa": "Pracownik biura podróży",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422102",
+			"nazwa": "Rezydent biura turystycznego",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422103",
+			"nazwa": "Technik obsługi turystycznej",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422104",
+			"nazwa": "Technik organizacji turystyki*",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422190",
+			"nazwa": "Pozostali konsultanci i inni pracownicy biur podróży",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422201",
+			"nazwa": "Pracownik centrum obsługi telefonicznej (pracownik call center)",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422301",
+			"nazwa": "Operator centrali telefonicznej",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422302",
+			"nazwa": "Operator numerów alarmowych",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422401",
+			"nazwa": "Recepcjonista hotelowy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422402",
+			"nazwa": "Technik hotelarstwa*",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422501",
+			"nazwa": "Informator ruchu pasażerskiego",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422502",
+			"nazwa": "Pracownik informacji turystycznej",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422590",
+			"nazwa": "Pozostali pracownicy biur informacji",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422601",
+			"nazwa": "Pracownik biura przepustek",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422602",
+			"nazwa": "Recepcjonista",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422603",
+			"nazwa": "Rejestratorka medyczna",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422690",
+			"nazwa": "Pozostali recepcjoniści (z wyłączeniem hotelowych)",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422701",
+			"nazwa": "Ankieter",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422702",
+			"nazwa": "Teleankieter",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "422790",
+			"nazwa": "Pozostali ankieterzy",
+			"wielka_grupa": "4",
+			"wielka_grupa_nazwa": "PRACOWNICY BIUROWI",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		}
+	]
+}

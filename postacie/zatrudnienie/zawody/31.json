@@ -1,0 +1,7521 @@
+{
+	"kod_2": "31",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "311101",
+			"nazwa": "Laborant chemiczny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311102",
+			"nazwa": "Probierz",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311103",
+			"nazwa": "Technik analityk*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311104",
+			"nazwa": "Technik geodeta*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311105",
+			"nazwa": "Technik geofizyk",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311106",
+			"nazwa": "Technik geolog*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311107",
+			"nazwa": "Technik hydrolog",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311108",
+			"nazwa": "Technik meteorolog",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311109",
+			"nazwa": "Technik metrolog",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311190",
+			"nazwa": "Pozostali technicy nauk chemicznych, fizycznych i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311201",
+			"nazwa": "Kosztorysant budowlany",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311202",
+			"nazwa": "Laborant budowlany",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311203",
+			"nazwa": "Technik architekt",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311204",
+			"nazwa": "Technik budownictwa*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311205",
+			"nazwa": "Technik budownictwa wodnego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311206",
+			"nazwa": "Technik drogownictwa",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311207",
+			"nazwa": "Technik dróg i mostów kolejowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311208",
+			"nazwa": "Technik inżynierii środowiska i melioracji*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311209",
+			"nazwa": "Technik urządzeń sanitarnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311210",
+			"nazwa": "Technik renowacji elementów architektury*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311211",
+			"nazwa": "Inspektor budowlany",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311212",
+			"nazwa": "Inspektor budowy dróg",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311213",
+			"nazwa": "Inspektor budowy mostów",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311214",
+			"nazwa": "Inspektor ochrony przeciwpożarowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311215",
+			"nazwa": "Mostowniczy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311216",
+			"nazwa": "Technik budowy dróg*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311217",
+			"nazwa": "Technik dróg kolejowych i obiektów inżynieryjnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311218",
+			"nazwa": "Technik inżynierii sanitarnej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311219",
+			"nazwa": "Technik robót wykończeniowych w budownictwie*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311220",
+			"nazwa": "Technik budownictwa kolejowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311221",
+			"nazwa": "Technik dekarstwa*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311222",
+			"nazwa": "Technik montażu i automatyki stolarki budowlanej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311223",
+			"nazwa": "Technik obsługi przemysłu targowo-wystawienniczego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311224",
+			"nazwa": "Technik aranżacji wnętrz*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311290",
+			"nazwa": "Pozostali technicy budownictwa",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311302",
+			"nazwa": "Technik elektroenergetyk transportu szynowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311303",
+			"nazwa": "Technik elektryk*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311304",
+			"nazwa": "Technik elektryk kolejowych sieci elektroenergetycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311305",
+			"nazwa": "Technik elektryk samochodowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311306",
+			"nazwa": "Technik elektryk urządzeń zabezpieczenia i sterowania ruchem kolejowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311307",
+			"nazwa": "Technik energetyk*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311390",
+			"nazwa": "Pozostali technicy elektrycy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311401",
+			"nazwa": "Diagnosta kolejowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311402",
+			"nazwa": "Instalator systemów alarmowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311403",
+			"nazwa": "Instalator systemów alarmowych przeciwkradzieżowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311404",
+			"nazwa": "Instalator systemów telewizji przemysłowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311406",
+			"nazwa": "Projektant systemów alarmowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311407",
+			"nazwa": "Technik automatyk sterowania ruchem kolejowym*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311408",
+			"nazwa": "Technik elektronik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311409",
+			"nazwa": "Technik elektroniki medycznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311410",
+			"nazwa": "Technik mechatronik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311411",
+			"nazwa": "Technik elektroniki i informatyki medycznej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311412",
+			"nazwa": "Technik szerokopasmowej komunikacji elektronicznej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311413",
+			"nazwa": "Technik robotyk*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311490",
+			"nazwa": "Pozostali technicy elektronicy i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311501",
+			"nazwa": "Diagnosta uprawniony do wykonywania badań technicznych pojazdów",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311503",
+			"nazwa": "Kontroler stanu technicznego pojazdów",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311504",
+			"nazwa": "Technik mechanik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311505",
+			"nazwa": "Technik mechanik budowy środków transportu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311506",
+			"nazwa": "Technik mechanik eksploatacji środków transportu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311508",
+			"nazwa": "Technik mechanik maszyn i urządzeń",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311509",
+			"nazwa": "Technik mechanik obróbki skrawaniem",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311510",
+			"nazwa": "Technik mechanik precyzyjny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311511",
+			"nazwa": "Technik mechanik urządzeń przemysłowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311512",
+			"nazwa": "Technik mechanizacji rolnictwa",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311513",
+			"nazwa": "Technik pojazdów samochodowych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311514",
+			"nazwa": "Technik utrzymania ruchu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311515",
+			"nazwa": "Technik mechanizacji rolnictwa i agrotroniki*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311516",
+			"nazwa": "Technik spawalnictwa*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311517",
+			"nazwa": "Kontroler jakości połączeń spawanych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311518",
+			"nazwa": "Technik pojazdów kolejowych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311519",
+			"nazwa": "Technik elektromobilności*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311590",
+			"nazwa": "Pozostali technicy mechanicy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311601",
+			"nazwa": "Technik papiernictwa*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311602",
+			"nazwa": "Technik przetwórstwa tworzyw sztucznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311603",
+			"nazwa": "Technik technologii chemicznej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311604",
+			"nazwa": "Technik technologii środków farmaceutycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311605",
+			"nazwa": "Technik technologii środków kosmetycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311606",
+			"nazwa": "Technik zabezpieczeń przeciwkorozyjnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311607",
+			"nazwa": "Technik postępowania ze źródłami promieniotwórczymi",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311608",
+			"nazwa": "Technik izolacji przemysłowych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311690",
+			"nazwa": "Pozostali technicy chemicy i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311701",
+			"nazwa": "Technik górnictwa odkrywkowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311702",
+			"nazwa": "Technik górnictwa otworowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311703",
+			"nazwa": "Technik górnictwa podziemnego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311704",
+			"nazwa": "Technik hutnik",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311705",
+			"nazwa": "Technik odlewnik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311706",
+			"nazwa": "Technik przeróbki kopalin stałych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311707",
+			"nazwa": "Technik wiertnik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311708",
+			"nazwa": "Technik przemysłu metalurgicznego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311709",
+			"nazwa": "Technik podziemnej eksploatacji kopalin innych niż węgiel kamienny*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311790",
+			"nazwa": "Pozostali technicy górnictwa, metalurgii i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311801",
+			"nazwa": "Rysownik geodezyjny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311802",
+			"nazwa": "Rysownik kartograficzny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311803",
+			"nazwa": "Operator CAD",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311890",
+			"nazwa": "Pozostali kreślarze",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311901",
+			"nazwa": "Cechowniczy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311902",
+			"nazwa": "Monter urządzeń medycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311903",
+			"nazwa": "Korektor i stroiciel instrumentów muzycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311904",
+			"nazwa": "Operator badań defektoskopowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311905",
+			"nazwa": "Operator reaktora",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311906",
+			"nazwa": "Pracownik obsługi bankomatów",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311907",
+			"nazwa": "Serwisant urządzeń medycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311908",
+			"nazwa": "Technik akustyk",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311909",
+			"nazwa": "Technik automatyk*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311910",
+			"nazwa": "Technik budownictwa okrętowego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311911",
+			"nazwa": "Technik cyfrowych procesów graficznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311912",
+			"nazwa": "Technik garbarz*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311913",
+			"nazwa": "Technik gazownictwa*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311914",
+			"nazwa": "Technik instrumentów muzycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311915",
+			"nazwa": "Technik normowania pracy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311916",
+			"nazwa": "Technik obuwnik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311917",
+			"nazwa": "Technik organizacji produkcji",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311918",
+			"nazwa": "Technik poligraf",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311919",
+			"nazwa": "Technik pożarnictwa*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311920",
+			"nazwa": "Technik systemów zabezpieczeń technicznych osób i mienia",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311921",
+			"nazwa": "Technik technologii ceramicznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311922",
+			"nazwa": "Technik technologii drewna*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311923",
+			"nazwa": "Technik technologii materiałów budowlanych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311924",
+			"nazwa": "Technik technologii odzieży",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311925",
+			"nazwa": "Technik technologii szkła*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311926",
+			"nazwa": "Technik technologii wyrobów skórzanych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311927",
+			"nazwa": "Technik transportu drogowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311928",
+			"nazwa": "Technik transportu kolejowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311929",
+			"nazwa": "Technik chłodnictwa i klimatyzacji*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311930",
+			"nazwa": "Technik urządzeń i systemów energetyki odnawialnej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311931",
+			"nazwa": "Technik włókienniczych wyrobów dekoracyjnych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311932",
+			"nazwa": "Technik włókiennik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311933",
+			"nazwa": "Stroiciel fortepianów i pianin",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311934",
+			"nazwa": "Technik budowy fortepianów i pianin",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311935",
+			"nazwa": "Technik procesów drukowania*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311936",
+			"nazwa": "Technik procesów introligatorskich*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311937",
+			"nazwa": "Kontroler jakości wyrobów przemysłowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311939",
+			"nazwa": "Technik konserwator urządzeń dźwigowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311940",
+			"nazwa": "Technik urządzeń dźwigowych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311941",
+			"nazwa": "Technik przemysłu mody*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311942",
+			"nazwa": "Technik budowy jednostek pływających*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311943",
+			"nazwa": "Technik grafiki i poligrafii cyfrowej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311944",
+			"nazwa": "Technik ceramik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311945",
+			"nazwa": "Technik budowy i strojenia fortepianów i pianin*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311946",
+			"nazwa": "Technik stylista*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311947",
+			"nazwa": "Technik przemysłu jachtowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311948",
+			"nazwa": "Technik przemysłu drzewnego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311949",
+			"nazwa": "Diagnosta sieci preizolowanych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "311990",
+			"nazwa": "Pozostali technicy nauk fizycznych i technicznych gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312101",
+			"nazwa": "Osoby dozoru ruchu w górnictwie odkrywkowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312102",
+			"nazwa": "Osoby dozoru ruchu w górnictwie otworowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312103",
+			"nazwa": "Osoby dozoru ruchu w górnictwie podziemnym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312190",
+			"nazwa": "Pozostałe osoby dozoru ruchu w górnictwie",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312201",
+			"nazwa": "Mistrz produkcji w przemyśle chemicznym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312202",
+			"nazwa": "Mistrz produkcji w przemyśle drzewnym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312203",
+			"nazwa": "Mistrz produkcji w przemyśle elektromaszynowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312204",
+			"nazwa": "Mistrz produkcji w przemyśle elektronicznym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312205",
+			"nazwa": "Mistrz produkcji w przemyśle farmaceutycznym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312206",
+			"nazwa": "Mistrz produkcji w przemyśle metalurgicznym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312207",
+			"nazwa": "Mistrz produkcji w przemyśle samochodowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312208",
+			"nazwa": "Mistrz produkcji w przemyśle spożywczym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312209",
+			"nazwa": "Mistrz produkcji w przemyśle włókienniczym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312210",
+			"nazwa": "Mistrz produkcji w poligrafii",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312211",
+			"nazwa": "Mistrz produkcji w przemyśle odzieżowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312290",
+			"nazwa": "Pozostali mistrzowie produkcji w przemyśle przetwórczym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312301",
+			"nazwa": "Mistrz produkcji w budownictwie drogowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312302",
+			"nazwa": "Mistrz produkcji w budownictwie kolejowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312303",
+			"nazwa": "Mistrz produkcji w budownictwie mostowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312304",
+			"nazwa": "Mistrz produkcji w budownictwie ogólnym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312305",
+			"nazwa": "Mistrz produkcji w budownictwie przemysłowym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312306",
+			"nazwa": "Mistrz produkcji w budownictwie wodnym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "312390",
+			"nazwa": "Pozostali mistrzowie produkcji w budownictwie",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313101",
+			"nazwa": "Elektroenergetyk elektrowni cieplnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313102",
+			"nazwa": "Elektroenergetyk elektrowni wodnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313103",
+			"nazwa": "Elektroenergetyk nastawni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313104",
+			"nazwa": "Elektroenergetyk pomiarów i zabezpieczeń",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313105",
+			"nazwa": "Maszynista agregatów prądotwórczych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313106",
+			"nazwa": "Maszynista turbozespołu parowego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313107",
+			"nazwa": "Maszynista turbozespołu wodnego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313108",
+			"nazwa": "Maszynista urządzeń ciepłowniczych elektrowni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313109",
+			"nazwa": "Maszynista urządzeń pomocniczych elektrowni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313110",
+			"nazwa": "Obchodowy bloku",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313190",
+			"nazwa": "Pozostali operatorzy urządzeń energetycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313201",
+			"nazwa": "Operator aparatury do przetwarzania odpadów niebezpiecznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313202",
+			"nazwa": "Maszynista chłodni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313203",
+			"nazwa": "Maszynista sprężarek",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313204",
+			"nazwa": "Maszynista wentylatorów w kopalni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313205",
+			"nazwa": "Operator (maszynista) stacji pomp",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313206",
+			"nazwa": "Operator spalarni odpadów komunalnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313207",
+			"nazwa": "Operator urządzeń klimatyzacyjnych i odpylających",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313208",
+			"nazwa": "Operator urządzeń oczyszczania ścieków",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313209",
+			"nazwa": "Operator urządzeń uzdatniania i demineralizacji wody",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313210",
+			"nazwa": "Pracownik oczyszczania terenu z materiałów wybuchowych i niebezpiecznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313211",
+			"nazwa": "Operator maszyn i urządzeń w gospodarce odpadami*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313290",
+			"nazwa": "Pozostali operatorzy urządzeń do spalania odpadów, uzdatniania wody i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313301",
+			"nazwa": "Kontroler (sterowniczy) procesów w produkcji nawozów sztucznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313303",
+			"nazwa": "Kontroler (sterowniczy) reaktorów chemicznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313304",
+			"nazwa": "Kontroler (sterowniczy) urządzeń destylacyjnych i rektyfikacyjnych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313305",
+			"nazwa": "Kontroler (sterowniczy) urządzeń do obróbki cieplnej chemikaliów",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313306",
+			"nazwa": "Kontroler (sterowniczy) urządzeń filtrujących i oddzielających",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313307",
+			"nazwa": "Kontroler (sterowniczy) urządzeń koksowniczych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313390",
+			"nazwa": "Pozostali kontrolerzy (sterowniczy) procesów w przemyśle chemicznym",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313401",
+			"nazwa": "Kontroler (sterowniczy) procesów przeróbki ropy naftowej i gazu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313501",
+			"nazwa": "Kontroler (sterowniczy) urządzeń do ciągnienia i tłoczenia metali",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313502",
+			"nazwa": "Kontroler (sterowniczy) urządzeń do wytopu metali",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313503",
+			"nazwa": "Kontroler (sterowniczy) urządzeń obróbki cieplnej metali",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313504",
+			"nazwa": "Kontroler (sterowniczy) urządzeń odlewniczych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313505",
+			"nazwa": "Kontroler (sterowniczy) urządzeń walcowniczych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313590",
+			"nazwa": "Pozostali kontrolerzy (sterowniczy) procesów metalurgicznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313901",
+			"nazwa": "Kontroler (sterowniczy) robotów przemysłowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313902",
+			"nazwa": "Kontroler (sterowniczy) urządzeń do produkcji papieru",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313903",
+			"nazwa": "Operator robotów i manipulatorów przemysłowych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313904",
+			"nazwa": "Operator zautomatyzowanej linii produkcyjnej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313905",
+			"nazwa": "Operator drukarek 3D",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "313990",
+			"nazwa": "Pozostali kontrolerzy (sterowniczy) procesów przemysłowych gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314101",
+			"nazwa": "Laborant mikrobiologiczny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314102",
+			"nazwa": "Laborant biochemiczny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314103",
+			"nazwa": "Laborant w hodowli roślin",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314104",
+			"nazwa": "Laborant w hodowli zwierząt",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314190",
+			"nazwa": "Pozostali technicy nauk biologicznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314201",
+			"nazwa": "Laborant nasiennictwa",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314202",
+			"nazwa": "Technik architektury krajobrazu*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314203",
+			"nazwa": "Technik hodowca koni*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314204",
+			"nazwa": "Technik hodowca zwierząt",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314205",
+			"nazwa": "Technik ogrodnik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314206",
+			"nazwa": "Technik pszczelarz*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314207",
+			"nazwa": "Technik rolnik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314208",
+			"nazwa": "Technik rybactwa śródlądowego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314290",
+			"nazwa": "Pozostali technicy rolnictwa i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314301",
+			"nazwa": "Technik leśnik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314401",
+			"nazwa": "Kontroler jakości produktów spożywczych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314402",
+			"nazwa": "Technik przetwórstwa mleczarskiego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314403",
+			"nazwa": "Technik technologii żywności*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314404",
+			"nazwa": "Technik technologii żywności - cukrownictwo",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314405",
+			"nazwa": "Technik technologii żywności - produkcja cukiernicza",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314406",
+			"nazwa": "Technik technologii żywności - produkcja koncentratów spożywczych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314407",
+			"nazwa": "Technik technologii żywności - produkcja piekarsko-ciastkarska",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314408",
+			"nazwa": "Technik technologii żywności - przechowalnictwo chłodnicze i technologia żywności mrożonej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314409",
+			"nazwa": "Technik technologii żywności - przetwórstwo fermentacyjne",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314410",
+			"nazwa": "Technik technologii żywności - przetwórstwo jajczarsko-drobiarskie",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314411",
+			"nazwa": "Technik technologii żywności - przetwórstwo mięsne",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314412",
+			"nazwa": "Technik technologii żywności - przetwórstwo mleczarskie",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314413",
+			"nazwa": "Technik technologii żywności - przetwórstwo owocowo-warzywne",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314414",
+			"nazwa": "Technik technologii żywności - przetwórstwo rybne",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314415",
+			"nazwa": "Technik technologii żywności - przetwórstwo surowców olejarskich",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314416",
+			"nazwa": "Technik technologii żywności - przetwórstwo zbożowe",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314417",
+			"nazwa": "Technik technologii żywności - przetwórstwo ziemniaczane",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "314490",
+			"nazwa": "Pozostali technicy technologii żywności",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315101",
+			"nazwa": "Mechanik statkowy żeglugi śródlądowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315102",
+			"nazwa": "Oficer automatyk okrętowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315103",
+			"nazwa": "Oficer mechanik",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315104",
+			"nazwa": "Stermotorzysta żeglugi śródlądowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315105",
+			"nazwa": "Technik mechanik okrętowy*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315106",
+			"nazwa": "Technik elektroautomatyk okrętowy*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315190",
+			"nazwa": "Pozostali pracownicy służb technicznych żeglugi",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315202",
+			"nazwa": "Bosman portu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315203",
+			"nazwa": "Inspektor bezpieczeństwa żeglugi",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315204",
+			"nazwa": "Kapitan portu morskiego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315205",
+			"nazwa": "Kapitan statku morskiego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315206",
+			"nazwa": "Kapitan żeglugi śródlądowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315207",
+			"nazwa": "Kapitan żeglugi przybrzeżnej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315208",
+			"nazwa": "Oficer pokładowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315209",
+			"nazwa": "Oficer portu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315210",
+			"nazwa": "Obserwator radarowy żeglugi śródlądowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315211",
+			"nazwa": "Pilot morski",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315212",
+			"nazwa": "Pilot żeglugi śródlądowej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315214",
+			"nazwa": "Technik nawigator morski*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315215",
+			"nazwa": "Technik rybołówstwa morskiego*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315216",
+			"nazwa": "Technik żeglugi śródlądowej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315217",
+			"nazwa": "Szyper",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315290",
+			"nazwa": "Pozostali oficerowie pokładowi, piloci żeglugi i pokrewni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315301",
+			"nazwa": "Mechanik pokładowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315302",
+			"nazwa": "Nawigator lotniczy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315305",
+			"nazwa": "Operator tankowania statków powietrznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315306",
+			"nazwa": "Pilot balonowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315308",
+			"nazwa": "Pilot samolotowy zawodowy / liniowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315309",
+			"nazwa": "Pilot sterowcowy zawodowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315310",
+			"nazwa": "Pilot szybowcowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315311",
+			"nazwa": "Pilot śmigłowcowy zawodowy / liniowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315312",
+			"nazwa": "Pilot wiatrakowcowy zawodowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315314",
+			"nazwa": "Skoczek spadochronowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315316",
+			"nazwa": "Technik awionik*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315317",
+			"nazwa": "Technik mechanik lotniczy*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315318",
+			"nazwa": "Mechanik lotniczy obsługi technicznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315319",
+			"nazwa": "Pilot pionowzlotu",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315390",
+			"nazwa": "Pozostali piloci statków powietrznych i personel pokrewny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315401",
+			"nazwa": "Dyspozytor lotniczy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315402",
+			"nazwa": "Informator służby informacji powietrznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315403",
+			"nazwa": "Kontroler ruchu lotniczego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315405",
+			"nazwa": "Informator lotniskowej służby informacji powietrznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315406",
+			"nazwa": "Technik lotniskowych służb operacyjnych*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315490",
+			"nazwa": "Pozostali kontrolerzy ruchu lotniczego i personel pokrewny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "315501",
+			"nazwa": "Technik urządzeń ruchu lotniczego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

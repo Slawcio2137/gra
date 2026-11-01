@@ -1,0 +1,39 @@
+{
+	"nazwa": "Śląskie",
+	"ogolem_zrodlo": 1705248,
+	"sekcje": {
+		"A": 38961,
+		"B": 71707,
+		"C": 366792,
+		"D": 14544,
+		"E": 22726,
+		"F": 113696,
+		"G": 260531,
+		"H": 110519,
+		"I": 33735,
+		"J": 54645,
+		"K": 28563,
+		"L": 24312,
+		"M": 90137,
+		"N": 73036,
+		"O": 88717,
+		"P": 136220,
+		"Q": 114434,
+		"R": 19860,
+		"S": 42113
+	},
+	"sekcje_zero_bo_nie_wystapily": [],
+	"sekcje_nieopublikowane": [],
+	"zrodlo": {
+		"kto": "Główny Urząd Statystyczny",
+		"tytul": "Pracujący w gospodarce narodowej w 2023 roku, tabl. 1. Pracujący według sekcji PKD i miejsca zamieszkania",
+		"stan": "2023-12-31",
+		"rok": 2023,
+		"url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/pracujacy-w-gospodarce-narodowej-w-2023-roku,7,21.html",
+		"plik": "https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/7/21/1/pracujacy_w_gospodarce_narodowej_w_2023.xlsx",
+		"jednostka": "osoby",
+		"plec": "ogółem",
+		"znak_kreska": "Zjawisko nie wystąpiło. W pliku gry jest 0.",
+		"znak_kropka": "Brak informacji albo tajemnica. Tej sekcji nie ma w wagach, nie wpisuję zera."
+	}
+}

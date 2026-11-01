@@ -1,0 +1,865 @@
+{
+	"kod_2": "96",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "961101",
+			"nazwa": "Ładowacz nieczystości płynnych",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961102",
+			"nazwa": "Ładowacz nieczystości stałych",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961103",
+			"nazwa": "Pracownik zbiórki odpadów",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961190",
+			"nazwa": "Pozostali ładowacze nieczystości",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961201",
+			"nazwa": "Sortowacz surowców wtórnych",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961202",
+			"nazwa": "Sortowacz odpadów komunalnych",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961290",
+			"nazwa": "Pozostali sortowacze odpadów",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961301",
+			"nazwa": "Robotnik oczyszczania miasta",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961302",
+			"nazwa": "Robotnik placowy",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961303",
+			"nazwa": "Zamiatacz",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "961390",
+			"nazwa": "Pozostali zamiatacze i pokrewni",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962101",
+			"nazwa": "Bagażowy",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962102",
+			"nazwa": "Boy hotelowy",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962103",
+			"nazwa": "Dostawca potraw",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962104",
+			"nazwa": "Dźwigowy (windziarz)",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962105",
+			"nazwa": "Goniec",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962106",
+			"nazwa": "Kolporter",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962107",
+			"nazwa": "Noszowy",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962190",
+			"nazwa": "Pozostali gońcy, bagażowi i pokrewni",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962201",
+			"nazwa": "Pracownik prac dorywczych",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962202",
+			"nazwa": "Statysta",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962290",
+			"nazwa": "Pozostali pracownicy wykonujący dorywcze prace proste",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962301",
+			"nazwa": "Odczytywacz liczników",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962302",
+			"nazwa": "Wybieracz monet / żetonów z automatów",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962901",
+			"nazwa": "Bileter",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962902",
+			"nazwa": "Dozorca",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962903",
+			"nazwa": "Parkingowy",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962904",
+			"nazwa": "Szaleciarz",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962905",
+			"nazwa": "Szatniarz",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962906",
+			"nazwa": "Woźny",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962907",
+			"nazwa": "Pracownik obsługi hotelowej*",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962908",
+			"nazwa": "Pracownik parku rozrywki",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "962990",
+			"nazwa": "Pozostali pracownicy wykonujący prace proste gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

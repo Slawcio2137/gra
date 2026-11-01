@@ -107,14 +107,17 @@ func _uruchom() -> int:
 		return 1
 	root._wejdz_w_kategorie_zakupow({"id": "samochod", "nazwa": "Samochód", "stan_uzywany_nowy": true})
 	await process_frame
-	if root._stos.size() != 2:
-		printerr("FAIL: stos po Samochodzie != 2 jest=", root._stos.size())
+	if root._stos.size() != 3:
+		printerr("FAIL: stos po Samochodzie != 3 (Zakupy/grupa/auto) jest=", root._stos.size())
 		return 1
 	if str(root._stos[0].get("id", "")) != "zakupy":
 		printerr("FAIL: rodzic nie Zakupy: ", root._stos[0])
 		return 1
-	if str(root._stos[1].get("tresc", "")) != "zakupy_kategoria":
-		printerr("FAIL: brak kategorii na stosie: ", root._stos[1])
+	if str(root._stos[1].get("tresc", "")) != "zakupy_grupa":
+		printerr("FAIL: brak grupy Środki transportu: ", root._stos[1])
+		return 1
+	if str(root._stos[2].get("tresc", "")) != "zakupy_kategoria":
+		printerr("FAIL: brak kategorii na stosie: ", root._stos[2])
 		return 1
 	# Skok „obok” hierarchii (Mapa) nie dokleja do Zakupów — ustawia ścieżkę rodziców Mapa.
 	root._otworz_akcje({"id": "mapa", "nazwa": "Mapa", "tryb": "ekran", "tresc": "mapa"})

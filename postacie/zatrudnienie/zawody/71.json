@@ -1,0 +1,2763 @@
+{
+	"kod_2": "71",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "711101",
+			"nazwa": "Konserwator budynków i stanu technicznego pomieszczeń",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711102",
+			"nazwa": "Monter konstrukcji budowlanych*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711103",
+			"nazwa": "Renowator zabytków architektury",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711104",
+			"nazwa": "Robotnik budowlany",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711190",
+			"nazwa": "Pozostali monterzy konstrukcji budowlanych i konserwatorzy budynków",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711201",
+			"nazwa": "Monter kamiennych elementów budowlanych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711202",
+			"nazwa": "Murarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711203",
+			"nazwa": "Zdun*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711204",
+			"nazwa": "Murarz-tynkarz*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711205",
+			"nazwa": "Brukarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711290",
+			"nazwa": "Pozostali murarze i pokrewni",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711301",
+			"nazwa": "Kamieniarz*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711390",
+			"nazwa": "Pozostali robotnicy obróbki kamienia",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711401",
+			"nazwa": "Betoniarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711402",
+			"nazwa": "Betoniarz-zbrojarz*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711403",
+			"nazwa": "Palowniczy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711404",
+			"nazwa": "Zbrojarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711490",
+			"nazwa": "Pozostali betoniarze, betoniarze zbrojarze i pokrewni",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711501",
+			"nazwa": "Cieśla*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711502",
+			"nazwa": "Cieśla szalunkowy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711503",
+			"nazwa": "Stolarz budowlany",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711504",
+			"nazwa": "Szkutnik",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711505",
+			"nazwa": "Monter jachtów i łodzi*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711590",
+			"nazwa": "Pozostali cieśle i stolarze budowlani",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711602",
+			"nazwa": "Dróżnik obchodowy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711603",
+			"nazwa": "Monter nawierzchni kolejowej*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711605",
+			"nazwa": "Toromistrz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711606",
+			"nazwa": "Układacz nawierzchni drogowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711690",
+			"nazwa": "Pozostali robotnicy budowy dróg",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711701",
+			"nazwa": "Monter budownictwa wodnego*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711901",
+			"nazwa": "Montażysta dekoracji",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711902",
+			"nazwa": "Monter reklam",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711903",
+			"nazwa": "Monter rusztowań",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711904",
+			"nazwa": "Robotnik rozbiórki budowli",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711905",
+			"nazwa": "Monter ogrodzeń",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711906",
+			"nazwa": "Monter konstrukcji targowo-wystawienniczych*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "711990",
+			"nazwa": "Pozostali robotnicy budowlani robót stanu surowego i pokrewni gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712101",
+			"nazwa": "Dekarz*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712201",
+			"nazwa": "Cykliniarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712202",
+			"nazwa": "Glazurnik",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712203",
+			"nazwa": "Parkieciarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712204",
+			"nazwa": "Posadzkarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712290",
+			"nazwa": "Pozostali posadzkarze, parkieciarze i glazurnicy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712301",
+			"nazwa": "Monter ociepleń budynków",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712302",
+			"nazwa": "Sztukator",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712303",
+			"nazwa": "Tynkarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712304",
+			"nazwa": "Monter fasad",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712390",
+			"nazwa": "Pozostali tynkarze i pokrewni",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712401",
+			"nazwa": "Monter izolacji budowlanych*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712402",
+			"nazwa": "Monter izolacji chemoodpornych i antykorozyjnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712403",
+			"nazwa": "Monter izolacji przemysłowych*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712404",
+			"nazwa": "Termoizoler",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712490",
+			"nazwa": "Pozostali monterzy izolacji",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712501",
+			"nazwa": "Monter / składacz okien",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712502",
+			"nazwa": "Szklarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712503",
+			"nazwa": "Szklarz budowlany",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712504",
+			"nazwa": "Szklarz pojazdów",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712505",
+			"nazwa": "Witrażownik",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712506",
+			"nazwa": "Monter szkła budowlanego",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712590",
+			"nazwa": "Pozostali szklarze",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712601",
+			"nazwa": "Hydraulik",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712603",
+			"nazwa": "Monter instalacji gazowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712604",
+			"nazwa": "Monter instalacji i urządzeń sanitarnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712605",
+			"nazwa": "Monter rurociągów górniczych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712606",
+			"nazwa": "Monter rurociągów okrętowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712607",
+			"nazwa": "Monter rurociągów przemysłowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712608",
+			"nazwa": "Monter sieci cieplnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712609",
+			"nazwa": "Monter sieci deszczownianych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712610",
+			"nazwa": "Monter sieci gazowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712612",
+			"nazwa": "Monter sieci wodnych i kanalizacyjnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712613",
+			"nazwa": "Monter systemów rurociągowych*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712614",
+			"nazwa": "Monter urządzeń energetyki odnawialnej",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712615",
+			"nazwa": "Studniarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712616",
+			"nazwa": "Monter sieci, instalacji i urządzeń sanitarnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712617",
+			"nazwa": "Monter instalacji gazów medycznych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712618",
+			"nazwa": "Monter sieci i instalacji sanitarnych*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712690",
+			"nazwa": "Pozostali hydraulicy i monterzy rurociągów",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712701",
+			"nazwa": "Mechanik urządzeń chłodniczych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712702",
+			"nazwa": "Mechanik urządzeń klimatyzacyjnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712703",
+			"nazwa": "Monter / konserwator instalacji wentylacyjnych i klimatyzacyjnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712790",
+			"nazwa": "Pozostali monterzy i konserwatorzy instalacji klimatyzacyjnych i chłodniczych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712901",
+			"nazwa": "Monter płyt kartonowo-gipsowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712902",
+			"nazwa": "Monter systemów suchej zabudowy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712904",
+			"nazwa": "Technolog robót wykończeniowych w budownictwie",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712905",
+			"nazwa": "Monter zabudowy i robót wykończeniowych w budownictwie*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712906",
+			"nazwa": "Monter stolarki budowlanej*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "712990",
+			"nazwa": "Pozostali robotnicy budowlani robót wykończeniowych i pokrewni gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713101",
+			"nazwa": "Malarz-tapeciarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713102",
+			"nazwa": "Malarz budowlany",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713104",
+			"nazwa": "Szpachlarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713105",
+			"nazwa": "Tapeciarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713190",
+			"nazwa": "Pozostali malarze i pokrewni",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713201",
+			"nazwa": "Lakiernik",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713202",
+			"nazwa": "Lakiernik proszkowy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713203",
+			"nazwa": "Lakiernik samochodowy*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713204",
+			"nazwa": "Lakiernik tworzyw sztucznych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713205",
+			"nazwa": "Lakiernik wyrobów drzewnych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713206",
+			"nazwa": "Malarz-lakiernik samolotowy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713207",
+			"nazwa": "Malarz-lakiernik konstrukcji i wyrobów metalowych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713208",
+			"nazwa": "Piaskarz",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713290",
+			"nazwa": "Pozostali lakiernicy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713301",
+			"nazwa": "Alpinista przemysłowy",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713302",
+			"nazwa": "Czyściciel elewacji budowlanych",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713303",
+			"nazwa": "Kominiarz*",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713304",
+			"nazwa": "Robotnik osuszania i odgrzybiania budowli",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "713390",
+			"nazwa": "Pozostali robotnicy czyszczący konstrukcje budowlane i pokrewni",
+			"wielka_grupa": "7",
+			"wielka_grupa_nazwa": "ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY",
+			"zarobki": {
+				"mediana_zl": 6400
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

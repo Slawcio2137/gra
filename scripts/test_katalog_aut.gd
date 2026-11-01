@@ -55,6 +55,7 @@ func _uruchom() -> int:
 	}
 	rynek.zapewnij_pule(swiat, miasta, mid, 1)
 	rynek.aktywuj_zakladke_samochodow(swiat, miasta, mid, 1)
+	rynek.uzupelnij_okno_aut(swiat, miasta, {"poziom": "polska", "km": 9999.0, "stan": "nowy", "tydzien": 1}, 8)
 	var auta: Array = []
 	var uzywane_pula: Array = []
 	for o in swiat["rynek_zakupow"]["oferty"]:

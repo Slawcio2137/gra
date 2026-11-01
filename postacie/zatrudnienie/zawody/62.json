@@ -1,0 +1,189 @@
+{
+	"kod_2": "62",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "621001",
+			"nazwa": "Drwal / pilarz drzew",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "621002",
+			"nazwa": "Robotnik leśny",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "621003",
+			"nazwa": "Wozak zrywkarz",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "621090",
+			"nazwa": "Pozostali robotnicy leśni i pokrewni",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "622101",
+			"nazwa": "Hodowca ryb",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "622201",
+			"nazwa": "Rybak śródlądowy*",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "622301",
+			"nazwa": "Rybak rybołówstwa morskiego",
+			"wielka_grupa": "6",
+			"wielka_grupa_nazwa": "ROLNICY, OGRODNICY, LEŚNICY I RYBACY",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 8,
+				"zmeczenie_psychiczne": 2,
+				"sylwetka": 2,
+				"inteligencja": 0,
+				"zdrowie": -1,
+				"wyglad": -1,
+				"sila": 1,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

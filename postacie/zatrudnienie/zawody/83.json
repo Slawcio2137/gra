@@ -1,0 +1,2243 @@
+{
+	"kod_2": "83",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "831101",
+			"nazwa": "Kierowca drezyny i wózka motorowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831102",
+			"nazwa": "Kierowca lokomotywy spalinowej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831103",
+			"nazwa": "Maszynista pociągu metra",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831104",
+			"nazwa": "Maszynista",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831105",
+			"nazwa": "Maszynista pomocniczych pojazdów kolejowych metra",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831106",
+			"nazwa": "Prowadzący maszyny do kolejowych robót budowlanych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831190",
+			"nazwa": "Pozostali maszyniści kolejowi i metra",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831201",
+			"nazwa": "Dróżnik przejazdowy",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831202",
+			"nazwa": "Dyspozytor ruchu metra",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831203",
+			"nazwa": "Dyżurny ruchu i stacji metra",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831204",
+			"nazwa": "Dyżurny ruchu",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831205",
+			"nazwa": "Manewrowy",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831206",
+			"nazwa": "Manewrowy metra",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831207",
+			"nazwa": "Nastawniczy",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831208",
+			"nazwa": "Operator pociągowy",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831209",
+			"nazwa": "Rewident taboru",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831210",
+			"nazwa": "Ustawiacz",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831211",
+			"nazwa": "Zwrotniczy",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831212",
+			"nazwa": "Dyspozytor ruchu kolejowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "831290",
+			"nazwa": "Pozostali dyżurni ruchu, manewrowi i pokrewni",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832101",
+			"nazwa": "Kurier motocyklowy",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832190",
+			"nazwa": "Pozostali kierowcy motocykli",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832201",
+			"nazwa": "Kierowca mechanik*",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832202",
+			"nazwa": "Kierowca samochodu dostawczego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832203",
+			"nazwa": "Kierowca samochodu osobowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832204",
+			"nazwa": "Przewoźnik osób",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832205",
+			"nazwa": "Taksówkarz",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832206",
+			"nazwa": "Kierowca pojazdu uprzywilejowanego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "832290",
+			"nazwa": "Pozostali kierowcy samochodów osobowych i dostawczych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833101",
+			"nazwa": "Kierowca autobusu",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833102",
+			"nazwa": "Kierowca trolejbusu",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833103",
+			"nazwa": "Kierujący tramwajem (motorniczy)",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833190",
+			"nazwa": "Pozostali kierowcy autobusów i motorniczowie tramwajów",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833201",
+			"nazwa": "Kierowca autocysterny",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833202",
+			"nazwa": "Kierowca ciągnika siodłowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833203",
+			"nazwa": "Kierowca samochodu ciężarowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "833290",
+			"nazwa": "Pozostali kierowcy samochodów ciężarowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834101",
+			"nazwa": "Kierowca ciągnika rolniczego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834102",
+			"nazwa": "Kombajnista (kierowca kombajnu)",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834103",
+			"nazwa": "Mechanik-operator pojazdów i maszyn rolniczych*",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834104",
+			"nazwa": "Operator ciągników zrywkowych do zrywki podwieszanej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834105",
+			"nazwa": "Operator maszyn leśnych*",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834106",
+			"nazwa": "Operator maszyn ogrodniczych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834107",
+			"nazwa": "Operator maszyn rolniczych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834108",
+			"nazwa": "Operator nasiębiernych ciągników zrywkowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834109",
+			"nazwa": "Operator urządzeń technicznych stosowanych w leśnictwie",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834110",
+			"nazwa": "Operator wielooperacyjnych samojezdnych maszyn leśnych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834111",
+			"nazwa": "Operator zrywkowych kolejek linowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834190",
+			"nazwa": "Pozostali operatorzy wolnobieżnych maszyn rolniczych i leśnych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834201",
+			"nazwa": "Mechanik maszyn i urządzeń drogowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834202",
+			"nazwa": "Operator maszyn drogowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834203",
+			"nazwa": "Operator maszyn i sprzętu torowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834204",
+			"nazwa": "Operator sprzętu ciężkiego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834205",
+			"nazwa": "Operator koparki",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834206",
+			"nazwa": "Operator koparko-ładowarki",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834207",
+			"nazwa": "Operator ładowarki",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834208",
+			"nazwa": "Operator spycharki",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834209",
+			"nazwa": "Operator maszyn i urządzeń do robót ziemnych i drogowych*",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834290",
+			"nazwa": "Pozostali operatorzy sprzętu do robót ziemnych i urządzeń pokrewnych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834301",
+			"nazwa": "Maszynista doku",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834302",
+			"nazwa": "Maszynista górniczych maszyn wyciągowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834303",
+			"nazwa": "Maszynista kolei linowych, wyciągów narciarskich i zjeżdżalni grawitacyjnych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834304",
+			"nazwa": "Maszynista obsługujący urządzenia do napełniania i opróżniania zbiorników",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834305",
+			"nazwa": "Maszynista specjalistycznych dźwignic kolejowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834306",
+			"nazwa": "Operator dźwignic linotorowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834307",
+			"nazwa": "Operator-mechanik wyciągarki szybowcowej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834308",
+			"nazwa": "Operator mostu zwodzonego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834309",
+			"nazwa": "Operator przenośników",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834310",
+			"nazwa": "Operator przenośników taśmowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834311",
+			"nazwa": "Operator suwnic (suwnicowy)",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834312",
+			"nazwa": "Operator śluzy, jazu, zapory i pompowni",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834313",
+			"nazwa": "Operator urządzeń ładunkowych silosu",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834314",
+			"nazwa": "Operator wieżowy przenośnika taśmowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834315",
+			"nazwa": "Operator wywrotnic wagonowych",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834316",
+			"nazwa": "Operator żurawia jezdniowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834317",
+			"nazwa": "Operator żurawia wieżowego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834390",
+			"nazwa": "Pozostali maszyniści i operatorzy maszyn i urządzeń dźwigowo-transportowych i pokrewni",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "834401",
+			"nazwa": "Kierowca operator wózków jezdniowych (widłowych)",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835001",
+			"nazwa": "Flisak-retman",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835002",
+			"nazwa": "Latarnik",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835003",
+			"nazwa": "Marynarz statku morskiego",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835004",
+			"nazwa": "Marynarz żeglugi śródlądowej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835005",
+			"nazwa": "Sternik żeglugi śródlądowej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835006",
+			"nazwa": "Bosman żeglugi śródlądowej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835007",
+			"nazwa": "Przewoźnik żeglugi śródlądowej",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "835090",
+			"nazwa": "Pozostali marynarze i pokrewni",
+			"wielka_grupa": "8",
+			"wielka_grupa_nazwa": "OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ",
+			"zarobki": {
+				"mediana_zl": 6700
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

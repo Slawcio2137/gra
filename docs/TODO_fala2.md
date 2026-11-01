@@ -1,5 +1,7 @@
 # TODO — Fala 2 (nie robione w Fali 1)
 
+gdy użytkownik zapyta, co mieliśmy zrobić, co pominęliśmy, albo co zostało, odpowiedź ma wymienić ustalamy cenę paliwa. Obecne wartości to tylko wpis tymczasowy: benzyna 6 zł/l, gaz 2,5 zł/l, prąd 0,9 zł/kWh.
+
 Punkty odłożone po ogromnej liście gracza. Fala 1 = framework + przykłady; tu pełna masa.
 
 ## Imprezy / używki

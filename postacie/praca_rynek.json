@@ -1,0 +1,222 @@
+{
+	"opis": "Tablica ogłoszeń i tydzień w pracy. Kotwica płacy bierze się z katalogu KZiS (GUS, wielka grupa, już zaokrąglona) i nie wchodzi na kartę. Stawka w ogłoszeniu jest losowana wokół tej kotwicy. Wymagania, negocjacje, upomnienia, zwolnienie i podwyżka to projekt gry, nie statystyka urzędu.",
+	"propozycja_do_poprawki": true,
+	"okno": {
+		"start": 8,
+		"wyprzedzenie": 5,
+		"max_jednej_dokladki": 16,
+		"max_proby_na_oferte": 12,
+		"waznosc_tygodni": 4,
+		"uwaga": "Ogłoszenia powstają przy wejściu w Praca i przy scrollu. Tura tylko zdejmuje przeterminowane, nic nie dorzuca."
+	},
+	"wymagania_wielkiej_grupy": {
+		"0": {"wyksztalcenie": 1, "doswiadczenie": 1},
+		"1": {"wyksztalcenie": 2, "doswiadczenie": 4},
+		"2": {"wyksztalcenie": 3, "doswiadczenie": 2},
+		"3": {"wyksztalcenie": 2, "doswiadczenie": 1},
+		"4": {"wyksztalcenie": 1, "doswiadczenie": 0},
+		"5": {"wyksztalcenie": 0, "doswiadczenie": 0},
+		"6": {"wyksztalcenie": 0, "doswiadczenie": 1},
+		"7": {"wyksztalcenie": 1, "doswiadczenie": 1},
+		"8": {"wyksztalcenie": 1, "doswiadczenie": 1},
+		"9": {"wyksztalcenie": 0, "doswiadczenie": 0}
+	},
+	"doswiadczenie_dodatek": "Ostatnia cyfra kodu KZiS nieparzysta dodaje 1 do wymaganego doświadczenia. Reszta grupy ma bazę z tabeli. To nie jest staż z klasyfikacji.",
+	"poziomy_wyksztalcenia": [
+		{"id": 0, "nazwa": "Podstawowe"},
+		{"id": 1, "nazwa": "Branżowe"},
+		{"id": 2, "nazwa": "Średnie"},
+		{"id": 3, "nazwa": "Wyższe"}
+	],
+	"wyksztalcenie_bohatera": {
+		"klucz": "poziom_wyksztalcenia",
+		"fallback": "Jak klucza nie ma: wpis edukacji ze studiami albo wyższym = 3, liceum albo technikum = 2, branżowa = 1, inaczej 0. Nie budujemy tu systemu szkół.",
+		"propozycja_do_poprawki": true
+	},
+	"doswiadczenie_bohatera": {
+		"klucz": "doswiadczenie_zawodowe",
+		"start": 0,
+		"przyrost_tygodnia": 1,
+		"propozycja_do_poprawki": true,
+		"uwaga": "Stary licznik zostaje tylko jako zapas, gdy nie ma jeszcze wprawy w danym prefiksie. Nowy staż u tego pracodawcy to staz_tygodni przy etacie i startuje od zera. Wprawa zawodowa żyje osobno i nie ginie z odejściem."
+	},
+	"wprawa_zawodowa": {
+		"propozycja_do_poprawki": true,
+		"klucz": "wprawa_zawodowa",
+		"jak": "Jak wprawa gotowania: etap i punkty X/100. Pełne 100 punktów wchodzi w kolejny etap.",
+		"prefiks": "4 cyfry kodu KZiS. W katalogu są grupy czterocyfrowe (445). Krótszy kod bierze 3 cyfry. 711201 i 711202 dzielą pulę 7112. Daleki kod, np. 2212, jej nie rusza.",
+		"punkty_w_etapie_max": 100,
+		"punkty_za_tydzien": 8,
+		"etapy": ["brak", "początek", "pewna ręka", "wprawa", "biegłość", "mistrzostwo"],
+		"uwaga": "Poziom do wymagań oferty to numer etapu. Nie daję osobnego toru każdemu z 2945 nazw."
+	},
+	"staz_u_pracodawcy": {
+		"klucz": "staz_tygodni",
+		"start": 0,
+		"propozycja_do_poprawki": true,
+		"uwaga": "Licznik tylko tej umowy. Rośnie o 1 za przepracowany tydzień, także w wypowiedzeniu. Po końcu wypowiedzenia albo zwolnieniu zapis etatu znika i licznik przestaje iść."
+	},
+	"oferty_bez_placy": "Zawód z zarobki null (wielka grupa 0) nie wchodzi na tablicę. Nie wymyślamy mu kwoty.",
+	"wynagrodzenie_ogloszenia": {
+		"propozycja_do_poprawki": true,
+		"min_udzial": 0.85,
+		"max_udzial": 1.1,
+		"rodzaj": "brutto_miesiac",
+		"uwaga": "Kotwica to mediana wielkiej grupy GUS, miesięczna i brutto (cytat w postacie/losowanie/zarobki_kraje.json: „Mediana wynagrodzeń brutto”). Nie przeliczamy jej na netto. Najpierw mnożniki wymagań przesuwają kotwicę, potem stawka na karcie jest losowana od 85% do 110% przesuniętej kotwicy i zaokrąglana jak inne płace (zwykle 2 cyfry znaczące). To nie jest nowa liczba GUS i nie jest suwakiem negocjacji. Negocjacja startuje od wystawionej kwoty brutto, od 100% do 150%."
+	},
+	"mnozniki_wymagan": {
+		"propozycja_do_poprawki": true,
+		"wyksztalcenie_w_gore": 1.08,
+		"doswiadczenie_w_gore": 1.06,
+		"doswiadczenie_w_dol": 0.94,
+		"szansa_wyksztalcenia_wyzej": 0.45,
+		"prog_doswiadczenia_nizej": 0.34,
+		"prog_doswiadczenia_wyzej": 0.67,
+		"uwaga": "To nie jest GUS i nie jest dopłata za wybrzeże. Ogłoszenie może podnieść wykształcenie ponad bazę zawodu albo podnieść albo obniżyć doświadczenie. Każdy poziom wykształcenia w górę mnoży kotwicę przez 1,08. Każdy poziom doświadczenia w górę mnoży przez 1,06, w dół przez 0,94. Wykształcenie nie schodzi poniżej bazy. Potem zostaje pasmo 85–110% wokół tej przesuniętej kotwicy."
+	},
+	"tekst_ogloszenia": {
+		"doswiadczenie": {
+			"0": "nie jest wymagane",
+			"1": "krótkie doświadczenie",
+			"kilka": "kilka lat doświadczenia",
+			"dlugie": "długie doświadczenie"
+		},
+		"cechy": {
+			"propozycja_do_poprawki": true,
+			"uwaga": "Frazy są w dopełniaczu liczby mnogiej, bo stoją po „ludzi”. Nie wstawiamy mianownika: pracowitość, siła fizyczna. Kilka cech na ogłoszenie, nie cała lista cech z karty postaci. Klienci: profil fizyczna_lekka i wielka grupa 5 (kiosk, sklep, kelner). Strażak zostaje przy profilu fizyczna.",
+			"ramy": [
+				"Cenimy ludzi %s.",
+				"Potrzebujemy ludzi %s."
+			],
+			"profile": {
+				"fizyczna": ["pracowitych", "silnych fizycznie", "umiejących pracować w grupie"],
+				"fizyczna_lekka": ["pracowitych", "sprawnych", "wytrzymałych"],
+				"biurowa": ["pracowitych", "sumiennych", "umiejących pracować przy biurku"],
+				"kreatywna": ["pracowitych", "pomysłowych", "umiejących szukać nowych rozwiązań"],
+				"opiekuncza": ["pracowitych", "cierpliwych", "umiejących opiekować się ludźmi"],
+				"klienci": ["pracowitych", "umiejących pracować z klientami", "uprzejmych"]
+			}
+		}
+	},
+	"negocjacje": {
+		"propozycja_do_poprawki": true,
+		"min_udzial": 1.0,
+		"max_udzial": 1.5,
+		"szansa_gdy_luka_i_nadwyzka": 0.45,
+		"bez_negocjacji": "Płaca zostaje z ogłoszenia, gdy brak luk. Jedna luka i nic powyżej wymagań to twarda odmowa: Tak nie zatrudnia. Jedna luka i druga kwalifikacja powyżej wymagań, bez suwaka: szansa 0,45 na zgodę na kwotę z ogłoszenia. Powyżej progu też twarda odmowa. To propozycja, nie pomiar.",
+		"odmowa": "Odmowa żądania płacy, gdy wymagania są spełnione, nie kasuje aplikacji. Zostają trzy wybory: przyjąć warunki pracodawcy, odejść, albo negocjować jeszcze raz. Twarda odmowa z braku kwalifikacji nie daje zatrudnienia.",
+		"zgoda": "Przy suwaku płaca to żądanie od 100% do 150% ogłoszenia, obcięte do pasma i zaokrąglone do 2 cyfr znaczących. Nie schodzi się poniżej ogłoszenia.",
+		"kontroferta": "Środek między ogłoszeniem a żądaniem, potem to samo zaokrąglenie.",
+		"progi": "Szansa zgody rośnie z dopasowaniem (0–2) i spada, gdy suwak jest powyżej ogłoszenia. Reszta rzutu to kontroferta, a ogon to odmowa."
+	},
+	"szef": {
+		"nazwa": "Kierownik",
+		"relacja_start": 50,
+		"propozycja_do_poprawki": true,
+		"uwaga": "Nie ma osobnej osoby szefa w zapisie. Relacja 0–100 siedzi przy tej pracy."
+	},
+	"tydzien": {
+		"propozycja_do_poprawki": true,
+		"angaz_start": 50,
+		"zly_angaz_ponizej": 35,
+		"zmeczenie_zle_od": 80,
+		"upomnienie_relacja": -10,
+		"satysfakcja_start": 70,
+		"satysfakcja_zwolnienie_ponizej_lub_rowno": 15,
+		"podwyzka_tygodnia_udzial": 1.05,
+		"premia_udzial": 0.1,
+		"progi_skutecznosci": [0.28, 0.42, 0.58, 0.75],
+		"pasma": {
+			"wyraznie_gorzej": {"satysfakcja": -14, "upomnienie": true, "szansa_podwyzki": 0.0, "szansa_premii": 0.0},
+			"troche_gorzej": {"satysfakcja": -6, "upomnienie": true, "szansa_podwyzki": 0.0, "szansa_premii": 0.05},
+			"w_porzadku": {"satysfakcja": 1, "upomnienie": false, "szansa_podwyzki": 0.04, "szansa_premii": 0.12},
+			"dobrze": {"satysfakcja": 6, "upomnienie": false, "szansa_podwyzki": 0.12, "szansa_premii": 0.3},
+			"bardzo_dobrze": {"satysfakcja": 12, "upomnienie": false, "szansa_podwyzki": 0.22, "szansa_premii": 0.45}
+		},
+		"skutecznosc": "0,35×zaangażowanie + 0,2×wiedza_pkt/20 + 0,2×kondycja/100 + 0,15×wprawa etap/10 − 0,15×zmeczenie_fizyczne/100 − 0,1×zmeczenie_psychiczne/100. Kondycja jest sprawnością. Brak kondycji bierze siłę, a jak i jej nie ma — 40.",
+		"kolejnosc": "Najpierw brzemię drugiej pracy, potem pasmo tygodnia, potem delty z katalogu. Liczba upomnień nie zwalnia. Inteligencja zostaje rodzajami.",
+		"uwaga": "Pięć pasm: wyraźnie gorzej, trochę gorzej, w porządku, dobrze, bardzo dobrze. Zaangażowanie poniżej 35 zsuwa pasmo o jeden, od 80 podnosi o jeden. Zmęczenie od 80 nie pozwala wyjść ponad trochę gorzej. Zwolnienie, gdy satysfakcja pracodawcy spadnie do progu albo niżej."
+	},
+	"prosba_o_podwyzke": {
+		"propozycja_do_poprawki": true,
+		"slaby_angaz_ponizej": 40,
+		"slaba_skutecznosc_ponizej": 0.4,
+		"relacja_gdy_slabo": -12,
+		"szansa_gdy_slabo": 0.08,
+		"relacja_gdy_dobrze": 2,
+		"szansa_gdy_dobrze": 0.55,
+		"udzial_podwyzki": 1.08,
+		"relacja_gdy_sie_uda": 6,
+		"uwaga": "Przy niskim zaangażowaniu prośba psuje relację i rzadko przechodzi. Przy wysokim relacja nie spada od samego pytania i próg zgody jest wyższy."
+	},
+	"satysfakcja_szefa": {
+		"propozycja_do_poprawki": true,
+		"start": 70,
+		"zwolnienie_gdy_spadnie_do": 15,
+		"cechy": {
+			"lagodny": 0.75,
+			"cierpliwy": 0.75,
+			"empatyczny": 0.75,
+			"zyczliwy": 0.75,
+			"spokojny": 0.75,
+			"oschly": 1.35,
+			"wybuchowy": 1.35,
+			"drazliwy": 1.35,
+			"agresywny": 1.35
+		},
+		"kolejnosc_losowania": ["lagodny", "cierpliwy", "empatyczny", "spokojny", "oschly", "wybuchowy", "drazliwy", "agresywny"],
+		"uwaga": "Id cech są z postacie/cechy_charakteru.json. Mnożnik skaluje ruch satysfakcji w obie strony. Brak cechy albo cecha spoza listy = 1. To nie jest waga z badania."
+	},
+	"dwie_prace": {
+		"propozycja_do_poprawki": true,
+		"maks": 2,
+		"zmeczenie_fizyczne": 12,
+		"zmeczenie_psychiczne": 12,
+		"uwaga": "Drugi etat nie kasuje pierwszego. Raz na tydzień, gdy obie umowy trwają, dochodzi zmęczenie. Wypowiedzenie nie zdejmuje brzemienia, dopóki umowa jeszcze trwa."
+	},
+	"wypowiedzenie": {
+		"propozycja_do_poprawki": true,
+		"min_tygodni": 3,
+		"max_tygodni": 9,
+		"uwaga": "Rzutu 0–1 zamienia się na 3–9 tygodni. W tym czasie etat zostaje, staż rośnie. Po ostatnim takim tygodniu etat znika."
+	},
+	"zasieg": {
+		"poziomy": ["miasto", "wojewodztwo", "polska"],
+		"okno_zostaje": "Na liście dalej jest okno start 8 i dokładka 5. Pula jest licznikiem za scrollem, nie liczbą wierszy budowanych od razu.",
+		"brak_miasta": "Nieznane miejsce daje pulę 0. Nie podstawiamy innego miasta.",
+		"wies": "Pobyt w reszcie powiatu bierze ludność siedziby, czyli miasta powiatowego. Nie bierze ludności wsi ani obcego miasta.",
+		"oferta_na_mieszkancow": {
+			"mieszkancow_na_oferte": 412,
+			"wolne_miejsca_koniec_iv_kw_2024": 91000,
+			"ludnosc_polski_31_12_2024": 37489100,
+			"zrodlo_wolnych_miejsc": "GUS, Popyt na pracę w czwartym kwartale 2024 r., informacja z 10.03.2025: na koniec kwartału 91,0 tys. wolnych miejsc pracy w podmiotach od 1 pracującego.",
+			"url_wolnych_miejsc": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/popyt-na-prace/popyt-na-prace-w-czwartym-kwartale-2024-r-,2,57.html",
+			"zrodlo_ludnosci_mianownika": "GUS, Ludność. Stan i struktura oraz ruch naturalny w przekroju terytorialnym w 2024 r., stan 31.12.2024: 37 489,1 tys.",
+			"url_ludnosci": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5468/6/38/1/ludnosc_stan_i_struktura_oraz_ruch_naturalny_w_przekroju_terytorialnym_na_31-12-2024.pdf",
+			"rachunek": "37 489 100 / 91 000 = 411,97, w grze 412 mieszkańców na jedno wolne miejsce. Licznik puli bierze ludność miejsc z plików gry (GUS, tabl. 19, stan podziału 2026-01-01), nie tę jedną liczbę krajową wstawioną na sztywno. To nie jest 1 ogłoszenie na 5000 mieszkańców z rynku aut.",
+			"wskaznik_074_nie_uzywany": "Wskaźnik wolnych miejsc 0,74% jest udziałem w miejscach pracy, nie w ludności. Nie wchodzi do wzoru."
+		},
+		"czynniki_branzy": {
+			"propozycja_do_poprawki": true,
+			"zakres": "Ta sama tabela dla każdego województwa, bo nie ma cytowanego przekroju branża×województwo. W mieście suma ofert zostaje przy ludności (Chrzanów około 81). Czynniki ruszają tylko skład rodzajów wewnątrz tej sumy, także przy zasięgu miasto. Województwo i Polska trzymają już przyjęte sumy.",
+			"kiedy": "Domyślny miks ofert nie używa tej tabeli. Bierze zatrudnienie z postacie/zatrudnienie/. Tabela zostaje tylko dla nakładki czynniki_test. Skala sumy województwa i Polski jest jedna, ta sama wszędzie, i nie zmienia udziału górnictwa.",
+			"uwaga": "Nie ma w grze Barometru zawodów ani tabeli GUS branża×województwo. Trzy mnożniki są jedną skromną propozycją na wielką grupę KZiS, tą samą dla każdego województwa i dla Polski. Każdy mieści się w 0,85–1,15. To nie są oficjalne stopy deficytu.",
+			"pola": ["nacisk_branzy", "zaawansowanie", "brak_pracownikow"],
+			"grupy": {
+				"1": {"nacisk_branzy": 1.04, "zaawansowanie": 1.06, "brak_pracownikow": 0.98},
+				"2": {"nacisk_branzy": 1.06, "zaawansowanie": 1.08, "brak_pracownikow": 1.04},
+				"3": {"nacisk_branzy": 1.02, "zaawansowanie": 1.02, "brak_pracownikow": 1.04},
+				"4": {"nacisk_branzy": 0.96, "zaawansowanie": 0.98, "brak_pracownikow": 0.94},
+				"5": {"nacisk_branzy": 1.02, "zaawansowanie": 0.96, "brak_pracownikow": 1.06},
+				"6": {"nacisk_branzy": 0.94, "zaawansowanie": 0.94, "brak_pracownikow": 0.98},
+				"7": {"nacisk_branzy": 1.00, "zaawansowanie": 0.98, "brak_pracownikow": 1.06},
+				"8": {"nacisk_branzy": 1.02, "zaawansowanie": 1.00, "brak_pracownikow": 1.04},
+				"9": {"nacisk_branzy": 0.96, "zaawansowanie": 0.94, "brak_pracownikow": 1.02}
+			}
+		},
+		"udzial_filtra": {
+			"propozycja_do_poprawki": true,
+			"uwaga": "Gdy filtr odcina część katalogu, pula maleje o udział pasujących kodów z płacą. Pełny zakres płacy 0–20000 nie zwęża. To nie jest waga zatrudnienia."
+		}
+	}
+}

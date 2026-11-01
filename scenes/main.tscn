@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmainntrldemo01"]
+[gd_scene load_steps=7 format=3 uid="uid://bmainntrldemo01"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/scroll_dotyk.gd" id="2_scroll"]
 [ext_resource type="Texture2D" path="res://grafika/ikony/start.png" id="3_start"]
 [ext_resource type="Texture2D" path="res://grafika/ikony/ustawienia.png" id="4_ustawienia"]
 [ext_resource type="Texture2D" path="res://grafika/ikony/powrot.png" id="5_powrot"]
@@ -181,6 +182,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
+script = ExtResource("2_scroll")
 
 [node name="TrescBiala" type="VBoxContainer" parent="Gra/Margines/Kolumna/BialyEkran/MarginesBialy/KolumnaBiala/ScrollBialy"]
 layout_mode = 2

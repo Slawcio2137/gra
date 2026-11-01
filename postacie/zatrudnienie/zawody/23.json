@@ -1,0 +1,1775 @@
+{
+	"kod_2": "23",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "231001",
+			"nazwa": "Nauczyciel akademicki – nauki humanistyczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231002",
+			"nazwa": "Nauczyciel akademicki – nauki inżynieryjno-techniczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231003",
+			"nazwa": "Nauczyciel akademicki – nauki medyczne i nauki o zdrowiu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231004",
+			"nazwa": "Nauczyciel akademicki – nauki rolnicze",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231005",
+			"nazwa": "Nauczyciel akademicki – nauki społeczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231006",
+			"nazwa": "Nauczyciel akademicki – nauki ścisłe i przyrodnicze",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231007",
+			"nazwa": "Nauczyciel akademicki – nauki teologiczne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231008",
+			"nazwa": "Nauczyciel akademicki – sztuka",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231009",
+			"nazwa": "Nauczyciel akademicki – nauki o rodzinie",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231010",
+			"nazwa": "Nauczyciel akademicki – nauki weterynaryjne",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "231090",
+			"nazwa": "Pozostali nauczyciele akademiccy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "232001",
+			"nazwa": "Nauczyciel praktycznej nauki zawodu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "232002",
+			"nazwa": "Nauczyciel przedmiotów zawodowych artystycznych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "232003",
+			"nazwa": "Nauczyciel przedmiotów teoretycznych zawodowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "232090",
+			"nazwa": "Pozostali nauczyciele kształcenia zawodowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "233001",
+			"nazwa": "Nauczyciel przedmiotu w szkole ponadpodstawowej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "233090",
+			"nazwa": "Pozostali nauczyciele szkół ponadpodstawowych (z wyjątkiem nauczycieli kształcenia zawodowego)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "234101",
+			"nazwa": "Nauczyciel edukacji wczesnoszkolnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "234102",
+			"nazwa": "Nauczyciel przedmiotu w szkole podstawowej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "234190",
+			"nazwa": "Pozostali nauczyciele szkół podstawowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "234201",
+			"nazwa": "Nauczyciel przedszkola",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "234202",
+			"nazwa": "Nauczyciel innych form wychowania przedszkolnego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "234290",
+			"nazwa": "Pozostali specjaliści do spraw wychowania małego dziecka",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235101",
+			"nazwa": "Andragog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235102",
+			"nazwa": "Ewaluator programów edukacji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235103",
+			"nazwa": "Metodyk edukacji na odległość",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235104",
+			"nazwa": "Metodyk technologii informacyjnych i komunikacyjnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235105",
+			"nazwa": "Nauczyciel doradca metodyczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235106",
+			"nazwa": "Nauczyciel konsultant",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235109",
+			"nazwa": "Wizytator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235190",
+			"nazwa": "Pozostali wizytatorzy i specjaliści metod nauczania",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235201",
+			"nazwa": "Nauczyciel niesłyszących i słabosłyszących (surdopedagog)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235202",
+			"nazwa": "Nauczyciel niedostosowanych społecznie (pedagog resocjalizacji, socjoterapeuta)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235203",
+			"nazwa": "Nauczyciel niewidomych i słabowidzących (tyflopedagog)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235204",
+			"nazwa": "Nauczyciel przewlekle chorych oraz osób z niepełnosprawnością ruchową",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235205",
+			"nazwa": "Nauczyciel osób z niepełnosprawnością intelektualną (oligofrenopedagog)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235290",
+			"nazwa": "Pozostali nauczyciele pracujący z osobami o specjalnych potrzebach edukacyjnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235301",
+			"nazwa": "Lektor języka obcego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235401",
+			"nazwa": "Nauczyciel muzyki w placówkach pozaszkolnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235501",
+			"nazwa": "Instruktor amatorskiego ruchu artystycznego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235502",
+			"nazwa": "Instruktor tańca",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235503",
+			"nazwa": "Nauczyciel sztuki w placówkach pozaszkolnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235590",
+			"nazwa": "Pozostali nauczyciele sztuki w placówkach pozaszkolnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235601",
+			"nazwa": "Nauczyciel technologii informatycznych w placówkach pozaszkolnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235690",
+			"nazwa": "Pozostali instruktorzy technologii informatycznych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235901",
+			"nazwa": "Dydaktyk multimedialny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235902",
+			"nazwa": "Egzaminator on-line",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235903",
+			"nazwa": "Egzaminator osób ubiegających się o uprawnienia do kierowania pojazdem",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235904",
+			"nazwa": "Nauczyciel bibliotekarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235905",
+			"nazwa": "Instruktor praktycznej nauki zawodu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235906",
+			"nazwa": "Nauczyciel logopeda",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235907",
+			"nazwa": "Nauczyciel nauczania na odległość",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235908",
+			"nazwa": "Nauczyciel psycholog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235909",
+			"nazwa": "Nauczyciel specjalista terapii pedagogicznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235910",
+			"nazwa": "Nauczyciel w placówkach pozaszkolnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235911",
+			"nazwa": "Pedagog animacji kulturalnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235912",
+			"nazwa": "Pedagog szkolny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235913",
+			"nazwa": "Specjalista do spraw zarządzania w oświacie",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235914",
+			"nazwa": "Wychowawca w placówkach oświatowych, wsparcia dziennego, wychowawczych i opiekuńczych oraz instytucjach pieczy zastępczej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235915",
+			"nazwa": "Wykładowca na kursach (edukator, trener)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235916",
+			"nazwa": "Animator czasu wolnego młodzieży (pracownik młodzieżowy)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235917",
+			"nazwa": "Korepetytor",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235918",
+			"nazwa": "Nauczyciel domowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235919",
+			"nazwa": "Pedagog specjalny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235920",
+			"nazwa": "Trener osobisty (coach, mentor, tutor)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235921",
+			"nazwa": "Pedagog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235922",
+			"nazwa": "Pedagog mediów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "235990",
+			"nazwa": "Pozostali specjaliści nauczania i wychowania gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

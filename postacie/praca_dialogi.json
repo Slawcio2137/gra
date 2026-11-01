@@ -1,0 +1,87 @@
+{
+	"opis": "Kwestie pracodawcy przy aplikacji. ____ w linii zamienia się na kwotę z rozmowy.",
+	"propozycja_do_poprawki": false,
+	"wybory": ["Tak", "Nie", "Spróbuj ponownej negocjacji"],
+	"wstep": {
+		"odrzucenie_zadania": "",
+		"zgoda_na_zadanie": "",
+		"kontroferta": "",
+		"zgoda_bez_negocjacji": "",
+		"ponowna_proba": "",
+		"brak_kwalifikacji": ""
+	},
+	"grupy": {
+		"odrzucenie_zadania": [
+			"Tyle nie dam. Zostaje ____.",
+			"Nie mam takiej stawki. Płacę ____.",
+			"Za wysoko. Umowa na ____.",
+			"Nie wchodzę w tę kwotę. Płacę ____.",
+			"Na to miejsce jest ____. Wyżej nie.",
+			"Inni biorą ____ i na tym stoimy.",
+			"Nie. Na umowie będzie ____.",
+			"Budżet kończy się na ____.",
+			"Tyle nie przejdzie. Mogę ____.",
+			"Stoimy przy ____."
+		],
+		"zgoda_na_zadanie": [
+			"Dobrze. Płacę ____.",
+			"Zgoda na ____.",
+			"Niech będzie, ____.",
+			"Wchodzę w ____.",
+			"Umowa na ____.",
+			"Pasuje. ____ miesięcznie.",
+			"Biorę tę kwotę. ____.",
+			"Zgoda. Wypłata ____.",
+			"Stoi. ____ od pierwszego tygodnia.",
+			"Da się zrobić. Płacę ____."
+		],
+		"kontroferta": [
+			"Tyle nie. Mogę ____.",
+			"Schodzę najwyżej do ____.",
+			"Moja kwota to ____.",
+			"Spotykamy się przy ____.",
+			"Nie ta liczba. Daję ____.",
+			"Dam ____ i koniec tematu.",
+			"Środek wychodzi ____.",
+			"Zostawiam ____.",
+			"Wyżej niż ____ nie pójdę.",
+			"Moje ostatnie: ____."
+		],
+		"zgoda_bez_negocjacji": [
+			"Biorę cię. Płaca ____.",
+			"Zaczynasz za ____.",
+			"Bez targu. Umowa na ____.",
+			"Papiery się zgadzają. ____.",
+			"Jest miejsce. Wypłata ____.",
+			"Wchodzisz od razu za ____.",
+			"Nie targujemy się. Zostaje ____.",
+			"Pasuje do ogłoszenia. ____.",
+			"Podpisujemy na ____.",
+			"Zgoda. ____, jak w ogłoszeniu."
+		],
+		"ponowna_proba": [
+			"Jeszcze raz. W ogłoszeniu jest ____.",
+			"Druga rozmowa. Wyjściowa kwota to ____.",
+			"Słucham. Na stole dalej ____.",
+			"Jeszcze jedna liczba. Ogłoszenie ma ____.",
+			"Dobrze, jeszcze raz. Startujemy od ____.",
+			"Mów kwotę. W ogłoszeniu stoi ____.",
+			"Ostatnie podejście. W ogłoszeniu jest ____.",
+			"Słucham ponownie. Ogłoszenie: ____.",
+			"Jeszcze raz, krótko. Wypisane jest ____.",
+			"No to druga próba. W ogłoszeniu stoi ____."
+		],
+		"brak_kwalifikacji": [
+			"Brakuje warunku z ogłoszenia. Nie zatrudniam.",
+			"Papiery nie dociągają. Nie ma umowy.",
+			"Nie podpiszę. Czegoś z ogłoszenia brakuje.",
+			"Wykształcenie albo staż nie sięga progu. Nie biorę.",
+			"Bez warunku z ogłoszenia nie ma zatrudnienia.",
+			"Nie tym razem. Papiery nie przechodzą.",
+			"Odmawiam. Ogłoszenie wymaga więcej, niż jest w papierach.",
+			"Nie ma umowy. Warunek z ogłoszenia nie jest spełniony.",
+			"Nie zatrudniam. Papiery są za słabe na to ogłoszenie.",
+			"Odpada. Nie spełniasz warunku z ogłoszenia."
+		]
+	}
+}

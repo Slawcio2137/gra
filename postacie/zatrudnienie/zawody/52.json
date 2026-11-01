@@ -1,0 +1,1047 @@
+{
+	"kod_2": "52",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "521101",
+			"nazwa": "Sprzedawca na targowisku / bazarze",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "521102",
+			"nazwa": "Sprzedawca obwoźny z samochodu (vanseller)",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "521201",
+			"nazwa": "Uliczny sprzedawca żywności o krótkim terminie przydatności do spożycia",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522101",
+			"nazwa": "Antykwariusz",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522102",
+			"nazwa": "Kioskarz",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522103",
+			"nazwa": "Właściciel małego sklepu",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522190",
+			"nazwa": "Pozostali właściciele sklepów",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522201",
+			"nazwa": "Kierownik sali sprzedaży",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522202",
+			"nazwa": "Kierownik stoiska w markecie",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522203",
+			"nazwa": "Kierownik kas",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522290",
+			"nazwa": "Pozostali kierownicy sprzedaży w marketach",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522301",
+			"nazwa": "Sprzedawca*",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522302",
+			"nazwa": "Sprzedawca w branży mięsnej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522303",
+			"nazwa": "Sprzedawca w branży przemysłowej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522304",
+			"nazwa": "Sprzedawca w branży spożywczej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522305",
+			"nazwa": "Technik handlowiec*",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522306",
+			"nazwa": "Technik księgarstwa*",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "522390",
+			"nazwa": "Pozostali sprzedawcy sklepowi (ekspedienci)",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "523001",
+			"nazwa": "Kasjer biletowy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "523002",
+			"nazwa": "Kasjer handlowy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "523003",
+			"nazwa": "Kasjer w zakładzie pracy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "523090",
+			"nazwa": "Pozostali kasjerzy i sprzedawcy biletów",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524101",
+			"nazwa": "Modelka / model",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524201",
+			"nazwa": "Demonstrator wyrobów",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524301",
+			"nazwa": "Akwizytor",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524302",
+			"nazwa": "Konsultant / agent sprzedaży bezpośredniej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524390",
+			"nazwa": "Pozostali agenci sprzedaży bezpośredniej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524401",
+			"nazwa": "Ekspedytor sprzedaży wysyłkowej / internetowej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524402",
+			"nazwa": "Organizator obsługi sprzedaży internetowej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524403",
+			"nazwa": "Sprzedawca na telefon",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524404",
+			"nazwa": "Telemarketer",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524490",
+			"nazwa": "Pozostali sprzedawcy (konsultanci) w centrach sprzedaży telefonicznej / internetowej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524502",
+			"nazwa": "Sprzedawca w stacji paliw",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524601",
+			"nazwa": "Wydawca posiłków / bufetowy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524901",
+			"nazwa": "Bukieciarz",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524902",
+			"nazwa": "Doradca klienta",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524903",
+			"nazwa": "Ekspedient w punkcie usługowym",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524905",
+			"nazwa": "Ekspedient w stacji obsługi pojazdów",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524906",
+			"nazwa": "Pośrednik usług medycznych",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "524990",
+			"nazwa": "Pozostali pracownicy sprzedaży i pokrewni gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

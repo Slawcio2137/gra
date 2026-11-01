@@ -1,0 +1,1749 @@
+{
+	"kod_2": "32",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "321101",
+			"nazwa": "Operator systemów sterylizacji artykułów sanitarnych, sprzętu i aparatów medycznych",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321102",
+			"nazwa": "Perfuzjonista",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321103",
+			"nazwa": "Technik elektroradiolog*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321104",
+			"nazwa": "Technik sterylizacji medycznej*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321190",
+			"nazwa": "Pozostali operatorzy aparatury medycznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321201",
+			"nazwa": "Technik analityki medycznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321301",
+			"nazwa": "Technik farmaceutyczny*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321401",
+			"nazwa": "Protetyk słuchu*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321402",
+			"nazwa": "Technik dentystyczny*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321403",
+			"nazwa": "Technik ortopeda*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "321490",
+			"nazwa": "Pozostali technicy medyczni i dentystyczni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "322001",
+			"nazwa": "Dietetyk",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "322002",
+			"nazwa": "Technik żywienia i gospodarstwa domowego",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "322090",
+			"nazwa": "Pozostali dietetycy i żywieniowcy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323001",
+			"nazwa": "Akupunkturzysta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323002",
+			"nazwa": "Bioenergoterapeuta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323003",
+			"nazwa": "Biomasażysta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323004",
+			"nazwa": "Chiropraktyk",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323005",
+			"nazwa": "Homeopata",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323006",
+			"nazwa": "Instruktor hipoterapii",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323007",
+			"nazwa": "Kynoterapeuta (dogoterapeuta)",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323008",
+			"nazwa": "Muzykoterapeuta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323009",
+			"nazwa": "Naturopata",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323010",
+			"nazwa": "Osteopata",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323011",
+			"nazwa": "Refleksolog",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323012",
+			"nazwa": "Zielarz-fitoterapeuta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323013",
+			"nazwa": "Arteterapeuta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323014",
+			"nazwa": "Podolog*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "323090",
+			"nazwa": "Pozostali praktykujący niekonwencjonalne lub komplementarne metody terapii",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "324001",
+			"nazwa": "Laborant weterynaryjny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "324002",
+			"nazwa": "Technik weterynarii*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "324090",
+			"nazwa": "Pozostali technicy weterynarii",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325101",
+			"nazwa": "Asystentka stomatologiczna*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325102",
+			"nazwa": "Higienistka stomatologiczna*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325190",
+			"nazwa": "Pozostali asystenci dentystyczni",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325201",
+			"nazwa": "Terapeuta środowiskowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325290",
+			"nazwa": "Pozostali środowiskowi pracownicy ochrony zdrowia",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325301",
+			"nazwa": "Optyk okularowy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325302",
+			"nazwa": "Technik optyk*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325390",
+			"nazwa": "Pozostali optycy okularowi",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325401",
+			"nazwa": "Technik fizjoterapii",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325402",
+			"nazwa": "Technik masażysta*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325501",
+			"nazwa": "Edukator ekologiczny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325502",
+			"nazwa": "Inspektor bezpieczeństwa i higieny pracy",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325503",
+			"nazwa": "Inspektor ochrony radiologicznej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325504",
+			"nazwa": "Inspektor ochrony środowiska",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325505",
+			"nazwa": "Instruktor higieny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325506",
+			"nazwa": "Kontroler higieny mięsa",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325507",
+			"nazwa": "Strażnik ochrony przyrody / środowiska",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325508",
+			"nazwa": "Technik analizy i monitoringu środowiska",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325509",
+			"nazwa": "Technik bezpieczeństwa i higieny pracy*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325510",
+			"nazwa": "Technik dozymetrysta",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325511",
+			"nazwa": "Technik ochrony środowiska*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325512",
+			"nazwa": "Weterynaryjny kontroler sanitarny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325513",
+			"nazwa": "Inspektor obrony cywilnej",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325514",
+			"nazwa": "Inspektor sanitarny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325515",
+			"nazwa": "Technik gospodarki odpadami*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325590",
+			"nazwa": "Pozostały średni personel ochrony środowiska, medycyny pracy i bhp",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325601",
+			"nazwa": "Ratownik medyczny",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325901",
+			"nazwa": "Felczer",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325902",
+			"nazwa": "Higienistka szkolna",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325903",
+			"nazwa": "Instruktor terapii uzależnień",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325904",
+			"nazwa": "Koordynator pobierania i przeszczepiania tkanek i narządów",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325905",
+			"nazwa": "Opiekunka dziecięca*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325906",
+			"nazwa": "Ortoptystka*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325907",
+			"nazwa": "Terapeuta zajęciowy*",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "325990",
+			"nazwa": "Pozostały średni personel do spraw zdrowia gdzie indziej niesklasyfikowany",
+			"wielka_grupa": "3",
+			"wielka_grupa_nazwa": "TECHNICY I INNY ŚREDNI PERSONEL",
+			"zarobki": {
+				"mediana_zl": 7800
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

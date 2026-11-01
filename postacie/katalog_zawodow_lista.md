@@ -1,0 +1,3236 @@
+# Katalog zawodów KZiS
+
+Nazwy i kody: klasyfikacja zawodów i specjalności (API integratorów MRPiPS, podstawa Dz.U. 2025 poz. 1534). To nie jest tabela płac.
+
+Płace: GUS, Struktura wynagrodzeń według zawodów za październik 2024 r., tylko wielkie grupy 1–9 już zapisane w `postacie/losowanie/zarobki_kraje.json`. Zawód 6-cyfrowy dziedziczy tę kwotę (`zarobki_zrodlo: grupa_nadrzedna`). Grupa 0 nie ma wiersza, więc płaca jest pusta. Kwota na ekran ma 2 cyfry znaczące; obok w JSON zostaje kwota źródłowa.
+
+Efekty tygodniowe są projektem gry (propozycja do poprawki), nie faktem GUS. Ten sam profil kodu ma te same liczby.
+
+## Rubryka
+
+| Profil | Zm. fiz. | Zm. psych. | Sylwetka | Inteligencja | Zdrowie | Wygląd | Siła | Kondycja | Psychika |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| fizyczna | +8 | +2 | +2 | 0 | -1 | -1 | +1 | +1 | -1 |
+| fizyczna_lekka | +4 | +4 | +1 | 0 | 0 | 0 | 0 | +1 | -1 |
+| biurowa | +1 | +6 | -1 | +1 | 0 | +1 | 0 | -1 | -1 |
+| opiekuncza | +4 | +6 | +1 | +1 | -1 | 0 | 0 | +1 | -1 |
+| kreatywna | +2 | +5 | 0 | +2 | 0 | +1 | 0 | 0 | +1 |
+
+fizyczna_lekka jest lżejszym wariantem pracy fizycznej (sprzedaż, kierowcy, lekka obsługa), nie osobną statystyką urzędu.
+
+## Wielkie grupy
+
+| Kod | Nazwa KZiS | Zawodów | Płaca |
+| --- | --- | ---: | --- |
+| 0 | SIŁY ZBROJNE | 3 | brak wiersza GUS, zarobki null |
+| 1 | KIEROWNICY | 203 | dziedziczone z OC1: mediana 12000 zł (źródło 12185.73) |
+| 2 | SPECJALIŚCI | 807 | dziedziczone z OC2: mediana 9500 zł (źródło 9466.17) |
+| 3 | TECHNICY I INNY ŚREDNI PERSONEL | 620 | dziedziczone z OC3: mediana 7800 zł (źródło 7811.76) |
+| 4 | PRACOWNICY BIUROWI | 89 | dziedziczone z OC4: mediana 6400 zł (źródło 6418.75) |
+| 5 | PRACOWNICY USŁUG I SPRZEDAWCY | 169 | dziedziczone z OC5: mediana 5300 zł (źródło 5281.03) |
+| 6 | ROLNICY, OGRODNICY, LEŚNICY I RYBACY | 63 | dziedziczone z OC6: mediana 5500 zł (źródło 5521.64) |
+| 7 | ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY | 476 | dziedziczone z OC7: mediana 6400 zł (źródło 6414.06) |
+| 8 | OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ | 388 | dziedziczone z OC8: mediana 6700 zł (źródło 6734.42) |
+| 9 | PRACOWNICY WYKONUJĄCY PRACE PROSTE | 127 | dziedziczone z OC9: mediana 5500 zł (źródło 5501.66) |
+
+Razem zawodów 6-cyfrowych: 2945. Płace dziedziczone: 2942. Płace puste: 3. Własny wiersz GUS na zawodzie 6-cyfrowym: 0. Opublikowane wiersze wielkich grup: 9.
+
+## 0 SIŁY ZBROJNE (3)
+
+Płaca: null. W zestawie GUS z gry nie ma wielkiej grupy 0. Nie wpisano kwoty z innej grupy.
+
+### 01 Oficerowie sił zbrojnych (1)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 011001 Oficer zawodowych Sił Zbrojnych
+
+### 02 Podoficerowie sił zbrojnych (1)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 021001 Podoficer zawodowych Sił Zbrojnych
+
+### 03 Żołnierze szeregowi (1)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 031001 Szeregowy zawodowy Sił Zbrojnych
+
+## 1 KIEROWNICY (203)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC1, GUS październik 2024. Mediana ogółem 12185.73 zł → wyświetlane 12000 zł. Przeciętne 15213.78 zł → 15000 zł.
+
+### 11 Przedstawiciele władz publicznych, wyżsi urzędnicy i dyrektorzy generalni (35)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 111101 Parlamentarzysta
+- 111102 Polityk (minister, sekretarz / podsekretarz stanu)
+- 111103 Przedstawiciel władzy samorządowej (marszałek, starosta, radny)
+- 111190 Pozostali przedstawiciele władz publicznych
+- 111201 Wyższy urzędnik państwowy
+- 111202 Wyższy urzędnik placówki dyplomatycznej
+- 111290 Pozostali wyżsi urzędnicy administracji rządowej
+- 111301 Wyższy urzędnik samorządowy
+- 111401 Zawodowy działacz organizacji komercyjnej / pracodawców
+- 111402 Zawodowy działacz organizacji politycznej
+- 111403 Zawodowy działacz organizacji pozarządowej
+- 111404 Zawodowy działacz organizacji zawodowej
+- 111405 Zawodowy działacz organizacji związkowej
+- 111490 Pozostali zawodowi działacze organizacji członkowskich
+- 112001 Dyrektor do spraw administracyjnych
+- 112002 Dyrektor do spraw badawczo-rozwojowych
+- 112003 Dyrektor do spraw energetyki
+- 112004 Dyrektor do spraw informatyki / informacji
+- 112005 Dyrektor do spraw personalnych
+- 112006 Dyrektor finansowy
+- 112007 Dyrektor generalny
+- 112008 Dyrektor handlowy
+- 112009 Dyrektor logistyki
+- 112010 Dyrektor marketingu
+- 112011 Dyrektor operacyjny
+- 112012 Dyrektor produkcji
+- 112013 Dyrektor rozwoju biznesu
+- 112014 Dyrektor sprzedaży
+- 112015 Dyrektor techniczny
+- 112016 Dyrektor wykonawczy
+- 112017 Prezes
+- 112018 Rektor
+- 112019 Syndyk
+- 112020 Dyrektor do spraw wdrożeń i rozwoju technologii
+- 112090 Pozostali dyrektorzy generalni i zarządzający
+
+### 12 Kierownicy do spraw zarządzania i handlu (32)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 121101 Główny księgowy
+- 121102 Kierownik biura rachunkowego
+- 121103 Kierownik działu finansowego
+- 121190 Pozostali kierownicy do spraw finansowych
+- 121201 Kierownik działu kadr i płac
+- 121202 Kierownik działu szkoleń
+- 121203 Kierownik działu zarządzania zasobami ludzkimi
+- 121204 Kierownik przedsiębiorstwa świadczącego usługi z zakresu zarządzania zasobami ludzkimi
+- 121290 Pozostali kierownicy do spraw zarządzania zasobami ludzkimi
+- 121301 Dyrektor departamentu
+- 121302 Kierownik do spraw strategii i planowania
+- 121303 Naczelnik / kierownik wydziału
+- 121390 Pozostali kierownicy do spraw strategii i planowania
+- 121901 Kierownik działu administracyjno-gospodarczego
+- 121902 Kierownik przedsiębiorstwa świadczącego usługi z zakresu obsługi biznesu
+- 121903 Kierownik przedsiębiorstwa świadczącego usługi osobiste i porządkowe
+- 121904 Kierownik projektu
+- 121990 Pozostali kierownicy do spraw obsługi biznesu i zarządzania gdzie indziej niesklasyfikowani
+- 122101 Kierownik do spraw marketingu
+- 122102 Kierownik do spraw sprzedaży
+- 122103 Kierownik przedsiębiorstwa świadczącego usługi z zakresu marketingu i sprzedaży
+- 122104 Kierownik do spraw marketingu internetowego
+- 122105 Kierownik do spraw marketingu sieciowego (wielopoziomowego)
+- 122106 Regionalny kierownik sprzedaży
+- 122107 Kierownik domu aukcyjnego
+- 122190 Pozostali kierownicy do spraw marketingu i sprzedaży
+- 122201 Kierownik agencji reklamowej
+- 122202 Kierownik działu reklamy / promocji / public relations
+- 122290 Pozostali kierownicy do spraw reklamy i public relations
+- 122301 Kierownik do spraw rozwoju produktu
+- 122302 Kierownik działu badawczo-rozwojowego
+- 122390 Pozostali kierownicy do spraw badań i rozwoju
+
+### 13 Kierownicy do spraw produkcji i usług (89)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 131101 Kierownik produkcji w przedsiębiorstwie rolnym
+- 131102 Kierownik przedsiębiorstwa usługowego związanego z leśnictwem
+- 131103 Kierownik w gospodarce leśnej
+- 131104 Kierownik produkcji w przedsiębiorstwie ogrodniczym
+- 131105 Kierownik produkcji w przedsiębiorstwie hodowlanym
+- 131190 Pozostali kierownicy produkcji w rolnictwie i leśnictwie
+- 131201 Kierownik produkcji w zakładach akwakultury
+- 131202 Kierownik przedsiębiorstwa w rybołówstwie
+- 131290 Pozostali kierownicy produkcji w zakładach akwakultury i rybołówstwie
+- 132102 Kierownik do spraw kontroli jakości
+- 132103 Kierownik produkcji w przemyśle
+- 132104 Kierownik małego przedsiębiorstwa w przemyśle przetwórczym
+- 132105 Kierownik utrzymania ruchu
+- 132190 Pozostali kierownicy do spraw produkcji przemysłowej
+- 132201 Kierownik działu ruchu zakładu górniczego lub zakładu
+- 132202 Kierownik jednostki ratownictwa górniczego
+- 132204 Kierownik ruchu zakładu górniczego lub zakładu
+- 132290 Pozostali kierownicy w górnictwie
+- 132301 Kierownik budowy
+- 132302 Kierownik małego przedsiębiorstwa budowlanego
+- 132390 Pozostali kierownicy do spraw budownictwa
+- 132401 Kierownik działu logistyki
+- 132402 Kierownik działu transportu
+- 132403 Kierownik działu zakupów
+- 132404 Kierownik magazynu
+- 132405 Kierownik przedsiębiorstwa spedycyjnego
+- 132406 Kierownik przedsiębiorstwa transportowego
+- 132407 Zawiadowca stacji
+- 132408 Kierownik punktu skupu
+- 132409 Kierownik do spraw handlu zagranicznego
+- 132410 Kierownik do spraw optymalizacji zasobów
+- 132411 Kierownik do spraw transportu rurociągowego
+- 132412 Kierownik do spraw zarzadzania flotą samochodową
+- 132490 Pozostali kierownicy do spraw logistyki i dziedzin pokrewnych
+- 133001 Kierownik działu informatyki
+- 133002 Kierownik działu w przedsiębiorstwie telekomunikacyjnym
+- 133003 Kierownik przedsiębiorstwa informatycznego
+- 133004 Kierownik przedsiębiorstwa telekomunikacyjnego
+- 133005 Kierownik rozwoju technologii informatycznych
+- 133006 Kierownik rozwoju technologii telekomunikacyjnych
+- 133007 Kierownik sieci informatycznych
+- 133090 Pozostali kierownicy do spraw technologii informatycznych i telekomunikacyjnych
+- 134101 Kierownik centrum rozrywki dla dzieci
+- 134102 Kierownik przedszkola
+- 134104 Kierownik żłobka / klubu dziecięcego
+- 134105 Kierownik placówki wsparcia dziennego
+- 134106 Dyrektor ośrodka adopcyjnego
+- 134107 Dyrektor placówki opiekuńczo-wychowawczej
+- 134190 Pozostali kierownicy / dyrektorzy w instytucjach opieki nad dziećmi
+- 134201 Kierownik hospicjum
+- 134202 Kierownik komórki organizacyjnej podmiotu leczniczego
+- 134204 Kierownik podmiotu leczniczego
+- 134205 Pielęgniarka oddziałowa
+- 134206 Położna oddziałowa
+- 134207 Lekarz ordynator oddziału
+- 134290 Pozostali kierownicy w instytucjach opieki zdrowotnej
+- 134301 Kierownik domu spokojnej starości
+- 134390 Pozostali kierownicy w instytucjach opieki nad osobami starszymi
+- 134402 Kierownik domu pomocy społecznej
+- 134403 Kierownik działu w instytucjach pomocy społecznej
+- 134404 Kierownik ośrodka pomocy rodzinie
+- 134490 Pozostali kierownicy w instytucjach pomocy społecznej
+- 134501 Dyrektor szkoły
+- 134502 Dziekan
+- 134503 Kierownik warsztatów szkolnych
+- 134504 Kierownik praktycznej nauki zawodu
+- 134590 Pozostali kierownicy w instytucjach edukacyjnych
+- 134601 Kierownik agencji doradztwa finansowego
+- 134602 Kierownik agencji ubezpieczeniowej
+- 134603 Kierownik działu operacji finansowych
+- 134605 Kierownik placówki bankowej
+- 134690 Pozostali kierownicy instytucji finansowych i ubezpieczeniowych
+- 134901 Dyrektor aresztu śledczego / zakładu karnego
+- 134902 Dyrektor zakładu dla nieletnich
+- 134903 Kierownik agencji ochrony mienia i osób
+- 134904 Kierownik firmy audytorskiej
+- 134905 Kierownik kancelarii prawnej
+- 134906 Kierownik agencji filmowej / telewizyjnej
+- 134907 Kierownik archiwum
+- 134908 Kierownik biblioteki
+- 134909 Kierownik galerii sztuki
+- 134910 Kierownik muzeum
+- 134911 Komendant policji (powiatowy, miejski, rejonowy, komisariatu)
+- 134912 Komendant straży gminnej / miejskiej
+- 134913 Komendant powiatowy / miejski państwowej straży pożarnej
+- 134914 Kierownik rewiru / posterunku policji
+- 134915 Kierownik wydawnictwa
+- 134916 Prezes / dyrektor sądu
+- 134990 Pozostali kierownicy w instytucjach usług wyspecjalizowanych gdzie indziej niesklasyfikowani
+
+### 14 Kierownicy w branży hotelarskiej, handlu i innych branżach usługowych (47)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 141101 Kierownik działu w hotelu
+- 141102 Kierownik hostelu / motelu
+- 141103 Kierownik hotelu
+- 141104 Kierownik pensjonatu
+- 141190 Pozostali kierownicy w hotelarstwie
+- 141201 Kierownik działu w lokalu gastronomicznym
+- 141202 Kierownik lokalu gastronomicznego
+- 141203 Kierownik do spraw kateringu
+- 141290 Pozostali kierownicy w gastronomii
+- 142001 Kierownik działu w handlu detalicznym
+- 142002 Kierownik działu w handlu hurtowym
+- 142003 Kierownik hurtowni
+- 142004 Kierownik sklepu / supermarketu
+- 142005 Kierownik apteki
+- 142006 Kierownik sieci sklepów
+- 142090 Pozostali kierownicy w handlu detalicznym i hurtowym
+- 143101 Kierownik agencji do spraw usług sportowych / turystycznych / kulturalnych
+- 143102 Kierownik obiektu sportowego
+- 143103 Kierownik ogrodu zoologicznego
+- 143104 Kierownik zakładu bukmacherskiego / kolektury / loterii
+- 143105 Kierownik domu kultury
+- 143107 Kierownik kasyna
+- 143108 Kierownik kina
+- 143109 Kierownik klubu fitness
+- 143110 Kierownik klubu sportowego
+- 143112 Kierownik parku rozrywki / cyrku
+- 143114 Kierownik siłowni
+- 143115 Kierownik szkółki jeździeckiej
+- 143116 Dyrektor teatru
+- 143117 Kierownik szkoły tańca
+- 143118 Dyrektor filharmonii / opery /operetki/ orkiestry
+- 143119 Dyrektor zespołu pieśni i tańca / chóru
+- 143190 Pozostali kierownicy do spraw sportu, rekreacji i rozrywki
+- 143901 Kierownik biura podroży
+- 143902 Kierownik biura tłumaczeń
+- 143903 Kierownik centrum handlowego
+- 143904 Kierownik centrum konferencyjnego
+- 143905 Kierownik centrum obsługi telefonicznej (kierownik call center)
+- 143906 Kierownik do spraw windykacji
+- 143907 Kierownik firmy sprzątającej
+- 143908 Kierownik kempingu
+- 143909 Kierownik / właściciel zakładu usługowego
+- 143910 Kierownik / właściciel stacji paliw
+- 143911 Kierownik / właściciel szkoły jazdy
+- 143912 Kierownik salonu odnowy biologicznej
+- 143913 Kierownik salonu pielęgnacji urody
+- 143990 Pozostali kierownicy do spraw innych typów usług gdzie indziej niesklasyfikowani
+
+## 2 SPECJALIŚCI (807)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC2, GUS październik 2024. Mediana ogółem 9466.17 zł → wyświetlane 9500 zł. Przeciętne 10734.04 zł → 11000 zł.
+
+### 21 Specjaliści nauk fizycznych, matematycznych i technicznych (201)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 211101 Astrofizyk — biurowa
+- 211102 Astronom — biurowa
+- 211103 Fizyk — biurowa
+- 211104 Fizyk medyczny — biurowa
+- 211190 Pozostali fizycy i astronomowie — biurowa
+- 211201 Hydrometeorolog — biurowa
+- 211202 Meteorolog — biurowa
+- 211203 Synoptyk — biurowa
+- 211204 Klimatolog — biurowa
+- 211290 Pozostali meteorolodzy — biurowa
+- 211301 Chemik — biurowa
+- 211302 Chemik - technologia chemiczna — biurowa
+- 211303 Agrochemik — biurowa
+- 211304 Perfumiarz — biurowa
+- 211390 Pozostali chemicy — biurowa
+- 211401 Geofizyk — biurowa
+- 211402 Geograf — biurowa
+- 211403 Geolog — biurowa
+- 211404 Hydrograf morski — biurowa
+- 211405 Hydrolog — biurowa
+- 211406 Oceanolog — biurowa
+- 211407 Paleontolog — biurowa
+- 211490 Pozostali specjaliści nauk o Ziemi — biurowa
+- 212001 Aktuariusz — biurowa
+- 212002 Matematyk — biurowa
+- 212003 Demograf — biurowa
+- 212004 Statystyk — biurowa
+- 212090 Pozostali matematycy, aktuariusze i statystycy — biurowa
+- 213101 Botanik — biurowa
+- 213102 Biochemik — biurowa
+- 213103 Biofizyk — biurowa
+- 213104 Bioinżynier — biurowa
+- 213105 Biolog — biurowa
+- 213106 Biotechnolog — biurowa
+- 213107 Genetyk — biurowa
+- 213108 Mikrobiolog — biurowa
+- 213109 Bioinformatyk — biurowa
+- 213110 Fizjolog — biurowa
+- 213190 Pozostali biolodzy i pokrewni — biurowa
+- 213201 Doradca rolniczy — biurowa
+- 213202 Gleboznawca — biurowa
+- 213203 Inżynier leśnictwa — biurowa
+- 213204 Inżynier ogrodnictwa — biurowa
+- 213205 Inżynier rolnictwa — biurowa
+- 213206 Inżynier rybactwa — biurowa
+- 213207 Inżynier zootechniki — biurowa
+- 213208 Klasyfikator gruntów — biurowa
+- 213209 Rzeczoznawca rolniczy — biurowa
+- 213290 Pozostali specjaliści w zakresie rolnictwa, leśnictwa i pokrewni — biurowa
+- 213301 Audytor środowiskowy — biurowa
+- 213302 Ekolog — biurowa
+- 213303 Specjalista ochrony środowiska — biurowa
+- 213390 Pozostali specjaliści do spraw ochrony środowiska — biurowa
+- 214101 Inżynier normowania pracy — biurowa
+- 214102 Inżynier organizacji i planowania produkcji — biurowa
+- 214103 Inżynier utrzymania ruchu — biurowa
+- 214104 Inżynier zaopatrzenia, transportu i magazynowania — biurowa
+- 214105 Konsultant komitetu technicznego — biurowa
+- 214107 Normalizator — biurowa
+- 214108 Specjalista do spraw audytu zabezpieczenia — biurowa
+- 214109 Specjalista kontroli jakości — biurowa
+- 214110 Towaroznawca — biurowa
+- 214111 Główny technolog — biurowa
+- 214190 Pozostali inżynierowie do spraw przemysłu i produkcji — biurowa
+- 214201 Inżynier budownictwa - budowle i drogi wodne — biurowa
+- 214202 Inżynier budownictwa - budownictwo ogólne — biurowa
+- 214203 Inżynier budownictwa - budownictwo przemysłowe — biurowa
+- 214204 Inżynier budownictwa - linie, węzły i stacje kolejowe — biurowa
+- 214205 Inżynier budownictwa - urządzenia, instalacje i sieci energetyczne — biurowa
+- 214206 Inżynier budownictwa - wyburzanie obiektów — biurowa
+- 214207 Inżynier budowy dróg — biurowa
+- 214208 Inżynier budowy mostów — biurowa
+- 214209 Inżynier geotechnik — biurowa
+- 214210 Rzeczoznawca budowlany — biurowa
+- 214290 Pozostali inżynierowie budownictwa — biurowa
+- 214301 Inżynier inżynierii środowiska - gazowe urządzenia, instalacje i sieci energetyczne — biurowa
+- 214302 Inżynier inżynierii środowiska - gospodarka wodna i hydrologia — biurowa
+- 214303 Inżynier inżynierii środowiska - instalacje sanitarne — biurowa
+- 214304 Inżynier inżynierii środowiska - melioracje — biurowa
+- 214305 Inżynier inżynierii środowiska - oczyszczanie miast i gospodarka odpadami — biurowa
+- 214306 Inżynier inżynierii środowiska - systemy wodociągowe i kanalizacyjne — biurowa
+- 214307 Inżynier systemów bezpieczeństwa jądrowego i ochrony radiologicznej — biurowa
+- 214390 Pozostali inżynierowie inżynierii środowiska — biurowa
+- 214401 Inżynier mechanik - cieplno-mechaniczne urządzenia, instalacje i sieci energetyczne — biurowa
+- 214402 Inżynier mechanik - maszyny i urządzenia do obróbki metali — biurowa
+- 214403 Inżynier mechanik - maszyny i urządzenia energetyczne — biurowa
+- 214404 Inżynier mechanik - maszyny i urządzenia przemysłowe — biurowa
+- 214405 Inżynier mechanik - mechanika precyzyjna — biurowa
+- 214406 Inżynier mechanik - środki transportu — biurowa
+- 214407 Inżynier mechanik - technologia mechaniczna — biurowa
+- 214408 Inżynier mechanik lotniczy — biurowa
+- 214409 Inżynier mechanizacji rolnictwa — biurowa
+- 214410 Inżynier spawalnik — biurowa
+- 214411 Konstruktor form wtryskowych — biurowa
+- 214412 Inżynier budownictwa okrętowego — biurowa
+- 214413 Inżynier chłodnictwa i klimatyzacji — biurowa
+- 214490 Pozostali inżynierowie mechanicy — biurowa
+- 214501 Inżynier inżynierii chemicznej — biurowa
+- 214502 Inżynier technologii chemicznej — biurowa
+- 214503 Inżynier technologii żywności — biurowa
+- 214504 Inżynier dekontaminacji – skażenia promieniotwórcze — biurowa
+- 214505 Inżynier postępowania z odpadami promieniotwórczymi — biurowa
+- 214506 Inżynier inżynierii materiałów syntetycznych — biurowa
+- 214507 Inżynier papiernictwa — biurowa
+- 214590 Pozostali inżynierowie chemicy i pokrewni — biurowa
+- 214601 Inżynier górnik - górnictwo otworowe — biurowa
+- 214602 Inżynier górnik - górnictwo odkrywkowe — biurowa
+- 214603 Inżynier górnik - górnictwo podziemne — biurowa
+- 214604 Inżynier górnik - wiertnictwo — biurowa
+- 214605 Inżynier hutnik — biurowa
+- 214607 Inżynier odlewnik — biurowa
+- 214608 Inżynier geofizyk - geofizyka górnicza — biurowa
+- 214609 Inżynier geolog - geologia górnicza i poszukiwawcza — biurowa
+- 214610 Inżynier geolog - hydrologia górnicza — biurowa
+- 214690 Pozostali inżynierowie górnictwa i metalurgii — biurowa
+- 214901 Audytor energetyczny — biurowa
+- 214902 Inspektor dozoru technicznego — biurowa
+- 214903 Inżynier automatyki i robotyki — biurowa
+- 214904 Inżynier awionik — biurowa
+- 214905 Inżynier biocybernetyki i inżynierii biomedycznej — biurowa
+- 214906 Inżynier energetyki — biurowa
+- 214907 Inżynier gospodarki przestrzennej — biurowa
+- 214908 Inżynier kliniczny — biurowa
+- 214909 Inżynier poligrafii — biurowa
+- 214910 Inżynier pożarnictwa — biurowa
+- 214911 Inżynier systemów zabezpieczeń technicznych osób i mienia — biurowa
+- 214912 Inżynier technologii betonów — biurowa
+- 214913 Inżynier technologii ceramiki — biurowa
+- 214914 Inżynier technologii drewna — biurowa
+- 214915 Inżynier technologii przetwórstwa skóry — biurowa
+- 214916 Inżynier technologii szkła — biurowa
+- 214917 Inżynier transportu drogowego — biurowa
+- 214918 Inżynier transportu kolejowego — biurowa
+- 214919 Inżynier włókiennik — biurowa
+- 214920 Kontroler kolejowy — biurowa
+- 214921 Legalizator — biurowa
+- 214922 Metrolog — biurowa
+- 214923 Nanotechnolog (inżynier nanostruktur) — biurowa
+- 214924 Specjalista do spraw ergonomii i projektowania form użytkowych — biurowa
+- 214925 Specjalista do spraw pakowania i opakowań — biurowa
+- 214926 Specjalista monitoringu systemów zabezpieczeń technicznych osób i mienia — biurowa
+- 214927 Inżynier akustyk — biurowa
+- 214928 Inżynier optyk — biurowa
+- 214929 Inżynier procesu malowania — biurowa
+- 214930 Rzeczoznawca samochodowy — biurowa
+- 214931 Technolog – programista obrabiarek — biurowa
+- 214932 Inżynier inżynierii materiałowej — biurowa
+- 214933 Zarządca energią — biurowa
+- 214934 Inżynier inżynierii kosmicznej i satelitarnej — biurowa
+- 214935 Rzeczoznawca do spraw zabezpieczeń przeciwpożarowych — biurowa
+- 214990 Pozostali inżynierowie gdzie indziej niesklasyfikowani — biurowa
+- 215101 Inżynier elektroenergetyk — biurowa
+- 215102 Inżynier elektroenergetyk kolejowych sieci i podstacji trakcyjnych — biurowa
+- 215103 Inżynier elektryk — biurowa
+- 215104 Inżynier elektryk automatyk — biurowa
+- 215105 Inżynier techniki świetlnej — biurowa
+- 215106 Inżynier urządzeń i systemów energetyki odnawialnej — biurowa
+- 215190 Pozostali inżynierowie elektrycy — biurowa
+- 215201 Inżynier elektronik — biurowa
+- 215202 Inżynier mechatronik — biurowa
+- 215203 Inżynier urządzeń zabezpieczenia i sterowania ruchem kolejowym — biurowa
+- 215204 Optoelektronik — biurowa
+- 215205 Projektant układów scalonych — biurowa
+- 215290 Pozostali inżynierowie elektronicy — biurowa
+- 215301 Inżynier telekomunikacji — biurowa
+- 215302 Technolog inżynierii telekomunikacyjnej — biurowa
+- 215303 Inżynier teleinformatyk — biurowa
+- 215390 Pozostali inżynierowie telekomunikacji — biurowa
+- 216101 Architekt — kreatywna
+- 216102 Architekt wnętrz — kreatywna
+- 216190 Pozostali architekci — kreatywna
+- 216201 Architekt krajobrazu — kreatywna
+- 216202 Architekt zieleni wewnątrz budynków — kreatywna
+- 216290 Pozostali architekci krajobrazu — kreatywna
+- 216301 Projektant biżuterii — kreatywna
+- 216302 Kostiumograf — kreatywna
+- 216303 Projektant mody — kreatywna
+- 216304 Projektant wzornictwa przemysłowego — kreatywna
+- 216305 Projektant ekspozycji towarów i usług (visual merchandiser) — kreatywna
+- 216306 Projektant wyrobów skórzanych — kreatywna
+- 216390 Pozostali projektanci wzornictwa przemysłowego i odzieży — kreatywna
+- 216401 Inżynier ruchu drogowego — kreatywna
+- 216402 Inżynier ruchu kolejowego — kreatywna
+- 216403 Urbanista — kreatywna
+- 216490 Pozostali urbaniści i inżynierowie ruchu drogowego — kreatywna
+- 216501 Inżynier geodeta - fotogrametria i teledetekcja — kreatywna
+- 216502 Inżynier geodeta - geodezja górnicza — kreatywna
+- 216503 Inżynier geodeta - geodezja inżynieryjno-przemysłowa — kreatywna
+- 216504 Inżynier geodeta - geodezja urządzania terenów rolnych i leśnych — kreatywna
+- 216505 Inżynier geodeta - geodezyjne pomiary podstawowe i satelitarne — kreatywna
+- 216506 Inżynier geodeta - geomatyka — kreatywna
+- 216507 Inżynier geodeta - kataster i gospodarka nieruchomościami — kreatywna
+- 216508 Kartograf — kreatywna
+- 216590 Pozostali kartografowie i geodeci — kreatywna
+- 216601 Grafik komputerowy DTP — kreatywna
+- 216602 Grafik komputerowy multimediów — kreatywna
+- 216603 Ilustrator — kreatywna
+- 216604 Projektant grafiki — kreatywna
+- 216605 Projektant grafiki stron internetowych — kreatywna
+- 216606 Specjalista do spraw animacji multimedialnej — kreatywna
+- 216690 Pozostali projektanci grafiki i multimediów — kreatywna
+
+### 22 Specjaliści do spraw zdrowia (213)
+
+Profil: opiekuncza. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +6, sylwetka +1, inteligencja +1, zdrowie -1, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 221101 Lekarz
+- 221102 Lekarz ze specjalizacją I stopnia
+- 221201 Lekarz - specjalista alergologii
+- 221202 Lekarz - specjalista anestezjologii i intensywnej terapii
+- 221203 Lekarz - specjalista angiologii
+- 221204 Lekarz - specjalista audiologii i foniatrii
+- 221205 Lekarz - specjalista balneologii i medycyny fizykalnej
+- 221206 Lekarz - specjalista chirurgii dziecięcej
+- 221207 Lekarz - specjalista chirurgii klatki piersiowej
+- 221208 Lekarz - specjalista chirurgii naczyniowej
+- 221209 Lekarz - specjalista chirurgii ogólnej
+- 221210 Lekarz - specjalista chirurgii onkologicznej
+- 221211 Lekarz - specjalista chirurgii plastycznej
+- 221212 Lekarz - specjalista chirurgii szczękowo-twarzowej
+- 221213 Lekarz - specjalista chorób płuc
+- 221214 Lekarz - specjalista chorób wewnętrznych
+- 221215 Lekarz - specjalista chorób zakaźnych
+- 221216 Lekarz - specjalista dermatologii i wenerologii
+- 221217 Lekarz - specjalista diabetologii
+- 221218 Lekarz - specjalista diagnostyki laboratoryjnej
+- 221219 Lekarz - specjalista endokrynologii
+- 221220 Lekarz - specjalista epidemiologii
+- 221221 Lekarz - specjalista farmakologii klinicznej
+- 221222 Lekarz - specjalista gastroenterologii
+- 221223 Lekarz - specjalista genetyki klinicznej
+- 221224 Lekarz - specjalista geriatrii
+- 221225 Lekarz - specjalista ginekologii onkologicznej
+- 221226 Lekarz - specjalista hematologii
+- 221227 Lekarz - specjalista hipertensjologii
+- 221228 Lekarz - specjalista immunologii klinicznej
+- 221229 Lekarz - specjalista kardiochirurgii
+- 221230 Lekarz - specjalista kardiologii
+- 221231 Lekarz - specjalista kardiologii dziecięcej
+- 221232 Lekarz - specjalista medycyny nuklearnej
+- 221233 Lekarz - specjalista medycyny paliatywnej
+- 221234 Lekarz - specjalista medycyny pracy
+- 221235 Lekarz - specjalista medycyny ratunkowej
+- 221236 Lekarz - specjalista medycyny rodzinnej
+- 221237 Lekarz - specjalista medycyny sądowej
+- 221238 Lekarz - specjalista medycyny sportowej
+- 221239 Lekarz - specjalista medycyny transportu
+- 221240 Lekarz - specjalista mikrobiologii lekarskiej
+- 221241 Lekarz - specjalista nefrologii
+- 221242 Lekarz - specjalista neonatologii
+- 221243 Lekarz - specjalista neurochirurgii
+- 221244 Lekarz - specjalista neurologii
+- 221245 Lekarz - specjalista neurologii dziecięcej
+- 221246 Lekarz - specjalista neuropatologii
+- 221247 Lekarz - specjalista okulistyki
+- 221248 Lekarz - specjalista onkologii i hematologii dziecięcej
+- 221249 Lekarz - specjalista onkologii klinicznej
+- 221250 Lekarz - specjalista ortopedii i traumatologii narządu ruchu
+- 221251 Lekarz - specjalista otorynolaryngologii
+- 221252 Lekarz - specjalista otorynolaryngologii dziecięcej
+- 221253 Lekarz - specjalista patomorfologii
+- 221254 Lekarz - specjalista pediatrii
+- 221255 Lekarz - specjalista położnictwa i ginekologii
+- 221256 Lekarz - specjalista psychiatrii
+- 221257 Lekarz - specjalista psychiatrii dzieci i młodzieży
+- 221258 Lekarz - specjalista radiologii i diagnostyki obrazowej
+- 221259 Lekarz - specjalista radioterapii onkologicznej
+- 221260 Lekarz - specjalista rehabilitacji medycznej
+- 221261 Lekarz - specjalista reumatologii
+- 221262 Lekarz – specjalista seksuologii
+- 221263 Lekarz - specjalista toksykologii klinicznej
+- 221264 Lekarz - specjalista transfuzjologii klinicznej
+- 221265 Lekarz - specjalista transplantologii klinicznej
+- 221266 Lekarz - specjalista urologii
+- 221267 Lekarz - specjalista urologii dziecięcej
+- 221268 Lekarz - specjalista zdrowia publicznego
+- 221269 Lekarz - specjalista chorób płuc dzieci
+- 221270 Lekarz - specjalista endokrynologii ginekologicznej i rozrodczości
+- 221271 Lekarz - specjalista endokrynologii i diabetologii dziecięcej
+- 221272 Lekarz - specjalista gastroenterologii dziecięcej
+- 221273 Lekarz - specjalista intensywnej terapii
+- 221274 Lekarz - specjalista medycyny lotniczej
+- 221275 Lekarz - specjalista medycyny morskiej i tropikalnej
+- 221276 Lekarz - specjalista nefrologii dziecięcej
+- 221277 Lekarz - specjalista pediatrii metabolicznej
+- 221278 Lekarz - specjalista perinatologii
+- 221290 Pozostali lekarze specjaliści
+- 222101 Pielęgniarka
+- 222201 Pielęgniarka - specjalista organizacji i zarządzania
+- 222202 Pielęgniarka - specjalista pielęgniarstwa anestezjologicznego i intensywnej opieki
+- 222203 Pielęgniarka - specjalista pielęgniarstwa chirurgicznego
+- 222204 Pielęgniarka - specjalista pielęgniarstwa diabetologicznego
+- 222205 Pielęgniarka - specjalista pielęgniarstwa epidemiologicznego
+- 222206 Pielęgniarka - specjalista pielęgniarstwa geriatrycznego
+- 222207 Pielęgniarka - specjalista pielęgniarstwa kardiologicznego
+- 222208 Pielęgniarka - specjalista pielęgniarstwa nefrologicznego
+- 222209 Pielęgniarka - specjalista pielęgniarstwa neonatologicznego
+- 222210 Pielęgniarka - specjalista pielęgniarstwa neurologicznego
+- 222211 Pielęgniarka - specjalista pielęgniarstwa onkologicznego
+- 222212 Pielęgniarka - specjalista pielęgniarstwa operacyjnego
+- 222213 Pielęgniarka - specjalista pielęgniarstwa opieki długoterminowej
+- 222214 Pielęgniarka - specjalista pielęgniarstwa opieki paliatywnej
+- 222215 Pielęgniarka - specjalista pielęgniarstwa pediatrycznego
+- 222216 Pielęgniarka - specjalista pielęgniarstwa psychiatrycznego
+- 222217 Pielęgniarka - specjalista pielęgniarstwa ratunkowego
+- 222218 Pielęgniarka - specjalista pielęgniarstwa rodzinnego
+- 222219 Pielęgniarka - specjalista pielęgniarstwa środowiska nauczania i wychowania
+- 222220 Pielęgniarka - specjalista pielęgniarstwa w ochronie zdrowia pracujących
+- 222221 Pielęgniarka – specjalista pielęgniarstwa zachowawczego / internistycznego
+- 222222 Pielęgniarka - specjalista promocji zdrowia i edukacji zdrowotnej
+- 222290 Pozostałe pielęgniarki z tytułem specjalisty
+- 223101 Położna
+- 223201 Położna - specjalista organizacji i zarządzania
+- 223202 Położna - specjalista pielęgniarstwa epidemiologicznego
+- 223203 Położna - specjalista pielęgniarstwa ginekologicznego
+- 223204 Położna - specjalista pielęgniarstwa neonatologicznego
+- 223205 Położna - specjalista pielęgniarstwa położniczego
+- 223206 Położna - specjalista pielęgniarstwa rodzinnego
+- 223207 Położna - specjalista promocji zdrowia i edukacji zdrowotnej
+- 223208 Położna – specjalista pielęgniarstwa ginekologiczno-położniczego
+- 223290 Pozostałe położne z tytułem specjalisty
+- 224001 Specjalista do spraw ratownictwa medycznego
+- 225101 Lekarz weterynarii
+- 225201 Lekarz weterynarii - specjalista chirurgii weterynaryjnej
+- 225202 Lekarz weterynarii - specjalista chorób drobiu i ptaków ozdobnych
+- 225203 Lekarz weterynarii - specjalista chorób koni
+- 225204 Lekarz weterynarii - specjalista chorób owadów użytkowych
+- 225205 Lekarz weterynarii - specjalista chorób przeżuwaczy
+- 225206 Lekarz weterynarii - specjalista chorób psów i kotów
+- 225207 Lekarz weterynarii - specjalista chorób ryb
+- 225208 Lekarz weterynarii - specjalista chorób trzody chlewnej
+- 225209 Lekarz weterynarii - specjalista chorób zwierząt futerkowych
+- 225210 Lekarz weterynarii - specjalista chorób zwierząt nieudomowionych
+- 225211 Lekarz weterynarii - specjalista epizootiologii i administracji weterynaryjnej
+- 225212 Lekarz weterynarii - specjalista higieny zwierząt rzeźnych i żywności pochodzenia zwierzęcego
+- 225213 Lekarz weterynarii - specjalista prewencji weterynaryjnej i higieny pasz
+- 225214 Lekarz weterynarii - specjalista radiologii weterynaryjnej
+- 225215 Lekarz weterynarii - specjalista rozrodu zwierząt
+- 225216 Lekarz weterynarii - specjalista użytkowania i patologii zwierząt laboratoryjnych
+- 225217 Lekarz weterynarii - specjalista weterynaryjnej diagnostyki laboratoryjnej
+- 225290 Pozostali lekarze weterynarii specjaliści
+- 226101 Lekarz dentysta
+- 226102 Lekarz dentysta ze specjalizacją I stopnia
+- 226201 Lekarz dentysta - specjalista chirurgii stomatologicznej
+- 226202 Lekarz dentysta - specjalista chirurgii szczękowo-twarzowej
+- 226203 Lekarz dentysta - specjalista epidemiologii
+- 226204 Lekarz dentysta - specjalista ortodoncji
+- 226205 Lekarz dentysta - specjalista periodontologii
+- 226206 Lekarz dentysta - specjalista protetyki stomatologicznej
+- 226207 Lekarz dentysta - specjalista stomatologii dziecięcej
+- 226208 Lekarz dentysta - specjalista stomatologii zachowawczej z endodoncją
+- 226209 Lekarz dentysta - specjalista zdrowia publicznego
+- 226290 Pozostali lekarze dentyści specjaliści
+- 227101 Diagnosta laboratoryjny
+- 227201 Diagnosta laboratoryjny – specjalista laboratoryjnej cytomorfologii medycznej
+- 227202 Diagnosta laboratoryjny - specjalista epidemiologii
+- 227203 Diagnosta laboratoryjny - specjalista laboratoryjnej diagnostyki medycznej
+- 227204 Diagnosta laboratoryjny - specjalista laboratoryjnej genetyki sądowej
+- 227205 Diagnosta laboratoryjny - specjalista laboratoryjnej genetyki medycznej
+- 227206 Diagnosta laboratoryjny - specjalista laboratoryjnej hematologii medycznej
+- 227207 Diagnosta laboratoryjny - specjalista laboratoryjnej immunologii medycznej
+- 227208 Diagnosta laboratoryjny - specjalista laboratoryjnej parazytologii medycznej
+- 227209 Diagnosta laboratoryjny - specjalista laboratoryjnej toksykologii medycznej
+- 227210 Diagnosta laboratoryjny - specjalista laboratoryjnej transfuzjologii medycznej
+- 227211 Diagnosta laboratoryjny – specjalista laboratoryjnej mikrobiologii medycznej
+- 227212 Diagnosta laboratoryjny - specjalista zdrowia publicznego
+- 227213 Diagnosta laboratoryjny - specjalista zdrowia środowiskowego
+- 227214 Diagnosta laboratoryjny - specjalista laboratoryjnej toksykologii sądowej
+- 227290 Pozostali diagności laboratoryjni specjaliści
+- 228101 Farmaceuta
+- 228201 Farmaceuta - specjalista analityki farmaceutycznej
+- 228202 Farmaceuta - specjalista bromatologii
+- 228203 Farmaceuta - specjalista farmacji aptecznej
+- 228204 Farmaceuta - specjalista farmacji klinicznej
+- 228205 Farmaceuta - specjalista farmacji przemysłowej
+- 228206 Farmaceuta - specjalista farmacji szpitalnej
+- 228207 Farmaceuta - specjalista farmakologii
+- 228208 Farmaceuta - specjalista leku roślinnego
+- 228209 Farmaceuta - specjalista mikrobiologii i biotechnologii farmaceutycznej
+- 228210 Farmaceuta - specjalista toksykologii
+- 228211 Farmaceuta - specjalista zdrowia publicznego
+- 228212 Farmaceuta - specjalista zdrowia środowiskowego
+- 228290 Pozostali farmaceuci specjaliści
+- 229101 Inspektor dozoru jądrowego
+- 229102 Specjalista promocji zdrowia i edukacji zdrowotnej
+- 229103 Specjalista bezpieczeństwa i higieny pracy
+- 229104 Specjalista zdrowia publicznego
+- 229105 Specjalista zdrowia środowiskowego
+- 229106 Rzeczoznawca do spraw bezpieczeństwa i higieny pracy
+- 229190 Pozostali specjaliści do spraw higieny, bezpieczeństwa pracy i ochrony środowiska
+- 229201 Fizjoterapeuta
+- 229202 Specjalista fizjoterapii
+- 229301 Specjalista do spraw dietetyki
+- 229302 Specjalista żywienia człowieka
+- 229390 Pozostali dietetycy i specjaliści do spraw żywienia
+- 229401 Audiofonolog
+- 229402 Logopeda
+- 229403 Neurologopeda
+- 229404 Surdologopeda
+- 229490 Pozostali audiofonolodzy i logopedzi
+- 229501 Optometrysta
+- 229901 Epidemiolog
+- 229902 Koordynator badań klinicznych
+- 229903 Kosmetolog
+- 229904 Osoba wykwalifikowana w przemyśle farmaceutycznym
+- 229905 Psychoterapeuta
+- 229906 Specjalista psychoterapii uzależnień
+- 229907 Specjalista terapii uzależnień
+- 229908 Toksykolog
+- 229909 Psychoonkolog
+- 229910 Psychotraumatolog
+- 229911 Specjalista radiofarmacji
+- 229912 Specjalista inżynierii medycznej
+- 229913 Elektroradiolog
+- 229914 Specjalista do spraw techniki dentystycznej
+- 229915 Podiatra
+- 229916 Profilaktyk
+- 229917 Specjalista w dziedzinie psychologii klinicznej
+- 229990 Pozostali specjaliści ochrony zdrowia gdzie indziej niesklasyfikowani
+
+### 23 Specjaliści nauczania i wychowania (68)
+
+Profil: opiekuncza. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +6, sylwetka +1, inteligencja +1, zdrowie -1, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 231001 Nauczyciel akademicki – nauki humanistyczne
+- 231002 Nauczyciel akademicki – nauki inżynieryjno-techniczne
+- 231003 Nauczyciel akademicki – nauki medyczne i nauki o zdrowiu
+- 231004 Nauczyciel akademicki – nauki rolnicze
+- 231005 Nauczyciel akademicki – nauki społeczne
+- 231006 Nauczyciel akademicki – nauki ścisłe i przyrodnicze
+- 231007 Nauczyciel akademicki – nauki teologiczne
+- 231008 Nauczyciel akademicki – sztuka
+- 231009 Nauczyciel akademicki – nauki o rodzinie
+- 231010 Nauczyciel akademicki – nauki weterynaryjne
+- 231090 Pozostali nauczyciele akademiccy
+- 232001 Nauczyciel praktycznej nauki zawodu
+- 232002 Nauczyciel przedmiotów zawodowych artystycznych
+- 232003 Nauczyciel przedmiotów teoretycznych zawodowych
+- 232090 Pozostali nauczyciele kształcenia zawodowego
+- 233001 Nauczyciel przedmiotu w szkole ponadpodstawowej
+- 233090 Pozostali nauczyciele szkół ponadpodstawowych (z wyjątkiem nauczycieli kształcenia zawodowego)
+- 234101 Nauczyciel edukacji wczesnoszkolnej
+- 234102 Nauczyciel przedmiotu w szkole podstawowej
+- 234190 Pozostali nauczyciele szkół podstawowych
+- 234201 Nauczyciel przedszkola
+- 234202 Nauczyciel innych form wychowania przedszkolnego
+- 234290 Pozostali specjaliści do spraw wychowania małego dziecka
+- 235101 Andragog
+- 235102 Ewaluator programów edukacji
+- 235103 Metodyk edukacji na odległość
+- 235104 Metodyk technologii informacyjnych i komunikacyjnych
+- 235105 Nauczyciel doradca metodyczny
+- 235106 Nauczyciel konsultant
+- 235109 Wizytator
+- 235190 Pozostali wizytatorzy i specjaliści metod nauczania
+- 235201 Nauczyciel niesłyszących i słabosłyszących (surdopedagog)
+- 235202 Nauczyciel niedostosowanych społecznie (pedagog resocjalizacji, socjoterapeuta)
+- 235203 Nauczyciel niewidomych i słabowidzących (tyflopedagog)
+- 235204 Nauczyciel przewlekle chorych oraz osób z niepełnosprawnością ruchową
+- 235205 Nauczyciel osób z niepełnosprawnością intelektualną (oligofrenopedagog)
+- 235290 Pozostali nauczyciele pracujący z osobami o specjalnych potrzebach edukacyjnych
+- 235301 Lektor języka obcego
+- 235401 Nauczyciel muzyki w placówkach pozaszkolnych
+- 235501 Instruktor amatorskiego ruchu artystycznego
+- 235502 Instruktor tańca
+- 235503 Nauczyciel sztuki w placówkach pozaszkolnych
+- 235590 Pozostali nauczyciele sztuki w placówkach pozaszkolnych
+- 235601 Nauczyciel technologii informatycznych w placówkach pozaszkolnych
+- 235690 Pozostali instruktorzy technologii informatycznych
+- 235901 Dydaktyk multimedialny
+- 235902 Egzaminator on-line
+- 235903 Egzaminator osób ubiegających się o uprawnienia do kierowania pojazdem
+- 235904 Nauczyciel bibliotekarz
+- 235905 Instruktor praktycznej nauki zawodu
+- 235906 Nauczyciel logopeda
+- 235907 Nauczyciel nauczania na odległość
+- 235908 Nauczyciel psycholog
+- 235909 Nauczyciel specjalista terapii pedagogicznej
+- 235910 Nauczyciel w placówkach pozaszkolnych
+- 235911 Pedagog animacji kulturalnej
+- 235912 Pedagog szkolny
+- 235913 Specjalista do spraw zarządzania w oświacie
+- 235914 Wychowawca w placówkach oświatowych, wsparcia dziennego, wychowawczych i opiekuńczych oraz instytucjach pieczy zastępczej
+- 235915 Wykładowca na kursach (edukator, trener)
+- 235916 Animator czasu wolnego młodzieży (pracownik młodzieżowy)
+- 235917 Korepetytor
+- 235918 Nauczyciel domowy
+- 235919 Pedagog specjalny
+- 235920 Trener osobisty (coach, mentor, tutor)
+- 235921 Pedagog
+- 235922 Pedagog mediów
+- 235990 Pozostali specjaliści nauczania i wychowania gdzie indziej niesklasyfikowani
+
+### 24 Specjaliści do spraw ekonomicznych i zarządzania (125)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 241101 Biegły rewident
+- 241102 Specjalista do spraw controllingu
+- 241103 Specjalista do spraw rachunkowości
+- 241104 Specjalista do spraw rachunkowości inwestycyjnej
+- 241105 Specjalista do spraw rachunkowości podatkowej
+- 241106 Specjalista do spraw rachunkowości zarządczej
+- 241107 Kontroler finansowy
+- 241190 Pozostali specjaliści do spraw księgowości i rachunkowości
+- 241201 Doradca emerytalny
+- 241202 Doradca finansowy
+- 241203 Doradca inwestycyjny
+- 241204 Doradca podatkowy
+- 241205 Doradca do spraw leasingu
+- 241206 Specjalista do spraw tworzenia biznesplanów
+- 241207 Specjalista do spraw zarządzania ryzykiem
+- 241290 Pozostali doradcy finansowi i inwestycyjni
+- 241301 Analityk giełdowy
+- 241302 Analityk kredytowy
+- 241303 Projektant pakietów usług finansowych
+- 241304 Specjalista bankowości
+- 241305 Specjalista do spraw factoringu
+- 241306 Analityk finansowy
+- 241307 Specjalista do spraw ubezpieczeń majątkowych i osobowych
+- 241308 Specjalista do spraw ubezpieczeń społecznych
+- 241309 Specjalista do spraw ubezpieczeń zdrowotnych
+- 241310 Specjalista do spraw analizy ryzyka ubezpieczeniowego (underwriter)
+- 241311 Analityk inwestycyjny
+- 241390 Pozostali analitycy finansowi
+- 242101 Administrator produkcji filmowej
+- 242102 Koordynator projektów unijnych
+- 242103 Makler nadzorujący
+- 242104 Negocjator biznesowy
+- 242105 Organizator transportu drogowego
+- 242106 Specjalista do spraw doskonalenia organizacji
+- 242107 Specjalista do spraw konsultingu
+- 242108 Specjalista do spraw logistyki
+- 242109 Specjalista do spraw pozyskiwania funduszy (fundraiser)
+- 242110 Specjalista ochrony informacji niejawnych
+- 242112 Analityk biznesowy
+- 242113 Specjalista do spraw organizacji usług gastronomicznych, hotelowych i turystycznych
+- 242114 Specjalista do spraw społecznej odpowiedzialności przedsiębiorstw
+- 242115 Specjalista do spraw przewozów intermodalnych
+- 242116 Specjalista do spraw zarządzania
+- 242190 Pozostali specjaliści do spraw zarządzania i organizacji
+- 242201 Animator gospodarczy do spraw przedsiębiorczości
+- 242202 Animator gospodarczy do spraw rozwoju regionalnego
+- 242203 Specjalista do spraw komercjalizacji innowacyjnych technologii
+- 242204 Audytor / kontroler
+- 242205 Doradca do spraw bezpieczeństwa w transporcie towarów niebezpiecznych
+- 242206 Ekspert w Urzędzie Patentowym RP
+- 242207 Inspektor do spraw wytwarzania Głównego Inspektoratu Farmaceutycznego
+- 242208 Inspektor farmaceutyczny
+- 242209 Inspektor kontroli skarbowej
+- 242210 Inspektor nadzoru bankowego
+- 242211 Inspektor nadzoru budowlanego
+- 242212 Inspektor ochrony danych
+- 242213 Inspektor rybołówstwa morskiego
+- 242214 Inspektor pracy
+- 242215 Kontroler państwowy
+- 242216 Rzecznik patentowy
+- 242217 Specjalista administracji publicznej
+- 242218 Specjalista do spraw badań społeczno-ekonomicznych
+- 242219 Specjalista do spraw integracji europejskiej
+- 242220 Specjalista do spraw organizacji i rozwoju przemysłu
+- 242221 Specjalista do spraw organizacji i rozwoju transportu
+- 242223 Specjalista do spraw planowania strategicznego
+- 242224 Specjalista do spraw stosunków międzynarodowych
+- 242225 Specjalista do spraw zamówień publicznych
+- 242226 Specjalista organizacji i zarządzania w ochronie zdrowia
+- 242227 Specjalista zarządzania kryzysowego
+- 242228 Specjalista do spraw organizacji i rozwoju sprzedaży
+- 242229 Inspektor do spraw obrotu hurtowego lekami
+- 242230 Specjalista do spraw bezpieczeństwa wewnętrznego
+- 242231 Specjalista do spraw cudzoziemców, migracji i integracji
+- 242232 Specjalista do spraw obsługi projektów i programów
+- 242290 Pozostali specjaliści do spraw administracji i rozwoju
+- 242301 Analityk pracy
+- 242302 Doradca EURES
+- 242303 Doradca personalny
+- 242304 Doradca zawodowy
+- 242305 Konsultant do spraw kariery
+- 242306 Doradca do spraw zatrudnienia
+- 242307 Specjalista do spraw kadr
+- 242308 Specjalista do spraw kultury firmy
+- 242309 Specjalista do spraw rekrutacji pracowników
+- 242310 Specjalista do spraw wynagrodzeń
+- 242311 Specjalista do spraw zarządzania talentami
+- 242312 Specjalista integracji międzykulturowej
+- 242313 Specjalista do spraw czasowego zatrudniania pracowników
+- 242390 Pozostali specjaliści do spraw zarządzania zasobami ludzkimi
+- 242401 Broker edukacyjny
+- 242402 Specjalista do spraw rozwoju zawodowego
+- 242403 Specjalista do spraw szkoleń
+- 242490 Pozostali specjaliści do spraw szkoleń zawodowych i rozwoju kadr
+- 243101 Analityk trendów rynkowych (cool hunter)
+- 243102 Autor tekstów i sloganów reklamowych (copywriter)
+- 243103 Menedżer produktu (product manager)
+- 243104 Menedżer marki (brand manager)
+- 243105 Specjalista analizy i rozwoju rynku
+- 243106 Specjalista do spraw marketingu i handlu
+- 243107 Specjalista do spraw reklamy
+- 243108 Specjalista do spraw mediów interaktywnych
+- 243109 Specjalista sprzedaży internetowej
+- 243110 Specjalista do spraw mediów społecznościowych
+- 243190 Pozostali specjaliści do spraw reklamy i marketingu
+- 243201 Specjalista etyki biznesu
+- 243202 Lobbysta
+- 243203 Specjalista do spraw public relations
+- 243290 Pozostali specjaliści do spraw public relations
+- 243301 Inżynier sprzedaży
+- 243302 Opiekun klienta
+- 243303 Przedstawiciel medyczny
+- 243304 Specjalista do spraw kluczowych klientów (key account manager)
+- 243305 Specjalista do spraw sprzedaży
+- 243306 Specjalista zaopatrzenia medycznego
+- 243307 Specjalista do spraw obsługi posprzedażowej
+- 243308 Specjalista do spraw handlu zagranicznego
+- 243390 Pozostali specjaliści do spraw sprzedaży (z wyłączeniem technologii informacyjno-komunikacyjnych)
+- 243401 Inżynier sprzedaży technologii i usług teleinformatycznych
+- 243402 Specjalista sprzedaży technologii i usług informatycznych
+- 243490 Pozostali specjaliści do spraw sprzedaży z dziedziny technologii teleinformatycznych
+- 244001 Pośrednik w obrocie nieruchomościami
+- 244002 Rzeczoznawca majątkowy
+- 244003 Zarządca nieruchomości
+- 244090 Pozostali specjaliści do spraw rynku nieruchomości
+
+### 25 Specjaliści do spraw technologii informacyjno-komunikacyjnych (58)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 251101 Analityk systemów teleinformatycznych
+- 251102 Konsultant do spraw systemów teleinformatycznych
+- 251103 Projektant / architekt systemów teleinformatycznych
+- 251104 Analityk doświadczenia użytkowników (user experience analyst)
+- 251105 Specjalista do spraw integracji technologii informatycznych
+- 251106 Informatyk
+- 251190 Pozostali analitycy systemów komputerowych
+- 251201 Specjalista do spraw doskonalenia i rozwoju aplikacji
+- 251202 Specjalista do spraw rozwoju oprogramowania
+- 251203 Specjalista do spraw technologii blockchain
+- 251290 Pozostali specjaliści do spraw oprogramowania
+- 251301 Architekt stron internetowych
+- 251302 Projektant aplikacji multimedialnych, animacji i gier komputerowych
+- 251303 Specjalista do spraw rozwoju stron internetowych
+- 251390 Pozostali projektanci aplikacji sieciowych i multimediów
+- 251401 Programista aplikacji
+- 251402 Programista aplikacji mobilnych
+- 251403 Projektant interfejsu użytkownika
+- 251404 Specjalista do spraw jakości oprogramowania
+- 251490 Pozostali programiści aplikacji
+- 251901 Informatyk medyczny
+- 251902 Specjalista zastosowań informatyki
+- 251903 Tester oprogramowania komputerowego
+- 251904 Tester systemów teleinformatycznych
+- 251905 Specjalista systemów rozpoznawania mowy
+- 251906 Inżynier internetu rzeczy
+- 251907 Specjalista do spraw chmury obliczeniowej (cloud computing)
+- 251908 Specjalista do spraw rozwoju sztucznej inteligencji
+- 251909 Specjalista do spraw uczenia maszynowego
+- 251910 Specjalista do spraw wirtualnej rzeczywistości
+- 251911 Specjalista do spraw informatyki przemysłowej
+- 251990 Pozostali analitycy systemów komputerowych i programiści gdzie indziej niesklasyfikowani
+- 252101 Administrator baz danych
+- 252102 Analityk baz danych (data scientist)
+- 252103 Projektant baz danych
+- 252190 Pozostali projektanci i administratorzy baz danych
+- 252201 Administrator systemów komputerowych
+- 252202 Administrator zintegrowanych systemów zarządzania
+- 252290 Pozostali administratorzy systemów komputerowych
+- 252301 Analityk sieci komputerowych
+- 252302 Inżynier systemów i sieci komputerowych
+- 252390 Pozostali specjaliści do spraw sieci komputerowych
+- 252901 Specjalista bezpieczeństwa oprogramowania
+- 252902 Specjalista do spraw cyberbezpieczeństwa
+- 252903 Specjalista do spraw systemów zarządzania bezpieczeństwem informacji
+- 252904 Specjalista do spraw informatyki śledczej
+- 252905 Główny menedżer bezpieczeństwa informacji (Chief information security officer)
+- 252906 Specjalista do spraw obsługi incydentów (Cyber incident responder)
+- 252907 Specjalista do spraw prawnych i zgodności w zakresie cyberbezpieczeństwa (Cyber legal, policy & compliance officer)
+- 252908 Specjalista do spraw pozyskiwania i analizy informacji o cyberzagrożeniach (Cyber threat intelligence specialist)
+- 252909 Architekt cyberbezpieczeństwa (Cybersecurity architect)
+- 252910 Audytor cyberbezpieczeństwa (Cybersecurity auditor)
+- 252911 Specjalista do spraw szkoleń z zakresu cyberbezpieczeństwa (Cybersecurity educator)
+- 252912 Specjalista do spraw wdrażania rozwiązań z zakresu cyberbezpieczeństwa (Cybersecurity implementer)
+- 252913 Specjalista do spraw badań w obszarze cyberbezpieczeństwa (Cybersecurity researcher)
+- 252914 Specjalista do spraw zarządzania ryzykiem w obszarze cyberbezpieczeństwa (Cybersecurity risk manager)
+- 252915 Specjalista do spraw testów bezpieczeństwa systemów informacyjnych (Penetration tester)
+- 252990 Pozostali specjaliści do spraw baz danych i sieci komputerowych gdzie indziej niesklasyfikowani
+
+### 26 Specjaliści z dziedziny prawa, dziedzin społecznych i kultury (142)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 261101 Adwokat — biurowa
+- 261102 Prokurator — biurowa
+- 261103 Radca prawny — biurowa
+- 261201 Sędzia — biurowa
+- 261901 Asystent prawny — biurowa
+- 261902 Asystent prokuratora — biurowa
+- 261903 Asystent sędziego — biurowa
+- 261904 Komornik sądowy — biurowa
+- 261905 Notariusz — biurowa
+- 261906 Legislator — biurowa
+- 261907 Radca Prokuratorii Generalnej Rzeczypospolitej Polskiej — biurowa
+- 261908 Referendarz sądowy — biurowa
+- 261909 Doradca do spraw odszkodowań — biurowa
+- 261910 Specjalista do spraw ochrony własności intelektualnej — biurowa
+- 261911 Analityk kryminalny — biurowa
+- 261912 Asystent radcy Prokuratorii Generalnej Rzeczypospolitej Polskiej — biurowa
+- 261913 Referendarz w Urzędzie Prokuratorii Generalnej Rzeczypospolitej Polskiej — biurowa
+- 261990 Pozostali specjaliści z dziedziny prawa gdzie indziej niesklasyfikowani — biurowa
+- 262101 Archiwista — biurowa
+- 262102 Muzealnik — biurowa
+- 262201 Analityk informacji i raportów medialnych — biurowa
+- 262202 Analityk ruchu na stronach internetowych — biurowa
+- 262203 Bibliotekoznawca — biurowa
+- 262204 Broker informacji (researcher) — biurowa
+- 262205 Menedżer zawartości serwisów internetowych — biurowa
+- 262206 Specjalista informacji naukowej, technicznej i ekonomicznej — biurowa
+- 262207 Specjalista zarządzania informacją — biurowa
+- 262208 Specjalista zarządzania dokumentacją — biurowa
+- 262290 Pozostali bibliotekoznawcy i specjaliści zarządzania informacją — biurowa
+- 263101 Ekonometryk — opiekuncza
+- 263102 Ekonomista — opiekuncza
+- 263190 Pozostali ekonomiści — opiekuncza
+- 263201 Archeolog — opiekuncza
+- 263202 Etnograf — opiekuncza
+- 263203 Kulturoznawca — opiekuncza
+- 263204 Socjolog — opiekuncza
+- 263205 Antropolog — opiekuncza
+- 263206 Kryminolog — opiekuncza
+- 263207 Religioznawca — opiekuncza
+- 263290 Pozostali archeolodzy, socjolodzy i specjaliści dziedzin pokrewnych — opiekuncza
+- 263301 Filozof — opiekuncza
+- 263302 Historyk — opiekuncza
+- 263303 Historyk sztuki — opiekuncza
+- 263304 Politolog — opiekuncza
+- 263305 Specjalista polityki społecznej — opiekuncza
+- 263306 Teolog — opiekuncza
+- 263390 Pozostali filozofowie, historycy i politolodzy — opiekuncza
+- 263401 Psycholog — opiekuncza
+- 263402 Psycholog biznesu — opiekuncza
+- 263404 Psycholog organizacji — opiekuncza
+- 263405 Psycholog sportowy — opiekuncza
+- 263406 Psycholog wychowawczy — opiekuncza
+- 263407 Specjalista do spraw uzależnień od mediów cyfrowych — opiekuncza
+- 263408 Grafolog — opiekuncza
+- 263409 Specjalista marketingu społecznego — opiekuncza
+- 263490 Pozostali psycholodzy i pokrewni — opiekuncza
+- 263501 Kurator sądowy — opiekuncza
+- 263502 Mediator — opiekuncza
+- 263503 Specjalista poradnictwa psychospołecznego i rodzinnego — opiekuncza
+- 263504 Specjalista pracy socjalnej — opiekuncza
+- 263505 Specjalista resocjalizacji — opiekuncza
+- 263506 Wychowawca w jednostkach penitencjarnych — opiekuncza
+- 263507 Mediator sądowy — opiekuncza
+- 263508 Koordynator rodzinnej pieczy zastępczej — opiekuncza
+- 263509 Specjalista do spraw adopcji — opiekuncza
+- 263510 Specjalista komunikacji społecznej — opiekuncza
+- 263511 Specjalista do spraw ochrony praw dziecka i rodziny — opiekuncza
+- 263590 Pozostali specjaliści do spraw społecznych — opiekuncza
+- 263601 Duchowny religii mojżeszowej — opiekuncza
+- 263602 Duchowny religii muzułmańskiej — opiekuncza
+- 263603 Duchowny wyznania prawosławnego — opiekuncza
+- 263604 Duchowny wyznania rzymskokatolickiego — opiekuncza
+- 263605 Duchowny wyznania ewangelickiego — opiekuncza
+- 263606 Zakonnik (bez święceń kapłańskich) — opiekuncza
+- 263690 Pozostali duchowni i osoby konsekrowane — opiekuncza
+- 264101 Edytor materiałów źródłowych — kreatywna
+- 264102 Pisarz — kreatywna
+- 264103 Poeta — kreatywna
+- 264104 Redaktor wydawniczy — kreatywna
+- 264105 Scenarzysta — kreatywna
+- 264190 Pozostali literaci i inni autorzy tekstów — kreatywna
+- 264201 Dziennikarz — kreatywna
+- 264202 Fotoedytor — kreatywna
+- 264203 Krytyk artystyczny — kreatywna
+- 264204 Redaktor programowy — kreatywna
+- 264205 Reporter radiowy / telewizyjny / prasowy — kreatywna
+- 264206 Krytyk kulinarny — kreatywna
+- 264207 Redaktor serwisu internetowego — kreatywna
+- 264208 Redaktor naczelny — kreatywna
+- 264290 Pozostali dziennikarze — kreatywna
+- 264301 Filolog klasyczny — kreatywna
+- 264302 Filolog języka nowożytnego — kreatywna
+- 264303 Filolog polski — kreatywna
+- 264304 Tłumacz — kreatywna
+- 264305 Tłumacz przysięgły — kreatywna
+- 264310 Tłumacz języka migowego — kreatywna
+- 264390 Pozostali filolodzy i tłumacze — kreatywna
+- 265101 Artysta fotografik — kreatywna
+- 265102 Artysta grafik — kreatywna
+- 265103 Artysta malarz — kreatywna
+- 265104 Artysta rzeźbiarz — kreatywna
+- 265105 Konserwator dzieł sztuki — kreatywna
+- 265106 Scenograf — kreatywna
+- 265107 Konserwator zabytków architektury — kreatywna
+- 265190 Pozostali artyści plastycy — kreatywna
+- 265201 Instrumentalista — kreatywna
+- 265202 Wokalista — kreatywna
+- 265203 Dyrygent — kreatywna
+- 265204 Kompozytor — kreatywna
+- 265205 Reżyser dźwięku — kreatywna
+- 265206 Muzykolog — kreatywna
+- 265207 Piosenkarz — kreatywna
+- 265290 Pozostali kompozytorzy, artyści muzycy i śpiewacy — kreatywna
+- 265301 Choreograf — kreatywna
+- 265302 Tancerz baletowy — kreatywna
+- 265390 Pozostali choreografowie i tancerze — kreatywna
+- 265401 Asystent reżysera filmowego — kreatywna
+- 265402 Operator obrazu — kreatywna
+- 265403 Producent filmowy — kreatywna
+- 265404 Producent teatralny — kreatywna
+- 265405 Producent telewizyjny — kreatywna
+- 265406 Realizator programu telewizyjnego / radiowego — kreatywna
+- 265407 Reżyser filmowy — kreatywna
+- 265408 Reżyser teatralny — kreatywna
+- 265409 Reżyser telewizyjny / radiowy — kreatywna
+- 265410 Kierownik produkcji filmowej / telewizyjnej / radiowej — kreatywna
+- 265411 Producent muzyczny — kreatywna
+- 265490 Pozostali producenci filmowi, reżyserzy i pokrewni — kreatywna
+- 265501 Aktor — kreatywna
+- 265502 Aktor lalkarz — kreatywna
+- 265503 Mim — kreatywna
+- 265590 Pozostali aktorzy — kreatywna
+- 265601 Komentator sportowy — kreatywna
+- 265602 Konferansjer — kreatywna
+- 265603 Lektor dialogów filmowych i radiowych — kreatywna
+- 265604 Prezenter muzyczny (DJ / didżej) — kreatywna
+- 265605 Prezenter telewizyjny — kreatywna
+- 265606 Spiker radiowy — kreatywna
+- 265690 Pozostali prezenterzy radiowi, telewizyjni i pokrewni — kreatywna
+- 265901 Twórca ludowy — kreatywna
+- 265902 Bloger / vloger — kreatywna
+- 265990 Pozostali twórcy i artyści gdzie indziej niesklasyfikowani — kreatywna
+
+## 3 TECHNICY I INNY ŚREDNI PERSONEL (620)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC3, GUS październik 2024. Mediana ogółem 7811.76 zł → wyświetlane 7800 zł. Przeciętne 8701.93 zł → 8700 zł.
+
+### 31 Średni personel nauk fizycznych, chemicznych i technicznych (289)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 311101 Laborant chemiczny — fizyczna
+- 311102 Probierz — fizyczna
+- 311103 Technik analityk* — fizyczna
+- 311104 Technik geodeta* — fizyczna
+- 311105 Technik geofizyk — fizyczna
+- 311106 Technik geolog* — fizyczna
+- 311107 Technik hydrolog — fizyczna
+- 311108 Technik meteorolog — fizyczna
+- 311109 Technik metrolog — fizyczna
+- 311190 Pozostali technicy nauk chemicznych, fizycznych i pokrewni — fizyczna
+- 311201 Kosztorysant budowlany — fizyczna
+- 311202 Laborant budowlany — fizyczna
+- 311203 Technik architekt — fizyczna
+- 311204 Technik budownictwa* — fizyczna
+- 311205 Technik budownictwa wodnego* — fizyczna
+- 311206 Technik drogownictwa — fizyczna
+- 311207 Technik dróg i mostów kolejowych — fizyczna
+- 311208 Technik inżynierii środowiska i melioracji* — fizyczna
+- 311209 Technik urządzeń sanitarnych — fizyczna
+- 311210 Technik renowacji elementów architektury* — fizyczna
+- 311211 Inspektor budowlany — fizyczna
+- 311212 Inspektor budowy dróg — fizyczna
+- 311213 Inspektor budowy mostów — fizyczna
+- 311214 Inspektor ochrony przeciwpożarowej — fizyczna
+- 311215 Mostowniczy — fizyczna
+- 311216 Technik budowy dróg* — fizyczna
+- 311217 Technik dróg kolejowych i obiektów inżynieryjnych — fizyczna
+- 311218 Technik inżynierii sanitarnej* — fizyczna
+- 311219 Technik robót wykończeniowych w budownictwie* — fizyczna
+- 311220 Technik budownictwa kolejowego* — fizyczna
+- 311221 Technik dekarstwa* — fizyczna
+- 311222 Technik montażu i automatyki stolarki budowlanej* — fizyczna
+- 311223 Technik obsługi przemysłu targowo-wystawienniczego* — fizyczna
+- 311224 Technik aranżacji wnętrz* — fizyczna
+- 311290 Pozostali technicy budownictwa — fizyczna
+- 311302 Technik elektroenergetyk transportu szynowego* — fizyczna
+- 311303 Technik elektryk* — fizyczna
+- 311304 Technik elektryk kolejowych sieci elektroenergetycznych — fizyczna
+- 311305 Technik elektryk samochodowy — fizyczna
+- 311306 Technik elektryk urządzeń zabezpieczenia i sterowania ruchem kolejowym — fizyczna
+- 311307 Technik energetyk* — fizyczna
+- 311390 Pozostali technicy elektrycy — fizyczna
+- 311401 Diagnosta kolejowy — fizyczna
+- 311402 Instalator systemów alarmowych — fizyczna
+- 311403 Instalator systemów alarmowych przeciwkradzieżowych — fizyczna
+- 311404 Instalator systemów telewizji przemysłowej — fizyczna
+- 311406 Projektant systemów alarmowych — fizyczna
+- 311407 Technik automatyk sterowania ruchem kolejowym* — fizyczna
+- 311408 Technik elektronik* — fizyczna
+- 311409 Technik elektroniki medycznej — fizyczna
+- 311410 Technik mechatronik* — fizyczna
+- 311411 Technik elektroniki i informatyki medycznej* — fizyczna
+- 311412 Technik szerokopasmowej komunikacji elektronicznej* — fizyczna
+- 311413 Technik robotyk* — fizyczna
+- 311490 Pozostali technicy elektronicy i pokrewni — fizyczna
+- 311501 Diagnosta uprawniony do wykonywania badań technicznych pojazdów — fizyczna
+- 311503 Kontroler stanu technicznego pojazdów — fizyczna
+- 311504 Technik mechanik* — fizyczna
+- 311505 Technik mechanik budowy środków transportu — fizyczna
+- 311506 Technik mechanik eksploatacji środków transportu — fizyczna
+- 311508 Technik mechanik maszyn i urządzeń — fizyczna
+- 311509 Technik mechanik obróbki skrawaniem — fizyczna
+- 311510 Technik mechanik precyzyjny — fizyczna
+- 311511 Technik mechanik urządzeń przemysłowych — fizyczna
+- 311512 Technik mechanizacji rolnictwa — fizyczna
+- 311513 Technik pojazdów samochodowych* — fizyczna
+- 311514 Technik utrzymania ruchu — fizyczna
+- 311515 Technik mechanizacji rolnictwa i agrotroniki* — fizyczna
+- 311516 Technik spawalnictwa* — fizyczna
+- 311517 Kontroler jakości połączeń spawanych — fizyczna
+- 311518 Technik pojazdów kolejowych* — fizyczna
+- 311519 Technik elektromobilności* — fizyczna
+- 311590 Pozostali technicy mechanicy — fizyczna
+- 311601 Technik papiernictwa* — fizyczna
+- 311602 Technik przetwórstwa tworzyw sztucznych — fizyczna
+- 311603 Technik technologii chemicznej* — fizyczna
+- 311604 Technik technologii środków farmaceutycznych — fizyczna
+- 311605 Technik technologii środków kosmetycznych — fizyczna
+- 311606 Technik zabezpieczeń przeciwkorozyjnych — fizyczna
+- 311607 Technik postępowania ze źródłami promieniotwórczymi — fizyczna
+- 311608 Technik izolacji przemysłowych* — fizyczna
+- 311690 Pozostali technicy chemicy i pokrewni — fizyczna
+- 311701 Technik górnictwa odkrywkowego* — fizyczna
+- 311702 Technik górnictwa otworowego* — fizyczna
+- 311703 Technik górnictwa podziemnego* — fizyczna
+- 311704 Technik hutnik — fizyczna
+- 311705 Technik odlewnik* — fizyczna
+- 311706 Technik przeróbki kopalin stałych* — fizyczna
+- 311707 Technik wiertnik* — fizyczna
+- 311708 Technik przemysłu metalurgicznego* — fizyczna
+- 311709 Technik podziemnej eksploatacji kopalin innych niż węgiel kamienny* — fizyczna
+- 311790 Pozostali technicy górnictwa, metalurgii i pokrewni — fizyczna
+- 311801 Rysownik geodezyjny — biurowa
+- 311802 Rysownik kartograficzny — biurowa
+- 311803 Operator CAD — biurowa
+- 311890 Pozostali kreślarze — biurowa
+- 311901 Cechowniczy — fizyczna
+- 311902 Monter urządzeń medycznych — fizyczna
+- 311903 Korektor i stroiciel instrumentów muzycznych — fizyczna
+- 311904 Operator badań defektoskopowych — fizyczna
+- 311905 Operator reaktora — fizyczna
+- 311906 Pracownik obsługi bankomatów — fizyczna
+- 311907 Serwisant urządzeń medycznych — fizyczna
+- 311908 Technik akustyk — fizyczna
+- 311909 Technik automatyk* — fizyczna
+- 311910 Technik budownictwa okrętowego — fizyczna
+- 311911 Technik cyfrowych procesów graficznych — fizyczna
+- 311912 Technik garbarz* — fizyczna
+- 311913 Technik gazownictwa* — fizyczna
+- 311914 Technik instrumentów muzycznych — fizyczna
+- 311915 Technik normowania pracy — fizyczna
+- 311916 Technik obuwnik* — fizyczna
+- 311917 Technik organizacji produkcji — fizyczna
+- 311918 Technik poligraf — fizyczna
+- 311919 Technik pożarnictwa* — fizyczna
+- 311920 Technik systemów zabezpieczeń technicznych osób i mienia — fizyczna
+- 311921 Technik technologii ceramicznej — fizyczna
+- 311922 Technik technologii drewna* — fizyczna
+- 311923 Technik technologii materiałów budowlanych — fizyczna
+- 311924 Technik technologii odzieży — fizyczna
+- 311925 Technik technologii szkła* — fizyczna
+- 311926 Technik technologii wyrobów skórzanych* — fizyczna
+- 311927 Technik transportu drogowego* — fizyczna
+- 311928 Technik transportu kolejowego* — fizyczna
+- 311929 Technik chłodnictwa i klimatyzacji* — fizyczna
+- 311930 Technik urządzeń i systemów energetyki odnawialnej* — fizyczna
+- 311931 Technik włókienniczych wyrobów dekoracyjnych* — fizyczna
+- 311932 Technik włókiennik* — fizyczna
+- 311933 Stroiciel fortepianów i pianin — fizyczna
+- 311934 Technik budowy fortepianów i pianin — fizyczna
+- 311935 Technik procesów drukowania* — fizyczna
+- 311936 Technik procesów introligatorskich* — fizyczna
+- 311937 Kontroler jakości wyrobów przemysłowych — fizyczna
+- 311939 Technik konserwator urządzeń dźwigowych — fizyczna
+- 311940 Technik urządzeń dźwigowych* — fizyczna
+- 311941 Technik przemysłu mody* — fizyczna
+- 311942 Technik budowy jednostek pływających* — fizyczna
+- 311943 Technik grafiki i poligrafii cyfrowej* — fizyczna
+- 311944 Technik ceramik* — fizyczna
+- 311945 Technik budowy i strojenia fortepianów i pianin* — fizyczna
+- 311946 Technik stylista* — fizyczna
+- 311947 Technik przemysłu jachtowego* — fizyczna
+- 311948 Technik przemysłu drzewnego* — fizyczna
+- 311949 Diagnosta sieci preizolowanych — fizyczna
+- 311990 Pozostali technicy nauk fizycznych i technicznych gdzie indziej niesklasyfikowani — fizyczna
+- 312101 Osoby dozoru ruchu w górnictwie odkrywkowym — fizyczna
+- 312102 Osoby dozoru ruchu w górnictwie otworowym — fizyczna
+- 312103 Osoby dozoru ruchu w górnictwie podziemnym — fizyczna
+- 312190 Pozostałe osoby dozoru ruchu w górnictwie — fizyczna
+- 312201 Mistrz produkcji w przemyśle chemicznym — fizyczna
+- 312202 Mistrz produkcji w przemyśle drzewnym — fizyczna
+- 312203 Mistrz produkcji w przemyśle elektromaszynowym — fizyczna
+- 312204 Mistrz produkcji w przemyśle elektronicznym — fizyczna
+- 312205 Mistrz produkcji w przemyśle farmaceutycznym — fizyczna
+- 312206 Mistrz produkcji w przemyśle metalurgicznym — fizyczna
+- 312207 Mistrz produkcji w przemyśle samochodowym — fizyczna
+- 312208 Mistrz produkcji w przemyśle spożywczym — fizyczna
+- 312209 Mistrz produkcji w przemyśle włókienniczym — fizyczna
+- 312210 Mistrz produkcji w poligrafii — fizyczna
+- 312211 Mistrz produkcji w przemyśle odzieżowym — fizyczna
+- 312290 Pozostali mistrzowie produkcji w przemyśle przetwórczym — fizyczna
+- 312301 Mistrz produkcji w budownictwie drogowym — fizyczna
+- 312302 Mistrz produkcji w budownictwie kolejowym — fizyczna
+- 312303 Mistrz produkcji w budownictwie mostowym — fizyczna
+- 312304 Mistrz produkcji w budownictwie ogólnym — fizyczna
+- 312305 Mistrz produkcji w budownictwie przemysłowym — fizyczna
+- 312306 Mistrz produkcji w budownictwie wodnym — fizyczna
+- 312390 Pozostali mistrzowie produkcji w budownictwie — fizyczna
+- 313101 Elektroenergetyk elektrowni cieplnych — fizyczna
+- 313102 Elektroenergetyk elektrowni wodnych — fizyczna
+- 313103 Elektroenergetyk nastawni — fizyczna
+- 313104 Elektroenergetyk pomiarów i zabezpieczeń — fizyczna
+- 313105 Maszynista agregatów prądotwórczych — fizyczna
+- 313106 Maszynista turbozespołu parowego — fizyczna
+- 313107 Maszynista turbozespołu wodnego — fizyczna
+- 313108 Maszynista urządzeń ciepłowniczych elektrowni — fizyczna
+- 313109 Maszynista urządzeń pomocniczych elektrowni — fizyczna
+- 313110 Obchodowy bloku — fizyczna
+- 313190 Pozostali operatorzy urządzeń energetycznych — fizyczna
+- 313201 Operator aparatury do przetwarzania odpadów niebezpiecznych — fizyczna
+- 313202 Maszynista chłodni — fizyczna
+- 313203 Maszynista sprężarek — fizyczna
+- 313204 Maszynista wentylatorów w kopalni — fizyczna
+- 313205 Operator (maszynista) stacji pomp — fizyczna
+- 313206 Operator spalarni odpadów komunalnych — fizyczna
+- 313207 Operator urządzeń klimatyzacyjnych i odpylających — fizyczna
+- 313208 Operator urządzeń oczyszczania ścieków — fizyczna
+- 313209 Operator urządzeń uzdatniania i demineralizacji wody — fizyczna
+- 313210 Pracownik oczyszczania terenu z materiałów wybuchowych i niebezpiecznych — fizyczna
+- 313211 Operator maszyn i urządzeń w gospodarce odpadami* — fizyczna
+- 313290 Pozostali operatorzy urządzeń do spalania odpadów, uzdatniania wody i pokrewni — fizyczna
+- 313301 Kontroler (sterowniczy) procesów w produkcji nawozów sztucznych — fizyczna
+- 313303 Kontroler (sterowniczy) reaktorów chemicznych — fizyczna
+- 313304 Kontroler (sterowniczy) urządzeń destylacyjnych i rektyfikacyjnych — fizyczna
+- 313305 Kontroler (sterowniczy) urządzeń do obróbki cieplnej chemikaliów — fizyczna
+- 313306 Kontroler (sterowniczy) urządzeń filtrujących i oddzielających — fizyczna
+- 313307 Kontroler (sterowniczy) urządzeń koksowniczych — fizyczna
+- 313390 Pozostali kontrolerzy (sterowniczy) procesów w przemyśle chemicznym — fizyczna
+- 313401 Kontroler (sterowniczy) procesów przeróbki ropy naftowej i gazu — fizyczna
+- 313501 Kontroler (sterowniczy) urządzeń do ciągnienia i tłoczenia metali — fizyczna
+- 313502 Kontroler (sterowniczy) urządzeń do wytopu metali — fizyczna
+- 313503 Kontroler (sterowniczy) urządzeń obróbki cieplnej metali — fizyczna
+- 313504 Kontroler (sterowniczy) urządzeń odlewniczych — fizyczna
+- 313505 Kontroler (sterowniczy) urządzeń walcowniczych — fizyczna
+- 313590 Pozostali kontrolerzy (sterowniczy) procesów metalurgicznych — fizyczna
+- 313901 Kontroler (sterowniczy) robotów przemysłowych — fizyczna
+- 313902 Kontroler (sterowniczy) urządzeń do produkcji papieru — fizyczna
+- 313903 Operator robotów i manipulatorów przemysłowych — fizyczna
+- 313904 Operator zautomatyzowanej linii produkcyjnej — fizyczna
+- 313905 Operator drukarek 3D — fizyczna
+- 313990 Pozostali kontrolerzy (sterowniczy) procesów przemysłowych gdzie indziej niesklasyfikowani — fizyczna
+- 314101 Laborant mikrobiologiczny — fizyczna
+- 314102 Laborant biochemiczny — fizyczna
+- 314103 Laborant w hodowli roślin — fizyczna
+- 314104 Laborant w hodowli zwierząt — fizyczna
+- 314190 Pozostali technicy nauk biologicznych — fizyczna
+- 314201 Laborant nasiennictwa — fizyczna
+- 314202 Technik architektury krajobrazu* — fizyczna
+- 314203 Technik hodowca koni* — fizyczna
+- 314204 Technik hodowca zwierząt — fizyczna
+- 314205 Technik ogrodnik* — fizyczna
+- 314206 Technik pszczelarz* — fizyczna
+- 314207 Technik rolnik* — fizyczna
+- 314208 Technik rybactwa śródlądowego* — fizyczna
+- 314290 Pozostali technicy rolnictwa i pokrewni — fizyczna
+- 314301 Technik leśnik* — fizyczna
+- 314401 Kontroler jakości produktów spożywczych — fizyczna
+- 314402 Technik przetwórstwa mleczarskiego* — fizyczna
+- 314403 Technik technologii żywności* — fizyczna
+- 314404 Technik technologii żywności - cukrownictwo — fizyczna
+- 314405 Technik technologii żywności - produkcja cukiernicza — fizyczna
+- 314406 Technik technologii żywności - produkcja koncentratów spożywczych — fizyczna
+- 314407 Technik technologii żywności - produkcja piekarsko-ciastkarska — fizyczna
+- 314408 Technik technologii żywności - przechowalnictwo chłodnicze i technologia żywności mrożonej — fizyczna
+- 314409 Technik technologii żywności - przetwórstwo fermentacyjne — fizyczna
+- 314410 Technik technologii żywności - przetwórstwo jajczarsko-drobiarskie — fizyczna
+- 314411 Technik technologii żywności - przetwórstwo mięsne — fizyczna
+- 314412 Technik technologii żywności - przetwórstwo mleczarskie — fizyczna
+- 314413 Technik technologii żywności - przetwórstwo owocowo-warzywne — fizyczna
+- 314414 Technik technologii żywności - przetwórstwo rybne — fizyczna
+- 314415 Technik technologii żywności - przetwórstwo surowców olejarskich — fizyczna
+- 314416 Technik technologii żywności - przetwórstwo zbożowe — fizyczna
+- 314417 Technik technologii żywności - przetwórstwo ziemniaczane — fizyczna
+- 314490 Pozostali technicy technologii żywności — fizyczna
+- 315101 Mechanik statkowy żeglugi śródlądowej — fizyczna
+- 315102 Oficer automatyk okrętowy — fizyczna
+- 315103 Oficer mechanik — fizyczna
+- 315104 Stermotorzysta żeglugi śródlądowej — fizyczna
+- 315105 Technik mechanik okrętowy* — fizyczna
+- 315106 Technik elektroautomatyk okrętowy* — fizyczna
+- 315190 Pozostali pracownicy służb technicznych żeglugi — fizyczna
+- 315202 Bosman portu — fizyczna
+- 315203 Inspektor bezpieczeństwa żeglugi — fizyczna
+- 315204 Kapitan portu morskiego — fizyczna
+- 315205 Kapitan statku morskiego — fizyczna
+- 315206 Kapitan żeglugi śródlądowej — fizyczna
+- 315207 Kapitan żeglugi przybrzeżnej — fizyczna
+- 315208 Oficer pokładowy — fizyczna
+- 315209 Oficer portu — fizyczna
+- 315210 Obserwator radarowy żeglugi śródlądowej — fizyczna
+- 315211 Pilot morski — fizyczna
+- 315212 Pilot żeglugi śródlądowej — fizyczna
+- 315214 Technik nawigator morski* — fizyczna
+- 315215 Technik rybołówstwa morskiego* — fizyczna
+- 315216 Technik żeglugi śródlądowej* — fizyczna
+- 315217 Szyper — fizyczna
+- 315290 Pozostali oficerowie pokładowi, piloci żeglugi i pokrewni — fizyczna
+- 315301 Mechanik pokładowy — fizyczna
+- 315302 Nawigator lotniczy — fizyczna
+- 315305 Operator tankowania statków powietrznych — fizyczna
+- 315306 Pilot balonowy — fizyczna
+- 315308 Pilot samolotowy zawodowy / liniowy — fizyczna
+- 315309 Pilot sterowcowy zawodowy — fizyczna
+- 315310 Pilot szybowcowy — fizyczna
+- 315311 Pilot śmigłowcowy zawodowy / liniowy — fizyczna
+- 315312 Pilot wiatrakowcowy zawodowy — fizyczna
+- 315314 Skoczek spadochronowy — fizyczna
+- 315316 Technik awionik* — fizyczna
+- 315317 Technik mechanik lotniczy* — fizyczna
+- 315318 Mechanik lotniczy obsługi technicznej — fizyczna
+- 315319 Pilot pionowzlotu — fizyczna
+- 315390 Pozostali piloci statków powietrznych i personel pokrewny — fizyczna
+- 315401 Dyspozytor lotniczy — fizyczna
+- 315402 Informator służby informacji powietrznej — fizyczna
+- 315403 Kontroler ruchu lotniczego — fizyczna
+- 315405 Informator lotniskowej służby informacji powietrznej — fizyczna
+- 315406 Technik lotniskowych służb operacyjnych* — fizyczna
+- 315490 Pozostali kontrolerzy ruchu lotniczego i personel pokrewny — fizyczna
+- 315501 Technik urządzeń ruchu lotniczego — fizyczna
+
+### 32 Średni personel do spraw zdrowia (67)
+
+Profil: opiekuncza. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +6, sylwetka +1, inteligencja +1, zdrowie -1, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 321101 Operator systemów sterylizacji artykułów sanitarnych, sprzętu i aparatów medycznych
+- 321102 Perfuzjonista
+- 321103 Technik elektroradiolog*
+- 321104 Technik sterylizacji medycznej*
+- 321190 Pozostali operatorzy aparatury medycznej
+- 321201 Technik analityki medycznej
+- 321301 Technik farmaceutyczny*
+- 321401 Protetyk słuchu*
+- 321402 Technik dentystyczny*
+- 321403 Technik ortopeda*
+- 321490 Pozostali technicy medyczni i dentystyczni
+- 322001 Dietetyk
+- 322002 Technik żywienia i gospodarstwa domowego
+- 322090 Pozostali dietetycy i żywieniowcy
+- 323001 Akupunkturzysta
+- 323002 Bioenergoterapeuta
+- 323003 Biomasażysta
+- 323004 Chiropraktyk
+- 323005 Homeopata
+- 323006 Instruktor hipoterapii
+- 323007 Kynoterapeuta (dogoterapeuta)
+- 323008 Muzykoterapeuta
+- 323009 Naturopata
+- 323010 Osteopata
+- 323011 Refleksolog
+- 323012 Zielarz-fitoterapeuta
+- 323013 Arteterapeuta
+- 323014 Podolog*
+- 323090 Pozostali praktykujący niekonwencjonalne lub komplementarne metody terapii
+- 324001 Laborant weterynaryjny
+- 324002 Technik weterynarii*
+- 324090 Pozostali technicy weterynarii
+- 325101 Asystentka stomatologiczna*
+- 325102 Higienistka stomatologiczna*
+- 325190 Pozostali asystenci dentystyczni
+- 325201 Terapeuta środowiskowy
+- 325290 Pozostali środowiskowi pracownicy ochrony zdrowia
+- 325301 Optyk okularowy
+- 325302 Technik optyk*
+- 325390 Pozostali optycy okularowi
+- 325401 Technik fizjoterapii
+- 325402 Technik masażysta*
+- 325501 Edukator ekologiczny
+- 325502 Inspektor bezpieczeństwa i higieny pracy
+- 325503 Inspektor ochrony radiologicznej
+- 325504 Inspektor ochrony środowiska
+- 325505 Instruktor higieny
+- 325506 Kontroler higieny mięsa
+- 325507 Strażnik ochrony przyrody / środowiska
+- 325508 Technik analizy i monitoringu środowiska
+- 325509 Technik bezpieczeństwa i higieny pracy*
+- 325510 Technik dozymetrysta
+- 325511 Technik ochrony środowiska*
+- 325512 Weterynaryjny kontroler sanitarny
+- 325513 Inspektor obrony cywilnej
+- 325514 Inspektor sanitarny
+- 325515 Technik gospodarki odpadami*
+- 325590 Pozostały średni personel ochrony środowiska, medycyny pracy i bhp
+- 325601 Ratownik medyczny
+- 325901 Felczer
+- 325902 Higienistka szkolna
+- 325903 Instruktor terapii uzależnień
+- 325904 Koordynator pobierania i przeszczepiania tkanek i narządów
+- 325905 Opiekunka dziecięca*
+- 325906 Ortoptystka*
+- 325907 Terapeuta zajęciowy*
+- 325990 Pozostały średni personel do spraw zdrowia gdzie indziej niesklasyfikowany
+
+### 33 Średni personel do spraw biznesu i administracji (119)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 331101 Dealer aktywów finansowych
+- 331102 Makler papierów wartościowych
+- 331103 Pośrednik finansowy
+- 331104 Pracownik do spraw produktów finansowych
+- 331105 Pracownik scentralizowanych systemów rozliczeniowych
+- 331190 Pozostali dealerzy i maklerzy aktywów finansowych
+- 331201 Pracownik do spraw kredytów
+- 331202 Pracownik do spraw pożyczek
+- 331203 Pracownik obsługi klienta instytucji finansowej
+- 331290 Pozostali pracownicy do spraw kredytów, pożyczek i pokrewni
+- 331301 Księgowy
+- 331401 Asystent do spraw statystyki
+- 331402 Technik agrobiznesu*
+- 331403 Technik ekonomista*
+- 331404 Asystent przetwarzania danych
+- 331490 Pozostały średni personel do spraw statystyki i dziedzin pokrewnych
+- 331501 Gemmolog
+- 331502 Likwidator szkód
+- 331503 Rzeczoznawca
+- 331504 Rzeczoznawca jakości handlowej artykułów rolno-spożywczych
+- 331506 Taksator
+- 331508 Taksator ryzyka działalności firm
+- 331590 Pozostali rzeczoznawcy (z wyłączeniem majątkowych)
+- 332101 Agent ubezpieczeniowy
+- 332103 Broker reasekuracyjny
+- 332104 Broker ubezpieczeniowy
+- 332190 Pozostali agenci ubezpieczeniowi
+- 332201 Ekspozytor towarów (merchandiser)
+- 332202 Pracownik centrum elektronicznej obsługi klienta
+- 332203 Przedstawiciel handlowy
+- 332290 Pozostali przedstawiciele handlowi
+- 332301 Agent do spraw zakupów
+- 332302 Zaopatrzeniowiec
+- 332390 Pozostali zaopatrzeniowcy
+- 332401 Makler giełd towarowych
+- 332402 Makler morski
+- 332490 Pozostali pośrednicy handlowi
+- 333101 Agent celny
+- 333102 Agent klarujący
+- 333103 Eksploatator portu
+- 333104 Pracownik działu logistyki
+- 333105 Spedytor
+- 333106 Technik eksploatacji portów i terminali*
+- 333107 Technik logistyk*
+- 333108 Technik spedytor*
+- 333109 Doradca do spraw bezpieczeństwa przewozu koleją towarów niebezpiecznych (Doradca RID)
+- 333190 Pozostali spedytorzy i pokrewni
+- 333201 Organizator imprez rozrywkowych (organizator eventów)
+- 333202 Organizator imprez ślubnych
+- 333203 Organizator imprez sportowych
+- 333204 Organizator usług konferencyjnych
+- 333205 Organizator widowni
+- 333290 Pozostali organizatorzy konferencji i imprez
+- 333301 Pośrednik pracy
+- 333302 Pracownik agencji pracy tymczasowej
+- 333390 Pozostali pośrednicy pracy i zatrudnienia
+- 333401 Agent do spraw pozyskiwania gruntów
+- 333402 Pracownik wynajmu powierzchni komercyjnych
+- 333403 Administrator nieruchomości
+- 333404 Doradca do spraw rynku nieruchomości
+- 333405 Technik gospodarki nieruchomościami*
+- 333490 Pozostali agenci i administratorzy nieruchomości
+- 333901 Menedżer artystyczny
+- 333902 Licytator
+- 333903 Promotor marki (trendsetter)
+- 333904 Sprzedawca reklam internetowych
+- 333905 Tajemniczy klient (mystery shopper)
+- 333906 Technik organizacji reklamy
+- 333907 Technik reklamy*
+- 333990 Pozostali pośrednicy usług biznesowych gdzie indziej niesklasyfikowani
+- 334101 Kierownik biura
+- 334102 Kierownik kancelarii tajnej
+- 334201 Sekretarka w kancelarii prawnej
+- 334290 Pozostali sekretarze prawni
+- 334301 Akredytowany asystent parlamentarny
+- 334302 Asystent dyrektora
+- 334303 Asystent parlamentarny
+- 334304 Asystent zarządu
+- 334305 Sekretarz konsularny
+- 334306 Technik administracji*
+- 334307 Stenograf-protokolant
+- 334390 Pozostali pracownicy administracyjni i sekretarze biura zarządu
+- 334401 Pracownik do spraw ubezpieczeń medycznych
+- 334402 Sekretarka medyczna
+- 334490 Pozostali sekretarze medyczni i pokrewni
+- 335101 Funkcjonariusz celny
+- 335102 Funkcjonariusz Straży Granicznej
+- 335103 Urzędnik do spraw imigracji
+- 335104 Funkcjonariusz Służby Celno-Skarbowej
+- 335190 Pozostali funkcjonariusze celni i ochrony granic
+- 335201 Kontroler rozliczeń podatkowych
+- 335202 Rewident kontroli skarbowej
+- 335203 Urzędnik podatkowy
+- 335290 Pozostali urzędnicy do spraw podatków
+- 335301 Urzędnik ubezpieczeń społecznych
+- 335390 Pozostali urzędnicy do spraw świadczeń społecznych
+- 335401 Urzędnik do spraw licencji
+- 335402 Urzędnik do spraw paszportów
+- 335403 Urzędnik do spraw udzielania pozwoleń na budowę
+- 335404 Urzędnik do spraw udzielania pozwoleń na prowadzenie działalności gospodarczej
+- 335490 Pozostali urzędnicy organów udzielających licencji
+- 335501 Negocjator policyjny
+- 335502 Policjant służby kryminalnej
+- 335503 Technik kryminalistyki
+- 335504 Policjant służby prewencji
+- 335505 Policjant służby wspomagającej
+- 335506 Policjant służby kontrterrorystycznej
+- 335507 Policjant służby spraw wewnętrznych
+- 335508 Policjant służby śledczej
+- 335590 Pozostali policjanci
+- 335601 Funkcjonariusz służby ochrony
+- 335602 Funkcjonariusz służby penitencjarnej
+- 335690 Pozostali funkcjonariusze Służby Więziennej
+- 335701 Funkcjonariusz służb specjalnych
+- 335905 Inspektor kontroli handlu i usług
+- 335906 Rzecznik praw konsumenta
+- 335907 Inspektor do spraw miar i wag
+- 335909 Inspektor Inspekcji Transportu Drogowego
+- 335990 Pozostali urzędnicy państwowi do spraw nadzoru gdzie indziej niesklasyfikowani
+
+### 34 Średni personel z dziedziny prawa, spraw społecznych, kultury i pokrewny (94)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 341101 Detektyw prywatny — biurowa
+- 341102 Sekretarka notarialna — biurowa
+- 341103 Sekretarz sądowy — biurowa
+- 341190 Pozostały średni personel z dziedziny prawa i pokrewny — biurowa
+- 341201 Asystent osoby niepełnosprawnej* — opiekuncza
+- 341202 Opiekun osoby starszej* — opiekuncza
+- 341203 Opiekun w domu pomocy społecznej* — opiekuncza
+- 341204 Opiekunka środowiskowa* — opiekuncza
+- 341205 Pracownik socjalny — opiekuncza
+- 341206 Interwent kryzysowy — opiekuncza
+- 341207 Asystent rodziny — opiekuncza
+- 341208 Pracownik do spraw streetworkingu (streetworker) — opiekuncza
+- 341290 Pozostali pracownicy wsparcia rodziny, pomocy społecznej i pracy socjalnej — opiekuncza
+- 341301 Pracownik parafialny — opiekuncza
+- 341302 Świecki krzewiciel wiary — opiekuncza
+- 341390 Pozostali pracownicy z zakresu działalności religijnej — opiekuncza
+- 342101 Dżokej — fizyczna
+- 342102 Zawodnik dyscypliny sportu — fizyczna
+- 342201 Instruktor sportu — fizyczna
+- 342202 Instruktor sportu osób niepełnosprawnych — fizyczna
+- 342203 Menedżer dyscypliny sportu — fizyczna
+- 342204 Menedżer imprez sportowych — fizyczna
+- 342205 Menedżer sportu — fizyczna
+- 342206 Sędzia sportowy — fizyczna
+- 342207 Trener sportu — fizyczna
+- 342290 Pozostali trenerzy, instruktorzy i działacze sportowi — fizyczna
+- 342301 Instruktor fitness — fizyczna
+- 342302 Instruktor gimnastyki korekcyjnej — fizyczna
+- 342303 Instruktor jazdy konnej — fizyczna
+- 342304 Instruktor odnowy biologicznej — fizyczna
+- 342305 Instruktor rekreacji ruchowej — fizyczna
+- 342306 Instruktor rytmiki — fizyczna
+- 342307 Instruktor sportów siłowych — fizyczna
+- 342308 Instruktor sportów ekstremalnych — fizyczna
+- 342309 Instruktor sztuki walki — fizyczna
+- 342310 Pracownik do spraw kultury fizycznej i sportu — fizyczna
+- 342311 Animator rekreacji i organizacji czasu wolnego — fizyczna
+- 342390 Pozostali instruktorzy fitness i rekreacji ruchowej — fizyczna
+- 343101 Fotograf* — kreatywna
+- 343102 Fotoreporter — kreatywna
+- 343103 Fotosista — kreatywna
+- 343104 Fototechnik — kreatywna
+- 343105 Technik fotografii i multimediów* — kreatywna
+- 343190 Pozostali fotografowie — kreatywna
+- 343201 Dekorator sklepów — kreatywna
+- 343202 Dekorator wnętrz — kreatywna
+- 343203 Florysta* — kreatywna
+- 343204 Plastyk* — kreatywna
+- 343205 Technik sztukatorstwa i kamieniarstwa artystycznego — kreatywna
+- 343206 Rzeźbiarz w owocach i warzywach — kreatywna
+- 343290 Pozostali plastycy, dekoratorzy wnętrz i pokrewni — kreatywna
+- 343301 Bibliotekarz — kreatywna
+- 343302 Pracownik galerii / muzeum — kreatywna
+- 343303 Technik informacji naukowej — kreatywna
+- 343304 Doradca do spraw zasobów bibliotecznych — kreatywna
+- 343305 Animator rynku książki* — kreatywna
+- 343390 Pozostali pracownicy bibliotek, galerii, muzeów, informacji naukowej i pokrewni — kreatywna
+- 343401 Organizator usług kateringowych — kreatywna
+- 343402 Szef kuchni (kuchmistrz) — kreatywna
+- 343404 Technik żywienia i usług gastronomicznych* — kreatywna
+- 343490 Pozostali szefowie kuchni i organizatorzy usług gastronomicznych — kreatywna
+- 343501 Akrobata — kreatywna
+- 343502 Aktor cyrkowy* — kreatywna
+- 343503 Klaun (clown) — kreatywna
+- 343504 Iluzjonista — kreatywna
+- 343505 Komik — kreatywna
+- 343506 Treser zwierząt cyrkowych — kreatywna
+- 343507 Żongler — kreatywna
+- 343590 Pozostali aktorzy cyrkowi i pokrewni — kreatywna
+- 343601 Aktor scen muzycznych* — kreatywna
+- 343602 Muzyk* — kreatywna
+- 343603 Organista — kreatywna
+- 343690 Pozostali muzycy i pokrewni — kreatywna
+- 343701 Tancerz* — kreatywna
+- 343901 Animator kultury — kreatywna
+- 343902 Asystent kierownika produkcji filmowej i telewizyjnej* — kreatywna
+- 343903 Garderobiana — kreatywna
+- 343904 Inspicjent — kreatywna
+- 343905 Kaskader filmowy — kreatywna
+- 343906 Kaskader filmowy – koordynator — kreatywna
+- 343907 Kierownik planu filmowego — kreatywna
+- 343908 Menedżer klubu muzycznego — kreatywna
+- 343909 Oświetlacz filmowy — kreatywna
+- 343910 Pirotechnik — kreatywna
+- 343911 Technik teatralny — kreatywna
+- 343912 Realizator światła — kreatywna
+- 343913 Rekwizytor — kreatywna
+- 343914 Specjalista do spraw scenariusza i kontynuacji w filmie (Continuity and Script Supervisor) — kreatywna
+- 343915 Sufler — kreatywna
+- 343917 Tatuażysta — kreatywna
+- 343918 Charakteryzator — kreatywna
+- 343919 Administrator produkcji filmowej i telewizyjnej* — kreatywna
+- 343920 Technik animacji filmowej* — kreatywna
+- 343990 Pozostały średni personel w zakresie działalności artystycznej i kulturalnej gdzie indziej niesklasyfikowany — kreatywna
+
+### 35 Technicy informatycy (51)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 351101 Operator bezprzewodowych sieci komputerowych
+- 351102 Operator komputerowych urządzeń peryferyjnych
+- 351103 Technik teleinformatyk*
+- 351190 Pozostali operatorzy urządzeń teleinformatycznych
+- 351201 Konserwator sieci i systemów komputerowych
+- 351202 Operator zintegrowanych systemów zarządzania zasobami firmy
+- 351203 Technik informatyk*
+- 351204 Technik tyfloinformatyk*
+- 351205 Tester gier komputerowych
+- 351206 Pracownik wsparcia informatycznego (help desk)
+- 351290 Pozostali technicy wsparcia informatycznego i technicznego
+- 351301 Operator sieci komputerowych
+- 351302 Operator sprzętu komputerowego
+- 351303 Operator systemów komputerowych
+- 351390 Pozostali operatorzy sieci i systemów komputerowych
+- 351401 Administrator stron internetowych
+- 351402 Administrator systemów poczty elektronicznej
+- 351403 Pracownik pozycjonowania stron internetowych
+- 351404 Projektant stron internetowych (webmaster)
+- 351405 Pracownik obsługi kampanii e-mailowych
+- 351406 Technik programista*
+- 351490 Pozostali technicy sieci internetowych
+- 352101 Asystent operatora dźwięku
+- 352102 Asystent operatora obrazu
+- 352103 Asystent techniczny realizatora dźwięku
+- 352104 Asystent techniczny realizatora programu
+- 352105 Imitator efektów dźwiękowych
+- 352106 Kinooperator
+- 352107 Mikser dźwięku
+- 352108 Mikser obrazu
+- 352109 Montażysta dźwięku
+- 352110 Montażysta obrazu
+- 352111 Operator dźwięku
+- 352112 Operator kamery
+- 352113 Operator sprzętu zdjęciowego (wózkarz)
+- 352114 Operator radiowych urządzeń transmisyjnych
+- 352115 Operator telewizyjnych urządzeń transmisyjnych
+- 352116 Realizator dźwięku
+- 352117 Realizator filmu wideo (wideofilmowiec)
+- 352118 Realizator rekonstrukcji dźwięku
+- 352119 Technik dźwięku
+- 352120 Technik realizacji dźwięku
+- 352121 Technik urządzeń audiowizualnych
+- 352122 Technik realizacji nagrań i nagłośnień
+- 352123 Technik realizacji nagrań*
+- 352124 Technik realizacji nagłośnień*
+- 352190 Pozostali operatorzy urządzeń do rejestracji i transmisji obrazu i dźwięku
+- 352201 Operator urządzeń nadawczych telewizji kablowej
+- 352202 Operator urządzeń radiokomunikacyjnych
+- 352203 Technik telekomunikacji*
+- 352290 Pozostali operatorzy urządzeń telekomunikacyjnych
+
+## 4 PRACOWNICY BIUROWI (89)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC4, GUS październik 2024. Mediana ogółem 6418.75 zł → wyświetlane 6400 zł. Przeciętne 6993.97 zł → 7000 zł.
+
+### 41 Sekretarki, operatorzy urządzeń biurowych i pokrewni (10)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 411001 Pracownik kancelarii tajnej
+- 411002 Pracownik do spraw ewidencji ludności
+- 411003 Pracownik biurowy
+- 411004 Technik prac biurowych*
+- 411090 Pozostali pracownicy obsługi biurowej
+- 412001 Sekretarka
+- 413102 Operator aplikacji komputerowych
+- 413103 Operator edytorów tekstu
+- 413190 Pozostali operatorzy edytorów tekstu
+- 413201 Operator wprowadzania danych
+
+### 42 Pracownicy obsługi klienta (39)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 421101 Asystent usług pocztowych
+- 421102 Asystent usług telekomunikacyjnych
+- 421103 Kasjer bankowy
+- 421104 Kasjer walutowy
+- 421105 Kontroler pocztowy
+- 421106 Kontroler rozliczeń pieniężnych
+- 421107 Skarbnik bankowy
+- 421108 Technik usług pocztowych i finansowych*
+- 421190 Pozostali kasjerzy bankowi i pokrewni
+- 421201 Bukmacher
+- 421202 Krupier
+- 421203 Pracownik kolektury
+- 421290 Pozostali bukmacherzy, krupierzy i pokrewni
+- 421301 Pracownik instytucji pożyczkowej
+- 421302 Pracownik lombardu
+- 421401 Inkasent
+- 421402 Poborca skarbowy
+- 421403 Windykator
+- 421490 Pozostali windykatorzy i pokrewni
+- 422101 Pracownik biura podróży
+- 422102 Rezydent biura turystycznego
+- 422103 Technik obsługi turystycznej
+- 422104 Technik organizacji turystyki*
+- 422190 Pozostali konsultanci i inni pracownicy biur podróży
+- 422201 Pracownik centrum obsługi telefonicznej (pracownik call center)
+- 422301 Operator centrali telefonicznej
+- 422302 Operator numerów alarmowych
+- 422401 Recepcjonista hotelowy
+- 422402 Technik hotelarstwa*
+- 422501 Informator ruchu pasażerskiego
+- 422502 Pracownik informacji turystycznej
+- 422590 Pozostali pracownicy biur informacji
+- 422601 Pracownik biura przepustek
+- 422602 Recepcjonista
+- 422603 Rejestratorka medyczna
+- 422690 Pozostali recepcjoniści (z wyłączeniem hotelowych)
+- 422701 Ankieter
+- 422702 Teleankieter
+- 422790 Pozostali ankieterzy
+
+### 43 Pracownicy do spraw finansowo-statystycznych i ewidencji materiałowej (23)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 431101 Asystent do spraw księgowości
+- 431102 Fakturzystka
+- 431103 Technik rachunkowości*
+- 431190 Pozostali pracownicy do spraw rachunkowości i księgowości
+- 431201 Pracownik do spraw statystyki
+- 431202 Pracownik do spraw ubezpieczeń
+- 431203 Pracownik w biurze maklerskim
+- 431290 Pozostali pracownicy do spraw statystyki, finansów i ubezpieczeń
+- 431301 Pracownik obsługi płacowej
+- 432101 Ekspedient wypożyczalni
+- 432102 Inwentaryzator
+- 432103 Magazynier
+- 432104 Pracownik punktu skupu
+- 432105 Pracownik sortowania przesyłek i towarów
+- 432106 Magazynier-logistyk*
+- 432190 Pozostali magazynierzy i pokrewni
+- 432201 Planista produkcyjny
+- 432301 Dyspozytor radiotaxi
+- 432302 Dyspozytor transportu samochodowego
+- 432303 Ekspedytor
+- 432304 Odprawiacz pociągów
+- 432305 Konstruktor rozkładów jazdy
+- 432390 Pozostali pracownicy do spraw transportu
+
+### 44 Pozostali pracownicy obsługi biura (17)
+
+Profil: biurowa. Efekty na tydzień (propozycja): zmęczenie fizyczne +1, zmęczenie psychiczne +6, sylwetka -1, inteligencja +1, zdrowie 0, wygląd +1, siła 0, kondycja -1, psychika -1.
+
+- 441101 Pomocnik biblioteczny
+- 441201 Ekspedient pocztowy
+- 441202 Kurier
+- 441203 Listonosz
+- 441290 Pozostali listonosze i pokrewni
+- 441301 Kodowacz (koder)
+- 441302 Korektor tekstu
+- 441390 Pozostali kodowacze, korektorzy i pokrewni
+- 441401 Archiwista dokumentów elektronicznych
+- 441402 Archiwista zakładowy
+- 441403 Technik archiwista*
+- 441490 Pozostali technicy archiwiści i pokrewni
+- 441501 Pracownik do spraw osobowych
+- 441502 Pracownik do spraw socjalnych
+- 441590 Pozostali pracownicy działów kadr
+- 441901 Asystent do spraw wydawniczych
+- 441990 Pozostali pracownicy obsługi biura gdzie indziej niesklasyfikowani
+
+## 5 PRACOWNICY USŁUG I SPRZEDAWCY (169)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC5, GUS październik 2024. Mediana ogółem 5281.03 zł → wyświetlane 5300 zł. Przeciętne 5863.53 zł → 5900 zł.
+
+### 51 Pracownicy usług osobistych (81)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 511101 Stewardesa / steward — opiekuncza
+- 511102 Steward statku morskiego — opiekuncza
+- 511190 Pozostali stewardzi — opiekuncza
+- 511201 Kierownik pociągu — opiekuncza
+- 511202 Konduktor — opiekuncza
+- 511203 Konduktor kolei linowej — opiekuncza
+- 511204 Kontroler biletów — opiekuncza
+- 511205 Konwojent (konduktor) wagonów specjalnych — opiekuncza
+- 511206 Rewizor pociągów — opiekuncza
+- 511290 Pozostali konduktorzy i pokrewni — opiekuncza
+- 511301 Pilot wycieczek — opiekuncza
+- 511302 Przewodnik turystyczny górski — opiekuncza
+- 511303 Przewodnik turystyczny miejski — opiekuncza
+- 511304 Przewodnik turystyczny terenowy — opiekuncza
+- 511390 Pozostali przewodnicy turystyczni i piloci wycieczek — opiekuncza
+- 512001 Kucharz* — fizyczna
+- 512002 Pizzer — fizyczna
+- 512090 Pozostali kucharze — fizyczna
+- 513101 Kelner* — fizyczna_lekka
+- 513102 Technik usług kelnerskich* — fizyczna_lekka
+- 513201 Barista — fizyczna_lekka
+- 513202 Barman — fizyczna_lekka
+- 513203 Sommelier — fizyczna_lekka
+- 513290 Pozostali barmani — fizyczna_lekka
+- 514101 Fryzjer* — opiekuncza
+- 514102 Fryzjer damski — opiekuncza
+- 514103 Fryzjer męski (barber) — opiekuncza
+- 514104 Perukarz — opiekuncza
+- 514105 Technik usług fryzjerskich* — opiekuncza
+- 514190 Pozostali fryzjerzy — opiekuncza
+- 514202 Kosmetyczka — opiekuncza
+- 514203 Manikiurzystka — opiekuncza
+- 514204 Pedikiurzystka — opiekuncza
+- 514205 Pracownik solarium — opiekuncza
+- 514207 Technik usług kosmetycznych* — opiekuncza
+- 514208 Wizażystka / stylistka — opiekuncza
+- 514290 Pozostałe kosmetyczki i pokrewni — opiekuncza
+- 515101 Inspektor hotelowy — biurowa
+- 515102 Intendent — biurowa
+- 515190 Pozostali pracownicy obsługi technicznej biur, hoteli i innych obiektów — biurowa
+- 515201 Gospodyni — biurowa
+- 515202 Organizator usług domowych — biurowa
+- 515203 Technik turystyki wiejskiej — biurowa
+- 515204 Właściciel małego zakładu agroturystycznego / hotelarskiego / gastronomicznego — biurowa
+- 515205 Technik turystyki na obszarach wiejskich* — biurowa
+- 515290 Pozostali pracownicy usług domowych — biurowa
+- 515301 Gospodarz domu — biurowa
+- 515302 Kościelny — biurowa
+- 515303 Robotnik gospodarczy — biurowa
+- 515390 Pozostali gospodarze budynków — biurowa
+- 516101 Astrolog — opiekuncza
+- 516102 Wróżbita — opiekuncza
+- 516190 Pozostali astrolodzy, wróżbici i pokrewni — opiekuncza
+- 516201 Osoba do towarzystwa — opiekuncza
+- 516301 Kremator — opiekuncza
+- 516302 Organizator usług pogrzebowych — opiekuncza
+- 516303 Tanatoprakser (balsamista) — opiekuncza
+- 516304 Żałobnik — opiekuncza
+- 516305 Pracownik cmentarza — opiekuncza
+- 516390 Pozostali pracownicy zakładów pogrzebowych — opiekuncza
+- 516401 Fryzjer zwierząt (groomer) — opiekuncza
+- 516402 Opiekun dzikich zwierząt — opiekuncza
+- 516403 Opiekun zwierząt domowych — opiekuncza
+- 516404 Trener koni wyścigowych — opiekuncza
+- 516405 Treser psów — opiekuncza
+- 516406 Zoofizjoterapeuta — opiekuncza
+- 516407 Zoopsycholog — opiekuncza
+- 516408 Jeździec* — opiekuncza
+- 516409 Fizjoterapeuta koni — opiekuncza
+- 516410 Pracownik do spraw ochrony zwierząt — opiekuncza
+- 516411 Pracownik schroniska dla zwierząt — opiekuncza
+- 516412 Specjalista w dopasowaniu siodeł (Saddle fitter) — opiekuncza
+- 516490 Pozostali opiekunowie zwierząt i pracownicy zajmujący się zwierzętami — opiekuncza
+- 516501 Instruktor techniki jazdy — opiekuncza
+- 516502 Instruktor nauki jazdy — opiekuncza
+- 516590 Pozostali instruktorzy nauki jazdy — opiekuncza
+- 516901 Radiesteta — opiekuncza
+- 516902 Asystent osobisty (concierge) — opiekuncza
+- 516903 Hostessa — opiekuncza
+- 516904 Osobisty doradca do spraw zakupów (personal shopper) — opiekuncza
+- 516990 Pozostali pracownicy usług osobistych gdzie indziej niesklasyfikowani — opiekuncza
+
+### 52 Sprzedawcy i pokrewni (40)
+
+Profil: fizyczna_lekka. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +4, sylwetka +1, inteligencja 0, zdrowie 0, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 521101 Sprzedawca na targowisku / bazarze
+- 521102 Sprzedawca obwoźny z samochodu (vanseller)
+- 521201 Uliczny sprzedawca żywności o krótkim terminie przydatności do spożycia
+- 522101 Antykwariusz
+- 522102 Kioskarz
+- 522103 Właściciel małego sklepu
+- 522190 Pozostali właściciele sklepów
+- 522201 Kierownik sali sprzedaży
+- 522202 Kierownik stoiska w markecie
+- 522203 Kierownik kas
+- 522290 Pozostali kierownicy sprzedaży w marketach
+- 522301 Sprzedawca*
+- 522302 Sprzedawca w branży mięsnej
+- 522303 Sprzedawca w branży przemysłowej
+- 522304 Sprzedawca w branży spożywczej
+- 522305 Technik handlowiec*
+- 522306 Technik księgarstwa*
+- 522390 Pozostali sprzedawcy sklepowi (ekspedienci)
+- 523001 Kasjer biletowy
+- 523002 Kasjer handlowy
+- 523003 Kasjer w zakładzie pracy
+- 523090 Pozostali kasjerzy i sprzedawcy biletów
+- 524101 Modelka / model
+- 524201 Demonstrator wyrobów
+- 524301 Akwizytor
+- 524302 Konsultant / agent sprzedaży bezpośredniej
+- 524390 Pozostali agenci sprzedaży bezpośredniej
+- 524401 Ekspedytor sprzedaży wysyłkowej / internetowej
+- 524402 Organizator obsługi sprzedaży internetowej
+- 524403 Sprzedawca na telefon
+- 524404 Telemarketer
+- 524490 Pozostali sprzedawcy (konsultanci) w centrach sprzedaży telefonicznej / internetowej
+- 524502 Sprzedawca w stacji paliw
+- 524601 Wydawca posiłków / bufetowy
+- 524901 Bukieciarz
+- 524902 Doradca klienta
+- 524903 Ekspedient w punkcie usługowym
+- 524905 Ekspedient w stacji obsługi pojazdów
+- 524906 Pośrednik usług medycznych
+- 524990 Pozostali pracownicy sprzedaży i pokrewni gdzie indziej niesklasyfikowani
+
+### 53 Pracownicy opieki osobistej i pokrewni (27)
+
+Profil: opiekuncza. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +6, sylwetka +1, inteligencja +1, zdrowie -1, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 531102 Opiekun dzieci na przejściach dla pieszych
+- 531103 Opiekunka dzieci w drodze do szkoły
+- 531104 Opiekunka dziecięca domowa (niania)
+- 531105 Rodzic zastępczy
+- 531106 Prowadzący rodzinny dom dziecka
+- 531107 Opiekunka w żłobku / klubie dziecięcym
+- 531108 Dzienny opiekun małego dziecka
+- 531190 Pozostali opiekunowie dziecięcy
+- 531201 Asystent nauczyciela dziecka cudzoziemca
+- 531202 Asystent nauczyciela przedszkola
+- 531203 Asystent edukacji romskiej
+- 531204 Asystent nauczyciela w szkole
+- 531205 Asystent międzykulturowy
+- 531206 Pomoc nauczyciela
+- 531290 Pozostali asystenci nauczycieli
+- 532102 Opiekun medyczny*
+- 532190 Pozostały pomocniczy personel medyczny
+- 532201 Opiekunka domowa
+- 532202 Siostra PCK
+- 532290 Pozostali pracownicy domowej opieki osobistej
+- 532901 Pomoc apteczna
+- 532902 Pomoc dentystyczna
+- 532903 Preparator medyczny
+- 532904 Sanitariusz szpitalny
+- 532905 Zabiegowy balneologiczny
+- 532906 Asystentka kobiety w czasie ciąży i porodu (doula)
+- 532990 Pozostali pracownicy opieki osobistej w ochronie zdrowia i pokrewni gdzie indziej niesklasyfikowani
+
+### 54 Pracownicy usług ochrony (21)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 541101 Strażak
+- 541201 Strażnik w zakładzie dla nieletnich
+- 541301 Funkcjonariusz Służby Ochrony Państwa
+- 541306 Portier
+- 541307 Pracownik ochrony fizycznej
+- 541312 Strażnik gminny / miejski
+- 541313 Strażnik Straży Marszałkowskiej
+- 541314 Funkcjonariusz Straży Ochrony Kolei
+- 541315 Technik ochrony fizycznej osób i mienia*
+- 541316 Operator kontroli bezpieczeństwa
+- 541317 Pracownik obsługi monitoringu
+- 541390 Pozostali pracownicy ochrony osób i mienia
+- 541902 Ratownik górniczy
+- 541903 Ratownik górski
+- 541904 Ratownik morski
+- 541905 Ratownik pokładowy
+- 541906 Ratownik wodny
+- 541907 Strażnik leśny
+- 541908 Strażnik łowiecki
+- 541909 Strażnik rybacki
+- 541990 Pozostali pracownicy usług ochrony gdzie indziej niesklasyfikowani
+
+## 6 ROLNICY, OGRODNICY, LEŚNICY I RYBACY (63)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC6, GUS październik 2024. Mediana ogółem 5521.64 zł → wyświetlane 5500 zł. Przeciętne 6264.42 zł → 6300 zł.
+
+### 61 Rolnicy produkcji towarowej (51)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 611101 Kierownik gospodarstwa upraw polowych
+- 611102 Rolnik łąkarz
+- 611103 Rolnik producent kwalifikowanych nasion rolniczych
+- 611104 Rolnik upraw polowych
+- 611190 Pozostali rolnicy upraw polowych
+- 611201 Kierownik gospodarstwa sadowniczego
+- 611202 Rolnik chmielarz
+- 611203 Sadownik
+- 611290 Pozostali sadownicy
+- 611301 Chirurg pielęgniarz drzew
+- 611302 Kierownik gospodarstwa ogrodniczego
+- 611303 Ogrodnik*
+- 611304 Ogrodnik producent nasion
+- 611305 Ogrodnik szkółkarz
+- 611306 Ogrodnik terenów zieleni
+- 611307 Ogrodnik - uprawa grzybów jadalnych
+- 611308 Ogrodnik - uprawa roślin ozdobnych
+- 611309 Ogrodnik - uprawa warzyw polowych
+- 611310 Ogrodnik - uprawy pod osłonami
+- 611311 Producent i zbieracz ziół
+- 611312 Pielęgniarz trawników / murawy (greenkeeper)
+- 611390 Pozostali ogrodnicy
+- 611401 Kierownik gospodarstwa upraw mieszanych
+- 611402 Producent żywności ekologicznej
+- 611403 Rolnik upraw mieszanych
+- 611490 Pozostali rolnicy upraw mieszanych
+- 612101 Dojarz
+- 612102 Hodowca bydła
+- 612103 Hodowca koni
+- 612104 Hodowca owiec
+- 612105 Hodowca trzody chlewnej
+- 612106 Hodowca zwierząt domowych
+- 612107 Hodowca zwierząt futerkowych
+- 612108 Juhas
+- 612109 Kierownik gospodarstwa produkcji zwierzęcej
+- 612110 Masztalerz
+- 612111 Hodowca inwentarza mieszanego
+- 612190 Pozostali hodowcy zwierząt gospodarskich i domowych
+- 612201 Hodowca drobiu
+- 612202 Kierownik gospodarstwa hodowli drobiu
+- 612203 Pracownik wylęgarni drobiu
+- 612290 Pozostali hodowcy drobiu
+- 612301 Hodowca jedwabników
+- 612302 Pszczelarz*
+- 612902 Hodowca ptaków
+- 612903 Hodowca zwierząt laboratoryjnych
+- 612990 Pozostali hodowcy zwierząt gdzie indziej niesklasyfikowani
+- 613001 Baca
+- 613002 Kierownik gospodarstwa produkcji roślinnej i zwierzęcej
+- 613003 Rolnik*
+- 613090 Pozostali rolnicy produkcji roślinnej i zwierzęcej
+
+### 62 Leśnicy i rybacy (7)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 621001 Drwal / pilarz drzew
+- 621002 Robotnik leśny
+- 621003 Wozak zrywkarz
+- 621090 Pozostali robotnicy leśni i pokrewni
+- 622101 Hodowca ryb
+- 622201 Rybak śródlądowy*
+- 622301 Rybak rybołówstwa morskiego
+
+### 63 Rolnicy i rybacy pracujący na własne potrzeby (5)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 631001 Rolnik produkcji roślinnej pracujący na własne potrzeby
+- 632001 Hodowca zwierząt pracujący na własne potrzeby
+- 633001 Rolnik produkcji roślinnej i zwierzęcej pracujący na własne potrzeby
+- 634001 Rybak pracujący na własne potrzeby
+- 634002 Zbieracz owoców, ziół i innych roślin
+
+## 7 ROBOTNICY PRZEMYSŁOWI I RZEMIEŚLNICY (476)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC7, GUS październik 2024. Mediana ogółem 6414.06 zł → wyświetlane 6400 zł. Przeciętne 7077.3 zł → 7100 zł.
+
+### 71 Robotnicy budowlani i pokrewni (z wyłączeniem elektryków) (106)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 711101 Konserwator budynków i stanu technicznego pomieszczeń
+- 711102 Monter konstrukcji budowlanych*
+- 711103 Renowator zabytków architektury
+- 711104 Robotnik budowlany
+- 711190 Pozostali monterzy konstrukcji budowlanych i konserwatorzy budynków
+- 711201 Monter kamiennych elementów budowlanych
+- 711202 Murarz
+- 711203 Zdun*
+- 711204 Murarz-tynkarz*
+- 711205 Brukarz
+- 711290 Pozostali murarze i pokrewni
+- 711301 Kamieniarz*
+- 711390 Pozostali robotnicy obróbki kamienia
+- 711401 Betoniarz
+- 711402 Betoniarz-zbrojarz*
+- 711403 Palowniczy
+- 711404 Zbrojarz
+- 711490 Pozostali betoniarze, betoniarze zbrojarze i pokrewni
+- 711501 Cieśla*
+- 711502 Cieśla szalunkowy
+- 711503 Stolarz budowlany
+- 711504 Szkutnik
+- 711505 Monter jachtów i łodzi*
+- 711590 Pozostali cieśle i stolarze budowlani
+- 711602 Dróżnik obchodowy
+- 711603 Monter nawierzchni kolejowej*
+- 711605 Toromistrz
+- 711606 Układacz nawierzchni drogowych
+- 711690 Pozostali robotnicy budowy dróg
+- 711701 Monter budownictwa wodnego*
+- 711901 Montażysta dekoracji
+- 711902 Monter reklam
+- 711903 Monter rusztowań
+- 711904 Robotnik rozbiórki budowli
+- 711905 Monter ogrodzeń
+- 711906 Monter konstrukcji targowo-wystawienniczych*
+- 711990 Pozostali robotnicy budowlani robót stanu surowego i pokrewni gdzie indziej niesklasyfikowani
+- 712101 Dekarz*
+- 712201 Cykliniarz
+- 712202 Glazurnik
+- 712203 Parkieciarz
+- 712204 Posadzkarz
+- 712290 Pozostali posadzkarze, parkieciarze i glazurnicy
+- 712301 Monter ociepleń budynków
+- 712302 Sztukator
+- 712303 Tynkarz
+- 712304 Monter fasad
+- 712390 Pozostali tynkarze i pokrewni
+- 712401 Monter izolacji budowlanych*
+- 712402 Monter izolacji chemoodpornych i antykorozyjnych
+- 712403 Monter izolacji przemysłowych*
+- 712404 Termoizoler
+- 712490 Pozostali monterzy izolacji
+- 712501 Monter / składacz okien
+- 712502 Szklarz
+- 712503 Szklarz budowlany
+- 712504 Szklarz pojazdów
+- 712505 Witrażownik
+- 712506 Monter szkła budowlanego
+- 712590 Pozostali szklarze
+- 712601 Hydraulik
+- 712603 Monter instalacji gazowych
+- 712604 Monter instalacji i urządzeń sanitarnych
+- 712605 Monter rurociągów górniczych
+- 712606 Monter rurociągów okrętowych
+- 712607 Monter rurociągów przemysłowych
+- 712608 Monter sieci cieplnych
+- 712609 Monter sieci deszczownianych
+- 712610 Monter sieci gazowych
+- 712612 Monter sieci wodnych i kanalizacyjnych
+- 712613 Monter systemów rurociągowych*
+- 712614 Monter urządzeń energetyki odnawialnej
+- 712615 Studniarz
+- 712616 Monter sieci, instalacji i urządzeń sanitarnych
+- 712617 Monter instalacji gazów medycznych
+- 712618 Monter sieci i instalacji sanitarnych*
+- 712690 Pozostali hydraulicy i monterzy rurociągów
+- 712701 Mechanik urządzeń chłodniczych
+- 712702 Mechanik urządzeń klimatyzacyjnych
+- 712703 Monter / konserwator instalacji wentylacyjnych i klimatyzacyjnych
+- 712790 Pozostali monterzy i konserwatorzy instalacji klimatyzacyjnych i chłodniczych
+- 712901 Monter płyt kartonowo-gipsowych
+- 712902 Monter systemów suchej zabudowy
+- 712904 Technolog robót wykończeniowych w budownictwie
+- 712905 Monter zabudowy i robót wykończeniowych w budownictwie*
+- 712906 Monter stolarki budowlanej*
+- 712990 Pozostali robotnicy budowlani robót wykończeniowych i pokrewni gdzie indziej niesklasyfikowani
+- 713101 Malarz-tapeciarz
+- 713102 Malarz budowlany
+- 713104 Szpachlarz
+- 713105 Tapeciarz
+- 713190 Pozostali malarze i pokrewni
+- 713201 Lakiernik
+- 713202 Lakiernik proszkowy
+- 713203 Lakiernik samochodowy*
+- 713204 Lakiernik tworzyw sztucznych
+- 713205 Lakiernik wyrobów drzewnych
+- 713206 Malarz-lakiernik samolotowy
+- 713207 Malarz-lakiernik konstrukcji i wyrobów metalowych
+- 713208 Piaskarz
+- 713290 Pozostali lakiernicy
+- 713301 Alpinista przemysłowy
+- 713302 Czyściciel elewacji budowlanych
+- 713303 Kominiarz*
+- 713304 Robotnik osuszania i odgrzybiania budowli
+- 713390 Pozostali robotnicy czyszczący konstrukcje budowlane i pokrewni
+
+### 72 Robotnicy obróbki metali, mechanicy maszyn i urządzeń (98)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 721101 Brązownik
+- 721102 Formierz odlewnik
+- 721103 Ludwisarz
+- 721104 Modelarz odlewniczy*
+- 721105 Zalewacz form
+- 721190 Pozostali formierze odlewniczy i pokrewni
+- 721201 Lutowacz
+- 721202 Operator robotów spawalniczych
+- 721203 Operator zgrzewarek
+- 721204 Spawacz
+- 721209 Zgrzewacz
+- 721290 Pozostali spawacze i pokrewni
+- 721301 Blacharz*
+- 721302 Blacharz budowlany
+- 721303 Blacharz izolacji przemysłowych
+- 721304 Blacharz lotniczy
+- 721305 Blacharz okrętowy
+- 721306 Blacharz samochodowy*
+- 721390 Pozostali blacharze
+- 721401 Monter bram
+- 721402 Monter kadłubów okrętowych
+- 721403 Monter konstrukcji aluminiowych
+- 721404 Monter konstrukcji stalowych
+- 721405 Oczyszczacz konstrukcji stalowych
+- 721406 Monter kadłubów i jednostek pływających*
+- 721490 Pozostali robotnicy przygotowujący i wznoszący konstrukcje metalowe
+- 721501 Monter / konserwator kolei linowych, wyciągów narciarskich i zjeżdżalni grawitacyjnych
+- 721502 Monter konstrukcji linowych stałych
+- 721503 Monter wiertni
+- 721504 Takielarz
+- 721590 Pozostali monterzy konstrukcji linowych
+- 722101 Kowal*
+- 722102 Kowal wyrobów zdobniczych
+- 722103 Operator pras kuźniczych
+- 722104 Podkuwacz koni
+- 722190 Pozostali kowale i operatorzy pras kuźniczych
+- 722201 Eguterzysta
+- 722202 Płatnerz
+- 722203 Rusznikarz
+- 722204 Ślusarz*
+- 722205 Ślusarz galanterii metalowej
+- 722206 Ślusarz narzędziowy
+- 722207 Traser
+- 722290 Pozostali ślusarze i pokrewni
+- 722301 Frezer
+- 722302 Operator automatycznej linii obróbki skrawaniem
+- 722303 Operator maszyn do obróbki skrawaniem
+- 722304 Operator maszyn do produkcji wyrobów z drutu, lin, siatek i kabli
+- 722305 Operator maszyn i urządzeń do produkcji łożysk tocznych
+- 722306 Operator maszyn i urządzeń do produkcji opakowań blaszanych
+- 722307 Operator obrabiarek skrawających*
+- 722308 Operator obrabiarek sterowanych numerycznie
+- 722309 Operator obrabiarek zespołowych
+- 722310 Operator urządzeń do wyważania i centrowania
+- 722311 Strugacz
+- 722312 Szlifierz metali
+- 722313 Tokarz / frezer obrabiarek sterowanych numerycznie
+- 722314 Tokarz w metalu
+- 722315 Ustawiacz maszyn do obróbki skrawaniem
+- 722316 Wiertacz w metalu
+- 722317 Operator maszyn do produkcji wyrobów z metalu
+- 722390 Pozostali ustawiacze i operatorzy obrabiarek do metali i pokrewni
+- 722401 Docieracz-polerowacz
+- 722402 Szlifierz-ostrzarz
+- 722490 Pozostali szlifierze narzędzi i polerowacze metali
+- 723101 Mechanik autobusów
+- 723102 Mechanik ciągników
+- 723103 Mechanik pojazdów samochodowych*
+- 723104 Mechanik samochodów ciężarowych
+- 723105 Mechanik samochodów osobowych
+- 723106 Monter samochodowej instalacji gazowej (LPG)
+- 723107 Mechanik motocyklowy*
+- 723190 Pozostali mechanicy pojazdów samochodowych
+- 723201 Mechanik płatowców
+- 723202 Mechanik silników lotniczych
+- 723203 Mechanik wyposażenia lotniczego statków powietrznych
+- 723204 Układacz-konserwator spadochronów
+- 723290 Pozostali mechanicy statków powietrznych i pokrewni
+- 723301 Mechanik / konserwator urządzeń do napełniania i opróżniania zbiorników
+- 723302 Mechanik / konserwator urządzeń dźwignicowych
+- 723303 Mechanik maszyn i urządzeń budowlanych i melioracyjnych
+- 723304 Mechanik maszyn i urządzeń do obróbki metali
+- 723305 Mechanik maszyn i urządzeń górnictwa odkrywkowego
+- 723306 Mechanik maszyn i urządzeń górnictwa podziemnego
+- 723307 Mechanik maszyn i urządzeń przemysłowych
+- 723308 Mechanik maszyn rolniczych
+- 723309 Mechanik maszyn szwalniczych
+- 723310 Mechanik-monter maszyn i urządzeń*
+- 723311 Mechanik okrętowy
+- 723312 Mechanik silników spalinowych
+- 723313 Mechanik taboru kolejowego
+- 723314 Monter-instalator urządzeń technicznych w budownictwie wiejskim
+- 723315 Monter / konserwator urządzeń przeciwpożarowych
+- 723316 Motorzysta wachtowy
+- 723317 Marynarz motorzysta żeglugi śródlądowej
+- 723318 Mechanik pojazdów kolejowych*
+- 723390 Pozostali mechanicy maszyn i urządzeń rolniczych i przemysłowych
+- 723401 Monter-mechanik rowerów / wózków
+
+### 73 Rzemieślnicy i robotnicy poligraficzni (106)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 731102 Mechanik automatyki przemysłowej i urządzeń precyzyjnych — kreatywna
+- 731103 Mechanik precyzyjny* — kreatywna
+- 731104 Optyk-mechanik* — kreatywna
+- 731105 Ortopeda mechanik — kreatywna
+- 731106 Zegarmistrz* — kreatywna
+- 731107 Automatyk* — kreatywna
+- 731190 Pozostali mechanicy precyzyjni — kreatywna
+- 731202 Monter fortepianów i pianin — kreatywna
+- 731205 Monter instrumentów muzycznych — kreatywna
+- 731207 Organomistrz — kreatywna
+- 731208 Korektor (naprawiacz) instrumentów muzycznych — kreatywna
+- 731290 Pozostali monterzy instrumentów muzycznych — kreatywna
+- 731301 Bursztyniarz — kreatywna
+- 731303 Szlifierz kamieni szlachetnych i ozdobnych — kreatywna
+- 731304 Szlifierz-polerowacz wyrobów artystycznych — kreatywna
+- 731305 Złotnik-jubiler* — kreatywna
+- 731390 Pozostali jubilerzy, złotnicy i pokrewni — kreatywna
+- 731401 Ceramik wyrobów ceramiki budowlanej — kreatywna
+- 731402 Ceramik wyrobów użytkowych i ozdobnych — kreatywna
+- 731403 Formowacz ściernic — kreatywna
+- 731404 Formowacz wyrobów ceramicznych — kreatywna
+- 731405 Garncarz — kreatywna
+- 731406 Modelarz odlewnik gipsowych form roboczych — kreatywna
+- 731407 Odlewnik wyrobów ceramicznych — kreatywna
+- 731408 Sortowacz-brakarz ceramiki — kreatywna
+- 731409 Szkliwierz ceramiki — kreatywna
+- 731410 Operator automatów ceglarskich i wapienno-piaskarskich — kreatywna
+- 731490 Pozostali ceramicy i pokrewni — kreatywna
+- 731501 Formowacz wyrobów szklanych — kreatywna
+- 731502 Hutnik dmuchacz szkła — kreatywna
+- 731503 Krajacz szkła — kreatywna
+- 731504 Ręczny polerowacz szkła — kreatywna
+- 731505 Sortowacz-brakarz szkła — kreatywna
+- 731506 Szlifierz-polerowacz szkła optycznego — kreatywna
+- 731507 Szlifierz szkła gospodarczego i technicznego — kreatywna
+- 731508 Szlifierz szkła płaskiego — kreatywna
+- 731590 Pozostali formowacze wyrobów szklanych, krajacze i szlifierze szkła — kreatywna
+- 731601 Cechowacz skal i znaków na szkle oraz na wyrobach z metali — kreatywna
+- 731602 Galwanizer — kreatywna
+- 731603 Giloszer szkła — kreatywna
+- 731604 Grawer szkła — kreatywna
+- 731605 Lustrzarz — kreatywna
+- 731606 Pozłotnik — kreatywna
+- 731607 Rzeźbiarz szkła — kreatywna
+- 731608 Szyldziarz — kreatywna
+- 731609 Zdobnik ceramiki* — kreatywna
+- 731610 Zdobnik szkła — kreatywna
+- 731611 Grawer — kreatywna
+- 731690 Pozostali szyldziarze, grawerzy i zdobnicy ceramiki, szkła i pokrewni — kreatywna
+- 731701 Fajkarz — kreatywna
+- 731702 Koszykarz-plecionkarz* — kreatywna
+- 731703 Łubiankarz — kreatywna
+- 731704 Modelarz wyrobów plecionkarskich — kreatywna
+- 731705 Rzeźbiarz w drewnie — kreatywna
+- 731706 Sitarz — kreatywna
+- 731707 Szczotkarz — kreatywna
+- 731708 Trzciniarz — kreatywna
+- 731790 Pozostali rękodzielnicy wyrobów z drewna i pokrewnych materiałów — kreatywna
+- 731801 Arkadownik — kreatywna
+- 731802 Dziewiarz — kreatywna
+- 731803 Koronkarka — kreatywna
+- 731804 Plecionkarz — kreatywna
+- 731805 Przędzarz — kreatywna
+- 731806 Przygotowywacz włókna — kreatywna
+- 731807 Renowator tkanin unikatowych — kreatywna
+- 731808 Rękodzielnik wyrobów włókienniczych* — kreatywna
+- 731809 Tkacz — kreatywna
+- 731810 Rękodzielnik wyrobów skórzanych — kreatywna
+- 731890 Pozostali rękodzielnicy wyrobów z tkanin, skóry i pokrewnych materiałów — kreatywna
+- 731901 Pamiątkarz — kreatywna
+- 731902 Wytwórca galanterii — kreatywna
+- 731903 Wytwórca sztucznych kwiatów — kreatywna
+- 731904 Zabawkarz — kreatywna
+- 731905 Metaloplastyk — kreatywna
+- 731990 Pozostali rzemieślnicy gdzie indziej niesklasyfikowani — kreatywna
+- 732101 Fotograf poligraficzny — fizyczna
+- 732102 Fotograf w drukarni filmowej — fizyczna
+- 732103 Giloszer poligraficzny — fizyczna
+- 732104 Grawer poligraficzny — fizyczna
+- 732105 Komputerowy składacz tekstu — fizyczna
+- 732106 Moletownik — fizyczna
+- 732107 Montażysta reprodukcyjny — fizyczna
+- 732108 Operator DTP — fizyczna
+- 732109 Operator fotoskładu — fizyczna
+- 732110 Operator skanera poligraficznego — fizyczna
+- 732111 Rysownik litograficzny — fizyczna
+- 732112 Rytownik — fizyczna
+- 732113 Trawiacz poligraficzny — fizyczna
+- 732190 Pozostali pracownicy przy pracach przygotowawczych do druku — fizyczna
+- 732201 Drukarz — fizyczna
+- 732202 Drukarz sitodrukowy — fizyczna
+- 732203 Drukarz tkanin — fizyczna
+- 732204 Maszynista maszyn fleksograficznych — fizyczna
+- 732205 Maszynista maszyn offsetowych — fizyczna
+- 732206 Maszynista maszyn typograficznych — fizyczna
+- 732207 Maszynista maszyn wklęsłodrukowych — fizyczna
+- 732208 Operator kserokopiarek — fizyczna
+- 732209 Drukarz fleksograficzny* — fizyczna
+- 732210 Drukarz offsetowy* — fizyczna
+- 732290 Pozostali drukarze — fizyczna
+- 732301 Introligator — fizyczna
+- 732302 Introligator galanteryjny — fizyczna
+- 732303 Introligator poligraficzny — fizyczna
+- 732304 Operator maszyn introligatorskich — fizyczna
+- 732305 Operator procesów introligatorskich* — fizyczna
+- 732390 Pozostali introligatorzy i pokrewni — fizyczna
+
+### 74 Elektrycy i elektronicy (58)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 741101 Elektromonter instalacji elektrycznych
+- 741102 Elektromonter reklam świetlnych
+- 741103 Elektryk*
+- 741104 Elektryk budowlany
+- 741105 Monter instalacji fotowoltaicznych
+- 741190 Pozostali elektrycy budowlani i pokrewni
+- 741201 Elektromechanik*
+- 741202 Elektromechanik elektrycznych przyrządów pomiarowych
+- 741203 Elektromechanik pojazdów samochodowych*
+- 741204 Elektromechanik sprzętu gospodarstwa domowego
+- 741205 Elektromechanik urządzeń chłodniczych
+- 741206 Elektromechanik urządzeń sterowania ruchem kolejowym
+- 741207 Elektromonter (elektryk) zakładowy
+- 741208 Elektromonter / konserwator urządzeń dźwignicowych
+- 741209 Elektromonter lotniczy
+- 741210 Elektromonter maszyn elektrycznych
+- 741211 Elektromonter maszyn i urządzeń górnictwa odkrywkowego
+- 741212 Elektromonter maszyn i urządzeń górnictwa podziemnego
+- 741213 Elektromonter okrętowy
+- 741214 Elektromonter prefabrykowanych stacji transformatorowych
+- 741215 Elektromonter rozdzielni i podstacji trakcyjnych
+- 741216 Elektromonter taboru szynowego
+- 741217 Elektromonter telekomunikacyjnych urządzeń zasilających
+- 741218 Elektromonter transformatorów
+- 741219 Elektromonter układów pomiarowych i automatyki zabezpieczeniowej
+- 741220 Elektromonter urządzeń sygnalizacyjnych
+- 741290 Pozostali elektromechanicy i elektromonterzy
+- 741301 Elektromonter linii kablowych
+- 741302 Elektromonter napowietrznych linii niskich i średnich napięć
+- 741303 Elektromonter napowietrznych linii wysokich i najwyższych napięć
+- 741304 Elektromonter pogotowia elektroenergetycznego
+- 741305 Elektromonter sieci trakcyjnej
+- 741390 Pozostali monterzy linii elektrycznych
+- 742101 Automatyk sterowania ruchem kolejowym
+- 742102 Monter-elektronik
+- 742103 Monter-elektronik - aparatura medyczna
+- 742104 Monter-elektronik - aparatura pomiarowa
+- 742105 Monter-elektronik - elektroniczne instrumenty muzyczne
+- 742106 Monter-elektronik - elektroniczny sprzęt sygnalizacyjny i systemy sygnalizacyjne
+- 742108 Monter-elektronik - naprawa sprzętu audiowizualnego
+- 742110 Monter-elektronik - układy elektroniczne automatyki przemysłowej
+- 742113 Monter / konserwator urządzeń zabezpieczeń technicznych osób i mienia
+- 742114 Monter mechatronik
+- 742115 Monter urządzeń sterowania ruchem pociągów metra
+- 742116 Monter urządzeń zdalnego sterowania i kontroli dyspozytorskiej metra
+- 742117 Elektronik*
+- 742118 Mechatronik*
+- 742119 Serwisant urządzeń biurowych
+- 742190 Pozostali monterzy elektronicy i serwisanci urządzeń elektronicznych
+- 742201 Monter instalacji i urządzeń telekomunikacyjnych (telemonter)
+- 742202 Monter sieci i urządzeń telekomunikacyjnych*
+- 742203 Monter sieci telekomunikacyjnych
+- 742204 Monter-elektronik - instalacja anten
+- 742205 Monter-elektronik - sprzęt komputerowy
+- 742206 Monter-elektronik - urządzenia radiokomunikacyjne
+- 742207 Monter-elektronik - urządzenia radiowo-telewizyjne
+- 742208 Serwisant sprzętu komputerowego
+- 742290 Pozostali monterzy i serwisanci instalacji i urządzeń teleinformatycznych
+
+### 75 Robotnicy w przetwórstwie spożywczym, obróbce drewna, produkcji wyrobów tekstylnych i pokrewni (108)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 751101 Garmażer
+- 751102 Pracownik rozbioru mięsa
+- 751103 Przetwórca ryb*
+- 751104 Rozbieracz-wykrawacz
+- 751105 Rzeźnik-wędliniarz
+- 751106 Ubojowy
+- 751107 Wędliniarz
+- 751108 Przetwórca mięsa*
+- 751109 Wędzarz
+- 751190 Pozostali masarze, robotnicy w przetwórstwie ryb i pokrewni
+- 751201 Cukiernik*
+- 751202 Dekorator wyrobów cukierniczych
+- 751203 Karmelarz
+- 751204 Piekarz*
+- 751290 Pozostali piekarze, cukiernicy i pokrewni
+- 751301 Maślarz
+- 751302 Serowar
+- 751390 Pozostali robotnicy w produkcji wyrobów mleczarskich
+- 751401 Młynarz
+- 751402 Przetwórca owoców i warzyw
+- 751490 Pozostali robotnicy przetwórstwa surowców roślinnych
+- 751501 Grzyboznawca
+- 751502 Klasyfikator dziczyzny i ptactwa
+- 751503 Klasyfikator grzybów
+- 751504 Klasyfikator jaj, drobiu i pierza
+- 751505 Klasyfikator ryb
+- 751590 Pozostali klasyfikatorzy żywności i pokrewni
+- 752101 Impregnator drewna
+- 752102 Manipulant drewna okrągłego
+- 752103 Mygłowacz
+- 752104 Parzelniczy drewna
+- 752105 Sortowacz materiałów drzewnych
+- 752106 Suszarniowy drewna
+- 752190 Pozostali robotnicy przygotowujący drewno i pokrewni
+- 752201 Bednarz
+- 752202 Gięciarz drewna
+- 752203 Kołodziej
+- 752204 Renowator mebli artystycznych
+- 752205 Stolarz*
+- 752206 Stolarz galanterii drzewnej
+- 752207 Stolarz mebli artystycznych i wzorcowych
+- 752208 Stolarz meblowy
+- 752209 Stolarz modelarz instrumentów muzycznych
+- 752290 Pozostali stolarze meblowi i pokrewni
+- 752301 Frezer drewna
+- 752302 Operator maszyn do produkcji wyrobów drewnianych
+- 752304 Operator urządzeń do polerowania drewna
+- 752306 Polerowacz wyrobów z drewna
+- 752307 Strugacz drewna
+- 752308 Szlifierz materiałów drzewnych
+- 752310 Tokarz w drewnie
+- 752311 Ustawiacz maszyn do obróbki drewna
+- 752312 Wiertacz w drewnie
+- 752390 Pozostali ustawiacze i operatorzy maszyn do obróbki drewna i pokrewni
+- 753101 Bieliźniarz
+- 753102 Gorseciarka
+- 753103 Kapelusznik-czapnik
+- 753104 Kożusznik
+- 753105 Krawiec*
+- 753106 Kuśnierz*
+- 753107 Modystka
+- 753108 Rękawicznik
+- 753190 Pozostali krawcy, kuśnierze, kapelusznicy i pokrewni
+- 753201 Konstruktor odzieży
+- 753202 Krojczy
+- 753301 Hafciarka
+- 753302 Parasolnik
+- 753303 Szwaczka ręczna
+- 753304 Wytwórca abażurów
+- 753305 Żaglownik
+- 753390 Pozostałe szwaczki, hafciarki i pokrewni
+- 753401 Bieliźniarz-kołdrzarz
+- 753402 Tapicer*
+- 753403 Tapicer meblowy
+- 753490 Pozostali tapicerzy i pokrewni
+- 753501 Garbarz skór*
+- 753502 Garbarz skór bez włosa
+- 753503 Klasyfikator skór
+- 753504 Konserwator skór surowych
+- 753505 Wyprawiacz skór futerkowych
+- 753590 Pozostali wyprawiacze skór, garbarze i pokrewni
+- 753601 Cholewkarz
+- 753602 Obuwnik*
+- 753603 Obuwnik miarowy
+- 753604 Obuwnik ortopedyczny
+- 753606 Szewc
+- 753690 Pozostali obuwnicy i pokrewni
+- 753701 Bandażysta ortopedyczny
+- 753702 Kaletnik*
+- 753703 Rymarz
+- 753790 Pozostali kaletnicy, rymarze i pokrewni
+- 754101 Kierownik prac podwodnych
+- 754102 Nurek
+- 754104 Operator systemów nurkowych
+- 754105 Płetwonurek ratownik
+- 754190 Pozostali nurkowie
+- 754201 Strzałowy (górnik strzałowy)
+- 754202 Wydawca środków strzałowych
+- 754203 Instruktor strzałowy
+- 754290 Pozostali strzałowi i pokrewni
+- 754301 Klasyfikator wyrobów przemysłowych
+- 754401 Pracownik deratyzacji, dezynfekcji i dezynsekcji
+- 754402 Pracownik ochrony roślin
+- 754490 Pozostali robotnicy zwalczania szkodników i chwastów
+- 754901 Monter znaków nawigacyjnych
+- 754902 Monter żaluzji
+- 754903 Pracownik produkcji
+- 754990 Pozostali robotnicy przemysłowi i rzemieślnicy gdzie indziej niesklasyfikowani
+
+## 8 OPERATORZY I MONTERZY MASZYN I URZĄDZEŃ (388)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC8, GUS październik 2024. Mediana ogółem 6734.42 zł → wyświetlane 6700 zł. Przeciętne 7476.61 zł → 7500 zł.
+
+### 81 Operatorzy maszyn i urządzeń wydobywczych i przetwórczych (263)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 811101 Górnik eksploatacji podziemnej*
+- 811102 Górnik odkrywkowej eksploatacji złóż*
+- 811103 Sygnalista szybowy
+- 811107 Operator maszyn i urządzeń do pozyskiwania torfu
+- 811108 Operator maszyn urabiających i ładujących
+- 811111 Wydobywca kruszywa i gliny
+- 811112 Górnik podziemnej eksploatacji kopalin innych niż węgiel kamienny*
+- 811113 Operator systemów odwadniających
+- 811190 Pozostali górnicy podziemnej i odkrywkowej eksploatacji złóż i pokrewni
+- 811201 Operator maszyn i urządzeń do przerobu torfu
+- 811202 Operator maszyn i urządzeń do przeróbki mechanicznej rud
+- 811203 Operator maszyn i urządzeń do przeróbki mechanicznej węgla
+- 811204 Operator maszyn i urządzeń do rozdrabniania i sortowania surowców mineralnych
+- 811205 Operator maszyn i urządzeń przeróbczych*
+- 811290 Pozostali operatorzy maszyn i urządzeń do przeróbki mechanicznej kopalin
+- 811301 Górnik eksploatacji otworowej*
+- 811302 Operator urządzeń do obróbki odwiertów wydobywczych
+- 811303 Operator tarczy drążącej TBM (tunnel boring machine)
+- 811304 Wiertacz studni
+- 811305 Wiertacz*
+- 811390 Pozostali operatorzy urządzeń wiertniczych i wydobywczych ropy, gazu i innych surowców
+- 811401 Hartowacz betonów i sylikatów
+- 811402 Krajacz materiałów budowlanych
+- 811404 Operator urządzeń do formowania bloków i tynków gipsowych
+- 811405 Operator urządzeń do produkcji elementów z betonu komórkowego
+- 811406 Operator urządzeń do produkcji mas asfaltobetonowych
+- 811407 Operator urządzeń wytwórczych mieszanek betonowych
+- 811408 Pilarz kamienia
+- 811409 Szlifierz kamienia
+- 811490 Pozostali operatorzy maszyn i urządzeń do produkcji wyrobów cementowych, kamiennych i pokrewni
+- 812101 Ciągacz rur
+- 812102 Hartownik
+- 812103 Operator agregatów do obróbki cieplnej
+- 812104 Operator maszyn do produkcji drutów i prętów
+- 812105 Operator maszyn i urządzeń do obróbki plastycznej
+- 812106 Operator maszyn i urządzeń metalurgicznych
+- 812107 Operator maszyn i urządzeń odlewniczych*
+- 812108 Operator maszyny rozlewniczej
+- 812109 Operator pieców do obróbki cieplnej
+- 812110 Operator urządzeń do ciągłego odlewania stali
+- 812111 Operator urządzeń do elektrolitycznego uzyskiwania metali
+- 812112 Operator urządzeń próżniowego odgazowania stali
+- 812113 Operator urządzeń przygotowania wsadu
+- 812114 Operator urządzeń walcowni
+- 812115 Piecowy nagrzewania wsadu w walcowni
+- 812116 Piecowy pieca łukowego
+- 812117 Pulpitowy wielkich pieców
+- 812118 Tłoczarz w metalu
+- 812119 Wytapiacz metali nieżelaznych
+- 812120 Wytapiacz stali, surówki i żelazostopów
+- 812121 Operator maszyn i urządzeń hutniczych
+- 812122 Operator maszyn i urządzeń przemysłu metalurgicznego*
+- 812190 Pozostali operatorzy maszyn i urządzeń do produkcji i przetwórstwa metali
+- 812201 Operator urządzeń do elektroforetycznego nakładania powłok
+- 812202 Operator urządzeń do emaliowania
+- 812203 Operator urządzeń do nakładania powłok galwanicznych
+- 812204 Operator urządzeń do natryskowego nakładania powłok
+- 812205 Operator urządzeń do platerowania
+- 812206 Operator urządzeń do przygotowania powierzchni do nakładania powłok
+- 812207 Operator urządzeń do zanurzeniowego nakładania powłok
+- 812290 Pozostali operatorzy urządzeń do obróbki powierzchniowej metali i nakładania powłok
+- 813101 Aparatowy procesów chemicznych
+- 813102 Operator maszyn do produkcji papy
+- 813103 Operator maszyn do produkcji taśm magnetycznych
+- 813104 Operator maszyn zapałczanych
+- 813105 Operator reaktorów i autoklawów
+- 813106 Operator urządzeń destylacyjnych
+- 813107 Operator urządzeń do ekstrakcji
+- 813108 Operator urządzeń do krystalizacji
+- 813109 Operator urządzeń do obróbki cieplnej chemikaliów
+- 813110 Operator urządzeń do produkcji cementu
+- 813111 Operator urządzeń do produkcji chemikaliów nieorganicznych
+- 813112 Operator urządzeń do produkcji chemikaliów organicznych
+- 813113 Operator urządzeń do produkcji dezynfektantów
+- 813114 Operator urządzeń do produkcji gazów technicznych
+- 813115 Operator urządzeń do produkcji katalizatorów
+- 813116 Operator urządzeń do produkcji mas bitumicznych
+- 813117 Operator urządzeń do produkcji materiałów półprzewodnikowych
+- 813118 Operator urządzeń do produkcji materiałów wybuchowych i pokrewnych
+- 813119 Operator urządzeń do produkcji nawozów sztucznych
+- 813120 Operator urządzeń do produkcji ołówków
+- 813121 Operator urządzeń do produkcji sadzy
+- 813122 Operator urządzeń do produkcji sztucznej skóry
+- 813123 Operator urządzeń do produkcji środków piorących i myjących
+- 813124 Operator urządzeń do produkcji węgli aktywnych
+- 813125 Operator urządzeń do produkcji włókien chemicznych
+- 813126 Operator urządzeń do produkcji wyrobów farmaceutycznych
+- 813127 Operator urządzeń do produkcji wyrobów kosmetycznych
+- 813128 Operator urządzeń do przeróbki ropy naftowej i gazu
+- 813129 Operator urządzeń filtrujących
+- 813130 Operator urządzeń granulujących
+- 813131 Operator urządzeń homogenizujących
+- 813132 Operator urządzeń koksowniczych
+- 813133 Operator urządzeń mieszających
+- 813134 Operator urządzeń przemysłu chemicznego*
+- 813135 Operator urządzeń rozdrabniających
+- 813136 Operator urządzeń sorpcyjnych
+- 813137 Operator urządzeń wyparnych
+- 813138 Operator wirówek
+- 813139 Stokażowy
+- 813190 Pozostali operatorzy maszyn i urządzeń do produkcji wyrobów chemicznych
+- 813201 Operator minilabu fotograficznego
+- 813202 Operator urządzeń do obróbki błon i filmów fotograficznych
+- 813290 Pozostali operatorzy urządzeń do produkcji materiałów światłoczułych i obróbki filmów
+- 814101 Aparatowy produkcji wyrobów maczanych
+- 814102 Operator urządzeń do wulkanizacji
+- 814103 Operator urządzeń do przetwórstwa surowców gumowych
+- 814104 Wulkanizator
+- 814105 Wulkanizator taśm przenośnikowych
+- 814190 Pozostali operatorzy maszyn do produkcji wyrobów gumowych
+- 814201 Formierz wyrobów z kompozytów polimerowych
+- 814202 Formowacz ortopedycznych wyrobów z tworzyw
+- 814203 Odlewnik wyrobów z materiałów polimerowych
+- 814204 Operator maszyn i urządzeń do produkcji okien z tworzyw sztucznych
+- 814205 Operator urządzeń do cięcia folii i płyt
+- 814206 Operator urządzeń do formowania wyrobów z tworzyw sztucznych
+- 814207 Operator urządzeń do spieniania tworzyw sztucznych
+- 814208 Operator wtryskarki
+- 814209 Operator maszyn i urządzeń do przetwórstwa tworzyw sztucznych*
+- 814290 Pozostali operatorzy maszyn do produkcji wyrobów z tworzyw sztucznych
+- 814301 Operator maszyn do lakierowania i laminowania przetworów papierowych
+- 814302 Operator maszyn do produkcji opakowań z papieru i tektury
+- 814303 Operator maszyn do produkcji papierowych artykułów piśmiennych
+- 814304 Operator maszyn do produkcji papierowych artykułów toaletowych i sanitarnych
+- 814305 Operator maszyn do produkcji papieru i tektury falistej
+- 814306 Operator maszyn do produkcji sznurka i tulei
+- 814307 Operator maszyn krojących i wykrawających do papieru
+- 814308 Operator pras do formowania wyrobów z masy papierniczej
+- 814390 Pozostali operatorzy maszyn do produkcji wyrobów papierniczych
+- 815101 Operator maszyn do przygotowania włókien
+- 815102 Operator maszyn przędzalniczych
+- 815103 Operator przewijarek i skręcarek nitek
+- 815190 Pozostali operatorzy maszyn przędzalniczych i pokrewni
+- 815201 Operator maszyn dziewiarskich
+- 815202 Operator maszyn przygotowawczych do wytwarzania płaskich wyrobów włókienniczych
+- 815203 Operator maszyn tkackich
+- 815204 Operator maszyn w przemyśle włókienniczym*
+- 815290 Pozostali operatorzy maszyn tkackich i dziewiarskich
+- 815301 Szwaczka maszynowa
+- 815401 Operator maszyn wykończalniczych wyrobów włókienniczych
+- 815501 Operator agregatów natryskowych
+- 815502 Operator maszyn i urządzeń chemicznej obróbki skór
+- 815503 Operator maszyn i urządzeń mechanicznej obróbki skór
+- 815590 Pozostali operatorzy maszyn do wyprawiania futer i skór
+- 815601 Operator obuwniczych urządzeń szwalniczych
+- 815602 Operator urządzeń kaletniczych
+- 815603 Operator urządzeń montażowych obuwia
+- 815604 Operator urządzeń wykrawających elementy obuwia
+- 815605 Obuwnik przemysłowy
+- 815690 Pozostali operatorzy maszyn do produkcji obuwia
+- 815701 Operator urządzeń do prania, prasowania i chemicznego czyszczenia tekstyliów
+- 815702 Pracownik pralni chemicznej
+- 815790 Pozostali operatorzy maszyn do prania
+- 815901 Operator maszyn do produkcji włóknin i przędzin
+- 815902 Operator maszyn tapicerskich
+- 815903 Operator urządzeń do klejenia elementów odzieży
+- 815904 Operator urządzeń wykrawających i nawarstwiających
+- 815990 Pozostali operatorzy maszyn do produkcji wyrobów włókienniczych, futrzarskich i skórzanych gdzie indziej niesklasyfikowani
+- 816001 Aparatowy produkcji drożdży
+- 816002 Aparatowy produkcji octu
+- 816003 Operator maszyn i urządzeń przemysłu spożywczego*
+- 816004 Operator urządzeń do konfekcjonowania herbaty
+- 816005 Operator urządzeń do obróbki surowca mleczarskiego
+- 816006 Operator urządzeń do produkcji cukru
+- 816007 Operator urządzeń do produkcji koncentratów spożywczych
+- 816008 Operator urządzeń do produkcji majonezu i musztardy
+- 816009 Operator urządzeń do produkcji makaronu
+- 816010 Operator urządzeń do produkcji napojów bezalkoholowych
+- 816011 Operator urządzeń do produkcji pasz
+- 816012 Operator urządzeń do produkcji pieczywa
+- 816013 Operator urządzeń do produkcji piwa
+- 816014 Operator urządzeń do produkcji spirytusu
+- 816015 Operator urządzeń do produkcji tłuszczów roślinnych
+- 816016 Operator urządzeń do produkcji wina
+- 816017 Operator urządzeń do produkcji wyrobów cukierniczych
+- 816018 Operator urządzeń do produkcji wyrobów mleczarskich
+- 816019 Operator urządzeń do produkcji wyrobów spirytusowych
+- 816020 Operator urządzeń do przerobu ziarna kakaowego
+- 816021 Operator urządzeń do przerobu ziarna zbóż
+- 816022 Operator urządzeń do suszenia zbóż
+- 816023 Operator urządzeń elewatorów zbożowych
+- 816024 Operator urządzeń linii aseptycznego rozlewu w opakowania kartonowe
+- 816025 Operator urządzeń przemysłu tytoniowego
+- 816026 Operator urządzeń do przetwórstwa drobiu
+- 816027 Operator urządzeń do przetwórstwa kawy
+- 816028 Operator urządzeń do przetwórstwa mięsa
+- 816029 Operator urządzeń do przetwórstwa owocowo-warzywnego
+- 816030 Operator urządzeń do przetwórstwa ryb
+- 816031 Operator urządzeń do przetwórstwa ziemniaczanego
+- 816090 Pozostali operatorzy maszyn do produkcji wyrobów spożywczych i pokrewni
+- 817101 Operator kalandrów wyrobów papierowych
+- 817102 Operator linii do belowania makulatury
+- 817103 Operator maszyny odwadniającej celulozę
+- 817104 Operator maszyny papierniczej
+- 817105 Operator maszyny tekturniczej
+- 817106 Operator pergaminiarki
+- 817107 Operator urządzeń bielących masy włókniste
+- 817108 Operator urządzeń do impregnowania i powlekania wyrobów papierowych
+- 817109 Operator urządzeń do mielenia masy włóknistej
+- 817110 Operator urządzeń do przygotowywania i dozowania dodatków masowych
+- 817111 Operator urządzeń do ścierania drewna
+- 817112 Operator urządzeń rębalni drewna
+- 817113 Operator urządzeń rozwłókniających
+- 817114 Operator urządzeń warzelni
+- 817190 Pozostali operatorzy urządzeń do wyrobu masy papierniczej i produkcji papieru
+- 817201 Operator maszyn do produkcji płyt i sklejek
+- 817202 Operator pilarek do pozyskiwania tarcicy
+- 817203 Operator pras w produkcji drzewnej
+- 817204 Operator sklejarek płyt stolarskich
+- 817205 Operator skrawarek drewna
+- 817206 Operator spajarek okleiny i łuszczki
+- 817207 Operator strugarek i frezarek do drewna
+- 817208 Operator urządzeń do końcowej obróbki płyt
+- 817209 Sterowniczy linii sztaplowania i pakietowania tarcicy
+- 817210 Pilarz
+- 817211 Tartacznik
+- 817212 Mechanik-operator maszyn do produkcji drzewnej
+- 817213 Operator maszyn i urządzeń przemysłu drzewnego*
+- 817290 Pozostali operatorzy maszyn i urządzeń do obróbki drewna
+- 818101 Operator automatów do formowania wyrobów szklanych
+- 818102 Operator maszyn do formowania szkła płaskiego
+- 818103 Operator odprężarek wyrobów szklanych
+- 818104 Operator urządzeń do chemicznego polerowania szkła
+- 818105 Operator urządzeń do formowania i przetwórstwa włókna szklanego
+- 818106 Operator urządzeń do formowania wyrobów ceramicznych
+- 818107 Operator urządzeń do formowania wyrobów ogniotrwałych
+- 818108 Operator urządzeń do formowania wyrobów sylikatowych
+- 818109 Operator urządzeń do gięcia szkła
+- 818110 Operator urządzeń do hartowania szkła
+- 818111 Operator urządzeń do matowania wyrobów szklanych
+- 818112 Operator urządzeń do obróbki płomieniowej szkła
+- 818113 Operator urządzeń do produkcji materiałów ściernych
+- 818114 Operator urządzeń do produkcji termosów
+- 818115 Operator urządzeń przemysłu ceramicznego*
+- 818116 Operator urządzeń przemysłu szklarskiego*
+- 818117 Prasowacz ceramiki elektronicznej i elektrotechnicznej
+- 818118 Przygotowywacz mas ceramicznych
+- 818119 Suszarnik ceramiki i wyrobów gipsowych
+- 818120 Szlifierz ceramiki
+- 818121 Maszynowy szlifierz-polerowacz szkła
+- 818122 Topiarz fryty
+- 818123 Topiarz mas mineralnych
+- 818124 Topiarz szkła
+- 818125 Wypalacz surowców i wyrobów ogniotrwałych
+- 818126 Wypalacz wyrobów ceramicznych
+- 818190 Pozostali operatorzy urządzeń do produkcji wyrobów szklanych i ceramicznych
+- 818201 Maszynista kotła
+- 818202 Maszynista urządzeń nawęglania
+- 818203 Maszynista urządzeń odpopielania i odżużlania
+- 818204 Palacz gazowych kotłów centralnego ogrzewania
+- 818205 Palacz wodnych rusztowych kotłów centralnego ogrzewania
+- 818206 Palacz kotłów parowych
+- 818290 Pozostali maszyniści kotłów parowych i pokrewni
+- 818301 Operator maszyn kopertujących
+- 818302 Operator urządzeń do mycia, napełniania i zamykania butelek
+- 818303 Operator urządzeń pakujących
+- 818304 Operator urządzeń znakujących
+- 818390 Pozostali operatorzy urządzeń pakujących, znakujących i urządzeń do napełniania butelek
+- 818901 Operator urządzeń do paletyzacji
+- 818902 Operator urządzeń utylizacji surowców zwierzęcych
+- 818903 Operator maszyn i urządzeń wikliniarskich
+- 818904 Operator maszyn i urządzeń w przemyśle przetwórczym
+- 818990 Pozostali operatorzy innych maszyn i urządzeń przetwórczych gdzie indziej niesklasyfikowani
+
+### 82 Monterzy (39)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 821101 Monter aparatów i przyrządów optycznych
+- 821102 Monter aparatury i urządzeń chemicznych
+- 821103 Monter kotłów i armatury kotłowej
+- 821104 Monter maszyn i urządzeń okrętowych
+- 821105 Monter maszyn i urządzeń przemysłowych
+- 821106 Monter mechanizmów i przyrządów precyzyjnych
+- 821107 Monter obrabiarek
+- 821108 Monter płatowców i śmigłowców
+- 821109 Monter pojazdów i urządzeń transportowych
+- 821110 Monter silników spalinowych
+- 821111 Monter sprzętu gospodarstwa domowego
+- 821112 Monter taboru szynowego
+- 821113 Monter układów hydraulicznych i pneumatycznych
+- 821114 Monter urządzeń chłodniczych i gastronomicznych
+- 821115 Monter urządzeń laserowych
+- 821116 Monter urządzeń sterowania ruchem kolejowym
+- 821190 Pozostali monterzy maszyn i urządzeń mechanicznych
+- 821201 Monter aparatury rozdzielczej i kontrolnej energii elektrycznej
+- 821202 Monter elektrycznego sprzętu gospodarstwa domowego
+- 821203 Monter elektrycznych przyrządów pomiarowych
+- 821204 Monter maszyn elektrycznych
+- 821205 Monter osprzętu elektrotechnicznego
+- 821206 Monter sprzętu oświetleniowego i lamp elektrycznych
+- 821207 Monter wiązek elektrycznych
+- 821290 Pozostali monterzy sprzętu elektrycznego
+- 821301 Monter aparatury i urządzeń techniki jądrowej
+- 821302 Monter elektronicznego wyposażenia maszyn i urządzeń
+- 821303 Monter elektroniki samochodowej
+- 821304 Monter podzespołów i zespołów elektronicznych
+- 821305 Monter sprzętu radiowego i telewizyjnego
+- 821306 Monter zestrajacz urządzeń elektronicznych
+- 821390 Pozostali monterzy sprzętu elektronicznego
+- 821901 Konfekcjoner wyrobów gumowych
+- 821902 Monter mebli
+- 821904 Monter wyrobów tekstylnych, z tektury i pokrewnych materiałów
+- 821905 Monter wyrobów z drewna
+- 821906 Monter wyrobów z tworzyw sztucznych
+- 821907 Składacz sprzętu spadochronowego
+- 821990 Pozostali monterzy gdzie indziej niesklasyfikowani
+
+### 83 Kierowcy i operatorzy pojazdów (86)
+
+Profil: fizyczna_lekka. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +4, sylwetka +1, inteligencja 0, zdrowie 0, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 831101 Kierowca drezyny i wózka motorowego
+- 831102 Kierowca lokomotywy spalinowej
+- 831103 Maszynista pociągu metra
+- 831104 Maszynista
+- 831105 Maszynista pomocniczych pojazdów kolejowych metra
+- 831106 Prowadzący maszyny do kolejowych robót budowlanych
+- 831190 Pozostali maszyniści kolejowi i metra
+- 831201 Dróżnik przejazdowy
+- 831202 Dyspozytor ruchu metra
+- 831203 Dyżurny ruchu i stacji metra
+- 831204 Dyżurny ruchu
+- 831205 Manewrowy
+- 831206 Manewrowy metra
+- 831207 Nastawniczy
+- 831208 Operator pociągowy
+- 831209 Rewident taboru
+- 831210 Ustawiacz
+- 831211 Zwrotniczy
+- 831212 Dyspozytor ruchu kolejowego
+- 831290 Pozostali dyżurni ruchu, manewrowi i pokrewni
+- 832101 Kurier motocyklowy
+- 832190 Pozostali kierowcy motocykli
+- 832201 Kierowca mechanik*
+- 832202 Kierowca samochodu dostawczego
+- 832203 Kierowca samochodu osobowego
+- 832204 Przewoźnik osób
+- 832205 Taksówkarz
+- 832206 Kierowca pojazdu uprzywilejowanego
+- 832290 Pozostali kierowcy samochodów osobowych i dostawczych
+- 833101 Kierowca autobusu
+- 833102 Kierowca trolejbusu
+- 833103 Kierujący tramwajem (motorniczy)
+- 833190 Pozostali kierowcy autobusów i motorniczowie tramwajów
+- 833201 Kierowca autocysterny
+- 833202 Kierowca ciągnika siodłowego
+- 833203 Kierowca samochodu ciężarowego
+- 833290 Pozostali kierowcy samochodów ciężarowych
+- 834101 Kierowca ciągnika rolniczego
+- 834102 Kombajnista (kierowca kombajnu)
+- 834103 Mechanik-operator pojazdów i maszyn rolniczych*
+- 834104 Operator ciągników zrywkowych do zrywki podwieszanej
+- 834105 Operator maszyn leśnych*
+- 834106 Operator maszyn ogrodniczych
+- 834107 Operator maszyn rolniczych
+- 834108 Operator nasiębiernych ciągników zrywkowych
+- 834109 Operator urządzeń technicznych stosowanych w leśnictwie
+- 834110 Operator wielooperacyjnych samojezdnych maszyn leśnych
+- 834111 Operator zrywkowych kolejek linowych
+- 834190 Pozostali operatorzy wolnobieżnych maszyn rolniczych i leśnych
+- 834201 Mechanik maszyn i urządzeń drogowych
+- 834202 Operator maszyn drogowych
+- 834203 Operator maszyn i sprzętu torowego
+- 834204 Operator sprzętu ciężkiego
+- 834205 Operator koparki
+- 834206 Operator koparko-ładowarki
+- 834207 Operator ładowarki
+- 834208 Operator spycharki
+- 834209 Operator maszyn i urządzeń do robót ziemnych i drogowych*
+- 834290 Pozostali operatorzy sprzętu do robót ziemnych i urządzeń pokrewnych
+- 834301 Maszynista doku
+- 834302 Maszynista górniczych maszyn wyciągowych
+- 834303 Maszynista kolei linowych, wyciągów narciarskich i zjeżdżalni grawitacyjnych
+- 834304 Maszynista obsługujący urządzenia do napełniania i opróżniania zbiorników
+- 834305 Maszynista specjalistycznych dźwignic kolejowych
+- 834306 Operator dźwignic linotorowych
+- 834307 Operator-mechanik wyciągarki szybowcowej
+- 834308 Operator mostu zwodzonego
+- 834309 Operator przenośników
+- 834310 Operator przenośników taśmowych
+- 834311 Operator suwnic (suwnicowy)
+- 834312 Operator śluzy, jazu, zapory i pompowni
+- 834313 Operator urządzeń ładunkowych silosu
+- 834314 Operator wieżowy przenośnika taśmowego
+- 834315 Operator wywrotnic wagonowych
+- 834316 Operator żurawia jezdniowego
+- 834317 Operator żurawia wieżowego
+- 834390 Pozostali maszyniści i operatorzy maszyn i urządzeń dźwigowo-transportowych i pokrewni
+- 834401 Kierowca operator wózków jezdniowych (widłowych)
+- 835001 Flisak-retman
+- 835002 Latarnik
+- 835003 Marynarz statku morskiego
+- 835004 Marynarz żeglugi śródlądowej
+- 835005 Sternik żeglugi śródlądowej
+- 835006 Bosman żeglugi śródlądowej
+- 835007 Przewoźnik żeglugi śródlądowej
+- 835090 Pozostali marynarze i pokrewni
+
+## 9 PRACOWNICY WYKONUJĄCY PRACE PROSTE (127)
+
+Płaca każdego zawodu poniżej: grupa_nadrzedna OC9, GUS październik 2024. Mediana ogółem 5501.66 zł → wyświetlane 5500 zł. Przeciętne 5725.36 zł → 5700 zł.
+
+### 91 Pomoce domowe i sprzątaczki (22)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 911101 Pomoc domowa
+- 911102 Sprzątaczka domowa
+- 911201 Łazienkowa
+- 911202 Palacz pieców zwykłych
+- 911203 Pokojowa
+- 911204 Pomoc laboratoryjna
+- 911205 Pracownik pomocniczy obsługi hotelowej*
+- 911206 Salowa
+- 911207 Pracownik utrzymania czystości (sprzątaczka)
+- 911208 Sprzątacz pojazdów
+- 911290 Pozostałe pomoce i sprzątaczki biurowe, hotelowe i podobne
+- 912101 Maglarz
+- 912102 Praczka
+- 912103 Prasowaczka ręczna
+- 912201 Czyściciel pojazdów
+- 912202 Operator myjni
+- 912301 Zmywacz okien (czyściciel szyb)
+- 912901 Czyściciel basenów pływackich
+- 912902 Czyściciel dywanów
+- 912903 Zmywacz graffiti
+- 912904 Operator maszyn czyszczących
+- 912990 Pozostali pracownicy zajmujący się sprzątaniem gdzie indziej niesklasyfikowani
+
+### 92 Robotnicy wykonujący prace proste w rolnictwie, leśnictwie i rybactwie (11)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 921101 Pomocniczy robotnik polowy
+- 921201 Pomocniczy robotnik w hodowli zwierząt
+- 921301 Pomocniczy robotnik przy uprawie roślin i hodowli zwierząt
+- 921401 Pomocniczy robotnik konserwacji terenów zieleni
+- 921402 Pomocniczy robotnik szklarniowy
+- 921403 Pomocniczy robotnik w gospodarstwie sadowniczym
+- 921490 Pozostali robotnicy wykonujący prace proste w ogrodnictwie i sadownictwie
+- 921501 Pomocniczy robotnik leśny
+- 921502 Pomocniczy robotnik w łowiectwie
+- 921590 Pozostali robotnicy wykonujący prace proste w leśnictwie
+- 921601 Pomocniczy robotnik w gospodarstwie rybackim
+
+### 93 Robotnicy wykonujący prace proste w górnictwie, przemyśle, budownictwie i transporcie (51)
+
+Profil: fizyczna. Efekty na tydzień (propozycja): zmęczenie fizyczne +8, zmęczenie psychiczne +2, sylwetka +2, inteligencja 0, zdrowie -1, wygląd -1, siła +1, kondycja +1, psychika -1.
+
+- 931101 Robotnik górniczy dołowy
+- 931102 Robotnik naziemny w górnictwie
+- 931190 Pozostali robotnicy wykonujący prace proste w kopalniach i kamieniołomach
+- 931201 Grabarz
+- 931202 Kopacz
+- 931203 Meliorant
+- 931204 Oczyszczacz kanalizacyjny (kanalarz)
+- 931205 Pomocniczy robotnik drogowy
+- 931206 Pomocniczy robotnik mostowy
+- 931207 Pomocniczy robotnik torowy
+- 931290 Pozostali robotnicy wykonujący prace proste w budownictwie drogowym, wodnym i pokrewni
+- 931301 Pomocniczy robotnik budowlany
+- 932101 Pakowacz ręczny
+- 932102 Ręczny znakowacz wyrobów
+- 932901 Konserwator części / sprzętu
+- 932902 Lagowacz
+- 932903 Liczarz
+- 932904 Patroszacz ryb
+- 932905 Pomoc krawiecka
+- 932906 Pomocnik ciastkarza
+- 932907 Pomocnik lakiernika
+- 932908 Pomocnik mechanika
+- 932909 Pomocnik mleczarski
+- 932910 Pomocnik piekarza
+- 932911 Pomocniczy robotnik przemysłowy
+- 932912 Robotnik myjący części i zespoły
+- 932913 Sortowacz
+- 932914 Wydawca materiałów
+- 932915 Pracownik pomocniczy krawca*
+- 932916 Pracownik pomocniczy mechanika*
+- 932917 Pracownik pomocniczy ślusarza*
+- 932918 Pracownik pomocniczy stolarza*
+- 932919 Asystent fryzjera
+- 932920 Pracownik pomocniczy fryzjera*
+- 932921 Pomocnik elektromontera
+- 932922 Pracownik pomocniczy w gospodarce odpadami*
+- 932990 Pozostali robotnicy wykonujący prace proste w przemyśle
+- 933101 Rykszarz
+- 933201 Dorożkarz
+- 933202 Wozak
+- 933301 Ładowacz
+- 933302 Napełniający zbiorniki przenośne
+- 933303 Pracownik przeprowadzkowy
+- 933304 Robotnik magazynowy
+- 933305 Robotnik pracujący na rampie
+- 933306 Robotnik portowy (doker)
+- 933307 Sztauer-trymer
+- 933308 Tragarz
+- 933309 Wagowy
+- 933390 Pozostali robotnicy pracujący przy przeładunku towarów
+- 933401 Pracownik obsługi sklepu
+
+### 94 Pracownicy wykonujący prace proste związane z przygotowywaniem posiłków (4)
+
+Profil: fizyczna_lekka. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +4, sylwetka +1, inteligencja 0, zdrowie 0, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 941101 Pracownik przygotowujący posiłki typu fast food
+- 941201 Pomoc kuchenna
+- 941202 Zmywacz naczyń
+- 941203 Pracownik pomocniczy gastronomii*
+
+### 95 Sprzedawcy uliczni i pracownicy świadczący usługi na ulicach (6)
+
+Profil: fizyczna_lekka. Efekty na tydzień (propozycja): zmęczenie fizyczne +4, zmęczenie psychiczne +4, sylwetka +1, inteligencja 0, zdrowie 0, wygląd 0, siła 0, kondycja +1, psychika -1.
+
+- 951001 Czyściciel butów
+- 951002 Dystrybutor ulotek
+- 951003 Rozlepiacz afiszy
+- 951004 Uliczny zmywacz szyb samochodowych
+- 951090 Pozostali pracownicy świadczący usługi na ulicach
+- 952001 Uliczny sprzedawca produktów nieżywnościowych / żywności o długim terminie przydatności do spożycia
+
+### 96 Ładowacze nieczystości i inni pracownicy wykonujący prace proste (33)
+
+Profil mieszany wewnątrz tej grupy. Przy nazwisku jest profil, efekty są w rubryce u góry.
+
+- 961101 Ładowacz nieczystości płynnych — fizyczna
+- 961102 Ładowacz nieczystości stałych — fizyczna
+- 961103 Pracownik zbiórki odpadów — fizyczna
+- 961190 Pozostali ładowacze nieczystości — fizyczna
+- 961201 Sortowacz surowców wtórnych — fizyczna
+- 961202 Sortowacz odpadów komunalnych — fizyczna
+- 961290 Pozostali sortowacze odpadów — fizyczna
+- 961301 Robotnik oczyszczania miasta — fizyczna
+- 961302 Robotnik placowy — fizyczna
+- 961303 Zamiatacz — fizyczna
+- 961390 Pozostali zamiatacze i pokrewni — fizyczna
+- 962101 Bagażowy — fizyczna_lekka
+- 962102 Boy hotelowy — fizyczna_lekka
+- 962103 Dostawca potraw — fizyczna_lekka
+- 962104 Dźwigowy (windziarz) — fizyczna_lekka
+- 962105 Goniec — fizyczna_lekka
+- 962106 Kolporter — fizyczna_lekka
+- 962107 Noszowy — fizyczna_lekka
+- 962190 Pozostali gońcy, bagażowi i pokrewni — fizyczna_lekka
+- 962201 Pracownik prac dorywczych — fizyczna_lekka
+- 962202 Statysta — fizyczna_lekka
+- 962290 Pozostali pracownicy wykonujący dorywcze prace proste — fizyczna_lekka
+- 962301 Odczytywacz liczników — fizyczna_lekka
+- 962302 Wybieracz monet / żetonów z automatów — fizyczna_lekka
+- 962901 Bileter — fizyczna_lekka
+- 962902 Dozorca — fizyczna_lekka
+- 962903 Parkingowy — fizyczna_lekka
+- 962904 Szaleciarz — fizyczna_lekka
+- 962905 Szatniarz — fizyczna_lekka
+- 962906 Woźny — fizyczna_lekka
+- 962907 Pracownik obsługi hotelowej* — fizyczna_lekka
+- 962908 Pracownik parku rozrywki — fizyczna_lekka
+- 962990 Pozostali pracownicy wykonujący prace proste gdzie indziej niesklasyfikowani — fizyczna_lekka

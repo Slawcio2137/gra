@@ -5,11 +5,13 @@ class_name ZiarnoRodzicow
 
 const PLIK := "res://postacie/losowanie/ziarno_rodzicow.json"
 const PLIK_KIESZONKOWEGO := "res://postacie/kieszonkowe.json"
+const ZaokraglenieZarobkow = preload("res://scripts/zaokraglenie_zarobkow.gd")
 const PLIK_DIET := "res://postacie/losowanie/diety_kraje.json"
 const PLIK_ZAROBKOW_KRAJE := "res://postacie/losowanie/zarobki_kraje.json"
 const PLIK_ZAWODY_KRAJE := "res://postacie/losowanie/zawody_kraje.json"
 const PLIK_IMION := "res://postacie/imiona/imiona_kraje.json"
 const _Losowanie = preload("res://scripts/losowanie.gd")
+const SkryptKataloguZawodow = preload("res://scripts/katalog_zawodow.gd")
 
 var _dane: Variant = null
 
@@ -116,6 +118,12 @@ func _losuj_imie(los, kraj: String, klucz_listy: String) -> Variant:
 
 
 func _zawod_kola(los, kraj: String, klucz_plci: String) -> Dictionary:
+	var wynik := _zawod_kola_wagi(los, kraj, klucz_plci)
+	SkryptKataloguZawodow.new().dopnij_prace(wynik)
+	return wynik
+
+
+func _zawod_kola_wagi(los, kraj: String, klucz_plci: String) -> Dictionary:
 	var pusty := {"id": null, "nazwa": null, "kolo": false, "powod": "brak wag", "grupa_id": null, "grupa_nazwa": null, "zawod": null}
 	var dane: Variant = _czytaj(PLIK_ZAWODY_KRAJE)
 	if not (dane is Dictionary) or not (dane.get("kraje") is Dictionary):
@@ -306,7 +314,8 @@ func _zarobki_dla_pracy(praca: Variant, klucz_plci: String, kraj: String) -> Dic
 	wynik["cytat"] = str(grupa.get("cytat", ""))
 	wynik["kolo"] = true
 	wynik["kwota"] = null
-	wynik["powod"] = "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu %% wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na %s." % grupa_id
+	wynik["powod"] = "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu %% wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na %s. Kwoty na ekranie: 2 cyfry znaczące." % grupa_id
+	ZaokraglenieZarobkow.zaokraglij_blok(wynik)
 	return wynik
 
 
@@ -383,7 +392,8 @@ func _zarobki_gospodarstwa(matka_z: Variant, ojciec_z: Variant, kraj: String, lo
 	wynik["cytat"] = " | ".join(cytaty) if not cytaty.is_empty() else null
 	wynik["kolo"] = true
 	wynik["kwota"] = null
-	wynik["powod"] = "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie."
+	wynik["powod"] = "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie. Suma na ekranie: 2 cyfry znaczące."
+	ZaokraglenieZarobkow.zaokraglij_blok(wynik)
 	return wynik
 
 
@@ -447,7 +457,8 @@ func _zarobki_kola_ogolem(los, miejsce: Variant) -> Dictionary:
 	wynik["cytat"] = wybrany.get("cytat")
 	wynik["kolo"] = true
 	wynik["kwota"] = null
-	wynik["powod"] = "Awaryjny przedział ogółem (bez zawodu). Jednej kwoty w środku nie ma."
+	wynik["powod"] = "Awaryjny przedział ogółem (bez zawodu). Jednej kwoty w środku nie ma. Krańce na ekranie: 2 cyfry znaczące."
+	ZaokraglenieZarobkow.zaokraglij_blok(wynik)
 	return wynik
 
 
@@ -763,7 +774,7 @@ func popros_o_podwyzke_kieszonkowego(ziarno: Dictionary, kwota_teraz: Variant, w
 	var sufit := int(round(float(baza) * max_m))
 	if nowa_surowa > sufit:
 		nowa_surowa = sufit
-	var nowa := _snap_kwoty_kieszonkowej(dane, nowa_surowa, "najblizsza_wyzsza_albo_najblizsza")
+	var nowa := ZaokraglenieZarobkow.zaokraglij(_snap_kwoty_kieszonkowej(dane, nowa_surowa, "najblizsza_wyzsza_albo_najblizsza"))
 	if nowa <= int(kwota_teraz):
 		wynik["tekst"] = "Rodzice mówią, że to już maksimum."
 		return wynik
@@ -803,7 +814,7 @@ func popros_o_pieniadze_jednorazowo(ziarno: Dictionary, wiek_lat: Variant = null
 	if _jest_liczba(jed.get("mnoznik_bazy")):
 		mnoznik = float(jed["mnoznik_bazy"])
 	var kwota_surowa := int(round(float(baza["zl"]) * mnoznik))
-	var kwota := _snap_kwoty_kieszonkowej(dane, kwota_surowa)
+	var kwota := ZaokraglenieZarobkow.zaokraglij(_snap_kwoty_kieszonkowej(dane, kwota_surowa))
 	if kwota <= 0:
 		wynik["tekst"] = "Kwota wyszła 0."
 		return wynik
@@ -919,7 +930,7 @@ func _kwota_propozycja(ziarno: Dictionary, dane: Variant, wiek_lat: Variant = nu
 	mnoznik *= _mnoznik_wieku_kieszonkowego(dane, wiek_lat)
 	mnoznik *= _mnoznik_charakteru_kwoty(ziarno, dane)
 	var surowa := maxi(1, int(round(float(baza) * mnoznik)))
-	wynik["zl"] = _snap_kwoty_kieszonkowej(dane, surowa)
+	wynik["zl"] = ZaokraglenieZarobkow.zaokraglij(_snap_kwoty_kieszonkowej(dane, surowa))
 	wynik["przed_snap_zl"] = surowa
 	return wynik
 
@@ -1015,21 +1026,7 @@ func _mnoznik_charakteru_kwoty(ziarno: Dictionary, dane: Variant) -> float:
 
 
 func _tekst_przedzialu_zarobkow(blok: Variant) -> String:
-	if not (blok is Dictionary) or blok.get("kolo") != true:
-		return ""
-	var od: Variant = blok.get("od_zl")
-	var dok: Variant = blok.get("do_zl")
-	if not _jest_liczba(od) and _jest_liczba(blok.get("mediana_zl")):
-		od = blok.get("mediana_zl")
-	if not _jest_liczba(dok) and _jest_liczba(blok.get("przecietne_zl")):
-		dok = blok.get("przecietne_zl")
-	if _jest_liczba(od) and _jest_liczba(dok):
-		return "%s–%s zł" % [od, dok]
-	if _jest_liczba(dok):
-		return "do %s zł" % dok
-	if _jest_liczba(od):
-		return "od %s zł" % od
-	return ""
+	return ZaokraglenieZarobkow.tekst(blok)
 
 
 func _cechy_z(ziarno: Dictionary) -> Array:

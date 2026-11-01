@@ -1,0 +1,709 @@
+{
+	"kod_2": "53",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "531102",
+			"nazwa": "Opiekun dzieci na przejściach dla pieszych",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531103",
+			"nazwa": "Opiekunka dzieci w drodze do szkoły",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531104",
+			"nazwa": "Opiekunka dziecięca domowa (niania)",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531105",
+			"nazwa": "Rodzic zastępczy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531106",
+			"nazwa": "Prowadzący rodzinny dom dziecka",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531107",
+			"nazwa": "Opiekunka w żłobku / klubie dziecięcym",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531108",
+			"nazwa": "Dzienny opiekun małego dziecka",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531190",
+			"nazwa": "Pozostali opiekunowie dziecięcy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531201",
+			"nazwa": "Asystent nauczyciela dziecka cudzoziemca",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531202",
+			"nazwa": "Asystent nauczyciela przedszkola",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531203",
+			"nazwa": "Asystent edukacji romskiej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531204",
+			"nazwa": "Asystent nauczyciela w szkole",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531205",
+			"nazwa": "Asystent międzykulturowy",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531206",
+			"nazwa": "Pomoc nauczyciela",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "531290",
+			"nazwa": "Pozostali asystenci nauczycieli",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532102",
+			"nazwa": "Opiekun medyczny*",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532190",
+			"nazwa": "Pozostały pomocniczy personel medyczny",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532201",
+			"nazwa": "Opiekunka domowa",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532202",
+			"nazwa": "Siostra PCK",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532290",
+			"nazwa": "Pozostali pracownicy domowej opieki osobistej",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532901",
+			"nazwa": "Pomoc apteczna",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532902",
+			"nazwa": "Pomoc dentystyczna",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532903",
+			"nazwa": "Preparator medyczny",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532904",
+			"nazwa": "Sanitariusz szpitalny",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532905",
+			"nazwa": "Zabiegowy balneologiczny",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532906",
+			"nazwa": "Asystentka kobiety w czasie ciąży i porodu (doula)",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "532990",
+			"nazwa": "Pozostali pracownicy opieki osobistej w ochronie zdrowia i pokrewni gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "5",
+			"wielka_grupa_nazwa": "PRACOWNICY USŁUG I SPRZEDAWCY",
+			"zarobki": {
+				"mediana_zl": 5300
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

@@ -1,0 +1,163 @@
+{
+	"kod_2": "95",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "951001",
+			"nazwa": "Czyściciel butów",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "951002",
+			"nazwa": "Dystrybutor ulotek",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "951003",
+			"nazwa": "Rozlepiacz afiszy",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "951004",
+			"nazwa": "Uliczny zmywacz szyb samochodowych",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "951090",
+			"nazwa": "Pozostali pracownicy świadczący usługi na ulicach",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "952001",
+			"nazwa": "Uliczny sprzedawca produktów nieżywnościowych / żywności o długim terminie przydatności do spożycia",
+			"wielka_grupa": "9",
+			"wielka_grupa_nazwa": "PRACOWNICY WYKONUJĄCY PRACE PROSTE",
+			"zarobki": {
+				"mediana_zl": 5500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "fizyczna_lekka",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 4,
+				"sylwetka": 1,
+				"inteligencja": 0,
+				"zdrowie": 0,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		}
+	]
+}

@@ -1,0 +1,3699 @@
+{
+	"kod_2": "26",
+	"losowanie": "rowne",
+	"powod": "Poniżej ISCO 2-digit (Eurostat lfsa_egai2d, 2024) nie ma częstości. Nazwy z płacą w tym kodzie mają równą wagę.",
+	"zawody": [
+		{
+			"kod": "261101",
+			"nazwa": "Adwokat",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261102",
+			"nazwa": "Prokurator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261103",
+			"nazwa": "Radca prawny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261201",
+			"nazwa": "Sędzia",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261901",
+			"nazwa": "Asystent prawny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261902",
+			"nazwa": "Asystent prokuratora",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261903",
+			"nazwa": "Asystent sędziego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261904",
+			"nazwa": "Komornik sądowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261905",
+			"nazwa": "Notariusz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261906",
+			"nazwa": "Legislator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261907",
+			"nazwa": "Radca Prokuratorii Generalnej Rzeczypospolitej Polskiej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261908",
+			"nazwa": "Referendarz sądowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261909",
+			"nazwa": "Doradca do spraw odszkodowań",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261910",
+			"nazwa": "Specjalista do spraw ochrony własności intelektualnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261911",
+			"nazwa": "Analityk kryminalny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261912",
+			"nazwa": "Asystent radcy Prokuratorii Generalnej Rzeczypospolitej Polskiej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261913",
+			"nazwa": "Referendarz w Urzędzie Prokuratorii Generalnej Rzeczypospolitej Polskiej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "261990",
+			"nazwa": "Pozostali specjaliści z dziedziny prawa gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262101",
+			"nazwa": "Archiwista",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262102",
+			"nazwa": "Muzealnik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262201",
+			"nazwa": "Analityk informacji i raportów medialnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262202",
+			"nazwa": "Analityk ruchu na stronach internetowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262203",
+			"nazwa": "Bibliotekoznawca",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262204",
+			"nazwa": "Broker informacji (researcher)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262205",
+			"nazwa": "Menedżer zawartości serwisów internetowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262206",
+			"nazwa": "Specjalista informacji naukowej, technicznej i ekonomicznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262207",
+			"nazwa": "Specjalista zarządzania informacją",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262208",
+			"nazwa": "Specjalista zarządzania dokumentacją",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "262290",
+			"nazwa": "Pozostali bibliotekoznawcy i specjaliści zarządzania informacją",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "biurowa",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 1,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": -1,
+				"inteligencja": 1,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": -1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263101",
+			"nazwa": "Ekonometryk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263102",
+			"nazwa": "Ekonomista",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263190",
+			"nazwa": "Pozostali ekonomiści",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263201",
+			"nazwa": "Archeolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263202",
+			"nazwa": "Etnograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263203",
+			"nazwa": "Kulturoznawca",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263204",
+			"nazwa": "Socjolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263205",
+			"nazwa": "Antropolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263206",
+			"nazwa": "Kryminolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263207",
+			"nazwa": "Religioznawca",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263290",
+			"nazwa": "Pozostali archeolodzy, socjolodzy i specjaliści dziedzin pokrewnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263301",
+			"nazwa": "Filozof",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263302",
+			"nazwa": "Historyk",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263303",
+			"nazwa": "Historyk sztuki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263304",
+			"nazwa": "Politolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263305",
+			"nazwa": "Specjalista polityki społecznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263306",
+			"nazwa": "Teolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263390",
+			"nazwa": "Pozostali filozofowie, historycy i politolodzy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263401",
+			"nazwa": "Psycholog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263402",
+			"nazwa": "Psycholog biznesu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263404",
+			"nazwa": "Psycholog organizacji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263405",
+			"nazwa": "Psycholog sportowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263406",
+			"nazwa": "Psycholog wychowawczy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263407",
+			"nazwa": "Specjalista do spraw uzależnień od mediów cyfrowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263408",
+			"nazwa": "Grafolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263409",
+			"nazwa": "Specjalista marketingu społecznego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263490",
+			"nazwa": "Pozostali psycholodzy i pokrewni",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263501",
+			"nazwa": "Kurator sądowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263502",
+			"nazwa": "Mediator",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263503",
+			"nazwa": "Specjalista poradnictwa psychospołecznego i rodzinnego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263504",
+			"nazwa": "Specjalista pracy socjalnej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263505",
+			"nazwa": "Specjalista resocjalizacji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263506",
+			"nazwa": "Wychowawca w jednostkach penitencjarnych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263507",
+			"nazwa": "Mediator sądowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263508",
+			"nazwa": "Koordynator rodzinnej pieczy zastępczej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263509",
+			"nazwa": "Specjalista do spraw adopcji",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263510",
+			"nazwa": "Specjalista komunikacji społecznej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263511",
+			"nazwa": "Specjalista do spraw ochrony praw dziecka i rodziny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263590",
+			"nazwa": "Pozostali specjaliści do spraw społecznych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263601",
+			"nazwa": "Duchowny religii mojżeszowej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263602",
+			"nazwa": "Duchowny religii muzułmańskiej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263603",
+			"nazwa": "Duchowny wyznania prawosławnego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263604",
+			"nazwa": "Duchowny wyznania rzymskokatolickiego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263605",
+			"nazwa": "Duchowny wyznania ewangelickiego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263606",
+			"nazwa": "Zakonnik (bez święceń kapłańskich)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "263690",
+			"nazwa": "Pozostali duchowni i osoby konsekrowane",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "opiekuncza",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 4,
+				"zmeczenie_psychiczne": 6,
+				"sylwetka": 1,
+				"inteligencja": 1,
+				"zdrowie": -1,
+				"wyglad": 0,
+				"sila": 0,
+				"kondycja": 1,
+				"psychika": -1
+			}
+		},
+		{
+			"kod": "264101",
+			"nazwa": "Edytor materiałów źródłowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264102",
+			"nazwa": "Pisarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264103",
+			"nazwa": "Poeta",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264104",
+			"nazwa": "Redaktor wydawniczy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264105",
+			"nazwa": "Scenarzysta",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264190",
+			"nazwa": "Pozostali literaci i inni autorzy tekstów",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264201",
+			"nazwa": "Dziennikarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264202",
+			"nazwa": "Fotoedytor",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264203",
+			"nazwa": "Krytyk artystyczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264204",
+			"nazwa": "Redaktor programowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264205",
+			"nazwa": "Reporter radiowy / telewizyjny / prasowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264206",
+			"nazwa": "Krytyk kulinarny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264207",
+			"nazwa": "Redaktor serwisu internetowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264208",
+			"nazwa": "Redaktor naczelny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264290",
+			"nazwa": "Pozostali dziennikarze",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264301",
+			"nazwa": "Filolog klasyczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264302",
+			"nazwa": "Filolog języka nowożytnego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264303",
+			"nazwa": "Filolog polski",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264304",
+			"nazwa": "Tłumacz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264305",
+			"nazwa": "Tłumacz przysięgły",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264310",
+			"nazwa": "Tłumacz języka migowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "264390",
+			"nazwa": "Pozostali filolodzy i tłumacze",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265101",
+			"nazwa": "Artysta fotografik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265102",
+			"nazwa": "Artysta grafik",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265103",
+			"nazwa": "Artysta malarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265104",
+			"nazwa": "Artysta rzeźbiarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265105",
+			"nazwa": "Konserwator dzieł sztuki",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265106",
+			"nazwa": "Scenograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265107",
+			"nazwa": "Konserwator zabytków architektury",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265190",
+			"nazwa": "Pozostali artyści plastycy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265201",
+			"nazwa": "Instrumentalista",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265202",
+			"nazwa": "Wokalista",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265203",
+			"nazwa": "Dyrygent",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265204",
+			"nazwa": "Kompozytor",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265205",
+			"nazwa": "Reżyser dźwięku",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265206",
+			"nazwa": "Muzykolog",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265207",
+			"nazwa": "Piosenkarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265290",
+			"nazwa": "Pozostali kompozytorzy, artyści muzycy i śpiewacy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265301",
+			"nazwa": "Choreograf",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265302",
+			"nazwa": "Tancerz baletowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265390",
+			"nazwa": "Pozostali choreografowie i tancerze",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265401",
+			"nazwa": "Asystent reżysera filmowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265402",
+			"nazwa": "Operator obrazu",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265403",
+			"nazwa": "Producent filmowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265404",
+			"nazwa": "Producent teatralny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265405",
+			"nazwa": "Producent telewizyjny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265406",
+			"nazwa": "Realizator programu telewizyjnego / radiowego",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265407",
+			"nazwa": "Reżyser filmowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265408",
+			"nazwa": "Reżyser teatralny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265409",
+			"nazwa": "Reżyser telewizyjny / radiowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265410",
+			"nazwa": "Kierownik produkcji filmowej / telewizyjnej / radiowej",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265411",
+			"nazwa": "Producent muzyczny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265490",
+			"nazwa": "Pozostali producenci filmowi, reżyserzy i pokrewni",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265501",
+			"nazwa": "Aktor",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265502",
+			"nazwa": "Aktor lalkarz",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265503",
+			"nazwa": "Mim",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265590",
+			"nazwa": "Pozostali aktorzy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265601",
+			"nazwa": "Komentator sportowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265602",
+			"nazwa": "Konferansjer",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265603",
+			"nazwa": "Lektor dialogów filmowych i radiowych",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265604",
+			"nazwa": "Prezenter muzyczny (DJ / didżej)",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265605",
+			"nazwa": "Prezenter telewizyjny",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265606",
+			"nazwa": "Spiker radiowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265690",
+			"nazwa": "Pozostali prezenterzy radiowi, telewizyjni i pokrewni",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265901",
+			"nazwa": "Twórca ludowy",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265902",
+			"nazwa": "Bloger / vloger",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		},
+		{
+			"kod": "265990",
+			"nazwa": "Pozostali twórcy i artyści gdzie indziej niesklasyfikowani",
+			"wielka_grupa": "2",
+			"wielka_grupa_nazwa": "SPECJALIŚCI",
+			"zarobki": {
+				"mediana_zl": 9500
+			},
+			"zarobki_zrodlo": "grupa_nadrzedna",
+			"efekty_tygodniowe": {
+				"profil": "kreatywna",
+				"propozycja_do_poprawki": true,
+				"szacunek": true,
+				"jednostka": "na_tydzien",
+				"uwaga": "Projekt gry. Nie jest to statystyka GUS, Eurostatu ani NBP.",
+				"zmeczenie_fizyczne": 2,
+				"zmeczenie_psychiczne": 5,
+				"sylwetka": 0,
+				"inteligencja": 2,
+				"zdrowie": 0,
+				"wyglad": 1,
+				"sila": 0,
+				"kondycja": 0,
+				"psychika": 1
+			}
+		}
+	]
+}

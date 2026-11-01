@@ -1,0 +1,83 @@
+{
+	"opis": "Odtrącenia od wynagrodzenia za pracę. Kwoty GUS w grze zostają brutto. Stawki biorą się z cytowanych ustaw. Brak cytatu = null i pasek nie odejmuje zgadywanej liczby. Inny kraj niż Polska ma null, dopóki nie dołożymy jego przepisów.",
+	"kalendarz": {
+		"propozycja_do_poprawki": true,
+		"tygodnie_w_roku_gry": 52,
+		"dni_tygodnia": 7,
+		"dni_miesiaca": 30,
+		"wzor": "brutto_tygodnia = brutto_miesięczne × 7 / 30, do pełnego złotego",
+		"uwaga": "Podział miesiąca na tydzień gry. To nie jest nowa statystyka płac. Rok gry ma 52 tygodnie. Cytowana kwota zmniejszająca podatek 3600 zł rocznie dzieli się na te 52 tygodnie."
+	},
+	"uczy_sie": {
+		"propozycja_do_poprawki": true,
+		"klucz": "uczy_sie",
+		"inne_klucze": ["studiuje"],
+		"edukacja_trwa": ["trwa", "aktualna", "uczy_sie"],
+		"uwaga": "Szkoła w grze nie zapisuje jeszcze, że postać właśnie się uczy. Flaga bohatera uczy_sie albo studiuje, albo wpis edukacji z trwa, aktualna albo uczy_sie, znaczy naukę. Bez tej flagi osoba poniżej 26 lat płaci składki, a PIT nie, dopóki mieści się w limicie ulgi."
+	},
+	"kraje": {
+		"polska": {
+			"waluta": "PLN",
+			"skladki_pracownika": [
+				{
+					"id": "emerytalna",
+					"nazwa": "Składka emerytalna",
+					"udzial": 0.0976,
+					"podstawa": "brutto",
+					"cytat": "Połowa stawki 19,52% z art. 22 ust. 1 pkt 1 ustawy z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych (tekst jednolity Dz.U. 2025 poz. 350). Finansowanie po 9,76% przez ubezpieczonego i płatnika: art. 16 ust. 1 tej ustawy oraz ZUS, „Zasady ustalania podstawy wymiaru składek pracowników”."
+				},
+				{
+					"id": "rentowa",
+					"nazwa": "Składka rentowa",
+					"udzial": 0.015,
+					"podstawa": "brutto",
+					"cytat": "Art. 16 ust. 1b ustawy o systemie ubezpieczeń społecznych (Dz.U. 2025 poz. 350): ubezpieczony 1,5% podstawy, płatnik 6,5%. Łączna stopa 8% jest w art. 22 ust. 1 pkt 2."
+				},
+				{
+					"id": "chorobowa",
+					"nazwa": "Składka chorobowa",
+					"udzial": 0.0245,
+					"podstawa": "brutto",
+					"cytat": "Art. 22 ust. 1 pkt 3 ustawy o systemie ubezpieczeń społecznych (Dz.U. 2025 poz. 350): 2,45% podstawy. ZUS, „Zasady ustalania podstawy wymiaru składek pracowników”: składkę chorobową finansuje w całości pracownik. Składka wypadkowa jest po stronie płatnika i nie schodzi z pasku pracownika."
+				},
+				{
+					"id": "zdrowotna",
+					"nazwa": "Składka zdrowotna",
+					"udzial": 0.09,
+					"podstawa": "po_spolecznych",
+					"cytat": "Art. 79 ust. 1 ustawy z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych (tekst jednolity Dz.U. 2025 poz. 1461): 9% podstawy wymiaru. ZUS, „Podstawa wymiaru składek na ubezpieczenie zdrowotne” (1 stycznia 2022): u pracownika podstawę pomniejsza się o składki emerytalną, rentową i chorobową finansowane przez pracownika."
+				}
+			],
+			"pit": {
+				"koszty_uzyskania_miesiac_zl": null,
+				"uwaga_kosztow": "Miesięczne koszty uzyskania przychodu ze stosunku pracy nie są tu wpisane, bo nie wkładam kwoty bez osobnego cytatu przy roku gry. Pasek ich nie odejmuje.",
+				"skala": [
+					{
+						"do_podstawy_rok_zl": 120000,
+						"stawka": 0.12,
+						"kwota_zmniejszajaca_rok_zl": 3600
+					},
+					{
+						"do_podstawy_rok_zl": null,
+						"stawka": 0.32,
+						"nadwyzka_ponad_zl": 120000,
+						"podatek_do_progu_zl": 10800
+					}
+				],
+				"cytat_skali": "Art. 27 ust. 1 ustawy z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych, w omówieniu Ministerstwa Finansów (Eureka 685417, 7 kwietnia 2026): do 120 000 zł podstawy 12% minus kwota zmniejszająca podatek 3600 zł, powyżej 10 800 zł plus 32% nadwyżki ponad 120 000 zł.",
+				"ulga_mlodych": {
+					"wiek_ponizej": 26,
+					"limit_przychodu_rok_zl": 85528,
+					"cytat": "Art. 21 ust. 1 pkt 148 ustawy o PIT. KAS, 27 lutego 2026, i podatki.gov.pl, aktualizacja 6 października 2026: przychody z pracy do ukończenia 26. roku życia są zwolnione do 85 528 zł w roku podatkowym. Nadwyżka wchodzi w skalę."
+				}
+			},
+			"ponizej_26_i_nauka_bez_skladek": {
+				"propozycja_do_poprawki": true,
+				"wiek_ponizej": 26,
+				"cytat_rzeczywisty": "Art. 6 ust. 4 ustawy o systemie ubezpieczeń społecznych (Dz.U. 2025 poz. 350): uczniowie szkół ponadpodstawowych i studenci do ukończenia 26 lat nie podlegają obowiązkowo ubezpieczeniom emerytalnemu i rentowym, gdy są zleceniobiorcami (ust. 1 pkt 4). Umowa o pracę zwykle składek nie zdejmuje.",
+				"regula_gry": "W tej grze praca poniżej 26 lat i przy fladze nauki nie pobiera ani PIT, ani składek pracownika. To reguła gracza, nie odwzorowanie etatu."
+			}
+		},
+		"niemcy": null
+	}
+}

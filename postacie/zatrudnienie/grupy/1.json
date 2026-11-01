@@ -1,0 +1,39 @@
+{
+	"wielka_grupa": "1",
+	"opis": "Częstości wewnątrz wielkiej grupy. Poziom 2-digit ISCO. Poniżej losowanie równe wśród nazw KZiS z płacą.",
+	"zrodlo": {
+		"kto": "Eurostat",
+		"zbior": "lfsa_egai2d",
+		"rok": 2024,
+		"geo": "PL",
+		"wiek": "Y15-64",
+		"plec": "suma kobiet i mężczyzn",
+		"jednostka": "tysiące osób, w pliku dziesiąte części tysiąca",
+		"url": "https://ec.europa.eu/eurostat/databrowser/view/lfsa_egai2d/default/table",
+		"plik_w_grze": "postacie/losowanie/zawody_kraje.json"
+	},
+	"ponizej_2_digit": "Brak publikowanej częstości 3-, 4- i 6-cyfrowej w lfsa_egai2d. Wewnątrz kodu 2-digit nazwy KZiS z płacą są losowane równo.",
+	"kody": [
+		{
+			"kod": "11",
+			"dziesiate_tys": 2214,
+			"nazw_w_katalogu": 35
+		},
+		{
+			"kod": "12",
+			"dziesiate_tys": 3381,
+			"nazw_w_katalogu": 32
+		},
+		{
+			"kod": "13",
+			"dziesiate_tys": 3833,
+			"nazw_w_katalogu": 89
+		},
+		{
+			"kod": "14",
+			"dziesiate_tys": 2730,
+			"nazw_w_katalogu": 47
+		}
+	],
+	"pominiete": []
+}

@@ -1,0 +1,39 @@
+{
+	"nazwa": "Małopolskie",
+	"ogolem_zrodlo": 1440804,
+	"sekcje": {
+		"A": 144230,
+		"B": 11854,
+		"C": 231789,
+		"D": 8278,
+		"E": 13642,
+		"F": 116066,
+		"G": 208558,
+		"H": 65625,
+		"I": 40883,
+		"J": 79377,
+		"K": 25505,
+		"L": 14442,
+		"M": 100837,
+		"N": 45883,
+		"O": 69376,
+		"P": 118307,
+		"Q": 90522,
+		"R": 18164,
+		"S": 37466
+	},
+	"sekcje_zero_bo_nie_wystapily": [],
+	"sekcje_nieopublikowane": [],
+	"zrodlo": {
+		"kto": "Główny Urząd Statystyczny",
+		"tytul": "Pracujący w gospodarce narodowej w 2023 roku, tabl. 1. Pracujący według sekcji PKD i miejsca zamieszkania",
+		"stan": "2023-12-31",
+		"rok": 2023,
+		"url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/pracujacy-w-gospodarce-narodowej-w-2023-roku,7,21.html",
+		"plik": "https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/7/21/1/pracujacy_w_gospodarce_narodowej_w_2023.xlsx",
+		"jednostka": "osoby",
+		"plec": "ogółem",
+		"znak_kreska": "Zjawisko nie wystąpiło. W pliku gry jest 0.",
+		"znak_kropka": "Brak informacji albo tajemnica. Tej sekcji nie ma w wagach, nie wpisuję zera."
+	}
+}

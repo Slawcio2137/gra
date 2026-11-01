@@ -1,45 +1,53 @@
 {
 	"cecha_1": {
-		"id": "lagodny",
-		"nazwa": "Łagodny"
+		"id": "drazliwy",
+		"nazwa": "Drażliwy"
 	},
 	"cecha_2": {
-		"id": "empatyczny",
-		"nazwa": "Empatyczny"
+		"id": "oszczedny",
+		"nazwa": "Oszczędny"
 	},
 	"cecha_3": {
-		"id": "towarzyski",
-		"nazwa": "Towarzyski"
+		"id": "wybuchowy",
+		"nazwa": "Wybuchowy"
 	},
 	"choroby_wypadly": [],
 	"inteligencja_1": {
-		"id": "pamieciowa",
-		"nazwa": "Pamięciowa",
-		"wartosc": 52
+		"id": "przestrzenna",
+		"nazwa": "Przestrzenna",
+		"wartosc": 50
 	},
 	"inteligencja_2": {
-		"id": "logiczno_matematyczna",
-		"nazwa": "Logiczno-matematyczna",
-		"wartosc": 56
+		"id": "jezykowa",
+		"nazwa": "Językowa",
+		"wartosc": 98
 	},
 	"inteligencja_3": {
 		"id": "muzyczna",
 		"nazwa": "Muzyczna",
-		"wartosc": 54
+		"wartosc": 83
+	},
+	"inteligencja_emocjonalna": 49,
+	"lotnictwo": {
+		"hangar": false,
+		"licencje": [],
+		"smiglowce_odblokowane": false
 	},
 	"miejsce": {
-		"id": "0419",
+		"id": "2213",
 		"kontynent": "europa",
-		"ludnosc": 53942,
-		"nazwa": "żniński",
+		"ludnosc": 79657,
+		"nazwa": "starogardzki",
 		"panstwo": "Polska",
 		"panstwo_id": "polska",
-		"typ": "wies"
+		"powiat_id": "",
+		"typ": "wies",
+		"wojewodztwo": "Pomorskie"
 	},
 	"opis": "Jedno losowanie na start. Szablon postacie/bohater.json nie został zmieniony.",
 	"orientacja": {
-		"id": "hetero",
-		"nazwa": "Hetero"
+		"id": "bi",
+		"nazwa": "Bi"
 	},
 	"pieniadze": 0,
 	"plec": {
@@ -48,41 +56,54 @@
 	},
 	"psychika": 50,
 	"rola": "bohater",
-	"rownowaga": 52,
-	"sila": 39,
+	"rownowaga": 31,
+	"sila": 27,
 	"sylwetka": {
-		"id": "przecietna",
-		"nazwa": "przecietna"
+		"etap": 0,
+		"propozycja_do_poprawki": true,
+		"punkty": 0
 	},
-	"szybkosc_reakcji": 76,
+	"szybkosc_reakcji": 92,
+	"wiedza_pkt": 0,
 	"wiek": 3,
 	"wyglad_naturalny": null,
 	"wylosowano": true,
-	"wytrzymalosc": 5,
-	"zadowolenie_docelowe": 73,
+	"wytrzymalosc": 26,
+	"zadowolenie_docelowe": 53,
+	"zainteresowanie": {
+		"dominujace": true,
+		"doprecyzowanie": null,
+		"id": "gotowanie",
+		"kolo": true,
+		"nazwa": "Gotowanie",
+		"ogolne": true,
+		"propozycja_do_poprawki": true
+	},
+	"zajecia_dodatkowe": [],
 	"zarobki_rodziny": {
-		"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23). | GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-		"do_zl": 22150.83,
+		"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 5 — mediana 5281,03 zł (M 5643,61 / K 5158,45); przeciętne 5863,53 zł (M 6319,16 / K 5630,42). | GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 3 — mediana 7811,76 zł (M 8451,16 / K 7428,01); przeciętne 8701,93 zł (M 9521,35 / K 8042,57).",
+		"do_zl": 15000,
 		"dochód_gospodarstwa": "suma_przedzialow_rodzicow",
 		"kolo": true,
 		"kraj": "polska",
 		"kwota": null,
 		"matka": {
-			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-			"do_zl": 9906.23,
-			"grupa_nazwa": "Specjaliści",
-			"isco08_grupa": "OC2",
+			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 5 — mediana 5281,03 zł (M 5643,61 / K 5158,45); przeciętne 5863,53 zł (M 6319,16 / K 5630,42).",
+			"do_zl": 5600,
+			"grupa_nazwa": "Pracownicy usług i sprzedawcy",
+			"isco08_grupa": "OC5",
 			"kolo": true,
 			"kraj": "polska",
 			"kwota": null,
-			"mediana_zl": 9071.01,
-			"od_zl": 9071.01,
+			"mediana_zl": 5200,
+			"od_zl": 5200,
 			"plec_stat": "kobiety",
-			"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
-			"przecietne_zl": 9906.23,
+			"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC5. Kwoty na ekranie: 2 cyfry znaczące.",
+			"przecietne_zl": 5600,
 			"przedzial_id": null,
 			"waga": null,
-			"zarobki_z": "grupa_OC2",
+			"zaokraglenie": "2_cyfry_znaczace",
+			"zarobki_z": "grupa_OC5",
 			"zrodlo": {
 				"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
 				"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
@@ -99,25 +120,26 @@
 				"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
 			}
 		},
-		"mediana_zl": 19462.84,
+		"mediana_zl": 14000,
 		"miasto": null,
-		"od_zl": 19462.84,
+		"od_zl": 14000,
 		"ojciec": {
-			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-			"do_zl": 12244.6,
-			"grupa_nazwa": "Specjaliści",
-			"isco08_grupa": "OC2",
+			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 3 — mediana 7811,76 zł (M 8451,16 / K 7428,01); przeciętne 8701,93 zł (M 9521,35 / K 8042,57).",
+			"do_zl": 9500,
+			"grupa_nazwa": "Technicy i inny średni personel",
+			"isco08_grupa": "OC3",
 			"kolo": true,
 			"kraj": "polska",
 			"kwota": null,
-			"mediana_zl": 10391.83,
-			"od_zl": 10391.83,
+			"mediana_zl": 8500,
+			"od_zl": 8500,
 			"plec_stat": "mezczyzni",
-			"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
-			"przecietne_zl": 12244.6,
+			"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC3. Kwoty na ekranie: 2 cyfry znaczące.",
+			"przecietne_zl": 9500,
 			"przedzial_id": null,
 			"waga": null,
-			"zarobki_z": "grupa_OC2",
+			"zaokraglenie": "2_cyfry_znaczace",
+			"zarobki_z": "grupa_OC3",
 			"zrodlo": {
 				"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
 				"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
@@ -134,11 +156,12 @@
 				"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
 			}
 		},
-		"powod": "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie.",
-		"przecietne_zl": 22150.83,
+		"powod": "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie. Suma na ekranie: 2 cyfry znaczące.",
+		"przecietne_zl": 15000,
 		"przedzial_id": null,
 		"waga": null,
 		"wies": null,
+		"zaokraglenie": "2_cyfry_znaczace",
 		"zarobki_z": "suma_rodzicow",
 		"zrodlo": {
 			"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
@@ -160,24 +183,135 @@
 	"ziarno_rodzicow": {
 		"charakter": [
 			{
-				"id": "optymistyczny",
-				"nazwa": "Optymistyczny"
+				"id": "impulsywny",
+				"nazwa": "Impulsywny"
 			},
 			{
-				"id": "wygodny",
-				"nazwa": "Wygodny"
+				"id": "szczery",
+				"nazwa": "Szczery"
 			},
 			{
-				"id": "pewny_siebie",
-				"nazwa": "Pewny siebie"
+				"id": "podejrzliwy",
+				"nazwa": "Podejrzliwy"
+			},
+			{
+				"id": "zmienny",
+				"nazwa": "Zmienny"
 			}
 		],
 		"dom": {
-			"id": "dom_jednorodzinny",
+			"id": "mieszkanie",
 			"kolo": true,
-			"nazwa": "Dom jednorodzinny",
+			"nazwa": "Mieszkanie",
 			"powod": "",
 			"propozycja_do_poprawki": true
+		},
+		"dziadkowie": {
+			"kieszonkowe_aktywne": false,
+			"kieszonkowe_kwota_zl": null,
+			"lista": [
+				{
+					"charakter": [
+						{
+							"id": "pesymistyczny",
+							"nazwa": "Pesymistyczny"
+						},
+						{
+							"id": "cierpliwy",
+							"nazwa": "Cierpliwy"
+						}
+					],
+					"imie": {
+						"id": "zuzanna",
+						"kolo": true,
+						"nazwa": "Zuzanna",
+						"powod": ""
+					},
+					"linia_matki": false,
+					"miejsce": {
+						"miasto_id": "2213",
+						"miasto_nazwa": "starogardzki",
+						"propozycja_do_poprawki": true,
+						"tryb": "to_samo_miasto",
+						"wojewodztwo": "Pomorskie"
+					},
+					"praca": {
+						"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC53 Personal care workers: 176.6 tys.",
+						"grupa_id": "uslugi_sprzedawcy",
+						"grupa_isco08": "OC5",
+						"grupa_nazwa": "Pracownicy usług i sprzedawcy",
+						"id": "oc53",
+						"isco08": "OC53",
+						"kolo": true,
+						"nazwa": "Opiekunowie osób",
+						"powod": "",
+						"zawod": "Opiekunowie osób"
+					},
+					"rola": "babcia_ojca",
+					"zarobki": {
+						"do_zl": 5200,
+						"jeszcze_pracuje": false,
+						"kolo": true,
+						"od_zl": 4700,
+						"propozycja_do_poprawki": true,
+						"tryb": "emerytura_uproszczona",
+						"zaokraglenie": "2_cyfry_znaczace"
+					}
+				},
+				{
+					"charakter": [
+						{
+							"id": "ambitny",
+							"nazwa": "Ambitny"
+						},
+						{
+							"id": "wybuchowy",
+							"nazwa": "Wybuchowy"
+						}
+					],
+					"imie": {
+						"id": "krzysztof",
+						"kolo": true,
+						"nazwa": "Krzysztof",
+						"powod": ""
+					},
+					"linia_matki": false,
+					"miejsce": {
+						"miasto_id": "2213",
+						"miasto_nazwa": "starogardzki",
+						"propozycja_do_poprawki": true,
+						"tryb": "sasiednie_miasto",
+						"uwaga": "Sąsiednie/daleko — stub: to samo województwo; pełne losowanie miasta w Fali 2.",
+						"wojewodztwo": "Pomorskie"
+					},
+					"praca": {
+						"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC11 Chief executives, senior officials and legislators: 131.5 tys.",
+						"grupa_id": "przedstawiciele_wladz",
+						"grupa_isco08": "OC1",
+						"grupa_nazwa": "Kierownicy",
+						"id": "oc11",
+						"isco08": "OC11",
+						"kolo": true,
+						"nazwa": "Przedstawiciele władz publicznych i wyżsi urzędnicy",
+						"powod": "",
+						"zawod": "Przedstawiciele władz publicznych i wyżsi urzędnicy"
+					},
+					"rola": "dziadek_ojca",
+					"zarobki": {
+						"do_zl": 5200,
+						"jeszcze_pracuje": false,
+						"kolo": true,
+						"od_zl": 4700,
+						"propozycja_do_poprawki": true,
+						"tryb": "emerytura_uproszczona",
+						"zaokraglenie": "2_cyfry_znaczace"
+					}
+				}
+			],
+			"podejrzliwosc": 0,
+			"propozycja_do_poprawki": true,
+			"przerwa_do_tygodnia": -1,
+			"zestaw_id": "oboje_ojca"
 		},
 		"kieszonkowe": {
 			"decyzja": null,
@@ -220,37 +354,37 @@
 		"kolo": true,
 		"kraj_rodziny": "polska",
 		"lokum": {
-			"cena_zl": 1565000,
-			"id": "lokum_start_dom_1290478468",
-			"kategoria": "dom",
+			"cena_zl": 453000,
+			"id": "lokum_start_mieszkanie_2913365027",
+			"kategoria": "mieszkanie",
 			"lokalizacja": "poza",
-			"lokalizacja_opis": "poza miastem (żniński)",
+			"lokalizacja_opis": "poza miastem (starogardzki)",
 			"lokum_rodziny": true,
-			"metraz_m2": 167,
-			"miasto_id": "0419",
-			"miasto_nazwa": "żniński",
-			"nazwa": "Dom jednorodzinny, 167 m²",
+			"metraz_m2": 54,
+			"miasto_id": "2213",
+			"miasto_nazwa": "starogardzki",
+			"nazwa": "Mieszkanie, 54 m²",
 			"nieruchomosc": true,
-			"obrazek": "res://grafika/zakupy/dom.png",
-			"pokoje": 6,
-			"poziom_zarobkow": 0.56,
+			"obrazek": "res://grafika/zakupy/mieszkanie.png",
+			"pokoje": 1,
+			"poziom_zarobkow": 0.26,
 			"propozycja_do_poprawki": true,
-			"stan": "po_remoncie",
-			"typ": "dom_jednorodzinny",
-			"typ_nazwa": "Dom jednorodzinny",
+			"stan": "do_odswiezenia",
+			"typ": "mieszkanie",
+			"typ_nazwa": "Mieszkanie",
 			"typ_urodzenia": "wies",
-			"wygoda": 86,
+			"wygoda": 46,
 			"zrodlo": "lokum_startowe"
 		},
 		"matka": {
 			"charakter": [
 				{
-					"id": "optymistyczny",
-					"nazwa": "Optymistyczny"
+					"id": "impulsywny",
+					"nazwa": "Impulsywny"
 				},
 				{
-					"id": "wygodny",
-					"nazwa": "Wygodny"
+					"id": "szczery",
+					"nazwa": "Szczery"
 				}
 			],
 			"imie": {
@@ -260,34 +394,35 @@
 				"powod": ""
 			},
 			"praca": {
-				"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC22 Health professionals: 490.1 tys.",
-				"grupa_id": "specjalisci",
-				"grupa_isco08": "OC2",
-				"grupa_nazwa": "Specjaliści",
-				"id": "oc22",
-				"isco08": "OC22",
+				"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=F OC52 Sales workers: 861.5 tys.",
+				"grupa_id": "uslugi_sprzedawcy",
+				"grupa_isco08": "OC5",
+				"grupa_nazwa": "Pracownicy usług i sprzedawcy",
+				"id": "oc52",
+				"isco08": "OC52",
 				"kolo": true,
-				"nazwa": "Specjaliści do spraw zdrowia",
+				"nazwa": "Sprzedawcy",
 				"powod": "",
-				"zawod": "Specjaliści do spraw zdrowia"
+				"zawod": "Sprzedawcy"
 			},
 			"rola": "matka",
 			"zarobki": {
-				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-				"do_zl": 9906.23,
-				"grupa_nazwa": "Specjaliści",
-				"isco08_grupa": "OC2",
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 5 — mediana 5281,03 zł (M 5643,61 / K 5158,45); przeciętne 5863,53 zł (M 6319,16 / K 5630,42).",
+				"do_zl": 5600,
+				"grupa_nazwa": "Pracownicy usług i sprzedawcy",
+				"isco08_grupa": "OC5",
 				"kolo": true,
 				"kraj": "polska",
 				"kwota": null,
-				"mediana_zl": 9071.01,
-				"od_zl": 9071.01,
+				"mediana_zl": 5200,
+				"od_zl": 5200,
 				"plec_stat": "kobiety",
-				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
-				"przecietne_zl": 9906.23,
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC5. Kwoty na ekranie: 2 cyfry znaczące.",
+				"przecietne_zl": 5600,
 				"przedzial_id": null,
 				"waga": null,
-				"zarobki_z": "grupa_OC2",
+				"zaokraglenie": "2_cyfry_znaczace",
+				"zarobki_z": "grupa_OC5",
 				"zrodlo": {
 					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
 					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
@@ -309,45 +444,50 @@
 		"ojciec": {
 			"charakter": [
 				{
-					"id": "pewny_siebie",
-					"nazwa": "Pewny siebie"
+					"id": "podejrzliwy",
+					"nazwa": "Podejrzliwy"
+				},
+				{
+					"id": "zmienny",
+					"nazwa": "Zmienny"
 				}
 			],
 			"imie": {
-				"id": "paweł",
+				"id": "adrian",
 				"kolo": true,
-				"nazwa": "Paweł",
+				"nazwa": "Adrian",
 				"powod": ""
 			},
 			"praca": {
-				"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC23 Teaching professionals: 166.2 tys.",
-				"grupa_id": "specjalisci",
-				"grupa_isco08": "OC2",
-				"grupa_nazwa": "Specjaliści",
-				"id": "oc23",
-				"isco08": "OC23",
+				"cytat": "Eurostat lfsa_egai2d PL 2024 Y15-64 EMP Sex=M OC32 Health associate professionals: 56.8 tys.",
+				"grupa_id": "technicy",
+				"grupa_isco08": "OC3",
+				"grupa_nazwa": "Technicy i inny średni personel",
+				"id": "oc32",
+				"isco08": "OC32",
 				"kolo": true,
-				"nazwa": "Specjaliści nauczania i wychowania",
+				"nazwa": "Średni personel do spraw zdrowia",
 				"powod": "",
-				"zawod": "Specjaliści nauczania i wychowania"
+				"zawod": "Średni personel do spraw zdrowia"
 			},
 			"rola": "ojciec",
 			"zarobki": {
-				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-				"do_zl": 12244.6,
-				"grupa_nazwa": "Specjaliści",
-				"isco08_grupa": "OC2",
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 3 — mediana 7811,76 zł (M 8451,16 / K 7428,01); przeciętne 8701,93 zł (M 9521,35 / K 8042,57).",
+				"do_zl": 9500,
+				"grupa_nazwa": "Technicy i inny średni personel",
+				"isco08_grupa": "OC3",
 				"kolo": true,
 				"kraj": "polska",
 				"kwota": null,
-				"mediana_zl": 10391.83,
-				"od_zl": 10391.83,
+				"mediana_zl": 8500,
+				"od_zl": 8500,
 				"plec_stat": "mezczyzni",
-				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
-				"przecietne_zl": 12244.6,
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC3. Kwoty na ekranie: 2 cyfry znaczące.",
+				"przecietne_zl": 9500,
 				"przedzial_id": null,
 				"waga": null,
-				"zarobki_z": "grupa_OC2",
+				"zaokraglenie": "2_cyfry_znaczace",
+				"zarobki_z": "grupa_OC3",
 				"zrodlo": {
 					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
 					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
@@ -405,28 +545,29 @@
 			"wegetarianie": null
 		},
 		"zarobki": {
-			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23). | GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-			"do_zl": 22150.83,
+			"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 5 — mediana 5281,03 zł (M 5643,61 / K 5158,45); przeciętne 5863,53 zł (M 6319,16 / K 5630,42). | GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 3 — mediana 7811,76 zł (M 8451,16 / K 7428,01); przeciętne 8701,93 zł (M 9521,35 / K 8042,57).",
+			"do_zl": 15000,
 			"dochód_gospodarstwa": "suma_przedzialow_rodzicow",
 			"kolo": true,
 			"kraj": "polska",
 			"kwota": null,
 			"matka": {
-				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-				"do_zl": 9906.23,
-				"grupa_nazwa": "Specjaliści",
-				"isco08_grupa": "OC2",
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 5 — mediana 5281,03 zł (M 5643,61 / K 5158,45); przeciętne 5863,53 zł (M 6319,16 / K 5630,42).",
+				"do_zl": 5600,
+				"grupa_nazwa": "Pracownicy usług i sprzedawcy",
+				"isco08_grupa": "OC5",
 				"kolo": true,
 				"kraj": "polska",
 				"kwota": null,
-				"mediana_zl": 9071.01,
-				"od_zl": 9071.01,
+				"mediana_zl": 5200,
+				"od_zl": 5200,
 				"plec_stat": "kobiety",
-				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
-				"przecietne_zl": 9906.23,
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC5. Kwoty na ekranie: 2 cyfry znaczące.",
+				"przecietne_zl": 5600,
 				"przedzial_id": null,
 				"waga": null,
-				"zarobki_z": "grupa_OC2",
+				"zaokraglenie": "2_cyfry_znaczace",
+				"zarobki_z": "grupa_OC5",
 				"zrodlo": {
 					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
 					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
@@ -443,25 +584,26 @@
 					"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
 				}
 			},
-			"mediana_zl": 19462.84,
+			"mediana_zl": 14000,
 			"miasto": null,
-			"od_zl": 19462.84,
+			"od_zl": 14000,
 			"ojciec": {
-				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 2 Specjaliści — mediana 9466,17 zł (M 10391,83 / K 9071,01); przeciętne 10734,04 zł (M 12244,60 / K 9906,23).",
-				"do_zl": 12244.6,
-				"grupa_nazwa": "Specjaliści",
-				"isco08_grupa": "OC2",
+				"cytat": "GUS, Struktura wynagrodzeń według zawodów za październik 2024 r.: wielka grupa 3 — mediana 7811,76 zł (M 8451,16 / K 7428,01); przeciętne 8701,93 zł (M 9521,35 / K 8042,57).",
+				"do_zl": 9500,
+				"grupa_nazwa": "Technicy i inny średni personel",
+				"isco08_grupa": "OC3",
 				"kolo": true,
 				"kraj": "polska",
 				"kwota": null,
-				"mediana_zl": 10391.83,
-				"od_zl": 10391.83,
+				"mediana_zl": 8500,
+				"od_zl": 8500,
 				"plec_stat": "mezczyzni",
-				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC2.",
-				"przecietne_zl": 12244.6,
+				"powod": "Mediana i przeciętne wielkiej grupy ISCO ze źródła GUS (płeć rodzica). Rozkładu % wewnątrz grupy nie ma — koła przedziałów nie kręcono. Zawód 2-digit zmapowany na OC3. Kwoty na ekranie: 2 cyfry znaczące.",
+				"przecietne_zl": 9500,
 				"przedzial_id": null,
 				"waga": null,
-				"zarobki_z": "grupa_OC2",
+				"zaokraglenie": "2_cyfry_znaczace",
+				"zarobki_z": "grupa_OC3",
 				"zrodlo": {
 					"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
 					"cytat_minimum": "wynagrodzenie minimalne za pracę w październiku wynosiło 4300,00 zł brutto.",
@@ -478,11 +620,12 @@
 					"zbiorowosc": "Podmioty o liczbie pracujących 10 i więcej osób."
 				}
 			},
-			"powod": "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie.",
-			"przecietne_zl": 22150.83,
+			"powod": "Dochód gospodarstwa = suma przedziałów (mediana–przeciętne) matki i ojca z ich wielkich grup ISCO (GUS). Osobne losowanie zarobków każdego rodzica po zawodzie. Suma na ekranie: 2 cyfry znaczące.",
+			"przecietne_zl": 15000,
 			"przedzial_id": null,
 			"waga": null,
 			"wies": null,
+			"zaokraglenie": "2_cyfry_znaczace",
 			"zarobki_z": "suma_rodzicow",
 			"zrodlo": {
 				"cytat_mediana": "mediana wynagrodzeń wyniosła 7404,69 zł brutto.",
@@ -504,5 +647,5 @@
 	"zmeczenie": 20,
 	"zmeczenie_fizyczne": 20,
 	"zmeczenie_psychiczne": 15,
-	"zwinnosc": 64
+	"zwinnosc": 68
 }

@@ -1,0 +1,39 @@
+{
+	"nazwa": "Świętokrzyskie",
+	"ogolem_zrodlo": 429924,
+	"sekcje": {
+		"A": 62521,
+		"B": 3449,
+		"C": 74204,
+		"D": 3769,
+		"E": 5306,
+		"F": 32953,
+		"G": 62637,
+		"H": 23429,
+		"I": 7574,
+		"J": 6734,
+		"K": 5346,
+		"L": 3442,
+		"M": 15060,
+		"N": 12944,
+		"O": 29005,
+		"P": 32228,
+		"Q": 33776,
+		"R": 4684,
+		"S": 10863
+	},
+	"sekcje_zero_bo_nie_wystapily": [],
+	"sekcje_nieopublikowane": [],
+	"zrodlo": {
+		"kto": "Główny Urząd Statystyczny",
+		"tytul": "Pracujący w gospodarce narodowej w 2023 roku, tabl. 1. Pracujący według sekcji PKD i miejsca zamieszkania",
+		"stan": "2023-12-31",
+		"rok": 2023,
+		"url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/pracujacy-w-gospodarce-narodowej-w-2023-roku,7,21.html",
+		"plik": "https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/7/21/1/pracujacy_w_gospodarce_narodowej_w_2023.xlsx",
+		"jednostka": "osoby",
+		"plec": "ogółem",
+		"znak_kreska": "Zjawisko nie wystąpiło. W pliku gry jest 0.",
+		"znak_kropka": "Brak informacji albo tajemnica. Tej sekcji nie ma w wagach, nie wpisuję zera."
+	}
+}

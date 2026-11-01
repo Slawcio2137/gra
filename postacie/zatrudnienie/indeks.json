@@ -1,0 +1,47 @@
+{
+	"opis": "Ścieżki, które czyta ekran Praca. Jedno województwo na wyszukiwanie, nie cała Polska naraz i nie cały katalog KZiS.",
+	"skala_puli_krajowej": 1.08178106594154,
+	"skala_uwaga": "Ta sama liczba dla każdego województwa i dla Polski, żeby suma ogłoszeń została przy już przyjętych 9005 i 98023. Nie rusza udziałów sekcji. To nie jest mnożnik górnictwa.",
+	"wojewodztwa": {
+		"Małopolskie": "res://postacie/zatrudnienie/wojewodztwa/malopolskie.json",
+		"Śląskie": "res://postacie/zatrudnienie/wojewodztwa/slaskie.json",
+		"Lubuskie": "res://postacie/zatrudnienie/wojewodztwa/lubuskie.json",
+		"Wielkopolskie": "res://postacie/zatrudnienie/wojewodztwa/wielkopolskie.json",
+		"Zachodniopomorskie": "res://postacie/zatrudnienie/wojewodztwa/zachodniopomorskie.json",
+		"Dolnośląskie": "res://postacie/zatrudnienie/wojewodztwa/dolnoslaskie.json",
+		"Opolskie": "res://postacie/zatrudnienie/wojewodztwa/opolskie.json",
+		"Kujawsko-Pomorskie": "res://postacie/zatrudnienie/wojewodztwa/kujawsko-pomorskie.json",
+		"Pomorskie": "res://postacie/zatrudnienie/wojewodztwa/pomorskie.json",
+		"Warmińsko-Mazurskie": "res://postacie/zatrudnienie/wojewodztwa/warminsko-mazurskie.json",
+		"Łódzkie": "res://postacie/zatrudnienie/wojewodztwa/lodzkie.json",
+		"Świętokrzyskie": "res://postacie/zatrudnienie/wojewodztwa/swietokrzyskie.json",
+		"Lubelskie": "res://postacie/zatrudnienie/wojewodztwa/lubelskie.json",
+		"Podkarpackie": "res://postacie/zatrudnienie/wojewodztwa/podkarpackie.json",
+		"Podlaskie": "res://postacie/zatrudnienie/wojewodztwa/podlaskie.json",
+		"Mazowieckie": "res://postacie/zatrudnienie/wojewodztwa/mazowieckie.json",
+		"Polska": "res://postacie/zatrudnienie/wojewodztwa/polska.json"
+	},
+	"metropolie": "res://postacie/zatrudnienie/metropolie.json",
+	"miasta_metropolii": [
+		"Kraków",
+		"Poznań",
+		"Szczecin",
+		"Wrocław",
+		"Łódź",
+		"Warszawa"
+	],
+	"zawod_w_sekcji": "res://postacie/zatrudnienie/zawod_w_sekcji.json",
+	"grupy": {
+		"1": "res://postacie/zatrudnienie/grupy/1.json",
+		"2": "res://postacie/zatrudnienie/grupy/2.json",
+		"3": "res://postacie/zatrudnienie/grupy/3.json",
+		"4": "res://postacie/zatrudnienie/grupy/4.json",
+		"5": "res://postacie/zatrudnienie/grupy/5.json",
+		"6": "res://postacie/zatrudnienie/grupy/6.json",
+		"7": "res://postacie/zatrudnienie/grupy/7.json",
+		"8": "res://postacie/zatrudnienie/grupy/8.json",
+		"9": "res://postacie/zatrudnienie/grupy/9.json"
+	},
+	"zawody": "res://postacie/zatrudnienie/zawody/{kod2}.json",
+	"zaawansowanie_i_brak_pracownikow": "Wyłączone z miksu. Nie ma cytowanej tabeli branża×województwo dla tych dwóch nazw, więc nie mnożą Śląska."
+}

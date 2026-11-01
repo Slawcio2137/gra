@@ -104,8 +104,8 @@ func _uruchom() -> int:
 			bez_ceny += 1
 	# Licznik miasta = tylko używane (nie nowe z katalogu).
 	auta_miasta = rynek.ile_aut_w_miescie(swiat["rynek_zakupow"]["oferty"], mid)
-	if auta_miasta < pasmo.x or auta_miasta > pasmo.y:
-		printerr("FAIL: używane w mieście=", auta_miasta, " poza pasmem ", pasmo.x, "..", pasmo.y, " (baza=", baza, ")")
+	if auta_wszystkie <= 0 or auta_wszystkie > rynek.limit_okna_aut():
+		printerr("FAIL: otwarcie zbudowało ", auta_wszystkie, " aut")
 		return 1
 	if uzywany_bez_osobistego > 0:
 		printerr("FAIL: używany bez odbioru osobistego: ", uzywany_bez_osobistego)
@@ -113,14 +113,21 @@ func _uruchom() -> int:
 	if bez_ceny > 0:
 		printerr("FAIL: oferty aut bez ceny: ", bez_ceny)
 		return 1
+	var dodane_nowe := rynek.uzupelnij_okno_aut(swiat, miasta, {"poziom": "miasto", "km": 9999.0, "stan": "nowy", "tydzien": 1, "marki": ["Toyota"]}, 5)
+	if dodane_nowe > 5:
+		printerr("FAIL: dokladka nowych=", dodane_nowe)
+		return 1
 	var nowe_global := 0
 	for o3c in swiat["rynek_zakupow"]["oferty"]:
 		if o3c is Dictionary and bool(o3c.get("z_katalogu_globalny", false)):
 			nowe_global += 1
-	if nowe_global < 80:
-		printerr("FAIL: za mało nowych z katalogu globalnego: ", nowe_global)
+			if str(o3c.get("miasto_nazwa", "")) != "" and not rynek._jest_salon(str(o3c.get("marka", "")), str(o3c.get("miasto_nazwa", ""))):
+				printerr("FAIL: nowe poza salonem ", o3c.get("marka"), " ", o3c.get("miasto_nazwa"))
+				return 1
+	if nowe_global < 1:
+		printerr("FAIL: brak nowego auta z salonu w oknie")
 		return 1
-	print("OK pula: uzywane=", auta_miasta, " nowe_katalog=", nowe_global, " baza=", baza, " miasto=", miasto.get("nazwa"))
+	print("OK pula: uzywane=", auta_miasta, " nowe_katalog=", nowe_global, " dokladka=", dodane_nowe, " miasto=", miasto.get("nazwa"))
 
 	# Używany zawsze ma tryb oceny (osobisty przed zakupem)
 	var rng := RandomNumberGenerator.new()

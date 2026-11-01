@@ -1,1 +1,32 @@
-[]
+[
+	{
+		"cecha_1": {
+			"id": "niesmialy",
+			"nazwa": "Nieśmiały"
+		},
+		"cecha_2": null,
+		"etykieta": "Elżbieta (siostra)",
+		"imie": {
+			"id": "elżbieta",
+			"kolo": true,
+			"nazwa": "Elżbieta",
+			"powod": ""
+		},
+		"miejsce": {
+			"id": "2213",
+			"kontynent": "europa",
+			"ludnosc": 79657,
+			"nazwa": "starogardzki",
+			"panstwo": "Polska",
+			"panstwo_id": "polska",
+			"powiat_id": "",
+			"typ": "wies",
+			"wojewodztwo": "Pomorskie"
+		},
+		"plec": {
+			"id": "kobieta",
+			"nazwa": "Kobieta"
+		},
+		"rola": "rodzenstwo"
+	}
+]

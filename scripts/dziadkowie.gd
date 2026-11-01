@@ -7,6 +7,7 @@ const PLIK_ZESTAWOW := "res://postacie/rodzina/dziadkowie.json"
 const PLIK_KIESZ := "res://postacie/kieszonkowe_dziadkowie.json"
 const PLIK_DIALOG := "res://postacie/dialogi_dziadkowie.json"
 const _Ziarno = preload("res://scripts/ziarno_rodzicow.gd")
+const ZaokraglenieZarobkow = preload("res://scripts/zaokraglenie_zarobkow.gd")
 
 var _zestawy: Dictionary = {}
 var _kiesz: Dictionary = {}
@@ -96,7 +97,7 @@ func snap_kwoty(surowa: int) -> int:
 	if _kiesz.get("dozwolone_kwoty") is Dictionary and _kiesz["dozwolone_kwoty"].get("lista_wzorcowa") is Array:
 		lista = _kiesz["dozwolone_kwoty"]["lista_wzorcowa"]
 	if lista.is_empty():
-		return surowa
+		return ZaokraglenieZarobkow.zaokraglij(surowa)
 	var best := int(lista[0])
 	var best_d := absi(surowa - best)
 	for v in lista:
@@ -110,7 +111,7 @@ func snap_kwoty(surowa: int) -> int:
 	var limit := 150
 	if _kiesz.get("dozwolone_kwoty") is Dictionary and (_kiesz["dozwolone_kwoty"].get("limit_max_zl") is int or _kiesz["dozwolone_kwoty"].get("limit_max_zl") is float):
 		limit = int(_kiesz["dozwolone_kwoty"]["limit_max_zl"])
-	return mini(best, limit)
+	return ZaokraglenieZarobkow.zaokraglij(mini(best, limit))
 
 
 func kwota_bazowa_z_rodziny(ziarno: Dictionary) -> int:
@@ -290,6 +291,8 @@ func _zarobki_uproszczone(rodzic_ref: Variant, los) -> Dictionary:
 	if z.get("do_zl") is int or z.get("do_zl") is float:
 		out["do_zl"] = int(round(float(z["do_zl"]) * mnoznik))
 		out["kolo"] = true
+	if bool(out.get("kolo", false)):
+		ZaokraglenieZarobkow.zaokraglij_blok(out)
 	var szansa_praca := 0.22
 	if _zestawy.get("zarobki") is Dictionary:
 		szansa_praca = float(_zestawy["zarobki"].get("szansa_jeszcze_pracuje", 0.22))

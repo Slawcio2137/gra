@@ -7,11 +7,14 @@ const SkryptZakresu = preload("res://scripts/suwak_zakres.gd")
 const SkryptZapisu = preload("res://scripts/zapis_swiata.gd")
 const SkryptEventow = preload("res://scripts/eventy_odkrycia.gd")
 const SkryptRynkuZakupow = preload("res://scripts/rynek_zakupow.gd")
+const ZaokraglenieZarobkow = preload("res://scripts/zaokraglenie_zarobkow.gd")
 const SkryptMapyMiast = preload("res://scripts/mapa_miast.gd")
 const SkryptPrzejazdu = preload("res://scripts/przejazd_auta.gd")
 const PLIK_ZAKUPOW_OFERT := "res://postacie/zakupy_oferty.json"
 const PLIK_DROBIAZGOW := "res://postacie/drobiazgi.json"
 const IKONA_MIASTA := "res://grafika/ikony/miasto.png"
+const SkryptKataloguZawodow = preload("res://scripts/katalog_zawodow.gd")
+const SkryptRynkuPracy = preload("res://scripts/rynek_pracy.gd")
 
 const KOLUMNA_USTAWIEN := "PanelUstawien/Margines/ScrollUstawien/Kolumna"
 const KOLUMNA_GRY := "Gra/Margines/Kolumna"
@@ -76,6 +79,7 @@ var _zakupy_licznik_od: Label
 var _zakupy_licznik_do: Label
 var _zakupy_zasieg_km := 25.0
 var _zakupy_zasieg_poziom := "miasto"
+var _zakupy_pula_lbl: Label
 var _zakupy_filtr_odbior := ""
 var _zakupy_filtr_rozwiniety := false
 var _zakupy_kat_id := ""
@@ -90,7 +94,17 @@ var _zakupy_filtr_marki: Array = []  ## multi-wybór; puste = wszystkie
 var _zakupy_filtr_naped := ""
 var _zakupy_panel_nowe_auta: Control
 var _zakupy_sort_cena := "malejaco"  ## malejaco | rosnaco
+var _zakupy_dokladka := false
+var _zakupy_scroll_podpiety := false
+var _zakupy_prefetch_kroki := 0
 var _rynek_zakupow := SkryptRynkuZakupow.new()
+var _rynek_pracy = SkryptRynkuPracy.new()
+var _ekran_pracy := false
+var _praca_dokladka := false
+var _praca_scroll_podpiety := false
+var _praca_cisza := false
+var _praca_filtry: Dictionary = {}
+var _praca_pula_lbl: Label
 var _mapa_miast := SkryptMapyMiast.new()
 var _przejazd := SkryptPrzejazdu.new()
 var _mapa_graf: Dictionary = {}
@@ -219,6 +233,18 @@ func _on_nastepna_tura() -> void:
 	_losuj_eventy_tury()
 	_fallback_nauki_szkolnej()
 	_efekt_wygody_tydzien()
+	var wynik_pracy: Variant = _rynek_pracy.tick(_swiat)
+	if wynik_pracy is Dictionary:
+		var wyplata_pracy := int(wynik_pracy.get("wyplata", 0))
+		var zdanie_pracy := str(wynik_pracy.get("tekst", ""))
+		if wyplata_pracy > 0:
+			_dodaj_pieniadze(wyplata_pracy)
+			_dodaj_wplyw("praca", wyplata_pracy, zdanie_pracy)
+		var pasek_pracy := str(wynik_pracy.get("pasek_tekst", ""))
+		if pasek_pracy != "":
+			_swiat["praca_komunikat"] = zdanie_pracy + "\n" + pasek_pracy if zdanie_pracy != "" else pasek_pracy
+		elif zdanie_pracy != "":
+			_swiat["praca_komunikat"] = zdanie_pracy
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	_swiat["dni_auta"] = int(_swiat.get("dni_auta", 0))
 	_odswiez_rynek_zakupow()
@@ -724,6 +750,7 @@ func _odswiez_stos() -> void:
 
 
 func _pokaz_start_bialy() -> void:
+	_ekran_pracy = false
 	_wyczysc(_tresc_biala())
 	_dol_suwaka().hide()
 	_tytul_bialy().text = "Gra"
@@ -738,6 +765,7 @@ func _pokaz_start_bialy() -> void:
 
 
 func _pokaz_napisy_tygodnia() -> void:
+	_ekran_pracy = false
 	_wyczysc(_tresc_biala())
 	_dol_suwaka().hide()
 	var tydzien := int(_swiat.get("tydzien", 1))
@@ -798,6 +826,7 @@ func _pokaz_liste_dzieci(akcja: Dictionary) -> void:
 
 
 func _pokaz_ekran(akcja: Dictionary) -> void:
+	_ekran_pracy = false
 	_zdanie = null
 	_wplyw_domu = null
 	_efekt_dni = null
@@ -863,6 +892,10 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 		_ekran_imprezy()
 	elif tresc == "zakupy":
 		_ekran_zakupy()
+	elif tresc == "zakupy_grupa":
+		var grupa_sl: Variant = akcja.get("grupa", {})
+		if grupa_sl is Dictionary:
+			_ekran_zakupy_grupa(grupa_sl)
 	elif tresc == "zakupy_kategoria":
 		var kat_sl: Variant = akcja.get("kat", {})
 		if kat_sl is Dictionary:
@@ -980,12 +1013,13 @@ func _ekran_rodzina() -> void:
 	if not (rodzina is Dictionary) or rodzina.is_empty():
 		_tresc_biala().add_child(_napis_ekranu("Rodzina nie weszła do zapisu. Spróbuj Start jeszcze raz — jeśli dalej pusto, losowanie padło.", 16))
 		return
-	_tresc_biala().add_child(_napis_ekranu("Matka", 18))
-	_tresc_biala().add_child(_napis_ekranu(_opis_rodzica(rodzina.get("matka")), 16))
-	_tresc_biala().add_child(_napis_ekranu("Ojciec", 18))
-	_tresc_biala().add_child(_napis_ekranu(_opis_rodzica(rodzina.get("ojciec")), 16))
-	_tresc_biala().add_child(_napis_ekranu("Dziadkowie", 18))
-	_tresc_biala().add_child(_napis_ekranu(_opis_dziadkow(rodzina.get("dziadkowie")), 16))
+	var rodzice_box := _dodaj_sekcje_zwijana("rodzice", "Rodzice")
+	rodzice_box.add_child(_napis_ekranu("Matka", 18))
+	rodzice_box.add_child(_napis_ekranu(_opis_rodzica(rodzina.get("matka")), 16))
+	rodzice_box.add_child(_napis_ekranu("Ojciec", 18))
+	rodzice_box.add_child(_napis_ekranu(_opis_rodzica(rodzina.get("ojciec")), 16))
+	var dziadkowie_box := _dodaj_sekcje_zwijana("dziadkowie", "Dziadkowie")
+	_wypelnij_dziadkow(dziadkowie_box, rodzina.get("dziadkowie"))
 	var prosba_d := Button.new()
 	prosba_d.text = "Poproś dziadków o kieszonkowe"
 	prosba_d.custom_minimum_size = Vector2(0, 48)
@@ -1027,7 +1061,9 @@ func _ekran_rodzina() -> void:
 	var linia_kiesz := "Kieszonkowe: %s" % tryb_etykieta
 	if aktywne and (tryb_id == "stala_kwota" or tryb_id == "stale_daje"):
 		if _jest_liczba(_swiat.get("kieszonkowe_kwota_zl")):
-			linia_kiesz += " · %d zł/tydzień" % int(_swiat["kieszonkowe_kwota_zl"])
+			var kwota_k := int(ZaokraglenieZarobkow.zaokraglij(_swiat["kieszonkowe_kwota_zl"]))
+			_swiat["kieszonkowe_kwota_zl"] = kwota_k
+			linia_kiesz += " · %d zł/tydzień" % kwota_k
 		else:
 			linia_kiesz += " · kwota tygodniowa: —"
 	_tresc_biala().add_child(_napis_ekranu(linia_kiesz, 16))
@@ -1051,6 +1087,58 @@ func _ekran_rodzina() -> void:
 	wynik_lbl.name = "WynikKieszonkowego"
 	wynik_lbl.visible = str(_swiat.get("ostatnie_kieszonkowe_tekst", "")) != ""
 	_tresc_biala().add_child(wynik_lbl)
+
+
+## Nagłówek zwija wiersze. Domyślnie zwinięte. Ludzie zostają w drzewie, tylko hidden.
+func _dodaj_sekcje_zwijana(id_sekcji: String, tytul: String) -> VBoxContainer:
+	var naglowek := Button.new()
+	naglowek.text = "%s ▸" % tytul
+	naglowek.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	naglowek.custom_minimum_size = Vector2(0, 48)
+	naglowek.add_theme_font_size_override("font_size", 18)
+	naglowek.set_meta("sekcja_rodziny", id_sekcji)
+	naglowek.focus_mode = Control.FOCUS_NONE
+	var pudelko := VBoxContainer.new()
+	pudelko.visible = false
+	pudelko.set_meta("tresc_sekcji", id_sekcji)
+	pudelko.add_theme_constant_override("separation", 6)
+	pudelko.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	naglowek.pressed.connect(func() -> void:
+		pudelko.visible = not pudelko.visible
+		naglowek.text = ("%s ▾" % tytul) if pudelko.visible else ("%s ▸" % tytul)
+	)
+	_tresc_biala().add_child(naglowek)
+	_tresc_biala().add_child(pudelko)
+	return pudelko
+
+
+func _wypelnij_dziadkow(pudelko: VBoxContainer, blok: Variant) -> void:
+	if not (blok is Dictionary):
+		pudelko.add_child(_napis_ekranu("Brak w zapisie (Start jeszcze raz).", 16))
+		return
+	var lista: Variant = blok.get("lista", [])
+	if not (lista is Array) or lista.is_empty():
+		pudelko.add_child(_napis_ekranu("Brak żyjących dziadków w wylosowanym zestawie.", 16))
+		return
+	for o in lista:
+		if not (o is Dictionary):
+			continue
+		pudelko.add_child(_napis_ekranu(_etykieta_roli_dziadka(str(o.get("rola", ""))), 16))
+		pudelko.add_child(_napis_ekranu(_opis_rodzica(o), 15))
+
+
+func _etykieta_roli_dziadka(rola: String) -> String:
+	match rola:
+		"babcia_matki":
+			return "Babcia (linia matki)"
+		"dziadek_matki":
+			return "Dziadek (linia matki)"
+		"babcia_ojca":
+			return "Babcia (linia ojca)"
+		"dziadek_ojca":
+			return "Dziadek (linia ojca)"
+		_:
+			return "Dziadek / babcia" if rola == "" else rola
 
 
 func _opis_rodzica(osoba: Variant) -> String:
@@ -1470,7 +1558,24 @@ func _ekran_majatek() -> void:
 				if bool(d.get("nie_jezdzi", false)) or bool(d.get("do_naprawy", false)):
 					_tresc_biala().add_child(_panel_awarii_auta(i_d, d))
 			else:
-				_tresc_biala().add_child(_napis_ekranu(nazwa_d, 14))
+				var linia_d := nazwa_d
+				if _rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
+					var plus_d := _rynek_zakupow.tekst_plusow(_rynek_zakupow.plusy_oferty(d))
+					if plus_d != "":
+						linia_d += " · " + plus_d
+				_tresc_biala().add_child(_napis_ekranu(linia_d, 14))
+				if _rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
+					var b_oddaj := Button.new()
+					b_oddaj.text = "Oddaj"
+					b_oddaj.custom_minimum_size = Vector2(0, 40)
+					var idx_d := i_d
+					b_oddaj.pressed.connect(func() -> void:
+						var wynik_o: Dictionary = _rynek_zakupow.oddaj_dobro(_swiat, idx_d)
+						if bool(wynik_o.get("ok", false)):
+							SkryptZapisu.zapisz(_swiat)
+							_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+					)
+					_tresc_biala().add_child(b_oddaj)
 	_tresc_biala().add_child(_napis_ekranu("Wpływy", 18))
 	var lista: Variant = _swiat.get("wplywy", [])
 	if not (lista is Array) or lista.is_empty():
@@ -1496,27 +1601,131 @@ func _ekran_zakupy() -> void:
 	if not (kategorie is Array) or kategorie.is_empty():
 		_tresc_biala().add_child(_napis_ekranu("Brak kategorii w danych.", 16))
 		return
+	var schowane := {}
+	for grupa in _grupy_zakupow():
+		if not (grupa is Dictionary):
+			continue
+		var ids: Variant = grupa.get("kategorie", [])
+		if ids is Array:
+			for id_k in ids:
+				schowane[str(id_k)] = true
+		_dodaj_przycisk_grupy_zakupow(grupa)
 	for kat in kategorie:
 		if not (kat is Dictionary):
 			continue
-		var przycisk := Button.new()
-		przycisk.text = str(kat.get("nazwa", kat.get("id", "")))
-		przycisk.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		przycisk.custom_minimum_size = Vector2(0, 48)
-		przycisk.add_theme_font_size_override("font_size", 18)
-		var kat_bind: Dictionary = kat
-		przycisk.pressed.connect(func() -> void:
-			_wejdz_w_kategorie_zakupow(kat_bind)
-		)
-		_tresc_biala().add_child(przycisk)
+		if schowane.has(str(kat.get("id", ""))):
+			continue
+		_dodaj_przycisk_kategorii_zakupow(kat)
+
+
+func _dodaj_przycisk_grupy_zakupow(grupa: Dictionary) -> void:
+	var przycisk := Button.new()
+	przycisk.text = str(grupa.get("nazwa", grupa.get("id", "")))
+	przycisk.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	przycisk.custom_minimum_size = Vector2(0, 48)
+	przycisk.add_theme_font_size_override("font_size", 18)
+	przycisk.set_meta("grupa_zakupow", str(grupa.get("id", "")))
+	var grupa_bind: Dictionary = grupa.duplicate(true)
+	przycisk.pressed.connect(func() -> void:
+		_wejdz_w_grupe_zakupow(grupa_bind)
+	)
+	_tresc_biala().add_child(przycisk)
+
+
+func _dodaj_przycisk_kategorii_zakupow(kat: Dictionary) -> void:
+	var przycisk := Button.new()
+	przycisk.text = str(kat.get("nazwa", kat.get("id", "")))
+	przycisk.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	przycisk.custom_minimum_size = Vector2(0, 48)
+	przycisk.add_theme_font_size_override("font_size", 18)
+	przycisk.set_meta("kategoria_zakupow", str(kat.get("id", "")))
+	var kat_bind: Dictionary = kat.duplicate(true)
+	przycisk.pressed.connect(func() -> void:
+		_wejdz_w_kategorie_zakupow(kat_bind)
+	)
+	_tresc_biala().add_child(przycisk)
+
+
+func _grupy_zakupow() -> Array:
+	var dane := _wczytaj_zakupy_oferty()
+	var grupy: Variant = dane.get("grupy", [])
+	if grupy is Array:
+		return grupy
+	return []
+
+
+func _grupa_dla_kategorii(kat_id: String) -> Dictionary:
+	if kat_id == "":
+		return {}
+	for grupa in _grupy_zakupow():
+		if not (grupa is Dictionary):
+			continue
+		var ids: Variant = grupa.get("kategorie", [])
+		if ids is Array and ids.has(kat_id):
+			return grupa
+	return {}
+
+
+func _akcja_zakupy() -> Dictionary:
+	if _akcje_po_id.has("zakupy") and _akcje_po_id["zakupy"] is Dictionary:
+		var z: Dictionary = (_akcje_po_id["zakupy"] as Dictionary).duplicate(true)
+		z.erase("dzieci")
+		z.erase("sciezka_rodzicow")
+		return z
+	return {"id": "zakupy", "nazwa": "Zakupy", "tryb": "ekran", "tresc": "zakupy", "kolor": "#b0a04a"}
+
+
+func _akcja_grupy_zakupow(grupa: Dictionary) -> Dictionary:
+	return {
+		"id": "zakupy_grupa_%s" % str(grupa.get("id", "")),
+		"nazwa": str(grupa.get("nazwa", "Zakupy")),
+		"tryb": "ekran",
+		"tresc": "zakupy_grupa",
+		"grupa": grupa.duplicate(true),
+		"kolor": "#b0a04a",
+	}
+
+
+func _wejdz_w_grupe_zakupow(grupa: Dictionary) -> void:
+	var akcja := _akcja_grupy_zakupow(grupa)
+	akcja["sciezka_rodzicow"] = [_akcja_zakupy()]
+	_otworz_akcje(akcja)
+
+
+func _ekran_zakupy_grupa(grupa: Dictionary) -> void:
+	var ids: Array = grupa.get("kategorie", []) if grupa.get("kategorie") is Array else []
+	var nazwy: Dictionary = grupa.get("nazwy_wyboru", {}) if grupa.get("nazwy_wyboru") is Dictionary else {}
+	var dane := _wczytaj_zakupy_oferty()
+	var kategorie: Array = dane.get("kategorie", []) if dane.get("kategorie") is Array else []
+	var po_id := {}
+	for kat in kategorie:
+		if kat is Dictionary:
+			po_id[str(kat.get("id", ""))] = kat
+	if ids.is_empty():
+		_tresc_biala().add_child(_napis_ekranu("Brak wyborów w tej kategorii.", 16))
+		return
+	var uwaga := str(grupa.get("uwaga", "")).strip_edges()
+	if uwaga != "":
+		_tresc_biala().add_child(_napis_ekranu(uwaga, 14))
+	for id_k in ids:
+		var sid := str(id_k)
+		if not po_id.has(sid):
+			_tresc_biala().add_child(_napis_ekranu(
+				"%s — brak rynku w danych (null, bez wymyślonego katalogu)." % sid, 16
+			))
+			continue
+		var kat: Dictionary = (po_id[sid] as Dictionary).duplicate(true)
+		if nazwy.has(sid) and str(nazwy[sid]) != "":
+			kat["nazwa"] = str(nazwy[sid])
+		_dodaj_przycisk_kategorii_zakupow(kat)
 
 
 func _wejdz_w_kategorie_zakupow(kat: Dictionary) -> void:
-	var zakupy: Dictionary = {}
-	if _akcje_po_id.has("zakupy") and _akcje_po_id["zakupy"] is Dictionary:
-		zakupy = (_akcje_po_id["zakupy"] as Dictionary).duplicate(true)
-	else:
-		zakupy = {"id": "zakupy", "nazwa": "Zakupy", "tryb": "ekran", "tresc": "zakupy", "kolor": "#b0a04a"}
+	var zakupy := _akcja_zakupy()
+	var rodzice: Array = [zakupy]
+	var grupa := _grupa_dla_kategorii(str(kat.get("id", "")))
+	if not grupa.is_empty():
+		rodzice.append(_akcja_grupy_zakupow(grupa))
 	if str(kat.get("rodzaj", "")) == "budzet_jakosci" or str(kat.get("id", "")) == "drobiazgi":
 		_otworz_akcje({
 			"id": "zakupy_kat_drobiazgi",
@@ -1525,7 +1734,7 @@ func _wejdz_w_kategorie_zakupow(kat: Dictionary) -> void:
 			"tresc": "zakupy_kategoria",
 			"kat": kat,
 			"kolor": str(zakupy.get("kolor", "#b0a04a")),
-			"sciezka_rodzicow": [zakupy],
+			"sciezka_rodzicow": rodzice,
 		})
 		return
 	_otworz_akcje({
@@ -1535,7 +1744,7 @@ func _wejdz_w_kategorie_zakupow(kat: Dictionary) -> void:
 		"tresc": "zakupy_kategoria",
 		"kat": kat,
 		"kolor": str(zakupy.get("kolor", "#b0a04a")),
-		"sciezka_rodzicow": [zakupy],
+		"sciezka_rodzicow": rodzice,
 	})
 
 
@@ -1615,24 +1824,13 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		if o is Dictionary and _jest_liczba(o.get("cena_zl")):
 			ceny.append(float(o["cena_zl"]))
 	ceny.sort()
-	if kat_id == "samochod":
-		var mid_pula := _id_miejsca_pobytu()
-		var oferty_stan: Array = []
-		var baza_pula := 0
-		if _swiat.get("rynek_zakupow") is Dictionary:
-			var rz: Dictionary = _swiat["rynek_zakupow"]
-			if rz.get("oferty") is Array:
-				oferty_stan = rz["oferty"]
-			if _jest_liczba(rz.get("baza_ogloszen_aut")):
-				baza_pula = int(rz["baza_ogloszen_aut"])
-		var ile_uzywanych := _rynek_zakupow.ile_aut_w_miescie(oferty_stan, mid_pula)
+	if _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
 		_tresc_biala().add_child(_napis_ekranu(
-			"Pula używanych: %d (baza ≈ ludność/5000%s)" % [
-				ile_uzywanych,
-				(" = %d" % baza_pula) if baza_pula > 0 else "",
-			],
+			"Ogłoszenia wczytują się przy wejściu i po kilka przy przewijaniu.",
 			17
 		))
+	_zakupy_pula_lbl = _napis_ekranu("", 16)
+	_tresc_biala().add_child(_zakupy_pula_lbl)
 	# Filtr u góry — po wejściu w kategorię rozwinięty (widać min–max od razu).
 	var przycisk_filtr := Button.new()
 	przycisk_filtr.text = "Filtr ▾"
@@ -1706,6 +1904,11 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		opcje_zas.add_item(pn, i)
 	opcje_zas.select(0)
 	var opis_z := _napis_ekranu("Strop odległości: %d km" % int(_zakupy_zasieg_km), 16)
+	var suwak_z := HSlider.new()
+	suwak_z.min_value = zmin
+	suwak_z.max_value = zmax
+	suwak_z.step = 1.0
+	suwak_z.value = _zakupy_zasieg_km
 	opcje_zas.item_selected.connect(func(idx: int) -> void:
 		if idx < 0 or idx >= poziomy_zas.size():
 			return
@@ -1715,15 +1918,13 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 			var mx := float(p0.get("max_km", _zakupy_zasieg_km))
 			_zakupy_zasieg_km = mx
 			opis_z.text = "Strop odległości: %d km" % int(mx)
+			if suwak_z.max_value < mx:
+				suwak_z.max_value = mx
+			suwak_z.set_value_no_signal(mx)
 		_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
 	)
 	panel_filtr.add_child(opcje_zas)
 	panel_filtr.add_child(opis_z)
-	var suwak_z := HSlider.new()
-	suwak_z.min_value = zmin
-	suwak_z.max_value = zmax
-	suwak_z.step = 1.0
-	suwak_z.value = _zakupy_zasieg_km
 	suwak_z.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	suwak_z.custom_minimum_size = Vector2(0, 36)
 	suwak_z.value_changed.connect(func(v: float) -> void:
@@ -1732,7 +1933,34 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
 	)
 	panel_filtr.add_child(suwak_z)
-	# Ruchome: stan używany/nowy + odbiór osobisty/wysyłka. Budynki: tylko cena + odległość.
+	# Dom i mieszkanie: ten sam wybór Nowe / Używane co przy aucie. Nowe = wykończone i stan surowy.
+	if _rynek_zakupow.kategoria_ma_nowe_lokum(kat_id):
+		panel_filtr.add_child(_napis_ekranu("Stan:", 17))
+		var opcje_lok := OptionButton.new()
+		opcje_lok.add_item("Wszystkie", 0)
+		opcje_lok.add_item("Używane", 1)
+		opcje_lok.add_item("Nowe", 2)
+		var idx_lok := 0
+		if _zakupy_stan_filtr == "uzywany":
+			idx_lok = 1
+		elif _zakupy_stan_filtr == "nowy":
+			idx_lok = 2
+		opcje_lok.select(idx_lok)
+		opcje_lok.custom_minimum_size = Vector2(0, 40)
+		opcje_lok.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		opcje_lok.add_theme_font_size_override("font_size", 17)
+		opcje_lok.item_selected.connect(func(idx: int) -> void:
+			match idx:
+				1:
+					_zakupy_stan_filtr = "uzywany"
+				2:
+					_zakupy_stan_filtr = "nowy"
+				_:
+					_zakupy_stan_filtr = ""
+			_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
+		)
+		panel_filtr.add_child(opcje_lok)
+	# Ruchome: stan używany/nowy + odbiór osobisty/wysyłka. Budynki: cena, odległość i stan rynku.
 	_zakupy_filtr_odbior = ""
 	if not nieruchomosc:
 		if uzywany_nowy:
@@ -1825,16 +2053,16 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 			_zakupy_przebieg_od = suwak_p.od
 			_zakupy_przebieg_do = suwak_p.dokad
 			_zakupy_filtr_przebiegu_wlaczony = true
-			_zakupy_licznik_przebieg_od.text = "min: %d km" % int(_zakupy_przebieg_od)
-			_zakupy_licznik_przebieg_do.text = "max: %d km" % int(_zakupy_przebieg_do)
+			_zakupy_licznik_przebieg_od.text = _tekst_przebiegu_zakresu("min", _zakupy_przebieg_od)
+			_zakupy_licznik_przebieg_do.text = _tekst_przebiegu_zakresu("max", _zakupy_przebieg_do)
 			suwak_p.zakres_zmieniony.connect(func(od: float, dokad: float) -> void:
 				_zakupy_przebieg_od = od
 				_zakupy_przebieg_do = dokad
 				_zakupy_filtr_przebiegu_wlaczony = true
 				if _zakupy_licznik_przebieg_od != null and is_instance_valid(_zakupy_licznik_przebieg_od):
-					_zakupy_licznik_przebieg_od.text = "min: %d km" % int(od)
+					_zakupy_licznik_przebieg_od.text = _tekst_przebiegu_zakresu("min", od)
 				if _zakupy_licznik_przebieg_do != null and is_instance_valid(_zakupy_licznik_przebieg_do):
-					_zakupy_licznik_przebieg_do.text = "max: %d km" % int(dokad)
+					_zakupy_licznik_przebieg_do.text = _tekst_przebiegu_zakresu("max", dokad)
 				_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
 			)
 			panel_filtr.add_child(suwak_p)
@@ -1890,10 +2118,19 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		)
 		panel_nowe.add_child(opcje_naped)
 		panel_filtr.add_child(panel_nowe)
+	_podlacz_scroll_aut()
 	_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
 
 
 func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
+	if not _zakupy_dokladka:
+		if kat_id == "samochod":
+			_uzupelnij_aut_do_okna(stan_filtr)
+		elif _rynek_zakupow.kategoria_drobna(kat_id):
+			_uzupelnij_dobra_do_okna()
+		elif _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
+			_uzupelnij_lokum_do_okna()
+	_odswiez_napis_puli_zakupow(kat_id)
 	var tresc := _tresc_biala()
 	var do_usun: Array = []
 	for dziecko in tresc.get_children():
@@ -1912,10 +2149,12 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		marki_f = _zakupy_filtr_marki.duplicate()
 		if stan_filtr == "nowy" or stan_filtr == "":
 			naped_f = _zakupy_filtr_naped
+	var stan_listy := stan_filtr if (not nieruchomosc or _rynek_zakupow.kategoria_ma_nowe_lokum(kat_id)) else ""
+	var z_poziomem := kat_id == "samochod" or nieruchomosc or _rynek_zakupow.kategoria_drobna(kat_id)
 	var oferty := _rynek_zakupow.oferty_filtrowane(
 		_swiat,
 		kat_id,
-		"" if nieruchomosc else stan_filtr,
+		stan_listy,
 		_zakupy_zasieg_km,
 		_zakupy_filtr_od,
 		_zakupy_filtr_do if filtr_c else 1.0e12,
@@ -1926,7 +2165,7 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		filtr_p,
 		marki_f,
 		naped_f,
-		_zakupy_zasieg_poziom if kat_id == "samochod" else ""
+		_zakupy_zasieg_poziom if z_poziomem else "",
 	)
 	if not nieruchomosc and stan_filtr != "":
 		var tylko: Array = []
@@ -1937,9 +2176,10 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 	if kat_id == "samochod":
 		oferty = _posortuj_oferty_cena(oferty, _zakupy_sort_cena)
 	if oferty.is_empty():
-		var pusto := _napis_ekranu("Brak ofert w zasięgu / filtrze. Następna tura ruszy pulą.", 16)
+		var pusto := _napis_ekranu("Brak ofert w tym filtrze.", 16)
 		pusto.set_meta("zakupy_oferta", true)
 		tresc.add_child(pusto)
+		_dodaj_przycisk_kolejnych_zakupow(tresc, kat_id)
 		return
 	for o in oferty:
 		if not (o is Dictionary):
@@ -1947,6 +2187,10 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		var wiersz := _buduj_skrot_karty_oferty(o, kat_id, stan_filtr, etykiety, nieruchomosc)
 		tresc.add_child(wiersz)
 		_zakupy_wiersze.append({"cena": o.get("cena_zl"), "wezel": wiersz})
+	_dodaj_przycisk_kolejnych_zakupow(tresc, kat_id)
+	if not _zakupy_dokladka:
+		_zakupy_prefetch_kroki = 0
+		call_deferred("_prefetch_zakupy_jesli_blisko")
 
 
 func _buduj_skrot_karty_oferty(
@@ -1959,35 +2203,34 @@ func _buduj_skrot_karty_oferty(
 	var wiersz := VBoxContainer.new()
 	wiersz.set_meta("zakupy_oferta", true)
 	wiersz.add_theme_constant_override("separation", 4)
+	if _rynek_zakupow.kategoria_drobna(kat_id):
+		for linia_d in _rynek_zakupow.linie_karty_drobiazgu(o):
+			wiersz.add_child(_napis_ekranu(str(linia_d), 17))
+		var b_d := Button.new()
+		b_d.text = "Szczegóły / kup"
+		b_d.custom_minimum_size = Vector2(0, 44)
+		b_d.add_theme_font_size_override("font_size", 17)
+		var oid_d := str(o.get("id", ""))
+		b_d.pressed.connect(func() -> void:
+			_wejdz_w_karte_oferty(oid_d, kat_id, stan_filtr, etykiety, nieruchomosc)
+		)
+		wiersz.add_child(b_d)
+		return wiersz
 	var nazwa := str(o.get("nazwa", o.get("id", "")))
 	var stan_txt := str(etykiety.get(str(o.get("stan", "")), o.get("stan", "")))
 	var cena_txt := _tekst_ceny_oferty(o.get("cena_zl"), kat_id)
 	if nieruchomosc:
 		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 17))
-		wiersz.add_child(_napis_ekranu(
-			"%s · %d pok. · ~%.0f km · wygoda %d" % [
-				str(o.get("miasto_nazwa", "?")),
-				int(o.get("pokoje", 0)),
-				float(o.get("odleglosc_km", 0)),
-				int(o.get("wygoda", 0)),
-			],
-			16
-		))
+		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o), 16))
 	else:
 		var stan_karty := stan_txt
 		if kat_id == "samochod":
 			stan_karty = "stan: nowy" if str(o.get("stan", "")) == "nowy" else "stan: używany"
 		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_karty, cena_txt], 17))
-		wiersz.add_child(_napis_ekranu(
-			"%s · ~%.0f km · %s" % [
-				str(o.get("miasto_nazwa", "?")),
-				float(o.get("odleglosc_km", 0)),
-				_etykieta_odbioru(str(o.get("sposob_odbioru", ""))),
-			],
-			16
-		))
+		var odbior_skrot := _rynek_zakupow.tekst_odbioru_auta(o) if kat_id == "samochod" else _etykieta_odbioru(str(o.get("sposob_odbioru", "")))
+		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
 		if kat_id == "samochod" and _jest_liczba(o.get("przebieg_km")):
-			wiersz.add_child(_napis_ekranu("Przebieg: %d km" % int(o["przebieg_km"]), 16))
+			wiersz.add_child(_napis_ekranu("Przebieg: %s km" % _tekst_z_odstepami(int(o["przebieg_km"])), 16))
 		elif _jest_liczba(o.get("lata_od_zakupu")):
 			wiersz.add_child(_napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
 		if str(o.get("segment", "")) != "":
@@ -2074,30 +2317,19 @@ func _buduj_pelna_karte_oferty(
 	var stan_txt := str(etykiety.get(str(o.get("stan", "")), o.get("stan", "")))
 	var cena_v: Variant = o.get("cena_zl")
 	var cena_txt := _tekst_ceny_oferty(cena_v, kat_id)
-	if nieruchomosc:
+	if _rynek_zakupow.kategoria_drobna(kat_id):
+		for linia_d in _rynek_zakupow.linie_karty_drobiazgu(o):
+			wiersz.add_child(_napis_ekranu(str(linia_d), 18))
+	elif nieruchomosc:
 		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 18))
-		wiersz.add_child(_napis_ekranu(
-			"%s · %d pok. · ~%.0f km · wygoda %d" % [
-				str(o.get("miasto_nazwa", "?")),
-				int(o.get("pokoje", 0)),
-				float(o.get("odleglosc_km", 0)),
-				int(o.get("wygoda", 0)),
-			],
-			16
-		))
+		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o), 16))
 	else:
 		var stan_karty := stan_txt
 		if kat_id == "samochod":
 			stan_karty = "stan: nowy" if str(o.get("stan", "")) == "nowy" else "stan: używany"
 		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_karty, cena_txt], 18))
-		wiersz.add_child(_napis_ekranu(
-			"%s · ~%.0f km · %s" % [
-				str(o.get("miasto_nazwa", "?")),
-				float(o.get("odleglosc_km", 0)),
-				_etykieta_odbioru(str(o.get("sposob_odbioru", ""))),
-			],
-			16
-		))
+		var odbior_skrot := _rynek_zakupow.tekst_odbioru_auta(o) if kat_id == "samochod" else _etykieta_odbioru(str(o.get("sposob_odbioru", "")))
+		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
 		if _jest_liczba(o.get("lata_od_zakupu")) and kat_id != "samochod":
 			wiersz.add_child(_napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
 		if str(o.get("segment", "")) != "":
@@ -2110,7 +2342,7 @@ func _buduj_pelna_karte_oferty(
 			))
 		if kat_id == "samochod":
 			if _jest_liczba(o.get("przebieg_km")):
-				wiersz.add_child(_napis_ekranu("Przebieg: %d km" % int(o["przebieg_km"]), 16))
+				wiersz.add_child(_napis_ekranu("Przebieg: %s km" % _tekst_z_odstepami(int(o["przebieg_km"])), 16))
 			var naped_txt := _rynek_zakupow.etykieta_napedu(str(o.get("naped", "")))
 			if naped_txt != "":
 				wiersz.add_child(_napis_ekranu("Napęd: %s" % naped_txt, 16))
@@ -2169,6 +2401,9 @@ func _buduj_pelna_karte_oferty(
 		b_ocen.add_theme_font_size_override("font_size", 17)
 		b_ocen.disabled = bool(o.get("stan_ujawniony", false))
 		b_ocen.pressed.connect(func() -> void:
+			if kat_id == "samochod" and not _rynek_zakupow.auto_na_miejscu(_swiat, o):
+				_panel_dojazdu(oid, "ocena", kat_id, stan_filtr, etykiety, nieruchomosc)
+				return
 			var w: Dictionary = _rynek_zakupow.ocen_stan(_swiat, oid, false)
 			_pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
 			if bool(w.get("ok", false)):
@@ -2202,6 +2437,9 @@ func _buduj_pelna_karte_oferty(
 	b.add_theme_font_size_override("font_size", 18)
 	b.disabled = bool(o.get("targowanie_zakonczone", false)) and not o.has("cena_wynegocjowana")
 	b.pressed.connect(func() -> void:
+		if kat_id == "samochod" and not _rynek_zakupow.auto_na_miejscu(_swiat, o):
+			_panel_dojazdu(oid, "kup", kat_id, stan_filtr, etykiety, nieruchomosc)
+			return
 		var wynik: Dictionary = _rynek_zakupow.kup(_swiat, oid)
 		if bool(wynik.get("ok", false)):
 			SkryptZapisu.zapisz(_swiat)
@@ -2242,26 +2480,175 @@ func _panel_pomocy_oceny(oferta_id: String, kat_id: String, stan_filtr: String, 
 	if kandydaci.is_empty():
 		_pokaz_komunikat_zakupu("Nikogo nie ma w zapisie (rodzic / przyjaciel / znajomy), kto mógłby pomóc.")
 		return
+	var oferta := _rynek_zakupow._znajdz_oferte(_swiat, oferta_id)
+	var trzeba_dojazd := kat_id == "samochod" and not _rynek_zakupow.auto_na_miejscu(_swiat, oferta)
 	var panel := VBoxContainer.new()
 	panel.set_meta("zakupy_oferta", true)
 	panel.add_theme_constant_override("separation", 4)
 	panel.add_child(_napis_ekranu("Kto ma pomóc w ocenie?", 14))
+	if trzeba_dojazd:
+		panel.add_child(_napis_ekranu("W tym samym kroku wybierz dojazd. Potem jesteś już na miejscu.", 14))
 	for k in kandydaci:
 		if not (k is Dictionary):
 			continue
 		var ref := str(k.get("ref", ""))
-		var btn := Button.new()
-		btn.text = "%s (%s)" % [str(k.get("nazwa", "?")), str(k.get("rola", ""))]
-		btn.custom_minimum_size = Vector2(0, 34)
-		btn.pressed.connect(func() -> void:
-			var w: Dictionary = _rynek_zakupow.popros_o_pomoc_oceny(_swiat, oferta_id, ref)
-			_pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
-			if bool(w.get("ok", false)):
-				SkryptZapisu.zapisz(_swiat)
-				_przerysuj_liste_zakupow(kat_id, stan_filtr, etykiety, nieruchomosc)
+		var osoba: Dictionary = k.get("osoba", {}) if k.get("osoba") is Dictionary else {}
+		if not trzeba_dojazd:
+			var btn := Button.new()
+			btn.text = "%s (%s)" % [str(k.get("nazwa", "?")), str(k.get("rola", ""))]
+			btn.custom_minimum_size = Vector2(0, 34)
+			btn.pressed.connect(func() -> void:
+				_zakoncz_prosbe_oceny(oferta_id, ref, {}, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(btn)
+			continue
+		var b_kom := Button.new()
+		b_kom.text = "%s — transport publiczny" % str(k.get("nazwa", "?"))
+		b_kom.custom_minimum_size = Vector2(0, 36)
+		b_kom.pressed.connect(func() -> void:
+			_zakoncz_prosbe_oceny(oferta_id, ref, {"sposob": "komunikacja"}, kat_id, stan_filtr, etykiety, nieruchomosc)
 		)
-		panel.add_child(btn)
+		panel.add_child(b_kom)
+		if _rynek_zakupow.kierowca_prosi_o_paliwo(osoba):
+			var wycena_p := _rynek_zakupow.koszt_dojazdu(_swiat, oferta)
+			var paliwo_p: Dictionary = wycena_p.get("paliwo", {}) if wycena_p.get("paliwo") is Dictionary else {}
+			var dopisek := ""
+			if _jest_liczba(paliwo_p.get("koszt_zl")):
+				dopisek = " (%d zł)" % int(paliwo_p["koszt_zl"])
+			panel.add_child(_napis_ekranu("%s może poprosić o paliwo%s." % [str(k.get("nazwa", "?")), dopisek], 14))
+			var b_tak := Button.new()
+			b_tak.text = "Podwózka, dołożę do paliwa%s" % dopisek
+			b_tak.custom_minimum_size = Vector2(0, 36)
+			b_tak.pressed.connect(func() -> void:
+				_zakoncz_prosbe_oceny(oferta_id, ref, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": true}, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(b_tak)
+			var b_nie := Button.new()
+			b_nie.text = "Podwózka, nie dołożę"
+			b_nie.custom_minimum_size = Vector2(0, 36)
+			b_nie.pressed.connect(func() -> void:
+				_zakoncz_prosbe_oceny(oferta_id, ref, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": false}, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(b_nie)
+		else:
+			var b_pod := Button.new()
+			b_pod.text = "%s — podwózka" % str(k.get("nazwa", "?"))
+			b_pod.custom_minimum_size = Vector2(0, 36)
+			b_pod.pressed.connect(func() -> void:
+				_zakoncz_prosbe_oceny(oferta_id, ref, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": false}, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(b_pod)
 	_tresc_biala().add_child(panel)
+
+
+func _zakoncz_prosbe_oceny(
+	oferta_id: String,
+	ref: String,
+	dojazd: Dictionary,
+	kat_id: String,
+	stan_filtr: String,
+	etykiety: Dictionary,
+	nieruchomosc: bool
+) -> void:
+	var w: Dictionary = _rynek_zakupow.popros_o_pomoc_oceny(_swiat, oferta_id, ref, dojazd)
+	var tekst := str(w.get("tekst", w.get("powod", "")))
+	var dojazd_w: Variant = w.get("dojazd", {})
+	if dojazd_w is Dictionary and str(dojazd_w.get("tekst", "")) != "":
+		tekst = str(dojazd_w.get("tekst", "")) + " " + tekst
+	_pokaz_komunikat_zakupu(tekst, w)
+	if bool(w.get("ok", false)):
+		SkryptZapisu.zapisz(_swiat)
+		_przerysuj_liste_zakupow(kat_id, stan_filtr, etykiety, nieruchomosc)
+
+
+func _panel_dojazdu(
+	oferta_id: String,
+	cel: String,
+	kat_id: String,
+	stan_filtr: String,
+	etykiety: Dictionary,
+	nieruchomosc: bool
+) -> void:
+	var oferta := _rynek_zakupow._znajdz_oferte(_swiat, oferta_id)
+	var wycena := _rynek_zakupow.koszt_dojazdu(_swiat, oferta)
+	var panel := VBoxContainer.new()
+	panel.set_meta("zakupy_oferta", true)
+	panel.add_theme_constant_override("separation", 4)
+	panel.add_child(_napis_ekranu("Jak dojechać do auta?", 16))
+	var kom: Dictionary = wycena.get("komunikacja", {}) if wycena.get("komunikacja") is Dictionary else {}
+	var b_kom := Button.new()
+	b_kom.text = str(kom.get("tekst", "transport publiczny"))
+	b_kom.custom_minimum_size = Vector2(0, 40)
+	b_kom.pressed.connect(func() -> void:
+		_po_dojezdzie(oferta_id, {"sposob": "komunikacja"}, cel, kat_id, stan_filtr, etykiety, nieruchomosc)
+	)
+	panel.add_child(b_kom)
+	var kandydaci: Array = _rynek_zakupow.kandydaci_pomocy_oceny(_swiat)
+	if kandydaci.is_empty():
+		panel.add_child(_napis_ekranu("Nie ma kogo poprosić o podwózkę.", 14))
+	for k in kandydaci:
+		if not (k is Dictionary):
+			continue
+		var ref := str(k.get("ref", ""))
+		var osoba: Dictionary = k.get("osoba", {}) if k.get("osoba") is Dictionary else {}
+		var nazwa := str(k.get("nazwa", "?"))
+		if _rynek_zakupow.kierowca_prosi_o_paliwo(osoba):
+			var paliwo_d: Dictionary = wycena.get("paliwo", {}) if wycena.get("paliwo") is Dictionary else {}
+			var dopisek_d := ""
+			if _jest_liczba(paliwo_d.get("koszt_zl")):
+				dopisek_d = " (%d zł)" % int(paliwo_d["koszt_zl"])
+			var b_tak := Button.new()
+			b_tak.text = "Podwózka: %s, dołożę do paliwa%s" % [nazwa, dopisek_d]
+			b_tak.custom_minimum_size = Vector2(0, 36)
+			b_tak.pressed.connect(func() -> void:
+				_po_dojezdzie(oferta_id, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": true}, cel, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(b_tak)
+			var b_nie := Button.new()
+			b_nie.text = "Podwózka: %s, nie dołożę" % nazwa
+			b_nie.custom_minimum_size = Vector2(0, 36)
+			b_nie.pressed.connect(func() -> void:
+				_po_dojezdzie(oferta_id, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": false}, cel, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(b_nie)
+		else:
+			var b_pod := Button.new()
+			b_pod.text = "Podwózka: %s" % nazwa
+			b_pod.custom_minimum_size = Vector2(0, 36)
+			b_pod.pressed.connect(func() -> void:
+				_po_dojezdzie(oferta_id, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": false}, cel, kat_id, stan_filtr, etykiety, nieruchomosc)
+			)
+			panel.add_child(b_pod)
+	_tresc_biala().add_child(panel)
+
+
+func _po_dojezdzie(
+	oferta_id: String,
+	wybor: Dictionary,
+	cel: String,
+	kat_id: String,
+	stan_filtr: String,
+	etykiety: Dictionary,
+	nieruchomosc: bool
+) -> void:
+	var w: Dictionary = _rynek_zakupow.wykonaj_dojazd(_swiat, oferta_id, wybor)
+	_pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
+	if not bool(w.get("ok", false)):
+		return
+	if cel == "ocena":
+		var ocena: Dictionary = _rynek_zakupow.ocen_stan(_swiat, oferta_id, false)
+		_pokaz_komunikat_zakupu(str(ocena.get("tekst", ocena.get("powod", ""))), ocena)
+	elif cel == "kup":
+		var wynik: Dictionary = _rynek_zakupow.kup(_swiat, oferta_id)
+		if bool(wynik.get("ok", false)):
+			_zsynchronizuj_pieniadze_z_bohatera()
+			_odswiez_pasek_statystyk(false)
+			SkryptZapisu.zapisz(_swiat)
+			_cofnij_poziom()
+			return
+		_pokaz_komunikat_zakupu(str(wynik.get("powod", "Nie kupiono.")), wynik)
+	SkryptZapisu.zapisz(_swiat)
+	_przerysuj_liste_zakupow(kat_id, stan_filtr, etykiety, nieruchomosc)
 
 
 func _buduj_panel_targowania(
@@ -2388,6 +2775,327 @@ func _odswiez_rynek_zakupow() -> void:
 	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
 	var mid := _id_miejsca_pobytu()
 	_rynek_zakupow.zapewnij_pule(_swiat, miasta, mid, int(_swiat.get("tydzien", 1)))
+
+
+func _filtry_aut(stan_filtr: String) -> Dictionary:
+	var filtr_c := _zakupy_filtr_ceny_wlaczony and _zakupy_filtr_do >= _zakupy_filtr_od
+	var filtr_p := _zakupy_filtr_przebiegu_wlaczony and _zakupy_przebieg_do >= _zakupy_przebieg_od
+	return {
+		"poziom": _zakupy_zasieg_poziom,
+		"km": _zakupy_zasieg_km,
+		"stan": stan_filtr,
+		"cena_od": _zakupy_filtr_od,
+		"cena_do": _zakupy_filtr_do if filtr_c else 1.0e12,
+		"filtruj_cene": filtr_c,
+		"przebieg_od": _zakupy_przebieg_od,
+		"przebieg_do": _zakupy_przebieg_do if filtr_p else 1.0e12,
+		"filtruj_przebieg": filtr_p,
+		"marki": _zakupy_filtr_marki.duplicate(),
+		"naped": _zakupy_filtr_naped if stan_filtr == "nowy" or stan_filtr == "" else "",
+		"tydzien": int(_swiat.get("tydzien", 1)),
+	}
+
+
+func _odswiez_napis_puli_zakupow(kat_id: String) -> void:
+	if _zakupy_pula_lbl == null or not is_instance_valid(_zakupy_pula_lbl):
+		return
+	if not _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
+		_zakupy_pula_lbl.visible = false
+		_zakupy_pula_lbl.text = ""
+		return
+	if kat_id == "samochod" and _zakupy_stan_filtr == "nowy":
+		_zakupy_pula_lbl.visible = true
+		_zakupy_pula_lbl.text = "Nowe auta: salony, bez puli z ludności."
+		return
+	var strona := _strona_puli_zakupow(kat_id)
+	var n: int = _rynek_zakupow.pula_w_zasiegu(_zakupy_zasieg_poziom, _id_miejsca_pobytu(), kat_id, strona)
+	if n < 0:
+		_zakupy_pula_lbl.visible = false
+		_zakupy_pula_lbl.text = ""
+		return
+	_zakupy_pula_lbl.visible = true
+	var co := "nowych" if strona == "nowy" else "używanych"
+	_zakupy_pula_lbl.text = "Ogłoszeń %s w tym zasięgu: %d" % [co, n]
+
+
+func _dodaj_przycisk_kolejnych_zakupow(tresc: Node, kat_id: String) -> void:
+	if not _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
+		return
+	var strona := _strona_puli_zakupow(kat_id)
+	var pula: int = _rynek_zakupow.pula_w_zasiegu(_zakupy_zasieg_poziom, _id_miejsca_pobytu(), kat_id, strona)
+	var jest: int = _rynek_zakupow.ile_w_zasiegu(_swiat, kat_id, _zakupy_zasieg_poziom, strona)
+	if pula < 0 or jest >= pula:
+		return
+	var b := Button.new()
+	b.text = "Pokaż kolejne"
+	b.custom_minimum_size = Vector2(0, 44)
+	b.add_theme_font_size_override("font_size", 17)
+	b.set_meta("zakupy_oferta", true)
+	b.pressed.connect(_dokladka_zakupow)
+	tresc.add_child(b)
+
+
+func _filtry_lokum() -> Dictionary:
+	var filtr_c := _zakupy_filtr_ceny_wlaczony and _zakupy_filtr_do >= _zakupy_filtr_od
+	return {
+		"poziom": _zakupy_zasieg_poziom,
+		"km": _zakupy_zasieg_km,
+		"kategoria": _zakupy_kat_id,
+		"stan": _strona_generacji_lokum(),
+		"cena_od": _zakupy_filtr_od,
+		"cena_do": _zakupy_filtr_do if filtr_c else 1.0e12,
+		"filtruj_cene": filtr_c,
+		"tydzien": int(_swiat.get("tydzien", 1)),
+	}
+
+
+func _uzupelnij_lokum_do_okna() -> int:
+	var filtry := _filtry_lokum()
+	var jest: Array = _rynek_zakupow.oferty_filtrowane(
+		_swiat,
+		_zakupy_kat_id,
+		str(filtry.get("stan", "")),
+		float(filtry["km"]),
+		float(filtry["cena_od"]),
+		float(filtry["cena_do"]),
+		bool(filtry["filtruj_cene"]),
+		"",
+		0.0,
+		1.0e12,
+		false,
+		[],
+		"",
+		str(filtry["poziom"])
+	)
+	var brak := _rynek_zakupow.limit_okna_aut() - jest.size()
+	if brak <= 0:
+		return 0
+	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
+	return _rynek_zakupow.uzupelnij_okno_lokum(_swiat, miasta, filtry, brak)
+
+
+func _uzupelnij_aut_do_okna(stan_filtr: String) -> int:
+	var filtry := _filtry_aut(stan_filtr)
+	var jest: Array = _rynek_zakupow.oferty_filtrowane(
+		_swiat,
+		"samochod",
+		stan_filtr,
+		float(filtry["km"]),
+		float(filtry["cena_od"]),
+		float(filtry["cena_do"]),
+		bool(filtry["filtruj_cene"]),
+		"",
+		float(filtry["przebieg_od"]),
+		float(filtry["przebieg_do"]),
+		bool(filtry["filtruj_przebieg"]),
+		filtry["marki"],
+		str(filtry["naped"]),
+		str(filtry["poziom"])
+	)
+	var brak := _rynek_zakupow.limit_okna_aut() - jest.size()
+	if brak <= 0:
+		return 0
+	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
+	return _rynek_zakupow.uzupelnij_okno_aut(_swiat, miasta, filtry, brak)
+
+
+func _podlacz_scroll_aut() -> void:
+	if _zakupy_scroll_podpiety:
+		return
+	var sc := _scroll_zakupow()
+	if sc == null:
+		return
+	var pasek := sc.get_v_scroll_bar()
+	if pasek == null:
+		return
+	pasek.value_changed.connect(_na_scroll_aut)
+	_zakupy_scroll_podpiety = true
+
+
+func _scroll_zakupow() -> ScrollContainer:
+	var tresc := _tresc_biala()
+	if tresc.get_parent() is ScrollContainer:
+		return tresc.get_parent() as ScrollContainer
+	return null
+
+
+func _na_scroll_aut(wartosc: float) -> void:
+	if not _rynek_zakupow.kategoria_ma_pule_ludnosci(_zakupy_kat_id) or _zakupy_dokladka:
+		return
+	var sc := _scroll_zakupow()
+	if sc == null:
+		return
+	var pasek := sc.get_v_scroll_bar()
+	if pasek.max_value <= sc.size.y + 8.0:
+		return
+	var zostalo := pasek.max_value - wartosc - sc.size.y
+	if not RynekZakupow.trzeba_dociagnac_przed_koncem(zostalo):
+		return
+	_dokladka_zakupow()
+
+
+func _prefetch_zakupy_jesli_blisko() -> void:
+	if _zakupy_dokladka or _zakupy_prefetch_kroki >= 3:
+		return
+	if not _rynek_zakupow.kategoria_ma_pule_ludnosci(_zakupy_kat_id):
+		return
+	var sc := _scroll_zakupow()
+	if sc == null:
+		return
+	var pasek := sc.get_v_scroll_bar()
+	if pasek == null or pasek.max_value <= sc.size.y + 8.0:
+		return
+	var zostalo := pasek.max_value - pasek.value - sc.size.y
+	if not RynekZakupow.trzeba_dociagnac_przed_koncem(zostalo):
+		return
+	_zakupy_prefetch_kroki += 1
+	if _dokladka_zakupow() > 0:
+		call_deferred("_prefetch_zakupy_jesli_blisko")
+
+
+func _strona_puli_zakupow(kat_id: String) -> String:
+	if _zakupy_stan_filtr == "nowy" and (_rynek_zakupow.kategoria_ma_nowe_lokum(kat_id) or _rynek_zakupow.kategoria_drobna(kat_id)):
+		return "nowy"
+	return "uzywany"
+
+
+func _strona_generacji_lokum() -> String:
+	if _rynek_zakupow.kategoria_ma_nowe_lokum(_zakupy_kat_id) and _zakupy_stan_filtr == "nowy":
+		return "nowy"
+	return "uzywany"
+
+
+func _strona_generacji_dobr() -> String:
+	if _zakupy_stan_filtr == "nowy":
+		return "nowy"
+	return "uzywany"
+
+
+func _filtry_dobra() -> Dictionary:
+	var filtr_c := _zakupy_filtr_ceny_wlaczony and _zakupy_filtr_do >= _zakupy_filtr_od
+	return {
+		"poziom": _zakupy_zasieg_poziom,
+		"km": _zakupy_zasieg_km,
+		"kategoria": _zakupy_kat_id,
+		"stan": _strona_generacji_dobr(),
+		"cena_od": _zakupy_filtr_od,
+		"cena_do": _zakupy_filtr_do if filtr_c else 1.0e12,
+		"filtruj_cene": filtr_c,
+		"tydzien": int(_swiat.get("tydzien", 1)),
+	}
+
+
+func _uzupelnij_dobra_do_okna() -> int:
+	var filtry := _filtry_dobra()
+	var jest: Array = _rynek_zakupow.oferty_filtrowane(
+		_swiat,
+		_zakupy_kat_id,
+		str(filtry.get("stan", "")),
+		float(filtry["km"]),
+		float(filtry["cena_od"]),
+		float(filtry["cena_do"]),
+		bool(filtry["filtruj_cene"]),
+		"",
+		0.0,
+		1.0e12,
+		false,
+		[],
+		"",
+		str(filtry["poziom"])
+	)
+	var brak := _rynek_zakupow.limit_okna_aut() - jest.size()
+	if brak <= 0:
+		return 0
+	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
+	return _rynek_zakupow.uzupelnij_okno_dobr(_swiat, miasta, filtry, brak)
+
+
+func _dokladka_zakupow() -> int:
+	if not _rynek_zakupow.kategoria_ma_pule_ludnosci(_zakupy_kat_id) or _zakupy_dokladka:
+		return 0
+	_zakupy_dokladka = true
+	var przed := 0
+	if _swiat.get("rynek_zakupow") is Dictionary and _swiat["rynek_zakupow"].get("oferty") is Array:
+		przed = (_swiat["rynek_zakupow"]["oferty"] as Array).size()
+	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
+	var dodano := 0
+	if _zakupy_kat_id == "samochod":
+		dodano = _rynek_zakupow.uzupelnij_okno_aut(_swiat, miasta, _filtry_aut(_zakupy_stan_filtr), RynekZakupow.WYPRZEDZENIE_AUT)
+	elif _rynek_zakupow.kategoria_drobna(_zakupy_kat_id):
+		dodano = _rynek_zakupow.uzupelnij_okno_dobr(_swiat, miasta, _filtry_dobra(), RynekZakupow.WYPRZEDZENIE_AUT)
+	else:
+		dodano = _rynek_zakupow.uzupelnij_okno_lokum(_swiat, miasta, _filtry_lokum(), RynekZakupow.WYPRZEDZENIE_AUT)
+	if dodano > 0:
+		_dopisz_karty_zakupow(przed)
+		_odswiez_napis_puli_zakupow(_zakupy_kat_id)
+	_zakupy_dokladka = false
+	return dodano
+
+
+func _dopisz_karty_zakupow(przed: int) -> void:
+	var tresc := _tresc_biala()
+	var do_usun: Array = []
+	for dziecko in tresc.get_children():
+		if not dziecko.has_meta("zakupy_oferta"):
+			continue
+		if dziecko is Button or dziecko is Label:
+			do_usun.append(dziecko)
+	for d in do_usun:
+		tresc.remove_child(d)
+		d.queue_free()
+	var stan: Variant = _swiat.get("rynek_zakupow", {})
+	if not (stan is Dictionary) or not (stan.get("oferty") is Array):
+		_dodaj_przycisk_kolejnych_zakupow(tresc, _zakupy_kat_id)
+		return
+	var oferty: Array = stan["oferty"]
+	var widoczne := {}
+	for o in _oferty_na_liscie_zakupow():
+		if o is Dictionary:
+			widoczne[str(o.get("id", ""))] = o
+	var dane := _wczytaj_zakupy_oferty()
+	var etykiety: Dictionary = dane.get("etykiety_stanu", {}) if dane.get("etykiety_stanu") is Dictionary else {}
+	var nieruchomosc := _rynek_zakupow.kategoria_lokum(_zakupy_kat_id)
+	for i in range(przed, oferty.size()):
+		var o: Variant = oferty[i]
+		if not (o is Dictionary):
+			continue
+		var id := str(o.get("id", ""))
+		if not widoczne.has(id):
+			continue
+		var wiersz := _buduj_skrot_karty_oferty(widoczne[id], _zakupy_kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
+		tresc.add_child(wiersz)
+		_zakupy_wiersze.append({"cena": o.get("cena_zl"), "wezel": wiersz})
+	_dodaj_przycisk_kolejnych_zakupow(tresc, _zakupy_kat_id)
+
+
+func _oferty_na_liscie_zakupow() -> Array:
+	var kat_id := _zakupy_kat_id
+	var nieruchomosc := _rynek_zakupow.kategoria_lokum(kat_id)
+	var filtr_c := _zakupy_filtr_ceny_wlaczony and _zakupy_filtr_do >= _zakupy_filtr_od
+	var filtr_p := kat_id == "samochod" and _zakupy_filtr_przebiegu_wlaczony and _zakupy_przebieg_do >= _zakupy_przebieg_od
+	var stan_listy := _zakupy_stan_filtr if (not nieruchomosc or _rynek_zakupow.kategoria_ma_nowe_lokum(kat_id)) else ""
+	var marki_f: Array = []
+	var naped_f := ""
+	if kat_id == "samochod":
+		marki_f = _zakupy_filtr_marki.duplicate()
+		if _zakupy_stan_filtr == "nowy" or _zakupy_stan_filtr == "":
+			naped_f = _zakupy_filtr_naped
+	return _rynek_zakupow.oferty_filtrowane(
+		_swiat,
+		kat_id,
+		stan_listy,
+		_zakupy_zasieg_km,
+		_zakupy_filtr_od,
+		_zakupy_filtr_do if filtr_c else 1.0e12,
+		filtr_c,
+		_zakupy_filtr_odbior,
+		_zakupy_przebieg_od,
+		_zakupy_przebieg_do if filtr_p else 1.0e12,
+		filtr_p,
+		marki_f,
+		naped_f,
+		_zakupy_zasieg_poziom if kat_id == "samochod" or nieruchomosc or _rynek_zakupow.kategoria_drobna(kat_id) else ""
+	)
 
 
 func _aktywuj_zakladke_samochodow() -> void:
@@ -2833,33 +3541,689 @@ func _ekran_eventy_przyklady() -> void:
 
 
 func _ekran_praca_fala2() -> void:
+	_ekran_pracy = true
+	_praca_filtry_start()
+	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
 	var txt := _tekst_pracy()
-	if txt != "":
-		_tresc_biala().add_child(_napis_ekranu("Praca rodziców: %s" % txt, 15))
-	else:
-		_tresc_biala().add_child(_napis_ekranu("Praca rodziców: —", 15))
-	_tresc_biala().add_child(_napis_ekranu("Twoje fuchy (szkielet Fali 1+2):", 16))
-	var praca := PracaSzkielet.new()
+	_tresc_biala().add_child(_napis_ekranu("Praca rodziców: %s" % (txt if txt != "" else "—"), 16))
+	var komunikat := str(_swiat.get("praca_komunikat", "")).strip_edges()
+	if komunikat != "":
+		_tresc_biala().add_child(_napis_ekranu(komunikat, 16))
+	_praca_karta_zatrudnienia()
+	_tresc_biala().add_child(_napis_ekranu("Ogłoszenia", 18))
+	_tresc_biala().add_child(_napis_ekranu("Kilka ogłoszeń z wybranego zasięgu. Niżej dochodzą następne. Po kilku tygodniach same znikają.", 16))
+	_praca_panel_filtrow()
+	var slot := VBoxContainer.new()
+	slot.set_meta("praca_slot", true)
+	slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_tresc_biala().add_child(slot)
+	var fuchy := VBoxContainer.new()
+	fuchy.set_meta("praca_fuchy", true)
+	fuchy.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	fuchy.add_child(_napis_ekranu("Dorywczo", 18))
+	var szkic := PracaSzkielet.new()
 	var syl := Sylwetka.new()
 	syl.z_zapisu(_bohater().get("sylwetka", {}))
-	for p in praca.prace_dla_wieku(_wiek_lat()):
+	for p in szkic.prace_dla_wieku(_wiek_lat()):
 		if not (p is Dictionary):
 			continue
 		var b := Button.new()
 		b.text = str(p.get("nazwa", ""))
 		b.custom_minimum_size = Vector2(0, 44)
+		b.add_theme_font_size_override("font_size", 17)
 		var id_p := str(p.get("id", ""))
 		b.pressed.connect(func() -> void:
-			var w: Dictionary = praca.wykonaj_fuche(_bohater(), id_p, syl)
+			var w: Dictionary = szkic.wykonaj_fuche(_bohater(), id_p, syl)
 			if bool(w.get("ok", false)):
 				_dodaj_pieniadze(int(w.get("placa", 0)))
 				_dodaj_wplyw("fucha", int(w.get("placa", 0)), str(w.get("tekst", "")))
 				_swiat["bohater"] = _bohater()
 				SkryptZapisu.zapisz(_swiat)
 				_odswiez_pasek_statystyk(true)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 16))
 		)
-		_tresc_biala().add_child(b)
+		fuchy.add_child(b)
+	_tresc_biala().add_child(fuchy)
+	_podlacz_scroll_pracy()
+	_praca_przerysuj_oferty()
+
+
+func _praca_miejsca() -> Array:
+	if _losowanie == null:
+		return []
+	return _losowanie.wszystkie_z_ludnoscia()
+
+
+func _praca_tekst_puli() -> String:
+	var poziom := str(_praca_filtry.get("zasieg", "miasto"))
+	var karta: Dictionary = _rynek_pracy.miasto_bohatera(_praca_miejsca(), _id_miejsca_pobytu())
+	var obszar := "Polska"
+	var metro := false
+	if poziom == "miasto" or poziom == "wojewodztwo":
+		obszar = str(karta.get("wojewodztwo", "Polska"))
+		metro = poziom == "miasto" and _rynek_pracy.czy_metropolia(str(karta.get("nazwa", "")))
+	var n: int = _rynek_pracy.pula_ofert(
+		_rynek_pracy.ludnosc_zakresu(_praca_miejsca(), poziom, _id_miejsca_pobytu()),
+		poziom,
+		_praca_filtry,
+		obszar,
+		metro
+	)
+	return "Ogłoszeń w tym zasięgu: %d" % n
+
+
+func _praca_filtry_start() -> void:
+	if not _praca_filtry.is_empty():
+		return
+	_praca_filtry = {
+		"tekst": "",
+		"wielka_grupa": "",
+		"wyksztalcenie_max": -1,
+		"doswiadczenie_max": -1,
+		"filtruj_place": true,
+		"placa_od": 0,
+		"placa_do": 20000,
+		"wplyw_stat": "",
+		"wplyw_znak": "",
+		"zasieg": "miasto",
+	}
+
+
+func _praca_karta_zatrudnienia() -> void:
+	var lista: Array = _rynek_pracy.lista_prac(_swiat)
+	if lista.is_empty():
+		_tresc_biala().add_child(_napis_ekranu("Nie masz etatu.", 16))
+		return
+	if lista.size() >= 2:
+		_tresc_biala().add_child(_napis_ekranu("Masz dwie prace. Zmęczenie fizyczne i obciążenie psychiczne rosną co tydzień.", 16))
+	for i in lista.size():
+		if lista[i] is Dictionary:
+			_praca_jedna_karta(lista[i], i)
+
+
+func _praca_jedna_karta(praca: Dictionary, indeks: int) -> void:
+	var szef: Dictionary = praca.get("szef", {}) if praca.get("szef") is Dictionary else {}
+	var karta := VBoxContainer.new()
+	karta.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	karta.add_theme_constant_override("separation", 6)
+	karta.add_child(_napis_ekranu(str(praca.get("nazwa", "Praca")), 18))
+	karta.add_child(_napis_ekranu("Płaca: %s zł brutto" % _tekst_z_odstepami(int(praca.get("placa_zl", 0))), 16))
+	var pasek := str(praca.get("ostatni_pasek", ""))
+	if pasek != "":
+		for linia in pasek.split("\n"):
+			if str(linia) != "":
+				karta.add_child(_napis_ekranu(str(linia), 16))
+	var cecha := _nazwa_cechy_szefa(str(szef.get("cecha", "")))
+	var linia_szefa := "Kierownik: %s" % _slowa_relacji(int(szef.get("relacja", 50)))
+	if cecha != "":
+		linia_szefa += ", %s" % cecha
+	karta.add_child(_napis_ekranu(linia_szefa, 16))
+	karta.add_child(_napis_ekranu("Upomnienia: %s" % _slowa_upomnien(int(praca.get("upomnienia", 0))), 16))
+	karta.add_child(_napis_ekranu("Staż tutaj: %d tyg." % int(praca.get("staz_tygodni", 0)), 16))
+	var zostalo := int(praca.get("wypowiedzenie_zostalo", 0))
+	if zostalo > 0:
+		karta.add_child(_napis_ekranu("Zostajesz jeszcze %d tyg." % zostalo, 16))
+	karta.add_child(_napis_ekranu("Zaangażowanie", 16))
+	var suwak := HSlider.new()
+	suwak.min_value = 0
+	suwak.max_value = 100
+	suwak.step = 5
+	suwak.value = int(praca.get("angaz", 50))
+	suwak.custom_minimum_size = Vector2(0, 36)
+	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var opis := _napis_ekranu(_slowa_angazu(int(suwak.value)), 16)
+	var nr := indeks
+	suwak.value_changed.connect(func(v: float) -> void:
+		_rynek_pracy.ustaw_angaz(_swiat, int(v), nr)
+		opis.text = _slowa_angazu(int(v))
+		SkryptZapisu.zapisz(_swiat)
+	)
+	karta.add_child(suwak)
+	karta.add_child(opis)
+	var prosba := Button.new()
+	prosba.text = "Poproś o podwyżkę"
+	prosba.custom_minimum_size = Vector2(0, 44)
+	prosba.add_theme_font_size_override("font_size", 17)
+	prosba.pressed.connect(func() -> void:
+		_praca_popros(nr)
+	)
+	karta.add_child(prosba)
+	if zostalo <= 0:
+		var odejscie := Button.new()
+		odejscie.text = "Odejdź z pracy"
+		odejscie.custom_minimum_size = Vector2(0, 44)
+		odejscie.add_theme_font_size_override("font_size", 17)
+		odejscie.pressed.connect(func() -> void:
+			_praca_odejdz(nr)
+		)
+		karta.add_child(odejscie)
+	_tresc_biala().add_child(karta)
+
+
+func _praca_panel_filtrow() -> void:
+	var panel := VBoxContainer.new()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	panel.add_theme_constant_override("separation", 6)
+	panel.add_child(_napis_ekranu("Zasięg", 16))
+	var zasieg := OptionButton.new()
+	var nazwy_zasiegu := ["Miasto", "Województwo", "Polska"]
+	var kody_zasiegu := ["miasto", "wojewodztwo", "polska"]
+	var idx_zasiegu := 0
+	for i in nazwy_zasiegu.size():
+		zasieg.add_item(nazwy_zasiegu[i], i)
+		if kody_zasiegu[i] == str(_praca_filtry.get("zasieg", "miasto")):
+			idx_zasiegu = i
+	zasieg.select(idx_zasiegu)
+	_przycisk_filtra(zasieg)
+	zasieg.item_selected.connect(func(idx: int) -> void:
+		if _praca_cisza or idx < 0 or idx >= kody_zasiegu.size():
+			return
+		_praca_filtry["zasieg"] = kody_zasiegu[idx]
+		_praca_przeladuj()
+	)
+	panel.add_child(zasieg)
+	_praca_pula_lbl = _napis_ekranu(_praca_tekst_puli(), 16)
+	_praca_pula_lbl.set_meta("praca_pula", true)
+	panel.add_child(_praca_pula_lbl)
+	panel.add_child(_napis_ekranu("Szukaj", 16))
+	var pole := LineEdit.new()
+	pole.placeholder_text = "Nazwa zawodu"
+	pole.text = str(_praca_filtry.get("tekst", ""))
+	pole.custom_minimum_size = Vector2(0, 44)
+	pole.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	pole.add_theme_font_size_override("font_size", 17)
+	pole.text_submitted.connect(func(t: String) -> void:
+		_praca_filtry["tekst"] = t.strip_edges()
+		_praca_przeladuj()
+	)
+	var szukaj := Button.new()
+	szukaj.text = "Szukaj"
+	szukaj.custom_minimum_size = Vector2(0, 44)
+	szukaj.add_theme_font_size_override("font_size", 17)
+	szukaj.pressed.connect(func() -> void:
+		_praca_filtry["tekst"] = pole.text.strip_edges()
+		_praca_przeladuj()
+	)
+	panel.add_child(pole)
+	panel.add_child(szukaj)
+	panel.add_child(_napis_ekranu("Rodzaj", 16))
+	var rodzaj := OptionButton.new()
+	rodzaj.add_item("Wszystkie", 0)
+	var grupy := _praca_grupy()
+	var wybrany := 0
+	for i in grupy.size():
+		var g: Dictionary = grupy[i]
+		rodzaj.add_item(str(g.get("nazwa", g.get("kod", ""))), i + 1)
+		if str(g.get("kod", "")) == str(_praca_filtry.get("wielka_grupa", "")):
+			wybrany = i + 1
+	rodzaj.select(wybrany)
+	_przycisk_filtra(rodzaj)
+	rodzaj.item_selected.connect(func(idx: int) -> void:
+		if _praca_cisza:
+			return
+		if idx <= 0 or idx - 1 >= grupy.size():
+			_praca_filtry["wielka_grupa"] = ""
+		else:
+			_praca_filtry["wielka_grupa"] = str(grupy[idx - 1].get("kod", ""))
+		_praca_przeladuj()
+	)
+	panel.add_child(rodzaj)
+	panel.add_child(_napis_ekranu("Wymagane wykształcenie, do", 16))
+	var poziomy := [-1, 0, 1, 2, 3]
+	var nazwy_poz := ["Bez filtra", "Podstawowe", "Branżowe", "Średnie", "Wyższe"]
+	panel.add_child(_praca_opcja(nazwy_poz, poziomy, int(_praca_filtry.get("wyksztalcenie_max", -1)), func(wartosc: int) -> void:
+		_praca_filtry["wyksztalcenie_max"] = wartosc
+		_praca_przeladuj()
+	))
+	panel.add_child(_napis_ekranu("Wymagane doświadczenie, do", 16))
+	var progi := [-1, 0, 1, 3, 8]
+	var nazwy_staz := ["Bez filtra", "Brak", "Krótkie", "Kilkuletnie", "Długie"]
+	panel.add_child(_praca_opcja(nazwy_staz, progi, int(_praca_filtry.get("doswiadczenie_max", -1)), func(wartosc: int) -> void:
+		_praca_filtry["doswiadczenie_max"] = wartosc
+		_praca_przeladuj()
+	))
+	panel.add_child(_napis_ekranu("Wpływ", 16))
+	var opcja_wplywu := OptionButton.new()
+	opcja_wplywu.add_item("Bez filtra", 0)
+	var pary: Array = []
+	var nazwy_stat := {
+		"zmeczenie_fizyczne": "Zmęczenie fizyczne",
+		"zmeczenie_psychiczne": "Obciążenie psychiczne",
+		"sylwetka": "Sylwetka",
+		"inteligencja": "Inteligencja",
+		"zdrowie": "Zdrowie",
+		"wyglad": "Wygląd",
+		"sila": "Siła",
+		"kondycja": "Kondycja",
+		"psychika": "Psychika",
+	}
+	var idx_w := 0
+	var k := 1
+	for stat in nazwy_stat.keys():
+		for znak in ["+", "-"]:
+			var pokaz := "−" if znak == "-" else "+"
+			opcja_wplywu.add_item("%s %s" % [str(nazwy_stat[stat]), pokaz], k)
+			pary.append({"stat": stat, "znak": znak})
+			if str(_praca_filtry.get("wplyw_stat", "")) == stat and str(_praca_filtry.get("wplyw_znak", "")) == znak:
+				idx_w = k
+			k += 1
+	opcja_wplywu.select(idx_w)
+	_przycisk_filtra(opcja_wplywu)
+	opcja_wplywu.item_selected.connect(func(idx: int) -> void:
+		if _praca_cisza:
+			return
+		if idx <= 0 or idx - 1 >= pary.size():
+			_praca_filtry["wplyw_stat"] = ""
+			_praca_filtry["wplyw_znak"] = ""
+		else:
+			_praca_filtry["wplyw_stat"] = str(pary[idx - 1].get("stat", ""))
+			_praca_filtry["wplyw_znak"] = str(pary[idx - 1].get("znak", ""))
+		_praca_przeladuj()
+	)
+	panel.add_child(opcja_wplywu)
+	panel.add_child(_napis_ekranu("Płaca", 16))
+	var suwak = SkryptZakresu.new()
+	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	suwak.custom_minimum_size = Vector2(120, 48)
+	suwak.ustaw_zakres(0.0, 20000.0)
+	suwak.od = float(_praca_filtry.get("placa_od", 0))
+	suwak.dokad = float(_praca_filtry.get("placa_do", 20000))
+	var opis_placy := _napis_ekranu("%s–%s zł" % [_tekst_z_odstepami(int(suwak.od)), _tekst_z_odstepami(int(suwak.dokad))], 16)
+	suwak.zakres_zmieniony.connect(func(od: float, dokad: float) -> void:
+		_praca_filtry["filtruj_place"] = true
+		_praca_filtry["placa_od"] = int(od)
+		_praca_filtry["placa_do"] = int(dokad)
+		opis_placy.text = "%s–%s zł" % [_tekst_z_odstepami(int(od)), _tekst_z_odstepami(int(dokad))]
+		_praca_przeladuj()
+	)
+	panel.add_child(opis_placy)
+	panel.add_child(suwak)
+	_tresc_biala().add_child(panel)
+
+
+func _praca_opcja(nazwy: Array, wartosci: Array, aktualna: int, po_wyborze: Callable) -> OptionButton:
+	var opcja := OptionButton.new()
+	var idx := 0
+	for i in nazwy.size():
+		opcja.add_item(str(nazwy[i]), i)
+		if int(wartosci[i]) == aktualna:
+			idx = i
+	opcja.select(idx)
+	_przycisk_filtra(opcja)
+	opcja.item_selected.connect(func(i: int) -> void:
+		if _praca_cisza or i < 0 or i >= wartosci.size():
+			return
+		po_wyborze.call(int(wartosci[i]))
+	)
+	return opcja
+
+
+func _przycisk_filtra(opcja: OptionButton) -> void:
+	opcja.custom_minimum_size = Vector2(0, 44)
+	opcja.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	opcja.add_theme_font_size_override("font_size", 17)
+
+
+func _praca_grupy() -> Array:
+	var out: Array = []
+	var kat = SkryptKataloguZawodow.new()
+	kat.wczytaj()
+	var grupy: Variant = kat.dane().get("grupy", [])
+	if not (grupy is Array):
+		return out
+	for g in grupy:
+		if g is Dictionary and str(g.get("kod", "")).length() == 1:
+			out.append(g)
+	return out
+
+
+func _praca_przeladuj() -> void:
+	if _praca_cisza or _swiat.is_empty():
+		return
+	if _swiat.get("rynek_pracy") is Dictionary:
+		_swiat["rynek_pracy"]["oferty"] = []
+	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
+	if is_instance_valid(_praca_pula_lbl):
+		_praca_pula_lbl.text = _praca_tekst_puli()
+	_praca_przerysuj_oferty()
+	_praca_wyczysc_slot()
+
+
+func _praca_przerysuj_oferty() -> void:
+	var tresc := _tresc_biala()
+	var do_usun: Array = []
+	for dziecko in tresc.get_children():
+		if dziecko.has_meta("praca_oferta"):
+			do_usun.append(dziecko)
+	for d in do_usun:
+		tresc.remove_child(d)
+		d.queue_free()
+	var oferty: Array = []
+	if _swiat.get("rynek_pracy") is Dictionary and _swiat["rynek_pracy"].get("oferty") is Array:
+		oferty = _swiat["rynek_pracy"]["oferty"]
+	var przed: Node = null
+	for dziecko in tresc.get_children():
+		if dziecko.has_meta("praca_fuchy"):
+			przed = dziecko
+			break
+	if oferty.is_empty():
+		var pusty := _napis_ekranu("Brak ogłoszeń w tym filtrze.", 16)
+		pusty.set_meta("praca_oferta", true)
+		_praca_wstaw(tresc, pusty, przed)
+		return
+	for o in oferty:
+		if o is Dictionary:
+			_praca_wstaw(tresc, _praca_karta_oferty(o), przed)
+
+
+func _praca_wstaw(tresc: VBoxContainer, karta: Control, przed: Node) -> void:
+	tresc.add_child(karta)
+	if przed != null:
+		tresc.move_child(karta, przed.get_index())
+
+
+func _praca_karta_oferty(oferta: Dictionary) -> Control:
+	var karta := VBoxContainer.new()
+	karta.set_meta("praca_oferta", true)
+	karta.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	karta.add_theme_constant_override("separation", 4)
+	for linia in _rynek_pracy.tekst_ogloszenia(oferta).split("\n"):
+		if str(linia) == "":
+			continue
+		karta.add_child(_napis_ekranu(str(linia), 17))
+	var przycisk := Button.new()
+	przycisk.text = "Aplikuj"
+	przycisk.custom_minimum_size = Vector2(0, 44)
+	przycisk.add_theme_font_size_override("font_size", 17)
+	var id_oferty := str(oferta.get("id", ""))
+	przycisk.pressed.connect(func() -> void:
+		_praca_klik_aplikuj(id_oferty)
+	)
+	karta.add_child(przycisk)
+	return karta
+
+
+func _praca_klik_aplikuj(id_oferty: String) -> void:
+	var oferta := _praca_oferta_po_id(id_oferty)
+	if oferta.is_empty():
+		return
+	var slot := _praca_slot()
+	if slot == null:
+		return
+	_praca_wyczysc_slot()
+	if _rynek_pracy.lista_prac(_swiat).size() >= 2:
+		slot.add_child(_napis_ekranu("Masz już dwie prace. Trzeciej nie weźmiesz.", 16))
+		return
+	slot.add_child(_napis_ekranu("Chcesz negocjować płacę?", 16))
+	var tak := Button.new()
+	tak.text = "Tak, negocjuję"
+	tak.custom_minimum_size = Vector2(0, 44)
+	tak.add_theme_font_size_override("font_size", 17)
+	var nie := Button.new()
+	nie.text = "Nie, biorę kwotę z ogłoszenia"
+	nie.custom_minimum_size = Vector2(0, 44)
+	nie.add_theme_font_size_override("font_size", 17)
+	tak.pressed.connect(func() -> void:
+		_praca_suwak_negocjacji(oferta)
+	)
+	nie.pressed.connect(func() -> void:
+		_praca_zamknij_aplikacje(oferta, false, int(oferta.get("placa_zl", 0)))
+	)
+	slot.add_child(tak)
+	slot.add_child(nie)
+
+
+func _praca_suwak_negocjacji(oferta: Dictionary, ponownie: bool = false) -> void:
+	var slot := _praca_slot()
+	if slot == null:
+		return
+	_praca_wyczysc_slot()
+	var placa := int(oferta.get("placa_zl", 0))
+	var band: Dictionary = _rynek_pracy.pasmo(placa)
+	if ponownie:
+		var wst := _rynek_pracy.wstep_dialogu("ponowna_proba")
+		if wst != "":
+			slot.add_child(_napis_ekranu(wst, 16))
+		slot.add_child(_napis_ekranu(_rynek_pracy.linia_dialogu("ponowna_proba", placa, -1), 16))
+	var opis := _napis_ekranu("Żądasz: %s zł" % _tekst_z_odstepami(placa), 16)
+	var suwak := HSlider.new()
+	suwak.min_value = int(band.get("min_zl", placa))
+	suwak.max_value = maxi(int(band.get("max_zl", placa)), int(suwak.min_value) + 1)
+	suwak.step = 100
+	suwak.value = placa
+	suwak.custom_minimum_size = Vector2(0, 36)
+	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	suwak.value_changed.connect(func(v: float) -> void:
+		opis.text = "Żądasz: %s zł" % _tekst_z_odstepami(int(v))
+	)
+	slot.add_child(opis)
+	slot.add_child(suwak)
+	var zloz := Button.new()
+	zloz.text = "Złóż"
+	zloz.custom_minimum_size = Vector2(0, 44)
+	zloz.add_theme_font_size_override("font_size", 17)
+	zloz.pressed.connect(func() -> void:
+		_praca_zamknij_aplikacje(oferta, true, int(suwak.value))
+	)
+	slot.add_child(zloz)
+
+
+func _praca_zamknij_aplikacje(oferta: Dictionary, negocjuje: bool, zadana: int) -> void:
+	var wynik: Dictionary = _rynek_pracy.negocjuj(oferta, _bohater(), negocjuje, zadana, randf())
+	var slot := _praca_slot()
+	if slot == null:
+		return
+	_praca_wyczysc_slot()
+	var twarda := bool(wynik.get("twarda_odmowa", false))
+	var sytuacja := _praca_sytuacja(str(wynik.get("wynik", "")), negocjuje, twarda)
+	var placa_oni := int(wynik.get("placa_pracodawcy", oferta.get("placa_zl", 0)))
+	if placa_oni <= 0:
+		placa_oni = int(oferta.get("placa_zl", 0))
+	var wst := _rynek_pracy.wstep_dialogu(sytuacja)
+	if wst != "":
+		slot.add_child(_napis_ekranu(wst, 16))
+	slot.add_child(_napis_ekranu(_rynek_pracy.linia_dialogu(sytuacja, placa_oni, -1), 16))
+	if twarda:
+		var zamknij := _praca_przycisk("Nie")
+		zamknij.pressed.connect(func() -> void:
+			_praca_wyczysc_slot()
+			var zostaw := _praca_slot()
+			if zostaw != null:
+				zostaw.add_child(_napis_ekranu("Koniec rozmowy.", 16))
+		)
+		slot.add_child(zamknij)
+		return
+	var wybory: Array = wynik.get("wybory", []) if wynik.get("wybory") is Array else _rynek_pracy.wybory_dialogu()
+	var tak := _praca_przycisk(str(wybory[0]) if wybory.size() > 0 else "Tak")
+	var nie := _praca_przycisk(str(wybory[1]) if wybory.size() > 1 else "Nie")
+	var jeszcze := _praca_przycisk(str(wybory[2]) if wybory.size() > 2 else "Spróbuj ponownej negocjacji")
+	var kod := str(wynik.get("wynik", ""))
+	var placa_tak := int(wynik.get("placa_zl", 0))
+	if kod == "odmowa" or placa_tak <= 0:
+		placa_tak = placa_oni
+	tak.pressed.connect(func() -> void:
+		_praca_przyjmij(oferta, placa_tak)
+	)
+	nie.pressed.connect(func() -> void:
+		_praca_wyczysc_slot()
+		var zostaw := _praca_slot()
+		if zostaw != null:
+			zostaw.add_child(_napis_ekranu("Odchodzisz od tej oferty.", 16))
+	)
+	jeszcze.pressed.connect(func() -> void:
+		_praca_suwak_negocjacji(oferta, true)
+	)
+	slot.add_child(tak)
+	slot.add_child(nie)
+	slot.add_child(jeszcze)
+
+
+func _praca_sytuacja(wynik: String, negocjuje: bool, twarda: bool = false) -> String:
+	if twarda:
+		return "brak_kwalifikacji"
+	if not negocjuje and wynik == "zgoda":
+		return "zgoda_bez_negocjacji"
+	if wynik == "zgoda":
+		return "zgoda_na_zadanie"
+	if wynik == "kontroferta":
+		return "kontroferta"
+	return "odrzucenie_zadania"
+
+
+func _praca_przyjmij(oferta: Dictionary, placa: int) -> void:
+	if _rynek_pracy.lista_prac(_swiat).size() >= 2:
+		var slot := _praca_slot()
+		if slot != null:
+			slot.add_child(_napis_ekranu("Masz już dwie prace. Trzeciej nie weźmiesz.", 16))
+		return
+	var przyjęta: Dictionary = _rynek_pracy.zatrudnij(_swiat, oferta, placa)
+	if not bool(przyjęta.get("ok", true)) and str(przyjęta.get("powod", "")) == "dwie_prace":
+		_swiat["praca_komunikat"] = "Masz już dwie prace. Trzeciej nie weźmiesz."
+	else:
+		_swiat["praca_komunikat"] = "Zaczynasz pracę. Płaca: %s zł brutto." % _tekst_z_odstepami(placa)
+	SkryptZapisu.zapisz(_swiat)
+	_wyczysc(_tresc_biala())
+	_ekran_praca_fala2()
+
+
+func _praca_przycisk(napis: String) -> Button:
+	var b := Button.new()
+	b.text = napis
+	b.custom_minimum_size = Vector2(0, 44)
+	b.add_theme_font_size_override("font_size", 17)
+	return b
+
+
+func _praca_popros(indeks: int = 0) -> void:
+	var wynik: Dictionary = _rynek_pracy.popros_o_podwyzke(_swiat, randf(), indeks)
+	_swiat["praca_komunikat"] = str(wynik.get("tekst", ""))
+	SkryptZapisu.zapisz(_swiat)
+	_wyczysc(_tresc_biala())
+	_ekran_praca_fala2()
+
+
+func _praca_odejdz(indeks: int = 0) -> void:
+	var n: int = _rynek_pracy.odejdz(_swiat, -1.0, indeks)
+	_swiat["praca_komunikat"] = "Wypowiedzenie złożone. Zostajesz jeszcze %d tyg." % n
+	SkryptZapisu.zapisz(_swiat)
+	_wyczysc(_tresc_biala())
+	_ekran_praca_fala2()
+
+
+func _praca_oferta_po_id(id_oferty: String) -> Dictionary:
+	if not (_swiat.get("rynek_pracy") is Dictionary):
+		return {}
+	var oferty: Variant = _swiat["rynek_pracy"].get("oferty", [])
+	if not (oferty is Array):
+		return {}
+	for o in oferty:
+		if o is Dictionary and str(o.get("id", "")) == id_oferty:
+			return o
+	return {}
+
+
+func _praca_slot() -> VBoxContainer:
+	for dziecko in _tresc_biala().get_children():
+		if dziecko.has_meta("praca_slot") and dziecko is VBoxContainer:
+			return dziecko
+	return null
+
+
+func _praca_wyczysc_slot() -> void:
+	var slot := _praca_slot()
+	if slot == null:
+		return
+	for dziecko in slot.get_children():
+		slot.remove_child(dziecko)
+		dziecko.queue_free()
+
+
+func _nazwa_cechy_szefa(id: String) -> String:
+	match id:
+		"lagodny":
+			return "łagodny"
+		"cierpliwy":
+			return "cierpliwy"
+		"empatyczny":
+			return "empatyczny"
+		"zyczliwy":
+			return "życzliwy"
+		"spokojny":
+			return "spokojny"
+		"oschly":
+			return "oschły"
+		"wybuchowy":
+			return "wybuchowy"
+		"drazliwy":
+			return "drażliwy"
+		"agresywny":
+			return "agresywny"
+		_:
+			return id
+
+
+func _slowa_relacji(n: int) -> String:
+	if n < 25:
+		return "zła"
+	if n < 45:
+		return "słaba"
+	if n < 65:
+		return "w porządku"
+	if n < 85:
+		return "dobra"
+	return "bardzo dobra"
+
+
+func _slowa_upomnien(n: int) -> String:
+	if n <= 0:
+		return "brak"
+	if n == 1:
+		return "jedno"
+	if n == 2:
+		return "dwa"
+	return "trzy i więcej"
+
+
+func _slowa_angazu(n: int) -> String:
+	if n < 35:
+		return "byle jak"
+	if n < 70:
+		return "normalnie"
+	return "na poważnie"
+
+
+func _podlacz_scroll_pracy() -> void:
+	if _praca_scroll_podpiety:
+		return
+	var sc := _scroll_zakupow()
+	if sc == null:
+		return
+	var pasek := sc.get_v_scroll_bar()
+	if pasek == null:
+		return
+	pasek.value_changed.connect(_na_scroll_pracy)
+	_praca_scroll_podpiety = true
+
+
+func _na_scroll_pracy(wartosc: float) -> void:
+	if not _ekran_pracy or _praca_dokladka:
+		return
+	var sc := _scroll_zakupow()
+	if sc == null:
+		return
+	var pasek := sc.get_v_scroll_bar()
+	if pasek == null or pasek.max_value <= sc.size.y + 8.0:
+		return
+	if not RynekZakupow.trzeba_dociagnac_przed_koncem(pasek.max_value - wartosc - sc.size.y):
+		return
+	_praca_dokladka = true
+	var y := sc.scroll_vertical
+	var dodano: int = _rynek_pracy.uzupelnij(_swiat, _praca_filtry, _rynek_pracy.wyprzedzenie(), int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
+	if dodano > 0:
+		_praca_przerysuj_oferty()
+		sc.scroll_vertical = y
+		SkryptZapisu.zapisz(_swiat)
+	_praca_dokladka = false
 
 
 func _stub_pytanie_dziecka() -> void:
@@ -3257,11 +4621,15 @@ func _panel_przejazdu_autem(auto: Dictionary, dystans_km: float, cel_nazwa: Stri
 	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var odswiez := func() -> void:
 		var wynik: Dictionary = _przejazd.oblicz(
-			dystans_km, auto, str(tryb_stan["id"]), float(tryb_stan["nadmiar"]), _cena_paliwa()
+			dystans_km, auto, str(tryb_stan["id"]), float(tryb_stan["nadmiar"]), _cena_paliwa(auto)
 		)
-		var linie := "Koszt paliwa: %s · spalanie trybu: %s l/100 · zmęczenie fiz. +%d" % [
+		var jedn_sp := str(auto.get("spalanie_jednostka", "l/100 km"))
+		if jedn_sp == "":
+			jedn_sp = "l/100 km"
+		var linie := "Koszt paliwa: %s · zużycie trybu: %s %s · zmęczenie fiz. +%d" % [
 			str(wynik.get("koszt_tekst", "—")),
 			str(wynik.get("zuzycie_l_na_100", "—")),
+			jedn_sp,
 			int(wynik.get("zmeczenie_fizyczne_delta", 0)),
 		]
 		var mandat := str(wynik.get("mandat_stub", "")).strip_edges()
@@ -4160,21 +5528,7 @@ func _tekst_pracy() -> String:
 
 
 func _tekst_zarobkow(blok: Variant) -> String:
-	if not (blok is Dictionary) or blok.get("kolo") != true:
-		return ""
-	var od: Variant = blok.get("od_zl")
-	var dok: Variant = blok.get("do_zl")
-	if not _jest_liczba(od) and _jest_liczba(blok.get("mediana_zl")):
-		od = blok.get("mediana_zl")
-	if not _jest_liczba(dok) and _jest_liczba(blok.get("przecietne_zl")):
-		dok = blok.get("przecietne_zl")
-	if _jest_liczba(od) and _jest_liczba(dok):
-		return "%s–%s zł" % [od, dok]
-	if _jest_liczba(dok):
-		return "do %s zł" % dok
-	if _jest_liczba(od):
-		return "od %s zł" % od
-	return ""
+	return ZaokraglenieZarobkow.tekst(blok)
 
 
 func _cechy_bohatera(bohater: Dictionary) -> String:
@@ -4304,17 +5658,8 @@ func _cena_tygodnia_auta(auto: Dictionary) -> String:
 	return "—"
 
 
-func _cena_paliwa() -> Variant:
-	var kraj: Variant = _czytaj_json("res://świat/polska/kraj.json")
-	if not (kraj is Dictionary):
-		return null
-	var paliwo: Variant = kraj.get("cena_paliwa", {})
-	if not (paliwo is Dictionary):
-		return null
-	for klucz in ["pb95", "olej_napedowy"]:
-		if _jest_liczba(paliwo.get(klucz)):
-			return paliwo.get(klucz)
-	return null
+func _cena_paliwa(auto: Dictionary = {}) -> Variant:
+	return _rynek_zakupow.cena_nosnika_dojazdu(auto)
 
 
 func _cena_transportu_miasta(id: String) -> Variant:
@@ -4343,6 +5688,26 @@ func _tekst_ceny_oferty(cena: Variant, kat_id: String = "") -> String:
 	if kat_id == "samochod":
 		return _rynek_zakupow.formatuj_cene_auta(cena)
 	return _tekst_ceny(cena)
+
+
+func _tekst_przebiegu_zakresu(etykieta: String, km: float) -> String:
+	return "%s: %s km" % [etykieta, _tekst_z_odstepami(int(km))]
+
+
+## Spacje co 3 cyfry, jak cena auta. Nie zaokrągla — 376497 zostaje 376 497.
+func _tekst_z_odstepami(n: int) -> String:
+	var ujemna := n < 0
+	var s := str(absi(n))
+	var out := ""
+	var licznik := 0
+	for i in range(s.length() - 1, -1, -1):
+		if licznik > 0 and licznik % 3 == 0:
+			out = " " + out
+		out = s[i] + out
+		licznik += 1
+	if ujemna:
+		out = "-" + out
+	return out
 
 
 func _join_tekstow(lista: Array) -> String:

@@ -4,6 +4,23 @@
 	"to_nie_gus": true,
 	"generator": "res://scripts/rynek_zakupow.gd",
 	"obrazki_paczka": "res://zakupy/obrazki_paczka.json",
+	"grupy": [
+		{
+			"id": "srodki_transportu",
+			"nazwa": "Środki transportu",
+			"kategorie": ["samochod", "rower", "samolot", "smiglowiec_bojowy"],
+			"nazwy_wyboru": {
+				"smiglowiec_bojowy": "Śmigłowiec"
+			},
+			"uwaga": "Wejście otwiera istniejący rynek. Nie nowy cennik. Śmigłowiec = katalog smiglowiec_bojowy."
+		},
+		{
+			"id": "elektronika",
+			"nazwa": "Elektronika",
+			"kategorie": ["telefon", "komputer", "laptop", "sprzet"],
+			"uwaga": "Sprzęt = istniejący katalog peryferiów (słuchawki, klawiatura, mysz, mikrofon), nie nowa lista SKU."
+		}
+	],
 	"kategorie": [
 		{
 			"id": "drobiazgi",
@@ -155,6 +172,40 @@
 		"wiek_zamiast_przebiegu": ["telefon", "rower", "laptop", "komputer", "sprzet"],
 		"uwaga": "Używane: lata_od_zakupu zamiast przebiegu_km. Nowe = 0."
 	},
+	"pule_drobne": {
+		"propozycja_do_poprawki": true,
+		"to_nie_gus": true,
+		"opis": "Nowe: liczba modeli w katalogu sklepu. Małe miasto i Polska dostają ten sam licznik, nie round(ludność / N). Zasięg wybiera tylko miasto sklepu. Używane: round(ludność × stan_krajowy / ludność Polski). Stan krajowy to stojące ogłoszenia, nie dzielnik w rodzaju 1/12000.",
+		"wysylka_zl": 15,
+		"wysylka_uwaga": "15 zł to reguła gracza, nie taryfa przewoźnika. Odbiór osobisty zostaje, gdy oferta jest w mieście bohatera.",
+		"nowe_z_katalogu": true,
+		"telefon": {
+			"nowy": "katalog",
+			"uzywany_stan_krajowy": 15000,
+			"zrodlo": "OLX, styczeń: ponad 15 tys. zakończonych transakcji smartfonów. Telix: https://telix.pl/rynek/raporty-prezentacje/2026/03/zmiany-na-rynku-nowych-smartfonow-zdynamizuja-rynek-re-commerce/ oraz rp.pl: https://www.rp.pl/handel/art43938981-polacy-trzymaja-w-szufladach-majatek-przecietnie-do-odzyskania-jest-ponad-550-zl — 38% odsprzedaje nieużywany telefon, prawie 1 na 5 trzyma go w domu, 11% oddaje rodzinie. WP/Allegro OdZyskaj: https://wiadomosci.wp.pl/sprzedaz-uzywanego-smartfona-jeszcze-nigdy-nie-byla-tak-prosta-wystarczy-wejsc-na-allegro-7211855609953248a — wymiana co ok. 2 lata, 35% sprzedaje starą elektronikę, 43% zostawia.",
+			"zalozenie": "Ogłoszenie wisi około miesiąca, więc stojący stan publicznych ofert telefonu to ten miesięczny obrót OLX, 15 tys. w kraju — propozycja, nie spis żywych ogłoszeń i nie GUS."
+		},
+		"laptop": {
+			"nowy": "katalog",
+			"uzywany_stan_krajowy": 5000,
+			"zalozenie": "Laptop wymienia się rzadziej niż telefon, a stary zwykle zostaje drugim komputerem, więc publicznych ofert jest około jednej trzeciej stanu telefonów: 5 tys."
+		},
+		"komputer": {
+			"nowy": "katalog",
+			"uzywany_stan_krajowy": 2500,
+			"zalozenie": "Komputer stacjonarny ma mniej gospodarstw niż laptop i zwykle zostaje na biurku, więc publicznych ofert jest około połowy stanu laptopów: 2,5 tys."
+		},
+		"rower": {
+			"nowy": "katalog",
+			"uzywany_stan_krajowy": 45000,
+			"zalozenie": "Rower trafia na tablicę częściej niż telefon, bo dziecko z niego wyrasta, a sezon i przeprowadzka wypychają go na ogłoszenie zamiast do szuflady; stojący stan to trzykrotność telefonów, 45 tys. — nie ma cytowanego spisu ogłoszeń."
+		},
+		"sprzet": {
+			"nowy": "katalog",
+			"uzywany_stan_krajowy": 3750,
+			"zalozenie": "Słuchawki, klawiatura i mysz są tanie i zwykle lądują w szufladzie, więc publicznych ofert jest około jednej czwartej stanu telefonów: 3,75 tys."
+		}
+	},
 	"nieruchomosci": {
 		"opis": "Parametry losowania mieszkań/domów. Limit ofert na miasto × turę. Cena ze wzoru.",
 		"limit_ofert_na_miasto": {"od": 3, "do": 6, "propozycja_do_poprawki": true},
@@ -239,12 +290,13 @@
 				"do_odswiezenia": -6,
 				"po_remoncie": 12,
 				"surowy": -28,
+				"nowy": 12,
 				"swiezo_po_remoncie": 12
 			},
 			"za_km_od_centrum": -0.45,
 			"bonus_miasto_gracza": 4,
 			"clamp": [0, 100],
-			"uwaga": "Sufit per typ: nieruchomosci.wygoda_clamp_typu (mieszkanie/dom niżej; apartament/willa do 100)."
+			"uwaga": "Sufit per typ: nieruchomosci.wygoda_clamp_typu (mieszkanie/dom niżej; apartament/willa do 100). nowy = ten sam bonus co po_remoncie, propozycja_do_poprawki, nie pomiar."
 		},
 		"cena": {
 			"propozycja_do_poprawki": true,
@@ -255,8 +307,10 @@
 				"do_odswiezenia": 0.92,
 				"po_remoncie": 1.08,
 				"surowy": 0.65,
+				"nowy": 1.0,
 				"swiezo_po_remoncie": 1.08
 			},
+			"uwaga_mnoznik_nowy": "propozycja_do_poprawki. Wykończone nowe lokale używają istniejącego wzoru z mnożnikiem 1.0. To nie jest statystyka GUS ani przełączenie na kotwicę rynku pierwotnego BaRN. Stan surowy zostaje przy 0.65 już zapisanym wyżej.",
 			"mnozniki_lokalizacji": {
 				"miasto_gracza_centrum": 1.12,
 				"miasto_gracza_obrzeza": 1.0,
@@ -393,7 +447,7 @@
 		"sprzet": {"nowy": [50, 600], "uzywany": [20, 350]},
 		"samolot": {"nowy": [20000000, 140000000], "uzywany": [8000000, 90000000], "uwaga": "Szacunek z katalog_samoloty; militarne osobno często null."},
 		"smiglowiec_bojowy": {"nowy": null, "uzywany": null, "uwaga": "Ceny militarne — nie zmyślać; null gdy brak źródła."},
-		"uwaga_auta_tanie": "Tier ~2500+ zł „jeżdżące”; uszkodzone taniej (kotwice AAA Auto / Otomoto, szacunek)."
+		"uwaga_auta_tanie": "propozycja_do_poprawki. Pasmo 2500–90000 tylko gdy brak ceny katalogowej. Auto z katalogu nie spada do 2 tys. przez sufit."
 	},
 	"lata_od_zakupu": {
 		"propozycja_do_poprawki": true,
@@ -405,10 +459,26 @@
 	},
 	"auta": {
 		"propozycja_do_poprawki": true,
+		"krzywa_ceny": {
+			"propozycja_do_poprawki": true,
+			"to_nie_gus": true,
+			"opis": "Nowe: katalog × 1,00–1,06. Używane: katalog × clamp(1 − (km/200000)×0,45, 0,55, 1) × (0,78 + 0,22×stan/100) × szum 0,96–1,04. Podłoga 35% katalogu. Tier uszkodzony dodatkowo × 0,78–0,88 i podłoga 22%. Bez pasa 0,22–0,68 i bez sufitu 2000–7000. Mediana używanych tylko bez katalogu albo gdy ≥ 40% katalogu. Usterki deklarowane tną osobno, max 42%. Zaokrąglenie auta: 3 cyfry znaczące, nie 2 (48 000 nie staje się 2 000).",
+			"przyklad": "Katalog 50 000 zł, 80 000 km, stan 70, bez tieru: około 38 000 zł. Dawniej ten sam wóz przy tierze lądował koło 2 000 zł."
+		},
 		"szansa_tieru_taniego": 0.18,
-		"baza_ogloszen": "ludnosc / 5000 — TYLKO używane (pula lokalna); nowe z katalogu wszędzie, bez limitu miasta",
-		"pula_lokalna": "tylko_uzywane",
-		"nowe": "katalog_globalny + opcjonalnie sprowadzenie/import (szacunek+zrodlo)",
+		"baza_ogloszen": "Używane: round(ludność zakresu / 1500), najbliższa liczba całkowita, minimum 1 przy ludności > 0. Miasto, województwo, Polska. Na ekran wchodzi okno, reszta przy przewijaniu. Liczba puli nie jest liczbą węzłów.",
+		"waznosc_tygodni": 4,
+		"waznosc_propozycja_do_poprawki": true,
+		"waznosc_uwaga": "Ogłoszenie schodzi po 4 tygodniach. Nie ma źródła na średni czas życia ogłoszenia. Tura nie dokłada nowych aut.",
+		"dojazd": {
+			"propozycja_do_poprawki": true,
+			"km_na_bilet_lokalny": 25,
+			"spalanie_gdy_brak_l_na_100": 7.0,
+			"spadek_relacji_odmowa_paliwa": 4,
+			"uwaga": "Bilet lokalny bierzemy z cena_transportu_publicznego miasta, gdy jest liczbą. Międzymiastowo: tyle biletów, ile wychodzi z km/25 — szacunek, nie cennik przewoźnika. Paliwo: 2 × km × spalanie ogłoszenia / 100. Gdy brak spalania, 7 l/100 jako szacunek. Złotówki z świat/polska/kraj.json cena_paliwa: benzyna, gaz albo energia według napędu. Olej napędowy zostaje null. Odmowa dołożenia się, gdy kierowca prosi, obniża relację o 4."
+		},
+		"pula_lokalna": "leniwa_przy_kupnie",
+		"nowe": "salon w mieście z pojazdy/salony_marek_pl.json; marka bez listy nie dostaje salonu w Polsce",
 		"filtr_marek": "multi-wybór; puste = wszystkie",
 		"rozbieznosc_ilosciowa": 0.30,
 		"mnoznik_spalania_vmax": 1.55,
@@ -421,9 +491,13 @@
 			"propozycja_do_poprawki": true
 		},
 		"zakladka_flaga": "rynek_zakupow.zakladka_samochodow_aktywna",
-		"odbior_uzywany": "osobisty_dostawa_lub_oba",
-		"dostawa_uzywane": true,
-		"pula_wojewodztwo": "suma baz miast w województwie (ludnosc/5000) lub próbka realistyczna",
+		"odbior_uzywany": "osobisty",
+		"dostawa_uzywane": false,
+		"dostawa_cena_zl": null,
+		"dostawa_propozycja_do_poprawki": true,
+		"dostawa_szacunek": true,
+		"dostawa_uwaga": "Brak cennika przewozu auta. cena_transportu_publicznego to nie laweta. Osoba prywatna: tylko odbiór osobisty, bez słowa dostawa. Nawias z ceną dopiero gdy dostawa_cena_zl jest liczbą.",
+		"pula_wojewodztwo": "round(suma ludności województwa / 1500), bez capu próbki. Ekran dociąga po kilka.",
 		"ocena_stanu": "kazdy_auto; osobisty=przed_zakupem; dostawa/wysylka=po_dostawie_lub_ogledzinach",
 		"konserwacja": "res://pojazdy/konserwacja_aut.json",
 		"usterki": "res://pojazdy/usterki_aut.json",
@@ -510,9 +584,9 @@
 			"propozycja_do_poprawki": true,
 			"wzor": "mnoznik = clamp(1 - (przebieg_km / bazowe_km) * spadek_przy_bazie, min_mnoznik, 1)",
 			"bazowe_km": 200000,
-			"spadek_przy_bazie": 0.42,
-			"min_mnoznik": 0.42,
-			"kotwica": "Przy medianach AAA Auto (wysoki przebieg ≈ niższa mediana w segmencie tanich); wzór gry, nie regresja Otomoto."
+			"spadek_przy_bazie": 0.45,
+			"min_mnoznik": 0.55,
+			"kotwica": "propozycja_do_poprawki. Przy 200 000 km mnożnik 0,55, nie 0,42. Razem ze stanem 0,78–1,00 auto za 50 tys. przy zwykłym przebiegu zostaje przy dziesiątkach tysięcy. Stary min 0,42 i pas 0,22–0,68 plus sufit 2–7 tys. zbijały katalog do ~2 tys."
 		}
 	},
 	"ocena_stanu": {

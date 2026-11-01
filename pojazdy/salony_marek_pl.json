@@ -1,0 +1,2042 @@
+{
+	"opis": "Miasta, w których nowy samochód marki może być w salonie. Miejscowość bierzemy z adresu i zostawiamy tylko wtedy, gdy jest miastem w danych gry. Przedmieścia nie są dopinane do większego miasta. Toyota i Tesla zostają przy listach z 2026-10-25.",
+	"data_odczytu": "2026-10-25",
+	"kraje": {
+		"Polska": "Sekcja wojewodztwa. Salon jest w Polsce tylko wtedy, gdy miejscowość z adresu jest na tej liście.",
+		"zagranica": "Brak zweryfikowanej listy salonów poza Polską. Nie dodaję zagranicznego salonu ani wymyślonego miasta. Model z flagą sprowadzenia bez salonu w Polsce zostaje odbiorem za granicą, bez słowa dostawa i bez ceny przewozu."
+	},
+	"dostawa": {
+		"cena_zl": null,
+		"propozycja_do_poprawki": true,
+		"szacunek": true,
+		"uwaga": "W danych gry nie ma cennika przewozu samochodu. cena_transportu_publicznego to bilet komunikacji, nie laweta. Krajowa losowa dostawa jest wyłączona. Osoba prywatna: tylko odbiór osobisty. Kwota w nawiasie pojawi się dopiero, gdy cena_zl będzie liczbą ze źródła."
+	},
+	"zrodla": [
+		{
+			"marka": "Toyota",
+			"url": "https://www.toyota.pl/salony-i-serwisy-toyoty",
+			"uwaga": "Strona łączy salony i serwisy i nie rozdziela ich w treści. Fabryka Toyota Motor Manufacturing Poland (Wałbrzych, rekrutacja) wyłączona. Zostawiony jest dealer przy ul. Uczniowskiej 21 w Wałbrzychu. Miasto bierzemy z adresu, nie z nazwy handlowej. Jedyny alias: Warszawa na liście producenta = miasto gry „mst Warszawa” (TERYT), to samo miasto."
+		},
+		{
+			"marka": "Tesla",
+			"url": "https://www.tesla.com/pl_pl/findus/list/stores/Poland",
+			"uwaga": "Tylko lista stores. Punkt jazdy testowej nie jest salonem sprzedaży. Swadzim to nie Poznań, Ząbki to nie Warszawa, Długołęka to nie Wrocław."
+		},
+		{
+			"marka": "Opel, Citroen, Fiat, Peugeot, Jeep, Alfa Romeo",
+			"url": "https://sdswp.pl/czlonkowie-sds/",
+			"data_odczytu": "2026-10-27",
+			"uwaga": "Tabela członków Stowarzyszenia Dealerów Stellantis. Fiat Professional nie jest osobną marką katalogu. Wiersz z ukośnikiem w mieście, z adresem wsi (Ustowo, Kalinówka, Libertów, Falenty, Komorniki, Złotniki, Jamnica, Józefów) albo spoza listy miast gry jest pominięty."
+		},
+		{
+			"marka": "Skoda",
+			"url": "https://twoja.skoda.pl/formularze/oferta-twojej-skody2",
+			"data_odczytu": "2026-10-27",
+			"uwaga": "Formularz wyboru dealera przy ofercie zakupu. Wpisy oznaczone jako sam Autoryzowany Serwis pominięte. Sezamkowa 7 jest w źródle VW jako Bolesławice, więc nie dopinam jej do Słupska. Świętochłowice zostaje Świętochłowicami, Świdnik Świdnikiem, Wieliczka Wieliczką."
+		},
+		{
+			"marka": "Audi, BMW, BYD, Cupra, Dacia, DS, Ford, Honda, Hyundai, Jaguar, Kia, Land Rover, Leapmotor, Lexus, Mazda, Mercedes-Benz, MG, MINI, Mitsubishi, Nissan, Porsche, Renault, Seat, Subaru, Suzuki, Volkswagen, Volvo",
+			"url": "https://znajdzsalon.pl/marki/",
+			"data_odczytu": "2026-10-27",
+			"stan_katalogu": "2026-08-14",
+			"uwaga": "Katalog profili Google, gorsze źródło niż locator importera. Sami piszą, że punkt serwisowy bywa liczony jak salon i że marka bywa odczytana z nazwy profilu. Wyrzucone: motocykle, komisy aut używanych, biura i wpisy będące samym serwisem. Miejscowość spoza miast gry nie jest dopięta do większego miasta. Oficjalny PDF partnerów Volkswagena (volkswagen.pl/pl/dokumenty/lista-partnerow.html, data w pliku 2026-08-18) miesza sprzedaż i serwis i nie został przepisany wiersz po wierszu."
+		},
+		{
+			"marka": "SsangYong",
+			"url": "https://znajdzsalon.pl/marki/ssangyong/",
+			"data_odczytu": "2026-10-27",
+			"stan_katalogu": "2026-08-14",
+			"uwaga": "Strona katalogu tytułuje sieć KGM. W katalogu gry marka nadal nazywa się SsangYong, więc miasta KGM są pod tą nazwą. To nie jest pełna lista historycznych salonów SsangYong."
+		},
+		{
+			"marka": "Alpine",
+			"url": "https://www.media.renault.com.pl/Customer/NewsDetails?Id=9830",
+			"data_odczytu": "2026-10-27",
+			"uwaga": "Komunikat Renault 2025-05-09 i potwierdzenie otwarcia Grupy Pietrzak 2025-05-19: Alpine Centre, ul. Wirażowa 21, 02-158 Warszawa. Innych miast nie znalazłem."
+		},
+		{
+			"marka": "Smart",
+			"url": "https://www.salony-samochodowe.com.pl/smart.html",
+			"data_odczytu": "2026-10-27",
+			"uwaga": "Katalog wtórny, nie locator importera. Łomianki nie są Warszawą. Balonowa przy Lesznie leży koło Strzyżewic i nie jest dopięta do Leszna. Ociąż nie jest miastem gry. Wizytówka Daimlera 1 bez weryfikacji nie wchodzi."
+		},
+		{
+			"marka": "Ford, Mazda, Volvo, Hyundai, DS, Mercedes-Benz",
+			"url": "https://ford.bemo-motors.pl/o-firmie",
+			"data_odczytu": "2026-10-27",
+			"uwaga": "Zdania grupy Bemo o własnych salonach, nie cała sieć kraju. Jelonek, Ustowo, Złotniki i Falenty pominięte. Mercedes w Łodzi zapisany jako Mercedes-Benz, bo tak nazywa się marka w katalogu."
+		},
+		{
+			"marka": "BYD, Ford, Hyundai, Kia, Renault, Suzuki",
+			"url": "https://pgd.pl/kontakt/",
+			"data_odczytu": "2026-10-27",
+			"uwaga": "Tylko bloki z nagłówkiem marki. Serwis bez słowa salon (Chorzów Suzuki, Powstańców Suzuki) pominięty. Konstancin-Jeziorna i Mory nie są miastami gry. Markdown strony jest miejscami poszarpany, więc to uzupełnienie, nie spis sieci."
+		}
+	],
+	"marki_bez_zweryfikowanej_listy_salonow": {
+		"propozycja_do_poprawki": true,
+		"uwaga": "Po odczycie z 2026-10-27 te marki nadal nie mają salonu w mieście z listy gry. Nie dopisuję miasta z pamięci.",
+		"marki": [
+			"Genesis",
+			"Polestar"
+		]
+	},
+	"nie_zmapowane_bo_to_nie_miasto_z_listy_gry": {
+		"Toyota": [
+			"Dobrzelów",
+			"Czechowice-Dziedzice",
+			"Kazimierzowo",
+			"Kowale",
+			"Chwaszczyno",
+			"Wojcieszyce",
+			"Komorniki",
+			"Modlnica",
+			"Kalinówka",
+			"Marki",
+			"Stojadła",
+			"Nowogard",
+			"Ujście",
+			"Suchy Las",
+			"Jaworze",
+			"Sulejówek",
+			"Blizne Łaszczyńskiego",
+			"Mościska",
+			"Rumia",
+			"Świlcza",
+			"Sady",
+			"Zgłobice",
+			"Bielany Wrocławskie",
+			"Długołęka",
+			"Rzgów"
+		],
+		"Tesla": [
+			"Swadzim",
+			"Ząbki",
+			"Długołęka"
+		],
+		"Alfa Romeo": [
+			"POZNAŃ/KOMORNIKI | ul. Głogowska 444",
+			"STALOWA WOLA/GRĘBÓW | Jamnica 160",
+			"STAROWA GÓRA | ul. Graniczna 2",
+			"SULEJÓWEK | ul. Sasankowa 22",
+			"SZCZECIN | adres nie jest ulicą tego miasta: Ustowo 57B",
+			"WARSZAWA/FALENTY | al. Krakowska 8"
+		],
+		"Alpine": [
+			"poza Warszawą, ul. Wirażowa 21, brak dalszej listy"
+		],
+		"Audi": [
+			"biuro, nie salon: Grupa Cichy-Zasada - Biuro Zarządu | Skórzewska 8, 62-081 Poznań, Polska",
+			"Porosły-Kolonia | Porosły-Kolonia 2C",
+			"sam serwis: Serwis AUDI Warszawa | Połczyńska 82, 01-302 Warszawa, Polska",
+			"sam serwis: VW & Audi Group Serwis Kraków | Sadka 22, 30-690 Kraków, Polska",
+			"używane albo pośrednik: Samochody używane Audi Select Plus | Świtoń-Paczkowski Sp. z o.o. | Zdrojowa 2b, 65-142 Zielona Góra, Polska"
+		],
+		"BMW": [
+			"biuro, nie salon: BMW Group Polska | Wołoska 22A, 02-675 Warszawa, Polska",
+			"Falenty | Aleja Krakowska 5",
+			"Kraków odrzucone, bo adres ma „libertowska”: Góra Libertowska 14",
+			"Krasne | Krasne 9A",
+			"motocykl: BMW Motorrad Premium Arena - Salon i Serwis motocykli BMW | Al. Włókniarzy 48, 91-348 Łódź, Polska",
+			"motocykl: BMW Motorrad Smorawiński | Obornicka 235, 60-650 Poznań, Polska",
+			"motocykl: Dealer BMW i BMW Motorrad Bońkowscy Ustowo | Ustowo 55, 70-001 Szczecin, Polska",
+			"motocykl: Inchcape - BMW Motorrad Warszawa | Al. Prymasa Tysiąclecia 64, 01-424 Warszawa, Polska",
+			"Porosły-Kolonia | Porosły-Kolonia 1K",
+			"Rzeszów odrzucone, bo adres ma „swilcza”: 147H, Świlcza 147H",
+			"sam serwis: Autoryzowany Serwis BMW i MINI Tłokiński | Aleksandrowska 131c, 91-224 Łódź, Polska",
+			"sam serwis: BMW Fiałkowski Zielona Góra - Serwis i oryginalne części BMW | Trasa Północna 12B, 65-128 Zielona Góra, Polska",
+			"Swadzim | Wschodnia 9",
+			"używane albo pośrednik: BMW Dobrzański - Serwis BMW, Serwis MINI, Salon Samochodów Używanych (ASO) | Wielicka 119, 30-552 Kraków, Polska"
+		],
+		"BYD": [
+			"Przeźmierowo | Poznańska 33"
+		],
+		"Citroen": [
+			"KOSZALIN/STARE BIELICE | ul. Koszalińska 89",
+			"KRASNE | adres nie jest ulicą tego miasta: Krasne 7A",
+			"KUTNO | adres nie jest ulicą tego miasta: Józefów 26",
+			"MOTYCZ | adres nie jest ulicą tego miasta: Konopnica 164E",
+			"POZNAŃ-BARANOWO | ul. Poznańska 22",
+			"POZNAŃ/SWARZĘDZ | ul. Wrzesińska 191",
+			"POZNAŃ/ZŁOTNIKI | ul. Obornicka 4",
+			"STALOWA WOLA/GRĘBÓW | Jamnica 160",
+			"Złotniki — nie dopinam do Poznania"
+		],
+		"Cupra": [
+			"sam serwis: Autoryzowany Serwis SEAT & CUPRA G&G Auto Lublin | Piasecka 20A, 21-040 Świdnik, Polska",
+			"sam serwis: CUPRA Opole - Autoryzowany Partner i Serwis | Opolska 2C, 45-960 Opole, Polska",
+			"Suchy Las | Obornicka 150"
+		],
+		"Dacia": [
+			"sam serwis: Dacia Serwis Kraków - Łyko | Aleja Pokoju 63, 31-564 Kraków, Polska",
+			"Suchy Las | Obornicka 137"
+		],
+		"DS": [
+			"Jamnica | Jamnica 160",
+			"sam serwis: Autoryzowany Serwis DS PGD Warszawa | Krasnobrodzka 5, 03-214 Warszawa, Polska"
+		],
+		"Fiat": [
+			"KOSZALIN/STARE BIELICE | ul. Koszalińska 89",
+			"KRAKÓW/LIBERTÓW | ul. Góra Libertowska 12",
+			"POZNAŃ/KOMORNIKI | ul. Głogowska 444",
+			"STALOWA WOLA/GRĘBÓW | Jamnica 160",
+			"SULEJÓWEK | ul. Sasankowa 22",
+			"SZCZECIN | adres nie jest ulicą tego miasta: Ustowo 57B",
+			"WARSZAWA/FALENTY | al. Krakowska 8"
+		],
+		"Ford": [
+			"Jelonek | Obornicka 4",
+			"Jelonek k. Poznania — nie dopinam do Poznania",
+			"sam serwis: ABSCAR FORD SERWIS | Powałów 17, 03-182 Warszawa, Polska",
+			"sam serwis: Auto-Michałowski Autoryzowany Serwis Ford Autoryzowana Blacharnia Lakiernia | Radzymińska 158, 03-576 Warszawa, Polska",
+			"sam serwis: Auto-Waś: Stacja Kontroli Pojazdów Białołęka, Serwis Forda Transita | Kobiałka 28, 03-044 Warszawa, Polska",
+			"sam serwis: Serwis FORD Warszawa | Połczyńska 82, 01-302 Warszawa, Polska",
+			"Szczecin / Ustowo — Ustowo to nie Szczecin",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 56",
+			"używane albo pośrednik: Ford Auto Hobby - Autoryzowany Serwis Samochodowy, Blacharstwo - lakiernictwo, Sprzedaż Aut Używanych Białystok | Składowa 5a, 15-399 Białystok, Polska"
+		],
+		"Genesis": [
+			"money.pl 2026-02-07: szef Genesis w Europie mówi, że marki nadal nie ma w Polsce"
+		],
+		"Honda": [
+			"motocykl: Honda Park - Autoryzowany Dealer Samochodów i Motocykli | Brzezińska 33/35, 92-103 Łódź, Polska",
+			"motocykl: Honda Rawski Group Autoryzowany Salon i Serwis Samochodów i Motocykli Warszawa Marki | Majora Billa 2B, 05-270 Marki, Polska",
+			"sam serwis: Car Partner serwis Honda | XX Pijarów 10, 31-466 Kraków, Polska",
+			"sam serwis: Honda Krężel & Krężel Serwis | al. Jana Pawła II 142, 31-982 Kraków, Polska",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 57a"
+		],
+		"Hyundai": [
+			"Baranowo | Poznania PL, Poznańska 22",
+			"Długołęka | Wrocławska 33A",
+			"Jelonek | Obornicka 4",
+			"Jelonek k. Poznania — nie dopinam do Poznania",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 56",
+			"używane albo pośrednik: Otomoto Lease | Plac Konesera 9, 03-736 Warszawa, Polska"
+		],
+		"Jaguar": [
+			"Baranowo | Poznańska 30",
+			"Długołęka | Wrocławska 56"
+		],
+		"Jeep": [
+			"KRAKÓW/LIBERTÓW | ul. Góra Libertowska 12",
+			"POZNAŃ/KOMORNIKI | ul. Głogowska 444",
+			"STALOWA WOLA/GRĘBÓW | Jamnica 160",
+			"STAROWA GÓRA | ul. Graniczna 2",
+			"SULEJÓWEK | ul. Sasankowa 22",
+			"SZCZECIN | adres nie jest ulicą tego miasta: Ustowo 57B",
+			"WARSZAWA/FALENTY | al. Krakowska 8"
+		],
+		"Kia": [
+			"Białystok odrzucone, bo adres ma „porosly”: Porosły-Kolonia 1F",
+			"Długołęka | Wrocławska 35",
+			"Komorniki | Poznańska 156",
+			"Konstancin-Jeziorna | Warszawska 84",
+			"Nadarzyn | Aleja Katowicka 68A",
+			"Przeźmierowo | Składowa 17",
+			"sam serwis: Po-gwarancyjny serwis KIA - Malibu Auto Centrum | Morelowa 3, 03-192 Warszawa, Polska",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 52",
+			"Tomaszkowo | Pszczela 8",
+			"używane albo pośrednik: KIA Używane | 73 Pułku Piechoty 1, 40-467 Katowice, Polska"
+		],
+		"Land Rover": [
+			"Baranowo | Poznańska 30",
+			"Długołęka | Wrocławska 56",
+			"Marki | Majora Billa 2",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 58"
+		],
+		"Leapmotor": [
+			"Jamnica | Jamnica 160",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 57"
+		],
+		"Lexus": [
+			"Kalinówka | Kalinówka 18",
+			"Osielsko | Szosa Gdańska 23",
+			"Świlcza | 146Z"
+		],
+		"Mazda": [
+			"Długołęka | Wrocławska 51",
+			"Kielce ul. | 25-655 Kielce ul., 1 Maja 191, 25-655 Kielce, Polska",
+			"sam serwis: MAZDA Impex - Autoryzowany Serwis Mazdy | Wertera 1a, 20-713 Lublin, Polska"
+		],
+		"Mercedes-Benz": [
+			"Świerklany | Żorska 39",
+			"używane albo pośrednik: Mercedes-Benz Auto Frelik, Sp. K. - samochody osobowe i dostawcze, nowe i używane. Serwis, blacharnia, lakiernia. | Nowotoruńska 27, 85-839 Bydgoszcz, Polska",
+			"używane albo pośrednik: Mercedes-Benz Grupa Wróbel Sp. z o.o. | Dealer, serwis | Oryginalne części i akcesoria | Samochody używane | Graniczna 4A, 54-610 Wrocław, Polska",
+			"używane albo pośrednik: Mercedes-Benz Grupa Wróbel Sp. z o.o. | Dealer, serwis | Oryginalne części i akcesoria | Samochody używane | Wrocławska 145, 45-837 Opole, Polska",
+			"używane albo pośrednik: Mercedes-Benz Mojsiuk samochody używane Szczecin | Pomorska 88, 70-812 Szczecin, Polska",
+			"używane albo pośrednik: Otomoto Lease | Plac Konesera 9, 03-736 Warszawa, Polska"
+		],
+		"MG": [
+			"Długołęka | Wrocławska 34A",
+			"Falenty | Aleja Krakowska 8",
+			"Jasin | Wrzesińska 191",
+			"Jelonek | Obornicka 4",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 56"
+		],
+		"MINI": [
+			"Krasne | Krasne 9A",
+			"sam serwis: Autoryzowany Serwis BMW i MINI Tłokiński | Aleksandrowska 131c, 91-224 Łódź, Polska",
+			"Swadzim | Wschodnia 9",
+			"używane albo pośrednik: BMW Dobrzański - Serwis BMW, Serwis MINI, Salon Samochodów Używanych (ASO) | Wielicka 119, 30-552 Kraków, Polska",
+			"używane albo pośrednik: MINI Bawaria Motors Gdańsk - Autoryzowany Serwis i Samochody Używane | aleja Grunwaldzka 195, 80-266 Gdańsk, Polska"
+		],
+		"Mitsubishi": [
+			"sam serwis: Auto Serwis Sikorski sp.j. - Mitsubishi/Ssangyong/Bosch Car Service | Sielska 43c, 10-801 Olsztyn, Polska",
+			"sam serwis: Autoryzowany Serwis Mitsubishi ASV-LIDER | Obrońców Poczty Gdańskiej 19, 52-204 Wrocław, Polska",
+			"sam serwis: Autoryzowany Serwis Mitsubishi RM Filipowicz | Stanisława Klimeckiego 25, 30-705 Kraków, Polska",
+			"sam serwis: Mitsubishi Germaz - niezależny serwis samochodowy | Strzegomska 141, 54-428 Wrocław, Polska",
+			"sam serwis: Mitsubishi Parexbud Lublin - Autoryzowany Serwis ASO | Nałęczowska 24, 20-701 Lublin, Polska",
+			"sam serwis: Satall. Autoryzowany Serwis Mitsubishi Motors | Liściasta 104, 91-357 Łódź, Polska",
+			"sam serwis: Serwis Opel i Mitsubishi | Malownicza 29, 02-272 Warszawa, Polska"
+		],
+		"Nissan": [
+			"Bielany Wrocławskie | Wrocławska 1F",
+			"Osielsko | Szosa Gdańska 28",
+			"Przeźmierowo | Rynkowa 160",
+			"Rzgów | Łódzka 40",
+			"sam serwis: Nissan Polmotor – Autoryzowany Serwis | Andrzeja Struga 73, 70-784 Szczecin, Polska",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 52",
+			"używane albo pośrednik: Otomoto Lease | Plac Konesera 9, 03-736 Warszawa, Polska"
+		],
+		"Opel": [
+			"Falenty i Złotniki — nie dopinam do Warszawy ani Poznania",
+			"KOSZALIN/STARE BIELICE | ul. Koszalińska 89",
+			"KRAKÓW/LIBERTÓW | ul. Góra Libertowska 12",
+			"KRASNE | adres nie jest ulicą tego miasta: Krasne 7A",
+			"LESZNO-STRZYŻEWICE | ul. Balonowa 57",
+			"LUBLIN/ŚWIDNIK | Kalinówka 17A",
+			"ŁOMIANKI | ul. Kolejowa 123",
+			"MOTYCZ | adres nie jest ulicą tego miasta: Konopnica 164E",
+			"POZNAŃ/KOMORNIKI | ul. Głogowska 444",
+			"POZNAŃ/SUCHY LAS | ul. Obornicka 125",
+			"POZNAŃ/SWARZĘDZ | ul. Wrzesińska 191",
+			"POZNAŃ/ZŁOTNIKI | ul. Obornicka 4",
+			"PRZYSZOWICE | ul. Gliwicka 9",
+			"STALOWA WOLA/GRĘBÓW | Jamnica 160",
+			"SZCZECIN | adres nie jest ulicą tego miasta: Ustowo 57B",
+			"WARSZAWA/FALENTY | al. Krakowska 8",
+			"WARSZAWA/RASZYN | al. Krakowska 24A"
+		],
+		"Peugeot": [
+			"KOSZALIN/STARE BIELICE | ul. Koszalińska 89",
+			"KRASNE | adres nie jest ulicą tego miasta: Krasne 7A",
+			"ŁOMIANKI | ul. Kolejowa 123",
+			"OSTRÓW WIELK./TOPOLA MAŁA | ul. Odolanowska 136-138",
+			"POZNAŃ-BARANOWO | ul. Poznańska 22",
+			"POZNAŃ/SWARZĘDZ | ul. Wrzesińska 191",
+			"POZNAŃ/ZŁOTNIKI | ul. Obornicka 4",
+			"STALOWA WOLA/GRĘBÓW | Jamnica 160",
+			"Złotniki — nie dopinam do Poznania"
+		],
+		"Polestar": [
+			"Polestar Automotive Poland, al. Niepodległości 18/piętro 6, Warszawa — to adres spółki w KRS, nie salon"
+		],
+		"Renault": [
+			"Kryspinów | ul. Buki 7",
+			"sam serwis: Serwis samochodów Citroen, Peugeot, Renault | Połczyńska 82/2, 01-302 Warszawa, Polska"
+		],
+		"Seat": [
+			"sam serwis: Autoryzowany Serwis SEAT & CUPRA G&G Auto Lublin | Piasecka 20A, 21-040 Świdnik, Polska",
+			"Suchy Las | Obornicka 150"
+		],
+		"Skoda": [
+			"Dobroń | 95-082 Dobroń, ul. Wrocławska 18",
+			"Falenty | 05-090 Falenty, al. Krakowska 5/A",
+			"Krasne | 36-007 Krasne, Krasne 7",
+			"Lubicz Dolny | 87-162 Lubicz Dolny, ul. Toruńska 85",
+			"Łęczyca odrzucone, bo adres ma „ozorkowskie przedmiescie”: 99-100 Łęczyca, Ozorkowskie Przedmieście 73",
+			"Mielec odrzucone, bo adres ma „wola mielecka”: 39-300 Mielec, Wola Mielecka 592",
+			"Opacz Kolonia | 05-816 Opacz Kolonia, al. Jerozolimskie 249b",
+			"sam serwis: 50-541 Wrocław, ul. Armii Krajowej 46",
+			"sam serwis: 58-200 Dzierżoniów, ul. Świdnicka 151",
+			"sam serwis: 87-300 Brodnica, ul. Olsztyńska 5",
+			"Słupsk odrzucone, bo adres ma „sezamkowa”: 76-200 Słupsk, ul. Sezamkowa 7",
+			"Starogard Gdański odrzucone, bo adres ma „rokocin”: 83-200 Starogard Gdański, Rokocin 4G",
+			"Stojadła | 05-300 Stojadła, ul. Warszawska 84",
+			"Świlcza | 36-072 Świlcza, Świlcza 147 Z"
+		],
+		"Smart": [
+			"Leszno, ul. Balonowa 55 — ta ulica leży przy Strzyżewicach, nie dopinam jej do Leszna",
+			"Łomianki, ul. Brukowa 46 — nie ma tego miasta na liście gry",
+			"Ociąż, ul. Ostrowska 6 — nie ma tego miasta na liście gry"
+		],
+		"SsangYong": [
+			"Motycz | Konopnica 164e",
+			"sam serwis: Auto Serwis Sikorski sp.j. - Mitsubishi/Ssangyong/Bosch Car Service | Sielska 43c, 10-801 Olsztyn, Polska",
+			"sam serwis: Autoryzowany Serwis Citroen Kubiak, Autoryzowany Serwis SsangYong | Rzgowska 140, 93-311 Łódź, Polska",
+			"sam serwis: Gadimex serwis wielomarkowy, specjalizacja Suzuki, Ssangyong | Goraszewska 32, 02-903 Warszawa, Polska"
+		],
+		"Subaru": [
+			"Lublin odrzucone, bo adres ma „konopnica”: Konopnica 164A",
+			"Rzgów | Łódzka 40",
+			"sam serwis: Subaru Fiałkowski Zielona Góra - Autoryzowany serwis | Zjednoczenia 117A, 65-120 Zielona Góra, Polska",
+			"sam serwis: Subaru Serwis Kubiak Dziąg | Traktorowa 140, 91-204 Łódź, Polska",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 52 b",
+			"Tyniec Mały | Ryszarda Chomicza 12"
+		],
+		"Suzuki": [
+			" | Świlcza 146i, 36-072, Polska",
+			"Dąbrowa | Janusza Korczaka 3",
+			"motocykl: Motocykle SUZUKI & BENDA KRAKÓW - autoryzowany salon i serwis | Częstochowska 6, 32-085 Modlnica, Polska",
+			"motocykl: PM Auto Motocykle Suzuki | Kartuska 391A, 80-125 Gdańsk, Polska",
+			"motocykl: Suzuki Motocykle PM Auto Sp. z.o.o | Kartuska 391A, 80-125 Gdańsk, Polska",
+			"Osielsko | Szosa Gdańska 28",
+			"sam serwis: Autoryzowany Serwis Suzuki Japan Motors Kraków | aleja Powstańców Śląskich 22, 30-570 Kraków, Polska",
+			"sam serwis: Gadimex serwis wielomarkowy, specjalizacja Suzuki, Ssangyong | Goraszewska 32, 02-903 Warszawa, Polska",
+			"sam serwis: Suzuki Germaz - autoryzowany serwis Wrocław | Strzegomska 141, 54-428 Wrocław, Polska",
+			"Szczecin odrzucone, bo adres ma „ustowo”: Ustowo 57a"
+		],
+		"Volkswagen": [
+			"biuro, nie salon: Grupa Cichy-Zasada - Biuro Zarządu | Skórzewska 8, 62-081 Poznań, Polska",
+			"biuro, nie salon: Volkswagen Group Polska | Krańcowa 44, 61-037 Poznań, Polska",
+			"biuro, nie salon: Volkswagen Group Polska S.A. | Krańcowa 44, 61-037 Poznań, Polska",
+			"Jasin | Rabowicka 10/1",
+			"Kraków odrzucone, bo adres ma „libertowska”: Góra Libertowska 10",
+			"Modlniczka | Profesora Adama Rożańskiego 28/30",
+			"Przeźmierowo | Poznańska 33",
+			"sam serwis: Auto BZ Sp. z o.o. Sp. k. Autoryzowany Serwis Volkswagen Łódź | Brzezińska 17, 92-103 Łódź, Polska",
+			"sam serwis: Autoryzowany Serwis Volkswagen Plichta Bydgoszcz (osobowe i dostawcze) | Nowotoruńska 15, 85-854 Bydgoszcz, Polska",
+			"sam serwis: Berdychowski Autoryzowany Serwis Volkswagen | Owsiana 27, 61-666 Poznań, Polska",
+			"sam serwis: BURSIAK Autoryzowany Serwis Volkswagen Škoda | Pabianicka 119/131, 93-490 Łódź, Polska",
+			"sam serwis: Zimny Auto Sp. z o.o. Autoryzowany Serwis Volkswagen Samochody Osobowe Łódź | Rzgowska 142/146, 93-311 Łódź, Polska",
+			"używane albo pośrednik: Centrum Samochodów Używanych | Władysława Wysockiego 65, 15-168 Białystok, Polska",
+			"używane albo pośrednik: Otomoto Lease | Plac Konesera 9, 03-736 Warszawa, Polska",
+			"używane albo pośrednik: Volkswagen Financial Services STORE Samochody używane w finansowaniu | Łopuszańska 36, 02-220 Warszawa, Polska"
+		],
+		"Volvo": [
+			"Baranowo | Poznańska 30",
+			"Bielany Wrocławskie | Wrocławska 1",
+			"Dąbrowa | Kamienna",
+			"Konopnica | Konopnica 157F",
+			"Rudna Mała | Rudna Mała 610",
+			"sam serwis: V-Tech Niezależny Serwis Volvo Opole | Polska, Dworska 2A, 45-752 Opole, Polska",
+			"sam serwis: VCENTRUM SERWIS VOLVO | Jana Pawła Woronicza 19, 02-625 Warszawa, Polska",
+			"używane albo pośrednik: Volvo Karlik - Salon Samochodów Używanych Selekt | Baraniaka 4, 61-131 Poznań, Polska"
+		],
+		"uwaga": "Adres jest w źródle, ale miejscowość nie jest miastem gry albo leży obok miasta i nie została do niego dopięta."
+	},
+	"wojewodztwa": {
+		"Lubelskie": {
+			"Toyota": [
+				"Biała Podlaska"
+			],
+			"Opel": [
+				"Lublin",
+				"Zamość"
+			],
+			"Citroen": [
+				"Lublin"
+			],
+			"Fiat": [
+				"Lublin"
+			],
+			"Jeep": [
+				"Lublin"
+			],
+			"Alfa Romeo": [
+				"Lublin"
+			],
+			"Skoda": [
+				"Lublin",
+				"Świdnik"
+			],
+			"Audi": [
+				"Świdnik"
+			],
+			"BMW": [
+				"Lublin"
+			],
+			"Cupra": [
+				"Lublin"
+			],
+			"Dacia": [
+				"Lublin"
+			],
+			"Ford": [
+				"Lublin"
+			],
+			"Honda": [
+				"Lublin"
+			],
+			"Hyundai": [
+				"Lublin"
+			],
+			"Kia": [
+				"Lublin"
+			],
+			"Leapmotor": [
+				"Świdnik"
+			],
+			"Mazda": [
+				"Świdnik"
+			],
+			"Mercedes-Benz": [
+				"Lublin"
+			],
+			"MG": [
+				"Lublin"
+			],
+			"MINI": [
+				"Lublin"
+			],
+			"Mitsubishi": [
+				"Lublin"
+			],
+			"Nissan": [
+				"Lublin"
+			],
+			"Porsche": [
+				"Lublin"
+			],
+			"Renault": [
+				"Lublin"
+			],
+			"Suzuki": [
+				"Lublin"
+			],
+			"Volkswagen": [
+				"Świdnik"
+			]
+		},
+		"Podlaskie": {
+			"Toyota": [
+				"Białystok",
+				"Suwałki"
+			],
+			"Opel": [
+				"Białystok"
+			],
+			"Citroen": [
+				"Białystok"
+			],
+			"Fiat": [
+				"Białystok"
+			],
+			"Peugeot": [
+				"Białystok"
+			],
+			"Jeep": [
+				"Białystok"
+			],
+			"Alfa Romeo": [
+				"Białystok"
+			],
+			"Skoda": [
+				"Białystok"
+			],
+			"Cupra": [
+				"Białystok"
+			],
+			"Dacia": [
+				"Białystok"
+			],
+			"Ford": [
+				"Białystok"
+			],
+			"Honda": [
+				"Białystok"
+			],
+			"Hyundai": [
+				"Białystok"
+			],
+			"Land Rover": [
+				"Białystok"
+			],
+			"Leapmotor": [
+				"Białystok"
+			],
+			"Mazda": [
+				"Białystok"
+			],
+			"Mercedes-Benz": [
+				"Białystok"
+			],
+			"MG": [
+				"Białystok"
+			],
+			"Mitsubishi": [
+				"Białystok"
+			],
+			"Nissan": [
+				"Białystok"
+			],
+			"Renault": [
+				"Białystok"
+			],
+			"Seat": [
+				"Białystok"
+			],
+			"Suzuki": [
+				"Białystok"
+			],
+			"Volvo": [
+				"Białystok"
+			],
+			"Volkswagen": [
+				"Białystok"
+			],
+			"Smart": [
+				"Białystok"
+			],
+			"Subaru": [
+				"Białystok"
+			]
+		},
+		"Mazowieckie": {
+			"Toyota": [
+				"mst Warszawa",
+				"Ostrołęka",
+				"Piaseczno",
+				"Płock",
+				"Radom",
+				"Siedlce"
+			],
+			"Opel": [
+				"mst Warszawa",
+				"Płock",
+				"Radom",
+				"Siedlce"
+			],
+			"Citroen": [
+				"mst Warszawa",
+				"Płock",
+				"Radom"
+			],
+			"Fiat": [
+				"mst Warszawa",
+				"Płock",
+				"Radom"
+			],
+			"Peugeot": [
+				"mst Warszawa",
+				"Ostrołęka",
+				"Płock",
+				"Radom",
+				"Siedlce"
+			],
+			"Jeep": [
+				"mst Warszawa"
+			],
+			"Alfa Romeo": [
+				"mst Warszawa",
+				"Płock"
+			],
+			"Skoda": [
+				"Ciechanów",
+				"mst Warszawa",
+				"Płock",
+				"Radom",
+				"Siedlce"
+			],
+			"Audi": [
+				"mst Warszawa"
+			],
+			"BMW": [
+				"mst Warszawa"
+			],
+			"BYD": [
+				"mst Warszawa"
+			],
+			"Cupra": [
+				"mst Warszawa"
+			],
+			"Dacia": [
+				"mst Warszawa"
+			],
+			"DS": [
+				"mst Warszawa"
+			],
+			"Ford": [
+				"mst Warszawa"
+			],
+			"Honda": [
+				"mst Warszawa"
+			],
+			"Hyundai": [
+				"mst Warszawa"
+			],
+			"Jaguar": [
+				"mst Warszawa"
+			],
+			"Kia": [
+				"mst Warszawa"
+			],
+			"Land Rover": [
+				"mst Warszawa"
+			],
+			"Leapmotor": [
+				"mst Warszawa",
+				"Płock"
+			],
+			"Lexus": [
+				"mst Warszawa"
+			],
+			"Mazda": [
+				"mst Warszawa"
+			],
+			"Mercedes-Benz": [
+				"mst Warszawa"
+			],
+			"MG": [
+				"mst Warszawa"
+			],
+			"MINI": [
+				"mst Warszawa"
+			],
+			"Mitsubishi": [
+				"mst Warszawa"
+			],
+			"Nissan": [
+				"mst Warszawa"
+			],
+			"Porsche": [
+				"mst Warszawa"
+			],
+			"Renault": [
+				"mst Warszawa"
+			],
+			"Seat": [
+				"mst Warszawa"
+			],
+			"Suzuki": [
+				"mst Warszawa"
+			],
+			"Volvo": [
+				"mst Warszawa"
+			],
+			"Volkswagen": [
+				"mst Warszawa"
+			],
+			"SsangYong": [
+				"mst Warszawa"
+			],
+			"Alpine": [
+				"mst Warszawa"
+			],
+			"Subaru": [
+				"mst Warszawa"
+			]
+		},
+		"Kujawsko-Pomorskie": {
+			"Toyota": [
+				"Bydgoszcz",
+				"Grudziądz",
+				"Toruń",
+				"Włocławek"
+			],
+			"Opel": [
+				"Bydgoszcz",
+				"Grudziądz",
+				"Inowrocław",
+				"Włocławek"
+			],
+			"Citroen": [
+				"Bydgoszcz"
+			],
+			"Fiat": [
+				"Bydgoszcz",
+				"Grudziądz",
+				"Włocławek"
+			],
+			"Peugeot": [
+				"Bydgoszcz",
+				"Grudziądz"
+			],
+			"Jeep": [
+				"Bydgoszcz",
+				"Włocławek"
+			],
+			"Alfa Romeo": [
+				"Bydgoszcz"
+			],
+			"Skoda": [
+				"Bydgoszcz",
+				"Grudziądz",
+				"Włocławek"
+			],
+			"Audi": [
+				"Bydgoszcz"
+			],
+			"BMW": [
+				"Bydgoszcz"
+			],
+			"BYD": [
+				"Bydgoszcz"
+			],
+			"Cupra": [
+				"Bydgoszcz"
+			],
+			"Dacia": [
+				"Bydgoszcz"
+			],
+			"Ford": [
+				"Bydgoszcz"
+			],
+			"Hyundai": [
+				"Bydgoszcz"
+			],
+			"Jaguar": [
+				"Bydgoszcz"
+			],
+			"Kia": [
+				"Bydgoszcz"
+			],
+			"Land Rover": [
+				"Bydgoszcz"
+			],
+			"Leapmotor": [
+				"Bydgoszcz",
+				"Grudziądz"
+			],
+			"Mazda": [
+				"Bydgoszcz"
+			],
+			"MG": [
+				"Bydgoszcz"
+			],
+			"Renault": [
+				"Bydgoszcz"
+			],
+			"Seat": [
+				"Bydgoszcz"
+			],
+			"Volvo": [
+				"Bydgoszcz"
+			],
+			"Volkswagen": [
+				"Bydgoszcz"
+			],
+			"SsangYong": [
+				"Bydgoszcz"
+			]
+		},
+		"Śląskie": {
+			"Toyota": [
+				"Bytom",
+				"Chorzów",
+				"Częstochowa",
+				"Katowice",
+				"Rybnik",
+				"Sosnowiec",
+				"Tychy",
+				"Zabrze"
+			],
+			"Tesla": [
+				"Katowice"
+			],
+			"Opel": [
+				"Bielsko-Biała",
+				"Jastrzębie-Zdrój",
+				"Katowice",
+				"Mikołów",
+				"Ruda Śląska",
+				"Rybnik",
+				"Sosnowiec",
+				"Tarnowskie Góry",
+				"Tychy"
+			],
+			"Citroen": [
+				"Mikołów",
+				"Ruda Śląska",
+				"Rybnik",
+				"Sosnowiec"
+			],
+			"Fiat": [
+				"Bielsko-Biała",
+				"Częstochowa",
+				"Sosnowiec"
+			],
+			"Peugeot": [
+				"Bielsko-Biała",
+				"Katowice",
+				"Ruda Śląska",
+				"Rybnik",
+				"Sosnowiec",
+				"Tychy"
+			],
+			"Jeep": [
+				"Bielsko-Biała",
+				"Częstochowa",
+				"Sosnowiec"
+			],
+			"Alfa Romeo": [
+				"Bielsko-Biała",
+				"Sosnowiec"
+			],
+			"Skoda": [
+				"Bielsko-Biała",
+				"Bytom",
+				"Częstochowa",
+				"Dąbrowa Górnicza",
+				"Gliwice",
+				"Katowice",
+				"Rybnik",
+				"Sosnowiec",
+				"Świętochłowice",
+				"Tychy",
+				"Zabrze"
+			],
+			"Audi": [
+				"Katowice"
+			],
+			"BMW": [
+				"Katowice"
+			],
+			"BYD": [
+				"Katowice",
+				"Rybnik",
+				"Tychy"
+			],
+			"Cupra": [
+				"Katowice"
+			],
+			"Dacia": [
+				"Katowice"
+			],
+			"DS": [
+				"Katowice"
+			],
+			"Ford": [
+				"Katowice"
+			],
+			"Honda": [
+				"Katowice"
+			],
+			"Hyundai": [
+				"Katowice"
+			],
+			"Jaguar": [
+				"Katowice"
+			],
+			"Kia": [
+				"Chorzów",
+				"Gliwice",
+				"Katowice"
+			],
+			"Land Rover": [
+				"Bielsko-Biała",
+				"Katowice"
+			],
+			"Leapmotor": [
+				"Bielsko-Biała",
+				"Częstochowa",
+				"Jastrzębie-Zdrój",
+				"Katowice"
+			],
+			"Lexus": [
+				"Katowice"
+			],
+			"Mazda": [
+				"Katowice"
+			],
+			"Mercedes-Benz": [
+				"Ruda Śląska",
+				"Sosnowiec"
+			],
+			"MG": [
+				"Katowice"
+			],
+			"MINI": [
+				"Katowice"
+			],
+			"Mitsubishi": [
+				"Katowice"
+			],
+			"Nissan": [
+				"Chorzów",
+				"Sosnowiec"
+			],
+			"Porsche": [
+				"Katowice",
+				"Świętochłowice"
+			],
+			"Renault": [
+				"Katowice"
+			],
+			"Seat": [
+				"Katowice"
+			],
+			"Suzuki": [
+				"Katowice",
+				"Sosnowiec"
+			],
+			"Volvo": [
+				"Bielsko-Biała",
+				"Chorzów",
+				"Katowice"
+			],
+			"Volkswagen": [
+				"Katowice",
+				"Świętochłowice"
+			],
+			"SsangYong": [
+				"Katowice"
+			],
+			"Smart": [
+				"Bielsko-Biała"
+			],
+			"Subaru": [
+				"Katowice"
+			]
+		},
+		"Warmińsko-Mazurskie": {
+			"Toyota": [
+				"Ełk",
+				"Olsztyn"
+			],
+			"Opel": [
+				"Elbląg",
+				"Giżycko",
+				"Olsztyn"
+			],
+			"Citroen": [
+				"Elbląg",
+				"Ełk",
+				"Olsztyn"
+			],
+			"Fiat": [
+				"Olsztyn"
+			],
+			"Peugeot": [
+				"Ełk"
+			],
+			"Jeep": [
+				"Olsztyn"
+			],
+			"Skoda": [
+				"Elbląg",
+				"Ełk",
+				"Olsztyn",
+				"Pisz"
+			],
+			"Audi": [
+				"Olsztyn"
+			],
+			"BMW": [
+				"Olsztyn"
+			],
+			"Cupra": [
+				"Olsztyn"
+			],
+			"Dacia": [
+				"Olsztyn"
+			],
+			"DS": [
+				"Olsztyn"
+			],
+			"Ford": [
+				"Olsztyn"
+			],
+			"Honda": [
+				"Olsztyn"
+			],
+			"Hyundai": [
+				"Olsztyn"
+			],
+			"Leapmotor": [
+				"Olsztyn"
+			],
+			"Lexus": [
+				"Olsztyn"
+			],
+			"Mazda": [
+				"Olsztyn"
+			],
+			"Mercedes-Benz": [
+				"Olsztyn"
+			],
+			"MG": [
+				"Olsztyn"
+			],
+			"Nissan": [
+				"Olsztyn"
+			],
+			"Renault": [
+				"Olsztyn"
+			],
+			"Volvo": [
+				"Olsztyn"
+			],
+			"Volkswagen": [
+				"Olsztyn"
+			]
+		},
+		"Pomorskie": {
+			"Toyota": [
+				"Gdańsk",
+				"Słupsk"
+			],
+			"Tesla": [
+				"Gdańsk"
+			],
+			"Opel": [
+				"Człuchów",
+				"Gdańsk",
+				"Gdynia",
+				"Słupsk"
+			],
+			"Citroen": [
+				"Gdynia",
+				"Słupsk"
+			],
+			"Fiat": [
+				"Gdańsk",
+				"Gdynia",
+				"Słupsk"
+			],
+			"Peugeot": [
+				"Gdynia",
+				"Słupsk"
+			],
+			"Jeep": [
+				"Gdańsk",
+				"Gdynia",
+				"Słupsk"
+			],
+			"Alfa Romeo": [
+				"Gdańsk",
+				"Gdynia",
+				"Słupsk"
+			],
+			"Skoda": [
+				"Gdańsk",
+				"Gdynia",
+				"Słupsk",
+				"Starogard Gdański",
+				"Wejherowo"
+			],
+			"Audi": [
+				"Gdańsk"
+			],
+			"BMW": [
+				"Gdańsk"
+			],
+			"BYD": [
+				"Gdańsk"
+			],
+			"Cupra": [
+				"Gdańsk"
+			],
+			"DS": [
+				"Gdańsk"
+			],
+			"Ford": [
+				"Gdańsk"
+			],
+			"Honda": [
+				"Gdańsk"
+			],
+			"Hyundai": [
+				"Gdańsk"
+			],
+			"Jaguar": [
+				"Gdańsk"
+			],
+			"Kia": [
+				"Gdańsk"
+			],
+			"Land Rover": [
+				"Gdańsk"
+			],
+			"Leapmotor": [
+				"Gdańsk"
+			],
+			"Lexus": [
+				"Gdańsk"
+			],
+			"Mazda": [
+				"Gdańsk"
+			],
+			"Mercedes-Benz": [
+				"Gdańsk"
+			],
+			"MG": [
+				"Gdańsk"
+			],
+			"MINI": [
+				"Gdańsk"
+			],
+			"Mitsubishi": [
+				"Gdańsk"
+			],
+			"Nissan": [
+				"Gdańsk"
+			],
+			"Porsche": [
+				"Gdańsk",
+				"Sopot"
+			],
+			"Renault": [
+				"Gdańsk"
+			],
+			"Seat": [
+				"Gdańsk"
+			],
+			"Volvo": [
+				"Gdańsk"
+			],
+			"Volkswagen": [
+				"Gdańsk"
+			],
+			"Subaru": [
+				"Gdańsk"
+			]
+		},
+		"Podkarpackie": {
+			"Toyota": [
+				"Jasło",
+				"Mielec",
+				"Stalowa Wola"
+			],
+			"Opel": [
+				"Krosno"
+			],
+			"Citroen": [
+				"Krosno"
+			],
+			"Fiat": [
+				"Krosno",
+				"Rzeszów"
+			],
+			"Peugeot": [
+				"Krosno"
+			],
+			"Jeep": [
+				"Rzeszów"
+			],
+			"Alfa Romeo": [
+				"Rzeszów"
+			],
+			"Skoda": [
+				"Mielec",
+				"Stalowa Wola"
+			],
+			"Audi": [
+				"Rzeszów"
+			],
+			"Cupra": [
+				"Rzeszów"
+			],
+			"Dacia": [
+				"Rzeszów"
+			],
+			"Ford": [
+				"Rzeszów"
+			],
+			"Honda": [
+				"Rzeszów"
+			],
+			"Hyundai": [
+				"Rzeszów"
+			],
+			"Kia": [
+				"Rzeszów"
+			],
+			"Leapmotor": [
+				"Rzeszów"
+			],
+			"Mazda": [
+				"Rzeszów"
+			],
+			"Mercedes-Benz": [
+				"Rzeszów"
+			],
+			"MG": [
+				"Rzeszów"
+			],
+			"Mitsubishi": [
+				"Rzeszów"
+			],
+			"Nissan": [
+				"Rzeszów"
+			],
+			"Porsche": [
+				"Rzeszów"
+			],
+			"Renault": [
+				"Rzeszów"
+			],
+			"Seat": [
+				"Rzeszów"
+			],
+			"Volkswagen": [
+				"Rzeszów"
+			],
+			"SsangYong": [
+				"Rzeszów"
+			],
+			"Smart": [
+				"Rzeszów"
+			],
+			"Subaru": [
+				"Rzeszów"
+			]
+		},
+		"Dolnośląskie": {
+			"Toyota": [
+				"Jelenia Góra",
+				"Lubin",
+				"Wałbrzych",
+				"Wrocław"
+			],
+			"Opel": [
+				"Legnica",
+				"Lubin",
+				"Wrocław"
+			],
+			"Citroen": [
+				"Legnica",
+				"Wrocław"
+			],
+			"Fiat": [
+				"Legnica",
+				"Wrocław"
+			],
+			"Peugeot": [
+				"Legnica",
+				"Wrocław"
+			],
+			"Jeep": [
+				"Legnica",
+				"Wrocław"
+			],
+			"Alfa Romeo": [
+				"Wrocław"
+			],
+			"Skoda": [
+				"Jelenia Góra",
+				"Lubin",
+				"Wałbrzych",
+				"Wrocław",
+				"Zgorzelec"
+			],
+			"Audi": [
+				"Wrocław"
+			],
+			"BMW": [
+				"Wrocław"
+			],
+			"BYD": [
+				"Wrocław"
+			],
+			"Cupra": [
+				"Wrocław"
+			],
+			"Dacia": [
+				"Wrocław"
+			],
+			"DS": [
+				"Wrocław"
+			],
+			"Ford": [
+				"Wrocław"
+			],
+			"Honda": [
+				"Wrocław"
+			],
+			"Hyundai": [
+				"Wrocław"
+			],
+			"Kia": [
+				"Wrocław"
+			],
+			"Leapmotor": [
+				"Wrocław"
+			],
+			"Lexus": [
+				"Wrocław"
+			],
+			"Mazda": [
+				"Wrocław"
+			],
+			"Mercedes-Benz": [
+				"Wrocław"
+			],
+			"MINI": [
+				"Wrocław"
+			],
+			"Nissan": [
+				"Wrocław"
+			],
+			"Porsche": [
+				"Wrocław"
+			],
+			"Renault": [
+				"Wrocław"
+			],
+			"Seat": [
+				"Wrocław"
+			],
+			"Volvo": [
+				"Wrocław"
+			],
+			"Volkswagen": [
+				"Wrocław"
+			],
+			"SsangYong": [
+				"Wrocław"
+			]
+		},
+		"Wielkopolskie": {
+			"Toyota": [
+				"Kalisz",
+				"Konin",
+				"Leszno",
+				"Poznań"
+			],
+			"Opel": [
+				"Kalisz",
+				"Konin",
+				"Piła",
+				"Poznań"
+			],
+			"Citroen": [
+				"Kalisz",
+				"Konin",
+				"Piła",
+				"Poznań"
+			],
+			"Fiat": [
+				"Jarocin",
+				"Kalisz",
+				"Konin",
+				"Ostrów Wielkopolski",
+				"Piła",
+				"Poznań"
+			],
+			"Peugeot": [
+				"Kalisz",
+				"Konin",
+				"Piła",
+				"Poznań"
+			],
+			"Jeep": [
+				"Kalisz",
+				"Konin",
+				"Ostrów Wielkopolski",
+				"Piła",
+				"Poznań"
+			],
+			"Alfa Romeo": [
+				"Poznań"
+			],
+			"Skoda": [
+				"Kalisz",
+				"Leszno",
+				"Piła",
+				"Poznań"
+			],
+			"Audi": [
+				"Poznań"
+			],
+			"BMW": [
+				"Poznań"
+			],
+			"BYD": [
+				"Poznań"
+			],
+			"Cupra": [
+				"Poznań"
+			],
+			"Dacia": [
+				"Poznań"
+			],
+			"DS": [
+				"Poznań"
+			],
+			"Ford": [
+				"Poznań"
+			],
+			"Honda": [
+				"Poznań"
+			],
+			"Hyundai": [
+				"Poznań"
+			],
+			"Kia": [
+				"Poznań"
+			],
+			"Leapmotor": [
+				"Kalisz",
+				"Poznań"
+			],
+			"Lexus": [
+				"Leszno",
+				"Poznań"
+			],
+			"Mazda": [
+				"Poznań"
+			],
+			"Mercedes-Benz": [
+				"Poznań"
+			],
+			"MG": [
+				"Poznań"
+			],
+			"MINI": [
+				"Poznań"
+			],
+			"Mitsubishi": [
+				"Poznań"
+			],
+			"Nissan": [
+				"Poznań"
+			],
+			"Porsche": [
+				"Poznań"
+			],
+			"Renault": [
+				"Poznań"
+			],
+			"Seat": [
+				"Poznań"
+			],
+			"Suzuki": [
+				"Poznań"
+			],
+			"Volvo": [
+				"Poznań"
+			],
+			"Volkswagen": [
+				"Poznań"
+			],
+			"Smart": [
+				"Poznań"
+			],
+			"Subaru": [
+				"Poznań"
+			]
+		},
+		"Świętokrzyskie": {
+			"Toyota": [
+				"Kielce"
+			],
+			"Opel": [
+				"Kielce"
+			],
+			"Citroen": [
+				"Kielce"
+			],
+			"Peugeot": [
+				"Kielce"
+			],
+			"Skoda": [
+				"Kielce"
+			],
+			"Audi": [
+				"Kielce"
+			],
+			"BMW": [
+				"Kielce"
+			],
+			"Cupra": [
+				"Kielce"
+			],
+			"Dacia": [
+				"Kielce"
+			],
+			"Ford": [
+				"Kielce"
+			],
+			"Honda": [
+				"Kielce"
+			],
+			"Hyundai": [
+				"Kielce"
+			],
+			"Lexus": [
+				"Kielce"
+			],
+			"Mazda": [
+				"Kielce"
+			],
+			"Mercedes-Benz": [
+				"Kielce"
+			],
+			"MG": [
+				"Kielce"
+			],
+			"Mitsubishi": [
+				"Kielce"
+			],
+			"Nissan": [
+				"Kielce"
+			],
+			"Renault": [
+				"Kielce"
+			],
+			"Seat": [
+				"Kielce"
+			],
+			"Volvo": [
+				"Kielce"
+			],
+			"Volkswagen": [
+				"Kielce"
+			],
+			"SsangYong": [
+				"Kielce"
+			]
+		},
+		"Zachodniopomorskie": {
+			"Toyota": [
+				"Koszalin",
+				"Szczecin"
+			],
+			"Citroen": [
+				"Szczecin"
+			],
+			"Peugeot": [
+				"Szczecin"
+			],
+			"Skoda": [
+				"Koszalin",
+				"Szczecin"
+			],
+			"Audi": [
+				"Szczecin"
+			],
+			"BMW": [
+				"Szczecin"
+			],
+			"BYD": [
+				"Szczecin"
+			],
+			"Cupra": [
+				"Szczecin"
+			],
+			"Dacia": [
+				"Szczecin"
+			],
+			"Ford": [
+				"Koszalin",
+				"Szczecin"
+			],
+			"Hyundai": [
+				"Koszalin",
+				"Szczecin"
+			],
+			"Kia": [
+				"Szczecin"
+			],
+			"Lexus": [
+				"Szczecin"
+			],
+			"Mazda": [
+				"Szczecin"
+			],
+			"Mercedes-Benz": [
+				"Szczecin"
+			],
+			"MINI": [
+				"Szczecin"
+			],
+			"Porsche": [
+				"Szczecin"
+			],
+			"Renault": [
+				"Szczecin"
+			],
+			"Seat": [
+				"Szczecin"
+			],
+			"Volvo": [
+				"Szczecin"
+			],
+			"Volkswagen": [
+				"Szczecin"
+			],
+			"Smart": [
+				"Szczecin"
+			]
+		},
+		"Małopolskie": {
+			"Toyota": [
+				"Kraków",
+				"Nowy Sącz",
+				"Nowy Targ"
+			],
+			"Opel": [
+				"Kraków",
+				"Myślenice",
+				"Nowy Targ",
+				"Oświęcim",
+				"Tarnów"
+			],
+			"Citroen": [
+				"Kraków",
+				"Nowy Targ"
+			],
+			"Fiat": [
+				"Nowy Targ"
+			],
+			"Peugeot": [
+				"Kraków",
+				"Nowy Targ"
+			],
+			"Jeep": [
+				"Kraków",
+				"Nowy Targ"
+			],
+			"Alfa Romeo": [
+				"Kraków"
+			],
+			"Skoda": [
+				"Kraków",
+				"Nowy Sącz",
+				"Nowy Targ",
+				"Tarnów",
+				"Wieliczka"
+			],
+			"Audi": [
+				"Kraków"
+			],
+			"BMW": [
+				"Kraków"
+			],
+			"BYD": [
+				"Kraków",
+				"Myślenice"
+			],
+			"Cupra": [
+				"Kraków"
+			],
+			"Dacia": [
+				"Kraków"
+			],
+			"DS": [
+				"Kraków"
+			],
+			"Ford": [
+				"Kraków"
+			],
+			"Honda": [
+				"Kraków",
+				"Wieliczka"
+			],
+			"Hyundai": [
+				"Kraków"
+			],
+			"Jaguar": [
+				"Kraków"
+			],
+			"Kia": [
+				"Kraków"
+			],
+			"Land Rover": [
+				"Kraków"
+			],
+			"Leapmotor": [
+				"Kraków",
+				"Nowy Targ"
+			],
+			"Lexus": [
+				"Kraków"
+			],
+			"Mazda": [
+				"Kraków"
+			],
+			"Mercedes-Benz": [
+				"Kraków"
+			],
+			"MG": [
+				"Kraków"
+			],
+			"MINI": [
+				"Kraków"
+			],
+			"Mitsubishi": [
+				"Kraków"
+			],
+			"Nissan": [
+				"Kraków"
+			],
+			"Porsche": [
+				"Kraków"
+			],
+			"Renault": [
+				"Kraków"
+			],
+			"Seat": [
+				"Kraków"
+			],
+			"Suzuki": [
+				"Kraków"
+			],
+			"Volvo": [
+				"Kraków"
+			],
+			"Volkswagen": [
+				"Kraków"
+			],
+			"Smart": [
+				"Kraków",
+				"Nowy Sącz"
+			],
+			"Subaru": [
+				"Kraków"
+			]
+		},
+		"Opolskie": {
+			"Toyota": [
+				"Opole"
+			],
+			"Opel": [
+				"Opole"
+			],
+			"Citroen": [
+				"Opole"
+			],
+			"Fiat": [
+				"Opole"
+			],
+			"Peugeot": [
+				"Opole"
+			],
+			"Jeep": [
+				"Opole"
+			],
+			"Alfa Romeo": [
+				"Opole"
+			],
+			"Skoda": [
+				"Kędzierzyn-Koźle",
+				"Opole"
+			],
+			"Audi": [
+				"Opole"
+			],
+			"BMW": [
+				"Opole"
+			],
+			"Dacia": [
+				"Opole"
+			],
+			"Ford": [
+				"Opole"
+			],
+			"Honda": [
+				"Opole"
+			],
+			"Hyundai": [
+				"Opole"
+			],
+			"Kia": [
+				"Opole"
+			],
+			"Mazda": [
+				"Opole"
+			],
+			"MG": [
+				"Opole"
+			],
+			"MINI": [
+				"Opole"
+			],
+			"Nissan": [
+				"Opole"
+			],
+			"Renault": [
+				"Opole"
+			],
+			"Seat": [
+				"Opole"
+			],
+			"Volvo": [
+				"Opole"
+			],
+			"Volkswagen": [
+				"Opole"
+			],
+			"SsangYong": [
+				"Opole"
+			]
+		},
+		"Łódzkie": {
+			"Toyota": [
+				"Łódź",
+				"Sieradz"
+			],
+			"Opel": [
+				"Łódź"
+			],
+			"Citroen": [
+				"Łódź"
+			],
+			"Fiat": [
+				"Łódź"
+			],
+			"Peugeot": [
+				"Łódź"
+			],
+			"Jeep": [
+				"Łódź"
+			],
+			"Alfa Romeo": [
+				"Łódź"
+			],
+			"Skoda": [
+				"Łęczyca",
+				"Łódź",
+				"Piotrków Trybunalski"
+			],
+			"Audi": [
+				"Łódź"
+			],
+			"BMW": [
+				"Łódź"
+			],
+			"BYD": [
+				"Łódź"
+			],
+			"Cupra": [
+				"Łódź"
+			],
+			"Dacia": [
+				"Łódź"
+			],
+			"DS": [
+				"Łódź"
+			],
+			"Ford": [
+				"Łódź"
+			],
+			"Hyundai": [
+				"Łódź"
+			],
+			"Jaguar": [
+				"Łódź"
+			],
+			"Kia": [
+				"Łódź"
+			],
+			"Land Rover": [
+				"Łódź"
+			],
+			"Leapmotor": [
+				"Łódź"
+			],
+			"Lexus": [
+				"Łódź"
+			],
+			"Mazda": [
+				"Łódź"
+			],
+			"Mercedes-Benz": [
+				"Łódź"
+			],
+			"MG": [
+				"Łódź"
+			],
+			"Nissan": [
+				"Łódź"
+			],
+			"Porsche": [
+				"Łódź"
+			],
+			"Renault": [
+				"Łódź"
+			],
+			"Seat": [
+				"Łódź"
+			],
+			"Suzuki": [
+				"Łódź"
+			],
+			"Volvo": [
+				"Łódź"
+			],
+			"Volkswagen": [
+				"Łódź"
+			],
+			"SsangYong": [
+				"Łódź"
+			],
+			"Subaru": [
+				"Łódź"
+			]
+		},
+		"Lubuskie": {
+			"Toyota": [
+				"Zielona Góra"
+			],
+			"Opel": [
+				"Gorzów Wielkopolski",
+				"Zielona Góra"
+			],
+			"Citroen": [
+				"Zielona Góra"
+			],
+			"Fiat": [
+				"Gorzów Wielkopolski",
+				"Zielona Góra"
+			],
+			"Peugeot": [
+				"Zielona Góra"
+			],
+			"Jeep": [
+				"Gorzów Wielkopolski",
+				"Zielona Góra"
+			],
+			"Alfa Romeo": [
+				"Zielona Góra"
+			],
+			"Skoda": [
+				"Gorzów Wielkopolski",
+				"Zielona Góra"
+			],
+			"BMW": [
+				"Zielona Góra"
+			],
+			"Cupra": [
+				"Zielona Góra"
+			],
+			"Ford": [
+				"Zielona Góra"
+			],
+			"Honda": [
+				"Zielona Góra"
+			],
+			"Hyundai": [
+				"Zielona Góra"
+			],
+			"Kia": [
+				"Zielona Góra"
+			],
+			"Leapmotor": [
+				"Zielona Góra"
+			],
+			"Mazda": [
+				"Zielona Góra"
+			],
+			"Mercedes-Benz": [
+				"Zielona Góra"
+			],
+			"MG": [
+				"Zielona Góra"
+			],
+			"Mitsubishi": [
+				"Zielona Góra"
+			],
+			"Nissan": [
+				"Zielona Góra"
+			],
+			"Renault": [
+				"Zielona Góra"
+			],
+			"Seat": [
+				"Zielona Góra"
+			],
+			"Suzuki": [
+				"Zielona Góra"
+			],
+			"Volvo": [
+				"Zielona Góra"
+			],
+			"Volkswagen": [
+				"Zielona Góra"
+			]
+		}
+	},
+	"data_uzupelnienia": "2026-10-27"
+}

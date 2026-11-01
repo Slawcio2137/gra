@@ -1,6 +1,6 @@
 extends SceneTree
 
-## Headless: baza ogłoszeń ≈ ludnosc/5000 ±30%; flaga startu zakładki; odświeżanie po aktywacji.
+## Headless: baza używanych aut = round(ludnosc/1500); flaga startu zakładki; odświeżanie po aktywacji.
 ## godot --headless --quit-after 3 --path . --script res://scripts/test_pula_aut_ludnosc.gd
 
 const Rynek = preload("res://scripts/rynek_zakupow.gd")
@@ -31,7 +31,7 @@ func _uruchom() -> int:
 		printerr("FAIL: brak ludności ", miasto.get("nazwa"))
 		return 1
 	var baza := rynek.baza_ogloszen_aut(lud)
-	var oczek := int(round(float(lud) / 5000.0))
+	var oczek := int(round(float(lud) / 1500.0))
 	if baza != maxi(1, oczek):
 		printerr("FAIL: baza=", baza, " oczekiwano ", maxi(1, oczek), " lud=", lud)
 		return 1
@@ -65,8 +65,15 @@ func _uruchom() -> int:
 		printerr("FAIL: flaga nie ustawiona po aktywacji")
 		return 1
 	var auta1 := rynek.ile_aut_w_miescie(swiat["rynek_zakupow"]["oferty"], mid)
-	if auta1 < pasmo.x or auta1 > pasmo.y:
-		printerr("FAIL: auta po aktywacji=", auta1, " poza pasmem ", pasmo.x, "..", pasmo.y)
+	var wszystkie1 := 0
+	for o_l in swiat["rynek_zakupow"]["oferty"]:
+		if o_l is Dictionary and str(o_l.get("kategoria", "")) == "samochod":
+			wszystkie1 += 1
+	if wszystkie1 <= 0 or wszystkie1 > rynek.limit_okna_aut():
+		printerr("FAIL: otwarcie zbudowało ", wszystkie1, " aut, okno=", rynek.limit_okna_aut())
+		return 1
+	if auta1 <= 0:
+		printerr("FAIL: brak używanych po otwarciu")
 		return 1
 	# Pula lokalna = tylko używane (licznik nie obejmuje nowych z katalogu).
 	var nowe_w_liczniku := 0
@@ -97,13 +104,19 @@ func _uruchom() -> int:
 	if uzywane_lokalne != auta1:
 		printerr("FAIL: używane lokalne=", uzywane_lokalne, " != licznik ", auta1)
 		return 1
-	if nowe_katalog < 50:
-		printerr("FAIL: za mało nowych z katalogu: ", nowe_katalog)
+	if nowe_katalog > rynek.limit_okna_aut():
+		printerr("FAIL: za dużo nowych na starcie: ", nowe_katalog)
 		return 1
-	if sprowadzenie_widziane < 1:
-		printerr("FAIL: brak flagi sprowadzenie/import wśród nowych")
+	var sa_importy := false
+	var kat_modele: Array = rynek.katalog_aut().get("modele", []) if rynek.katalog_aut().get("modele") is Array else []
+	for m_imp in kat_modele:
+		if m_imp is Dictionary and (bool(m_imp.get("sprowadzenie", false)) or bool(m_imp.get("import", false))):
+			sa_importy = true
+			break
+	if not sa_importy:
+		printerr("FAIL: katalog nie ma flagi sprowadzenie/import")
 		return 1
-	print("OK aktywacja: używane=", auta1, " nowe_katalog=", nowe_katalog, " sprowadzenie=", sprowadzenie_widziane)
+	print("OK aktywacja: używane=", auta1, " nowe_katalog=", nowe_katalog, " sprowadzenie_w_oknie=", sprowadzenie_widziane)
 
 	# vmax z katalogu (bez zmyślania) + spalanie_przy_vmax ukryte; delta/nie_jezdzi z usterek
 	var widziano_vmax := false
@@ -137,14 +150,27 @@ func _uruchom() -> int:
 		return 1
 	print("OK vmax katalogowe + spalanie_przy_vmax (null_ok=", widziano_null_vmax, ")")
 
-	# Odświeżanie tygodniowe zostaje w paśmie
+	# Tura nie dokłada aut. Po 4 tygodniach stare schodzą i nadal nic nie dochodzi.
+	var przed_tura := wszystkie1
 	swiat["tydzien"] = 2
 	rynek.zapewnij_pule(swiat, miasta, mid, 2)
-	var auta2 := rynek.ile_aut_w_miescie(swiat["rynek_zakupow"]["oferty"], mid)
-	if auta2 < pasmo.x or auta2 > pasmo.y:
-		printerr("FAIL: po turze auta=", auta2, " poza pasmem")
+	var po_turze := 0
+	for o_t in swiat["rynek_zakupow"]["oferty"]:
+		if o_t is Dictionary and str(o_t.get("kategoria", "")) == "samochod":
+			po_turze += 1
+	if po_turze > przed_tura:
+		printerr("FAIL: tura dodała auta ", przed_tura, " -> ", po_turze)
 		return 1
-	print("OK po turze auta=", auta2)
+	swiat["tydzien"] = 1 + rynek._waznosc_ogloszenia_aut()
+	rynek.zapewnij_pule(swiat, miasta, mid, int(swiat["tydzien"]))
+	var po_wygasnieciu := 0
+	for o_w in swiat["rynek_zakupow"]["oferty"]:
+		if o_w is Dictionary and str(o_w.get("kategoria", "")) == "samochod":
+			po_wygasnieciu += 1
+	if po_wygasnieciu > 0:
+		printerr("FAIL: po ważności zostały auta ", po_wygasnieciu)
+		return 1
+	print("OK tura bez nowych, po ważności auta=", po_wygasnieciu)
 
 	# Przejazd: cena paliwa null → „—”
 	var przejazd = Przejazd.new()

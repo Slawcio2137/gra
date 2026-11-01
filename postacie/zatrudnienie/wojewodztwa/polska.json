@@ -1,0 +1,40 @@
+{
+	"nazwa": "Polska",
+	"ogolem_zrodlo": 15142530,
+	"sekcje": {
+		"A": 1228327,
+		"B": 132784,
+		"C": 2790222,
+		"D": 113096,
+		"E": 167459,
+		"F": 1044397,
+		"G": 2238159,
+		"H": 930274,
+		"I": 320142,
+		"J": 531957,
+		"K": 324234,
+		"L": 177155,
+		"M": 834171,
+		"N": 557247,
+		"O": 1030648,
+		"P": 1204818,
+		"Q": 967423,
+		"R": 169187,
+		"S": 380830
+	},
+	"sekcje_zero_bo_nie_wystapily": [],
+	"sekcje_nieopublikowane": [],
+	"zrodlo": {
+		"kto": "Główny Urząd Statystyczny",
+		"tytul": "Pracujący w gospodarce narodowej w 2023 roku, tabl. 1. Pracujący według sekcji PKD i miejsca zamieszkania",
+		"stan": "2023-12-31",
+		"rok": 2023,
+		"url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/pracujacy-zatrudnieni-wynagrodzenia-koszty-pracy/pracujacy-w-gospodarce-narodowej-w-2023-roku,7,21.html",
+		"plik": "https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5474/7/21/1/pracujacy_w_gospodarce_narodowej_w_2023.xlsx",
+		"jednostka": "osoby",
+		"plec": "ogółem",
+		"znak_kreska": "Zjawisko nie wystąpiło. W pliku gry jest 0.",
+		"znak_kropka": "Brak informacji albo tajemnica. Tej sekcji nie ma w wagach, nie wpisuję zera.",
+		"wiersz": "TERYT 0000000 Polska. To suma 16 województw z tej tablicy. Osobny wiersz OGÓŁEM ma 15178138 osób i górnictwo 132821. Gra bierze wiersz TERYT, bo schodzi się z województwami."
+	}
+}

@@ -29,6 +29,16 @@
 		"pogłębianie_stub": true,
 		"propozycja_do_poprawki": true
 	},
+	"plusy_dobr": {
+		"propozycja_do_poprawki": true,
+		"opis": "Telefon, laptop, komputer, rower i sprzęt dają zadowolenie tylko plusami, od + do ++++. Przesuwają ukryte zadowolenie_docelowe o 1, 2, 3 albo 4. Na karcie same plusy, bez cyfry przesunięcia. W typie liczy się najlepszy posiadany egzemplarz, nie suma. Drugi taki sam nic nie dodaje. Lepszy dodaje tylko różnicę. Oddanie lepszego wraca do następnego, który jeszcze jest. Wygoda lokum zostaje.",
+		"mapa": {
+			"nowy_bez_usterek": 4,
+			"nowy_z_usterka_albo_uzywany_bez_usterek_stan_od_80": 3,
+			"uzywany_powaga_do_3_i_stan_od_50": 2,
+			"reszta_uszkodzonych": 1
+		}
+	},
 	"dryf_tury": {
 		"propozycja_do_poprawki": true,
 		"wzor": "nowe = obecne + 0.5 * (docelowe - obecne)",

@@ -1,12 +1,21 @@
 {
+    "przypomnienie": "gdy użytkownik zapyta, co mieliśmy zrobić, co pominęliśmy, albo co zostało, odpowiedź ma wymienić ustalamy cenę paliwa. Obecne wartości to tylko wpis tymczasowy: benzyna 6 zł/l, gaz 2,5 zł/l, prąd 0,9 zł/kWh.",
     "nazwa": "Polska",
     "cena_paliwa": {
-        "pb95": null,
+        "benzyna": 6,
+        "pb95": 6,
+        "gaz": 2.5,
+        "lpg": 2.5,
+        "energia": 0.9,
         "olej_napedowy": null,
-        "jednostka": "zl/l",
-        "zrodlo": null,
-        "data": null,
-        "uwaga": "Liczby nie wpisane. Biuletyn Komisji Europejskiej (Weekly Oil Bulletin) podaje ceny, ale plik z tabelą nie został tu odczytany. Nie przepisano cen z omówień wtórnych."
+        "jednostka_benzyna": "zl/l",
+        "jednostka_gaz": "zl/l",
+        "jednostka_energia": "zl/kWh",
+        "tymczasowe": true,
+        "propozycja_do_poprawki": true,
+        "data": "2026-10-27",
+        "zrodlo": "wpis użytkownika z 2026-10-27, nie cennik stacji",
+        "uwaga": "Tymczasowe liczby ustawione przez użytkownika: benzyna 6 zł/l, gaz LPG 2,5 zł/l, energia 0,9 zł/kWh. To nie są dane GUS, NBP ani ORLEN. Prawdziwe ceny stacji i ładowania nie są ustalone. Olej napędowy zostaje null — nie podstawiać tu 6 zł. Hybryda ze spalaniem w l/100 km idzie na benzynę. cena_pradu obok to nadal informacja URE o gospodarstwie domowym, nie ta stawka."
     },
     "cena_pradu": {
         "wartosc": 0.9198,
