@@ -23,6 +23,7 @@ const KRWISTY := "#9d0610"
 const TEKST_CIEMNY := Color(0.12, 0.14, 0.16, 1)
 const PLIK_EMOTIKONOW := "res://ui/pasek_emotikony.json"
 const SkryptUiWspolne = preload("res://scripts/ui_wspolne.gd")
+const SkryptStanuGry = preload("res://scripts/stan_gry.gd")
 
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
@@ -117,8 +118,12 @@ var _mapa_ikona: Texture2D
 var _ui: UiWspolne
 ## Moduły ekranów. Świat, zapis i nawigacja zostają w tym skrypcie.
 
+var _stan: StanGry
+
 func _init() -> void:
 	_ui = SkryptUiWspolne.new(self)
+	_stan = SkryptStanuGry.new(self)
+
 
 
 func _ready() -> void:
@@ -197,8 +202,8 @@ func _on_wczytaj_pressed() -> void:
 		_swiat["majatek"] = {"nieruchomosci": [], "dobra": []}
 	if not (_swiat.get("rynek_zakupow") is Dictionary):
 		_swiat["rynek_zakupow"] = {}
-	if not (_swiat.get("lokum_startowe") is Dictionary) or not _lokum_pelne(_swiat.get("lokum_startowe")):
-		_swiat["lokum_startowe"] = _zbuduj_lokum_dla_swiata()
+	if not (_swiat.get("lokum_startowe") is Dictionary) or not _stan._lokum_pelne(_swiat.get("lokum_startowe")):
+		_swiat["lokum_startowe"] = _stan._zbuduj_lokum_dla_swiata()
 	_rynek_zakupow.przelicz_zadowolenie_docelowe(_swiat)
 	_odswiez_flage_jedzenia_sam()
 	_odswiez_rynek_zakupow()
@@ -212,7 +217,7 @@ func _on_wczytaj_pressed() -> void:
 		if not (rodzina is Dictionary):
 			rodzina = {}
 		_jedzenie.ustaw_z_losowania(bohater, rodzina)
-	_zsynchronizuj_pieniadze_z_bohatera()
+	_stan._zsynchronizuj_pieniadze_z_bohatera()
 	_wejdz()
 
 
@@ -224,7 +229,7 @@ func _on_nastepna_tura() -> void:
 	if tydzien > 52:
 		tydzien = 1
 		rok += 1
-		var bohater := _bohater()
+		var bohater := _stan._bohater()
 		if _ui._jest_liczba(bohater.get("wiek")):
 			bohater["wiek"] = int(bohater["wiek"]) + 1
 			_swiat["bohater"] = bohater
@@ -240,14 +245,14 @@ func _on_nastepna_tura() -> void:
 	_efekt_fala2_tydzien()
 	_losuj_eventy_tury()
 	_fallback_nauki_szkolnej()
-	_efekt_wygody_tydzien()
+	_stan._efekt_wygody_tydzien()
 	var wynik_pracy: Variant = _rynek_pracy.tick(_swiat)
 	if wynik_pracy is Dictionary:
 		var wyplata_pracy := int(wynik_pracy.get("wyplata", 0))
 		var zdanie_pracy := str(wynik_pracy.get("tekst", ""))
 		if wyplata_pracy > 0:
-			_dodaj_pieniadze(wyplata_pracy)
-			_dodaj_wplyw("praca", wyplata_pracy, zdanie_pracy)
+			_stan._dodaj_pieniadze(wyplata_pracy)
+			_stan._dodaj_wplyw("praca", wyplata_pracy, zdanie_pracy)
 		var pasek_pracy := str(wynik_pracy.get("pasek_tekst", ""))
 		if pasek_pracy != "":
 			_swiat["praca_komunikat"] = zdanie_pracy + "\n" + pasek_pracy if zdanie_pracy != "" else pasek_pracy
@@ -278,29 +283,16 @@ func _wyplata_kieszonkowego_tydzien() -> void:
 		rodzina = {}
 	var ziarno := ZiarnoRodzicow.new()
 	var wynik: Dictionary = ziarno.wyplata_tygodniowa_kieszonkowego(
-		rodzina, tryb, true, _swiat.get("kieszonkowe_kwota_zl", null), _wiek_lat()
+		rodzina, tryb, true, _swiat.get("kieszonkowe_kwota_zl", null), _stan._wiek_lat()
 	)
 	if not bool(wynik.get("dodano", false)) or not _ui._jest_liczba(wynik.get("kwota")):
 		return
-	_dodaj_pieniadze(int(wynik["kwota"]))
-	_dodaj_wplyw(str(wynik.get("zrodlo_wplywu", "kieszonkowe")), int(wynik["kwota"]), str(wynik.get("tekst", "")))
+	_stan._dodaj_pieniadze(int(wynik["kwota"]))
+	_stan._dodaj_wplyw(str(wynik.get("zrodlo_wplywu", "kieszonkowe")), int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	_swiat["kieszonkowe_ostatnia_wyplata_tydzien"] = tydzien
 	var tekst := str(wynik.get("tekst", ""))
 	_swiat["komunikat_tury"] = tekst
 	_swiat["ostatnie_kieszonkowe_tekst"] = tekst
-
-
-func _efekt_wygody_tydzien() -> void:
-	_swiat["ostatni_efekt_wygody_tekst"] = ""
-	if not (_swiat.get("lokum_startowe") is Dictionary) or not _lokum_pelne(_swiat.get("lokum_startowe")):
-		_swiat["lokum_startowe"] = _zbuduj_lokum_dla_swiata()
-	var wynik: Dictionary = _rynek_zakupow.efekt_wygody_tydzien(_swiat)
-	var tekst := str(wynik.get("tekst", "")).strip_edges()
-	_swiat["ostatni_efekt_wygody_tekst"] = tekst
-	if tekst == "":
-		return
-	var kom := str(_swiat.get("komunikat_tury", "")).strip_edges()
-	_swiat["komunikat_tury"] = tekst if kom == "" else kom + "\n" + tekst
 
 
 func _on_ustawienia_pressed() -> void:
@@ -375,7 +367,7 @@ func _nowa_gra() -> void:
 	wynik["zajecia_dodatkowe"] = []
 	wynik["lotnictwo"] = {"licencje": [], "hangar": false, "smiglowce_odblokowane": false}
 	var rodzenstwo := _losowanie.losuj_rodzenstwo(wynik)
-	_uzupelnij_normy_bohatera(wynik)
+	_stan._uzupelnij_normy_bohatera(wynik)
 	_jedzenie.ustaw_z_losowania(wynik, rodzina)
 	var nazwa := ""
 	var typ := ""
@@ -525,26 +517,6 @@ func _indeksuj_akcje_rekurencyjnie(lista: Array) -> void:
 			_akcje_po_id[id] = akcja
 		if akcja.get("dzieci") is Array:
 			_indeksuj_akcje_rekurencyjnie(akcja["dzieci"])
-
-
-func _uzupelnij_normy_bohatera(bohater: Dictionary) -> void:
-	var psychika: Variant = _emotikony.get("psychika", {})
-	var zmeczenie: Variant = _emotikony.get("zmeczenie_fizyczne", _emotikony.get("zmeczenie", {}))
-	var zmeczenie_p: Variant = _emotikony.get("zmeczenie_psychiczne", {})
-	if not _ui._jest_liczba(bohater.get("psychika")) and psychika is Dictionary and _ui._jest_liczba(psychika.get("norma")):
-		bohater["psychika"] = int(psychika["norma"])
-	if not _ui._jest_liczba(bohater.get("zmeczenie_fizyczne")):
-		if _ui._jest_liczba(bohater.get("zmeczenie")):
-			bohater["zmeczenie_fizyczne"] = int(bohater["zmeczenie"])
-		elif zmeczenie is Dictionary and _ui._jest_liczba(zmeczenie.get("norma")):
-			bohater["zmeczenie_fizyczne"] = int(zmeczenie["norma"])
-	if _ui._jest_liczba(bohater.get("zmeczenie_fizyczne")):
-		bohater["zmeczenie"] = int(bohater["zmeczenie_fizyczne"])
-	elif not _ui._jest_liczba(bohater.get("zmeczenie")) and zmeczenie is Dictionary and _ui._jest_liczba(zmeczenie.get("norma")):
-		bohater["zmeczenie"] = int(zmeczenie["norma"])
-		bohater["zmeczenie_fizyczne"] = int(zmeczenie["norma"])
-	if not _ui._jest_liczba(bohater.get("zmeczenie_psychiczne")) and zmeczenie_p is Dictionary and _ui._jest_liczba(zmeczenie_p.get("norma")):
-		bohater["zmeczenie_psychiczne"] = int(zmeczenie_p["norma"])
 
 
 func _zbuduj_zakladki() -> void:
@@ -935,11 +907,11 @@ func _ekran_dom() -> void:
 		_ui._tresc_biala().add_child(_ui._napis_ekranu(tekst, 20))
 	else:
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Dom. Brak nazwy w zapisie.", 16))
-	_ui._tresc_biala().add_child(_ui._napis_ekranu(_opis_lokalizacji(), 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(_stan._opis_lokalizacji(), 15))
 
 
 func _ekran_zdrowie() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var skrot := str(bohater.get("zdrowie_skrot", ""))
 	if skrot != "":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu(skrot, 18))
@@ -956,7 +928,7 @@ func _ekran_zdrowie() -> void:
 
 
 func _ekran_postac() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var imie := _ui._tekst_pusty(bohater.get("imie"))
 	var nazwisko := _ui._tekst_pusty(bohater.get("nazwisko"))
 	if imie != "" or nazwisko != "":
@@ -1005,7 +977,7 @@ func _ekran_postac() -> void:
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Flaga: depresja.", 14))
 	# Docelowe tylko w trybie deweloperskim — nigdy na pasku / w normalnej grze.
 	if DostepStatystyk.POKAZ_STATYSTYKI:
-		var doc_dev := _ui._tekst_liczby(_bohater().get("zadowolenie_docelowe"))
+		var doc_dev := _ui._tekst_liczby(_stan._bohater().get("zadowolenie_docelowe"))
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Docelowe (dev, ukryte): %s" % (doc_dev if doc_dev != "" else "—"), 14))
 
 
@@ -1293,7 +1265,7 @@ func _on_kieszonkowe_dziadkowie() -> void:
 		return
 	var dziad := Dziadkowie.new()
 	var inteligencja := 1
-	var boh := _bohater()
+	var boh := _stan._bohater()
 	if boh.get("inteligencja") is Array and not (boh["inteligencja"] as Array).is_empty():
 		inteligencja = 2
 	elif _ui._jest_liczba(boh.get("inteligencja")):
@@ -1305,8 +1277,8 @@ func _on_kieszonkowe_dziadkowie() -> void:
 	_swiat["rodzina"] = rodzina
 	_swiat["ostatnie_kieszonkowe_dziadkowie_tekst"] = str(wynik.get("tekst", ""))
 	if bool(wynik.get("ok", false)) and _ui._jest_liczba(wynik.get("kwota")):
-		_dodaj_pieniadze(int(wynik["kwota"]))
-		_dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
+		_stan._dodaj_pieniadze(int(wynik["kwota"]))
+		_stan._dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	SkryptZapisu.zapisz(_swiat)
 	_odswiez_pasek_statystyk(true)
 	_zaplanuj_stos()
@@ -1322,8 +1294,8 @@ func _wyplata_kieszonkowego_dziadkow_tydzien() -> void:
 	rodzina["dziadkowie"] = stan_d
 	_swiat["rodzina"] = rodzina
 	if bool(wynik.get("ok", false)) and _ui._jest_liczba(wynik.get("kwota")):
-		_dodaj_pieniadze(int(wynik["kwota"]))
-		_dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
+		_stan._dodaj_pieniadze(int(wynik["kwota"]))
+		_stan._dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 		var kom := str(_swiat.get("komunikat_tury", ""))
 		var dopisek := str(wynik.get("tekst", ""))
 		_swiat["komunikat_tury"] = (kom + "\n" + dopisek).strip_edges() if kom != "" else dopisek
@@ -1360,13 +1332,13 @@ func _on_kieszonkowe() -> void:
 	var ziarno := ZiarnoRodzicow.new()
 	var pierwsza := bool(_swiat.get("kieszonkowe_pierwsza_rozmowa", true))
 	var tryb_teraz := str(_swiat.get("tryb_kieszonkowego", ""))
-	var wynik: Dictionary = ziarno.popros_o_kieszonkowe(rodzina, tryb_teraz, pierwsza, _wiek_lat())
+	var wynik: Dictionary = ziarno.popros_o_kieszonkowe(rodzina, tryb_teraz, pierwsza, _stan._wiek_lat())
 	_swiat["kieszonkowe_pierwsza_rozmowa"] = false
 	_swiat["ostatnie_kieszonkowe"] = wynik
 	_swiat["ostatnie_kieszonkowe_tekst"] = str(wynik.get("tekst", ""))
 	if bool(wynik.get("dodano", false)) and _ui._jest_liczba(wynik.get("kwota")):
-		_dodaj_pieniadze(int(wynik["kwota"]))
-		_dodaj_wplyw("kieszonkowe", int(wynik["kwota"]), str(wynik.get("tekst", "")))
+		_stan._dodaj_pieniadze(int(wynik["kwota"]))
+		_stan._dodaj_wplyw("kieszonkowe", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 		_swiat["tryb_kieszonkowego"] = "stala_kwota"
 		_swiat["kieszonkowe_aktywne"] = true
 		_swiat["kieszonkowe_kwota_zl"] = int(wynik["kwota"])
@@ -1388,7 +1360,7 @@ func _on_kieszonkowe_podwyzka() -> void:
 		rodzina = {}
 	var ziarno := ZiarnoRodzicow.new()
 	var wynik: Dictionary = ziarno.popros_o_podwyzke_kieszonkowego(
-		rodzina, _swiat.get("kieszonkowe_kwota_zl", null), _wiek_lat()
+		rodzina, _swiat.get("kieszonkowe_kwota_zl", null), _stan._wiek_lat()
 	)
 	_swiat["ostatnie_kieszonkowe_tekst"] = str(wynik.get("tekst", ""))
 	if bool(wynik.get("ok", false)) and _ui._jest_liczba(wynik.get("kwota")):
@@ -1405,69 +1377,15 @@ func _on_pieniadze_jednorazowo() -> void:
 	if not (rodzina is Dictionary):
 		rodzina = {}
 	var ziarno := ZiarnoRodzicow.new()
-	var wynik: Dictionary = ziarno.popros_o_pieniadze_jednorazowo(rodzina, _wiek_lat())
+	var wynik: Dictionary = ziarno.popros_o_pieniadze_jednorazowo(rodzina, _stan._wiek_lat())
 	_swiat["ostatnie_kieszonkowe_tekst"] = str(wynik.get("tekst", ""))
 	if bool(wynik.get("dodano", false)) and _ui._jest_liczba(wynik.get("kwota")):
-		_dodaj_pieniadze(int(wynik["kwota"]))
-		_dodaj_wplyw("pieniadze_jednorazowo", int(wynik["kwota"]), str(wynik.get("tekst", "")))
+		_stan._dodaj_pieniadze(int(wynik["kwota"]))
+		_stan._dodaj_wplyw("pieniadze_jednorazowo", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	SkryptZapisu.zapisz(_swiat)
 	_odswiez_pasek_statystyk(true)
 	_zaplanuj_stos()
-
-
-func _zsynchronizuj_pieniadze_z_bohatera() -> void:
-	var stan := _jedzenie.odczyt_statystyk()
-	if _ui._jest_liczba(stan.get("pieniadze")):
-		return
-	var bohater := _bohater()
-	if _ui._jest_liczba(bohater.get("pieniadze")):
-		_jedzenie.zastosuj_statystyki({"pieniadze": int(bohater["pieniadze"])})
-
-
-func _dodaj_pieniadze(kwota: int) -> void:
-	if kwota <= 0:
-		return
-	var stan := _jedzenie.odczyt_statystyk()
-	var teraz := 0
-	if _ui._jest_liczba(stan.get("pieniadze")):
-		teraz = int(stan["pieniadze"])
-	elif _ui._jest_liczba(_bohater().get("pieniadze")):
-		teraz = int(_bohater()["pieniadze"])
-	var nowe := teraz + kwota
-	_jedzenie.zastosuj_statystyki({"pieniadze": nowe})
-	var bohater := _bohater()
-	bohater["pieniadze"] = nowe
-	_swiat["bohater"] = bohater
-
-
-func _dodaj_wplyw(zrodlo: String, kwota: int, tekst: String = "") -> void:
-	if not (_swiat.get("wplywy") is Array):
-		_swiat["wplywy"] = []
-	var lista: Array = _swiat["wplywy"]
-	var etykieta := zrodlo
-	if tekst != "" and tekst.find(":") >= 0:
-		etykieta = tekst.get_slice(":", 0).strip_edges()
-	lista.append({
-		"zrodlo": zrodlo,
-		"kwota": kwota,
-		"tekst": ("%s: +%d zł" % [etykieta, kwota]) if tekst == "" else tekst,
-		"rok": int(_swiat.get("rok", 0)),
-		"tydzien": int(_swiat.get("tydzien", 0)),
-	})
-	# Trzymaj ostatnie ~30 wpisów.
-	while lista.size() > 30:
-		lista.remove_at(0)
-	_swiat["wplywy"] = lista
-
-
-func _wiek_lat() -> Variant:
-	var bohater := _bohater()
-	if _ui._jest_liczba(bohater.get("wiek")):
-		return int(bohater["wiek"])
-	if _ui._jest_liczba(_swiat.get("rok")):
-		return int(_swiat["rok"])
-	return null
 
 
 func _jedzenie_odblok_cfg() -> Variant:
@@ -1487,7 +1405,7 @@ func _czy_jedzenie_sam_po_wieku() -> bool:
 	var prog := 8
 	if cfg is Dictionary and _ui._jest_liczba(cfg.get("prog_wiek_lat")):
 		prog = int(cfg["prog_wiek_lat"])
-	var wiek: Variant = _wiek_lat()
+	var wiek: Variant = _stan._wiek_lat()
 	return _ui._jest_liczba(wiek) and int(wiek) >= prog
 
 
@@ -1500,7 +1418,7 @@ func _odswiez_flage_jedzenia_sam() -> void:
 
 func _ekran_majatek() -> void:
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Pieniądze", 18))
-	var kwota := _pieniadze_tekst()
+	var kwota := _stan._pieniadze_tekst()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu(kwota if kwota != "" else "—", 18))
 	var opis_lokum := _opis_mieszkacie_w()
 	if opis_lokum != "":
@@ -1531,7 +1449,7 @@ func _ekran_majatek() -> void:
 				if bool(wynik.get("ok", false)):
 					_rynek_zakupow.przelicz_zadowolenie_docelowe(_swiat)
 					SkryptZapisu.zapisz(_swiat)
-					_zsynchronizuj_pieniadze_z_bohatera()
+					_stan._zsynchronizuj_pieniadze_z_bohatera()
 					_odswiez_pasek_statystyk(false)
 					_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 				else:
@@ -2444,7 +2362,7 @@ func _buduj_pelna_karte_oferty(
 		var wynik: Dictionary = _rynek_zakupow.kup(_swiat, oid)
 		if bool(wynik.get("ok", false)):
 			SkryptZapisu.zapisz(_swiat)
-			_zsynchronizuj_pieniadze_z_bohatera()
+			_stan._zsynchronizuj_pieniadze_z_bohatera()
 			_odswiez_pasek_statystyk(false)
 			_cofnij_poziom()
 		else:
@@ -2642,7 +2560,7 @@ func _po_dojezdzie(
 	elif cel == "kup":
 		var wynik: Dictionary = _rynek_zakupow.kup(_swiat, oferta_id)
 		if bool(wynik.get("ok", false)):
-			_zsynchronizuj_pieniadze_z_bohatera()
+			_stan._zsynchronizuj_pieniadze_z_bohatera()
 			_odswiez_pasek_statystyk(false)
 			SkryptZapisu.zapisz(_swiat)
 			_cofnij_poziom()
@@ -2774,7 +2692,7 @@ func _odswiez_rynek_zakupow() -> void:
 	if _swiat.is_empty():
 		return
 	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
-	var mid := _id_miejsca_pobytu()
+	var mid := _stan._id_miejsca_pobytu()
 	_rynek_zakupow.zapewnij_pule(_swiat, miasta, mid, int(_swiat.get("tydzien", 1)))
 
 
@@ -2809,7 +2727,7 @@ func _odswiez_napis_puli_zakupow(kat_id: String) -> void:
 		_zakupy_pula_lbl.text = "Nowe auta: salony, bez puli z ludności."
 		return
 	var strona := _strona_puli_zakupow(kat_id)
-	var n: int = _rynek_zakupow.pula_w_zasiegu(_zakupy_zasieg_poziom, _id_miejsca_pobytu(), kat_id, strona)
+	var n: int = _rynek_zakupow.pula_w_zasiegu(_zakupy_zasieg_poziom, _stan._id_miejsca_pobytu(), kat_id, strona)
 	if n < 0:
 		_zakupy_pula_lbl.visible = false
 		_zakupy_pula_lbl.text = ""
@@ -2823,7 +2741,7 @@ func _dodaj_przycisk_kolejnych_zakupow(tresc: Node, kat_id: String) -> void:
 	if not _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
 		return
 	var strona := _strona_puli_zakupow(kat_id)
-	var pula: int = _rynek_zakupow.pula_w_zasiegu(_zakupy_zasieg_poziom, _id_miejsca_pobytu(), kat_id, strona)
+	var pula: int = _rynek_zakupow.pula_w_zasiegu(_zakupy_zasieg_poziom, _stan._id_miejsca_pobytu(), kat_id, strona)
 	var jest: int = _rynek_zakupow.ile_w_zasiegu(_swiat, kat_id, _zakupy_zasieg_poziom, strona)
 	if pula < 0 or jest >= pula:
 		return
@@ -3104,17 +3022,8 @@ func _aktywuj_zakladke_samochodow() -> void:
 		return
 	var miasta: Array = _losowanie.miasta_polski() if _losowanie != null else []
 	_rynek_zakupow.aktywuj_zakladke_samochodow(
-		_swiat, miasta, _id_miejsca_pobytu(), int(_swiat.get("tydzien", 1))
+		_swiat, miasta, _stan._id_miejsca_pobytu(), int(_swiat.get("tydzien", 1))
 	)
-
-
-func _id_miejsca_pobytu() -> String:
-	var mid := str(_swiat.get("id_miejsca_pobytu", _swiat.get("id_urodzenia", "")))
-	if mid == "":
-		var boh := _bohater()
-		if boh.get("miejsce") is Dictionary:
-			mid = str(boh["miejsce"].get("id", ""))
-	return mid
 
 
 func _posortuj_oferty_cena(oferty: Array, tryb: String) -> Array:
@@ -3168,7 +3077,7 @@ func _stub_przedszkole() -> void:
 
 
 func _efekt_fala2_tydzien() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var ie := InteligencjaEmocjonalna.new()
 	ie.reset_tydzien(bohater)
 	var kor := Korepetycje.new()
@@ -3226,15 +3135,15 @@ func _pasek_sylwetki(bohater: Dictionary) -> Control:
 
 
 func _odswiez_bohatera_i_ekran(tresc: String, nazwa: String) -> void:
-	_swiat["bohater"] = _bohater()
+	_swiat["bohater"] = _stan._bohater()
 	SkryptZapisu.zapisz(_swiat)
-	_zsynchronizuj_pieniadze_z_bohatera()
+	_stan._zsynchronizuj_pieniadze_z_bohatera()
 	_odswiez_pasek_statystyk(true)
 	_otworz_akcje({"id": tresc, "nazwa": nazwa, "tryb": "ekran", "tresc": tresc})
 
 
 func _ekran_korepetycje() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Korepetycje (propozycja kosztów). Wiedza: %d" % int(bohater.get("wiedza_pkt", 0)), 16))
 	var kor := Korepetycje.new()
 	for p in kor.lista():
@@ -3249,7 +3158,7 @@ func _ekran_korepetycje() -> void:
 		b.custom_minimum_size = Vector2(0, 44)
 		var id_b := str(p.get("id", ""))
 		b.pressed.connect(func() -> void:
-			var w: Dictionary = kor.zajecie(_bohater(), id_b)
+			var w: Dictionary = kor.zajecie(_stan._bohater(), id_b)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("korepetycje", "Korepetycje")
@@ -3258,11 +3167,11 @@ func _ekran_korepetycje() -> void:
 
 
 func _ekran_zajecia_dodatkowe() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var zaj := ZajeciaDodatkowe.new()
 	var akt := zaj.aktywne(bohater)
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Aktywne: %s" % (", ".join(PackedStringArray(akt)) if not akt.is_empty() else "brak"), 15))
-	for z in zaj.lista(_wiek_lat()):
+	for z in zaj.lista(_stan._wiek_lat()):
 		if not (z is Dictionary):
 			continue
 		var b := Button.new()
@@ -3270,7 +3179,7 @@ func _ekran_zajecia_dodatkowe() -> void:
 		b.custom_minimum_size = Vector2(0, 44)
 		var id_z := str(z.get("id", ""))
 		b.pressed.connect(func() -> void:
-			var w: Dictionary = zaj.zapisz_sie(_bohater(), id_z)
+			var w: Dictionary = zaj.zapisz_sie(_stan._bohater(), id_z)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("zajecia_dodatkowe", "Zajęcia dodatkowe")
@@ -3279,7 +3188,7 @@ func _ekran_zajecia_dodatkowe() -> void:
 
 
 func _ekran_szachy() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var sz := Szachy.new()
 	sz.zapewnij_ranking(bohater)
 	_swiat["bohater"] = bohater
@@ -3288,13 +3197,13 @@ func _ekran_szachy() -> void:
 	bt.text = "Trening"
 	bt.custom_minimum_size = Vector2(0, 44)
 	bt.pressed.connect(func() -> void:
-		var w: Dictionary = sz.trening(_bohater())
+		var w: Dictionary = sz.trening(_stan._bohater())
 		_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 		if bool(w.get("ok", false)):
 			_odswiez_bohatera_i_ekran("szachy", "Szachy / turnieje")
 	)
 	_ui._tresc_biala().add_child(bt)
-	for t in sz.turnieje(_wiek_lat()):
+	for t in sz.turnieje(_stan._wiek_lat()):
 		if not (t is Dictionary):
 			continue
 		var b := Button.new()
@@ -3302,7 +3211,7 @@ func _ekran_szachy() -> void:
 		b.custom_minimum_size = Vector2(0, 44)
 		var id_t := str(t.get("id", ""))
 		b.pressed.connect(func() -> void:
-			var w2: Dictionary = sz.graj_turniej(_bohater(), id_t)
+			var w2: Dictionary = sz.graj_turniej(_stan._bohater(), id_t)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w2.get("tekst", "")), 14))
 			if bool(w2.get("ok", false)):
 				_odswiez_bohatera_i_ekran("szachy", "Szachy / turnieje")
@@ -3311,14 +3220,14 @@ func _ekran_szachy() -> void:
 
 
 func _ekran_imprezy() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var dep := Depresja.new()
 	if dep.blokada_imprez(bohater):
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Kryzys nastroju — imprezy zablokowane (stub).", 15))
 		return
 	var im := ImprezyUzywki.new()
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Imprezy / używki (stub). Wiek %d." % _wiek_lat(), 16))
-	for p in im.lista_imprez(_wiek_lat()):
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Imprezy / używki (stub). Wiek %d." % _stan._wiek_lat(), 16))
+	for p in im.lista_imprez(_stan._wiek_lat()):
 		if not (p is Dictionary):
 			continue
 		var id_p := str(p.get("id", ""))
@@ -3326,7 +3235,7 @@ func _ekran_imprezy() -> void:
 		b1.text = "%s (bez picia)" % str(p.get("nazwa", ""))
 		b1.custom_minimum_size = Vector2(0, 44)
 		b1.pressed.connect(func() -> void:
-			var w: Dictionary = im.idz_na_impreze(_bohater(), _swiat, id_p, false)
+			var w: Dictionary = im.idz_na_impreze(_stan._bohater(), _swiat, id_p, false)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("imprezy", "Imprezy / używki")
@@ -3336,7 +3245,7 @@ func _ekran_imprezy() -> void:
 		b2.text = "%s (+ picie stub)" % str(p.get("nazwa", ""))
 		b2.custom_minimum_size = Vector2(0, 44)
 		b2.pressed.connect(func() -> void:
-			var w2: Dictionary = im.idz_na_impreze(_bohater(), _swiat, id_p, true)
+			var w2: Dictionary = im.idz_na_impreze(_stan._bohater(), _swiat, id_p, true)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w2.get("tekst", "")), 14))
 			if bool(w2.get("ok", false)):
 				_odswiez_bohatera_i_ekran("imprezy", "Imprezy / używki")
@@ -3345,7 +3254,7 @@ func _ekran_imprezy() -> void:
 
 
 func _ekran_terapia() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var dep := Depresja.new()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Nastrój / terapia (stub). Nie jest to porada medyczna.", 15))
 	var st := dep.tekst_stanu(bohater)
@@ -3358,7 +3267,7 @@ func _ekran_terapia() -> void:
 		b.custom_minimum_size = Vector2(0, 44)
 		var tryb_b := str(tryb)
 		b.pressed.connect(func() -> void:
-			var w: Dictionary = dep.terapia(_bohater(), tryb_b)
+			var w: Dictionary = dep.terapia(_stan._bohater(), tryb_b)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("terapia", "Terapia / nastrój")
@@ -3409,7 +3318,7 @@ func _ekran_konserwacja_auta() -> void:
 				var w: Dictionary = kon.serwis(stan_k, cz, sp)
 				var koszt := int(w.get("koszt_zl", 0))
 				if bool(w.get("ok", false)) and koszt > 0:
-					var boh := _bohater()
+					var boh := _stan._bohater()
 					if int(boh.get("pieniadze", 0)) < koszt:
 						_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak kasy na serwis.", 13))
 						return
@@ -3433,7 +3342,7 @@ func _ekran_konserwacja_auta() -> void:
 			bw.pressed.connect(func() -> void:
 				var w3: Dictionary = kon.serwis(stan_k, czb, "warsztat")
 				var koszt3 := int(w3.get("koszt_zl", 0))
-				var boh3 := _bohater()
+				var boh3 := _stan._bohater()
 				if bool(w3.get("ok", false)) and int(boh3.get("pieniadze", 0)) >= koszt3:
 					boh3["pieniadze"] = int(boh3["pieniadze"]) - koszt3
 					_swiat["bohater"] = boh3
@@ -3482,7 +3391,7 @@ func _zapisz_konserwacje_auta(auto: Variant, stan_k: Dictionary) -> void:
 
 
 func _ekran_lotnictwo() -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var lot := SprowadzanieSamolotow.new()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu(lot.tekst_ui(bohater), 15))
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Sprowadzanie samolotów — stub licencji/hangaru (katalog już jest).", 14))
@@ -3494,7 +3403,7 @@ func _ekran_lotnictwo() -> void:
 		b.custom_minimum_size = Vector2(0, 44)
 		var id_l := str(l.get("id", ""))
 		b.pressed.connect(func() -> void:
-			var w: Dictionary = lot.kup_licencje(_bohater(), id_l)
+			var w: Dictionary = lot.kup_licencje(_stan._bohater(), id_l)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("lotnictwo", "Lotnictwo (stub)")
@@ -3504,7 +3413,7 @@ func _ekran_lotnictwo() -> void:
 	bh.text = "Wynajmij hangar (miesiąc stub)"
 	bh.custom_minimum_size = Vector2(0, 44)
 	bh.pressed.connect(func() -> void:
-		var w2: Dictionary = lot.wynajmij_hangar(_bohater())
+		var w2: Dictionary = lot.wynajmij_hangar(_stan._bohater())
 		_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w2.get("tekst", "")), 14))
 		if bool(w2.get("ok", false)):
 			_odswiez_bohatera_i_ekran("lotnictwo", "Lotnictwo (stub)")
@@ -3532,8 +3441,8 @@ func _ekran_eventy_przyklady() -> void:
 				var eid := str(e.get("id", ""))
 				var oid := str(o.get("id", ""))
 				b.pressed.connect(func() -> void:
-					var w: Dictionary = ev.zastosuj_opcje(_bohater(), eid, oid)
-					_swiat["bohater"] = _bohater()
+					var w: Dictionary = ev.zastosuj_opcje(_stan._bohater(), eid, oid)
+					_swiat["bohater"] = _stan._bohater()
 					SkryptZapisu.zapisz(_swiat)
 					_odswiez_pasek_statystyk(true)
 					_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 13))
@@ -3544,7 +3453,7 @@ func _ekran_eventy_przyklady() -> void:
 func _ekran_praca_fala2() -> void:
 	_ekran_pracy = true
 	_praca_filtry_start()
-	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
+	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _stan._id_miejsca_pobytu())
 	var txt := _tekst_pracy()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Praca rodziców: %s" % (txt if txt != "" else "—"), 16))
 	var komunikat := str(_swiat.get("praca_komunikat", "")).strip_edges()
@@ -3564,8 +3473,8 @@ func _ekran_praca_fala2() -> void:
 	fuchy.add_child(_ui._napis_ekranu("Dorywczo", 18))
 	var szkic := PracaSzkielet.new()
 	var syl := Sylwetka.new()
-	syl.z_zapisu(_bohater().get("sylwetka", {}))
-	for p in szkic.prace_dla_wieku(_wiek_lat()):
+	syl.z_zapisu(_stan._bohater().get("sylwetka", {}))
+	for p in szkic.prace_dla_wieku(_stan._wiek_lat()):
 		if not (p is Dictionary):
 			continue
 		var b := Button.new()
@@ -3574,11 +3483,11 @@ func _ekran_praca_fala2() -> void:
 		b.add_theme_font_size_override("font_size", 17)
 		var id_p := str(p.get("id", ""))
 		b.pressed.connect(func() -> void:
-			var w: Dictionary = szkic.wykonaj_fuche(_bohater(), id_p, syl)
+			var w: Dictionary = szkic.wykonaj_fuche(_stan._bohater(), id_p, syl)
 			if bool(w.get("ok", false)):
-				_dodaj_pieniadze(int(w.get("placa", 0)))
-				_dodaj_wplyw("fucha", int(w.get("placa", 0)), str(w.get("tekst", "")))
-				_swiat["bohater"] = _bohater()
+				_stan._dodaj_pieniadze(int(w.get("placa", 0)))
+				_stan._dodaj_wplyw("fucha", int(w.get("placa", 0)), str(w.get("tekst", "")))
+				_swiat["bohater"] = _stan._bohater()
 				SkryptZapisu.zapisz(_swiat)
 				_odswiez_pasek_statystyk(true)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 16))
@@ -3597,14 +3506,14 @@ func _praca_miejsca() -> Array:
 
 func _praca_tekst_puli() -> String:
 	var poziom := str(_praca_filtry.get("zasieg", "miasto"))
-	var karta: Dictionary = _rynek_pracy.miasto_bohatera(_praca_miejsca(), _id_miejsca_pobytu())
+	var karta: Dictionary = _rynek_pracy.miasto_bohatera(_praca_miejsca(), _stan._id_miejsca_pobytu())
 	var obszar := "Polska"
 	var metro := false
 	if poziom == "miasto" or poziom == "wojewodztwo":
 		obszar = str(karta.get("wojewodztwo", "Polska"))
 		metro = poziom == "miasto" and _rynek_pracy.czy_metropolia(str(karta.get("nazwa", "")))
 	var n: int = _rynek_pracy.pula_ofert(
-		_rynek_pracy.ludnosc_zakresu(_praca_miejsca(), poziom, _id_miejsca_pobytu()),
+		_rynek_pracy.ludnosc_zakresu(_praca_miejsca(), poziom, _stan._id_miejsca_pobytu()),
 		poziom,
 		_praca_filtry,
 		obszar,
@@ -3883,7 +3792,7 @@ func _praca_przeladuj() -> void:
 		return
 	if _swiat.get("rynek_pracy") is Dictionary:
 		_swiat["rynek_pracy"]["oferty"] = []
-	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
+	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _stan._id_miejsca_pobytu())
 	if is_instance_valid(_praca_pula_lbl):
 		_praca_pula_lbl.text = _praca_tekst_puli()
 	_praca_przerysuj_oferty()
@@ -4010,7 +3919,7 @@ func _praca_suwak_negocjacji(oferta: Dictionary, ponownie: bool = false) -> void
 
 
 func _praca_zamknij_aplikacje(oferta: Dictionary, negocjuje: bool, zadana: int) -> void:
-	var wynik: Dictionary = _rynek_pracy.negocjuj(oferta, _bohater(), negocjuje, zadana, randf())
+	var wynik: Dictionary = _rynek_pracy.negocjuj(oferta, _stan._bohater(), negocjuje, zadana, randf())
 	var slot := _praca_slot()
 	if slot == null:
 		return
@@ -4219,7 +4128,7 @@ func _na_scroll_pracy(wartosc: float) -> void:
 		return
 	_praca_dokladka = true
 	var y := sc.scroll_vertical
-	var dodano: int = _rynek_pracy.uzupelnij(_swiat, _praca_filtry, _rynek_pracy.wyprzedzenie(), int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
+	var dodano: int = _rynek_pracy.uzupelnij(_swiat, _praca_filtry, _rynek_pracy.wyprzedzenie(), int(_swiat.get("tydzien", 1)), _praca_miejsca(), _stan._id_miejsca_pobytu())
 	if dodano > 0:
 		_praca_przerysuj_oferty()
 		sc.scroll_vertical = y
@@ -4409,7 +4318,7 @@ func _ekran_mapa() -> void:
 	var ziarno := int(_swiat.get("rynek_zakupow", {}).get("ziarno", 1)) if _swiat.get("rynek_zakupow") is Dictionary else 1
 	if ziarno == 0:
 		ziarno = int(_swiat.get("tydzien", 1)) * 9973 + 1
-	_mapa_graf = _mapa_miast.zbuduj(miasta, ziarno, _id_miejsca_pobytu())
+	_mapa_graf = _mapa_miast.zbuduj(miasta, ziarno, _stan._id_miejsca_pobytu())
 	var obszar := Control.new()
 	obszar.custom_minimum_size = Vector2(0, 420)
 	obszar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -4543,7 +4452,7 @@ func _wypelnij_opcje_transportu(id: String, nazwa: String) -> void:
 		return
 	_ui._wyczysc(_opcje_transportu)
 	_opcje_transportu.add_child(_ui._napis_ekranu(nazwa, 18))
-	var skad := _id_miejsca_pobytu()
+	var skad := _stan._id_miejsca_pobytu()
 	var dyst: Variant = _mapa_miast.dystans_km(_mapa_graf, skad, id)
 	var dyst_txt := "—"
 	if _ui._jest_liczba(dyst):
@@ -4916,7 +4825,7 @@ func _kontekst_eventow() -> Dictionary:
 					cechy.append(c)
 		if rodzina.get("zarobki") is Dictionary:
 			przedzial = str(rodzina["zarobki"].get("przedzial_id", ""))
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var pieniadze_ok := _ui._jest_liczba(bohater.get("pieniadze")) and int(bohater["pieniadze"]) > 0
 	var ma := {
 		"telefon": bool(flagi.get("ma_telefon", false)) or bool(flagi.get("wie_o_telefonie", false)),
@@ -4927,7 +4836,7 @@ func _kontekst_eventow() -> Dictionary:
 	if pieniadze_ok:
 		ma["pieniadze"] = true
 	return {
-		"wiek": _wiek_lat(),
+		"wiek": _stan._wiek_lat(),
 		"jedynak": jedynak,
 		"flagi": flagi,
 		"ma": ma,
@@ -5021,7 +4930,7 @@ func _dodaj_znajomego_dziecka() -> void:
 	var lista: Array = []
 	if _swiat.get("znajomi_dzieci") is Array:
 		lista = _swiat["znajomi_dzieci"]
-	var plec_b := str(_bohater().get("plec", _bohater().get("płeć", "")))
+	var plec_b := str(_stan._bohater().get("plec", _stan._bohater().get("płeć", "")))
 	var ta_sama := plec_b
 	lista.append({
 		"id": "dziecko_%d" % (lista.size() + 1),
@@ -5041,7 +4950,7 @@ func _dodaj_znajomego_dziecka() -> void:
 
 func _fallback_nauki_szkolnej() -> void:
 	# Jak nie nauczy się w domu — i tak w podstawówce (~7).
-	var wiek: Variant = _wiek_lat()
+	var wiek: Variant = _stan._wiek_lat()
 	if not _ui._jest_liczba(wiek) or int(wiek) < 7:
 		return
 	var flagi: Dictionary = {}
@@ -5139,7 +5048,7 @@ func _wypelnij_rozwiniete_stat() -> void:
 
 
 func _wypelnij_statystyki_ilosciowe(cel: VBoxContainer, kompakt: bool = false) -> void:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	var rozmiar := 13 if kompakt else 15
 	cel.add_child(_ui._napis_ekranu_lub_paska("Zdrowie: %s" % _ui._tekst_lub_pauza(bohater.get("zdrowie_skrot"), bohater.get("zdrowie")), rozmiar, kompakt))
 	cel.add_child(_ui._napis_ekranu_lub_paska("Wygląd: %s" % _ui._tekst_lub_pauza(_ui._nazwa_pola(bohater.get("wyglad_naturalny"))), rozmiar, kompakt))
@@ -5183,7 +5092,7 @@ func _odswiez_pasek_statystyk(animuj_pieniadze: bool) -> void:
 
 
 func _wartosc_metryki(klucz: String) -> Variant:
-	var bohater := _bohater()
+	var bohater := _stan._bohater()
 	if _ui._jest_liczba(bohater.get(klucz)):
 		return int(bohater[klucz])
 	if _ui._jest_liczba(_swiat.get(klucz)):
@@ -5263,8 +5172,8 @@ func _ustaw_pieniadze(animuj: bool) -> void:
 	var stan := _jedzenie.odczyt_statystyk()
 	if _ui._jest_liczba(stan.get("pieniadze")):
 		kwota = int(stan["pieniadze"])
-	elif _ui._jest_liczba(_bohater().get("pieniadze")):
-		kwota = int(_bohater()["pieniadze"])
+	elif _ui._jest_liczba(_stan._bohater().get("pieniadze")):
+		kwota = int(_stan._bohater()["pieniadze"])
 	var blok: Variant = _emotikony.get("pieniadze", {})
 	if kwota == null:
 		_pieniadze_znane_pokaz = false
@@ -5307,18 +5216,8 @@ func _emoji_portfela(kwota: int, blok: Variant) -> String:
 
 func _odswiez_lokalizacje() -> void:
 	var napis: Label = get_node(KOLUMNA_GRY + "/Lokalizacja")
-	napis.text = _opis_lokalizacji()
+	napis.text = _stan._opis_lokalizacji()
 	napis.add_theme_color_override("font_color", Color(0.9, 0.93, 0.95))
-
-
-func _opis_lokalizacji() -> String:
-	var nazwa := str(_swiat.get("nazwa_miejsca", ""))
-	var gdzie := str(_swiat.get("miejsce_pobytu", "dom"))
-	if gdzie == "":
-		gdzie = "dom"
-	if nazwa == "":
-		return gdzie
-	return "%s - %s" % [nazwa, gdzie]
 
 
 func _opis_urodzenia() -> String:
@@ -5333,15 +5232,6 @@ func _opis_urodzenia() -> String:
 	return nazwa
 
 
-func _pieniadze_tekst() -> String:
-	var stan := _jedzenie.odczyt_statystyk()
-	if _ui._jest_liczba(stan.get("pieniadze")):
-		return str(int(stan["pieniadze"]))
-	if _ui._jest_liczba(_bohater().get("pieniadze")):
-		return str(int(_bohater()["pieniadze"]))
-	return ""
-
-
 func _tekst_domu() -> String:
 	var rodzina: Variant = _swiat.get("rodzina", {})
 	if not (rodzina is Dictionary):
@@ -5354,7 +5244,7 @@ func _tekst_domu() -> String:
 
 func _opis_mieszkacie_w() -> String:
 	var lokum: Variant = _swiat.get("lokum_startowe", {})
-	if not _lokum_pelne(lokum):
+	if not _stan._lokum_pelne(lokum):
 		var maj: Variant = _swiat.get("majatek", {})
 		if maj is Dictionary and maj.get("lokum_rodziny") is Dictionary:
 			lokum = maj["lokum_rodziny"]
@@ -5363,37 +5253,6 @@ func _opis_mieszkacie_w() -> String:
 			if rodzina is Dictionary and rodzina.get("lokum") is Dictionary:
 				lokum = rodzina["lokum"]
 	return _rynek_zakupow.opis_lokum_ui(lokum)
-
-
-func _lokum_pelne(lokum: Variant) -> bool:
-	if not (lokum is Dictionary):
-		return false
-	if not _ui._jest_liczba(lokum.get("wygoda")):
-		return false
-	# Pełny obiekt: typ + metraż (stary save miał tylko wygodę/dom_id).
-	return str(lokum.get("typ", "")) != "" and _ui._jest_liczba(lokum.get("metraz_m2"))
-
-
-func _zbuduj_lokum_dla_swiata() -> Dictionary:
-	var rodzina: Variant = _swiat.get("rodzina", {})
-	if not (rodzina is Dictionary):
-		rodzina = {}
-	var miejsce: Variant = null
-	var bohater: Variant = _swiat.get("bohater", {})
-	if bohater is Dictionary and bohater.get("miejsce") is Dictionary:
-		miejsce = bohater["miejsce"]
-	elif str(_swiat.get("id_urodzenia", "")) != "":
-		miejsce = {
-			"id": str(_swiat.get("id_urodzenia", "")),
-			"nazwa": str(_swiat.get("nazwa_urodzenia", "")),
-			"typ": str(_swiat.get("typ_urodzenia", "")),
-		}
-	var lokum: Dictionary = _rynek_zakupow.zbuduj_lokum_startowe(rodzina, miejsce)
-	_swiat["rodzina"] = rodzina
-	if not (_swiat.get("majatek") is Dictionary):
-		_swiat["majatek"] = {"nieruchomosci": [], "dobra": []}
-	_swiat["majatek"]["lokum_rodziny"] = lokum.duplicate(true)
-	return lokum
 
 
 func _tekst_pracy() -> String:
@@ -5445,18 +5304,11 @@ func _inteligencje_bohatera(bohater: Dictionary) -> String:
 	return ", ".join(nazwy)
 
 
-func _bohater() -> Dictionary:
-	var bohater: Variant = _swiat.get("bohater", {})
-	if bohater is Dictionary:
-		return bohater
-	return {}
-
-
 func _auto_z_zapisu() -> Variant:
 	var auto: Variant = _swiat.get("auto", null)
 	if auto is Dictionary and _auto_jest(auto) and not bool(auto.get("nie_jezdzi", false)):
 		return auto
-	var posiadane: Variant = _bohater().get("posiadane", {})
+	var posiadane: Variant = _stan._bohater().get("posiadane", {})
 	if posiadane is Dictionary:
 		var pojazdy: Variant = posiadane.get("pojazdy", {})
 		if pojazdy is Dictionary and pojazdy.get("samochody") is Array:
@@ -5494,7 +5346,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 		_pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
 		if bool(w.get("ok", false)):
 			SkryptZapisu.zapisz(_swiat)
-			_zsynchronizuj_pieniadze_z_bohatera()
+			_stan._zsynchronizuj_pieniadze_z_bohatera()
 			_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 	)
 	var b_mech := Button.new()
@@ -5505,7 +5357,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 		_pokaz_komunikat_zakupu(str(w2.get("tekst", w2.get("powod", ""))), w2)
 		if bool(w2.get("ok", false)):
 			SkryptZapisu.zapisz(_swiat)
-			_zsynchronizuj_pieniadze_z_bohatera()
+			_stan._zsynchronizuj_pieniadze_z_bohatera()
 			_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 	)
 	var b_zlom := Button.new()
@@ -5516,7 +5368,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 		_pokaz_komunikat_zakupu(str(w3.get("tekst", w3.get("powod", ""))), w3)
 		if bool(w3.get("ok", false)):
 			SkryptZapisu.zapisz(_swiat)
-			_zsynchronizuj_pieniadze_z_bohatera()
+			_stan._zsynchronizuj_pieniadze_z_bohatera()
 			_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 	)
 	rzad.add_child(b_law)
