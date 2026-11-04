@@ -24,6 +24,7 @@ const TEKST_CIEMNY := Color(0.12, 0.14, 0.16, 1)
 const PLIK_EMOTIKONOW := "res://ui/pasek_emotikony.json"
 const SkryptUiWspolne = preload("res://scripts/ui_wspolne.gd")
 const SkryptStanuGry = preload("res://scripts/stan_gry.gd")
+const SkryptPaska = preload("res://scripts/pasek_statystyk.gd")
 
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
@@ -120,9 +121,13 @@ var _ui: UiWspolne
 
 var _stan: StanGry
 
+var _pasek: PasekStatystykGry
+
 func _init() -> void:
 	_ui = SkryptUiWspolne.new(self)
 	_stan = SkryptStanuGry.new(self)
+	_pasek = SkryptPaska.new(self)
+
 
 
 
@@ -140,10 +145,10 @@ func _ready() -> void:
 	_ui._podlacz_ustawienia()
 	_ui._male_przyciski()
 	_wczytaj_akcje()
-	_zbuduj_pasek_statystyk()
+	_pasek._zbuduj_pasek_statystyk()
 	_zbuduj_zakladki()
 	_ui._styl_bialego_ekranu()
-	_podlacz_pasek_gest()
+	_pasek._podlacz_pasek_gest()
 	_ui._zbuduj_statystyki_menu()
 	$UstawieniaGry.hide()
 	$Powrot.hide()
@@ -262,9 +267,9 @@ func _on_nastepna_tura() -> void:
 	_swiat["dni_auta"] = int(_swiat.get("dni_auta", 0))
 	_odswiez_rynek_zakupow()
 	SkryptZapisu.zapisz(_swiat)
-	_odswiez_pasek_statystyk(true)
-	_ukryj_zielony_komunikat_tury()
-	_odswiez_lokalizacje()
+	_pasek._odswiez_pasek_statystyk(true)
+	_pasek._ukryj_zielony_komunikat_tury()
+	_pasek._odswiez_lokalizacje()
 	# Po turze: wyjdź z głębokiej zakładki i pokaż napisy tygodnia (treść tury → biały obszar).
 	_wyjdz_do_napisow_tygodnia()
 
@@ -336,7 +341,7 @@ func _on_wszystkie_stat() -> void:
 	_ui._wyczysc(_ui._tresc_biala())
 	_ui._dol_suwaka().hide()
 	_ui._tytul_bialy().text = "Statystyki ilościowe"
-	_wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
+	_pasek._wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
 
 
 func _unhandled_input(zdarzenie: InputEvent) -> void:
@@ -484,8 +489,8 @@ func _wejdz() -> void:
 	_zakladka_id = ""
 	_odznacz_zakladki()
 	_pokaz_start_bialy()
-	_odswiez_lokalizacje()
-	_odswiez_pasek_statystyk(false)
+	_pasek._odswiez_lokalizacje()
+	_pasek._odswiez_pasek_statystyk(false)
 	_ui._na_wierzch_przyciski()
 
 
@@ -733,7 +738,7 @@ func _pokaz_start_bialy() -> void:
 	var tura_txt := str(_swiat.get("komunikat_tury", "")).strip_edges()
 	if tura_txt != "":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("W tym tygodniu: %s" % tura_txt, 15))
-	_ukryj_zielony_komunikat_tury()
+	_pasek._ukryj_zielony_komunikat_tury()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wybierz zakładkę. Rodzina i kieszonkowe: Osoby → Rodzina. Mapa: Majątek → Transport → Mapa.", 16))
 
 
@@ -776,7 +781,7 @@ func _pokaz_napisy_tygodnia() -> void:
 	var eventy: Variant = _swiat.get("eventy_tury", [])
 	if (not (eventy is Array) or eventy.is_empty()) and tura_txt == "" and kiesz == "" and wygoda_txt == "" and odp == "":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak szczególnych wydarzeń tygodnia.", 15))
-	_ukryj_zielony_komunikat_tury()
+	_pasek._ukryj_zielony_komunikat_tury()
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wybierz zakładkę, żeby kontynuować.", 14))
 
 
@@ -889,7 +894,7 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 	elif tresc == "ustawienia_gry":
 		_ui._ekran_ustawienia_w_bialym()
 	elif tresc == "statystyki_ilosciowe":
-		_wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
+		_pasek._wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
 	if akcja.get("dzieci") is Array and tresc != "jedzenie" and tresc != "majatek" and tresc != "osoby":
 		for dziecko in akcja["dzieci"]:
 			if dziecko is Dictionary:
@@ -945,11 +950,11 @@ func _ekran_postac() -> void:
 	_ui._tresc_biala().add_child(_ui._napis_ekranu(urodzenie if urodzenie != "" else "—", 16))
 	var wiek := _ui._tekst_liczby(bohater.get("wiek"))
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wiek: %s" % (wiek if wiek != "" else "—"), 16))
-	var psychika := _ui._tekst_liczby(_wartosc_metryki("psychika"))
-	var zm_f := _ui._tekst_liczby(_wartosc_metryki("zmeczenie_fizyczne"))
+	var psychika := _ui._tekst_liczby(_pasek._wartosc_metryki("psychika"))
+	var zm_f := _ui._tekst_liczby(_pasek._wartosc_metryki("zmeczenie_fizyczne"))
 	if zm_f == "":
-		zm_f = _ui._tekst_liczby(_wartosc_metryki("zmeczenie"))
-	var zm_p := _ui._tekst_liczby(_wartosc_metryki("zmeczenie_psychiczne"))
+		zm_f = _ui._tekst_liczby(_pasek._wartosc_metryki("zmeczenie"))
+	var zm_p := _ui._tekst_liczby(_pasek._wartosc_metryki("zmeczenie_psychiczne"))
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Psychika (nastrój): %s" % (psychika if psychika != "" else "—"), 16))
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Zmęczenie fizyczne: %s   Obciążenie psychiczne: %s" % [
 		zm_f if zm_f != "" else "—",
@@ -1280,7 +1285,7 @@ func _on_kieszonkowe_dziadkowie() -> void:
 		_stan._dodaj_pieniadze(int(wynik["kwota"]))
 		_stan._dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	SkryptZapisu.zapisz(_swiat)
-	_odswiez_pasek_statystyk(true)
+	_pasek._odswiez_pasek_statystyk(true)
 	_zaplanuj_stos()
 
 
@@ -1348,7 +1353,7 @@ func _on_kieszonkowe() -> void:
 			_swiat["tryb_kieszonkowego"] = "odmowa"
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	SkryptZapisu.zapisz(_swiat)
-	_odswiez_pasek_statystyk(true)
+	_pasek._odswiez_pasek_statystyk(true)
 	_zaplanuj_stos()
 
 
@@ -1384,7 +1389,7 @@ func _on_pieniadze_jednorazowo() -> void:
 		_stan._dodaj_wplyw("pieniadze_jednorazowo", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	SkryptZapisu.zapisz(_swiat)
-	_odswiez_pasek_statystyk(true)
+	_pasek._odswiez_pasek_statystyk(true)
 	_zaplanuj_stos()
 
 
@@ -1450,7 +1455,7 @@ func _ekran_majatek() -> void:
 					_rynek_zakupow.przelicz_zadowolenie_docelowe(_swiat)
 					SkryptZapisu.zapisz(_swiat)
 					_stan._zsynchronizuj_pieniadze_z_bohatera()
-					_odswiez_pasek_statystyk(false)
+					_pasek._odswiez_pasek_statystyk(false)
 					_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 				else:
 					_ui._tresc_biala().add_child(_ui._napis_ekranu(str(wynik.get("powod", "Remont nieudany.")), 13))
@@ -2363,7 +2368,7 @@ func _buduj_pelna_karte_oferty(
 		if bool(wynik.get("ok", false)):
 			SkryptZapisu.zapisz(_swiat)
 			_stan._zsynchronizuj_pieniadze_z_bohatera()
-			_odswiez_pasek_statystyk(false)
+			_pasek._odswiez_pasek_statystyk(false)
 			_cofnij_poziom()
 		else:
 			_pokaz_komunikat_zakupu(str(wynik.get("powod", "Nie kupiono.")), wynik)
@@ -2561,7 +2566,7 @@ func _po_dojezdzie(
 		var wynik: Dictionary = _rynek_zakupow.kup(_swiat, oferta_id)
 		if bool(wynik.get("ok", false)):
 			_stan._zsynchronizuj_pieniadze_z_bohatera()
-			_odswiez_pasek_statystyk(false)
+			_pasek._odswiez_pasek_statystyk(false)
 			SkryptZapisu.zapisz(_swiat)
 			_cofnij_poziom()
 			return
@@ -3085,13 +3090,13 @@ func _efekt_fala2_tydzien() -> void:
 	var dep := Depresja.new()
 	var dres: Dictionary = dep.tydzien(bohater)
 	if bool(dres.get("zmiana", false)):
-		_dopisz_komunikat_tury(str(dres.get("tekst", "")))
+		_pasek._dopisz_komunikat_tury(str(dres.get("tekst", "")))
 	var zaj := ZajeciaDodatkowe.new()
 	var syl := Sylwetka.new()
 	syl.z_zapisu(bohater.get("sylwetka", {}))
 	var ez: Dictionary = zaj.efekt_tygodnia(bohater, syl)
 	if ez.get("teksty") is Array and not (ez["teksty"] as Array).is_empty():
-		_dopisz_komunikat_tury("Zajęcia: " + ", ".join(PackedStringArray(ez["teksty"])))
+		_pasek._dopisz_komunikat_tury("Zajęcia: " + ", ".join(PackedStringArray(ez["teksty"])))
 	# Doprecyzowanie zainteresowań z wiekiem.
 	if bohater.get("zainteresowanie") is Dictionary:
 		var zan := ZainteresowaniaLos.new()
@@ -3099,15 +3104,8 @@ func _efekt_fala2_tydzien() -> void:
 	var lot := SprowadzanieSamolotow.new()
 	var odsm: Dictionary = lot.sprawdz_odblokowanie_smiglowcow(bohater)
 	if bool(odsm.get("odblokowane", false)):
-		_dopisz_komunikat_tury(str(odsm.get("tekst", "")))
+		_pasek._dopisz_komunikat_tury(str(odsm.get("tekst", "")))
 	_swiat["bohater"] = bohater
-
-
-func _dopisz_komunikat_tury(txt: String) -> void:
-	if txt == "":
-		return
-	var kom := str(_swiat.get("komunikat_tury", ""))
-	_swiat["komunikat_tury"] = (kom + "\n" + txt).strip_edges() if kom != "" else txt
 
 
 func _pasek_sylwetki(bohater: Dictionary) -> Control:
@@ -3138,7 +3136,7 @@ func _odswiez_bohatera_i_ekran(tresc: String, nazwa: String) -> void:
 	_swiat["bohater"] = _stan._bohater()
 	SkryptZapisu.zapisz(_swiat)
 	_stan._zsynchronizuj_pieniadze_z_bohatera()
-	_odswiez_pasek_statystyk(true)
+	_pasek._odswiez_pasek_statystyk(true)
 	_otworz_akcje({"id": tresc, "nazwa": nazwa, "tryb": "ekran", "tresc": tresc})
 
 
@@ -3444,7 +3442,7 @@ func _ekran_eventy_przyklady() -> void:
 					var w: Dictionary = ev.zastosuj_opcje(_stan._bohater(), eid, oid)
 					_swiat["bohater"] = _stan._bohater()
 					SkryptZapisu.zapisz(_swiat)
-					_odswiez_pasek_statystyk(true)
+					_pasek._odswiez_pasek_statystyk(true)
 					_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 13))
 				)
 				_ui._tresc_biala().add_child(b)
@@ -3489,7 +3487,7 @@ func _ekran_praca_fala2() -> void:
 				_stan._dodaj_wplyw("fucha", int(w.get("placa", 0)), str(w.get("tekst", "")))
 				_swiat["bohater"] = _stan._bohater()
 				SkryptZapisu.zapisz(_swiat)
-				_odswiez_pasek_statystyk(true)
+				_pasek._odswiez_pasek_statystyk(true)
 			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 16))
 		)
 		fuchy.add_child(b)
@@ -4215,7 +4213,7 @@ func _ekran_jedzenie_dom(kolor: Color) -> void:
 	zatwierdz.pressed.connect(func() -> void:
 		_jedzenie.zatwierdz()
 		_odswiez_napisy_domu()
-		_odswiez_pasek_statystyk(true)
+		_pasek._odswiez_pasek_statystyk(true)
 	)
 	_ui._tresc_biala().add_child(zatwierdz)
 	_odswiez_napisy_domu()
@@ -4715,7 +4713,7 @@ func _zjedz_pozycje(id: String, komunikat: Variant) -> void:
 	var wynik := _jedzenie.zjedz(id)
 	if komunikat != null and is_instance_valid(komunikat):
 		komunikat.text = str(wynik.get("komunikat", ""))
-	_odswiez_pasek_statystyk(true)
+	_pasek._odswiez_pasek_statystyk(true)
 	_odswiez_napisy_domu()
 
 
@@ -4723,67 +4721,6 @@ func _zmien_ilosc(id: String, delta: int, licznik: Label) -> void:
 	_jedzenie.ustaw_ilosc_pozycji(id, _jedzenie.ilosc_pozycji(id) + delta)
 	if licznik != null and is_instance_valid(licznik):
 		licznik.text = str(_jedzenie.ilosc_pozycji(id))
-
-
-func _zbuduj_pasek_statystyk() -> void:
-	var glowny: HBoxContainer = get_node(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze/PasekGlowny")
-	_rozwiniete_stat = get_node(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze/PasekRozwiniety")
-	_ui._wyczysc(glowny)
-	_ui._wyczysc(_rozwiniete_stat)
-	_styl_panelu_paska()
-	_rok_lbl = _ui._napis_paska("Rok 1", 14)
-	_tydzien_lbl = _ui._napis_paska("T0", 14)
-	glowny.add_child(_rok_lbl)
-	glowny.add_child(_tydzien_lbl)
-	var zmeczenie := _blok_metryki("zmeczenie_fizyczne")
-	_zmeczenie_emoji = zmeczenie["emoji"]
-	_zmeczenie_pasek = zmeczenie["pasek"]
-	_zmeczenie_liczba = zmeczenie["liczba"]
-	glowny.add_child(zmeczenie["wezel"])
-	var zmeczenie_p := _blok_metryki("zmeczenie_psychiczne")
-	_zmeczenie_psych_emoji = zmeczenie_p["emoji"]
-	_zmeczenie_psych_pasek = zmeczenie_p["pasek"]
-	_zmeczenie_psych_liczba = zmeczenie_p["liczba"]
-	glowny.add_child(zmeczenie_p["wezel"])
-	var psychika := _blok_metryki("psychika")
-	_psychika_emoji = psychika["emoji"]
-	_psychika_pasek = psychika["pasek"]
-	_psychika_liczba = psychika["liczba"]
-	glowny.add_child(psychika["wezel"])
-	var pieniadze := HBoxContainer.new()
-	pieniadze.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	pieniadze.add_theme_constant_override("separation", 4)
-	_pieniadze_emoji = _ui._napis_paska("👛", 20)
-	_pieniadze_lbl = _ui._napis_paska("—", 16)
-	_pieniadze_lbl.add_theme_color_override("font_color", Color(ZIELONY))
-	pieniadze.add_child(_pieniadze_emoji)
-	pieniadze.add_child(_pieniadze_lbl)
-	glowny.add_child(pieniadze)
-	var wnetrze: VBoxContainer = get_node(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze")
-	_komunikat_tury_lbl = get_node_or_null(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze/KomunikatTury") as Label
-	if _komunikat_tury_lbl == null:
-		_komunikat_tury_lbl = Label.new()
-		_komunikat_tury_lbl.name = "KomunikatTury"
-		_komunikat_tury_lbl.visible = false
-		_komunikat_tury_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		_komunikat_tury_lbl.add_theme_font_size_override("font_size", 13)
-		_komunikat_tury_lbl.add_theme_color_override("font_color", Color(ZIELONY))
-		# Pod głównym rzędem paska, nad rozwinięciem.
-		wnetrze.add_child(_komunikat_tury_lbl)
-		wnetrze.move_child(_komunikat_tury_lbl, 1)
-
-
-## Treść tury idzie na biały obszar — zielonego paska u góry nie pokazujemy.
-func _ukryj_zielony_komunikat_tury() -> void:
-	if _komunikat_tury_lbl == null:
-		return
-	_komunikat_tury_lbl.text = ""
-	_komunikat_tury_lbl.visible = false
-
-
-func _pokaz_komunikat_tury_ui() -> void:
-	# Zachowane API: dawniej zielony pasek; teraz tylko ukrycie (treść w białym).
-	_ukryj_zielony_komunikat_tury()
 
 
 func _losuj_eventy_tury() -> void:
@@ -4964,260 +4901,6 @@ func _fallback_nauki_szkolnej() -> void:
 	if not bool(flagi.get("uczy_sie_liczyc_w_domu", false)):
 		flagi["umie_liczyc"] = true
 	_swiat["flagi_odkrycia"] = flagi
-
-
-func _blok_metryki(_id: String) -> Dictionary:
-	var rzad := HBoxContainer.new()
-	rzad.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	rzad.add_theme_constant_override("separation", 3)
-	var emoji := _ui._napis_paska("🙂", 18)
-	var stos := Control.new()
-	stos.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	stos.custom_minimum_size = Vector2(48, 22)
-	var pasek := ProgressBar.new()
-	pasek.set_anchors_preset(Control.PRESET_FULL_RECT)
-	pasek.min_value = 0
-	pasek.max_value = 100
-	pasek.value = 0
-	pasek.show_percentage = false
-	pasek.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var liczba := Label.new()
-	liczba.set_anchors_preset(Control.PRESET_FULL_RECT)
-	liczba.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	liczba.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	liczba.add_theme_font_size_override("font_size", 12)
-	liczba.add_theme_color_override("font_color", Color.WHITE)
-	liczba.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	stos.add_child(pasek)
-	stos.add_child(liczba)
-	rzad.add_child(emoji)
-	rzad.add_child(stos)
-	return {"wezel": rzad, "emoji": emoji, "pasek": pasek, "liczba": liczba}
-
-
-func _styl_panelu_paska() -> void:
-	var panel: PanelContainer = get_node(KOLUMNA_GRY + "/PasekStatystyk")
-	var styl := StyleBoxFlat.new()
-	styl.bg_color = Color(0.18, 0.24, 0.28, 0.96)
-	styl.corner_radius_top_left = 10
-	styl.corner_radius_top_right = 10
-	styl.corner_radius_bottom_left = 10
-	styl.corner_radius_bottom_right = 10
-	styl.content_margin_left = 8
-	styl.content_margin_right = 8
-	styl.content_margin_top = 8
-	styl.content_margin_bottom = 4
-	panel.add_theme_stylebox_override("panel", styl)
-
-
-func _podlacz_pasek_gest() -> void:
-	var uchwyt: ColorRect = get_node(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze/UchwytPaska")
-	uchwyt.gui_input.connect(_on_pasek_input)
-	var panel: PanelContainer = get_node(KOLUMNA_GRY + "/PasekStatystyk")
-	panel.gui_input.connect(_on_pasek_input)
-
-
-func _on_pasek_input(zdarzenie: InputEvent) -> void:
-	if zdarzenie is InputEventMouseButton:
-		var mysz := zdarzenie as InputEventMouseButton
-		if mysz.button_index == MOUSE_BUTTON_LEFT:
-			if mysz.pressed:
-				_pasek_ciagnie = true
-				_pasek_start_y = mysz.global_position.y
-			else:
-				_pasek_ciagnie = false
-	elif zdarzenie is InputEventMouseMotion and _pasek_ciagnie:
-		var ruch: InputEventMouseMotion = zdarzenie
-		var delta := ruch.global_position.y - _pasek_start_y
-		if delta > 28.0 and not _pasek_rozwiniety:
-			_ustaw_pasek_rozwiniety(true)
-		elif delta < -28.0 and _pasek_rozwiniety:
-			_ustaw_pasek_rozwiniety(false)
-
-
-func _ustaw_pasek_rozwiniety(wlacz: bool) -> void:
-	_pasek_rozwiniety = wlacz
-	_rozwiniete_stat.visible = wlacz
-	if wlacz:
-		_wypelnij_rozwiniete_stat()
-
-
-func _wypelnij_rozwiniete_stat() -> void:
-	_ui._wyczysc(_rozwiniete_stat)
-	_wypelnij_statystyki_ilosciowe(_rozwiniete_stat, true)
-
-
-func _wypelnij_statystyki_ilosciowe(cel: VBoxContainer, kompakt: bool = false) -> void:
-	var bohater := _stan._bohater()
-	var rozmiar := 13 if kompakt else 15
-	cel.add_child(_ui._napis_ekranu_lub_paska("Zdrowie: %s" % _ui._tekst_lub_pauza(bohater.get("zdrowie_skrot"), bohater.get("zdrowie")), rozmiar, kompakt))
-	cel.add_child(_ui._napis_ekranu_lub_paska("Wygląd: %s" % _ui._tekst_lub_pauza(_ui._nazwa_pola(bohater.get("wyglad_naturalny"))), rozmiar, kompakt))
-	var sila := _ui._tekst_liczby(bohater.get("sila"))
-	var kondycja := _ui._tekst_liczby(bohater.get("kondycja"))
-	if sila != "" or kondycja != "":
-		cel.add_child(_ui._napis_ekranu_lub_paska("Siła: %s   Kondycja: %s" % [
-			sila if sila != "" else "—",
-			kondycja if kondycja != "" else "—"
-		], rozmiar, kompakt))
-	elif _ui._tekst_liczby(bohater.get("wytrzymalosc")) != "":
-		cel.add_child(_ui._napis_ekranu_lub_paska("Wytrzymałość: %s" % _ui._tekst_liczby(bohater.get("wytrzymalosc")), rozmiar, kompakt))
-	var zdrowe: Variant = _jedzenie.odczyt_statystyk().get("zdrowe_zywienie")
-	cel.add_child(_ui._napis_ekranu_lub_paska("Zdrowe żywienie: %s" % (_ui._tekst_liczby(zdrowe) if _ui._jest_liczba(zdrowe) else "—"), rozmiar, kompakt))
-	cel.add_child(_ui._napis_ekranu_lub_paska("Sylwetka: %s" % _ui._tekst_lub_pauza(_ui._nazwa_pola(bohater.get("sylwetka"))), rozmiar, kompakt))
-	# Pasek czyta psychikę. Docelowe tylko przy POKAZ_STATYSTYKI (nigdy w normalnej grze).
-	if DostepStatystyk.POKAZ_STATYSTYKI:
-		var doc := _ui._tekst_liczby(bohater.get("zadowolenie_docelowe"))
-		cel.add_child(_ui._napis_ekranu_lub_paska("Docelowe (dev): %s" % (doc if doc != "" else "—"), rozmiar, kompakt))
-
-
-func _odswiez_pasek_statystyk(animuj_pieniadze: bool) -> void:
-	if _rok_lbl == null:
-		return
-	var rok := int(_swiat.get("rok", 1))
-	var tydzien := int(_swiat.get("tydzien", 0))
-	_rok_lbl.text = "Rok %d" % rok
-	_tydzien_lbl.text = "Tydzień %d" % tydzien
-	var psychika: Variant = _wartosc_metryki("psychika")
-	var zmeczenie: Variant = _wartosc_metryki("zmeczenie_fizyczne")
-	if zmeczenie == null:
-		zmeczenie = _wartosc_metryki("zmeczenie")
-	var zmeczenie_p: Variant = _wartosc_metryki("zmeczenie_psychiczne")
-	_ustaw_metryke(_psychika_emoji, _psychika_pasek, _psychika_liczba, "psychika", psychika, false)
-	_ustaw_metryke(_zmeczenie_emoji, _zmeczenie_pasek, _zmeczenie_liczba, "zmeczenie_fizyczne", zmeczenie, true)
-	if _zmeczenie_psych_pasek != null:
-		_ustaw_metryke(_zmeczenie_psych_emoji, _zmeczenie_psych_pasek, _zmeczenie_psych_liczba, "zmeczenie_psychiczne", zmeczenie_p, true)
-	_ustaw_pieniadze(animuj_pieniadze)
-	if _pasek_rozwiniety:
-		_wypelnij_rozwiniete_stat()
-
-
-func _wartosc_metryki(klucz: String) -> Variant:
-	var bohater := _stan._bohater()
-	if _ui._jest_liczba(bohater.get(klucz)):
-		return int(bohater[klucz])
-	if _ui._jest_liczba(_swiat.get(klucz)):
-		return int(_swiat[klucz])
-	var blok: Variant = _emotikony.get(klucz, {})
-	if blok is Dictionary and _ui._jest_liczba(blok.get("norma")):
-		return int(blok["norma"])
-	return null
-
-
-func _ustaw_metryke(emoji: Label, pasek: ProgressBar, liczba: Label, klucz: String, wartosc: Variant, odwrotnie_kolor: bool) -> void:
-	var blok: Variant = _emotikony.get(klucz, {})
-	if not (blok is Dictionary) or blok.is_empty():
-		if klucz == "zmeczenie_fizyczne":
-			blok = _emotikony.get("zmeczenie", {})
-		elif klucz == "zmeczenie_psychiczne":
-			blok = _emotikony.get("zmeczenie", {})
-	var v := 0
-	if _ui._jest_liczba(wartosc):
-		v = clampi(int(wartosc), 0, 100)
-	emoji.text = _emoji_z_progow(blok, v if _ui._jest_liczba(wartosc) else null)
-	pasek.value = float(v)
-	liczba.text = str(v) if _ui._jest_liczba(wartosc) else "—"
-	var kolor_hex := _kolor_z_progow(blok, v)
-	var styl := StyleBoxFlat.new()
-	styl.bg_color = _ui._kolor(kolor_hex)
-	styl.corner_radius_top_left = 4
-	styl.corner_radius_top_right = 4
-	styl.corner_radius_bottom_left = 4
-	styl.corner_radius_bottom_right = 4
-	pasek.add_theme_stylebox_override("fill", styl)
-	var tlo := StyleBoxFlat.new()
-	tlo.bg_color = Color(0.12, 0.14, 0.16, 1)
-	tlo.corner_radius_top_left = 4
-	tlo.corner_radius_top_right = 4
-	tlo.corner_radius_bottom_left = 4
-	tlo.corner_radius_bottom_right = 4
-	pasek.add_theme_stylebox_override("background", tlo)
-	if odwrotnie_kolor:
-		pass
-
-
-func _emoji_z_progow(blok: Variant, wartosc: Variant) -> String:
-	if not (blok is Dictionary):
-		return "•"
-	if wartosc == null and blok.has("null_emoji"):
-		return str(blok.get("null_emoji"))
-	var lista: Variant = blok.get("emotikony", blok.get("progi", []))
-	if not (lista is Array) or not _ui._jest_liczba(wartosc):
-		return str(blok.get("null_emoji", "•"))
-	var v := int(wartosc)
-	for wpis in lista:
-		if not (wpis is Dictionary):
-			continue
-		var prog: Variant = wpis.get("do")
-		if prog == null:
-			return str(wpis.get("emoji", "•"))
-		if _ui._jest_liczba(prog) and v <= int(prog):
-			return str(wpis.get("emoji", "•"))
-	return "•"
-
-
-func _kolor_z_progow(blok: Variant, wartosc: int) -> String:
-	if not (blok is Dictionary):
-		return "#888888"
-	var lista: Variant = blok.get("kolory_paska", [])
-	if not (lista is Array):
-		return "#888888"
-	for wpis in lista:
-		if wpis is Dictionary and _ui._jest_liczba(wpis.get("do")) and wartosc <= int(wpis["do"]):
-			return str(wpis.get("kolor", "#888888"))
-	return "#888888"
-
-
-func _ustaw_pieniadze(animuj: bool) -> void:
-	var kwota: Variant = null
-	var stan := _jedzenie.odczyt_statystyk()
-	if _ui._jest_liczba(stan.get("pieniadze")):
-		kwota = int(stan["pieniadze"])
-	elif _ui._jest_liczba(_stan._bohater().get("pieniadze")):
-		kwota = int(_stan._bohater()["pieniadze"])
-	var blok: Variant = _emotikony.get("pieniadze", {})
-	if kwota == null:
-		_pieniadze_znane_pokaz = false
-		_pieniadze_emoji.text = str(blok.get("null_emoji", "👛")) if blok is Dictionary else "👛"
-		_pieniadze_lbl.text = str(blok.get("null_tekst", "—")) if blok is Dictionary else "—"
-		return
-	_pieniadze_emoji.text = _emoji_portfela(int(kwota), blok)
-	if not animuj or not _pieniadze_znane_pokaz:
-		_pieniadze_pokazane = float(kwota)
-		_pieniadze_lbl.text = str(int(kwota))
-		_pieniadze_znane_pokaz = true
-		return
-	if _pieniadze_tween != null and is_instance_valid(_pieniadze_tween):
-		_pieniadze_tween.kill()
-	_pieniadze_tween = create_tween()
-	_pieniadze_tween.tween_method(_ustaw_tekst_pieniedzy, _pieniadze_pokazane, float(kwota), 0.55)
-
-
-func _ustaw_tekst_pieniedzy(wartosc: float) -> void:
-	_pieniadze_pokazane = wartosc
-	_pieniadze_lbl.text = str(int(round(wartosc)))
-
-
-func _emoji_portfela(kwota: int, blok: Variant) -> String:
-	if not (blok is Dictionary):
-		return "👛"
-	var progi: Variant = blok.get("progi", [])
-	if not (progi is Array):
-		return "👛"
-	for wpis in progi:
-		if not (wpis is Dictionary):
-			continue
-		var prog: Variant = wpis.get("do")
-		if prog == null:
-			return str(wpis.get("emoji", "🏆"))
-		if _ui._jest_liczba(prog) and kwota <= int(prog):
-			return str(wpis.get("emoji", "👛"))
-	return "🏆"
-
-
-func _odswiez_lokalizacje() -> void:
-	var napis: Label = get_node(KOLUMNA_GRY + "/Lokalizacja")
-	napis.text = _stan._opis_lokalizacji()
-	napis.add_theme_color_override("font_color", Color(0.9, 0.93, 0.95))
 
 
 func _opis_urodzenia() -> String:
