@@ -26,6 +26,7 @@ const SkryptUiWspolne = preload("res://scripts/ui_wspolne.gd")
 const SkryptStanuGry = preload("res://scripts/stan_gry.gd")
 const SkryptPaska = preload("res://scripts/pasek_statystyk.gd")
 const SkryptEventowTury = preload("res://scripts/eventy_tury.gd")
+const SkryptEkranuDomu = preload("res://scripts/ekran_domu.gd")
 
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
@@ -126,11 +127,15 @@ var _pasek: PasekStatystykGry
 
 var _tury: EventyTury
 
+var _dom: EkranDomu
+
 func _init() -> void:
 	_ui = SkryptUiWspolne.new(self)
 	_stan = SkryptStanuGry.new(self)
 	_pasek = SkryptPaska.new(self)
 	_tury = SkryptEventowTury.new(self)
+	_dom = SkryptEkranuDomu.new(self)
+
 
 
 
@@ -839,7 +844,7 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 	var tresc := str(akcja.get("tresc", ""))
 	var kolor := _ui._kolor(str(akcja.get("kolor", "#9aa7b2")))
 	if tresc == "dom":
-		_ekran_dom()
+		_dom._ekran_dom()
 	elif tresc == "jedzenie_dom":
 		_ekran_jedzenie_dom(kolor)
 	elif tresc == "jedzenie_sam":
@@ -849,13 +854,13 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 	elif tresc == "mapa":
 		_ekran_mapa()
 	elif tresc == "zdrowie":
-		_ekran_zdrowie()
+		_dom._ekran_zdrowie()
 	elif tresc == "terapia":
 		_ekran_terapia()
 	elif tresc == "praca":
 		_ekran_praca_fala2()
 	elif tresc == "majatek":
-		_ekran_majatek()
+		_dom._ekran_majatek()
 	elif tresc == "konserwacja_auta":
 		_ekran_konserwacja_auta()
 	elif tresc == "lotnictwo":
@@ -909,32 +914,6 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 				przycisk.custom_minimum_size = Vector2(0, 44)
 				przycisk.pressed.connect(_otworz_akcje.bind(dziecko))
 				_ui._tresc_biala().add_child(przycisk)
-
-
-func _ekran_dom() -> void:
-	var tekst := _tekst_domu()
-	if tekst != "":
-		_ui._tresc_biala().add_child(_ui._napis_ekranu(tekst, 20))
-	else:
-		_ui._tresc_biala().add_child(_ui._napis_ekranu("Dom. Brak nazwy w zapisie.", 16))
-	_ui._tresc_biala().add_child(_ui._napis_ekranu(_stan._opis_lokalizacji(), 15))
-
-
-func _ekran_zdrowie() -> void:
-	var bohater := _stan._bohater()
-	var skrot := str(bohater.get("zdrowie_skrot", ""))
-	if skrot != "":
-		_ui._tresc_biala().add_child(_ui._napis_ekranu(skrot, 18))
-	else:
-		_ui._tresc_biala().add_child(_ui._napis_ekranu("Zdrowie ilościowe pojawi się, gdy będzie w zapisie. Chorób na starcie nie wypisuję.", 16))
-	var zdrowie := _ui._tekst_pusty(bohater.get("zdrowie"))
-	if zdrowie != "":
-		_ui._tresc_biala().add_child(_ui._napis_ekranu("Zdrowie: %s" % zdrowie, 16))
-	var dep := Depresja.new()
-	var dep_txt := dep.tekst_stanu(bohater)
-	if dep_txt != "":
-		_ui._tresc_biala().add_child(_ui._napis_ekranu(dep_txt, 15))
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Terapia / nastrój — w podmenu Zdrowie.", 14))
 
 
 func _ekran_postac() -> void:
@@ -1020,11 +999,11 @@ func _ekran_rodzina() -> void:
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("%s: —%s" % [etykieta_gosp, ((" (%s)" % powod) if powod != "" else "")], 16))
 	else:
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("%s: %s" % [etykieta_gosp, zarobki if zarobki != "" else "—"], 16))
-	var opis_lokum := _opis_mieszkacie_w()
+	var opis_lokum := _dom._opis_mieszkacie_w()
 	if opis_lokum != "":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu(opis_lokum, 16))
 	else:
-		var dom := _tekst_domu()
+		var dom := _dom._tekst_domu()
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Dom: %s" % (dom if dom != "" else "brak lokum w zapisie"), 16))
 	_ui._tresc_biala().add_child(_ui._napis_ekranu("Rodzeństwo", 18))
 	var rodzenstwo: Variant = _swiat.get("rodzenstwo", [])
@@ -1424,102 +1403,6 @@ func _odswiez_flage_jedzenia_sam() -> void:
 		return
 	if _czy_jedzenie_sam_po_wieku():
 		_swiat["odblokowane_jedzenie_samemu"] = true
-
-
-func _ekran_majatek() -> void:
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Pieniądze", 18))
-	var kwota := _stan._pieniadze_tekst()
-	_ui._tresc_biala().add_child(_ui._napis_ekranu(kwota if kwota != "" else "—", 18))
-	var opis_lokum := _opis_mieszkacie_w()
-	if opis_lokum != "":
-		_ui._tresc_biala().add_child(_ui._napis_ekranu(opis_lokum, 16))
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Nieruchomości", 18))
-	var maj: Dictionary = _swiat.get("majatek", {}) if _swiat.get("majatek") is Dictionary else {}
-	var n_lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []
-	if n_lista.is_empty():
-		_ui._tresc_biala().add_child(_ui._napis_ekranu("Własne kupione: brak — kup w Zakupach (generator, nie katalog 200).", 14))
-	else:
-		for i in range(n_lista.size()):
-			var n: Variant = n_lista[i]
-			if not (n is Dictionary):
-				continue
-			var linia := "%s · %s · wygoda %s · %s" % [
-				str(n.get("nazwa", "?")),
-				_etykieta_stanu_zakupu(str(n.get("stan", ""))),
-				str(n.get("wygoda", "—")),
-				str(n.get("miasto_nazwa", "")),
-			]
-			_ui._tresc_biala().add_child(_ui._napis_ekranu(linia, 14))
-			var idx_bind := i
-			var b_rem := Button.new()
-			b_rem.text = "Remont (propozycja koszt/wygoda)"
-			b_rem.custom_minimum_size = Vector2(0, 40)
-			b_rem.pressed.connect(func() -> void:
-				var wynik: Dictionary = _rynek_zakupow.remont(_swiat, idx_bind)
-				if bool(wynik.get("ok", false)):
-					_rynek_zakupow.przelicz_zadowolenie_docelowe(_swiat)
-					SkryptZapisu.zapisz(_swiat)
-					_stan._zsynchronizuj_pieniadze_z_bohatera()
-					_pasek._odswiez_pasek_statystyk(false)
-					_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
-				else:
-					_ui._tresc_biala().add_child(_ui._napis_ekranu(str(wynik.get("powod", "Remont nieudany.")), 13))
-			)
-			_ui._tresc_biala().add_child(b_rem)
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Dobra", 18))
-	var d_lista: Array = maj.get("dobra", []) if maj.get("dobra") is Array else []
-	if d_lista.is_empty():
-		_ui._tresc_biala().add_child(_ui._napis_ekranu("Pusto.", 14))
-	else:
-		for i_d in range(d_lista.size()):
-			var d: Variant = d_lista[i_d]
-			if not (d is Dictionary):
-				continue
-			var nazwa_d := str(d.get("nazwa", "?"))
-			if str(d.get("kategoria", "")) == "samochod":
-				var linia_a := nazwa_d
-				var vmax_m := _rynek_zakupow.tekst_vmax_oferty(d, d.get("usterki_rzeczywiste", []) if d.get("usterki_rzeczywiste") is Array else [])
-				if vmax_m != "":
-					linia_a += " · vmax %s km/h" % vmax_m
-				if bool(d.get("nie_jezdzi", false)):
-					linia_a += " · NIE JEŹDZI"
-				_ui._tresc_biala().add_child(_ui._napis_ekranu(linia_a, 14))
-				if bool(d.get("nie_jezdzi", false)) or bool(d.get("do_naprawy", false)):
-					_ui._tresc_biala().add_child(_panel_awarii_auta(i_d, d))
-			else:
-				var linia_d := nazwa_d
-				if _rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
-					var plus_d := _rynek_zakupow.tekst_plusow(_rynek_zakupow.plusy_oferty(d))
-					if plus_d != "":
-						linia_d += " · " + plus_d
-				_ui._tresc_biala().add_child(_ui._napis_ekranu(linia_d, 14))
-				if _rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
-					var b_oddaj := Button.new()
-					b_oddaj.text = "Oddaj"
-					b_oddaj.custom_minimum_size = Vector2(0, 40)
-					var idx_d := i_d
-					b_oddaj.pressed.connect(func() -> void:
-						var wynik_o: Dictionary = _rynek_zakupow.oddaj_dobro(_swiat, idx_d)
-						if bool(wynik_o.get("ok", false)):
-							SkryptZapisu.zapisz(_swiat)
-							_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
-					)
-					_ui._tresc_biala().add_child(b_oddaj)
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wpływy", 18))
-	var lista: Variant = _swiat.get("wplywy", [])
-	if not (lista is Array) or lista.is_empty():
-		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak wpływów.", 15))
-		return
-	var od := maxi(0, lista.size() - 12)
-	for i in range(od, lista.size()):
-		var wpis: Variant = lista[i]
-		if not (wpis is Dictionary):
-			continue
-		var linia2 := str(wpis.get("tekst", ""))
-		if linia2 == "" and _ui._jest_liczba(wpis.get("kwota")):
-			linia2 = "%s: +%d zł" % [str(wpis.get("zrodlo", "wpływ")), int(wpis["kwota"])]
-		if linia2 != "":
-			_ui._tresc_biala().add_child(_ui._napis_ekranu(linia2, 15))
 
 
 func _ekran_zakupy() -> void:
@@ -4738,29 +4621,6 @@ func _opis_urodzenia() -> String:
 	if typ != "":
 		return "%s, reszta powiatu" % nazwa
 	return nazwa
-
-
-func _tekst_domu() -> String:
-	var rodzina: Variant = _swiat.get("rodzina", {})
-	if not (rodzina is Dictionary):
-		return ""
-	var dom: Variant = rodzina.get("dom", {})
-	if dom is Dictionary and dom.get("kolo") == true and str(dom.get("nazwa", "")) != "":
-		return str(dom.get("nazwa"))
-	return ""
-
-
-func _opis_mieszkacie_w() -> String:
-	var lokum: Variant = _swiat.get("lokum_startowe", {})
-	if not _stan._lokum_pelne(lokum):
-		var maj: Variant = _swiat.get("majatek", {})
-		if maj is Dictionary and maj.get("lokum_rodziny") is Dictionary:
-			lokum = maj["lokum_rodziny"]
-		else:
-			var rodzina: Variant = _swiat.get("rodzina", {})
-			if rodzina is Dictionary and rodzina.get("lokum") is Dictionary:
-				lokum = rodzina["lokum"]
-	return _rynek_zakupow.opis_lokum_ui(lokum)
 
 
 func _tekst_pracy() -> String:
