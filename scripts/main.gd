@@ -28,6 +28,7 @@ const SkryptPaska = preload("res://scripts/pasek_statystyk.gd")
 const SkryptEventowTury = preload("res://scripts/eventy_tury.gd")
 const SkryptEkranuDomu = preload("res://scripts/ekran_domu.gd")
 const SkryptEkranuRodziny = preload("res://scripts/ekran_rodziny.gd")
+const SkryptEkranuJedzenia = preload("res://scripts/ekran_jedzenia.gd")
 
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
@@ -132,6 +133,8 @@ var _dom: EkranDomu
 
 var _rodzina: EkranRodziny
 
+var _ekran_jedzenia: EkranJedzenia
+
 func _init() -> void:
 	_ui = SkryptUiWspolne.new(self)
 	_stan = SkryptStanuGry.new(self)
@@ -139,6 +142,8 @@ func _init() -> void:
 	_tury = SkryptEventowTury.new(self)
 	_dom = SkryptEkranuDomu.new(self)
 	_rodzina = SkryptEkranuRodziny.new(self)
+	_ekran_jedzenia = SkryptEkranuJedzenia.new(self)
+
 
 
 
@@ -207,7 +212,7 @@ func _on_wczytaj_pressed() -> void:
 	if not (_swiat.get("wplywy") is Array):
 		_swiat["wplywy"] = []
 	if not _swiat.has("odblokowane_jedzenie_samemu"):
-		_swiat["odblokowane_jedzenie_samemu"] = _czy_jedzenie_sam_po_wieku()
+		_swiat["odblokowane_jedzenie_samemu"] = _ekran_jedzenia._czy_jedzenie_sam_po_wieku()
 	if not (_swiat.get("flagi_odkrycia") is Dictionary):
 		_swiat["flagi_odkrycia"] = {}
 	if not (_swiat.get("odblokowane_tematy_pytan") is Array):
@@ -225,7 +230,7 @@ func _on_wczytaj_pressed() -> void:
 	if not (_swiat.get("lokum_startowe") is Dictionary) or not _stan._lokum_pelne(_swiat.get("lokum_startowe")):
 		_swiat["lokum_startowe"] = _stan._zbuduj_lokum_dla_swiata()
 	_rynek_zakupow.przelicz_zadowolenie_docelowe(_swiat)
-	_odswiez_flage_jedzenia_sam()
+	_ekran_jedzenia._odswiez_flage_jedzenia_sam()
 	_odswiez_rynek_zakupow()
 	if _swiat.get("jedzenie") is Dictionary:
 		_jedzenie.wczytaj_zrzut(_swiat["jedzenie"])
@@ -258,7 +263,7 @@ func _on_nastepna_tura() -> void:
 	_swiat["komunikat_tury"] = ""
 	_swiat["eventy_tury"] = []
 	_swiat["event_odpowiedz_tekst"] = ""
-	_odswiez_flage_jedzenia_sam()
+	_ekran_jedzenia._odswiez_flage_jedzenia_sam()
 	_rodzina._wyplata_kieszonkowego_tydzien()
 	_rodzina._wyplata_kieszonkowego_dziadkow_tydzien()
 	_efekt_konserwacji_auta_tydzien()
@@ -422,7 +427,7 @@ func _nowa_gra() -> void:
 	if _swiat["majatek"] is Dictionary:
 		_swiat["majatek"]["lokum_rodziny"] = _swiat["lokum_startowe"].duplicate(true)
 	_rynek_zakupow.przelicz_zadowolenie_docelowe(_swiat)
-	_odswiez_flage_jedzenia_sam()
+	_ekran_jedzenia._odswiez_flage_jedzenia_sam()
 	_odswiez_rynek_zakupow()
 	_losowanie.zapisz(wynik)
 	_losowanie.zapisz_rodzenstwo(rodzenstwo)
@@ -825,9 +830,9 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 	if tresc == "dom":
 		_dom._ekran_dom()
 	elif tresc == "jedzenie_dom":
-		_ekran_jedzenie_dom(kolor)
+		_ekran_jedzenia._ekran_jedzenie_dom(kolor)
 	elif tresc == "jedzenie_sam":
-		_ekran_jedzenie_sam(kolor)
+		_ekran_jedzenia._ekran_jedzenie_sam(kolor)
 	elif tresc == "transport":
 		_ekran_transport(kolor)
 	elif tresc == "mapa":
@@ -915,34 +920,6 @@ func _efekt_konserwacji_auta_tydzien() -> void:
 		var kom := str(_swiat.get("komunikat_tury", ""))
 		var dop := " · ".join(PackedStringArray(efekt["teksty"]))
 		_swiat["komunikat_tury"] = (kom + "\n" + dop).strip_edges() if kom != "" else dop
-
-
-func _jedzenie_odblok_cfg() -> Variant:
-	if not FileAccess.file_exists("res://postacie/jedzenie_ustawienia.json"):
-		return null
-	var plik := FileAccess.open("res://postacie/jedzenie_ustawienia.json", FileAccess.READ)
-	if plik == null:
-		return null
-	var dane: Variant = JSON.parse_string(plik.get_as_text())
-	if dane is Dictionary:
-		return dane.get("odblokowanie_jedzenie_samemu", null)
-	return null
-
-
-func _czy_jedzenie_sam_po_wieku() -> bool:
-	var cfg: Variant = _jedzenie_odblok_cfg()
-	var prog := 8
-	if cfg is Dictionary and _ui._jest_liczba(cfg.get("prog_wiek_lat")):
-		prog = int(cfg["prog_wiek_lat"])
-	var wiek: Variant = _stan._wiek_lat()
-	return _ui._jest_liczba(wiek) and int(wiek) >= prog
-
-
-func _odswiez_flage_jedzenia_sam() -> void:
-	if bool(_swiat.get("odblokowane_jedzenie_samemu", false)):
-		return
-	if _czy_jedzenie_sam_po_wieku():
-		_swiat["odblokowane_jedzenie_samemu"] = true
 
 
 func _ekran_zakupy() -> void:
@@ -3598,121 +3575,6 @@ func _stub_pytanie_dziecka() -> void:
 		_ui._tresc_biala().add_child(b)
 
 
-func _ekran_jedzenie_dom(kolor: Color) -> void:
-	_zdanie = _ui._napis_ekranu("", 18)
-	_zdanie.add_theme_color_override("font_color", Color(KRWISTY))
-	_ui._tresc_biala().add_child(_zdanie)
-	_wplyw_domu = _ui._rich_ekran()
-	_ui._tresc_biala().add_child(_wplyw_domu)
-	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Cena", kolor, _suwak_jedzenia("cena")))
-	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Składniki odżywcze", kolor, _suwak_jedzenia("skladniki")))
-	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Dieta ogólna", kolor, _suwak_jedzenia("dieta_ogolna")))
-	var diety := VBoxContainer.new()
-	diety.add_theme_constant_override("separation", 4)
-	var wege := CheckButton.new()
-	wege.text = "Wegetariańska"
-	wege.button_pressed = bool(_jedzenie.stan_roboczy().get("wegetarianska", false))
-	wege.toggled.connect(func(wlaczona: bool) -> void:
-		_jedzenie.ustaw_diete("wegetarianska", wlaczona)
-		_odswiez_napisy_domu()
-	)
-	var weganska := CheckButton.new()
-	weganska.text = "Wegańska"
-	weganska.button_pressed = bool(_jedzenie.stan_roboczy().get("weganska", false))
-	weganska.toggled.connect(func(wlaczona: bool) -> void:
-		_jedzenie.ustaw_diete("weganska", wlaczona)
-		_odswiez_napisy_domu()
-	)
-	diety.add_child(wege)
-	diety.add_child(weganska)
-	_ui._tresc_biala().add_child(_ui._ramka_z_dolnym("Dieta", kolor, diety, null))
-	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Dieta gotowania własnego", kolor, _suwak_jedzenia("dieta_wlasna")))
-	_efekt_dni = _ui._rich_ekran()
-	var dni_srodek := VBoxContainer.new()
-	dni_srodek.add_child(_efekt_dni)
-	var dni := _ui._kropki_dni(_jedzenie.dni_gotowania(), _ustaw_dni_gotowania_z_ekranu)
-	_ui._tresc_biala().add_child(_ui._ramka_z_dolnym("Ile dni w tygodniu gotujesz", kolor, dni_srodek, dni))
-	for pozycja in _jedzenie.pozycje_gdzie("dom"):
-		if pozycja is Dictionary:
-			_ui._tresc_biala().add_child(_wiersz_pozycji(pozycja, false))
-	var zatwierdz := Button.new()
-	zatwierdz.text = "Zatwierdź"
-	zatwierdz.custom_minimum_size = Vector2(0, 48)
-	zatwierdz.pressed.connect(func() -> void:
-		_jedzenie.zatwierdz()
-		_odswiez_napisy_domu()
-		_pasek._odswiez_pasek_statystyk(true)
-	)
-	_ui._tresc_biala().add_child(zatwierdz)
-	_odswiez_napisy_domu()
-
-
-func _ekran_jedzenie_sam(_kolor: Color) -> void:
-	_odswiez_flage_jedzenia_sam()
-	if not bool(_swiat.get("odblokowane_jedzenie_samemu", false)):
-		var tekst_blok := "Jeszcze nie jesz samemu poza domem."
-		var cfg: Variant = _jedzenie_odblok_cfg()
-		if cfg is Dictionary and str(cfg.get("tekst_zablokowane", "")) != "":
-			tekst_blok = str(cfg["tekst_zablokowane"])
-		var prog_txt := ""
-		if cfg is Dictionary and _ui._jest_liczba(cfg.get("prog_wiek_lat")):
-			prog_txt = " (próg wieku: %d lat — propozycja do poprawki)" % int(cfg["prog_wiek_lat"])
-		_ui._tresc_biala().add_child(_ui._napis_ekranu(tekst_blok + prog_txt, 16))
-		return
-	_ui._tresc_biala().add_child(_ui._napis_ekranu("Jakość zdrowotna poza domem (osobno od smaku/ceny; propozycja, nie medyczne %).", 13))
-	var jak_cfg: Variant = null
-	var dane_j: Variant = _jedzenie.wczytaj()
-	if dane_j is Dictionary:
-		jak_cfg = dane_j.get("jakosc_zdrowotna_poza_domem", {})
-	var j_min := 0
-	var j_max := 100
-	var j_krok := 5
-	if jak_cfg is Dictionary:
-		if _ui._jest_liczba(jak_cfg.get("min")):
-			j_min = int(jak_cfg["min"])
-		if _ui._jest_liczba(jak_cfg.get("max")):
-			j_max = int(jak_cfg["max"])
-		if _ui._jest_liczba(jak_cfg.get("krok")):
-			j_krok = int(jak_cfg["krok"])
-	var j_wart := int(_swiat.get("jakosc_zdrowotna_poza_domem", 50))
-	var j_opis := _ui._napis_ekranu("Jakość zdrowotna: %d" % j_wart, 15)
-	_ui._tresc_biala().add_child(j_opis)
-	var j_suwak := HSlider.new()
-	j_suwak.min_value = float(j_min)
-	j_suwak.max_value = float(j_max)
-	j_suwak.step = float(j_krok)
-	j_suwak.value = float(clampi(j_wart, j_min, j_max))
-	j_suwak.custom_minimum_size = Vector2(0, 36)
-	j_suwak.value_changed.connect(func(v: float) -> void:
-		_swiat["jakosc_zdrowotna_poza_domem"] = int(v)
-		j_opis.text = "Jakość zdrowotna: %d" % int(v)
-	)
-	_ui._tresc_biala().add_child(j_suwak)
-	var komunikat := _ui._napis_ekranu("", 16)
-	_ui._tresc_biala().add_child(komunikat)
-	var ceny: Array = []
-	for pozycja in _jedzenie.pozycje_gdzie("sam"):
-		if not (pozycja is Dictionary):
-			continue
-		if _ui._jest_liczba(pozycja.get("cena_zl")):
-			ceny.append(float(pozycja["cena_zl"]))
-		_ui._tresc_biala().add_child(_wiersz_pozycji(pozycja, true, komunikat))
-	_ui._dol_suwaka().show()
-	if ceny.is_empty():
-		_filtr_aktywny = false
-		_ui._dol_suwaka().add_child(_ui._z_marginesem(_ui._napis_ekranu("—", 20)))
-		return
-	ceny.sort()
-	var suwak = SkryptZakresu.new()
-	suwak.ustaw_zakres(float(ceny[0]), float(ceny[ceny.size() - 1]))
-	_filtr_aktywny = true
-	_filtr_od = suwak.od
-	_filtr_do = suwak.dokad
-	suwak.zakres_zmieniony.connect(_on_filtr_ceny)
-	_ui._dol_suwaka().add_child(_ui._z_marginesem(suwak))
-	_zastosuj_filtr()
-
-
 func _ekran_transport(_kolor: Color) -> void:
 	var auto: Variant = _auto_z_zapisu()
 	if auto == null:
@@ -3913,7 +3775,7 @@ func _blok_drogi(nazwa: String, zmeczenie: String, pieniadze: String, cena: Stri
 			przycisk.text = str(klasa.get("nazwa", ""))
 			przycisk.alignment = HORIZONTAL_ALIGNMENT_LEFT
 			przycisk.custom_minimum_size = Vector2(0, 44)
-			przycisk.pressed.connect(_wybierz_klase.bind(str(klasa.get("id", ""))))
+			przycisk.pressed.connect(_ekran_jedzenia._wybierz_klase.bind(str(klasa.get("id", ""))))
 			kolumna.add_child(przycisk)
 	return kolumna
 
@@ -3994,161 +3856,9 @@ func _panel_przejazdu_autem(auto: Dictionary, dystans_km: float, cel_nazwa: Stri
 	return kolumna
 
 
-func _wiersz_pozycji(pozycja: Dictionary, sam: bool, komunikat: Label = null) -> Control:
-	var id := str(pozycja.get("id", ""))
-	var prawa := VBoxContainer.new()
-	prawa.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	prawa.add_theme_constant_override("separation", 4)
-	var nazwa := Button.new()
-	nazwa.text = str(pozycja.get("nazwa", ""))
-	nazwa.alignment = HORIZONTAL_ALIGNMENT_LEFT
-	nazwa.custom_minimum_size = Vector2(0, 40)
-	nazwa.pressed.connect(_zjedz_pozycje.bind(id, komunikat))
-	var cena := _ui._napis_ekranu(_ui._tekst_ceny(pozycja.get("cena_zl")), 16)
-	var jakosc_txt := ""
-	if _ui._jest_liczba(pozycja.get("jakosc_propozycja")):
-		jakosc_txt = "Jakość (propozycja): %d" % int(pozycja["jakosc_propozycja"])
-	elif not sam:
-		jakosc_txt = "Jakość: —"
-	var jakosc_lbl := _ui._napis_ekranu(jakosc_txt, 13) if jakosc_txt != "" else null
-	var ster := HBoxContainer.new()
-	ster.add_theme_constant_override("separation", 6)
-	var licznik := _ui._napis_ekranu(str(_jedzenie.ilosc_pozycji(id)), 20)
-	licznik.custom_minimum_size = Vector2(36, 48)
-	licznik.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	var plus := Button.new()
-	plus.text = "+"
-	plus.custom_minimum_size = Vector2(48, 48)
-	plus.pressed.connect(_zmien_ilosc.bind(id, 1, licznik))
-	var minus := Button.new()
-	minus.text = "−"
-	minus.custom_minimum_size = Vector2(48, 48)
-	minus.pressed.connect(_zmien_ilosc.bind(id, -1, licznik))
-	# Lewy −, prawy + (naturalniej niż +/−).
-	ster.add_child(minus)
-	ster.add_child(licznik)
-	ster.add_child(plus)
-	var efekty := _ui._rich_ekran()
-	efekty.text = _jedzenie.bb_pozycji(id)
-	prawa.add_child(nazwa)
-	prawa.add_child(cena)
-	if jakosc_lbl != null:
-		prawa.add_child(jakosc_lbl)
-	prawa.add_child(ster)
-	prawa.add_child(efekty)
-	var rodzice := _ui._napis_ekranu("", 15)
-	if not sam:
-		var stan := _jedzenie.tekst_rodzicow_przy(id)
-		rodzice.text = stan
-		rodzice.visible = stan != ""
-		prawa.add_child(rodzice)
-		_efekty_domu.append({"id": id, "rich": efekty, "rodzice": rodzice})
-	if sam:
-		_wiersze_sam.append({"cena": pozycja.get("cena_zl", null), "wezel": prawa})
-	return prawa
-
-
-func _on_filtr_ceny(od: float, dokad: float) -> void:
-	_filtr_aktywny = true
-	_filtr_od = od
-	_filtr_do = dokad
-	_zastosuj_filtr()
-
-
-func _zastosuj_filtr() -> void:
-	for wpis in _wiersze_sam:
-		if not (wpis is Dictionary):
-			continue
-		var wezel: Variant = wpis.get("wezel")
-		if not (wezel is CanvasItem) or not is_instance_valid(wezel):
-			continue
-		var pokaz := true
-		if _filtr_aktywny and _ui._jest_liczba(wpis.get("cena")):
-			var cena := float(wpis["cena"])
-			pokaz = cena >= _filtr_od - 0.001 and cena <= _filtr_do + 0.001
-		wezel.visible = pokaz
-
-
-func _suwak_jedzenia(id: String) -> HSlider:
-	var zakres := _jedzenie.zakres_suwaka(id if id != "dieta_ogolna" and id != "dieta_wlasna" else "cena")
-	if id == "dieta_ogolna" or id == "dieta_wlasna":
-		zakres = {"min": 0, "max": 100}
-	var suwak := HSlider.new()
-	suwak.min_value = float(zakres.get("min", 0))
-	suwak.max_value = float(zakres.get("max", 100))
-	suwak.step = 1.0
-	suwak.custom_minimum_size = Vector2(0, 36)
-	var stan := _jedzenie.stan_roboczy()
-	var pole := id
-	var flaga := id + "_ustawiona"
-	if id == "skladniki":
-		pole = "skladniki"
-		flaga = "skladniki_ustawione"
-	if bool(stan.get(flaga, false)) and _ui._jest_liczba(stan.get(pole)):
-		suwak.set_value_no_signal(float(stan[pole]))
-	else:
-		suwak.set_value_no_signal(suwak.min_value)
-	suwak.value_changed.connect(func(wartosc: float) -> void:
-		if id == "dieta_ogolna" or id == "dieta_wlasna":
-			_jedzenie.ustaw_diete_suwak(id, int(wartosc))
-		else:
-			_jedzenie.ustaw_suwak(id, int(wartosc))
-		_odswiez_napisy_domu()
-	)
-	return suwak
-
-
-func _ustaw_dni_gotowania_z_ekranu(dzien: int) -> void:
-	_jedzenie.ustaw_dni_gotowania(dzien)
-	_zaplanuj_stos()
-
-
 func _ustaw_dni_auta(dzien: int) -> void:
 	_swiat["dni_auta"] = clampi(dzien, 0, 7)
 	_zaplanuj_stos()
-
-
-func _odswiez_napisy_domu() -> void:
-	if _zdanie != null and is_instance_valid(_zdanie):
-		var tekst := _jedzenie.zdanie_domu()
-		_zdanie.text = tekst
-		_zdanie.visible = tekst != ""
-	if _wplyw_domu != null and is_instance_valid(_wplyw_domu):
-		var bb := _jedzenie.bb_znakow(_jedzenie.zbiorcze())
-		_wplyw_domu.text = bb
-		_wplyw_domu.visible = bb != ""
-	if _efekt_dni != null and is_instance_valid(_efekt_dni):
-		_efekt_dni.text = _jedzenie.efekt_gotowania_tekst()
-		_efekt_dni.visible = _efekt_dni.text != ""
-	for wpis in _efekty_domu:
-		if not (wpis is Dictionary):
-			continue
-		var efekty: Variant = wpis.get("rich")
-		if efekty is RichTextLabel and is_instance_valid(efekty):
-			efekty.text = _jedzenie.bb_pozycji(str(wpis.get("id", "")))
-		var rodzice: Variant = wpis.get("rodzice")
-		if rodzice is Label and is_instance_valid(rodzice):
-			var stan := _jedzenie.tekst_rodzicow_przy(str(wpis.get("id", "")))
-			rodzice.text = stan
-			rodzice.visible = stan != ""
-
-
-func _wybierz_klase(id: String) -> void:
-	_swiat["klasa_transportu"] = id
-
-
-func _zjedz_pozycje(id: String, komunikat: Variant) -> void:
-	var wynik := _jedzenie.zjedz(id)
-	if komunikat != null and is_instance_valid(komunikat):
-		komunikat.text = str(wynik.get("komunikat", ""))
-	_pasek._odswiez_pasek_statystyk(true)
-	_odswiez_napisy_domu()
-
-
-func _zmien_ilosc(id: String, delta: int, licznik: Label) -> void:
-	_jedzenie.ustaw_ilosc_pozycji(id, _jedzenie.ilosc_pozycji(id) + delta)
-	if licznik != null and is_instance_valid(licznik):
-		licznik.text = str(_jedzenie.ilosc_pozycji(id))
 
 
 func _auto_z_zapisu() -> Variant:
