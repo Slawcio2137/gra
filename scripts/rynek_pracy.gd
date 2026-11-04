@@ -1384,13 +1384,14 @@ func _blok_slownika(klucz: String) -> Dictionary:
 func _wczytaj_dialogi() -> void:
 	if _dialogi_wczytane:
 		return
-	_dialogi_wczytane = true
 	if not FileAccess.file_exists(PLIK_DIALOGI):
+		_dialogi_wczytane = true
 		_dialogi = {}
 		return
 	var plik := FileAccess.open(PLIK_DIALOGI, FileAccess.READ)
 	if plik == null:
 		return
+	_dialogi_wczytane = true
 	var dane: Variant = JSON.parse_string(plik.get_as_text())
 	if dane is Dictionary:
 		_dialogi = dane
@@ -1919,16 +1920,18 @@ func _brak_miasta() -> Dictionary:
 func _wczytaj() -> void:
 	if _wczytana:
 		return
-	_wczytana = true
 	if not FileAccess.file_exists(PLIK):
+		_wczytana = true
 		_rubryka = {}
 		return
 	var plik := FileAccess.open(PLIK, FileAccess.READ)
 	if plik == null:
 		return
+	_wczytana = true
 	var dane: Variant = JSON.parse_string(plik.get_as_text())
-	if dane is Dictionary:
-		_rubryka = dane
+	if not (dane is Dictionary):
+		return
+	_rubryka = dane
 
 
 func _liczba(v: Variant) -> bool:

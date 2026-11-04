@@ -686,7 +686,9 @@ func wczytaj_zrzut(dane: Dictionary) -> void:
 	_ile_wybrane = {}
 	if dane.get("ile") is Dictionary:
 		for klucz in (dane["ile"] as Dictionary).keys():
-			_ile_wybrane[str(klucz)] = int(dane["ile"][klucz])
+			var ile_v: Variant = dane["ile"][klucz]
+			if _jest_liczba(ile_v):
+				_ile_wybrane[str(klucz)] = int(ile_v)
 	if _jest_liczba(dane.get("zbicie")):
 		_zbicie_zatwierdzone = int(dane["zbicie"])
 	if _jest_liczba(dane.get("ile_razy")):
