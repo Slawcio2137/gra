@@ -196,13 +196,14 @@ func _regulamin(kraj: String) -> Variant:
 func _wczytaj() -> void:
 	if _wczytane:
 		return
-	_wczytane = true
 	if not FileAccess.file_exists(PLIK):
+		_wczytane = true
 		_dane = {}
 		return
 	var plik := FileAccess.open(PLIK, FileAccess.READ)
 	if plik == null:
 		return
+	_wczytane = true
 	var dane: Variant = JSON.parse_string(plik.get_as_text())
 	if dane is Dictionary:
 		_dane = dane

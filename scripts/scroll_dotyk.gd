@@ -78,6 +78,10 @@ func _poszerz_pionowy_pasek() -> void:
 	var pasek := get_v_scroll_bar()
 	if pasek == null:
 		return
+	# _enter_tree i _ready wołają to drugi raz — bez flagi zostają osierocone StyleBoxy.
+	if pasek.has_meta("_pasek_poszerzony"):
+		return
+	pasek.set_meta("_pasek_poszerzony", true)
 	pasek.custom_minimum_size = Vector2(32, 48)
 	var chwyt := StyleBoxFlat.new()
 	chwyt.bg_color = Color(0.32, 0.36, 0.4, 0.95)
@@ -236,7 +240,10 @@ func _ustaw_filtr(wezel: Node) -> void:
 func _zostaw_natywny(kontrolka: Control) -> bool:
 	if kontrolka is OptionButton or kontrolka is LineEdit or kontrolka is TextEdit:
 		return true
-	if kontrolka is ItemList or kontrolka is SpinBox or kontrolka is Range:
+	# ProgressBar jest Range, ale nie łapie gestu — palec ma scrollować listę.
+	if kontrolka is ProgressBar:
+		return false
+	if kontrolka is ItemList or kontrolka is SpinBox or kontrolka is Slider:
 		return true
 	var skrypt: Variant = kontrolka.get_script()
 	if skrypt is Script:

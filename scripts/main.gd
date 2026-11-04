@@ -353,6 +353,7 @@ func _on_wszystkie_stat() -> void:
 	_stos.clear()
 	$Powrot.hide()
 	_ui._wyczysc(_ui._tresc_biala())
+	_ui._wyczysc(_ui._dol_suwaka())
 	_ui._dol_suwaka().hide()
 	_ui._tytul_bialy().text = "Statystyki ilościowe"
 	_pasek._wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
@@ -744,6 +745,7 @@ func _odswiez_stos() -> void:
 func _pokaz_start_bialy() -> void:
 	_ekran_pracy = false
 	_ui._wyczysc(_ui._tresc_biala())
+	_ui._wyczysc(_ui._dol_suwaka())
 	_ui._dol_suwaka().hide()
 	_ui._tytul_bialy().text = "Gra"
 	var start := str(_swiat.get("komunikat_startu", ""))
@@ -759,6 +761,7 @@ func _pokaz_start_bialy() -> void:
 func _pokaz_napisy_tygodnia() -> void:
 	_ekran_pracy = false
 	_ui._wyczysc(_ui._tresc_biala())
+	_ui._wyczysc(_ui._dol_suwaka())
 	_ui._dol_suwaka().hide()
 	var tydzien := int(_swiat.get("tydzien", 1))
 	var rok := int(_swiat.get("rok", 1))
@@ -801,6 +804,7 @@ func _pokaz_napisy_tygodnia() -> void:
 
 func _pokaz_liste_dzieci(akcja: Dictionary) -> void:
 	_ui._wyczysc(_ui._tresc_biala())
+	_ui._wyczysc(_ui._dol_suwaka())
 	_ui._dol_suwaka().hide()
 	_ui._tytul_bialy().text = str(akcja.get("nazwa", ""))
 	var dzieci: Variant = akcja.get("dzieci", [])
