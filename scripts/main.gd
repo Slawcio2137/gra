@@ -22,6 +22,7 @@ const ZIELONY := "#2f9e45"
 const KRWISTY := "#9d0610"
 const TEKST_CIEMNY := Color(0.12, 0.14, 0.16, 1)
 const PLIK_EMOTIKONOW := "res://ui/pasek_emotikony.json"
+const SkryptUiWspolne = preload("res://scripts/ui_wspolne.gd")
 
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
@@ -113,6 +114,13 @@ var _mapa_pasek: Label
 var _mapa_ikona: Texture2D
 
 
+var _ui: UiWspolne
+## Moduły ekranów. Świat, zapis i nawigacja zostają w tym skrypcie.
+
+func _init() -> void:
+	_ui = SkryptUiWspolne.new(self)
+
+
 func _ready() -> void:
 	_losowanie = Losowanie.new()
 	_znak = load("res://grafika/znak_zapytania.png")
@@ -122,16 +130,16 @@ func _ready() -> void:
 	_jedzenie.visible = false
 	add_child(_jedzenie)
 	_wyglad = WygladGracza.wczytaj()
-	_wczytaj_emotikony()
-	_zastosuj_wyglad()
-	_podlacz_ustawienia()
-	_male_przyciski()
+	_ui._wczytaj_emotikony()
+	_ui._zastosuj_wyglad()
+	_ui._podlacz_ustawienia()
+	_ui._male_przyciski()
 	_wczytaj_akcje()
 	_zbuduj_pasek_statystyk()
 	_zbuduj_zakladki()
-	_styl_bialego_ekranu()
+	_ui._styl_bialego_ekranu()
 	_podlacz_pasek_gest()
-	_zbuduj_statystyki_menu()
+	_ui._zbuduj_statystyki_menu()
 	$UstawieniaGry.hide()
 	$Powrot.hide()
 	$MenuEkran/BrakZapisu.hide()
@@ -217,7 +225,7 @@ func _on_nastepna_tura() -> void:
 		tydzien = 1
 		rok += 1
 		var bohater := _bohater()
-		if _jest_liczba(bohater.get("wiek")):
+		if _ui._jest_liczba(bohater.get("wiek")):
 			bohater["wiek"] = int(bohater["wiek"]) + 1
 			_swiat["bohater"] = bohater
 	_swiat["tydzien"] = tydzien
@@ -272,7 +280,7 @@ func _wyplata_kieszonkowego_tydzien() -> void:
 	var wynik: Dictionary = ziarno.wyplata_tygodniowa_kieszonkowego(
 		rodzina, tryb, true, _swiat.get("kieszonkowe_kwota_zl", null), _wiek_lat()
 	)
-	if not bool(wynik.get("dodano", false)) or not _jest_liczba(wynik.get("kwota")):
+	if not bool(wynik.get("dodano", false)) or not _ui._jest_liczba(wynik.get("kwota")):
 		return
 	_dodaj_pieniadze(int(wynik["kwota"]))
 	_dodaj_wplyw(str(wynik.get("zrodlo_wplywu", "kieszonkowe")), int(wynik["kwota"]), str(wynik.get("tekst", "")))
@@ -298,13 +306,13 @@ func _efekt_wygody_tydzien() -> void:
 func _on_ustawienia_pressed() -> void:
 	$PanelUstawien.show()
 	$Powrot.show()
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 
 
 func _on_zamknij_ustawienia() -> void:
 	$PanelUstawien.hide()
 	_odswiez_widocznosc_powrotu()
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 
 
 func _on_powrot() -> void:
@@ -333,10 +341,10 @@ func _on_wszystkie_stat() -> void:
 	_odznacz_zakladki()
 	_stos.clear()
 	$Powrot.hide()
-	_wyczysc(_tresc_biala())
-	_dol_suwaka().hide()
-	_tytul_bialy().text = "Statystyki ilościowe"
-	_wypelnij_statystyki_ilosciowe(_tresc_biala())
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._dol_suwaka().hide()
+	_ui._tytul_bialy().text = "Statystyki ilościowe"
+	_wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
 
 
 func _unhandled_input(zdarzenie: InputEvent) -> void:
@@ -352,7 +360,7 @@ func _nowa_gra() -> void:
 	var rodzina: Dictionary = ziarno.losuj(_losowanie, miejsce)
 	wynik["ziarno_rodzicow"] = rodzina
 	wynik["zarobki_rodziny"] = rodzina.get("zarobki", null)
-	if not _jest_liczba(wynik.get("pieniadze")):
+	if not _ui._jest_liczba(wynik.get("pieniadze")):
 		wynik["pieniadze"] = 0
 	var dziad := Dziadkowie.new()
 	var dziadkowie_stan: Dictionary = dziad.losuj(rodzina, _losowanie, miejsce)
@@ -463,7 +471,7 @@ func _komunikat_startu(bohater: Dictionary, rodzina: Dictionary, rodzenstwo: Arr
 			powod_z = str(rodzina["zarobki"].get("powod", ""))
 		czesci.append("Rodzina: zarobki nie wylosowane%s." % ((" — " + powod_z) if powod_z != "" else ""))
 	czesci.append("Rodzeństwo: %d." % rodzenstwo.size())
-	if _jest_liczba(bohater.get("wiek")):
+	if _ui._jest_liczba(bohater.get("wiek")):
 		czesci.append("Wiek startu: %d lat." % int(bohater["wiek"]))
 	czesci.append("Przyjaciele i znajomi: puste na start.")
 	czesci.append("Kieszonkowe: dopiero po prośbie (Rodzina).")
@@ -486,7 +494,7 @@ func _wejdz() -> void:
 	_pokaz_start_bialy()
 	_odswiez_lokalizacje()
 	_odswiez_pasek_statystyk(false)
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 
 
 func _brak_zapisu() -> void:
@@ -519,36 +527,29 @@ func _indeksuj_akcje_rekurencyjnie(lista: Array) -> void:
 			_indeksuj_akcje_rekurencyjnie(akcja["dzieci"])
 
 
-func _wczytaj_emotikony() -> void:
-	_emotikony = {}
-	var dane: Variant = _czytaj_json(PLIK_EMOTIKONOW)
-	if dane is Dictionary:
-		_emotikony = dane
-
-
 func _uzupelnij_normy_bohatera(bohater: Dictionary) -> void:
 	var psychika: Variant = _emotikony.get("psychika", {})
 	var zmeczenie: Variant = _emotikony.get("zmeczenie_fizyczne", _emotikony.get("zmeczenie", {}))
 	var zmeczenie_p: Variant = _emotikony.get("zmeczenie_psychiczne", {})
-	if not _jest_liczba(bohater.get("psychika")) and psychika is Dictionary and _jest_liczba(psychika.get("norma")):
+	if not _ui._jest_liczba(bohater.get("psychika")) and psychika is Dictionary and _ui._jest_liczba(psychika.get("norma")):
 		bohater["psychika"] = int(psychika["norma"])
-	if not _jest_liczba(bohater.get("zmeczenie_fizyczne")):
-		if _jest_liczba(bohater.get("zmeczenie")):
+	if not _ui._jest_liczba(bohater.get("zmeczenie_fizyczne")):
+		if _ui._jest_liczba(bohater.get("zmeczenie")):
 			bohater["zmeczenie_fizyczne"] = int(bohater["zmeczenie"])
-		elif zmeczenie is Dictionary and _jest_liczba(zmeczenie.get("norma")):
+		elif zmeczenie is Dictionary and _ui._jest_liczba(zmeczenie.get("norma")):
 			bohater["zmeczenie_fizyczne"] = int(zmeczenie["norma"])
-	if _jest_liczba(bohater.get("zmeczenie_fizyczne")):
+	if _ui._jest_liczba(bohater.get("zmeczenie_fizyczne")):
 		bohater["zmeczenie"] = int(bohater["zmeczenie_fizyczne"])
-	elif not _jest_liczba(bohater.get("zmeczenie")) and zmeczenie is Dictionary and _jest_liczba(zmeczenie.get("norma")):
+	elif not _ui._jest_liczba(bohater.get("zmeczenie")) and zmeczenie is Dictionary and _ui._jest_liczba(zmeczenie.get("norma")):
 		bohater["zmeczenie"] = int(zmeczenie["norma"])
 		bohater["zmeczenie_fizyczne"] = int(zmeczenie["norma"])
-	if not _jest_liczba(bohater.get("zmeczenie_psychiczne")) and zmeczenie_p is Dictionary and _jest_liczba(zmeczenie_p.get("norma")):
+	if not _ui._jest_liczba(bohater.get("zmeczenie_psychiczne")) and zmeczenie_p is Dictionary and _ui._jest_liczba(zmeczenie_p.get("norma")):
 		bohater["zmeczenie_psychiczne"] = int(zmeczenie_p["norma"])
 
 
 func _zbuduj_zakladki() -> void:
 	var siatka: GridContainer = get_node(KOLUMNA_GRY + "/SiatkaZakladek")
-	_wyczysc(siatka)
+	_ui._wyczysc(siatka)
 	_przyciski_zakladek.clear()
 	for akcja in _akcje:
 		if not (akcja is Dictionary):
@@ -583,7 +584,7 @@ func _zbuduj_zakladki() -> void:
 
 
 func _styl_zakladki(przycisk: Button, hex: String, zaznaczona: bool) -> void:
-	var baza := _kolor(hex)
+	var baza := _ui._kolor(hex)
 	if zaznaczona:
 		baza = baza.darkened(0.35)
 	var styl := StyleBoxFlat.new()
@@ -598,9 +599,9 @@ func _styl_zakladki(przycisk: Button, hex: String, zaznaczona: bool) -> void:
 	styl.content_margin_bottom = 8
 	for stan in ["normal", "hover", "pressed", "focus", "disabled"]:
 		przycisk.add_theme_stylebox_override(stan, styl)
-	przycisk.add_theme_color_override("font_color", _kolor_napisu_na(baza))
-	przycisk.add_theme_color_override("font_pressed_color", _kolor_napisu_na(baza))
-	przycisk.add_theme_color_override("font_hover_color", _kolor_napisu_na(baza))
+	przycisk.add_theme_color_override("font_color", _ui._kolor_napisu_na(baza))
+	przycisk.add_theme_color_override("font_pressed_color", _ui._kolor_napisu_na(baza))
+	przycisk.add_theme_color_override("font_hover_color", _ui._kolor_napisu_na(baza))
 
 
 func _on_zakladka(id: String) -> void:
@@ -633,7 +634,7 @@ func _otworz_akcje(akcja: Dictionary) -> void:
 	_stos = _stos_hierarchiczny(akcja)
 	# Powrót zawsze przy otwartej ścieżce (także korzeń zakładki) — żeby dało się wyjść całkowicie.
 	$Powrot.show()
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 	_zaplanuj_stos()
 
 
@@ -691,7 +692,7 @@ func _cofnij_poziom() -> void:
 		_wyjdz_do_neutralnego()
 		return
 	$Powrot.show()
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 	_zaplanuj_stos()
 
 
@@ -701,7 +702,7 @@ func _wyjdz_do_neutralnego() -> void:
 	_odznacz_zakladki()
 	$Powrot.hide()
 	_pokaz_start_bialy()
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 
 
 func _wyjdz_do_napisow_tygodnia() -> void:
@@ -710,7 +711,7 @@ func _wyjdz_do_napisow_tygodnia() -> void:
 	_odznacz_zakladki()
 	$Powrot.hide()
 	_pokaz_napisy_tygodnia()
-	_na_wierzch_przyciski()
+	_ui._na_wierzch_przyciski()
 
 
 func _odswiez_widocznosc_powrotu() -> void:
@@ -751,66 +752,66 @@ func _odswiez_stos() -> void:
 
 func _pokaz_start_bialy() -> void:
 	_ekran_pracy = false
-	_wyczysc(_tresc_biala())
-	_dol_suwaka().hide()
-	_tytul_bialy().text = "Gra"
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._dol_suwaka().hide()
+	_ui._tytul_bialy().text = "Gra"
 	var start := str(_swiat.get("komunikat_startu", ""))
 	if start != "":
-		_tresc_biala().add_child(_napis_ekranu(start, 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(start, 15))
 	var tura_txt := str(_swiat.get("komunikat_tury", "")).strip_edges()
 	if tura_txt != "":
-		_tresc_biala().add_child(_napis_ekranu("W tym tygodniu: %s" % tura_txt, 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("W tym tygodniu: %s" % tura_txt, 15))
 	_ukryj_zielony_komunikat_tury()
-	_tresc_biala().add_child(_napis_ekranu("Wybierz zakładkę. Rodzina i kieszonkowe: Osoby → Rodzina. Mapa: Majątek → Transport → Mapa.", 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wybierz zakładkę. Rodzina i kieszonkowe: Osoby → Rodzina. Mapa: Majątek → Transport → Mapa.", 16))
 
 
 func _pokaz_napisy_tygodnia() -> void:
 	_ekran_pracy = false
-	_wyczysc(_tresc_biala())
-	_dol_suwaka().hide()
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._dol_suwaka().hide()
 	var tydzien := int(_swiat.get("tydzien", 1))
 	var rok := int(_swiat.get("rok", 1))
-	_tytul_bialy().text = "W tym tygodniu"
+	_ui._tytul_bialy().text = "W tym tygodniu"
 	# Najpierw Rok i Tydzień — pogrubione i powiększone; potem reszta napisów.
 	var naglowek := HBoxContainer.new()
 	naglowek.add_theme_constant_override("separation", 20)
-	var rok_rich := _rich_ekran()
+	var rok_rich := _ui._rich_ekran()
 	rok_rich.add_theme_font_size_override("normal_font_size", 24)
 	rok_rich.add_theme_font_size_override("bold_font_size", 24)
 	rok_rich.fit_content = true
 	rok_rich.text = "[b]Rok %d[/b]" % rok
-	var tydzien_rich := _rich_ekran()
+	var tydzien_rich := _ui._rich_ekran()
 	tydzien_rich.add_theme_font_size_override("normal_font_size", 24)
 	tydzien_rich.add_theme_font_size_override("bold_font_size", 24)
 	tydzien_rich.fit_content = true
 	tydzien_rich.text = "[b]Tydzień %d[/b]" % tydzien
 	naglowek.add_child(rok_rich)
 	naglowek.add_child(tydzien_rich)
-	_tresc_biala().add_child(naglowek)
+	_ui._tresc_biala().add_child(naglowek)
 	var tura_txt := str(_swiat.get("komunikat_tury", "")).strip_edges()
 	if tura_txt != "":
-		_tresc_biala().add_child(_napis_ekranu(tura_txt, 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(tura_txt, 15))
 	var kiesz := str(_swiat.get("ostatnie_kieszonkowe_tekst", "")).strip_edges()
 	if kiesz != "" and kiesz != tura_txt:
-		_tresc_biala().add_child(_napis_ekranu(kiesz, 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(kiesz, 14))
 	var wygoda_txt := str(_swiat.get("ostatni_efekt_wygody_tekst", "")).strip_edges()
 	if wygoda_txt != "" and tura_txt.find(wygoda_txt) < 0:
-		_tresc_biala().add_child(_napis_ekranu(wygoda_txt, 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(wygoda_txt, 14))
 	var odp := str(_swiat.get("event_odpowiedz_tekst", "")).strip_edges()
 	if odp != "":
-		_tresc_biala().add_child(_napis_ekranu(odp, 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(odp, 15))
 	_pokaz_eventy_tury_ui()
 	var eventy: Variant = _swiat.get("eventy_tury", [])
 	if (not (eventy is Array) or eventy.is_empty()) and tura_txt == "" and kiesz == "" and wygoda_txt == "" and odp == "":
-		_tresc_biala().add_child(_napis_ekranu("Brak szczególnych wydarzeń tygodnia.", 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak szczególnych wydarzeń tygodnia.", 15))
 	_ukryj_zielony_komunikat_tury()
-	_tresc_biala().add_child(_napis_ekranu("Wybierz zakładkę, żeby kontynuować.", 14))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wybierz zakładkę, żeby kontynuować.", 14))
 
 
 func _pokaz_liste_dzieci(akcja: Dictionary) -> void:
-	_wyczysc(_tresc_biala())
-	_dol_suwaka().hide()
-	_tytul_bialy().text = str(akcja.get("nazwa", ""))
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._dol_suwaka().hide()
+	_ui._tytul_bialy().text = str(akcja.get("nazwa", ""))
 	var dzieci: Variant = akcja.get("dzieci", [])
 	if not (dzieci is Array):
 		return
@@ -822,7 +823,7 @@ func _pokaz_liste_dzieci(akcja: Dictionary) -> void:
 		przycisk.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		przycisk.custom_minimum_size = Vector2(0, 48)
 		przycisk.pressed.connect(_otworz_akcje.bind(dziecko))
-		_tresc_biala().add_child(przycisk)
+		_ui._tresc_biala().add_child(przycisk)
 
 
 func _pokaz_ekran(akcja: Dictionary) -> void:
@@ -836,10 +837,10 @@ func _pokaz_ekran(akcja: Dictionary) -> void:
 	_opcje_transportu = null
 	_mapa_warstwa = null
 	_mapa_pasek = null
-	_wyczysc(_tresc_biala())
-	_wyczysc(_dol_suwaka())
-	_dol_suwaka().hide()
-	_tytul_bialy().text = _tytul_ekranu(akcja)
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._wyczysc(_ui._dol_suwaka())
+	_ui._dol_suwaka().hide()
+	_ui._tytul_bialy().text = _tytul_ekranu(akcja)
 	_wypelnij_ekran(akcja)
 
 
@@ -854,7 +855,7 @@ func _tytul_ekranu(akcja: Dictionary) -> String:
 
 func _wypelnij_ekran(akcja: Dictionary) -> void:
 	var tresc := str(akcja.get("tresc", ""))
-	var kolor := _kolor(str(akcja.get("kolor", "#9aa7b2")))
+	var kolor := _ui._kolor(str(akcja.get("kolor", "#9aa7b2")))
 	if tresc == "dom":
 		_ekran_dom()
 	elif tresc == "jedzenie_dom":
@@ -878,7 +879,7 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 	elif tresc == "lotnictwo":
 		_ekran_lotnictwo()
 	elif tresc == "szkola":
-		_tresc_biala().add_child(_napis_ekranu("Nauka — Fala 2: korepetycje, zajęcia, szachy w podmenu.", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Nauka — Fala 2: korepetycje, zajęcia, szachy w podmenu.", 16))
 		_stub_przedszkole()
 	elif tresc == "korepetycje":
 		_ekran_korepetycje()
@@ -914,9 +915,9 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 	elif tresc == "znajomi":
 		_ekran_lista_osob("znajomi", "Nikogo jeszcze.")
 	elif tresc == "ustawienia_gry":
-		_ekran_ustawienia_w_bialym()
+		_ui._ekran_ustawienia_w_bialym()
 	elif tresc == "statystyki_ilosciowe":
-		_wypelnij_statystyki_ilosciowe(_tresc_biala())
+		_wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
 	if akcja.get("dzieci") is Array and tresc != "jedzenie" and tresc != "majatek" and tresc != "osoby":
 		for dziecko in akcja["dzieci"]:
 			if dziecko is Dictionary:
@@ -925,134 +926,134 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 				przycisk.alignment = HORIZONTAL_ALIGNMENT_LEFT
 				przycisk.custom_minimum_size = Vector2(0, 44)
 				przycisk.pressed.connect(_otworz_akcje.bind(dziecko))
-				_tresc_biala().add_child(przycisk)
+				_ui._tresc_biala().add_child(przycisk)
 
 
 func _ekran_dom() -> void:
 	var tekst := _tekst_domu()
 	if tekst != "":
-		_tresc_biala().add_child(_napis_ekranu(tekst, 20))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(tekst, 20))
 	else:
-		_tresc_biala().add_child(_napis_ekranu("Dom. Brak nazwy w zapisie.", 16))
-	_tresc_biala().add_child(_napis_ekranu(_opis_lokalizacji(), 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Dom. Brak nazwy w zapisie.", 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(_opis_lokalizacji(), 15))
 
 
 func _ekran_zdrowie() -> void:
 	var bohater := _bohater()
 	var skrot := str(bohater.get("zdrowie_skrot", ""))
 	if skrot != "":
-		_tresc_biala().add_child(_napis_ekranu(skrot, 18))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(skrot, 18))
 	else:
-		_tresc_biala().add_child(_napis_ekranu("Zdrowie ilościowe pojawi się, gdy będzie w zapisie. Chorób na starcie nie wypisuję.", 16))
-	var zdrowie := _tekst_pusty(bohater.get("zdrowie"))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Zdrowie ilościowe pojawi się, gdy będzie w zapisie. Chorób na starcie nie wypisuję.", 16))
+	var zdrowie := _ui._tekst_pusty(bohater.get("zdrowie"))
 	if zdrowie != "":
-		_tresc_biala().add_child(_napis_ekranu("Zdrowie: %s" % zdrowie, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Zdrowie: %s" % zdrowie, 16))
 	var dep := Depresja.new()
 	var dep_txt := dep.tekst_stanu(bohater)
 	if dep_txt != "":
-		_tresc_biala().add_child(_napis_ekranu(dep_txt, 15))
-	_tresc_biala().add_child(_napis_ekranu("Terapia / nastrój — w podmenu Zdrowie.", 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(dep_txt, 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Terapia / nastrój — w podmenu Zdrowie.", 14))
 
 
 func _ekran_postac() -> void:
 	var bohater := _bohater()
-	var imie := _tekst_pusty(bohater.get("imie"))
-	var nazwisko := _tekst_pusty(bohater.get("nazwisko"))
+	var imie := _ui._tekst_pusty(bohater.get("imie"))
+	var nazwisko := _ui._tekst_pusty(bohater.get("nazwisko"))
 	if imie != "" or nazwisko != "":
-		_tresc_biala().add_child(_napis_ekranu(("%s %s" % [imie, nazwisko]).strip_edges(), 18))
-	_tresc_biala().add_child(_napis_ekranu("Cechy charakteru", 18))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(("%s %s" % [imie, nazwisko]).strip_edges(), 18))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Cechy charakteru", 18))
 	var cechy := _cechy_bohatera(bohater)
-	_tresc_biala().add_child(_napis_ekranu(cechy if cechy != "" else "—", 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(cechy if cechy != "" else "—", 16))
 	var inteligencje := _inteligencje_bohatera(bohater)
 	if inteligencje != "":
-		_tresc_biala().add_child(_napis_ekranu("Inteligencja", 18))
-		_tresc_biala().add_child(_napis_ekranu(inteligencje, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Inteligencja", 18))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(inteligencje, 16))
 	var urodzenie := _opis_urodzenia()
-	_tresc_biala().add_child(_napis_ekranu("Miejsce urodzenia", 18))
-	_tresc_biala().add_child(_napis_ekranu(urodzenie if urodzenie != "" else "—", 16))
-	var wiek := _tekst_liczby(bohater.get("wiek"))
-	_tresc_biala().add_child(_napis_ekranu("Wiek: %s" % (wiek if wiek != "" else "—"), 16))
-	var psychika := _tekst_liczby(_wartosc_metryki("psychika"))
-	var zm_f := _tekst_liczby(_wartosc_metryki("zmeczenie_fizyczne"))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Miejsce urodzenia", 18))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(urodzenie if urodzenie != "" else "—", 16))
+	var wiek := _ui._tekst_liczby(bohater.get("wiek"))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wiek: %s" % (wiek if wiek != "" else "—"), 16))
+	var psychika := _ui._tekst_liczby(_wartosc_metryki("psychika"))
+	var zm_f := _ui._tekst_liczby(_wartosc_metryki("zmeczenie_fizyczne"))
 	if zm_f == "":
-		zm_f = _tekst_liczby(_wartosc_metryki("zmeczenie"))
-	var zm_p := _tekst_liczby(_wartosc_metryki("zmeczenie_psychiczne"))
-	_tresc_biala().add_child(_napis_ekranu("Psychika (nastrój): %s" % (psychika if psychika != "" else "—"), 16))
-	_tresc_biala().add_child(_napis_ekranu("Zmęczenie fizyczne: %s   Obciążenie psychiczne: %s" % [
+		zm_f = _ui._tekst_liczby(_wartosc_metryki("zmeczenie"))
+	var zm_p := _ui._tekst_liczby(_wartosc_metryki("zmeczenie_psychiczne"))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Psychika (nastrój): %s" % (psychika if psychika != "" else "—"), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Zmęczenie fizyczne: %s   Obciążenie psychiczne: %s" % [
 		zm_f if zm_f != "" else "—",
 		zm_p if zm_p != "" else "—"
 	], 16))
 	var syl_txt := _opis_sylwetki(bohater)
 	if syl_txt != "":
-		_tresc_biala().add_child(_napis_ekranu(syl_txt, 16))
-		_tresc_biala().add_child(_pasek_sylwetki(bohater))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(syl_txt, 16))
+		_ui._tresc_biala().add_child(_pasek_sylwetki(bohater))
 	var ie := InteligencjaEmocjonalna.new()
 	var ie_txt := ie.tekst(bohater)
 	if ie_txt != "":
-		_tresc_biala().add_child(_napis_ekranu(ie_txt, 16))
-	var wiedza := _tekst_liczby(bohater.get("wiedza_pkt"))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(ie_txt, 16))
+	var wiedza := _ui._tekst_liczby(bohater.get("wiedza_pkt"))
 	if wiedza != "":
-		_tresc_biala().add_child(_napis_ekranu("Wiedza (pkt stub): %s" % wiedza, 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Wiedza (pkt stub): %s" % wiedza, 15))
 	var zan_txt := _opis_zainteresowania(bohater)
 	if zan_txt != "":
-		_tresc_biala().add_child(_napis_ekranu(zan_txt, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(zan_txt, 16))
 	var dep := Depresja.new()
 	var dep_txt := dep.tekst_stanu(bohater)
 	if dep_txt != "":
-		_tresc_biala().add_child(_napis_ekranu(dep_txt, 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(dep_txt, 14))
 	elif bool(bohater.get("depresja", false)):
-		_tresc_biala().add_child(_napis_ekranu("Flaga: depresja.", 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Flaga: depresja.", 14))
 	# Docelowe tylko w trybie deweloperskim — nigdy na pasku / w normalnej grze.
 	if DostepStatystyk.POKAZ_STATYSTYKI:
-		var doc_dev := _tekst_liczby(_bohater().get("zadowolenie_docelowe"))
-		_tresc_biala().add_child(_napis_ekranu("Docelowe (dev, ukryte): %s" % (doc_dev if doc_dev != "" else "—"), 14))
+		var doc_dev := _ui._tekst_liczby(_bohater().get("zadowolenie_docelowe"))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Docelowe (dev, ukryte): %s" % (doc_dev if doc_dev != "" else "—"), 14))
 
 
 func _ekran_rodzina() -> void:
 	var rodzina: Variant = _swiat.get("rodzina", {})
 	if not (rodzina is Dictionary) or rodzina.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Rodzina nie weszła do zapisu. Spróbuj Start jeszcze raz — jeśli dalej pusto, losowanie padło.", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Rodzina nie weszła do zapisu. Spróbuj Start jeszcze raz — jeśli dalej pusto, losowanie padło.", 16))
 		return
 	var rodzice_box := _dodaj_sekcje_zwijana("rodzice", "Rodzice")
-	rodzice_box.add_child(_napis_ekranu("Matka", 18))
-	rodzice_box.add_child(_napis_ekranu(_opis_rodzica(rodzina.get("matka")), 16))
-	rodzice_box.add_child(_napis_ekranu("Ojciec", 18))
-	rodzice_box.add_child(_napis_ekranu(_opis_rodzica(rodzina.get("ojciec")), 16))
+	rodzice_box.add_child(_ui._napis_ekranu("Matka", 18))
+	rodzice_box.add_child(_ui._napis_ekranu(_opis_rodzica(rodzina.get("matka")), 16))
+	rodzice_box.add_child(_ui._napis_ekranu("Ojciec", 18))
+	rodzice_box.add_child(_ui._napis_ekranu(_opis_rodzica(rodzina.get("ojciec")), 16))
 	var dziadkowie_box := _dodaj_sekcje_zwijana("dziadkowie", "Dziadkowie")
 	_wypelnij_dziadkow(dziadkowie_box, rodzina.get("dziadkowie"))
 	var prosba_d := Button.new()
 	prosba_d.text = "Poproś dziadków o kieszonkowe"
 	prosba_d.custom_minimum_size = Vector2(0, 48)
 	prosba_d.pressed.connect(_on_kieszonkowe_dziadkowie)
-	_tresc_biala().add_child(prosba_d)
-	var wynik_d := _napis_ekranu(str(_swiat.get("ostatnie_kieszonkowe_dziadkowie_tekst", "")), 15)
+	_ui._tresc_biala().add_child(prosba_d)
+	var wynik_d := _ui._napis_ekranu(str(_swiat.get("ostatnie_kieszonkowe_dziadkowie_tekst", "")), 15)
 	wynik_d.visible = str(_swiat.get("ostatnie_kieszonkowe_dziadkowie_tekst", "")) != ""
-	_tresc_biala().add_child(wynik_d)
+	_ui._tresc_biala().add_child(wynik_d)
 	var zarobki := _tekst_zarobkow(rodzina.get("zarobki"))
 	var etykieta_gosp := "Zarobki rodziny (suma rodziców)"
 	if rodzina.get("zarobki") is Dictionary and str(rodzina["zarobki"].get("dochód_gospodarstwa", "")) == "suma_przedzialow_rodzicow":
 		etykieta_gosp = "Zarobki gospodarstwa (suma przedziałów matki i ojca)"
 	if zarobki == "" and rodzina.get("zarobki") is Dictionary:
 		var powod := str(rodzina["zarobki"].get("powod", ""))
-		_tresc_biala().add_child(_napis_ekranu("%s: —%s" % [etykieta_gosp, ((" (%s)" % powod) if powod != "" else "")], 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("%s: —%s" % [etykieta_gosp, ((" (%s)" % powod) if powod != "" else "")], 16))
 	else:
-		_tresc_biala().add_child(_napis_ekranu("%s: %s" % [etykieta_gosp, zarobki if zarobki != "" else "—"], 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("%s: %s" % [etykieta_gosp, zarobki if zarobki != "" else "—"], 16))
 	var opis_lokum := _opis_mieszkacie_w()
 	if opis_lokum != "":
-		_tresc_biala().add_child(_napis_ekranu(opis_lokum, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(opis_lokum, 16))
 	else:
 		var dom := _tekst_domu()
-		_tresc_biala().add_child(_napis_ekranu("Dom: %s" % (dom if dom != "" else "brak lokum w zapisie"), 16))
-	_tresc_biala().add_child(_napis_ekranu("Rodzeństwo", 18))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Dom: %s" % (dom if dom != "" else "brak lokum w zapisie"), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Rodzeństwo", 18))
 	var rodzenstwo: Variant = _swiat.get("rodzenstwo", [])
 	if not (rodzenstwo is Array) or rodzenstwo.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Brak rodzeństwa (wylosowano 0).", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak rodzeństwa (wylosowano 0).", 16))
 	else:
 		var nr := 1
 		for osoba in rodzenstwo:
 			if not (osoba is Dictionary):
 				continue
-			_tresc_biala().add_child(_napis_ekranu(_opis_rodzenstwa(osoba, nr), 16))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(_opis_rodzenstwa(osoba, nr), 16))
 			nr += 1
 	var ziarno_ui := ZiarnoRodzicow.new()
 	var tryb_id := str(_swiat.get("tryb_kieszonkowego", ""))
@@ -1060,33 +1061,33 @@ func _ekran_rodzina() -> void:
 	var tryb_etykieta := ziarno_ui.etykieta_trybu_kieszonkowego(tryb_id) if aktywne else "jeszcze nie proszono"
 	var linia_kiesz := "Kieszonkowe: %s" % tryb_etykieta
 	if aktywne and (tryb_id == "stala_kwota" or tryb_id == "stale_daje"):
-		if _jest_liczba(_swiat.get("kieszonkowe_kwota_zl")):
+		if _ui._jest_liczba(_swiat.get("kieszonkowe_kwota_zl")):
 			var kwota_k := int(ZaokraglenieZarobkow.zaokraglij(_swiat["kieszonkowe_kwota_zl"]))
 			_swiat["kieszonkowe_kwota_zl"] = kwota_k
 			linia_kiesz += " · %d zł/tydzień" % kwota_k
 		else:
 			linia_kiesz += " · kwota tygodniowa: —"
-	_tresc_biala().add_child(_napis_ekranu(linia_kiesz, 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(linia_kiesz, 16))
 	var prosba := Button.new()
 	prosba.text = "Poproś o kieszonkowe"
 	prosba.custom_minimum_size = Vector2(0, 48)
 	prosba.pressed.connect(_on_kieszonkowe)
-	_tresc_biala().add_child(prosba)
+	_ui._tresc_biala().add_child(prosba)
 	var podwyzka := Button.new()
 	podwyzka.text = "Poproś o podniesienie kieszonkowego"
 	podwyzka.custom_minimum_size = Vector2(0, 48)
 	podwyzka.disabled = not aktywne
 	podwyzka.pressed.connect(_on_kieszonkowe_podwyzka)
-	_tresc_biala().add_child(podwyzka)
+	_ui._tresc_biala().add_child(podwyzka)
 	var jednoraz := Button.new()
 	jednoraz.text = "Poproś o pieniądze na coś"
 	jednoraz.custom_minimum_size = Vector2(0, 48)
 	jednoraz.pressed.connect(_on_pieniadze_jednorazowo)
-	_tresc_biala().add_child(jednoraz)
-	var wynik_lbl := _napis_ekranu(str(_swiat.get("ostatnie_kieszonkowe_tekst", "")), 15)
+	_ui._tresc_biala().add_child(jednoraz)
+	var wynik_lbl := _ui._napis_ekranu(str(_swiat.get("ostatnie_kieszonkowe_tekst", "")), 15)
 	wynik_lbl.name = "WynikKieszonkowego"
 	wynik_lbl.visible = str(_swiat.get("ostatnie_kieszonkowe_tekst", "")) != ""
-	_tresc_biala().add_child(wynik_lbl)
+	_ui._tresc_biala().add_child(wynik_lbl)
 
 
 ## Nagłówek zwija wiersze. Domyślnie zwinięte. Ludzie zostają w drzewie, tylko hidden.
@@ -1107,24 +1108,24 @@ func _dodaj_sekcje_zwijana(id_sekcji: String, tytul: String) -> VBoxContainer:
 		pudelko.visible = not pudelko.visible
 		naglowek.text = ("%s ▾" % tytul) if pudelko.visible else ("%s ▸" % tytul)
 	)
-	_tresc_biala().add_child(naglowek)
-	_tresc_biala().add_child(pudelko)
+	_ui._tresc_biala().add_child(naglowek)
+	_ui._tresc_biala().add_child(pudelko)
 	return pudelko
 
 
 func _wypelnij_dziadkow(pudelko: VBoxContainer, blok: Variant) -> void:
 	if not (blok is Dictionary):
-		pudelko.add_child(_napis_ekranu("Brak w zapisie (Start jeszcze raz).", 16))
+		pudelko.add_child(_ui._napis_ekranu("Brak w zapisie (Start jeszcze raz).", 16))
 		return
 	var lista: Variant = blok.get("lista", [])
 	if not (lista is Array) or lista.is_empty():
-		pudelko.add_child(_napis_ekranu("Brak żyjących dziadków w wylosowanym zestawie.", 16))
+		pudelko.add_child(_ui._napis_ekranu("Brak żyjących dziadków w wylosowanym zestawie.", 16))
 		return
 	for o in lista:
 		if not (o is Dictionary):
 			continue
-		pudelko.add_child(_napis_ekranu(_etykieta_roli_dziadka(str(o.get("rola", ""))), 16))
-		pudelko.add_child(_napis_ekranu(_opis_rodzica(o), 15))
+		pudelko.add_child(_ui._napis_ekranu(_etykieta_roli_dziadka(str(o.get("rola", ""))), 16))
+		pudelko.add_child(_ui._napis_ekranu(_opis_rodzica(o), 15))
 
 
 func _etykieta_roli_dziadka(rola: String) -> String:
@@ -1186,18 +1187,18 @@ func _opis_rodzica(osoba: Variant) -> String:
 func _ekran_lista_osob(klucz: String, pusto: String) -> void:
 	var lista: Variant = _swiat.get(klucz, [])
 	if not (lista is Array) or lista.is_empty():
-		_tresc_biala().add_child(_napis_ekranu(pusto, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(pusto, 16))
 		return
 	var nr := 1
 	for osoba in lista:
 		if not (osoba is Dictionary):
 			continue
 		var cechy := _cechy_listy_z_karty(osoba)
-		var plec := _nazwa_pola(osoba.get("plec"))
+		var plec := _ui._nazwa_pola(osoba.get("plec"))
 		var linia := "%d. %s" % [nr, plec if plec != "" else "osoba"]
 		if cechy != "":
 			linia += " — %s" % cechy
-		_tresc_biala().add_child(_napis_ekranu(linia, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(linia, 16))
 		nr += 1
 
 
@@ -1225,7 +1226,7 @@ func _cechy_listy(lista: Variant) -> String:
 		return ""
 	var nazwy: PackedStringArray = []
 	for pozycja in lista:
-		var nazwa := _nazwa_pola(pozycja)
+		var nazwa := _ui._nazwa_pola(pozycja)
 		if nazwa == "" and pozycja is String:
 			nazwa = str(pozycja)
 		if nazwa != "":
@@ -1237,7 +1238,7 @@ func _cechy_listy_z_karty(karta: Dictionary) -> String:
 	var nazwy: PackedStringArray = []
 	var numer := 1
 	while karta.has("cecha_%d" % numer):
-		var nazwa := _nazwa_pola(karta["cecha_%d" % numer])
+		var nazwa := _ui._nazwa_pola(karta["cecha_%d" % numer])
 		if nazwa != "":
 			nazwy.append(nazwa)
 		numer += 1
@@ -1295,7 +1296,7 @@ func _on_kieszonkowe_dziadkowie() -> void:
 	var boh := _bohater()
 	if boh.get("inteligencja") is Array and not (boh["inteligencja"] as Array).is_empty():
 		inteligencja = 2
-	elif _jest_liczba(boh.get("inteligencja")):
+	elif _ui._jest_liczba(boh.get("inteligencja")):
 		inteligencja = clampi(int(boh["inteligencja"]) / 33, 0, 3)
 	var wynik: Dictionary = dziad.popros_o_kieszonkowe(
 		stan_d, rodzina, inteligencja, int(_swiat.get("tydzien", 0)), false
@@ -1303,7 +1304,7 @@ func _on_kieszonkowe_dziadkowie() -> void:
 	rodzina["dziadkowie"] = stan_d
 	_swiat["rodzina"] = rodzina
 	_swiat["ostatnie_kieszonkowe_dziadkowie_tekst"] = str(wynik.get("tekst", ""))
-	if bool(wynik.get("ok", false)) and _jest_liczba(wynik.get("kwota")):
+	if bool(wynik.get("ok", false)) and _ui._jest_liczba(wynik.get("kwota")):
 		_dodaj_pieniadze(int(wynik["kwota"]))
 		_dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	SkryptZapisu.zapisz(_swiat)
@@ -1320,7 +1321,7 @@ func _wyplata_kieszonkowego_dziadkow_tydzien() -> void:
 	var wynik: Dictionary = dziad.wyplata_tygodniowa(stan_d, int(_swiat.get("tydzien", 0)))
 	rodzina["dziadkowie"] = stan_d
 	_swiat["rodzina"] = rodzina
-	if bool(wynik.get("ok", false)) and _jest_liczba(wynik.get("kwota")):
+	if bool(wynik.get("ok", false)) and _ui._jest_liczba(wynik.get("kwota")):
 		_dodaj_pieniadze(int(wynik["kwota"]))
 		_dodaj_wplyw("kieszonkowe_dziadkowie", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 		var kom := str(_swiat.get("komunikat_tury", ""))
@@ -1363,7 +1364,7 @@ func _on_kieszonkowe() -> void:
 	_swiat["kieszonkowe_pierwsza_rozmowa"] = false
 	_swiat["ostatnie_kieszonkowe"] = wynik
 	_swiat["ostatnie_kieszonkowe_tekst"] = str(wynik.get("tekst", ""))
-	if bool(wynik.get("dodano", false)) and _jest_liczba(wynik.get("kwota")):
+	if bool(wynik.get("dodano", false)) and _ui._jest_liczba(wynik.get("kwota")):
 		_dodaj_pieniadze(int(wynik["kwota"]))
 		_dodaj_wplyw("kieszonkowe", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 		_swiat["tryb_kieszonkowego"] = "stala_kwota"
@@ -1390,7 +1391,7 @@ func _on_kieszonkowe_podwyzka() -> void:
 		rodzina, _swiat.get("kieszonkowe_kwota_zl", null), _wiek_lat()
 	)
 	_swiat["ostatnie_kieszonkowe_tekst"] = str(wynik.get("tekst", ""))
-	if bool(wynik.get("ok", false)) and _jest_liczba(wynik.get("kwota")):
+	if bool(wynik.get("ok", false)) and _ui._jest_liczba(wynik.get("kwota")):
 		_swiat["kieszonkowe_kwota_zl"] = int(wynik["kwota"])
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	SkryptZapisu.zapisz(_swiat)
@@ -1406,7 +1407,7 @@ func _on_pieniadze_jednorazowo() -> void:
 	var ziarno := ZiarnoRodzicow.new()
 	var wynik: Dictionary = ziarno.popros_o_pieniadze_jednorazowo(rodzina, _wiek_lat())
 	_swiat["ostatnie_kieszonkowe_tekst"] = str(wynik.get("tekst", ""))
-	if bool(wynik.get("dodano", false)) and _jest_liczba(wynik.get("kwota")):
+	if bool(wynik.get("dodano", false)) and _ui._jest_liczba(wynik.get("kwota")):
 		_dodaj_pieniadze(int(wynik["kwota"]))
 		_dodaj_wplyw("pieniadze_jednorazowo", int(wynik["kwota"]), str(wynik.get("tekst", "")))
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
@@ -1417,10 +1418,10 @@ func _on_pieniadze_jednorazowo() -> void:
 
 func _zsynchronizuj_pieniadze_z_bohatera() -> void:
 	var stan := _jedzenie.odczyt_statystyk()
-	if _jest_liczba(stan.get("pieniadze")):
+	if _ui._jest_liczba(stan.get("pieniadze")):
 		return
 	var bohater := _bohater()
-	if _jest_liczba(bohater.get("pieniadze")):
+	if _ui._jest_liczba(bohater.get("pieniadze")):
 		_jedzenie.zastosuj_statystyki({"pieniadze": int(bohater["pieniadze"])})
 
 
@@ -1429,9 +1430,9 @@ func _dodaj_pieniadze(kwota: int) -> void:
 		return
 	var stan := _jedzenie.odczyt_statystyk()
 	var teraz := 0
-	if _jest_liczba(stan.get("pieniadze")):
+	if _ui._jest_liczba(stan.get("pieniadze")):
 		teraz = int(stan["pieniadze"])
-	elif _jest_liczba(_bohater().get("pieniadze")):
+	elif _ui._jest_liczba(_bohater().get("pieniadze")):
 		teraz = int(_bohater()["pieniadze"])
 	var nowe := teraz + kwota
 	_jedzenie.zastosuj_statystyki({"pieniadze": nowe})
@@ -1462,9 +1463,9 @@ func _dodaj_wplyw(zrodlo: String, kwota: int, tekst: String = "") -> void:
 
 func _wiek_lat() -> Variant:
 	var bohater := _bohater()
-	if _jest_liczba(bohater.get("wiek")):
+	if _ui._jest_liczba(bohater.get("wiek")):
 		return int(bohater["wiek"])
-	if _jest_liczba(_swiat.get("rok")):
+	if _ui._jest_liczba(_swiat.get("rok")):
 		return int(_swiat["rok"])
 	return null
 
@@ -1484,10 +1485,10 @@ func _jedzenie_odblok_cfg() -> Variant:
 func _czy_jedzenie_sam_po_wieku() -> bool:
 	var cfg: Variant = _jedzenie_odblok_cfg()
 	var prog := 8
-	if cfg is Dictionary and _jest_liczba(cfg.get("prog_wiek_lat")):
+	if cfg is Dictionary and _ui._jest_liczba(cfg.get("prog_wiek_lat")):
 		prog = int(cfg["prog_wiek_lat"])
 	var wiek: Variant = _wiek_lat()
-	return _jest_liczba(wiek) and int(wiek) >= prog
+	return _ui._jest_liczba(wiek) and int(wiek) >= prog
 
 
 func _odswiez_flage_jedzenia_sam() -> void:
@@ -1498,17 +1499,17 @@ func _odswiez_flage_jedzenia_sam() -> void:
 
 
 func _ekran_majatek() -> void:
-	_tresc_biala().add_child(_napis_ekranu("Pieniądze", 18))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Pieniądze", 18))
 	var kwota := _pieniadze_tekst()
-	_tresc_biala().add_child(_napis_ekranu(kwota if kwota != "" else "—", 18))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(kwota if kwota != "" else "—", 18))
 	var opis_lokum := _opis_mieszkacie_w()
 	if opis_lokum != "":
-		_tresc_biala().add_child(_napis_ekranu(opis_lokum, 16))
-	_tresc_biala().add_child(_napis_ekranu("Nieruchomości", 18))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(opis_lokum, 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Nieruchomości", 18))
 	var maj: Dictionary = _swiat.get("majatek", {}) if _swiat.get("majatek") is Dictionary else {}
 	var n_lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []
 	if n_lista.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Własne kupione: brak — kup w Zakupach (generator, nie katalog 200).", 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Własne kupione: brak — kup w Zakupach (generator, nie katalog 200).", 14))
 	else:
 		for i in range(n_lista.size()):
 			var n: Variant = n_lista[i]
@@ -1520,7 +1521,7 @@ func _ekran_majatek() -> void:
 				str(n.get("wygoda", "—")),
 				str(n.get("miasto_nazwa", "")),
 			]
-			_tresc_biala().add_child(_napis_ekranu(linia, 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(linia, 14))
 			var idx_bind := i
 			var b_rem := Button.new()
 			b_rem.text = "Remont (propozycja koszt/wygoda)"
@@ -1534,13 +1535,13 @@ func _ekran_majatek() -> void:
 					_odswiez_pasek_statystyk(false)
 					_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 				else:
-					_tresc_biala().add_child(_napis_ekranu(str(wynik.get("powod", "Remont nieudany.")), 13))
+					_ui._tresc_biala().add_child(_ui._napis_ekranu(str(wynik.get("powod", "Remont nieudany.")), 13))
 			)
-			_tresc_biala().add_child(b_rem)
-	_tresc_biala().add_child(_napis_ekranu("Dobra", 18))
+			_ui._tresc_biala().add_child(b_rem)
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Dobra", 18))
 	var d_lista: Array = maj.get("dobra", []) if maj.get("dobra") is Array else []
 	if d_lista.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Pusto.", 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Pusto.", 14))
 	else:
 		for i_d in range(d_lista.size()):
 			var d: Variant = d_lista[i_d]
@@ -1554,16 +1555,16 @@ func _ekran_majatek() -> void:
 					linia_a += " · vmax %s km/h" % vmax_m
 				if bool(d.get("nie_jezdzi", false)):
 					linia_a += " · NIE JEŹDZI"
-				_tresc_biala().add_child(_napis_ekranu(linia_a, 14))
+				_ui._tresc_biala().add_child(_ui._napis_ekranu(linia_a, 14))
 				if bool(d.get("nie_jezdzi", false)) or bool(d.get("do_naprawy", false)):
-					_tresc_biala().add_child(_panel_awarii_auta(i_d, d))
+					_ui._tresc_biala().add_child(_panel_awarii_auta(i_d, d))
 			else:
 				var linia_d := nazwa_d
 				if _rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
 					var plus_d := _rynek_zakupow.tekst_plusow(_rynek_zakupow.plusy_oferty(d))
 					if plus_d != "":
 						linia_d += " · " + plus_d
-				_tresc_biala().add_child(_napis_ekranu(linia_d, 14))
+				_ui._tresc_biala().add_child(_ui._napis_ekranu(linia_d, 14))
 				if _rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
 					var b_oddaj := Button.new()
 					b_oddaj.text = "Oddaj"
@@ -1575,11 +1576,11 @@ func _ekran_majatek() -> void:
 							SkryptZapisu.zapisz(_swiat)
 							_otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 					)
-					_tresc_biala().add_child(b_oddaj)
-	_tresc_biala().add_child(_napis_ekranu("Wpływy", 18))
+					_ui._tresc_biala().add_child(b_oddaj)
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Wpływy", 18))
 	var lista: Variant = _swiat.get("wplywy", [])
 	if not (lista is Array) or lista.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Brak wpływów.", 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak wpływów.", 15))
 		return
 	var od := maxi(0, lista.size() - 12)
 	for i in range(od, lista.size()):
@@ -1587,19 +1588,19 @@ func _ekran_majatek() -> void:
 		if not (wpis is Dictionary):
 			continue
 		var linia2 := str(wpis.get("tekst", ""))
-		if linia2 == "" and _jest_liczba(wpis.get("kwota")):
+		if linia2 == "" and _ui._jest_liczba(wpis.get("kwota")):
 			linia2 = "%s: +%d zł" % [str(wpis.get("zrodlo", "wpływ")), int(wpis["kwota"])]
 		if linia2 != "":
-			_tresc_biala().add_child(_napis_ekranu(linia2, 15))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(linia2, 15))
 
 
 func _ekran_zakupy() -> void:
 	_odswiez_rynek_zakupow()
-	_tresc_biala().add_child(_napis_ekranu("Zakupy — losowane oferty (limit miasta × tura). Nie arkusz strategii.", 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Zakupy — losowane oferty (limit miasta × tura). Nie arkusz strategii.", 16))
 	var dane := _wczytaj_zakupy_oferty()
 	var kategorie: Variant = dane.get("kategorie", []) if dane is Dictionary else []
 	if not (kategorie is Array) or kategorie.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Brak kategorii w danych.", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak kategorii w danych.", 16))
 		return
 	var schowane := {}
 	for grupa in _grupy_zakupow():
@@ -1629,7 +1630,7 @@ func _dodaj_przycisk_grupy_zakupow(grupa: Dictionary) -> void:
 	przycisk.pressed.connect(func() -> void:
 		_wejdz_w_grupe_zakupow(grupa_bind)
 	)
-	_tresc_biala().add_child(przycisk)
+	_ui._tresc_biala().add_child(przycisk)
 
 
 func _dodaj_przycisk_kategorii_zakupow(kat: Dictionary) -> void:
@@ -1643,7 +1644,7 @@ func _dodaj_przycisk_kategorii_zakupow(kat: Dictionary) -> void:
 	przycisk.pressed.connect(func() -> void:
 		_wejdz_w_kategorie_zakupow(kat_bind)
 	)
-	_tresc_biala().add_child(przycisk)
+	_ui._tresc_biala().add_child(przycisk)
 
 
 func _grupy_zakupow() -> Array:
@@ -1702,15 +1703,15 @@ func _ekran_zakupy_grupa(grupa: Dictionary) -> void:
 		if kat is Dictionary:
 			po_id[str(kat.get("id", ""))] = kat
 	if ids.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Brak wyborów w tej kategorii.", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak wyborów w tej kategorii.", 16))
 		return
 	var uwaga := str(grupa.get("uwaga", "")).strip_edges()
 	if uwaga != "":
-		_tresc_biala().add_child(_napis_ekranu(uwaga, 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(uwaga, 14))
 	for id_k in ids:
 		var sid := str(id_k)
 		if not po_id.has(sid):
-			_tresc_biala().add_child(_napis_ekranu(
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(
 				"%s — brak rynku w danych (null, bez wymyślonego katalogu)." % sid, 16
 			))
 			continue
@@ -1754,7 +1755,7 @@ func _ekran_zakupy_kategoria(kat: Dictionary) -> void:
 
 
 func _ekran_budzet_drobiazgow() -> void:
-	_tresc_biala().add_child(_napis_ekranu("Budżet jakości drobiazgów (propozycja; szansa zdarzenia nadal null).", 14))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Budżet jakości drobiazgów (propozycja; szansa zdarzenia nadal null).", 14))
 	var budzet: Dictionary = {}
 	if FileAccess.file_exists(PLIK_DROBIAZGOW):
 		var plik := FileAccess.open(PLIK_DROBIAZGOW, FileAccess.READ)
@@ -1762,12 +1763,12 @@ func _ekran_budzet_drobiazgow() -> void:
 			var dane_d: Variant = JSON.parse_string(plik.get_as_text())
 			if dane_d is Dictionary and dane_d.get("budzet_jakosci") is Dictionary:
 				budzet = dane_d["budzet_jakosci"]
-	var min_zl := int(budzet.get("min_zl", 0)) if _jest_liczba(budzet.get("min_zl")) else 0
-	var max_zl := int(budzet.get("max_zl", 100)) if _jest_liczba(budzet.get("max_zl")) else 100
-	var krok := int(budzet.get("krok_zl", 5)) if _jest_liczba(budzet.get("krok_zl")) else 5
+	var min_zl := int(budzet.get("min_zl", 0)) if _ui._jest_liczba(budzet.get("min_zl")) else 0
+	var max_zl := int(budzet.get("max_zl", 100)) if _ui._jest_liczba(budzet.get("max_zl")) else 100
+	var krok := int(budzet.get("krok_zl", 5)) if _ui._jest_liczba(budzet.get("krok_zl")) else 5
 	var wartosc := int(_swiat.get("budzet_jakosci_drobiazgow_zl", budzet.get("domyslnie_zl", 0)))
-	var opis := _napis_ekranu("Przeznaczam: %d zł" % wartosc, 16)
-	_tresc_biala().add_child(opis)
+	var opis := _ui._napis_ekranu("Przeznaczam: %d zł" % wartosc, 16)
+	_ui._tresc_biala().add_child(opis)
 	var suwak := HSlider.new()
 	suwak.min_value = float(min_zl)
 	suwak.max_value = float(max_zl)
@@ -1778,14 +1779,14 @@ func _ekran_budzet_drobiazgow() -> void:
 		_swiat["budzet_jakosci_drobiazgow_zl"] = int(v)
 		opis.text = "Przeznaczam: %d zł" % int(v)
 	)
-	_tresc_biala().add_child(suwak)
+	_ui._tresc_biala().add_child(suwak)
 
 
 func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -> void:
-	_wyczysc(_tresc_biala())
-	_wyczysc(_dol_suwaka())
-	_dol_suwaka().hide()
-	_tytul_bialy().text = str(kat.get("nazwa", kat_id))
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._wyczysc(_ui._dol_suwaka())
+	_ui._dol_suwaka().hide()
+	_ui._tytul_bialy().text = str(kat.get("nazwa", kat_id))
 	_odswiez_rynek_zakupow()
 	_zakupy_wiersze = []
 	_zakupy_kat_id = kat_id
@@ -1821,28 +1822,28 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	var wszystkie := _rynek_zakupow.oferty_filtrowane(_swiat, kat_id, "", 9999.0, 0.0, 0.0, false, "")
 	var ceny: Array = []
 	for o in wszystkie:
-		if o is Dictionary and _jest_liczba(o.get("cena_zl")):
+		if o is Dictionary and _ui._jest_liczba(o.get("cena_zl")):
 			ceny.append(float(o["cena_zl"]))
 	ceny.sort()
 	if _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
-		_tresc_biala().add_child(_napis_ekranu(
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(
 			"Ogłoszenia wczytują się przy wejściu i po kilka przy przewijaniu.",
 			17
 		))
-	_zakupy_pula_lbl = _napis_ekranu("", 16)
-	_tresc_biala().add_child(_zakupy_pula_lbl)
+	_zakupy_pula_lbl = _ui._napis_ekranu("", 16)
+	_ui._tresc_biala().add_child(_zakupy_pula_lbl)
 	# Filtr u góry — po wejściu w kategorię rozwinięty (widać min–max od razu).
 	var przycisk_filtr := Button.new()
 	przycisk_filtr.text = "Filtr ▾"
 	przycisk_filtr.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	przycisk_filtr.custom_minimum_size = Vector2(0, 44)
 	przycisk_filtr.add_theme_font_size_override("font_size", 17)
-	_tresc_biala().add_child(przycisk_filtr)
+	_ui._tresc_biala().add_child(przycisk_filtr)
 	var panel_filtr := VBoxContainer.new()
 	panel_filtr.visible = true
 	panel_filtr.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	panel_filtr.add_theme_constant_override("separation", 8)
-	_tresc_biala().add_child(panel_filtr)
+	_ui._tresc_biala().add_child(panel_filtr)
 	przycisk_filtr.pressed.connect(func() -> void:
 		_zakupy_filtr_rozwiniety = not _zakupy_filtr_rozwiniety
 		panel_filtr.visible = _zakupy_filtr_rozwiniety
@@ -1852,8 +1853,8 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	var rzad_licz := HBoxContainer.new()
 	rzad_licz.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rzad_licz.add_theme_constant_override("separation", 16)
-	_zakupy_licznik_od = _napis_ekranu("min: —", 17)
-	_zakupy_licznik_do = _napis_ekranu("max: —", 17)
+	_zakupy_licznik_od = _ui._napis_ekranu("min: —", 17)
+	_zakupy_licznik_do = _ui._napis_ekranu("max: —", 17)
 	_zakupy_licznik_od.autowrap_mode = TextServer.AUTOWRAP_OFF
 	_zakupy_licznik_do.autowrap_mode = TextServer.AUTOWRAP_OFF
 	_zakupy_licznik_od.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
@@ -1862,7 +1863,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	rzad_licz.add_child(_zakupy_licznik_do)
 	panel_filtr.add_child(rzad_licz)
 	if ceny.is_empty():
-		panel_filtr.add_child(_napis_ekranu("Przedział cen: — (brak liczb; filtr nie zmyśla).", 16))
+		panel_filtr.add_child(_ui._napis_ekranu("Przedział cen: — (brak liczb; filtr nie zmyśla).", 16))
 		_zakupy_filtr_od = 0.0
 		_zakupy_filtr_do = 0.0
 		_zakupy_filtr_ceny_wlaczony = false
@@ -1882,7 +1883,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		)
 		panel_filtr.add_child(suwak)
 	# Zasięg: miasto → powiat → województwo → PL → sąsiedzi → wysyłka + strop km.
-	panel_filtr.add_child(_napis_ekranu("Zasięg szukania:", 17))
+	panel_filtr.add_child(_ui._napis_ekranu("Zasięg szukania:", 17))
 	var opcje_zas := OptionButton.new()
 	opcje_zas.custom_minimum_size = Vector2(0, 44)
 	opcje_zas.add_theme_font_size_override("font_size", 18)
@@ -1903,7 +1904,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		var pn := str(pz.get("nazwa", pz.get("id", ""))) if pz is Dictionary else str(pz)
 		opcje_zas.add_item(pn, i)
 	opcje_zas.select(0)
-	var opis_z := _napis_ekranu("Strop odległości: %d km" % int(_zakupy_zasieg_km), 16)
+	var opis_z := _ui._napis_ekranu("Strop odległości: %d km" % int(_zakupy_zasieg_km), 16)
 	var suwak_z := HSlider.new()
 	suwak_z.min_value = zmin
 	suwak_z.max_value = zmax
@@ -1935,7 +1936,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	panel_filtr.add_child(suwak_z)
 	# Dom i mieszkanie: ten sam wybór Nowe / Używane co przy aucie. Nowe = wykończone i stan surowy.
 	if _rynek_zakupow.kategoria_ma_nowe_lokum(kat_id):
-		panel_filtr.add_child(_napis_ekranu("Stan:", 17))
+		panel_filtr.add_child(_ui._napis_ekranu("Stan:", 17))
 		var opcje_lok := OptionButton.new()
 		opcje_lok.add_item("Wszystkie", 0)
 		opcje_lok.add_item("Używane", 1)
@@ -1964,7 +1965,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	_zakupy_filtr_odbior = ""
 	if not nieruchomosc:
 		if uzywany_nowy:
-			panel_filtr.add_child(_napis_ekranu("Stan:", 17))
+			panel_filtr.add_child(_ui._napis_ekranu("Stan:", 17))
 			var opcje_stan := OptionButton.new()
 			opcje_stan.add_item("Wszystkie", 0)
 			opcje_stan.add_item("Używany", 1)
@@ -1991,7 +1992,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 				_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
 			)
 			panel_filtr.add_child(opcje_stan)
-		panel_filtr.add_child(_napis_ekranu("Odbiór osobisty:", 17))
+		panel_filtr.add_child(_ui._napis_ekranu("Odbiór osobisty:", 17))
 		var opcje_odbior := OptionButton.new()
 		opcje_odbior.add_item("Wszystkie (bez filtra)", 0)
 		opcje_odbior.add_item("Tylko odbiór osobisty", 1)
@@ -2013,7 +2014,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		panel_filtr.add_child(opcje_odbior)
 	# Samochód: przebieg min–max; multi-select marek (puste = wszystkie) + napęd dla nowych.
 	if kat_id == "samochod":
-		panel_filtr.add_child(_napis_ekranu("Sortuj cenę:", 17))
+		panel_filtr.add_child(_ui._napis_ekranu("Sortuj cenę:", 17))
 		var opcje_sort := OptionButton.new()
 		opcje_sort.add_item("Od największej", 0)
 		opcje_sort.add_item("Od najmniejszej", 1)
@@ -2028,22 +2029,22 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		panel_filtr.add_child(opcje_sort)
 		var przebiegi: Array = []
 		for o in wszystkie:
-			if o is Dictionary and _jest_liczba(o.get("przebieg_km")):
+			if o is Dictionary and _ui._jest_liczba(o.get("przebieg_km")):
 				przebiegi.append(float(o["przebieg_km"]))
 		przebiegi.sort()
-		panel_filtr.add_child(_napis_ekranu("Przebieg (km):", 17))
+		panel_filtr.add_child(_ui._napis_ekranu("Przebieg (km):", 17))
 		var rzad_p := HBoxContainer.new()
 		rzad_p.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		rzad_p.add_theme_constant_override("separation", 16)
-		_zakupy_licznik_przebieg_od = _napis_ekranu("min: —", 17)
-		_zakupy_licznik_przebieg_do = _napis_ekranu("max: —", 17)
+		_zakupy_licznik_przebieg_od = _ui._napis_ekranu("min: —", 17)
+		_zakupy_licznik_przebieg_do = _ui._napis_ekranu("max: —", 17)
 		_zakupy_licznik_przebieg_od.autowrap_mode = TextServer.AUTOWRAP_OFF
 		_zakupy_licznik_przebieg_do.autowrap_mode = TextServer.AUTOWRAP_OFF
 		rzad_p.add_child(_zakupy_licznik_przebieg_od)
 		rzad_p.add_child(_zakupy_licznik_przebieg_do)
 		panel_filtr.add_child(rzad_p)
 		if przebiegi.is_empty():
-			panel_filtr.add_child(_napis_ekranu("Przedział przebiegu: — (brak liczb).", 16))
+			panel_filtr.add_child(_ui._napis_ekranu("Przedział przebiegu: — (brak liczb).", 16))
 			_zakupy_filtr_przebiegu_wlaczony = false
 		else:
 			var suwak_p = SkryptZakresu.new()
@@ -2053,20 +2054,20 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 			_zakupy_przebieg_od = suwak_p.od
 			_zakupy_przebieg_do = suwak_p.dokad
 			_zakupy_filtr_przebiegu_wlaczony = true
-			_zakupy_licznik_przebieg_od.text = _tekst_przebiegu_zakresu("min", _zakupy_przebieg_od)
-			_zakupy_licznik_przebieg_do.text = _tekst_przebiegu_zakresu("max", _zakupy_przebieg_do)
+			_zakupy_licznik_przebieg_od.text = _ui._tekst_przebiegu_zakresu("min", _zakupy_przebieg_od)
+			_zakupy_licznik_przebieg_do.text = _ui._tekst_przebiegu_zakresu("max", _zakupy_przebieg_do)
 			suwak_p.zakres_zmieniony.connect(func(od: float, dokad: float) -> void:
 				_zakupy_przebieg_od = od
 				_zakupy_przebieg_do = dokad
 				_zakupy_filtr_przebiegu_wlaczony = true
 				if _zakupy_licznik_przebieg_od != null and is_instance_valid(_zakupy_licznik_przebieg_od):
-					_zakupy_licznik_przebieg_od.text = _tekst_przebiegu_zakresu("min", od)
+					_zakupy_licznik_przebieg_od.text = _ui._tekst_przebiegu_zakresu("min", od)
 				if _zakupy_licznik_przebieg_do != null and is_instance_valid(_zakupy_licznik_przebieg_do):
-					_zakupy_licznik_przebieg_do.text = _tekst_przebiegu_zakresu("max", dokad)
+					_zakupy_licznik_przebieg_do.text = _ui._tekst_przebiegu_zakresu("max", dokad)
 				_przerysuj_liste_zakupow(kat_id, _zakupy_stan_filtr, etykiety, nieruchomosc)
 			)
 			panel_filtr.add_child(suwak_p)
-		panel_filtr.add_child(_napis_ekranu("Marki (kilka naraz; puste = wszystkie):", 17))
+		panel_filtr.add_child(_ui._napis_ekranu("Marki (kilka naraz; puste = wszystkie):", 17))
 		var marki: Array = _rynek_zakupow.marki_katalogu_aut()
 		var szukaj_marek := LineEdit.new()
 		szukaj_marek.placeholder_text = "Szukaj marki…"
@@ -2096,7 +2097,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		panel_nowe.add_theme_constant_override("separation", 6)
 		panel_nowe.visible = (_zakupy_stan_filtr == "" or _zakupy_stan_filtr == "nowy")
 		_zakupy_panel_nowe_auta = panel_nowe
-		panel_nowe.add_child(_napis_ekranu("Napęd (nowe):", 17))
+		panel_nowe.add_child(_ui._napis_ekranu("Napęd (nowe):", 17))
 		var opcje_naped := OptionButton.new()
 		opcje_naped.add_item("Wszystkie", 0)
 		var napedy: Array = _rynek_zakupow.napedy_katalogu_aut()
@@ -2131,7 +2132,7 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		elif _rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
 			_uzupelnij_lokum_do_okna()
 	_odswiez_napis_puli_zakupow(kat_id)
-	var tresc := _tresc_biala()
+	var tresc := _ui._tresc_biala()
 	var do_usun: Array = []
 	for dziecko in tresc.get_children():
 		if dziecko.has_meta("zakupy_oferta"):
@@ -2176,7 +2177,7 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 	if kat_id == "samochod":
 		oferty = _posortuj_oferty_cena(oferty, _zakupy_sort_cena)
 	if oferty.is_empty():
-		var pusto := _napis_ekranu("Brak ofert w tym filtrze.", 16)
+		var pusto := _ui._napis_ekranu("Brak ofert w tym filtrze.", 16)
 		pusto.set_meta("zakupy_oferta", true)
 		tresc.add_child(pusto)
 		_dodaj_przycisk_kolejnych_zakupow(tresc, kat_id)
@@ -2205,7 +2206,7 @@ func _buduj_skrot_karty_oferty(
 	wiersz.add_theme_constant_override("separation", 4)
 	if _rynek_zakupow.kategoria_drobna(kat_id):
 		for linia_d in _rynek_zakupow.linie_karty_drobiazgu(o):
-			wiersz.add_child(_napis_ekranu(str(linia_d), 17))
+			wiersz.add_child(_ui._napis_ekranu(str(linia_d), 17))
 		var b_d := Button.new()
 		b_d.text = "Szczegóły / kup"
 		b_d.custom_minimum_size = Vector2(0, 44)
@@ -2218,23 +2219,23 @@ func _buduj_skrot_karty_oferty(
 		return wiersz
 	var nazwa := str(o.get("nazwa", o.get("id", "")))
 	var stan_txt := str(etykiety.get(str(o.get("stan", "")), o.get("stan", "")))
-	var cena_txt := _tekst_ceny_oferty(o.get("cena_zl"), kat_id)
+	var cena_txt := _ui._tekst_ceny_oferty(o.get("cena_zl"), kat_id)
 	if nieruchomosc:
-		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 17))
-		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o), 16))
+		wiersz.add_child(_ui._napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 17))
+		wiersz.add_child(_ui._napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o), 16))
 	else:
 		var stan_karty := stan_txt
 		if kat_id == "samochod":
 			stan_karty = "stan: nowy" if str(o.get("stan", "")) == "nowy" else "stan: używany"
-		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_karty, cena_txt], 17))
+		wiersz.add_child(_ui._napis_ekranu("%s · %s · %s" % [nazwa, stan_karty, cena_txt], 17))
 		var odbior_skrot := _rynek_zakupow.tekst_odbioru_auta(o) if kat_id == "samochod" else _etykieta_odbioru(str(o.get("sposob_odbioru", "")))
-		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
-		if kat_id == "samochod" and _jest_liczba(o.get("przebieg_km")):
-			wiersz.add_child(_napis_ekranu("Przebieg: %s km" % _tekst_z_odstepami(int(o["przebieg_km"])), 16))
-		elif _jest_liczba(o.get("lata_od_zakupu")):
-			wiersz.add_child(_napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
+		wiersz.add_child(_ui._napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
+		if kat_id == "samochod" and _ui._jest_liczba(o.get("przebieg_km")):
+			wiersz.add_child(_ui._napis_ekranu("Przebieg: %s km" % _ui._tekst_z_odstepami(int(o["przebieg_km"])), 16))
+		elif _ui._jest_liczba(o.get("lata_od_zakupu")):
+			wiersz.add_child(_ui._napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
 		if str(o.get("segment", "")) != "":
-			wiersz.add_child(_napis_ekranu("Segment: %s" % str(o["segment"]), 15))
+			wiersz.add_child(_ui._napis_ekranu("Segment: %s" % str(o["segment"]), 15))
 	var b_sz := Button.new()
 	b_sz.text = "Szczegóły / kup"
 	b_sz.custom_minimum_size = Vector2(0, 44)
@@ -2298,10 +2299,10 @@ func _ekran_zakupy_karta_oferty(akcja: Dictionary) -> void:
 				oferta = o
 				break
 	if oferta.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Oferta zniknęła z puli (sprzedana lub odświeżona).", 17))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Oferta zniknęła z puli (sprzedana lub odświeżona).", 17))
 		return
-	_tytul_bialy().text = str(oferta.get("nazwa", "Oferta"))
-	_tresc_biala().add_child(_buduj_pelna_karte_oferty(oferta, kat_id, stan_filtr, etykiety, nieruchomosc))
+	_ui._tytul_bialy().text = str(oferta.get("nazwa", "Oferta"))
+	_ui._tresc_biala().add_child(_buduj_pelna_karte_oferty(oferta, kat_id, stan_filtr, etykiety, nieruchomosc))
 
 
 func _buduj_pelna_karte_oferty(
@@ -2316,37 +2317,37 @@ func _buduj_pelna_karte_oferty(
 	var nazwa := str(o.get("nazwa", o.get("id", "")))
 	var stan_txt := str(etykiety.get(str(o.get("stan", "")), o.get("stan", "")))
 	var cena_v: Variant = o.get("cena_zl")
-	var cena_txt := _tekst_ceny_oferty(cena_v, kat_id)
+	var cena_txt := _ui._tekst_ceny_oferty(cena_v, kat_id)
 	if _rynek_zakupow.kategoria_drobna(kat_id):
 		for linia_d in _rynek_zakupow.linie_karty_drobiazgu(o):
-			wiersz.add_child(_napis_ekranu(str(linia_d), 18))
+			wiersz.add_child(_ui._napis_ekranu(str(linia_d), 18))
 	elif nieruchomosc:
-		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 18))
-		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o), 16))
+		wiersz.add_child(_ui._napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 18))
+		wiersz.add_child(_ui._napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o), 16))
 	else:
 		var stan_karty := stan_txt
 		if kat_id == "samochod":
 			stan_karty = "stan: nowy" if str(o.get("stan", "")) == "nowy" else "stan: używany"
-		wiersz.add_child(_napis_ekranu("%s · %s · %s" % [nazwa, stan_karty, cena_txt], 18))
+		wiersz.add_child(_ui._napis_ekranu("%s · %s · %s" % [nazwa, stan_karty, cena_txt], 18))
 		var odbior_skrot := _rynek_zakupow.tekst_odbioru_auta(o) if kat_id == "samochod" else _etykieta_odbioru(str(o.get("sposob_odbioru", "")))
-		wiersz.add_child(_napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
-		if _jest_liczba(o.get("lata_od_zakupu")) and kat_id != "samochod":
-			wiersz.add_child(_napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
+		wiersz.add_child(_ui._napis_ekranu(_rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
+		if _ui._jest_liczba(o.get("lata_od_zakupu")) and kat_id != "samochod":
+			wiersz.add_child(_ui._napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
 		if str(o.get("segment", "")) != "":
-			wiersz.add_child(_napis_ekranu("Segment: %s" % str(o["segment"]), 16))
+			wiersz.add_child(_ui._napis_ekranu("Segment: %s" % str(o["segment"]), 16))
 		if o.get("czas_oczekiwania") is Dictionary and not (o["czas_oczekiwania"] as Dictionary).is_empty():
 			var cz: Dictionary = o["czas_oczekiwania"]
-			wiersz.add_child(_napis_ekranu(
+			wiersz.add_child(_ui._napis_ekranu(
 				"Czas oczekiwania (fabryka): %d lat + %d tyg." % [int(cz.get("lata", 0)), int(cz.get("tygodnie", 0))],
 				16
 			))
 		if kat_id == "samochod":
-			if _jest_liczba(o.get("przebieg_km")):
-				wiersz.add_child(_napis_ekranu("Przebieg: %s km" % _tekst_z_odstepami(int(o["przebieg_km"])), 16))
+			if _ui._jest_liczba(o.get("przebieg_km")):
+				wiersz.add_child(_ui._napis_ekranu("Przebieg: %s km" % _ui._tekst_z_odstepami(int(o["przebieg_km"])), 16))
 			var naped_txt := _rynek_zakupow.etykieta_napedu(str(o.get("naped", "")))
 			if naped_txt != "":
-				wiersz.add_child(_napis_ekranu("Napęd: %s" % naped_txt, 16))
-			wiersz.add_child(_napis_ekranu("Spalanie: %s" % _rynek_zakupow.tekst_spalania(o), 16))
+				wiersz.add_child(_ui._napis_ekranu("Napęd: %s" % naped_txt, 16))
+			wiersz.add_child(_ui._napis_ekranu("Spalanie: %s" % _rynek_zakupow.tekst_spalania(o), 16))
 			if bool(o.get("sprowadzenie", false)) or bool(o.get("import", false)):
 				var spr_txt := "Sprowadzenie / import"
 				if bool(o.get("szacunek_ceny", false)):
@@ -2354,7 +2355,7 @@ func _buduj_pelna_karte_oferty(
 				var zrd := str(o.get("zrodlo_cennika", ""))
 				if zrd != "":
 					spr_txt += " · źródło: %s" % zrd
-				wiersz.add_child(_napis_ekranu(spr_txt, 16))
+				wiersz.add_child(_ui._napis_ekranu(spr_txt, 16))
 			var znane_u: Array = []
 			var dek_u_auto: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
 			var wyk_u_auto: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
@@ -2365,34 +2366,34 @@ func _buduj_pelna_karte_oferty(
 					znane_u.append(uid)
 			var vmax_ui := _rynek_zakupow.tekst_vmax_oferty(o, znane_u)
 			if vmax_ui != "":
-				wiersz.add_child(_napis_ekranu("Prędkość maksymalna: %s km/h" % vmax_ui, 16))
+				wiersz.add_child(_ui._napis_ekranu("Prędkość maksymalna: %s km/h" % vmax_ui, 16))
 			if bool(o.get("nie_jezdzi", false)) or bool(o.get("do_naprawy", false)):
-				wiersz.add_child(_napis_ekranu("Nie jeździ — do naprawy (laweta / mechanik / złom).", 16))
+				wiersz.add_child(_ui._napis_ekranu("Nie jeździ — do naprawy (laweta / mechanik / złom).", 16))
 		var dek_u: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
 		var wyk_u: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
 		var seg_u := str(o.get("segment", ""))
 		if not dek_u.is_empty():
-			var linia_dek := "Usterki (sprzedawca): %s" % _join_tekstow(_rynek_zakupow.nazwy_usterek(dek_u, kat_id, seg_u))
+			var linia_dek := "Usterki (sprzedawca): %s" % _ui._join_tekstow(_rynek_zakupow.nazwy_usterek(dek_u, kat_id, seg_u))
 			if bool(o.get("szacunek_usterek", false)):
 				linia_dek += " (szacunek)"
-			wiersz.add_child(_napis_ekranu(linia_dek, 16))
+			wiersz.add_child(_ui._napis_ekranu(linia_dek, 16))
 		if not wyk_u.is_empty():
-			wiersz.add_child(_napis_ekranu("Usterki wykryte: %s" % _join_tekstow(_rynek_zakupow.nazwy_usterek(wyk_u, kat_id, seg_u)), 16))
+			wiersz.add_child(_ui._napis_ekranu("Usterki wykryte: %s" % _ui._join_tekstow(_rynek_zakupow.nazwy_usterek(wyk_u, kat_id, seg_u)), 16))
 		if kat_id != "samochod" or str(o.get("stan", "")) != "nowy":
-			if _jest_liczba(o.get("stan_deklarowany")):
+			if _ui._jest_liczba(o.get("stan_deklarowany")):
 				var dek := int(o["stan_deklarowany"])
 				var linia_stan := "Stan deklarowany: %d (%s)" % [dek, _rynek_zakupow.etykieta_stanu_jakosci(dek)]
-				if bool(o.get("stan_ujawniony", false)) and _jest_liczba(o.get("stan_oceniony")):
+				if bool(o.get("stan_ujawniony", false)) and _ui._jest_liczba(o.get("stan_oceniony")):
 					var oc := int(o["stan_oceniony"])
 					linia_stan += " · ocena: %d (%s)" % [oc, _rynek_zakupow.etykieta_stanu_jakosci(oc)]
-					if _jest_liczba(o.get("stan_rzeczywisty")) and int(o["stan_deklarowany"]) != int(o["stan_rzeczywisty"]):
+					if _ui._jest_liczba(o.get("stan_rzeczywisty")) and int(o["stan_deklarowany"]) != int(o["stan_rzeczywisty"]):
 						linia_stan += " · rozjazd z deklaracją"
-				wiersz.add_child(_napis_ekranu(linia_stan, 16))
-		if _jest_liczba(o.get("ocena_zaplanowana_tura")):
-			wiersz.add_child(_napis_ekranu("Ocena z pomocą zaplanowana: tura %d" % int(o["ocena_zaplanowana_tura"]), 16))
+				wiersz.add_child(_ui._napis_ekranu(linia_stan, 16))
+		if _ui._jest_liczba(o.get("ocena_zaplanowana_tura")):
+			wiersz.add_child(_ui._napis_ekranu("Ocena z pomocą zaplanowana: tura %d" % int(o["ocena_zaplanowana_tura"]), 16))
 	var oid := str(o.get("id", ""))
 	var tryb_oc := _rynek_zakupow.tryb_oceny_stanu(o) if not nieruchomosc else "przed_zakupem"
-	if tryb_oc != "" and not nieruchomosc and _jest_liczba(o.get("stan_rzeczywisty")):
+	if tryb_oc != "" and not nieruchomosc and _ui._jest_liczba(o.get("stan_rzeczywisty")):
 		var rzad_ocena := HBoxContainer.new()
 		rzad_ocena.add_theme_constant_override("separation", 8)
 		var b_ocen := Button.new()
@@ -2414,7 +2415,7 @@ func _buduj_pelna_karte_oferty(
 					msg += " — rozjazd względem deklaracji sprzedawcy."
 				var uw: Array = w.get("usterki_wykryte", []) if w.get("usterki_wykryte") is Array else []
 				if not uw.is_empty():
-					msg += " · wykryto: %s" % _join_tekstow(_rynek_zakupow.nazwy_usterek(uw, kat_id, str(o.get("segment", ""))))
+					msg += " · wykryto: %s" % _ui._join_tekstow(_rynek_zakupow.nazwy_usterek(uw, kat_id, str(o.get("segment", ""))))
 				_pokaz_komunikat_zakupu(msg, w)
 				SkryptZapisu.zapisz(_swiat)
 				_zaplanuj_stos()
@@ -2429,7 +2430,7 @@ func _buduj_pelna_karte_oferty(
 		)
 		rzad_ocena.add_child(b_pomoc)
 		wiersz.add_child(rzad_ocena)
-	if str(o.get("stan", "")) == "uzywany" and not nieruchomosc and _jest_liczba(cena_v):
+	if str(o.get("stan", "")) == "uzywany" and not nieruchomosc and _ui._jest_liczba(cena_v):
 		wiersz.add_child(_buduj_panel_targowania(o, oid, kat_id, stan_filtr, etykiety, nieruchomosc))
 	var b := Button.new()
 	b.text = "Kup"
@@ -2470,9 +2471,9 @@ func _etykieta_odbioru(sposob: String) -> String:
 func _pokaz_komunikat_zakupu(tekst: String, _wynik: Dictionary = {}) -> void:
 	if tekst.strip_edges() == "":
 		return
-	var msg := _napis_ekranu(tekst, 16)
+	var msg := _ui._napis_ekranu(tekst, 16)
 	msg.set_meta("zakupy_oferta", true)
-	_tresc_biala().add_child(msg)
+	_ui._tresc_biala().add_child(msg)
 
 
 func _panel_pomocy_oceny(oferta_id: String, kat_id: String, stan_filtr: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
@@ -2485,9 +2486,9 @@ func _panel_pomocy_oceny(oferta_id: String, kat_id: String, stan_filtr: String, 
 	var panel := VBoxContainer.new()
 	panel.set_meta("zakupy_oferta", true)
 	panel.add_theme_constant_override("separation", 4)
-	panel.add_child(_napis_ekranu("Kto ma pomóc w ocenie?", 14))
+	panel.add_child(_ui._napis_ekranu("Kto ma pomóc w ocenie?", 14))
 	if trzeba_dojazd:
-		panel.add_child(_napis_ekranu("W tym samym kroku wybierz dojazd. Potem jesteś już na miejscu.", 14))
+		panel.add_child(_ui._napis_ekranu("W tym samym kroku wybierz dojazd. Potem jesteś już na miejscu.", 14))
 	for k in kandydaci:
 		if not (k is Dictionary):
 			continue
@@ -2513,9 +2514,9 @@ func _panel_pomocy_oceny(oferta_id: String, kat_id: String, stan_filtr: String, 
 			var wycena_p := _rynek_zakupow.koszt_dojazdu(_swiat, oferta)
 			var paliwo_p: Dictionary = wycena_p.get("paliwo", {}) if wycena_p.get("paliwo") is Dictionary else {}
 			var dopisek := ""
-			if _jest_liczba(paliwo_p.get("koszt_zl")):
+			if _ui._jest_liczba(paliwo_p.get("koszt_zl")):
 				dopisek = " (%d zł)" % int(paliwo_p["koszt_zl"])
-			panel.add_child(_napis_ekranu("%s może poprosić o paliwo%s." % [str(k.get("nazwa", "?")), dopisek], 14))
+			panel.add_child(_ui._napis_ekranu("%s może poprosić o paliwo%s." % [str(k.get("nazwa", "?")), dopisek], 14))
 			var b_tak := Button.new()
 			b_tak.text = "Podwózka, dołożę do paliwa%s" % dopisek
 			b_tak.custom_minimum_size = Vector2(0, 36)
@@ -2538,7 +2539,7 @@ func _panel_pomocy_oceny(oferta_id: String, kat_id: String, stan_filtr: String, 
 				_zakoncz_prosbe_oceny(oferta_id, ref, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": false}, kat_id, stan_filtr, etykiety, nieruchomosc)
 			)
 			panel.add_child(b_pod)
-	_tresc_biala().add_child(panel)
+	_ui._tresc_biala().add_child(panel)
 
 
 func _zakoncz_prosbe_oceny(
@@ -2574,7 +2575,7 @@ func _panel_dojazdu(
 	var panel := VBoxContainer.new()
 	panel.set_meta("zakupy_oferta", true)
 	panel.add_theme_constant_override("separation", 4)
-	panel.add_child(_napis_ekranu("Jak dojechać do auta?", 16))
+	panel.add_child(_ui._napis_ekranu("Jak dojechać do auta?", 16))
 	var kom: Dictionary = wycena.get("komunikacja", {}) if wycena.get("komunikacja") is Dictionary else {}
 	var b_kom := Button.new()
 	b_kom.text = str(kom.get("tekst", "transport publiczny"))
@@ -2585,7 +2586,7 @@ func _panel_dojazdu(
 	panel.add_child(b_kom)
 	var kandydaci: Array = _rynek_zakupow.kandydaci_pomocy_oceny(_swiat)
 	if kandydaci.is_empty():
-		panel.add_child(_napis_ekranu("Nie ma kogo poprosić o podwózkę.", 14))
+		panel.add_child(_ui._napis_ekranu("Nie ma kogo poprosić o podwózkę.", 14))
 	for k in kandydaci:
 		if not (k is Dictionary):
 			continue
@@ -2595,7 +2596,7 @@ func _panel_dojazdu(
 		if _rynek_zakupow.kierowca_prosi_o_paliwo(osoba):
 			var paliwo_d: Dictionary = wycena.get("paliwo", {}) if wycena.get("paliwo") is Dictionary else {}
 			var dopisek_d := ""
-			if _jest_liczba(paliwo_d.get("koszt_zl")):
+			if _ui._jest_liczba(paliwo_d.get("koszt_zl")):
 				dopisek_d = " (%d zł)" % int(paliwo_d["koszt_zl"])
 			var b_tak := Button.new()
 			b_tak.text = "Podwózka: %s, dołożę do paliwa%s" % [nazwa, dopisek_d]
@@ -2619,7 +2620,7 @@ func _panel_dojazdu(
 				_po_dojezdzie(oferta_id, {"sposob": "podwozka", "osoba_ref": ref, "dolozyc": false}, cel, kat_id, stan_filtr, etykiety, nieruchomosc)
 			)
 			panel.add_child(b_pod)
-	_tresc_biala().add_child(panel)
+	_ui._tresc_biala().add_child(panel)
 
 
 func _po_dojezdzie(
@@ -2662,14 +2663,14 @@ func _buduj_panel_targowania(
 	var panel := VBoxContainer.new()
 	panel.add_theme_constant_override("separation", 4)
 	if bool(oferta.get("targowanie_zakonczone", false)) and not oferta.has("cena_wynegocjowana"):
-		panel.add_child(_napis_ekranu("Targowanie zakończone — sprzedawca nie chce rozmawiać.", 13))
+		panel.add_child(_ui._napis_ekranu("Targowanie zakończone — sprzedawca nie chce rozmawiać.", 13))
 		return panel
 	var cena0 := float(oferta.get("cena_wyjsciowa", oferta.get("cena_zl", 0)))
 	var conf_dane := _wczytaj_zakupy_oferty()
 	var tconf: Dictionary = conf_dane.get("targowanie", {}) if conf_dane.get("targowanie") is Dictionary else {}
 	var p_od := float(tconf.get("suwak_procent_od", 50))
 	var p_do := float(tconf.get("suwak_procent_do", 100))
-	var etykieta := _napis_ekranu("Targuj: 90% ceny = %d zł" % int(round(cena0 * 0.9)), 13)
+	var etykieta := _ui._napis_ekranu("Targuj: 90% ceny = %d zł" % int(round(cena0 * 0.9)), 13)
 	panel.add_child(etykieta)
 	var suwak := HSlider.new()
 	suwak.min_value = p_od
@@ -2688,7 +2689,7 @@ func _buduj_panel_targowania(
 	)
 	suwak.value_changed.emit(suwak.value)
 	panel.add_child(suwak)
-	var dialog_lbl := _napis_ekranu("", 13)
+	var dialog_lbl := _ui._napis_ekranu("", 13)
 	dialog_lbl.visible = false
 	panel.add_child(dialog_lbl)
 	var b_targ := Button.new()
@@ -2913,7 +2914,7 @@ func _podlacz_scroll_aut() -> void:
 
 
 func _scroll_zakupow() -> ScrollContainer:
-	var tresc := _tresc_biala()
+	var tresc := _ui._tresc_biala()
 	if tresc.get_parent() is ScrollContainer:
 		return tresc.get_parent() as ScrollContainer
 	return null
@@ -3033,7 +3034,7 @@ func _dokladka_zakupow() -> int:
 
 
 func _dopisz_karty_zakupow(przed: int) -> void:
-	var tresc := _tresc_biala()
+	var tresc := _ui._tresc_biala()
 	var do_usun: Array = []
 	for dziecko in tresc.get_children():
 		if not dziecko.has_meta("zakupy_oferta"):
@@ -3119,8 +3120,8 @@ func _id_miejsca_pobytu() -> String:
 func _posortuj_oferty_cena(oferty: Array, tryb: String) -> Array:
 	var kopia: Array = oferty.duplicate()
 	kopia.sort_custom(func(a, b) -> bool:
-		var ca := float(a.get("cena_zl", -1)) if a is Dictionary and _jest_liczba(a.get("cena_zl")) else -1.0
-		var cb := float(b.get("cena_zl", -1)) if b is Dictionary and _jest_liczba(b.get("cena_zl")) else -1.0
+		var ca := float(a.get("cena_zl", -1)) if a is Dictionary and _ui._jest_liczba(a.get("cena_zl")) else -1.0
+		var cb := float(b.get("cena_zl", -1)) if b is Dictionary and _ui._jest_liczba(b.get("cena_zl")) else -1.0
 		if tryb == "rosnaco":
 			return ca < cb
 		return ca > cb
@@ -3158,12 +3159,12 @@ func _stub_przedszkole() -> void:
 		tekst = str(_swiat["przedszkole_tekst"])
 	else:
 		_swiat["przedszkole_tekst"] = tekst
-	_tresc_biala().add_child(_napis_ekranu(tekst, 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(tekst, 15))
 	var pytania := Button.new()
 	pytania.text = "Pytanie do kogoś (stub)"
 	pytania.custom_minimum_size = Vector2(0, 44)
 	pytania.pressed.connect(_stub_pytanie_dziecka)
-	_tresc_biala().add_child(pytania)
+	_ui._tresc_biala().add_child(pytania)
 
 
 func _efekt_fala2_tydzien() -> void:
@@ -3220,7 +3221,7 @@ func _pasek_sylwetki(bohater: Dictionary) -> Control:
 	styl.corner_radius_bottom_right = 4
 	pasek.add_theme_stylebox_override("fill", styl)
 	rzad.add_child(pasek)
-	rzad.add_child(_napis_ekranu("%d/%d" % [syl.punkty, syl.cap()], 12))
+	rzad.add_child(_ui._napis_ekranu("%d/%d" % [syl.punkty, syl.cap()], 12))
 	return rzad
 
 
@@ -3234,7 +3235,7 @@ func _odswiez_bohatera_i_ekran(tresc: String, nazwa: String) -> void:
 
 func _ekran_korepetycje() -> void:
 	var bohater := _bohater()
-	_tresc_biala().add_child(_napis_ekranu("Korepetycje (propozycja kosztów). Wiedza: %d" % int(bohater.get("wiedza_pkt", 0)), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Korepetycje (propozycja kosztów). Wiedza: %d" % int(bohater.get("wiedza_pkt", 0)), 16))
 	var kor := Korepetycje.new()
 	for p in kor.lista():
 		if not (p is Dictionary):
@@ -3249,18 +3250,18 @@ func _ekran_korepetycje() -> void:
 		var id_b := str(p.get("id", ""))
 		b.pressed.connect(func() -> void:
 			var w: Dictionary = kor.zajecie(_bohater(), id_b)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("korepetycje", "Korepetycje")
 		)
-		_tresc_biala().add_child(b)
+		_ui._tresc_biala().add_child(b)
 
 
 func _ekran_zajecia_dodatkowe() -> void:
 	var bohater := _bohater()
 	var zaj := ZajeciaDodatkowe.new()
 	var akt := zaj.aktywne(bohater)
-	_tresc_biala().add_child(_napis_ekranu("Aktywne: %s" % (", ".join(PackedStringArray(akt)) if not akt.is_empty() else "brak"), 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Aktywne: %s" % (", ".join(PackedStringArray(akt)) if not akt.is_empty() else "brak"), 15))
 	for z in zaj.lista(_wiek_lat()):
 		if not (z is Dictionary):
 			continue
@@ -3270,11 +3271,11 @@ func _ekran_zajecia_dodatkowe() -> void:
 		var id_z := str(z.get("id", ""))
 		b.pressed.connect(func() -> void:
 			var w: Dictionary = zaj.zapisz_sie(_bohater(), id_z)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("zajecia_dodatkowe", "Zajęcia dodatkowe")
 		)
-		_tresc_biala().add_child(b)
+		_ui._tresc_biala().add_child(b)
 
 
 func _ekran_szachy() -> void:
@@ -3282,17 +3283,17 @@ func _ekran_szachy() -> void:
 	var sz := Szachy.new()
 	sz.zapewnij_ranking(bohater)
 	_swiat["bohater"] = bohater
-	_tresc_biala().add_child(_napis_ekranu("Ranking lokalny (nie ELO FIDE): %d" % sz.ranking(bohater), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Ranking lokalny (nie ELO FIDE): %d" % sz.ranking(bohater), 16))
 	var bt := Button.new()
 	bt.text = "Trening"
 	bt.custom_minimum_size = Vector2(0, 44)
 	bt.pressed.connect(func() -> void:
 		var w: Dictionary = sz.trening(_bohater())
-		_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 		if bool(w.get("ok", false)):
 			_odswiez_bohatera_i_ekran("szachy", "Szachy / turnieje")
 	)
-	_tresc_biala().add_child(bt)
+	_ui._tresc_biala().add_child(bt)
 	for t in sz.turnieje(_wiek_lat()):
 		if not (t is Dictionary):
 			continue
@@ -3302,21 +3303,21 @@ func _ekran_szachy() -> void:
 		var id_t := str(t.get("id", ""))
 		b.pressed.connect(func() -> void:
 			var w2: Dictionary = sz.graj_turniej(_bohater(), id_t)
-			_tresc_biala().add_child(_napis_ekranu(str(w2.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w2.get("tekst", "")), 14))
 			if bool(w2.get("ok", false)):
 				_odswiez_bohatera_i_ekran("szachy", "Szachy / turnieje")
 		)
-		_tresc_biala().add_child(b)
+		_ui._tresc_biala().add_child(b)
 
 
 func _ekran_imprezy() -> void:
 	var bohater := _bohater()
 	var dep := Depresja.new()
 	if dep.blokada_imprez(bohater):
-		_tresc_biala().add_child(_napis_ekranu("Kryzys nastroju — imprezy zablokowane (stub).", 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Kryzys nastroju — imprezy zablokowane (stub).", 15))
 		return
 	var im := ImprezyUzywki.new()
-	_tresc_biala().add_child(_napis_ekranu("Imprezy / używki (stub). Wiek %d." % _wiek_lat(), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Imprezy / używki (stub). Wiek %d." % _wiek_lat(), 16))
 	for p in im.lista_imprez(_wiek_lat()):
 		if not (p is Dictionary):
 			continue
@@ -3326,31 +3327,31 @@ func _ekran_imprezy() -> void:
 		b1.custom_minimum_size = Vector2(0, 44)
 		b1.pressed.connect(func() -> void:
 			var w: Dictionary = im.idz_na_impreze(_bohater(), _swiat, id_p, false)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("imprezy", "Imprezy / używki")
 		)
-		_tresc_biala().add_child(b1)
+		_ui._tresc_biala().add_child(b1)
 		var b2 := Button.new()
 		b2.text = "%s (+ picie stub)" % str(p.get("nazwa", ""))
 		b2.custom_minimum_size = Vector2(0, 44)
 		b2.pressed.connect(func() -> void:
 			var w2: Dictionary = im.idz_na_impreze(_bohater(), _swiat, id_p, true)
-			_tresc_biala().add_child(_napis_ekranu(str(w2.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w2.get("tekst", "")), 14))
 			if bool(w2.get("ok", false)):
 				_odswiez_bohatera_i_ekran("imprezy", "Imprezy / używki")
 		)
-		_tresc_biala().add_child(b2)
+		_ui._tresc_biala().add_child(b2)
 
 
 func _ekran_terapia() -> void:
 	var bohater := _bohater()
 	var dep := Depresja.new()
-	_tresc_biala().add_child(_napis_ekranu("Nastrój / terapia (stub). Nie jest to porada medyczna.", 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Nastrój / terapia (stub). Nie jest to porada medyczna.", 15))
 	var st := dep.tekst_stanu(bohater)
-	_tresc_biala().add_child(_napis_ekranu(st if st != "" else "Bez flagi depresji.", 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(st if st != "" else "Bez flagi depresji.", 15))
 	var ie := InteligencjaEmocjonalna.new()
-	_tresc_biala().add_child(_napis_ekranu(ie.tekst(bohater), 14))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(ie.tekst(bohater), 14))
 	for tryb in ["nfz", "prywatna"]:
 		var b := Button.new()
 		b.text = "Terapia: %s" % tryb
@@ -3358,11 +3359,11 @@ func _ekran_terapia() -> void:
 		var tryb_b := str(tryb)
 		b.pressed.connect(func() -> void:
 			var w: Dictionary = dep.terapia(_bohater(), tryb_b)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("terapia", "Terapia / nastrój")
 		)
-		_tresc_biala().add_child(b)
+		_ui._tresc_biala().add_child(b)
 
 
 func _ekran_konserwacja_auta() -> void:
@@ -3376,7 +3377,7 @@ func _ekran_konserwacja_auta() -> void:
 				auto = d
 				break
 	if not (auto is Dictionary):
-		_tresc_biala().add_child(_napis_ekranu("Brak auta — kup w Zakupach, potem wróć tu.", 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak auta — kup w Zakupach, potem wróć tu.", 15))
 		return
 	var kon := KonserwacjaAuta.new()
 	var stan_k: Dictionary = {}
@@ -3385,10 +3386,10 @@ func _ekran_konserwacja_auta() -> void:
 	else:
 		stan_k = kon.stan_startowy()
 		auto["konserwacja"] = stan_k
-	_tresc_biala().add_child(_napis_ekranu(str(auto.get("nazwa", "Auto")), 16))
-	_tresc_biala().add_child(_napis_ekranu(kon.tekst_stanu(stan_k), 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(str(auto.get("nazwa", "Auto")), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(kon.tekst_stanu(stan_k), 15))
 	for czesc in ["olej", "filtry", "opony"]:
-		_tresc_biala().add_child(_pasek_konserwacji(czesc, int(stan_k.get(czesc, 0))))
+		_ui._tresc_biala().add_child(_pasek_konserwacji(czesc, int(stan_k.get(czesc, 0))))
 	var zima_btn := CheckButton.new()
 	zima_btn.text = "Konserwacja zimowa"
 	zima_btn.button_pressed = bool(stan_k.get("konserwacja_zima", false))
@@ -3396,7 +3397,7 @@ func _ekran_konserwacja_auta() -> void:
 		kon.ustaw_konserwacje_zimowa(stan_k, wl)
 		_zapisz_konserwacje_auta(auto, stan_k)
 	)
-	_tresc_biala().add_child(zima_btn)
+	_ui._tresc_biala().add_child(zima_btn)
 	for sposob in ["samodzielnie", "youtube", "przyjaciel_mechanik", "warsztat"]:
 		for czesc2 in ["olej", "filtry", "opony"]:
 			var b := Button.new()
@@ -3410,18 +3411,18 @@ func _ekran_konserwacja_auta() -> void:
 				if bool(w.get("ok", false)) and koszt > 0:
 					var boh := _bohater()
 					if int(boh.get("pieniadze", 0)) < koszt:
-						_tresc_biala().add_child(_napis_ekranu("Brak kasy na serwis.", 13))
+						_ui._tresc_biala().add_child(_ui._napis_ekranu("Brak kasy na serwis.", 13))
 						return
 					boh["pieniadze"] = int(boh["pieniadze"]) - koszt
 					_swiat["bohater"] = boh
 				_zapisz_konserwacje_auta(auto, stan_k)
-				_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 13))
+				_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 13))
 				if bool(w.get("ok", false)):
 					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
 			)
-			_tresc_biala().add_child(b)
+			_ui._tresc_biala().add_child(b)
 	if bool(stan_k.get("rdza", false)) or bool(stan_k.get("zatarcie", false)):
-		_tresc_biala().add_child(_napis_ekranu("Poważne: rdza/zatarcie — warsztat.", 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Poważne: rdza/zatarcie — warsztat.", 14))
 		for cz3 in ["rdza", "zatarcie"]:
 			if not bool(stan_k.get(cz3, false)):
 				continue
@@ -3438,15 +3439,15 @@ func _ekran_konserwacja_auta() -> void:
 					_swiat["bohater"] = boh3
 					_zapisz_konserwacje_auta(auto, stan_k)
 					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
-				_tresc_biala().add_child(_napis_ekranu(str(w3.get("tekst", "")), 13))
+				_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w3.get("tekst", "")), 13))
 			)
-			_tresc_biala().add_child(bw)
+			_ui._tresc_biala().add_child(bw)
 
 
 func _pasek_konserwacji(nazwa: String, wartosc: int) -> Control:
 	var rzad := HBoxContainer.new()
 	rzad.add_theme_constant_override("separation", 8)
-	rzad.add_child(_napis_ekranu(nazwa.capitalize(), 13))
+	rzad.add_child(_ui._napis_ekranu(nazwa.capitalize(), 13))
 	var pasek := ProgressBar.new()
 	pasek.min_value = 0
 	pasek.max_value = 100
@@ -3458,7 +3459,7 @@ func _pasek_konserwacji(nazwa: String, wartosc: int) -> Control:
 	styl.bg_color = Color(ZIELONY) if wartosc > 30 else Color(KRWISTY)
 	pasek.add_theme_stylebox_override("fill", styl)
 	rzad.add_child(pasek)
-	rzad.add_child(_napis_ekranu(str(wartosc), 12))
+	rzad.add_child(_ui._napis_ekranu(str(wartosc), 12))
 	return rzad
 
 
@@ -3483,8 +3484,8 @@ func _zapisz_konserwacje_auta(auto: Variant, stan_k: Dictionary) -> void:
 func _ekran_lotnictwo() -> void:
 	var bohater := _bohater()
 	var lot := SprowadzanieSamolotow.new()
-	_tresc_biala().add_child(_napis_ekranu(lot.tekst_ui(bohater), 15))
-	_tresc_biala().add_child(_napis_ekranu("Sprowadzanie samolotów — stub licencji/hangaru (katalog już jest).", 14))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(lot.tekst_ui(bohater), 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Sprowadzanie samolotów — stub licencji/hangaru (katalog już jest).", 14))
 	for l in lot.lista_licencji():
 		if not (l is Dictionary):
 			continue
@@ -3494,33 +3495,33 @@ func _ekran_lotnictwo() -> void:
 		var id_l := str(l.get("id", ""))
 		b.pressed.connect(func() -> void:
 			var w: Dictionary = lot.kup_licencje(_bohater(), id_l)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
 			if bool(w.get("ok", false)):
 				_odswiez_bohatera_i_ekran("lotnictwo", "Lotnictwo (stub)")
 		)
-		_tresc_biala().add_child(b)
+		_ui._tresc_biala().add_child(b)
 	var bh := Button.new()
 	bh.text = "Wynajmij hangar (miesiąc stub)"
 	bh.custom_minimum_size = Vector2(0, 44)
 	bh.pressed.connect(func() -> void:
 		var w2: Dictionary = lot.wynajmij_hangar(_bohater())
-		_tresc_biala().add_child(_napis_ekranu(str(w2.get("tekst", "")), 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w2.get("tekst", "")), 14))
 		if bool(w2.get("ok", false)):
 			_odswiez_bohatera_i_ekran("lotnictwo", "Lotnictwo (stub)")
 	)
-	_tresc_biala().add_child(bh)
+	_ui._tresc_biala().add_child(bh)
 	var od := lot.sprawdz_odblokowanie_smiglowcow(bohater)
-	_tresc_biala().add_child(_napis_ekranu(str(od.get("tekst", "")), 13))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(str(od.get("tekst", "")), 13))
 
 
 func _ekran_eventy_przyklady() -> void:
 	var ev := EventyPrzyklady.new()
 	var lista := ev.lista_eventow()
-	_tresc_biala().add_child(_napis_ekranu("Pakiet eventów: %d (Fala 1+2). Kliknij opcję." % lista.size(), 15))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Pakiet eventów: %d (Fala 1+2). Kliknij opcję." % lista.size(), 15))
 	for e in lista:
 		if not (e is Dictionary):
 			continue
-		_tresc_biala().add_child(_napis_ekranu("%s — %s" % [str(e.get("nazwa", "")), str(e.get("opis", ""))], 14))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("%s — %s" % [str(e.get("nazwa", "")), str(e.get("opis", ""))], 14))
 		if e.get("opcje") is Array:
 			for o in e["opcje"]:
 				if not (o is Dictionary):
@@ -3535,9 +3536,9 @@ func _ekran_eventy_przyklady() -> void:
 					_swiat["bohater"] = _bohater()
 					SkryptZapisu.zapisz(_swiat)
 					_odswiez_pasek_statystyk(true)
-					_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 13))
+					_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 13))
 				)
-				_tresc_biala().add_child(b)
+				_ui._tresc_biala().add_child(b)
 
 
 func _ekran_praca_fala2() -> void:
@@ -3545,22 +3546,22 @@ func _ekran_praca_fala2() -> void:
 	_praca_filtry_start()
 	_rynek_pracy.aktywuj(_swiat, _praca_filtry, int(_swiat.get("tydzien", 1)), _praca_miejsca(), _id_miejsca_pobytu())
 	var txt := _tekst_pracy()
-	_tresc_biala().add_child(_napis_ekranu("Praca rodziców: %s" % (txt if txt != "" else "—"), 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Praca rodziców: %s" % (txt if txt != "" else "—"), 16))
 	var komunikat := str(_swiat.get("praca_komunikat", "")).strip_edges()
 	if komunikat != "":
-		_tresc_biala().add_child(_napis_ekranu(komunikat, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(komunikat, 16))
 	_praca_karta_zatrudnienia()
-	_tresc_biala().add_child(_napis_ekranu("Ogłoszenia", 18))
-	_tresc_biala().add_child(_napis_ekranu("Kilka ogłoszeń z wybranego zasięgu. Niżej dochodzą następne. Po kilku tygodniach same znikają.", 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Ogłoszenia", 18))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Kilka ogłoszeń z wybranego zasięgu. Niżej dochodzą następne. Po kilku tygodniach same znikają.", 16))
 	_praca_panel_filtrow()
 	var slot := VBoxContainer.new()
 	slot.set_meta("praca_slot", true)
 	slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_tresc_biala().add_child(slot)
+	_ui._tresc_biala().add_child(slot)
 	var fuchy := VBoxContainer.new()
 	fuchy.set_meta("praca_fuchy", true)
 	fuchy.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	fuchy.add_child(_napis_ekranu("Dorywczo", 18))
+	fuchy.add_child(_ui._napis_ekranu("Dorywczo", 18))
 	var szkic := PracaSzkielet.new()
 	var syl := Sylwetka.new()
 	syl.z_zapisu(_bohater().get("sylwetka", {}))
@@ -3580,10 +3581,10 @@ func _ekran_praca_fala2() -> void:
 				_swiat["bohater"] = _bohater()
 				SkryptZapisu.zapisz(_swiat)
 				_odswiez_pasek_statystyk(true)
-			_tresc_biala().add_child(_napis_ekranu(str(w.get("tekst", "")), 16))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 16))
 		)
 		fuchy.add_child(b)
-	_tresc_biala().add_child(fuchy)
+	_ui._tresc_biala().add_child(fuchy)
 	_podlacz_scroll_pracy()
 	_praca_przerysuj_oferty()
 
@@ -3632,10 +3633,10 @@ func _praca_filtry_start() -> void:
 func _praca_karta_zatrudnienia() -> void:
 	var lista: Array = _rynek_pracy.lista_prac(_swiat)
 	if lista.is_empty():
-		_tresc_biala().add_child(_napis_ekranu("Nie masz etatu.", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Nie masz etatu.", 16))
 		return
 	if lista.size() >= 2:
-		_tresc_biala().add_child(_napis_ekranu("Masz dwie prace. Zmęczenie fizyczne i obciążenie psychiczne rosną co tydzień.", 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Masz dwie prace. Zmęczenie fizyczne i obciążenie psychiczne rosną co tydzień.", 16))
 	for i in lista.size():
 		if lista[i] is Dictionary:
 			_praca_jedna_karta(lista[i], i)
@@ -3646,24 +3647,24 @@ func _praca_jedna_karta(praca: Dictionary, indeks: int) -> void:
 	var karta := VBoxContainer.new()
 	karta.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	karta.add_theme_constant_override("separation", 6)
-	karta.add_child(_napis_ekranu(str(praca.get("nazwa", "Praca")), 18))
-	karta.add_child(_napis_ekranu("Płaca: %s zł brutto" % _tekst_z_odstepami(int(praca.get("placa_zl", 0))), 16))
+	karta.add_child(_ui._napis_ekranu(str(praca.get("nazwa", "Praca")), 18))
+	karta.add_child(_ui._napis_ekranu("Płaca: %s zł brutto" % _ui._tekst_z_odstepami(int(praca.get("placa_zl", 0))), 16))
 	var pasek := str(praca.get("ostatni_pasek", ""))
 	if pasek != "":
 		for linia in pasek.split("\n"):
 			if str(linia) != "":
-				karta.add_child(_napis_ekranu(str(linia), 16))
+				karta.add_child(_ui._napis_ekranu(str(linia), 16))
 	var cecha := _nazwa_cechy_szefa(str(szef.get("cecha", "")))
 	var linia_szefa := "Kierownik: %s" % _slowa_relacji(int(szef.get("relacja", 50)))
 	if cecha != "":
 		linia_szefa += ", %s" % cecha
-	karta.add_child(_napis_ekranu(linia_szefa, 16))
-	karta.add_child(_napis_ekranu("Upomnienia: %s" % _slowa_upomnien(int(praca.get("upomnienia", 0))), 16))
-	karta.add_child(_napis_ekranu("Staż tutaj: %d tyg." % int(praca.get("staz_tygodni", 0)), 16))
+	karta.add_child(_ui._napis_ekranu(linia_szefa, 16))
+	karta.add_child(_ui._napis_ekranu("Upomnienia: %s" % _slowa_upomnien(int(praca.get("upomnienia", 0))), 16))
+	karta.add_child(_ui._napis_ekranu("Staż tutaj: %d tyg." % int(praca.get("staz_tygodni", 0)), 16))
 	var zostalo := int(praca.get("wypowiedzenie_zostalo", 0))
 	if zostalo > 0:
-		karta.add_child(_napis_ekranu("Zostajesz jeszcze %d tyg." % zostalo, 16))
-	karta.add_child(_napis_ekranu("Zaangażowanie", 16))
+		karta.add_child(_ui._napis_ekranu("Zostajesz jeszcze %d tyg." % zostalo, 16))
+	karta.add_child(_ui._napis_ekranu("Zaangażowanie", 16))
 	var suwak := HSlider.new()
 	suwak.min_value = 0
 	suwak.max_value = 100
@@ -3671,7 +3672,7 @@ func _praca_jedna_karta(praca: Dictionary, indeks: int) -> void:
 	suwak.value = int(praca.get("angaz", 50))
 	suwak.custom_minimum_size = Vector2(0, 36)
 	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var opis := _napis_ekranu(_slowa_angazu(int(suwak.value)), 16)
+	var opis := _ui._napis_ekranu(_slowa_angazu(int(suwak.value)), 16)
 	var nr := indeks
 	suwak.value_changed.connect(func(v: float) -> void:
 		_rynek_pracy.ustaw_angaz(_swiat, int(v), nr)
@@ -3697,14 +3698,14 @@ func _praca_jedna_karta(praca: Dictionary, indeks: int) -> void:
 			_praca_odejdz(nr)
 		)
 		karta.add_child(odejscie)
-	_tresc_biala().add_child(karta)
+	_ui._tresc_biala().add_child(karta)
 
 
 func _praca_panel_filtrow() -> void:
 	var panel := VBoxContainer.new()
 	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	panel.add_theme_constant_override("separation", 6)
-	panel.add_child(_napis_ekranu("Zasięg", 16))
+	panel.add_child(_ui._napis_ekranu("Zasięg", 16))
 	var zasieg := OptionButton.new()
 	var nazwy_zasiegu := ["Miasto", "Województwo", "Polska"]
 	var kody_zasiegu := ["miasto", "wojewodztwo", "polska"]
@@ -3722,10 +3723,10 @@ func _praca_panel_filtrow() -> void:
 		_praca_przeladuj()
 	)
 	panel.add_child(zasieg)
-	_praca_pula_lbl = _napis_ekranu(_praca_tekst_puli(), 16)
+	_praca_pula_lbl = _ui._napis_ekranu(_praca_tekst_puli(), 16)
 	_praca_pula_lbl.set_meta("praca_pula", true)
 	panel.add_child(_praca_pula_lbl)
-	panel.add_child(_napis_ekranu("Szukaj", 16))
+	panel.add_child(_ui._napis_ekranu("Szukaj", 16))
 	var pole := LineEdit.new()
 	pole.placeholder_text = "Nazwa zawodu"
 	pole.text = str(_praca_filtry.get("tekst", ""))
@@ -3746,7 +3747,7 @@ func _praca_panel_filtrow() -> void:
 	)
 	panel.add_child(pole)
 	panel.add_child(szukaj)
-	panel.add_child(_napis_ekranu("Rodzaj", 16))
+	panel.add_child(_ui._napis_ekranu("Rodzaj", 16))
 	var rodzaj := OptionButton.new()
 	rodzaj.add_item("Wszystkie", 0)
 	var grupy := _praca_grupy()
@@ -3768,21 +3769,21 @@ func _praca_panel_filtrow() -> void:
 		_praca_przeladuj()
 	)
 	panel.add_child(rodzaj)
-	panel.add_child(_napis_ekranu("Wymagane wykształcenie, do", 16))
+	panel.add_child(_ui._napis_ekranu("Wymagane wykształcenie, do", 16))
 	var poziomy := [-1, 0, 1, 2, 3]
 	var nazwy_poz := ["Bez filtra", "Podstawowe", "Branżowe", "Średnie", "Wyższe"]
 	panel.add_child(_praca_opcja(nazwy_poz, poziomy, int(_praca_filtry.get("wyksztalcenie_max", -1)), func(wartosc: int) -> void:
 		_praca_filtry["wyksztalcenie_max"] = wartosc
 		_praca_przeladuj()
 	))
-	panel.add_child(_napis_ekranu("Wymagane doświadczenie, do", 16))
+	panel.add_child(_ui._napis_ekranu("Wymagane doświadczenie, do", 16))
 	var progi := [-1, 0, 1, 3, 8]
 	var nazwy_staz := ["Bez filtra", "Brak", "Krótkie", "Kilkuletnie", "Długie"]
 	panel.add_child(_praca_opcja(nazwy_staz, progi, int(_praca_filtry.get("doswiadczenie_max", -1)), func(wartosc: int) -> void:
 		_praca_filtry["doswiadczenie_max"] = wartosc
 		_praca_przeladuj()
 	))
-	panel.add_child(_napis_ekranu("Wpływ", 16))
+	panel.add_child(_ui._napis_ekranu("Wpływ", 16))
 	var opcja_wplywu := OptionButton.new()
 	opcja_wplywu.add_item("Bez filtra", 0)
 	var pary: Array = []
@@ -3821,24 +3822,24 @@ func _praca_panel_filtrow() -> void:
 		_praca_przeladuj()
 	)
 	panel.add_child(opcja_wplywu)
-	panel.add_child(_napis_ekranu("Płaca", 16))
+	panel.add_child(_ui._napis_ekranu("Płaca", 16))
 	var suwak = SkryptZakresu.new()
 	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	suwak.custom_minimum_size = Vector2(120, 48)
 	suwak.ustaw_zakres(0.0, 20000.0)
 	suwak.od = float(_praca_filtry.get("placa_od", 0))
 	suwak.dokad = float(_praca_filtry.get("placa_do", 20000))
-	var opis_placy := _napis_ekranu("%s–%s zł" % [_tekst_z_odstepami(int(suwak.od)), _tekst_z_odstepami(int(suwak.dokad))], 16)
+	var opis_placy := _ui._napis_ekranu("%s–%s zł" % [_ui._tekst_z_odstepami(int(suwak.od)), _ui._tekst_z_odstepami(int(suwak.dokad))], 16)
 	suwak.zakres_zmieniony.connect(func(od: float, dokad: float) -> void:
 		_praca_filtry["filtruj_place"] = true
 		_praca_filtry["placa_od"] = int(od)
 		_praca_filtry["placa_do"] = int(dokad)
-		opis_placy.text = "%s–%s zł" % [_tekst_z_odstepami(int(od)), _tekst_z_odstepami(int(dokad))]
+		opis_placy.text = "%s–%s zł" % [_ui._tekst_z_odstepami(int(od)), _ui._tekst_z_odstepami(int(dokad))]
 		_praca_przeladuj()
 	)
 	panel.add_child(opis_placy)
 	panel.add_child(suwak)
-	_tresc_biala().add_child(panel)
+	_ui._tresc_biala().add_child(panel)
 
 
 func _praca_opcja(nazwy: Array, wartosci: Array, aktualna: int, po_wyborze: Callable) -> OptionButton:
@@ -3890,7 +3891,7 @@ func _praca_przeladuj() -> void:
 
 
 func _praca_przerysuj_oferty() -> void:
-	var tresc := _tresc_biala()
+	var tresc := _ui._tresc_biala()
 	var do_usun: Array = []
 	for dziecko in tresc.get_children():
 		if dziecko.has_meta("praca_oferta"):
@@ -3907,7 +3908,7 @@ func _praca_przerysuj_oferty() -> void:
 			przed = dziecko
 			break
 	if oferty.is_empty():
-		var pusty := _napis_ekranu("Brak ogłoszeń w tym filtrze.", 16)
+		var pusty := _ui._napis_ekranu("Brak ogłoszeń w tym filtrze.", 16)
 		pusty.set_meta("praca_oferta", true)
 		_praca_wstaw(tresc, pusty, przed)
 		return
@@ -3930,7 +3931,7 @@ func _praca_karta_oferty(oferta: Dictionary) -> Control:
 	for linia in _rynek_pracy.tekst_ogloszenia(oferta).split("\n"):
 		if str(linia) == "":
 			continue
-		karta.add_child(_napis_ekranu(str(linia), 17))
+		karta.add_child(_ui._napis_ekranu(str(linia), 17))
 	var przycisk := Button.new()
 	przycisk.text = "Aplikuj"
 	przycisk.custom_minimum_size = Vector2(0, 44)
@@ -3952,9 +3953,9 @@ func _praca_klik_aplikuj(id_oferty: String) -> void:
 		return
 	_praca_wyczysc_slot()
 	if _rynek_pracy.lista_prac(_swiat).size() >= 2:
-		slot.add_child(_napis_ekranu("Masz już dwie prace. Trzeciej nie weźmiesz.", 16))
+		slot.add_child(_ui._napis_ekranu("Masz już dwie prace. Trzeciej nie weźmiesz.", 16))
 		return
-	slot.add_child(_napis_ekranu("Chcesz negocjować płacę?", 16))
+	slot.add_child(_ui._napis_ekranu("Chcesz negocjować płacę?", 16))
 	var tak := Button.new()
 	tak.text = "Tak, negocjuję"
 	tak.custom_minimum_size = Vector2(0, 44)
@@ -3983,9 +3984,9 @@ func _praca_suwak_negocjacji(oferta: Dictionary, ponownie: bool = false) -> void
 	if ponownie:
 		var wst := _rynek_pracy.wstep_dialogu("ponowna_proba")
 		if wst != "":
-			slot.add_child(_napis_ekranu(wst, 16))
-		slot.add_child(_napis_ekranu(_rynek_pracy.linia_dialogu("ponowna_proba", placa, -1), 16))
-	var opis := _napis_ekranu("Żądasz: %s zł" % _tekst_z_odstepami(placa), 16)
+			slot.add_child(_ui._napis_ekranu(wst, 16))
+		slot.add_child(_ui._napis_ekranu(_rynek_pracy.linia_dialogu("ponowna_proba", placa, -1), 16))
+	var opis := _ui._napis_ekranu("Żądasz: %s zł" % _ui._tekst_z_odstepami(placa), 16)
 	var suwak := HSlider.new()
 	suwak.min_value = int(band.get("min_zl", placa))
 	suwak.max_value = maxi(int(band.get("max_zl", placa)), int(suwak.min_value) + 1)
@@ -3994,7 +3995,7 @@ func _praca_suwak_negocjacji(oferta: Dictionary, ponownie: bool = false) -> void
 	suwak.custom_minimum_size = Vector2(0, 36)
 	suwak.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	suwak.value_changed.connect(func(v: float) -> void:
-		opis.text = "Żądasz: %s zł" % _tekst_z_odstepami(int(v))
+		opis.text = "Żądasz: %s zł" % _ui._tekst_z_odstepami(int(v))
 	)
 	slot.add_child(opis)
 	slot.add_child(suwak)
@@ -4021,15 +4022,15 @@ func _praca_zamknij_aplikacje(oferta: Dictionary, negocjuje: bool, zadana: int) 
 		placa_oni = int(oferta.get("placa_zl", 0))
 	var wst := _rynek_pracy.wstep_dialogu(sytuacja)
 	if wst != "":
-		slot.add_child(_napis_ekranu(wst, 16))
-	slot.add_child(_napis_ekranu(_rynek_pracy.linia_dialogu(sytuacja, placa_oni, -1), 16))
+		slot.add_child(_ui._napis_ekranu(wst, 16))
+	slot.add_child(_ui._napis_ekranu(_rynek_pracy.linia_dialogu(sytuacja, placa_oni, -1), 16))
 	if twarda:
 		var zamknij := _praca_przycisk("Nie")
 		zamknij.pressed.connect(func() -> void:
 			_praca_wyczysc_slot()
 			var zostaw := _praca_slot()
 			if zostaw != null:
-				zostaw.add_child(_napis_ekranu("Koniec rozmowy.", 16))
+				zostaw.add_child(_ui._napis_ekranu("Koniec rozmowy.", 16))
 		)
 		slot.add_child(zamknij)
 		return
@@ -4048,7 +4049,7 @@ func _praca_zamknij_aplikacje(oferta: Dictionary, negocjuje: bool, zadana: int) 
 		_praca_wyczysc_slot()
 		var zostaw := _praca_slot()
 		if zostaw != null:
-			zostaw.add_child(_napis_ekranu("Odchodzisz od tej oferty.", 16))
+			zostaw.add_child(_ui._napis_ekranu("Odchodzisz od tej oferty.", 16))
 	)
 	jeszcze.pressed.connect(func() -> void:
 		_praca_suwak_negocjacji(oferta, true)
@@ -4074,15 +4075,15 @@ func _praca_przyjmij(oferta: Dictionary, placa: int) -> void:
 	if _rynek_pracy.lista_prac(_swiat).size() >= 2:
 		var slot := _praca_slot()
 		if slot != null:
-			slot.add_child(_napis_ekranu("Masz już dwie prace. Trzeciej nie weźmiesz.", 16))
+			slot.add_child(_ui._napis_ekranu("Masz już dwie prace. Trzeciej nie weźmiesz.", 16))
 		return
 	var przyjęta: Dictionary = _rynek_pracy.zatrudnij(_swiat, oferta, placa)
 	if not bool(przyjęta.get("ok", true)) and str(przyjęta.get("powod", "")) == "dwie_prace":
 		_swiat["praca_komunikat"] = "Masz już dwie prace. Trzeciej nie weźmiesz."
 	else:
-		_swiat["praca_komunikat"] = "Zaczynasz pracę. Płaca: %s zł brutto." % _tekst_z_odstepami(placa)
+		_swiat["praca_komunikat"] = "Zaczynasz pracę. Płaca: %s zł brutto." % _ui._tekst_z_odstepami(placa)
 	SkryptZapisu.zapisz(_swiat)
-	_wyczysc(_tresc_biala())
+	_ui._wyczysc(_ui._tresc_biala())
 	_ekran_praca_fala2()
 
 
@@ -4098,7 +4099,7 @@ func _praca_popros(indeks: int = 0) -> void:
 	var wynik: Dictionary = _rynek_pracy.popros_o_podwyzke(_swiat, randf(), indeks)
 	_swiat["praca_komunikat"] = str(wynik.get("tekst", ""))
 	SkryptZapisu.zapisz(_swiat)
-	_wyczysc(_tresc_biala())
+	_ui._wyczysc(_ui._tresc_biala())
 	_ekran_praca_fala2()
 
 
@@ -4106,7 +4107,7 @@ func _praca_odejdz(indeks: int = 0) -> void:
 	var n: int = _rynek_pracy.odejdz(_swiat, -1.0, indeks)
 	_swiat["praca_komunikat"] = "Wypowiedzenie złożone. Zostajesz jeszcze %d tyg." % n
 	SkryptZapisu.zapisz(_swiat)
-	_wyczysc(_tresc_biala())
+	_ui._wyczysc(_ui._tresc_biala())
 	_ekran_praca_fala2()
 
 
@@ -4123,7 +4124,7 @@ func _praca_oferta_po_id(id_oferty: String) -> Dictionary:
 
 
 func _praca_slot() -> VBoxContainer:
-	for dziecko in _tresc_biala().get_children():
+	for dziecko in _ui._tresc_biala().get_children():
 		if dziecko.has_meta("praca_slot") and dziecko is VBoxContainer:
 			return dziecko
 	return null
@@ -4247,39 +4248,30 @@ func _stub_pytanie_dziecka() -> void:
 					temat = str(t0.get("nazwa", t0.get("id", temat)))
 				elif t0 is String:
 					temat = str(t0)
-	_wyczysc(_tresc_biala())
-	_tytul_bialy().text = "Pytanie"
-	_tresc_biala().add_child(_napis_ekranu("Temat: %s" % temat, 16))
-	_tresc_biala().add_child(_napis_ekranu("Rozmówca: %s (wybór stub)" % rozmowca, 15))
+	_ui._wyczysc(_ui._tresc_biala())
+	_ui._tytul_bialy().text = "Pytanie"
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Temat: %s" % temat, 16))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Rozmówca: %s (wybór stub)" % rozmowca, 15))
 	for kto in ["matka", "ojciec"]:
 		var b := Button.new()
 		b.text = "Zapytaj: %s" % kto
 		b.custom_minimum_size = Vector2(0, 44)
 		var kto_bind: String = str(kto)
 		b.pressed.connect(func() -> void:
-			_tresc_biala().add_child(_napis_ekranu("(%s) Odpowiedź stub — pełny system później." % kto_bind, 14))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu("(%s) Odpowiedź stub — pełny system później." % kto_bind, 14))
 		)
-		_tresc_biala().add_child(b)
-
-
-func _ekran_ustawienia_w_bialym() -> void:
-	_tresc_biala().add_child(_napis_ekranu("Otwiera panel wyglądu (przejrzystość, kolory). Podział poziomy 8:5 usunięty.", 15))
-	var przycisk := Button.new()
-	przycisk.text = "Otwórz ustawienia wyglądu"
-	przycisk.custom_minimum_size = Vector2(0, 48)
-	przycisk.pressed.connect(_on_ustawienia_pressed)
-	_tresc_biala().add_child(przycisk)
+		_ui._tresc_biala().add_child(b)
 
 
 func _ekran_jedzenie_dom(kolor: Color) -> void:
-	_zdanie = _napis_ekranu("", 18)
+	_zdanie = _ui._napis_ekranu("", 18)
 	_zdanie.add_theme_color_override("font_color", Color(KRWISTY))
-	_tresc_biala().add_child(_zdanie)
-	_wplyw_domu = _rich_ekran()
-	_tresc_biala().add_child(_wplyw_domu)
-	_tresc_biala().add_child(_ramka_suwaka("Cena", kolor, _suwak_jedzenia("cena")))
-	_tresc_biala().add_child(_ramka_suwaka("Składniki odżywcze", kolor, _suwak_jedzenia("skladniki")))
-	_tresc_biala().add_child(_ramka_suwaka("Dieta ogólna", kolor, _suwak_jedzenia("dieta_ogolna")))
+	_ui._tresc_biala().add_child(_zdanie)
+	_wplyw_domu = _ui._rich_ekran()
+	_ui._tresc_biala().add_child(_wplyw_domu)
+	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Cena", kolor, _suwak_jedzenia("cena")))
+	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Składniki odżywcze", kolor, _suwak_jedzenia("skladniki")))
+	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Dieta ogólna", kolor, _suwak_jedzenia("dieta_ogolna")))
 	var diety := VBoxContainer.new()
 	diety.add_theme_constant_override("separation", 4)
 	var wege := CheckButton.new()
@@ -4298,16 +4290,16 @@ func _ekran_jedzenie_dom(kolor: Color) -> void:
 	)
 	diety.add_child(wege)
 	diety.add_child(weganska)
-	_tresc_biala().add_child(_ramka_z_dolnym("Dieta", kolor, diety, null))
-	_tresc_biala().add_child(_ramka_suwaka("Dieta gotowania własnego", kolor, _suwak_jedzenia("dieta_wlasna")))
-	_efekt_dni = _rich_ekran()
+	_ui._tresc_biala().add_child(_ui._ramka_z_dolnym("Dieta", kolor, diety, null))
+	_ui._tresc_biala().add_child(_ui._ramka_suwaka("Dieta gotowania własnego", kolor, _suwak_jedzenia("dieta_wlasna")))
+	_efekt_dni = _ui._rich_ekran()
 	var dni_srodek := VBoxContainer.new()
 	dni_srodek.add_child(_efekt_dni)
-	var dni := _kropki_dni(_jedzenie.dni_gotowania(), _ustaw_dni_gotowania_z_ekranu)
-	_tresc_biala().add_child(_ramka_z_dolnym("Ile dni w tygodniu gotujesz", kolor, dni_srodek, dni))
+	var dni := _ui._kropki_dni(_jedzenie.dni_gotowania(), _ustaw_dni_gotowania_z_ekranu)
+	_ui._tresc_biala().add_child(_ui._ramka_z_dolnym("Ile dni w tygodniu gotujesz", kolor, dni_srodek, dni))
 	for pozycja in _jedzenie.pozycje_gdzie("dom"):
 		if pozycja is Dictionary:
-			_tresc_biala().add_child(_wiersz_pozycji(pozycja, false))
+			_ui._tresc_biala().add_child(_wiersz_pozycji(pozycja, false))
 	var zatwierdz := Button.new()
 	zatwierdz.text = "Zatwierdź"
 	zatwierdz.custom_minimum_size = Vector2(0, 48)
@@ -4316,7 +4308,7 @@ func _ekran_jedzenie_dom(kolor: Color) -> void:
 		_odswiez_napisy_domu()
 		_odswiez_pasek_statystyk(true)
 	)
-	_tresc_biala().add_child(zatwierdz)
+	_ui._tresc_biala().add_child(zatwierdz)
 	_odswiez_napisy_domu()
 
 
@@ -4328,11 +4320,11 @@ func _ekran_jedzenie_sam(_kolor: Color) -> void:
 		if cfg is Dictionary and str(cfg.get("tekst_zablokowane", "")) != "":
 			tekst_blok = str(cfg["tekst_zablokowane"])
 		var prog_txt := ""
-		if cfg is Dictionary and _jest_liczba(cfg.get("prog_wiek_lat")):
+		if cfg is Dictionary and _ui._jest_liczba(cfg.get("prog_wiek_lat")):
 			prog_txt = " (próg wieku: %d lat — propozycja do poprawki)" % int(cfg["prog_wiek_lat"])
-		_tresc_biala().add_child(_napis_ekranu(tekst_blok + prog_txt, 16))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(tekst_blok + prog_txt, 16))
 		return
-	_tresc_biala().add_child(_napis_ekranu("Jakość zdrowotna poza domem (osobno od smaku/ceny; propozycja, nie medyczne %).", 13))
+	_ui._tresc_biala().add_child(_ui._napis_ekranu("Jakość zdrowotna poza domem (osobno od smaku/ceny; propozycja, nie medyczne %).", 13))
 	var jak_cfg: Variant = null
 	var dane_j: Variant = _jedzenie.wczytaj()
 	if dane_j is Dictionary:
@@ -4341,15 +4333,15 @@ func _ekran_jedzenie_sam(_kolor: Color) -> void:
 	var j_max := 100
 	var j_krok := 5
 	if jak_cfg is Dictionary:
-		if _jest_liczba(jak_cfg.get("min")):
+		if _ui._jest_liczba(jak_cfg.get("min")):
 			j_min = int(jak_cfg["min"])
-		if _jest_liczba(jak_cfg.get("max")):
+		if _ui._jest_liczba(jak_cfg.get("max")):
 			j_max = int(jak_cfg["max"])
-		if _jest_liczba(jak_cfg.get("krok")):
+		if _ui._jest_liczba(jak_cfg.get("krok")):
 			j_krok = int(jak_cfg["krok"])
 	var j_wart := int(_swiat.get("jakosc_zdrowotna_poza_domem", 50))
-	var j_opis := _napis_ekranu("Jakość zdrowotna: %d" % j_wart, 15)
-	_tresc_biala().add_child(j_opis)
+	var j_opis := _ui._napis_ekranu("Jakość zdrowotna: %d" % j_wart, 15)
+	_ui._tresc_biala().add_child(j_opis)
 	var j_suwak := HSlider.new()
 	j_suwak.min_value = float(j_min)
 	j_suwak.max_value = float(j_max)
@@ -4360,20 +4352,20 @@ func _ekran_jedzenie_sam(_kolor: Color) -> void:
 		_swiat["jakosc_zdrowotna_poza_domem"] = int(v)
 		j_opis.text = "Jakość zdrowotna: %d" % int(v)
 	)
-	_tresc_biala().add_child(j_suwak)
-	var komunikat := _napis_ekranu("", 16)
-	_tresc_biala().add_child(komunikat)
+	_ui._tresc_biala().add_child(j_suwak)
+	var komunikat := _ui._napis_ekranu("", 16)
+	_ui._tresc_biala().add_child(komunikat)
 	var ceny: Array = []
 	for pozycja in _jedzenie.pozycje_gdzie("sam"):
 		if not (pozycja is Dictionary):
 			continue
-		if _jest_liczba(pozycja.get("cena_zl")):
+		if _ui._jest_liczba(pozycja.get("cena_zl")):
 			ceny.append(float(pozycja["cena_zl"]))
-		_tresc_biala().add_child(_wiersz_pozycji(pozycja, true, komunikat))
-	_dol_suwaka().show()
+		_ui._tresc_biala().add_child(_wiersz_pozycji(pozycja, true, komunikat))
+	_ui._dol_suwaka().show()
 	if ceny.is_empty():
 		_filtr_aktywny = false
-		_dol_suwaka().add_child(_z_marginesem(_napis_ekranu("—", 20)))
+		_ui._dol_suwaka().add_child(_ui._z_marginesem(_ui._napis_ekranu("—", 20)))
 		return
 	ceny.sort()
 	var suwak = SkryptZakresu.new()
@@ -4382,32 +4374,32 @@ func _ekran_jedzenie_sam(_kolor: Color) -> void:
 	_filtr_od = suwak.od
 	_filtr_do = suwak.dokad
 	suwak.zakres_zmieniony.connect(_on_filtr_ceny)
-	_dol_suwaka().add_child(_z_marginesem(suwak))
+	_ui._dol_suwaka().add_child(_ui._z_marginesem(suwak))
 	_zastosuj_filtr()
 
 
 func _ekran_transport(_kolor: Color) -> void:
 	var auto: Variant = _auto_z_zapisu()
 	if auto == null:
-		_tresc_biala().add_child(_napis_ekranu("Auta nie ma.", 20))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Auta nie ma.", 20))
 	else:
 		var opis := _opis_auta(auto)
 		if opis != "":
-			_tresc_biala().add_child(_napis_ekranu(opis, 18))
-		_dol_suwaka().show()
-		_dol_suwaka().add_child(_z_marginesem(_kropki_dni(int(_swiat.get("dni_auta", 0)), _ustaw_dni_auta)))
-		_dol_suwaka().add_child(_z_marginesem(_napis_ekranu("Cena na tydzień: %s" % _cena_tygodnia_auta(auto), 16)))
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(opis, 18))
+		_ui._dol_suwaka().show()
+		_ui._dol_suwaka().add_child(_ui._z_marginesem(_ui._kropki_dni(int(_swiat.get("dni_auta", 0)), _ustaw_dni_auta)))
+		_ui._dol_suwaka().add_child(_ui._z_marginesem(_ui._napis_ekranu("Cena na tydzień: %s" % _cena_tygodnia_auta(auto), 16)))
 	var mapa := Button.new()
 	mapa.text = "Mapa"
 	mapa.custom_minimum_size = Vector2(0, 44)
 	mapa.pressed.connect(func() -> void:
 		_otworz_akcje({"id": "mapa", "nazwa": "Mapa", "tryb": "ekran", "tresc": "mapa", "kolor": "#8aa0a8"})
 	)
-	_tresc_biala().add_child(mapa)
+	_ui._tresc_biala().add_child(mapa)
 
 
 func _ekran_mapa() -> void:
-	_tresc_biala().add_child(_napis_ekranu(
+	_ui._tresc_biala().add_child(_ui._napis_ekranu(
 		"Mapa uproszczona: miasta i drogi między nimi (sąsiedztwo). Bez GIS / bez ulic.",
 		16
 	))
@@ -4424,13 +4416,13 @@ func _ekran_mapa() -> void:
 	obszar.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	obszar.clip_contents = true
 	_mapa_warstwa = obszar
-	_tresc_biala().add_child(obszar)
-	_mapa_pasek = _napis_ekranu("Kliknij miasto — kto tam mieszka (bez znajomych).", 16)
+	_ui._tresc_biala().add_child(obszar)
+	_mapa_pasek = _ui._napis_ekranu("Kliknij miasto — kto tam mieszka (bez znajomych).", 16)
 	_mapa_pasek.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_tresc_biala().add_child(_mapa_pasek)
+	_ui._tresc_biala().add_child(_mapa_pasek)
 	_opcje_transportu = VBoxContainer.new()
 	_opcje_transportu.add_theme_constant_override("separation", 8)
-	_tresc_biala().add_child(_opcje_transportu)
+	_ui._tresc_biala().add_child(_opcje_transportu)
 	obszar.resized.connect(_przerysuj_mape_miast)
 	obszar.draw.connect(_rysuj_krawedzie_mapy)
 	call_deferred("_przerysuj_mape_miast")
@@ -4525,11 +4517,11 @@ func _on_klik_miasta_mapy(id: String, nazwa: String) -> void:
 	var dziad_l: Array = kto.get("dziadkowie", []) if kto.get("dziadkowie") is Array else []
 	var przyj_l: Array = kto.get("przyjaciele", []) if kto.get("przyjaciele") is Array else []
 	if not rodzice_l.is_empty():
-		czesci.append("Rodzice: %s" % _join_tekstow(rodzice_l))
+		czesci.append("Rodzice: %s" % _ui._join_tekstow(rodzice_l))
 	if not dziad_l.is_empty():
-		czesci.append("Dziadkowie: %s" % _join_tekstow(dziad_l))
+		czesci.append("Dziadkowie: %s" % _ui._join_tekstow(dziad_l))
 	if not przyj_l.is_empty():
-		czesci.append("Przyjaciele: %s" % _join_tekstow(przyj_l))
+		czesci.append("Przyjaciele: %s" % _ui._join_tekstow(przyj_l))
 	if _mapa_pasek != null and is_instance_valid(_mapa_pasek):
 		if czesci.is_empty():
 			_mapa_pasek.text = "%s — nikt z rodziny/przyjaciół tu nie mieszka." % nazwa
@@ -4549,38 +4541,38 @@ func _on_miasto_mapy(_indeks: int) -> void:
 func _wypelnij_opcje_transportu(id: String, nazwa: String) -> void:
 	if _opcje_transportu == null or not is_instance_valid(_opcje_transportu):
 		return
-	_wyczysc(_opcje_transportu)
-	_opcje_transportu.add_child(_napis_ekranu(nazwa, 18))
+	_ui._wyczysc(_opcje_transportu)
+	_opcje_transportu.add_child(_ui._napis_ekranu(nazwa, 18))
 	var skad := _id_miejsca_pobytu()
 	var dyst: Variant = _mapa_miast.dystans_km(_mapa_graf, skad, id)
 	var dyst_txt := "—"
-	if _jest_liczba(dyst):
+	if _ui._jest_liczba(dyst):
 		dyst_txt = "%.0f km (propozycja)" % float(dyst)
-	_opcje_transportu.add_child(_napis_ekranu("Dystans: %s" % dyst_txt, 14))
+	_opcje_transportu.add_child(_ui._napis_ekranu("Dystans: %s" % dyst_txt, 14))
 	var cena_publiczna: Variant = _cena_transportu_miasta(id)
 	var cena_txt := "—"
 	var pieniadze := "—"
-	if _jest_liczba(cena_publiczna):
+	if _ui._jest_liczba(cena_publiczna):
 		cena_txt = str(cena_publiczna)
 		pieniadze = "w dół"
 	_opcje_transportu.add_child(_blok_drogi("Pieszo", "w górę", "—", "—", []))
 	_opcje_transportu.add_child(_blok_drogi("Transport publiczny", "w górę", pieniadze, cena_txt, []))
 	var auto: Variant = _auto_z_zapisu()
-	if auto != null and _jest_liczba(dyst):
+	if auto != null and _ui._jest_liczba(dyst):
 		_opcje_transportu.add_child(_panel_przejazdu_autem(auto, float(dyst), nazwa))
 	elif auto != null:
-		_opcje_transportu.add_child(_napis_ekranu("Auto: brak dystansu do wyliczenia.", 14))
+		_opcje_transportu.add_child(_ui._napis_ekranu("Auto: brak dystansu do wyliczenia.", 14))
 
 
 func _blok_drogi(nazwa: String, zmeczenie: String, pieniadze: String, cena: String, klasy: Array) -> Control:
 	var kolumna := VBoxContainer.new()
 	kolumna.add_theme_constant_override("separation", 2)
-	kolumna.add_child(_napis_ekranu(nazwa, 18))
-	kolumna.add_child(_napis_ekranu("Zmęczenie: %s" % zmeczenie, 16))
-	kolumna.add_child(_napis_ekranu("Pieniądze: %s" % pieniadze, 16))
-	kolumna.add_child(_napis_ekranu("Cena: %s" % cena, 16))
+	kolumna.add_child(_ui._napis_ekranu(nazwa, 18))
+	kolumna.add_child(_ui._napis_ekranu("Zmęczenie: %s" % zmeczenie, 16))
+	kolumna.add_child(_ui._napis_ekranu("Pieniądze: %s" % pieniadze, 16))
+	kolumna.add_child(_ui._napis_ekranu("Cena: %s" % cena, 16))
 	if not klasy.is_empty():
-		kolumna.add_child(_napis_ekranu("Klasa", 16))
+		kolumna.add_child(_ui._napis_ekranu("Klasa", 16))
 		for klasa in klasy:
 			var przycisk := Button.new()
 			przycisk.text = str(klasa.get("nazwa", ""))
@@ -4594,10 +4586,10 @@ func _blok_drogi(nazwa: String, zmeczenie: String, pieniadze: String, cena: Stri
 func _panel_przejazdu_autem(auto: Dictionary, dystans_km: float, cel_nazwa: String) -> Control:
 	var kolumna := VBoxContainer.new()
 	kolumna.add_theme_constant_override("separation", 6)
-	kolumna.add_child(_napis_ekranu("Auto → %s" % cel_nazwa, 18))
+	kolumna.add_child(_ui._napis_ekranu("Auto → %s" % cel_nazwa, 18))
 	var vmax_v: Variant = _przejazd.predkosc_max_auta(auto)
 	if vmax_v == null:
-		kolumna.add_child(_napis_ekranu("Vmax: brak danych / auto nie jeździ.", 13))
+		kolumna.add_child(_ui._napis_ekranu("Vmax: brak danych / auto nie jeździ.", 13))
 		return kolumna
 	var vmax := int(vmax_v)
 	var vmax_txt := _rynek_zakupow.tekst_vmax_oferty(
@@ -4606,12 +4598,12 @@ func _panel_przejazdu_autem(auto: Dictionary, dystans_km: float, cel_nazwa: Stri
 	)
 	if vmax_txt == "":
 		vmax_txt = str(vmax)
-	kolumna.add_child(_napis_ekranu("Vmax pojazdu: %s km/h" % vmax_txt, 13))
+	kolumna.add_child(_ui._napis_ekranu("Vmax pojazdu: %s km/h" % vmax_txt, 13))
 	var tryb_stan := {"id": SkryptPrzejazdu.TRYB_DOZWOLONA, "nadmiar": 0.0}
-	var opis := _napis_ekranu("", 14)
+	var opis := _ui._napis_ekranu("", 14)
 	var suwak_box := VBoxContainer.new()
 	suwak_box.visible = false
-	var nad_opis := _napis_ekranu("Ponad dozwolone: 0 km/h", 13)
+	var nad_opis := _ui._napis_ekranu("Ponad dozwolone: 0 km/h", 13)
 	var suwak := HSlider.new()
 	suwak.min_value = 0
 	suwak.max_value = maxf(0.0, float(vmax) - float(SkryptPrzejazdu.LIMIT_DOZWOLONY_KM_H))
@@ -4677,16 +4669,16 @@ func _wiersz_pozycji(pozycja: Dictionary, sam: bool, komunikat: Label = null) ->
 	nazwa.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	nazwa.custom_minimum_size = Vector2(0, 40)
 	nazwa.pressed.connect(_zjedz_pozycje.bind(id, komunikat))
-	var cena := _napis_ekranu(_tekst_ceny(pozycja.get("cena_zl")), 16)
+	var cena := _ui._napis_ekranu(_ui._tekst_ceny(pozycja.get("cena_zl")), 16)
 	var jakosc_txt := ""
-	if _jest_liczba(pozycja.get("jakosc_propozycja")):
+	if _ui._jest_liczba(pozycja.get("jakosc_propozycja")):
 		jakosc_txt = "Jakość (propozycja): %d" % int(pozycja["jakosc_propozycja"])
 	elif not sam:
 		jakosc_txt = "Jakość: —"
-	var jakosc_lbl := _napis_ekranu(jakosc_txt, 13) if jakosc_txt != "" else null
+	var jakosc_lbl := _ui._napis_ekranu(jakosc_txt, 13) if jakosc_txt != "" else null
 	var ster := HBoxContainer.new()
 	ster.add_theme_constant_override("separation", 6)
-	var licznik := _napis_ekranu(str(_jedzenie.ilosc_pozycji(id)), 20)
+	var licznik := _ui._napis_ekranu(str(_jedzenie.ilosc_pozycji(id)), 20)
 	licznik.custom_minimum_size = Vector2(36, 48)
 	licznik.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	var plus := Button.new()
@@ -4701,7 +4693,7 @@ func _wiersz_pozycji(pozycja: Dictionary, sam: bool, komunikat: Label = null) ->
 	ster.add_child(minus)
 	ster.add_child(licznik)
 	ster.add_child(plus)
-	var efekty := _rich_ekran()
+	var efekty := _ui._rich_ekran()
 	efekty.text = _jedzenie.bb_pozycji(id)
 	prawa.add_child(nazwa)
 	prawa.add_child(cena)
@@ -4709,7 +4701,7 @@ func _wiersz_pozycji(pozycja: Dictionary, sam: bool, komunikat: Label = null) ->
 		prawa.add_child(jakosc_lbl)
 	prawa.add_child(ster)
 	prawa.add_child(efekty)
-	var rodzice := _napis_ekranu("", 15)
+	var rodzice := _ui._napis_ekranu("", 15)
 	if not sam:
 		var stan := _jedzenie.tekst_rodzicow_przy(id)
 		rodzice.text = stan
@@ -4736,7 +4728,7 @@ func _zastosuj_filtr() -> void:
 		if not (wezel is CanvasItem) or not is_instance_valid(wezel):
 			continue
 		var pokaz := true
-		if _filtr_aktywny and _jest_liczba(wpis.get("cena")):
+		if _filtr_aktywny and _ui._jest_liczba(wpis.get("cena")):
 			var cena := float(wpis["cena"])
 			pokaz = cena >= _filtr_od - 0.001 and cena <= _filtr_do + 0.001
 		wezel.visible = pokaz
@@ -4757,7 +4749,7 @@ func _suwak_jedzenia(id: String) -> HSlider:
 	if id == "skladniki":
 		pole = "skladniki"
 		flaga = "skladniki_ustawione"
-	if bool(stan.get(flaga, false)) and _jest_liczba(stan.get(pole)):
+	if bool(stan.get(flaga, false)) and _ui._jest_liczba(stan.get(pole)):
 		suwak.set_value_no_signal(float(stan[pole]))
 	else:
 		suwak.set_value_no_signal(suwak.min_value)
@@ -4824,89 +4816,14 @@ func _zmien_ilosc(id: String, delta: int, licznik: Label) -> void:
 		licznik.text = str(_jedzenie.ilosc_pozycji(id))
 
 
-func _kropki_dni(wybrane: int, cel: Callable) -> Control:
-	var rzad := HBoxContainer.new()
-	rzad.add_theme_constant_override("separation", 2)
-	for dzien in 8:
-		var kolumna := VBoxContainer.new()
-		kolumna.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		kolumna.add_theme_constant_override("separation", 0)
-		var liczba := Button.new()
-		liczba.text = str(dzien)
-		liczba.flat = true
-		liczba.focus_mode = Control.FOCUS_NONE
-		liczba.custom_minimum_size = Vector2(0, 48)
-		liczba.add_theme_color_override("font_color", TEKST_CIEMNY)
-		liczba.pressed.connect(cel.bind(dzien))
-		var kropka := TextureRect.new()
-		kropka.custom_minimum_size = Vector2(0, 22)
-		kropka.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		kropka.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		kropka.texture = _kropka_duza if dzien == wybrane else _kropka_mala
-		kropka.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
-		kropka.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		kolumna.add_child(liczba)
-		kolumna.add_child(kropka)
-		rzad.add_child(kolumna)
-	return rzad
-
-
-func _ramka_suwaka(tytul: String, kolor: Color, suwak: Control) -> Control:
-	var margines := MarginContainer.new()
-	margines.add_theme_constant_override("margin_left", 10)
-	margines.add_theme_constant_override("margin_right", 10)
-	margines.add_theme_constant_override("margin_top", 8)
-	margines.add_theme_constant_override("margin_bottom", 8)
-	margines.add_child(suwak)
-	return _ramka_z_dolnym(tytul, kolor, null, margines)
-
-
-func _ramka_z_dolnym(tytul: String, kolor: Color, srodek: Control, dol: Control) -> Control:
-	var panel := PanelContainer.new()
-	var styl := StyleBoxFlat.new()
-	styl.bg_color = Color(0.93, 0.94, 0.95, 1)
-	styl.content_margin_left = 0
-	styl.content_margin_right = 0
-	styl.content_margin_top = 0
-	styl.content_margin_bottom = 0
-	panel.add_theme_stylebox_override("panel", styl)
-	var kolumna := VBoxContainer.new()
-	kolumna.add_theme_constant_override("separation", 8)
-	var pasek := ColorRect.new()
-	pasek.color = kolor
-	pasek.custom_minimum_size = Vector2(0, 36)
-	pasek.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var napis := Label.new()
-	napis.text = tytul
-	napis.set_anchors_preset(Control.PRESET_FULL_RECT)
-	napis.offset_left = 12.0
-	napis.offset_right = -12.0
-	napis.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	napis.add_theme_font_size_override("font_size", 16)
-	napis.add_theme_color_override("font_color", _kolor_napisu_na(kolor))
-	napis.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	pasek.add_child(napis)
-	kolumna.add_child(pasek)
-	if srodek != null:
-		var wciecie := MarginContainer.new()
-		wciecie.add_theme_constant_override("margin_left", 10)
-		wciecie.add_theme_constant_override("margin_right", 10)
-		wciecie.add_child(srodek)
-		kolumna.add_child(wciecie)
-	if dol != null:
-		kolumna.add_child(dol)
-	panel.add_child(kolumna)
-	return panel
-
-
 func _zbuduj_pasek_statystyk() -> void:
 	var glowny: HBoxContainer = get_node(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze/PasekGlowny")
 	_rozwiniete_stat = get_node(KOLUMNA_GRY + "/PasekStatystyk/PasekWnetrze/PasekRozwiniety")
-	_wyczysc(glowny)
-	_wyczysc(_rozwiniete_stat)
+	_ui._wyczysc(glowny)
+	_ui._wyczysc(_rozwiniete_stat)
 	_styl_panelu_paska()
-	_rok_lbl = _napis_paska("Rok 1", 14)
-	_tydzien_lbl = _napis_paska("T0", 14)
+	_rok_lbl = _ui._napis_paska("Rok 1", 14)
+	_tydzien_lbl = _ui._napis_paska("T0", 14)
 	glowny.add_child(_rok_lbl)
 	glowny.add_child(_tydzien_lbl)
 	var zmeczenie := _blok_metryki("zmeczenie_fizyczne")
@@ -4927,8 +4844,8 @@ func _zbuduj_pasek_statystyk() -> void:
 	var pieniadze := HBoxContainer.new()
 	pieniadze.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	pieniadze.add_theme_constant_override("separation", 4)
-	_pieniadze_emoji = _napis_paska("👛", 20)
-	_pieniadze_lbl = _napis_paska("—", 16)
+	_pieniadze_emoji = _ui._napis_paska("👛", 20)
+	_pieniadze_lbl = _ui._napis_paska("—", 16)
 	_pieniadze_lbl.add_theme_color_override("font_color", Color(ZIELONY))
 	pieniadze.add_child(_pieniadze_emoji)
 	pieniadze.add_child(_pieniadze_lbl)
@@ -5000,7 +4917,7 @@ func _kontekst_eventow() -> Dictionary:
 		if rodzina.get("zarobki") is Dictionary:
 			przedzial = str(rodzina["zarobki"].get("przedzial_id", ""))
 	var bohater := _bohater()
-	var pieniadze_ok := _jest_liczba(bohater.get("pieniadze")) and int(bohater["pieniadze"]) > 0
+	var pieniadze_ok := _ui._jest_liczba(bohater.get("pieniadze")) and int(bohater["pieniadze"]) > 0
 	var ma := {
 		"telefon": bool(flagi.get("ma_telefon", false)) or bool(flagi.get("wie_o_telefonie", false)),
 		"portfel": bool(flagi.get("ma_portfel", false)),
@@ -5026,7 +4943,7 @@ func _pokaz_eventy_tury_ui() -> void:
 	for ev in eventy:
 		if not (ev is Dictionary):
 			continue
-		_tresc_biala().add_child(_napis_ekranu(str(ev.get("tekst", "")), 15))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(str(ev.get("tekst", "")), 15))
 		if not bool(ev.get("pytanie", false)):
 			continue
 		var rzad := HBoxContainer.new()
@@ -5046,7 +4963,7 @@ func _pokaz_eventy_tury_ui() -> void:
 				_on_odpowiedz_eventu(ev_bind, op_id)
 			)
 			rzad.add_child(b)
-		_tresc_biala().add_child(rzad)
+		_ui._tresc_biala().add_child(rzad)
 
 
 func _on_odpowiedz_eventu(ev: Dictionary, opcja_id: String) -> void:
@@ -5125,7 +5042,7 @@ func _dodaj_znajomego_dziecka() -> void:
 func _fallback_nauki_szkolnej() -> void:
 	# Jak nie nauczy się w domu — i tak w podstawówce (~7).
 	var wiek: Variant = _wiek_lat()
-	if not _jest_liczba(wiek) or int(wiek) < 7:
+	if not _ui._jest_liczba(wiek) or int(wiek) < 7:
 		return
 	var flagi: Dictionary = {}
 	if _swiat.get("flagi_odkrycia") is Dictionary:
@@ -5144,7 +5061,7 @@ func _blok_metryki(_id: String) -> Dictionary:
 	var rzad := HBoxContainer.new()
 	rzad.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rzad.add_theme_constant_override("separation", 3)
-	var emoji := _napis_paska("🙂", 18)
+	var emoji := _ui._napis_paska("🙂", 18)
 	var stos := Control.new()
 	stos.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	stos.custom_minimum_size = Vector2(48, 22)
@@ -5217,37 +5134,31 @@ func _ustaw_pasek_rozwiniety(wlacz: bool) -> void:
 
 
 func _wypelnij_rozwiniete_stat() -> void:
-	_wyczysc(_rozwiniete_stat)
+	_ui._wyczysc(_rozwiniete_stat)
 	_wypelnij_statystyki_ilosciowe(_rozwiniete_stat, true)
 
 
 func _wypelnij_statystyki_ilosciowe(cel: VBoxContainer, kompakt: bool = false) -> void:
 	var bohater := _bohater()
 	var rozmiar := 13 if kompakt else 15
-	cel.add_child(_napis_ekranu_lub_paska("Zdrowie: %s" % _tekst_lub_pauza(bohater.get("zdrowie_skrot"), bohater.get("zdrowie")), rozmiar, kompakt))
-	cel.add_child(_napis_ekranu_lub_paska("Wygląd: %s" % _tekst_lub_pauza(_nazwa_pola(bohater.get("wyglad_naturalny"))), rozmiar, kompakt))
-	var sila := _tekst_liczby(bohater.get("sila"))
-	var kondycja := _tekst_liczby(bohater.get("kondycja"))
+	cel.add_child(_ui._napis_ekranu_lub_paska("Zdrowie: %s" % _ui._tekst_lub_pauza(bohater.get("zdrowie_skrot"), bohater.get("zdrowie")), rozmiar, kompakt))
+	cel.add_child(_ui._napis_ekranu_lub_paska("Wygląd: %s" % _ui._tekst_lub_pauza(_ui._nazwa_pola(bohater.get("wyglad_naturalny"))), rozmiar, kompakt))
+	var sila := _ui._tekst_liczby(bohater.get("sila"))
+	var kondycja := _ui._tekst_liczby(bohater.get("kondycja"))
 	if sila != "" or kondycja != "":
-		cel.add_child(_napis_ekranu_lub_paska("Siła: %s   Kondycja: %s" % [
+		cel.add_child(_ui._napis_ekranu_lub_paska("Siła: %s   Kondycja: %s" % [
 			sila if sila != "" else "—",
 			kondycja if kondycja != "" else "—"
 		], rozmiar, kompakt))
-	elif _tekst_liczby(bohater.get("wytrzymalosc")) != "":
-		cel.add_child(_napis_ekranu_lub_paska("Wytrzymałość: %s" % _tekst_liczby(bohater.get("wytrzymalosc")), rozmiar, kompakt))
+	elif _ui._tekst_liczby(bohater.get("wytrzymalosc")) != "":
+		cel.add_child(_ui._napis_ekranu_lub_paska("Wytrzymałość: %s" % _ui._tekst_liczby(bohater.get("wytrzymalosc")), rozmiar, kompakt))
 	var zdrowe: Variant = _jedzenie.odczyt_statystyk().get("zdrowe_zywienie")
-	cel.add_child(_napis_ekranu_lub_paska("Zdrowe żywienie: %s" % (_tekst_liczby(zdrowe) if _jest_liczba(zdrowe) else "—"), rozmiar, kompakt))
-	cel.add_child(_napis_ekranu_lub_paska("Sylwetka: %s" % _tekst_lub_pauza(_nazwa_pola(bohater.get("sylwetka"))), rozmiar, kompakt))
+	cel.add_child(_ui._napis_ekranu_lub_paska("Zdrowe żywienie: %s" % (_ui._tekst_liczby(zdrowe) if _ui._jest_liczba(zdrowe) else "—"), rozmiar, kompakt))
+	cel.add_child(_ui._napis_ekranu_lub_paska("Sylwetka: %s" % _ui._tekst_lub_pauza(_ui._nazwa_pola(bohater.get("sylwetka"))), rozmiar, kompakt))
 	# Pasek czyta psychikę. Docelowe tylko przy POKAZ_STATYSTYKI (nigdy w normalnej grze).
 	if DostepStatystyk.POKAZ_STATYSTYKI:
-		var doc := _tekst_liczby(bohater.get("zadowolenie_docelowe"))
-		cel.add_child(_napis_ekranu_lub_paska("Docelowe (dev): %s" % (doc if doc != "" else "—"), rozmiar, kompakt))
-
-
-func _napis_ekranu_lub_paska(tekst: String, rozmiar: int, na_pasku: bool) -> Label:
-	if na_pasku:
-		return _napis_paska(tekst, rozmiar)
-	return _napis_ekranu(tekst, rozmiar)
+		var doc := _ui._tekst_liczby(bohater.get("zadowolenie_docelowe"))
+		cel.add_child(_ui._napis_ekranu_lub_paska("Docelowe (dev): %s" % (doc if doc != "" else "—"), rozmiar, kompakt))
 
 
 func _odswiez_pasek_statystyk(animuj_pieniadze: bool) -> void:
@@ -5273,12 +5184,12 @@ func _odswiez_pasek_statystyk(animuj_pieniadze: bool) -> void:
 
 func _wartosc_metryki(klucz: String) -> Variant:
 	var bohater := _bohater()
-	if _jest_liczba(bohater.get(klucz)):
+	if _ui._jest_liczba(bohater.get(klucz)):
 		return int(bohater[klucz])
-	if _jest_liczba(_swiat.get(klucz)):
+	if _ui._jest_liczba(_swiat.get(klucz)):
 		return int(_swiat[klucz])
 	var blok: Variant = _emotikony.get(klucz, {})
-	if blok is Dictionary and _jest_liczba(blok.get("norma")):
+	if blok is Dictionary and _ui._jest_liczba(blok.get("norma")):
 		return int(blok["norma"])
 	return null
 
@@ -5291,14 +5202,14 @@ func _ustaw_metryke(emoji: Label, pasek: ProgressBar, liczba: Label, klucz: Stri
 		elif klucz == "zmeczenie_psychiczne":
 			blok = _emotikony.get("zmeczenie", {})
 	var v := 0
-	if _jest_liczba(wartosc):
+	if _ui._jest_liczba(wartosc):
 		v = clampi(int(wartosc), 0, 100)
-	emoji.text = _emoji_z_progow(blok, v if _jest_liczba(wartosc) else null)
+	emoji.text = _emoji_z_progow(blok, v if _ui._jest_liczba(wartosc) else null)
 	pasek.value = float(v)
-	liczba.text = str(v) if _jest_liczba(wartosc) else "—"
+	liczba.text = str(v) if _ui._jest_liczba(wartosc) else "—"
 	var kolor_hex := _kolor_z_progow(blok, v)
 	var styl := StyleBoxFlat.new()
-	styl.bg_color = _kolor(kolor_hex)
+	styl.bg_color = _ui._kolor(kolor_hex)
 	styl.corner_radius_top_left = 4
 	styl.corner_radius_top_right = 4
 	styl.corner_radius_bottom_left = 4
@@ -5321,7 +5232,7 @@ func _emoji_z_progow(blok: Variant, wartosc: Variant) -> String:
 	if wartosc == null and blok.has("null_emoji"):
 		return str(blok.get("null_emoji"))
 	var lista: Variant = blok.get("emotikony", blok.get("progi", []))
-	if not (lista is Array) or not _jest_liczba(wartosc):
+	if not (lista is Array) or not _ui._jest_liczba(wartosc):
 		return str(blok.get("null_emoji", "•"))
 	var v := int(wartosc)
 	for wpis in lista:
@@ -5330,7 +5241,7 @@ func _emoji_z_progow(blok: Variant, wartosc: Variant) -> String:
 		var prog: Variant = wpis.get("do")
 		if prog == null:
 			return str(wpis.get("emoji", "•"))
-		if _jest_liczba(prog) and v <= int(prog):
+		if _ui._jest_liczba(prog) and v <= int(prog):
 			return str(wpis.get("emoji", "•"))
 	return "•"
 
@@ -5342,7 +5253,7 @@ func _kolor_z_progow(blok: Variant, wartosc: int) -> String:
 	if not (lista is Array):
 		return "#888888"
 	for wpis in lista:
-		if wpis is Dictionary and _jest_liczba(wpis.get("do")) and wartosc <= int(wpis["do"]):
+		if wpis is Dictionary and _ui._jest_liczba(wpis.get("do")) and wartosc <= int(wpis["do"]):
 			return str(wpis.get("kolor", "#888888"))
 	return "#888888"
 
@@ -5350,9 +5261,9 @@ func _kolor_z_progow(blok: Variant, wartosc: int) -> String:
 func _ustaw_pieniadze(animuj: bool) -> void:
 	var kwota: Variant = null
 	var stan := _jedzenie.odczyt_statystyk()
-	if _jest_liczba(stan.get("pieniadze")):
+	if _ui._jest_liczba(stan.get("pieniadze")):
 		kwota = int(stan["pieniadze"])
-	elif _jest_liczba(_bohater().get("pieniadze")):
+	elif _ui._jest_liczba(_bohater().get("pieniadze")):
 		kwota = int(_bohater()["pieniadze"])
 	var blok: Variant = _emotikony.get("pieniadze", {})
 	if kwota == null:
@@ -5389,7 +5300,7 @@ func _emoji_portfela(kwota: int, blok: Variant) -> String:
 		var prog: Variant = wpis.get("do")
 		if prog == null:
 			return str(wpis.get("emoji", "🏆"))
-		if _jest_liczba(prog) and kwota <= int(prog):
+		if _ui._jest_liczba(prog) and kwota <= int(prog):
 			return str(wpis.get("emoji", "👛"))
 	return "🏆"
 
@@ -5410,28 +5321,6 @@ func _opis_lokalizacji() -> String:
 	return "%s - %s" % [nazwa, gdzie]
 
 
-func _styl_bialego_ekranu() -> void:
-	var panel: PanelContainer = get_node(KOLUMNA_GRY + "/BialyEkran")
-	var styl := StyleBoxFlat.new()
-	styl.bg_color = Color(1, 1, 1, 1)
-	styl.corner_radius_top_left = 12
-	styl.corner_radius_top_right = 12
-	styl.corner_radius_bottom_left = 12
-	styl.corner_radius_bottom_right = 12
-	styl.content_margin_left = 0
-	styl.content_margin_right = 0
-	styl.content_margin_top = 0
-	styl.content_margin_bottom = 0
-	panel.add_theme_stylebox_override("panel", styl)
-
-
-func _linia_albo_pusto(tekst: String) -> void:
-	if tekst != "":
-		_tresc_biala().add_child(_napis_ekranu(tekst, 20))
-	else:
-		_tresc_biala().add_child(_napis_ekranu("—", 18))
-
-
 func _opis_urodzenia() -> String:
 	var nazwa := str(_swiat.get("nazwa_urodzenia", ""))
 	var typ := str(_swiat.get("typ_urodzenia", ""))
@@ -5446,9 +5335,9 @@ func _opis_urodzenia() -> String:
 
 func _pieniadze_tekst() -> String:
 	var stan := _jedzenie.odczyt_statystyk()
-	if _jest_liczba(stan.get("pieniadze")):
+	if _ui._jest_liczba(stan.get("pieniadze")):
 		return str(int(stan["pieniadze"]))
-	if _jest_liczba(_bohater().get("pieniadze")):
+	if _ui._jest_liczba(_bohater().get("pieniadze")):
 		return str(int(_bohater()["pieniadze"]))
 	return ""
 
@@ -5479,10 +5368,10 @@ func _opis_mieszkacie_w() -> String:
 func _lokum_pelne(lokum: Variant) -> bool:
 	if not (lokum is Dictionary):
 		return false
-	if not _jest_liczba(lokum.get("wygoda")):
+	if not _ui._jest_liczba(lokum.get("wygoda")):
 		return false
 	# Pełny obiekt: typ + metraż (stary save miał tylko wygodę/dom_id).
-	return str(lokum.get("typ", "")) != "" and _jest_liczba(lokum.get("metraz_m2"))
+	return str(lokum.get("typ", "")) != "" and _ui._jest_liczba(lokum.get("metraz_m2"))
 
 
 func _zbuduj_lokum_dla_swiata() -> Dictionary:
@@ -5535,7 +5424,7 @@ func _cechy_bohatera(bohater: Dictionary) -> String:
 	var nazwy: PackedStringArray = []
 	var numer := 1
 	while bohater.has("cecha_%d" % numer):
-		var nazwa := _nazwa_pola(bohater["cecha_%d" % numer])
+		var nazwa := _ui._nazwa_pola(bohater["cecha_%d" % numer])
 		if nazwa != "":
 			nazwy.append(nazwa)
 		numer += 1
@@ -5547,8 +5436,8 @@ func _inteligencje_bohatera(bohater: Dictionary) -> String:
 	var numer := 1
 	while bohater.has("inteligencja_%d" % numer):
 		var pozycja: Variant = bohater["inteligencja_%d" % numer]
-		var nazwa := _nazwa_pola(pozycja)
-		if nazwa != "" and pozycja is Dictionary and _jest_liczba(pozycja.get("wartosc")):
+		var nazwa := _ui._nazwa_pola(pozycja)
+		if nazwa != "" and pozycja is Dictionary and _ui._jest_liczba(pozycja.get("wartosc")):
 			nazwa = "%s %s" % [nazwa, str(int(pozycja["wartosc"]))]
 		if nazwa != "":
 			nazwy.append(nazwa)
@@ -5587,7 +5476,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 	var kolumna := VBoxContainer.new()
 	kolumna.add_theme_constant_override("separation", 6)
 	var kot: Dictionary = _rynek_zakupow.kotwica_naprawy_silnika(auto)
-	kolumna.add_child(_napis_ekranu(
+	kolumna.add_child(_ui._napis_ekranu(
 		"Awaria silnika — stub: Laweta ~%d zł · Mechanik ~%d zł · Złom +~%d zł (propozycja)." % [
 			int(kot.get("laweta_zl", 0)),
 			int(kot.get("mechanik_zl", 0)),
@@ -5653,7 +5542,7 @@ func _opis_auta(auto: Dictionary) -> String:
 
 
 func _cena_tygodnia_auta(auto: Dictionary) -> String:
-	if _jest_liczba(auto.get("cena_tygodnia")):
+	if _ui._jest_liczba(auto.get("cena_tygodnia")):
 		return str(auto.get("cena_tygodnia"))
 	return "—"
 
@@ -5665,305 +5554,23 @@ func _cena_paliwa(auto: Dictionary = {}) -> Variant:
 func _cena_transportu_miasta(id: String) -> Variant:
 	if id == "":
 		return null
-	var dane: Variant = _czytaj_json("res://świat/polska/miasta/%s.json" % id)
+	var dane: Variant = _ui._czytaj_json("res://świat/polska/miasta/%s.json" % id)
 	if dane is Dictionary:
 		return dane.get("cena_transportu_publicznego", null)
 	return null
 
 
 func _klasy_nadwozia() -> Array:
-	var dane: Variant = _czytaj_json("res://pojazdy/nadwozia.json")
+	var dane: Variant = _ui._czytaj_json("res://pojazdy/nadwozia.json")
 	if dane is Dictionary and dane.get("klasy") is Array:
 		return dane["klasy"]
 	return []
 
 
-func _tekst_ceny(cena: Variant) -> String:
-	if _jest_liczba(cena):
-		return "%s zł" % str(cena)
-	return "—"
-
-
-func _tekst_ceny_oferty(cena: Variant, kat_id: String = "") -> String:
-	if kat_id == "samochod":
-		return _rynek_zakupow.formatuj_cene_auta(cena)
-	return _tekst_ceny(cena)
-
-
-func _tekst_przebiegu_zakresu(etykieta: String, km: float) -> String:
-	return "%s: %s km" % [etykieta, _tekst_z_odstepami(int(km))]
-
-
-## Spacje co 3 cyfry, jak cena auta. Nie zaokrągla — 376497 zostaje 376 497.
-func _tekst_z_odstepami(n: int) -> String:
-	var ujemna := n < 0
-	var s := str(absi(n))
-	var out := ""
-	var licznik := 0
-	for i in range(s.length() - 1, -1, -1):
-		if licznik > 0 and licznik % 3 == 0:
-			out = " " + out
-		out = s[i] + out
-		licznik += 1
-	if ujemna:
-		out = "-" + out
-	return out
-
-
-func _join_tekstow(lista: Array) -> String:
-	var parts: PackedStringArray = []
-	for x in lista:
-		parts.append(str(x))
-	return ", ".join(parts)
-
-
-func _nazwa_pola(pozycja: Variant) -> String:
-	if pozycja is Dictionary:
-		return str(pozycja.get("nazwa", ""))
-	return ""
-
-
-func _tekst_pusty(wartosc: Variant) -> String:
-	if wartosc == null:
-		return ""
-	return str(wartosc)
-
-
-func _tekst_lub_pauza(a: Variant = null, b: Variant = null) -> String:
-	var t := _tekst_pusty(a)
-	if t != "":
-		return t
-	t = _tekst_pusty(b)
-	if t != "":
-		return t
-	return "—"
-
-
-func _tekst_liczby(wartosc: Variant) -> String:
-	if _jest_liczba(wartosc):
-		return str(int(wartosc))
-	return ""
-
-
-func _zbuduj_statystyki_menu() -> void:
-	var w_menu := $MenuEkran/StatystykiButton as Button
-	if not DostepStatystyk.POKAZ_STATYSTYKI:
-		w_menu.hide()
-		return
-	if not w_menu.pressed.is_connected(_on_statystyki_pressed):
-		w_menu.pressed.connect(_on_statystyki_pressed)
-	var panel := get_node_or_null("PanelStatystyk")
-	if panel != null:
-		return
-	panel = PanelStatystykSkrypt.new()
-	panel.name = "PanelStatystyk"
-	panel.visible = false
-	panel.z_index = 30
-	panel.zapisano.connect(_on_statystyki_zapisane)
-	add_child(panel)
-
-
-func _on_statystyki_pressed() -> void:
-	var panel := get_node_or_null("PanelStatystyk")
-	if panel == null:
-		return
-	if panel.visible:
-		panel.hide()
-		return
-	panel.wczytaj_z_gry(_jedzenie)
-	panel.oznacz_otwarty()
-	panel.show()
-	panel.move_to_front()
-	$Powrot.show()
-	_na_wierzch_przyciski()
-
-
-func _on_statystyki_zapisane(zapis: Dictionary) -> void:
-	_jedzenie.zastosuj_statystyki(zapis)
-	_odswiez_pasek_statystyk(true)
-
-
-func _zastosuj_wyglad() -> void:
-	theme = WygladGracza.temat(_wyglad)
-	_styl_bialego_ekranu()
-	_styl_panelu_paska()
-
-
-func _podlacz_ustawienia() -> void:
-	_cisza_ustawien = true
-	var kolumna: Node = get_node(KOLUMNA_USTAWIEN)
-	for i in [1, 2, 3]:
-		var przycisk := kolumna.get_node("Szerokosc%d" % i) as Button
-		przycisk.visible = false
-	var opis: Label = kolumna.get_node("SzerokoscOpis")
-	opis.visible = false
-	var proporcje: Label = kolumna.get_node("Proporcje")
-	proporcje.text = "Ekran pionowy (telefon). Stary podział 8:5 usunięty."
-	_ustaw_suwak_alpha(kolumna, "PanelAlpha", "PanelAlphaOpis", "Przejrzystość panelu", "alpha_panelu")
-	_ustaw_suwak_alpha(kolumna, "PrzyciskiAlpha", "PrzyciskiAlphaOpis", "Przejrzystość przycisków", "alpha_przyciskow")
-	_ustaw_suwak_alpha(kolumna, "NapisyAlpha", "NapisyAlphaOpis", "Przejrzystość napisów", "alpha_napisow")
-	var napisy := kolumna.get_node("KolorNapisow") as ColorPickerButton
-	napisy.edit_alpha = false
-	napisy.color = _wyglad.get("kolor_napisow", Color.WHITE)
-	if not napisy.color_changed.is_connected(_on_kolor_napisow):
-		napisy.color_changed.connect(_on_kolor_napisow)
-	var tlo := kolumna.get_node("KolorTla") as ColorPickerButton
-	tlo.edit_alpha = false
-	tlo.color = _wyglad.get("kolor_tla", Color(0.45, 0.45, 0.48))
-	if not tlo.color_changed.is_connected(_on_kolor_tla):
-		tlo.color_changed.connect(_on_kolor_tla)
-	_cisza_ustawien = false
-
-
-func _ustaw_suwak_alpha(kolumna: Node, suwak_nazwa: String, opis_nazwa: String, tytul: String, klucz: String) -> void:
-	var suwak := kolumna.get_node(suwak_nazwa) as HSlider
-	suwak.min_value = 0.0
-	suwak.max_value = 1.0
-	suwak.step = 0.05
-	var start := float(_wyglad.get(klucz, 1.0))
-	suwak.set_value_no_signal(start)
-	var opis := kolumna.get_node(opis_nazwa) as Label
-	opis.text = WygladGracza.napis_przejrzystosci(tytul, start)
-	if not suwak.value_changed.is_connected(_on_alpha):
-		suwak.value_changed.connect(_on_alpha.bind(klucz, opis, tytul))
-
-
-func _on_alpha(wartosc: float, klucz: String, opis: Label, tytul: String) -> void:
-	if _cisza_ustawien:
-		return
-	_wyglad[klucz] = wartosc
-	opis.text = WygladGracza.napis_przejrzystosci(tytul, wartosc)
-	_zapisz_wyglad()
-
-
-func _on_kolor_napisow(kolor: Color) -> void:
-	if _cisza_ustawien:
-		return
-	kolor.a = 1.0
-	_wyglad["kolor_napisow"] = kolor
-	_zapisz_wyglad()
-
-
-func _on_kolor_tla(kolor: Color) -> void:
-	if _cisza_ustawien:
-		return
-	kolor.a = 1.0
-	_wyglad["kolor_tla"] = kolor
-	_zapisz_wyglad()
-
-
-func _zapisz_wyglad() -> void:
-	WygladGracza.zapisz(_wyglad)
-	_zastosuj_wyglad()
-
-
-func _male_przyciski() -> void:
-	var pusty := StyleBoxEmpty.new()
-	for sciezka in ["UstawieniaGry", "Wyjscie"]:
-		var przycisk := get_node(sciezka) as Button
-		przycisk.text = ""
-		przycisk.custom_minimum_size = Vector2(56, 56)
-		przycisk.expand_icon = false
-		przycisk.add_theme_constant_override("icon_max_width", 28)
-		for stan in ["normal", "hover", "pressed", "focus", "disabled"]:
-			przycisk.add_theme_stylebox_override(stan, pusty)
-	# Powrót: lewy dół, ten sam czysty styl ikony co Wyjście (bez ciemnego panelu).
-	var powrot := $Powrot as Button
-	powrot.text = ""
-	powrot.custom_minimum_size = Vector2(56, 56)
-	powrot.expand_icon = false
-	powrot.add_theme_constant_override("icon_max_width", 28)
-	for stan in ["normal", "hover", "pressed", "focus", "disabled"]:
-		powrot.add_theme_stylebox_override(stan, pusty)
-
-
-func _na_wierzch_przyciski() -> void:
-	$Powrot.move_to_front()
-	$Wyjscie.move_to_front()
-	$UstawieniaGry.move_to_front()
-
-
+## Wejścia zostawione na węźle, bo testy i sygnały wołają je po staremu.
 func _tresc_biala() -> VBoxContainer:
-	return get_node(KOLUMNA_GRY + "/BialyEkran/MarginesBialy/KolumnaBiala/ScrollBialy/TrescBiala")
-
+	return _ui._tresc_biala()
 
 func _tytul_bialy() -> Label:
-	return get_node(KOLUMNA_GRY + "/BialyEkran/MarginesBialy/KolumnaBiala/TytulBialy")
+	return _ui._tytul_bialy()
 
-
-func _dol_suwaka() -> VBoxContainer:
-	return get_node(KOLUMNA_GRY + "/BialyEkran/MarginesBialy/KolumnaBiala/DolSuwaka")
-
-
-func _wyczysc(wezel: Node) -> void:
-	var dzieci := wezel.get_children()
-	for dziecko in dzieci:
-		wezel.remove_child(dziecko)
-		dziecko.queue_free()
-
-
-func _z_marginesem(wezel: Control) -> Control:
-	var margines := MarginContainer.new()
-	margines.add_theme_constant_override("margin_left", 8)
-	margines.add_theme_constant_override("margin_right", 8)
-	margines.add_theme_constant_override("margin_top", 4)
-	margines.add_theme_constant_override("margin_bottom", 8)
-	margines.add_child(wezel)
-	return margines
-
-
-func _napis_ekranu(tekst: String, rozmiar: int) -> Label:
-	var napis := Label.new()
-	napis.text = tekst
-	napis.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	# Czytelność na ~720 px: etykiety min ~16–18.
-	napis.add_theme_font_size_override("font_size", rozmiar if rozmiar >= 16 else 16)
-	napis.add_theme_color_override("font_color", TEKST_CIEMNY)
-	return napis
-
-
-func _napis_paska(tekst: String, rozmiar: int) -> Label:
-	var napis := Label.new()
-	napis.text = tekst
-	napis.autowrap_mode = TextServer.AUTOWRAP_OFF
-	napis.add_theme_font_size_override("font_size", rozmiar)
-	napis.add_theme_color_override("font_color", Color(0.95, 0.96, 0.97))
-	napis.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	return napis
-
-
-func _rich_ekran() -> RichTextLabel:
-	var napis := RichTextLabel.new()
-	napis.bbcode_enabled = true
-	napis.fit_content = true
-	napis.scroll_active = false
-	napis.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	napis.add_theme_font_size_override("normal_font_size", 16)
-	napis.add_theme_color_override("default_color", TEKST_CIEMNY)
-	return napis
-
-
-func _kolor(html: String) -> Color:
-	if html.begins_with("#") and (html.length() == 7 or html.length() == 9):
-		return Color(html)
-	return Color("#9aa7b2")
-
-
-func _kolor_napisu_na(tlo: Color) -> Color:
-	var jasnosc := tlo.r * 0.3 + tlo.g * 0.59 + tlo.b * 0.11
-	if jasnosc > 0.62:
-		return Color("#1c2428")
-	return Color.WHITE
-
-
-func _czytaj_json(sciezka: String) -> Variant:
-	if not FileAccess.file_exists(sciezka):
-		return null
-	var plik := FileAccess.open(sciezka, FileAccess.READ)
-	if plik == null:
-		return null
-	return JSON.parse_string(plik.get_as_text())
-
-
-func _jest_liczba(wartosc: Variant) -> bool:
-	return wartosc is int or wartosc is float
