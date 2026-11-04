@@ -233,13 +233,13 @@ func _on_statystyki_pressed() -> void:
 
 func _on_statystyki_zapisane(zapis: Dictionary) -> void:
 	h._jedzenie.zastosuj_statystyki(zapis)
-	h._odswiez_pasek_statystyk(true)
+	h._pasek._odswiez_pasek_statystyk(true)
 
 
 func _zastosuj_wyglad() -> void:
 	h.theme = WygladGracza.temat(h._wyglad)
 	_styl_bialego_ekranu()
-	h._styl_panelu_paska()
+	h._pasek._styl_panelu_paska()
 
 
 func _podlacz_ustawienia() -> void:

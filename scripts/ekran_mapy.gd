@@ -337,7 +337,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 	b_law.custom_minimum_size = Vector2(0, 40)
 	b_law.pressed.connect(func() -> void:
 		var w: Dictionary = h._rynek_zakupow.laweta_auta(h._swiat, idx)
-		h._pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
+		h._ekran_zakupow._pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
 		if bool(w.get("ok", false)):
 			h.SkryptZapisu.zapisz(h._swiat)
 			h._stan._zsynchronizuj_pieniadze_z_bohatera()
@@ -348,7 +348,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 	b_mech.custom_minimum_size = Vector2(0, 40)
 	b_mech.pressed.connect(func() -> void:
 		var w2: Dictionary = h._rynek_zakupow.mechanik_auta(h._swiat, idx)
-		h._pokaz_komunikat_zakupu(str(w2.get("tekst", w2.get("powod", ""))), w2)
+		h._ekran_zakupow._pokaz_komunikat_zakupu(str(w2.get("tekst", w2.get("powod", ""))), w2)
 		if bool(w2.get("ok", false)):
 			h.SkryptZapisu.zapisz(h._swiat)
 			h._stan._zsynchronizuj_pieniadze_z_bohatera()
@@ -359,7 +359,7 @@ func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 	b_zlom.custom_minimum_size = Vector2(0, 40)
 	b_zlom.pressed.connect(func() -> void:
 		var w3: Dictionary = h._rynek_zakupow.zlom_auta(h._swiat, idx)
-		h._pokaz_komunikat_zakupu(str(w3.get("tekst", w3.get("powod", ""))), w3)
+		h._ekran_zakupow._pokaz_komunikat_zakupu(str(w3.get("tekst", w3.get("powod", ""))), w3)
 		if bool(w3.get("ok", false)):
 			h.SkryptZapisu.zapisz(h._swiat)
 			h._stan._zsynchronizuj_pieniadze_z_bohatera()

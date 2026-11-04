@@ -69,7 +69,7 @@ func _ekran_postac() -> void:
 	var syl_txt := _opis_sylwetki(bohater)
 	if syl_txt != "":
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(syl_txt, 16))
-		h._ui._tresc_biala().add_child(h._pasek_sylwetki(bohater))
+		h._ui._tresc_biala().add_child(h._fala2._pasek_sylwetki(bohater))
 	var ie := InteligencjaEmocjonalna.new()
 	var ie_txt := ie.tekst(bohater)
 	if ie_txt != "":

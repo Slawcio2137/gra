@@ -57,7 +57,7 @@ func _ekran_majatek() -> void:
 				continue
 			var linia := "%s · %s · wygoda %s · %s" % [
 				str(n.get("nazwa", "?")),
-				h._etykieta_stanu_zakupu(str(n.get("stan", ""))),
+				h._ekran_zakupow._etykieta_stanu_zakupu(str(n.get("stan", ""))),
 				str(n.get("wygoda", "—")),
 				str(n.get("miasto_nazwa", "")),
 			]
@@ -97,7 +97,7 @@ func _ekran_majatek() -> void:
 					linia_a += " · NIE JEŹDZI"
 				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia_a, 14))
 				if bool(d.get("nie_jezdzi", false)) or bool(d.get("do_naprawy", false)):
-					h._ui._tresc_biala().add_child(h._panel_awarii_auta(i_d, d))
+					h._ui._tresc_biala().add_child(h._mapa_ekran._panel_awarii_auta(i_d, d))
 			else:
 				var linia_d := nazwa_d
 				if h._rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
