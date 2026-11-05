@@ -178,6 +178,7 @@ func _ready() -> void:
 	_kropka_duza = load("res://grafika/ikony/kolko_biale.png")
 	_jedzenie = ScenaJedzenia.instantiate()
 	_jedzenie.visible = false
+	_jedzenie.podlacz_kase(_stan)
 	add_child(_jedzenie)
 	_wyglad = WygladGracza.wczytaj()
 	_ui._wczytaj_emotikony()
@@ -254,6 +255,7 @@ func _on_wczytaj_pressed() -> void:
 	_ekran_zakupow._odswiez_rynek_zakupow()
 	if _swiat.get("jedzenie") is Dictionary:
 		_jedzenie.wczytaj_zrzut(_swiat["jedzenie"])
+		_stan._przejmij_kase_ze_zrzutu(_swiat["jedzenie"])
 	else:
 		var bohater: Variant = _swiat.get("bohater", {})
 		var rodzina: Variant = _swiat.get("rodzina", {})

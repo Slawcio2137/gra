@@ -7,7 +7,6 @@ class_name JedzenieUstawienia
 
 const PLIK := "res://postacie/jedzenie_ustawienia.json"
 const PLIK_ZIARNA := "res://postacie/losowanie/ziarno_rodzicow.json"
-const PLIK_BOHATERA := "res://postacie/bohater.json"
 const PLIK_ZAKUPOW := "res://postacie/zakupy_rodzicow.json"
 const PLIK_WYLOSOWANEJ := "res://postacie/wylosowana.json"
 const PANEL := "Scroll/PanelJedzenia/"
@@ -57,9 +56,8 @@ var _kwestia_odblokowana := false
 var _zbicie_zatwierdzone := 0
 var _ile_razy := 0
 var _cechy_rodzicow: Array = []
-var _pieniadze_zl: Variant = null
-var _pieniadze_znane := false
-var _pieniadze_wczytane := false
+## Kasa jest w StanGry (bohater.pieniadze). Tu tylko odczyt i wydatek.
+var _kasa_stan: Variant = null
 var _komunikat := ""
 var _wplyw_zjedzone: Dictionary = {}
 var _pozycje_zbudowane := false
@@ -117,7 +115,6 @@ func zapewnij_stan() -> void:
 		_wprawa.wczytaj()
 	_wczytaj_zakupy()
 	_wczytaj_cechy_bohatera()
-	_wczytaj_pieniadze()
 	var ziarno: Dictionary = {}
 	var surowe: Variant = _czytaj(PLIK_ZIARNA)
 	if surowe is Dictionary:
@@ -226,11 +223,16 @@ func tekst_zbiorczych() -> String:
 	return "\n".join(linie)
 
 
+func podlacz_kase(stan) -> void:
+	_kasa_stan = stan
+
+
 func tekst_zlotowek() -> String:
 	zapewnij_stan()
-	if not _pieniadze_znane or not _jest_liczba(_pieniadze_zl):
+	var kwota: Variant = _odczytaj_kase()
+	if not _jest_liczba(kwota):
 		return "Złotówki: nieustawione"
-	return "Złotówki: %d zł" % int(_pieniadze_zl)
+	return "Złotówki: %d zł" % int(kwota)
 
 
 func tekst_licznika() -> String:
@@ -361,9 +363,6 @@ func ustaw_z_losowania(bohater: Dictionary, rodzina: Dictionary) -> void:
 	if not cechy.is_empty():
 		_cechy_bohatera = cechy
 	ustaw_warunki_startowe(rodzina)
-	# Szablon bohater.json ma pieniadze: null — bierzemy kwotę z wylosowanej karty.
-	if _jest_liczba(bohater.get("pieniadze")):
-		_ustaw_pieniadze_sesji(bohater.get("pieniadze"))
 
 
 func zapis_relacji_gotowania(poprawa: Variant, spadek: Variant) -> Dictionary:
@@ -438,11 +437,8 @@ func _zjedz_raz(id: String, pozycja: Dictionary) -> Dictionary:
 	if kwota < 0:
 		return {"kupiono": false, "komunikat": "brak ceny"}
 	if kwota > 0:
-		if not _pieniadze_znane or not _jest_liczba(_pieniadze_zl) or int(_pieniadze_zl) < kwota:
+		if not _wydaj_z_kasy(kwota):
 			return {"kupiono": false, "komunikat": "nie masz tyle pieniędzy"}
-		_pieniadze_zl = int(_pieniadze_zl) - kwota
-		if int(_pieniadze_zl) < 0:
-			_pieniadze_zl = 0
 	var spadek := 0
 	if str(pozycja.get("gdzie", "")) == "sam" and _rodzice_decyduja():
 		spadek = _nalicz_spadek("jedzenie_poza_domem")
@@ -488,7 +484,7 @@ func odczyt_statystyk() -> Dictionary:
 	for id in _cechy_rodzicow:
 		cechy.append(str(id))
 	return {
-		"pieniadze": _pieniadze_zl if _pieniadze_znane else null,
+		"pieniadze": _odczytaj_kase(),
 		"cena": _zatwierdzony.get("cena"),
 		"cena_ustawiona": bool(_zatwierdzony.get("cena_ustawiona", false)),
 		"skladniki": _zatwierdzony.get("skladniki"),
@@ -520,7 +516,7 @@ func cechy_charakteru_dostepne() -> Array:
 func zastosuj_statystyki(zapis: Dictionary) -> void:
 	zapewnij_stan()
 	if zapis.has("pieniadze"):
-		_ustaw_pieniadze_sesji(zapis.get("pieniadze"))
+		_zapisz_kase(zapis.get("pieniadze"))
 	if zapis.has("cena_ustawiona"):
 		if bool(zapis.get("cena_ustawiona")) and _jest_liczba(zapis.get("cena")):
 			_roboczy["cena"] = int(zapis["cena"])
@@ -551,16 +547,6 @@ func zastosuj_statystyki(zapis: Dictionary) -> void:
 		else:
 			_cechy_rodzicow = [id]
 	_odswiez_ui()
-
-
-func _ustaw_pieniadze_sesji(wartosc: Variant) -> void:
-	_pieniadze_wczytane = true
-	if _jest_liczba(wartosc):
-		_pieniadze_zl = maxi(int(wartosc), 0)
-		_pieniadze_znane = true
-	else:
-		_pieniadze_zl = null
-		_pieniadze_znane = false
 
 
 func gar_rodzicow() -> Dictionary:
@@ -652,8 +638,8 @@ func zrzut_zapisu() -> Dictionary:
 		"roboczy": _roboczy.duplicate(true),
 		"zatwierdzony": _zatwierdzony.duplicate(true),
 		"start_rodzicow": _start_rodzicow.duplicate(true),
-		"pieniadze": _pieniadze_zl,
-		"pieniadze_znane": _pieniadze_znane,
+		"pieniadze": _odczytaj_kase(),
+		"pieniadze_znane": _jest_liczba(_odczytaj_kase()),
 		"cechy_rodzicow": _cechy_rodzicow.duplicate(),
 		"cechy_bohatera": _cechy_bohatera.duplicate(),
 		"ile": _ile_wybrane.duplicate(true),
@@ -672,13 +658,8 @@ func wczytaj_zrzut(dane: Dictionary) -> void:
 		_zatwierdzony = (dane["zatwierdzony"] as Dictionary).duplicate(true)
 	if dane.get("start_rodzicow") is Dictionary:
 		_start_rodzicow = (dane["start_rodzicow"] as Dictionary).duplicate(true)
-	_pieniadze_wczytane = true
-	if bool(dane.get("pieniadze_znane", false)) and _jest_liczba(dane.get("pieniadze")):
-		_pieniadze_zl = int(dane["pieniadze"])
-		_pieniadze_znane = true
-	else:
-		_pieniadze_zl = null
-		_pieniadze_znane = false
+	# Kwota ze zrzutu nie wchodzi tutaj. Wczytanie świata bierze bohater.pieniadze
+	# (albo, gdy jej nie ma, ten zrzut — patrz StanGry._przejmij_kase_ze_zrzutu).
 	if dane.get("cechy_rodzicow") is Array:
 		_cechy_rodzicow = (dane["cechy_rodzicow"] as Array).duplicate()
 	if dane.get("cechy_bohatera") is Array:
@@ -1475,22 +1456,21 @@ func _polacz_pressed(sciezka: String, cel: Callable) -> void:
 		przycisk.pressed.connect(cel)
 
 
-func _wczytaj_pieniadze() -> void:
-	if _pieniadze_wczytane:
-		return
-	_pieniadze_wczytane = true
-	# Najpierw aktualna wylosowana karta (ma liczbę), nie szablon bohater.json (null).
-	var bohater: Variant = _czytaj(PLIK_WYLOSOWANEJ)
-	if not (bohater is Dictionary and _jest_liczba(bohater.get("pieniadze"))):
-		bohater = _czytaj(PLIK_BOHATERA)
-	if bohater is Dictionary and _jest_liczba(bohater.get("pieniadze")):
-		_pieniadze_zl = int(bohater.get("pieniadze"))
-		_pieniadze_znane = true
-		if int(_pieniadze_zl) < 0:
-			_pieniadze_zl = 0
-	else:
-		_pieniadze_zl = null
-		_pieniadze_znane = false
+func _odczytaj_kase() -> Variant:
+	if _kasa_stan != null:
+		return _kasa_stan._kasa()
+	return null
+
+
+func _zapisz_kase(wartosc: Variant) -> void:
+	if _kasa_stan != null:
+		_kasa_stan._ustaw_kase(wartosc)
+
+
+func _wydaj_z_kasy(kwota: int) -> bool:
+	if _kasa_stan == null:
+		return false
+	return bool(_kasa_stan._wydaj_pieniadze(kwota))
 
 
 func _flaga(ziarno: Dictionary, id: String) -> bool:
