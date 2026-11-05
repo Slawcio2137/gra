@@ -980,8 +980,7 @@ func oferty_filtrowane(
 	filtruj_przebieg: bool = false,
 	marka_filtr: Variant = "",
 	naped_filtr: String = "",
-	zasieg_poziom: String = "",
-	segment_filtr: String = ""
+	zasieg_poziom: String = ""
 ) -> Array:
 	var wynik: Array = []
 	var stan: Variant = swiat.get("rynek_zakupow", {})
@@ -1021,8 +1020,6 @@ func oferty_filtrowane(
 		if not marki_wybrane.is_empty() and not marki_wybrane.has(str(o.get("marka", ""))):
 			continue
 		if naped_filtr != "" and str(o.get("naped", "")) != naped_filtr:
-			continue
-		if segment_filtr != "" and _segment_ceny_z_rekordu(o) != segment_filtr:
 			continue
 		wynik.append(o)
 	return wynik
@@ -3224,19 +3221,9 @@ func _udzial_nowych_dobr() -> float:
 	return 0.7
 
 
-func _segment_ceny_z_rekordu(m: Dictionary) -> String:
-	var sciezka := str(m.get("segment_ceny", "")).strip_edges()
-	if sciezka != "":
-		return sciezka
-	return str(m.get("segment", "")).strip_edges()
-
-
 func _rekord_pasuje_do_filtra_dobra(m: Dictionary, filtry: Dictionary) -> bool:
 	var marki := _normalizuj_filtr_marek(filtry.get("marki", []))
 	if not marki.is_empty() and not marki.has(str(m.get("marka", ""))):
-		return false
-	var segment := str(filtry.get("segment", "")).strip_edges()
-	if segment != "" and _segment_ceny_z_rekordu(m) != segment:
 		return false
 	return true
 
@@ -3271,15 +3258,6 @@ func marki_katalogu_dobra(kat: String) -> Array:
 		out.append(marka)
 	out.sort()
 	return out
-
-
-func segmenty_dobr() -> Array:
-	return [
-		{"id": "budzet", "nazwa": "Budżet"},
-		{"id": "srednia", "nazwa": "Średnia"},
-		{"id": "premium", "nazwa": "Premium"},
-		{"id": "flagowiec", "nazwa": "Flagowiec"},
-	]
 
 
 func _zostalo_w_puli_dobr(swiat: Dictionary, stan: Dictionary, kat: String, poziom: String, strona: String) -> int:

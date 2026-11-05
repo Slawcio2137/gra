@@ -218,7 +218,6 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	h._zakupy_przebieg_od = 0.0
 	h._zakupy_przebieg_do = 0.0
 	h._zakupy_filtr_marki = []
-	h._zakupy_filtr_segment = ""
 	h._zakupy_filtr_naped = ""
 	h._zakupy_panel_nowe_auta = null
 	h._zakupy_sort_cena = "malejaco"
@@ -432,7 +431,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 		)
 		panel_filtr.add_child(opcje_odbior)
 		if h._rynek_zakupow.kategoria_drobna(kat_id):
-			_dodaj_filtry_marki_i_segmentu(panel_filtr, kat_id, etykiety, nieruchomosc)
+			_dodaj_filtr_marek_dobr(panel_filtr, kat_id, etykiety, nieruchomosc)
 	# Samochód: przebieg min–max; multi-select marek (puste = wszystkie) + napęd dla nowych.
 	if kat_id == "samochod":
 		panel_filtr.add_child(h._ui._napis_ekranu("Sortuj cenę:", 17))
@@ -567,14 +566,12 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 	var filtr_p = kat_id == "samochod" and h._zakupy_filtr_przebiegu_wlaczony and h._zakupy_przebieg_do >= h._zakupy_przebieg_od
 	var marki_f: Array = []
 	var naped_f := ""
-	var segment_f := ""
 	if kat_id == "samochod":
 		marki_f = h._zakupy_filtr_marki.duplicate()
 		if stan_filtr == "nowy" or stan_filtr == "":
 			naped_f = h._zakupy_filtr_naped
 	elif h._rynek_zakupow.kategoria_drobna(kat_id):
 		marki_f = h._zakupy_filtr_marki.duplicate()
-		segment_f = h._zakupy_filtr_segment
 	var stan_listy = stan_filtr if (not nieruchomosc or h._rynek_zakupow.kategoria_ma_nowe_lokum(kat_id)) else ""
 	var z_poziomem = kat_id == "samochod" or nieruchomosc or h._rynek_zakupow.kategoria_drobna(kat_id)
 	var oferty = h._rynek_zakupow.oferty_filtrowane(
@@ -592,7 +589,6 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		marki_f,
 		naped_f,
 		h._zakupy_zasieg_poziom if z_poziomem else "",
-		segment_f,
 	)
 	if not nieruchomosc and stan_filtr != "":
 		var tylko: Array = []
@@ -1148,32 +1144,7 @@ func _on_zakupy_filtr_ceny(od: float, dokad: float) -> void:
 		h._zakupy_licznik_do.text = "max: %d" % int(dokad)
 
 
-func _dodaj_filtry_marki_i_segmentu(panel_filtr: VBoxContainer, kat_id: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
-	panel_filtr.add_child(h._ui._napis_ekranu("Segment:", 17))
-	var opcje_segment := OptionButton.new()
-	opcje_segment.add_item("Wszystkie", 0)
-	var segmenty: Array = h._rynek_zakupow.segmenty_dobr()
-	var idx_segment := 0
-	for i in segmenty.size():
-		var s: Variant = segmenty[i]
-		var sid := str(s.get("id", "")) if s is Dictionary else str(s)
-		var snazwa := str(s.get("nazwa", sid)) if s is Dictionary else sid
-		opcje_segment.add_item(snazwa, i + 1)
-		if sid == h._zakupy_filtr_segment:
-			idx_segment = i + 1
-	opcje_segment.select(idx_segment)
-	opcje_segment.custom_minimum_size = Vector2(0, 40)
-	opcje_segment.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	opcje_segment.add_theme_font_size_override("font_size", 17)
-	opcje_segment.item_selected.connect(func(idx: int) -> void:
-		if idx <= 0 or idx - 1 >= segmenty.size():
-			h._zakupy_filtr_segment = ""
-		else:
-			var s2: Variant = segmenty[idx - 1]
-			h._zakupy_filtr_segment = str(s2.get("id", "")) if s2 is Dictionary else str(s2)
-		_przerysuj_liste_zakupow(kat_id, h._zakupy_stan_filtr, etykiety, nieruchomosc)
-	)
-	panel_filtr.add_child(opcje_segment)
+func _dodaj_filtr_marek_dobr(panel_filtr: VBoxContainer, kat_id: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
 	panel_filtr.add_child(h._ui._napis_ekranu("Marki (kilka naraz; puste = wszystkie):", 17))
 	var marki: Array = h._rynek_zakupow.marki_katalogu_dobra(kat_id)
 	var szukaj_marek := LineEdit.new()
@@ -1470,10 +1441,8 @@ func _strona_generacji_dobr() -> String:
 func _filtry_dobra() -> Dictionary:
 	var filtr_c = h._zakupy_filtr_ceny_wlaczony and h._zakupy_filtr_do >= h._zakupy_filtr_od
 	var marki: Array = []
-	var segment := ""
 	if h._rynek_zakupow.kategoria_drobna(h._zakupy_kat_id):
 		marki = h._zakupy_filtr_marki.duplicate()
-		segment = h._zakupy_filtr_segment
 	return {
 		"poziom": h._zakupy_zasieg_poziom,
 		"km": h._zakupy_zasieg_km,
@@ -1483,7 +1452,6 @@ func _filtry_dobra() -> Dictionary:
 		"cena_do": h._zakupy_filtr_do if filtr_c else 1.0e12,
 		"filtruj_cene": filtr_c,
 		"marki": marki,
-		"segment": segment,
 		"tydzien": int(h._swiat.get("tydzien", 1)),
 	}
 
@@ -1505,7 +1473,6 @@ func _uzupelnij_dobra_do_okna() -> int:
 		filtry.get("marki", []),
 		"",
 		str(filtry["poziom"]),
-		str(filtry.get("segment", "")),
 	)
 	var brak = h._rynek_zakupow.limit_okna_aut() - jest.size()
 	if brak <= 0:
@@ -1580,14 +1547,12 @@ func _oferty_na_liscie_zakupow() -> Array:
 	var stan_listy = h._zakupy_stan_filtr if (not nieruchomosc or h._rynek_zakupow.kategoria_ma_nowe_lokum(kat_id)) else ""
 	var marki_f: Array = []
 	var naped_f := ""
-	var segment_f := ""
 	if kat_id == "samochod":
 		marki_f = h._zakupy_filtr_marki.duplicate()
 		if h._zakupy_stan_filtr == "nowy" or h._zakupy_stan_filtr == "":
 			naped_f = h._zakupy_filtr_naped
 	elif h._rynek_zakupow.kategoria_drobna(kat_id):
 		marki_f = h._zakupy_filtr_marki.duplicate()
-		segment_f = h._zakupy_filtr_segment
 	return h._rynek_zakupow.oferty_filtrowane(
 		h._swiat,
 		kat_id,
@@ -1603,7 +1568,6 @@ func _oferty_na_liscie_zakupow() -> Array:
 		marki_f,
 		naped_f,
 		h._zakupy_zasieg_poziom if kat_id == "samochod" or nieruchomosc or h._rynek_zakupow.kategoria_drobna(kat_id) else "",
-		segment_f,
 	)
 
 

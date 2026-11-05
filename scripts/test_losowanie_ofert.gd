@@ -1,6 +1,6 @@
 extends SceneTree
 
-## Wspólne koło wag, nowe modele bez duplikatów, filtr marki i segmentu, udział 70% na Wszystkie.
+## Wspólne koło wag, nowe modele bez duplikatów, filtr marki, udział 70% na Wszystkie.
 ## godot --headless --path . --script res://scripts/test_losowanie_ofert.gd
 
 const Rynek = preload("res://scripts/rynek_zakupow.gd")
@@ -153,11 +153,14 @@ func _test_nowe_bez_duplikatow(rynek) -> bool:
 func _test_filtr_przed_losowaniem(rynek) -> bool:
 	var kandydaci: Array = rynek._kandydaci_katalogu_dobra("telefon", {
 		"marki": ["Samsung"],
-		"segment": "flagowiec",
 	}, true)
-	if kandydaci.size() != 1 or str(kandydaci[0].get("id", "")) != "samsung_s25_ultra":
-		printerr("FAIL: pula przed losem ", kandydaci.size(), " ", kandydaci)
+	if kandydaci.is_empty():
+		printerr("FAIL: pula Samsunga pusta")
 		return false
+	for k in kandydaci:
+		if str(k.get("marka", "")) != "Samsung":
+			printerr("FAIL: kandydat przed losem nie jest Samsungiem ", k.get("marka"))
+			return false
 	var los = LosowanieSkrypt.new()
 	var miasta: Array = los.miasta_polski()
 	var swiat := {
@@ -175,25 +178,23 @@ func _test_filtr_przed_losowaniem(rynek) -> bool:
 		"kategoria": "telefon",
 		"stan": "nowy",
 		"marki": ["Samsung"],
-		"segment": "flagowiec",
-	}, 8)
-	if dodane != 1:
-		printerr("FAIL: filtr Samsung flagowiec dał ", dodane)
+	}, 16)
+	if dodane != kandydaci.size():
+		printerr("FAIL: filtr Samsung dał ", dodane, " a katalog ", kandydaci.size())
 		return false
 	for o in swiat["rynek_zakupow"]["oferty"]:
-		if str(o.get("marka", "")) != "Samsung" or str(o.get("segment_ceny", "")) != "flagowiec":
-			printerr("FAIL: oferta poza filtrem ", o.get("marka"), " ", o.get("segment_ceny"))
+		if str(o.get("marka", "")) != "Samsung" or str(o.get("stan", "")) != "nowy":
+			printerr("FAIL: oferta poza filtrem marki ", o.get("marka"), " ", o.get("stan"))
 			return false
 	var puste: int = rynek.uzupelnij_okno_dobr(swiat, miasta, {
 		"poziom": "polska",
 		"km": 9999.0,
 		"kategoria": "telefon",
 		"stan": "uzywany",
-		"marki": ["Apple"],
-		"segment": "budzet",
+		"marki": ["MarkaKtorejNieMa"],
 	}, 4)
 	if puste != 0:
-		printerr("FAIL: Apple budżet nie jest pusty ", puste)
+		printerr("FAIL: nieznana marka dała oferty ", puste)
 		return false
 	var uzywane: int = rynek.uzupelnij_okno_dobr(swiat, miasta, {
 		"poziom": "polska",
@@ -201,20 +202,19 @@ func _test_filtr_przed_losowaniem(rynek) -> bool:
 		"kategoria": "telefon",
 		"stan": "uzywany",
 		"marki": ["Samsung"],
-		"segment": "budzet",
 	}, 6)
 	if uzywane < 1:
-		printerr("FAIL: brak używanych Samsung budżet")
+		printerr("FAIL: brak używanych Samsungów")
 		return false
-	var po_filtrze: Array = rynek.oferty_filtrowane(swiat, "telefon", "uzywany", 9999.0, 0.0, 0.0, false, "", 0.0, 1.0e12, false, ["Samsung"], "", "polska", "budzet")
+	var po_filtrze: Array = rynek.oferty_filtrowane(swiat, "telefon", "uzywany", 9999.0, 0.0, 0.0, false, "", 0.0, 1.0e12, false, ["Samsung"], "", "polska")
 	if po_filtrze.size() != uzywane:
 		printerr("FAIL: lista filtra ", po_filtrze.size(), " generacja ", uzywane)
 		return false
 	for o2 in po_filtrze:
-		if str(o2.get("marka", "")) != "Samsung" or str(o2.get("segment_ceny", "")) != "budzet" or str(o2.get("stan", "")) != "uzywany":
-			printerr("FAIL: lista ma obcą ofertę ", o2.get("marka"), o2.get("segment_ceny"), o2.get("stan"))
+		if str(o2.get("marka", "")) != "Samsung" or str(o2.get("stan", "")) != "uzywany":
+			printerr("FAIL: lista ma obcą ofertę ", o2.get("marka"), " ", o2.get("stan"))
 			return false
-	print("OK filtr marki i segmentu, używane=", uzywane)
+	print("OK filtr marki, używane=", uzywane, " nowe=", dodane)
 	return true
 
 
