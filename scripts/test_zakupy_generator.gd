@@ -165,7 +165,7 @@ func _uruchom() -> int:
 		return 1
 	print("OK niska wygoda dryf: ", spad.get("tekst"), " psychika=", swiat_efekt["bohater"]["psychika"])
 	# Wysoka wygoda własnej: 80 → offset +20 → docelowe 70; z 50 → +10.
-	swiat_efekt["majatek"] = {"nieruchomosci": [{"wygoda": 80, "nazwa": "Test"}], "dobra": []}
+	swiat_efekt["majatek"] = {"nieruchomosci": [{"wygoda": 80, "nazwa": "Test", "zamieszkane": true}], "dobra": []}
 	swiat_efekt["bohater"]["psychika"] = 50
 	var plus: Dictionary = rynek.efekt_wygody_tydzien(swiat_efekt)
 	if int(plus.get("docelowe", -1)) != 70 or int(plus.get("delta", 0)) != 10:

@@ -1,5 +1,5 @@
 extends Object
 class_name StatystykiDostep
 
-## Wyłącz to przed oddaniem graczom.
-const POKAZ_STATYSTYKI := true
+## Wyłączone: gracz nie widzi „Docelowe (dev)” ani panelu deweloperskiego.
+const POKAZ_STATYSTYKI := false

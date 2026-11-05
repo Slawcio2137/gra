@@ -39,6 +39,9 @@ func _ekran_zdrowie() -> void:
 
 
 func _ekran_majatek() -> void:
+	var zapowiedz := str(h._swiat.get("zapowiedz_zadowolenia", "")).strip_edges()
+	if zapowiedz != "":
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(zapowiedz, 15))
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Pieniądze", 18))
 	var kwota = h._stan._pieniadze_tekst()
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(kwota if kwota != "" else "—", 18))
@@ -48,6 +51,7 @@ func _ekran_majatek() -> void:
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Nieruchomości", 18))
 	var maj: Dictionary = h._swiat.get("majatek", {}) if h._swiat.get("majatek") is Dictionary else {}
 	var n_lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []
+	var ktos_tam_mieszka := false
 	if n_lista.is_empty():
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Własne kupione: brak — kup w Zakupach (generator, nie katalog 200).", 14))
 	else:
@@ -62,6 +66,23 @@ func _ekran_majatek() -> void:
 				str(n.get("miasto_nazwa", "")),
 			]
 			h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia, 14))
+			if bool(n.get("zamieszkane", false)):
+				ktos_tam_mieszka = true
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Tu mieszkasz.", 14))
+			elif h._ui._jest_liczba(n.get("wygoda")):
+				var idx_zam := i
+				var b_zam := Button.new()
+				b_zam.text = "Zamieszkaj"
+				b_zam.custom_minimum_size = Vector2(0, 40)
+				b_zam.pressed.connect(func() -> void:
+					var wynik_z: Dictionary = h._rynek_zakupow.zamieszkaj_we_wlasnym(h._swiat, idx_zam)
+					if bool(wynik_z.get("ok", false)):
+						h.SkryptZapisu.zapisz(h._swiat)
+						h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+					else:
+						h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(wynik_z.get("powod", "Nie da się zamieszkać.")), 13))
+				)
+				h._ui._tresc_biala().add_child(b_zam)
 			var idx_bind := i
 			var b_rem := Button.new()
 			b_rem.text = "Remont (propozycja koszt/wygoda)"
@@ -78,6 +99,17 @@ func _ekran_majatek() -> void:
 					h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(wynik.get("powod", "Remont nieudany.")), 13))
 			)
 			h._ui._tresc_biala().add_child(b_rem)
+		if ktos_tam_mieszka:
+			var b_rodzina := Button.new()
+			b_rodzina.text = "Wróć do domu rodziny"
+			b_rodzina.custom_minimum_size = Vector2(0, 40)
+			b_rodzina.pressed.connect(func() -> void:
+				var wynik_r: Dictionary = h._rynek_zakupow.zamieszkaj_u_rodziny(h._swiat)
+				if bool(wynik_r.get("ok", false)):
+					h.SkryptZapisu.zapisz(h._swiat)
+				h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+			)
+			h._ui._tresc_biala().add_child(b_rodzina)
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Dobra", 18))
 	var d_lista: Array = maj.get("dobra", []) if maj.get("dobra") is Array else []
 	if d_lista.is_empty():
@@ -95,6 +127,9 @@ func _ekran_majatek() -> void:
 					linia_a += " · vmax %s km/h" % vmax_m
 				if bool(d.get("nie_jezdzi", false)):
 					linia_a += " · NIE JEŹDZI"
+				var plus_a: String = h._rynek_zakupow.tekst_plusow(h._rynek_zakupow.plusy_oferty(d))
+				if plus_a != "":
+					linia_a += " · " + plus_a
 				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia_a, 14))
 				if bool(d.get("nie_jezdzi", false)) or bool(d.get("do_naprawy", false)):
 					h._ui._tresc_biala().add_child(h._mapa_ekran._panel_awarii_auta(i_d, d))
@@ -145,6 +180,9 @@ func _tekst_domu() -> String:
 
 
 func _opis_mieszkacie_w() -> String:
+	var info: Dictionary = h._rynek_zakupow.wygoda_lokum(h._swiat)
+	if str(info.get("zrodlo", "")) == "wlasna":
+		return h._rynek_zakupow.opis_miejsca_zamieszkania(h._swiat)
 	var lokum: Variant = h._swiat.get("lokum_startowe", {})
 	if not h._stan._lokum_pelne(lokum):
 		var maj: Variant = h._swiat.get("majatek", {})

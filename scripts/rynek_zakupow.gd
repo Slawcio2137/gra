@@ -686,7 +686,10 @@ func kategoria_lokum(kategoria: String) -> bool:
 
 
 func kategoria_daje_plusy(kategoria: String) -> bool:
-	return kategoria_drobna(kategoria)
+	var lista: Variant = _plusy_conf().get("kategorie", [])
+	if lista is Array and not lista.is_empty():
+		return lista.has(kategoria)
+	return kategoria_drobna(kategoria) or kategoria == "samochod"
 
 
 ## Przy zasięgu województwo: suma baz miast w województwie (lub próbka z capem).
@@ -1574,14 +1577,22 @@ func kup(swiat: Dictionary, oferta_id: String) -> Dictionary:
 				swiat["bohater"] = bohater
 			stan["miasto_gracza_id"] = mid
 			out["przeprowadzka"] = true
+			_wyczysc_zamieszkanie(maj)
+			kopia["zamieszkane"] = true
 	else:
 		if not (maj.get("dobra") is Array):
 			maj["dobra"] = []
 		maj["dobra"].append(kopia)
+		if _ma_usterki_do_bolu(kopia):
+			var bol: Dictionary = bol_zdarzenia(swiat, dobro_nawalajace(kopia))
+			_dopisz_zapowiedz(swiat, str(bol.get("tekst", "")))
+			out["bol"] = bol
 	swiat["majatek"] = maj
 	stan["oferty"].remove_at(idx)
 	swiat["rynek_zakupow"] = stan
+	var cel_przed := _cel_zapisany(swiat)
 	przelicz_zadowolenie_docelowe(swiat)
+	out["tekst"] = _oznacz_zapowiedz(swiat, cel_przed, _cel_zapisany(swiat))
 	out["ok"] = true
 	out["oferta"] = kopia
 	return out
@@ -1855,34 +1866,29 @@ func _znajdz_kandydata(swiat: Dictionary, ref: String) -> Dictionary:
 	return {}
 
 
-## Wygoda aktualnego lokum: własna nieruchomość (najwyższa wygoda),
-## inaczej dom rodziny / lokum startowe; gdy brak → 0.
+## Wygoda miejsca, w którym bohater mieszka.
+## Własna nieruchomość liczy się dopiero z flagą zamieszkane — kupno kawalerki
+## nie kasuje wygody domu rodziny. Bez domu rodziny zostaje pierwsza własna, nie najwyższa.
 func wygoda_lokum(swiat: Dictionary) -> Dictionary:
 	var out := {
 		"wygoda": 0,
 		"zrodlo": "brak",
 		"propozycja_do_poprawki": true,
 	}
-	var maj: Variant = swiat.get("majatek", {})
-	if maj is Dictionary and maj.get("nieruchomosci") is Array:
-		var lista: Array = maj["nieruchomosci"]
-		var najlepsza := -1
-		for n in lista:
-			if not (n is Dictionary):
-				continue
-			if not _liczba(n.get("wygoda")):
-				continue
-			var w := int(n["wygoda"])
-			if w > najlepsza:
-				najlepsza = w
-		if najlepsza >= 0:
-			out["wygoda"] = clampi(najlepsza, 0, 100)
-			out["zrodlo"] = "wlasna"
-			return out
+	var zam := _nieruchomosc_zamieszkana(swiat)
+	if not zam.is_empty() and _liczba(zam.get("wygoda")):
+		out["wygoda"] = clampi(int(zam["wygoda"]), 0, 100)
+		out["zrodlo"] = "wlasna"
+		return out
 	var lokum: Variant = swiat.get("lokum_startowe", {})
 	if lokum is Dictionary and _liczba(lokum.get("wygoda")):
 		out["wygoda"] = clampi(int(lokum["wygoda"]), 0, 100)
 		out["zrodlo"] = "lokum_startowe"
+		return out
+	var jedyna := _pierwsza_wygoda_wlasna(swiat)
+	if jedyna >= 0:
+		out["wygoda"] = clampi(jedyna, 0, 100)
+		out["zrodlo"] = "wlasna"
 		return out
 	var conf := _efekt_wygody_conf()
 	var mapa: Dictionary = {}
@@ -1958,25 +1964,68 @@ func przelicz_zadowolenie_docelowe(swiat: Dictionary) -> int:
 	return docelowe
 
 
-## propozycja_do_poprawki. Plusa nie sumują się w typie: liczy się najlepszy posiadany.
-## nowy bez usterek ++++ (4). Używany bez usterek i stan ≥ 80: +++ (3).
-## Używany, powaga deklarowanych/rzeczywistych ≤ 3 i stan ≥ 50: ++ (2). Reszta: + (1).
-## Drugi taki sam telefon nie dodaje. Lepszy dodaje tylko różnicę. Oddanie lepszego wraca do następnego.
+## Plus z mapy w zadowolenie_dryf.json. W typie liczy się najlepszy, nie suma.
+## Nawalające auto (nie jeździ / do naprawy / zatarcie) daje wartość „nawalajacy”, zwykle 0.
+## To brak plusa, nie kara dopisywana do celu co turę.
 func plusy_oferty(oferta: Dictionary) -> int:
 	if not kategoria_daje_plusy(str(oferta.get("kategoria", ""))):
 		return 0
+	if dobro_nawalajace(oferta):
+		return _plus_z_mapy("nawalajacy", 0)
 	var usterki := _usterki_do_plusow(oferta)
 	var powaga := _powaga_usterek(usterki, str(oferta.get("kategoria", "")), str(oferta.get("segment", "")))
+	var stan_3 := _prog_plusow("stan_od_dla_3", 80)
+	var pow_2 := _prog_plusow("powaga_do_dla_2", 3)
+	var stan_2 := _prog_plusow("stan_od_dla_2", 50)
 	if str(oferta.get("stan", "")) == "nowy":
-		return 4 if powaga <= 0 else 3
-	var stan_d := 70
-	if _liczba(oferta.get("stan_deklarowany")):
-		stan_d = int(oferta["stan_deklarowany"])
-	if powaga <= 0 and stan_d >= 80:
-		return 3
-	if powaga <= 3 and stan_d >= 50:
-		return 2
-	return 1
+		if powaga <= 0:
+			return _plus_z_mapy("nowy_bez_usterek", 4)
+		return _plus_z_mapy("nowy_z_usterka_albo_uzywany_bez_usterek_stan_od_80", 3)
+	var stan_d := _stan_do_plusow(oferta)
+	if powaga <= 0 and stan_d >= stan_3:
+		return _plus_z_mapy("nowy_z_usterka_albo_uzywany_bez_usterek_stan_od_80", 3)
+	if powaga <= pow_2 and stan_d >= stan_2:
+		return _plus_z_mapy("uzywany_powaga_do_3_i_stan_od_50", 2)
+	return _plus_z_mapy("reszta_uszkodzonych", 1)
+
+
+func dobro_nawalajace(oferta: Dictionary) -> bool:
+	if bool(oferta.get("nie_jezdzi", false)) or bool(oferta.get("do_naprawy", false)):
+		return true
+	var kons: Variant = oferta.get("konserwacja", {})
+	return kons is Dictionary and bool(kons.get("zatarcie", false))
+
+
+## Jednorazowy ból psychiki. Nie rusza zadowolenie_docelowe.
+func bol_zdarzenia(swiat: Dictionary, awaria: bool = false) -> Dictionary:
+	var conf := _bol_conf()
+	var minus := int(conf.get("minus_awaria", 8)) if awaria else int(conf.get("minus_usterki", 4))
+	var cel := _cel_zapisany(swiat)
+	var out := {"delta": 0, "tekst": "", "docelowe": cel, "awaria": awaria}
+	if minus <= 0:
+		return out
+	var bohater: Dictionary = {}
+	if swiat.get("bohater") is Dictionary:
+		bohater = swiat["bohater"]
+	var metryka := metryka_widoczna_zadowolenia()
+	var obecne := 50
+	if _liczba(bohater.get(metryka)):
+		obecne = int(bohater[metryka])
+	var dryf := _dryf_conf()
+	var clamp_widoczny: Array = dryf.get("clamp_widocznej", [-100, 100]) if dryf.get("clamp_widocznej") is Array else [-100, 100]
+	var lo := int(clamp_widoczny[0]) if clamp_widoczny.size() >= 1 else -100
+	var hi := int(clamp_widoczny[1]) if clamp_widoczny.size() >= 2 else 100
+	var nowe := clampi(obecne - minus, lo, hi)
+	var delta := nowe - obecne
+	bohater[metryka] = nowe
+	swiat["bohater"] = bohater
+	out["delta"] = delta
+	out["docelowe"] = _cel_zapisany(swiat)
+	if delta != 0:
+		var znak := ("+%d" % delta) if delta > 0 else ("−%d" % absi(delta))
+		var nazwa := "Awaria" if awaria else "Usterka"
+		out["tekst"] = "%s: %s do psychiki." % [nazwa, znak]
+	return out
 
 
 func tekst_plusow(ile: int) -> String:
@@ -2019,12 +2068,199 @@ func oddaj_dobro(swiat: Dictionary, indeks: int) -> Dictionary:
 	if indeks < 0 or indeks >= lista.size():
 		out["powod"] = "Zły indeks."
 		return out
+	var cel_przed := _cel_zapisany(swiat)
 	lista.remove_at(indeks)
 	maj["dobra"] = lista
 	swiat["majatek"] = maj
 	out["docelowe"] = przelicz_zadowolenie_docelowe(swiat)
+	out["tekst"] = _oznacz_zapowiedz(swiat, cel_przed, int(out["docelowe"]))
 	out["ok"] = true
 	return out
+
+
+func _stan_do_plusow(oferta: Dictionary) -> int:
+	if _liczba(oferta.get("kupiono_tydzien")) and _liczba(oferta.get("stan_rzeczywisty")):
+		return int(oferta["stan_rzeczywisty"])
+	if _liczba(oferta.get("stan_deklarowany")):
+		return int(oferta["stan_deklarowany"])
+	if _liczba(oferta.get("stan_rzeczywisty")):
+		return int(oferta["stan_rzeczywisty"])
+	return 70
+
+
+func _plusy_conf() -> Dictionary:
+	var conf := _dryf_conf()
+	if conf.get("plusy_dobr") is Dictionary:
+		return conf["plusy_dobr"]
+	return {}
+
+
+func _mapa_plusow() -> Dictionary:
+	var blok := _plusy_conf()
+	if blok.get("mapa") is Dictionary:
+		return blok["mapa"]
+	return {}
+
+
+func _progi_plusow() -> Dictionary:
+	var blok := _plusy_conf()
+	if blok.get("progi") is Dictionary:
+		return blok["progi"]
+	return {}
+
+
+func _bol_conf() -> Dictionary:
+	var blok := _plusy_conf()
+	if blok.get("bol_zdarzenia") is Dictionary:
+		return blok["bol_zdarzenia"]
+	return {}
+
+
+func _plus_z_mapy(klucz: String, domyslnie: int) -> int:
+	var mapa := _mapa_plusow()
+	if _liczba(mapa.get(klucz)):
+		return int(mapa[klucz])
+	return domyslnie
+
+
+func _prog_plusow(klucz: String, domyslnie: int) -> int:
+	var progi := _progi_plusow()
+	if _liczba(progi.get(klucz)):
+		return int(progi[klucz])
+	return domyslnie
+
+
+func _cel_zapisany(swiat: Dictionary) -> int:
+	var bohater: Variant = swiat.get("bohater", {})
+	if bohater is Dictionary and _liczba(bohater.get("zadowolenie_docelowe")):
+		return int(bohater["zadowolenie_docelowe"])
+	return -99999
+
+
+func tekst_zapowiedzi_tury() -> String:
+	return "Samopoczucie zmieni się w następnej turze."
+
+
+func _oznacz_zapowiedz(swiat: Dictionary, przed: int, po: int) -> String:
+	if przed == po:
+		return str(swiat.get("zapowiedz_zadowolenia", ""))
+	return _dopisz_zapowiedz(swiat, tekst_zapowiedzi_tury())
+
+
+func _dopisz_zapowiedz(swiat: Dictionary, fragment: String) -> String:
+	var kawalek := fragment.strip_edges()
+	if kawalek == "":
+		return str(swiat.get("zapowiedz_zadowolenia", ""))
+	var stary := str(swiat.get("zapowiedz_zadowolenia", "")).strip_edges()
+	var tekst := kawalek if stary == "" or stary.find(kawalek) >= 0 else stary + " " + kawalek
+	swiat["zapowiedz_zadowolenia"] = tekst
+	return tekst
+
+
+func _ma_usterki_do_bolu(oferta: Dictionary) -> bool:
+	if dobro_nawalajace(oferta):
+		return true
+	var lista: Variant = oferta.get("usterki_rzeczywiste", [])
+	if not (lista is Array) or (lista as Array).is_empty():
+		lista = oferta.get("usterki_deklarowane", [])
+	return lista is Array and not (lista as Array).is_empty()
+
+
+func _nieruchomosc_zamieszkana(swiat: Dictionary) -> Dictionary:
+	var maj: Variant = swiat.get("majatek", {})
+	if not (maj is Dictionary) or not (maj.get("nieruchomosci") is Array):
+		return {}
+	for n in maj["nieruchomosci"]:
+		if n is Dictionary and bool(n.get("zamieszkane", false)):
+			return n
+	return {}
+
+
+func _pierwsza_wygoda_wlasna(swiat: Dictionary) -> int:
+	var maj: Variant = swiat.get("majatek", {})
+	if not (maj is Dictionary) or not (maj.get("nieruchomosci") is Array):
+		return -1
+	for n in maj["nieruchomosci"]:
+		if n is Dictionary and _liczba(n.get("wygoda")):
+			return int(n["wygoda"])
+	return -1
+
+
+func _wyczysc_zamieszkanie(maj: Dictionary) -> void:
+	if not (maj.get("nieruchomosci") is Array):
+		return
+	var lista: Array = maj["nieruchomosci"]
+	for i in range(lista.size()):
+		var n: Variant = lista[i]
+		if n is Dictionary and bool(n.get("zamieszkane", false)):
+			n["zamieszkane"] = false
+			lista[i] = n
+	maj["nieruchomosci"] = lista
+
+
+func zamieszkaj_we_wlasnym(swiat: Dictionary, indeks: int) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": ""}
+	if not (swiat.get("majatek") is Dictionary):
+		out["powod"] = "Brak majątku."
+		return out
+	var maj: Dictionary = swiat["majatek"]
+	if not (maj.get("nieruchomosci") is Array):
+		out["powod"] = "Brak nieruchomości."
+		return out
+	var lista: Array = maj["nieruchomosci"]
+	if indeks < 0 or indeks >= lista.size() or not (lista[indeks] is Dictionary):
+		out["powod"] = "Zły indeks."
+		return out
+	if not _liczba((lista[indeks] as Dictionary).get("wygoda")):
+		out["powod"] = "Ta nieruchomość nie ma wygody."
+		return out
+	var przed := _cel_zapisany(swiat)
+	_wyczysc_zamieszkanie(maj)
+	var n: Dictionary = lista[indeks]
+	n["zamieszkane"] = true
+	lista[indeks] = n
+	maj["nieruchomosci"] = lista
+	swiat["majatek"] = maj
+	var po := przelicz_zadowolenie_docelowe(swiat)
+	out["ok"] = true
+	out["docelowe"] = po
+	out["tekst"] = _oznacz_zapowiedz(swiat, przed, po)
+	return out
+
+
+func zamieszkaj_u_rodziny(swiat: Dictionary) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": ""}
+	var lokum: Variant = swiat.get("lokum_startowe", {})
+	if not (lokum is Dictionary) or not _liczba(lokum.get("wygoda")):
+		out["powod"] = "Brak domu rodziny."
+		return out
+	var przed := _cel_zapisany(swiat)
+	if swiat.get("majatek") is Dictionary:
+		var maj: Dictionary = swiat["majatek"]
+		_wyczysc_zamieszkanie(maj)
+		swiat["majatek"] = maj
+	var po := przelicz_zadowolenie_docelowe(swiat)
+	out["ok"] = true
+	out["docelowe"] = po
+	out["tekst"] = _oznacz_zapowiedz(swiat, przed, po)
+	return out
+
+
+func opis_miejsca_zamieszkania(swiat: Dictionary) -> String:
+	var info := wygoda_lokum(swiat)
+	if str(info.get("zrodlo", "")) == "wlasna":
+		var zam := _nieruchomosc_zamieszkana(swiat)
+		if not zam.is_empty():
+			return opis_lokum_ui(zam)
+		var maj: Variant = swiat.get("majatek", {})
+		if maj is Dictionary and maj.get("nieruchomosci") is Array:
+			for n in maj["nieruchomosci"]:
+				if n is Dictionary and _liczba(n.get("wygoda")):
+					return opis_lokum_ui(n)
+	var lokum: Variant = swiat.get("lokum_startowe", {})
+	if lokum is Dictionary and not lokum.is_empty():
+		return opis_lokum_ui(lokum)
+	return ""
 
 
 func _usterki_do_plusow(oferta: Dictionary) -> Array:
@@ -2262,6 +2498,8 @@ func opis_lokum_ui(lokum: Variant) -> String:
 	if stan_etykieta != "":
 		czesci.append(stan_etykieta)
 	czesci.append(gdzie)
+	if _liczba(lokum.get("wygoda")):
+		czesci.append("wygoda %d" % int(lokum["wygoda"]))
 	return "Mieszkacie w: %s." % ", ".join(czesci)
 
 
@@ -2501,6 +2739,7 @@ func remont(swiat: Dictionary, indeks_nieruchomosci: int) -> Dictionary:
 	if kasa < koszt:
 		out["powod"] = "Remont: za mało (%d < %d)." % [kasa, koszt]
 		return out
+	var cel_przed := _cel_zapisany(swiat)
 	bohater["pieniadze"] = kasa - koszt
 	swiat["bohater"] = bohater
 	n["stan"] = "po_remoncie"
@@ -2513,7 +2752,9 @@ func remont(swiat: Dictionary, indeks_nieruchomosci: int) -> Dictionary:
 	lista[indeks_nieruchomosci] = n
 	maj["nieruchomosci"] = lista
 	swiat["majatek"] = maj
-	przelicz_zadowolenie_docelowe(swiat)
+	var po_remoncie := przelicz_zadowolenie_docelowe(swiat)
+	out["tekst"] = _oznacz_zapowiedz(swiat, cel_przed, po_remoncie)
+	out["docelowe"] = po_remoncie
 	out["ok"] = true
 	out["koszt"] = koszt
 	out["wygoda"] = wyg
@@ -4760,9 +5001,15 @@ func mechanik_auta(swiat: Dictionary, auto_idx: int) -> Dictionary:
 	auto["vmax_delta"] = int(ef.get("vmax_delta", 0))
 	if _liczba(auto.get("vmax_katalog")):
 		auto["predkosc_max_kmh"] = clampi(int(auto["vmax_katalog"]) + int(auto["vmax_delta"]), 40, 350)
+	var cel_przed := _cel_zapisany(swiat)
+	var po_naprawie := przelicz_zadowolenie_docelowe(swiat)
+	var zapowiedz := _oznacz_zapowiedz(swiat, cel_przed, po_naprawie)
 	out["ok"] = true
 	out["koszt_zl"] = koszt
+	out["docelowe"] = po_naprawie
 	out["tekst"] = "Mechanik naprawił silnik (stub/propozycja): −%d zł. Auto znów jeździ." % koszt
+	if zapowiedz != "" and zapowiedz.find(tekst_zapowiedzi_tury()) >= 0:
+		out["tekst"] = str(out["tekst"]) + " " + tekst_zapowiedzi_tury()
 	out["propozycja_do_poprawki"] = true
 	return out
 
@@ -4784,13 +5031,19 @@ func zlom_auta(swiat: Dictionary, auto_idx: int) -> Dictionary:
 		return out
 	var kot := _kotwica_naprawy_silnika(auto)
 	var wykup := int(kot["zlom_zl"])
+	var cel_przed := _cel_zapisany(swiat)
 	dobra.remove_at(auto_idx)
 	maj["dobra"] = dobra
 	swiat["majatek"] = maj
 	_dodaj_pieniadze(swiat, wykup)
+	var po_zlomie := przelicz_zadowolenie_docelowe(swiat)
+	var zapowiedz_z := _oznacz_zapowiedz(swiat, cel_przed, po_zlomie)
 	out["ok"] = true
 	out["wykup_zl"] = wykup
+	out["docelowe"] = po_zlomie
 	out["tekst"] = "Oddano na złom (stub): +%d zł. Auto usunięte." % wykup
+	if zapowiedz_z != "" and zapowiedz_z.find(tekst_zapowiedzi_tury()) >= 0:
+		out["tekst"] = str(out["tekst"]) + " " + tekst_zapowiedzi_tury()
 	out["propozycja_do_poprawki"] = true
 	return out
 
