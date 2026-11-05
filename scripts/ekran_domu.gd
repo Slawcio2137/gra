@@ -93,6 +93,8 @@ func _ekran_majatek() -> void:
 				var vmax_m = h._rynek_zakupow.tekst_vmax_oferty(d, d.get("usterki_rzeczywiste", []) if d.get("usterki_rzeczywiste") is Array else [])
 				if vmax_m != "":
 					linia_a += " · vmax %s km/h" % vmax_m
+				if h._ui._jest_liczba(d.get("rok_produkcji")):
+					linia_a += " · rocznik %d" % int(d["rok_produkcji"])
 				if bool(d.get("nie_jezdzi", false)):
 					linia_a += " · " + h._rynek_zakupow.tekst_awarii_dla_gracza(d)
 				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia_a, 14))

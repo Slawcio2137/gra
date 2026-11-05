@@ -83,8 +83,16 @@ func oblicz(
 	out["koszt_zl"] = snappedf(koszt, 0.01)
 	out["koszt_tekst"] = "%.2f zł" % float(out["koszt_zl"])
 	out["ok"] = true
+	out["dystans_km"] = dystans_km
 	_wypelnij_zmeczenie_i_mandat(out, tryb, nadmiar, predkosc, vmax)
 	return out
+
+
+func dolicz_przebieg(auto: Dictionary, km: float) -> int:
+	var dodatek := maxi(0, int(round(km)))
+	var teraz := int(auto.get("przebieg_km", 0)) if auto.get("przebieg_km") is int or auto.get("przebieg_km") is float else 0
+	auto["przebieg_km"] = teraz + dodatek
+	return int(auto["przebieg_km"])
 
 
 func zuzycie_trybu(auto: Dictionary, tryb: String, nadmiar_km_h: float) -> Variant:

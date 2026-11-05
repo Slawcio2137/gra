@@ -289,6 +289,21 @@ func _panel_przejazdu_autem(auto: Dictionary, dystans_km: float, cel_nazwa: Stri
 		kolumna.add_child(b)
 	kolumna.add_child(suwak_box)
 	kolumna.add_child(opis)
+	var b_jedz := Button.new()
+	b_jedz.text = "Jedź"
+	b_jedz.custom_minimum_size = Vector2(0, 44)
+	b_jedz.pressed.connect(func() -> void:
+		var wynik: Dictionary = h._przejazd.oblicz(
+			dystans_km, auto, str(tryb_stan["id"]), float(tryb_stan["nadmiar"]), _cena_paliwa(auto)
+		)
+		if not bool(wynik.get("ok", false)):
+			opis.text = str(wynik.get("powod", "Nie da się jechać."))
+			return
+		h._rynek_zakupow.nalicz_zuzycie_przejazdu(auto, dystans_km, true)
+		h.SkryptZapisu.zapisz(h._swiat)
+		opis.text = "Przejechane %d km. Przebieg: %s km." % [int(round(dystans_km)), str(auto.get("przebieg_km", 0))]
+	)
+	kolumna.add_child(b_jedz)
 	odswiez.call()
 	return kolumna
 

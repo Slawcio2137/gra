@@ -3032,7 +3032,12 @@ func _losuj_samochod(
 		cena_dobra = _cena_dobra("samochod", stan, rng, int(stany.get("stan_deklarowany", 80)), przebieg_km)
 	if not _liczba(cena_dobra):
 		cena_dobra = zaokraglij_cene_auta(rng.randi_range(12000, 45000))
-	var usterki := _losuj_usterki_auta(stan, rng, tier_tani)
+	var kontekst_awarii := {
+		"przebieg_km": przebieg_km,
+		"tier_tani": tier_tani,
+		"konserwacja": _syntetyczna_konserwacja(przebieg_km),
+	}
+	var usterki := _losuj_usterki_auta(stan, rng, tier_tani, kontekst_awarii)
 	var vmax := _predkosc_max_z_rekordu(rekord, naped)
 	var spalanie_vmax: Variant = null
 	if _liczba(rekord.get("spalanie_przy_vmax")):
@@ -3096,6 +3101,8 @@ func _losuj_samochod(
 		"propozycja_do_poprawki": true,
 		"obrazek": placeholder_sciezka("samochod"),
 	}
+	oferta["rok_produkcji"] = losuj_rok_produkcji(stan, rng)
+	oferta["konserwacja"] = kontekst_awarii.get("konserwacja", {})
 	_naloz_efekty_vmax_na_oferte(oferta, usterki.get("rzeczywiste", []), vmax)
 	_naloz_rabat_usterek_na_cene(oferta)
 	return oferta
@@ -3241,6 +3248,7 @@ func _oferta_nowa_z_rekordu_katalogu(rekord: Dictionary, rng: RandomNumberGenera
 		"propozycja_do_poprawki": true,
 		"obrazek": placeholder_sciezka("samochod"),
 	}
+	oferta_n["rok_produkcji"] = losuj_rok_produkcji("nowy", rng)
 	_naloz_efekty_vmax_na_oferte(oferta_n, [], vmax)
 	return oferta_n
 
@@ -4075,7 +4083,8 @@ func _naloz_efekty_vmax_na_oferte(oferta: Dictionary, usterki_ids: Array, vmax_m
 	if bool(oferta["nie_jezdzi"]):
 		oferta["do_naprawy"] = true
 		if str(oferta.get("przyczyna_awarii", "")) == "":
-			oferta["przyczyna_awarii"] = losuj_przyczyne_awarii()
+			oferta["przyczyna_awarii"] = losuj_przyczyne_awarii(null, oferta)
+		_spojna_karta_z_przyczyna(oferta)
 		oferta["przyczyna_znana"] = false
 
 
@@ -4250,11 +4259,15 @@ func nazwa_usterki(uid: String, kategoria: String = "", segment: String = "") ->
 
 
 func nazwa_usterki_dla_gracza(uid: String, auto: Variant = null, kategoria: String = "", segment: String = "") -> String:
-	if uid == "awaria_silnika":
+	var przyczyny: Variant = _awaria_conf().get("przyczyny", {})
+	var to_awaria: bool = uid == "awaria_silnika" or (przyczyny is Dictionary and przyczyny.has(uid))
+	if to_awaria:
 		var napis := str(_awaria_conf().get("napis_przed_diagnoza", "Awaria"))
 		if not (auto is Dictionary) or not bool(auto.get("przyczyna_znana", false)):
 			return napis
-		return str(_cennik_przyczyny(przyczyna_auta(auto)).get("nazwa", napis))
+		if uid == "awaria_silnika":
+			return str(_cennik_przyczyny(przyczyna_auta(auto)).get("nazwa", napis))
+		return str(_cennik_przyczyny(uid).get("nazwa", napis))
 	return nazwa_usterki(uid, kategoria, segment)
 
 
@@ -4272,8 +4285,8 @@ func nazwy_usterek(ids: Array, kategoria: String = "", segment: String = "") -> 
 	return out
 
 
-func _losuj_usterki_auta(stan: String, rng: RandomNumberGenerator, tier_tani: bool = false) -> Dictionary:
-	return _losuj_usterki_z_listy(lista_usterek_meta("samochod"), stan, rng, tier_tani)
+func _losuj_usterki_auta(stan: String, rng: RandomNumberGenerator, tier_tani: bool = false, kontekst: Dictionary = {}) -> Dictionary:
+	return _losuj_usterki_z_listy(lista_usterek_meta("samochod"), stan, rng, tier_tani, kontekst)
 
 
 func _losuj_usterki_dobra(kategoria: String, stan: String, rng: RandomNumberGenerator, segment: String = "") -> Dictionary:
@@ -4283,18 +4296,21 @@ func _losuj_usterki_dobra(kategoria: String, stan: String, rng: RandomNumberGene
 		return puste
 	if rng.randf() > SZANSA_USZKODZENIA_UZYWANEGO:
 		return puste
-	return _losuj_usterki_z_listy(lista_usterek_meta(kategoria, segment), stan, rng, false)
+	return _losuj_usterki_z_listy(lista_usterek_meta(kategoria, segment), stan, rng, false, {})
 
 
-func _losuj_usterki_z_listy(lista: Array, stan: String, rng: RandomNumberGenerator, tier_tani: bool = false) -> Dictionary:
+func _losuj_usterki_z_listy(lista: Array, stan: String, rng: RandomNumberGenerator, tier_tani: bool = false, kontekst: Dictionary = {}) -> Dictionary:
 	var out := {"rzeczywiste": [], "deklarowane": [], "ukryte": [], "ma_szacunek": false}
 	if stan != "uzywany":
 		return out
 	for u in lista:
 		if not (u is Dictionary):
 			continue
+		var uid_wczesnie := str(u.get("id", ""))
 		var szansa := float(u.get("szansa_w_uzywanym", 0.1))
-		if tier_tani:
+		if uid_wczesnie == "awaria_silnika" and not kontekst.is_empty():
+			szansa = szansa_awarii_auta(kontekst)
+		elif tier_tani:
 			szansa = minf(0.95, szansa * 1.6)
 		if rng.randf() > szansa:
 			continue
@@ -4766,7 +4782,179 @@ func koszt_naprawy_awarii(auto: Dictionary) -> int:
 	return koszt
 
 
-func losuj_przyczyne_awarii(rng: RandomNumberGenerator = null) -> String:
+func _konserwacja_dane() -> Dictionary:
+	var kon := KonserwacjaAuta.new()
+	kon.wczytaj()
+	return kon.dane
+
+
+func szansa_awarii_auta(auto: Dictionary) -> float:
+	var blok: Dictionary = _konserwacja_dane().get("awaria_od_stanu", {}) if _konserwacja_dane().get("awaria_od_stanu") is Dictionary else {}
+	var p := float(blok.get("bazowa_szansa", 0.025))
+	var km := float(auto.get("przebieg_km", 0)) if _liczba(auto.get("przebieg_km")) else 0.0
+	p += (km / 100000.0) * float(blok.get("na_100000_km", 0.03))
+	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
+	if _liczba(kons.get("olej")) and int(kons["olej"]) < int(blok.get("olej_ponizej", 25)):
+		p += float(blok.get("bonus_olej", 0.05))
+	if _liczba(kons.get("filtry")) and int(kons["filtry"]) < int(blok.get("filtry_ponizej", 30)):
+		p += float(blok.get("bonus_filtry", 0.02))
+	if _liczba(kons.get("opony")) and int(kons["opony"]) < int(blok.get("opony_ponizej", 30)):
+		p += float(blok.get("bonus_opony", 0.015))
+	if bool(auto.get("tier_tani", false)):
+		p *= float(blok.get("mnoznik_tier_tani", 1.6))
+	return clampf(p, 0.0, float(blok.get("sufit", 0.85)))
+
+
+func _waga_przyczyny(id: String, wpis: Dictionary, auto: Dictionary) -> float:
+	var waga := float(wpis.get("waga", 1.0))
+	if auto.is_empty():
+		return waga
+	var mod: Dictionary = _konserwacja_dane().get("modyfikatory_wag", {}) if _konserwacja_dane().get("modyfikatory_wag") is Dictionary else {}
+	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
+	if id == "zatarcie" and _liczba(kons.get("olej")) and int(kons["olej"]) <= int(mod.get("olej_krytyczny_ponizej", 8)):
+		waga *= float(mod.get("zatarcie_gdy_olej_krytyczny", 8.0))
+	if id == "rdza" and not bool(kons.get("konserwacja_zima", false)) and not kons.is_empty():
+		waga *= float(mod.get("rdza_bez_konserwacji_zimowej", 4.0))
+	var km := int(auto.get("przebieg_km", 0)) if _liczba(auto.get("przebieg_km")) else 0
+	if km >= int(mod.get("przebieg_prog_km", 150000)):
+		var tab: Variant = mod.get("przy_duzym_przebiegu", {})
+		if tab is Dictionary and _liczba(tab.get(id)):
+			waga *= float(tab[id])
+	return waga
+
+
+func _syntetyczna_konserwacja(przebieg_km: int) -> Dictionary:
+	var olej := clampi(100 - int(przebieg_km / 4000), 8, 95)
+	var filtry := clampi(100 - int(przebieg_km / 5000), 10, 95)
+	var opony := clampi(100 - int(przebieg_km / 4500), 10, 95)
+	return {"olej": olej, "filtry": filtry, "opony": opony, "zatarcie": false, "rdza": false, "konserwacja_zima": false}
+
+
+func losuj_rok_produkcji(stan: String, rng: RandomNumberGenerator = null) -> int:
+	var rok := int(_konserwacja_dane().get("starzenie", {}).get("rok_odniesienia", 2026)) if _konserwacja_dane().get("starzenie") is Dictionary else 2026
+	if rng == null:
+		rng = RandomNumberGenerator.new()
+		rng.randomize()
+	if stan == "nowy":
+		return rok
+	return rok - rng.randi_range(3, 18)
+
+
+func wiek_auta_lat(auto: Dictionary) -> int:
+	if not _liczba(auto.get("rok_produkcji")):
+		return 0
+	var rok := int(_konserwacja_dane().get("starzenie", {}).get("rok_odniesienia", 2026)) if _konserwacja_dane().get("starzenie") is Dictionary else 2026
+	return maxi(0, rok - int(auto["rok_produkcji"]))
+
+
+func _spojna_karta_z_przyczyna(auto: Dictionary) -> void:
+	var przyczyna := str(auto.get("przyczyna_awarii", ""))
+	if przyczyna == "":
+		return
+	for klucz in ["usterki_rzeczywiste", "usterki_deklarowane", "usterki_ukryte"]:
+		var lista: Array = auto.get(klucz, []) if auto.get(klucz) is Array else []
+		var nowa: Array = []
+		var bylo := false
+		for x in lista:
+			if str(x) == "awaria_silnika":
+				bylo = true
+				if not nowa.has(przyczyna):
+					nowa.append(przyczyna)
+			elif not nowa.has(str(x)):
+				nowa.append(str(x))
+		if klucz == "usterki_rzeczywiste" and not nowa.has(przyczyna):
+			nowa.append(przyczyna)
+		elif bylo and not nowa.has(przyczyna):
+			nowa.append(przyczyna)
+		if not lista.is_empty() or klucz == "usterki_rzeczywiste":
+			auto[klucz] = nowa
+	_oznacz_czesc_zle(auto, przyczyna)
+
+
+func _oznacz_czesc_zle(auto: Dictionary, przyczyna: String) -> void:
+	var czesci: Dictionary = auto.get("czesci", {}) if auto.get("czesci") is Dictionary else {}
+	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
+	if przyczyna == "zatarcie":
+		kons["zatarcie"] = true
+		kons["olej"] = mini(int(kons.get("olej", 5)), 5)
+	elif przyczyna == "rdza":
+		kons["rdza"] = true
+	elif przyczyna == "peknieta_opona":
+		kons["opony"] = 0
+	else:
+		czesci[przyczyna] = 0
+	auto["czesci"] = czesci
+	auto["konserwacja"] = kons
+
+
+func ustal_przyczyne_z_czesci(auto: Dictionary) -> String:
+	var diag: Dictionary = _konserwacja_dane().get("diagnoza_czesci", {}) if _konserwacja_dane().get("diagnoza_czesci") is Dictionary else {}
+	var prog := int(diag.get("prog_zle", 15))
+	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
+	var czesci: Dictionary = auto.get("czesci", {}) if auto.get("czesci") is Dictionary else {}
+	var najlepsza := ""
+	var najgorzej := 101
+	if bool(kons.get("zatarcie", false)) or (_liczba(kons.get("olej")) and int(kons["olej"]) <= int(_konserwacja_dane().get("progi", {}).get("olej_krytyczny", 8))):
+		return "zatarcie"
+	if bool(kons.get("rdza", false)):
+		najlepsza = "rdza"
+		najgorzej = 0
+	if _liczba(kons.get("opony")) and int(kons["opony"]) <= prog and int(kons["opony"]) < najgorzej:
+		najlepsza = str(diag.get("opony_jako", "peknieta_opona"))
+		najgorzej = int(kons["opony"])
+	for id in czesci.keys():
+		if not _liczba(czesci[id]):
+			continue
+		var stan_c := int(czesci[id])
+		if stan_c <= prog and stan_c < najgorzej:
+			najlepsza = str(id)
+			najgorzej = stan_c
+	if najlepsza != "":
+		return najlepsza
+	var lista: Array = auto.get("usterki_rzeczywiste", []) if auto.get("usterki_rzeczywiste") is Array else []
+	var przyczyny: Variant = _awaria_conf().get("przyczyny", {})
+	for uid in lista:
+		if przyczyny is Dictionary and przyczyny.has(str(uid)):
+			return str(uid)
+	return str(auto.get("przyczyna_awarii", ""))
+
+
+func nalicz_zuzycie_przejazdu(auto: Dictionary, km: float, jedzie: bool) -> void:
+	var kon := KonserwacjaAuta.new()
+	var stan: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else kon.stan_startowy()
+	kon.zuzyj_kilometry(stan, km, jedzie)
+	auto["konserwacja"] = stan
+	var przejazd := PrzejazdAuta.new()
+	przejazd.dolicz_przebieg(auto, km if jedzie else km)
+
+
+func starzej_auto_tydzien(auto: Dictionary, rng: RandomNumberGenerator = null) -> Dictionary:
+	var out := {"rdza": false}
+	var star: Dictionary = _konserwacja_dane().get("starzenie", {}) if _konserwacja_dane().get("starzenie") is Dictionary else {}
+	if rng == null:
+		rng = RandomNumberGenerator.new()
+		rng.randomize()
+	var wiek := wiek_auta_lat(auto)
+	auto["tygodnie_czesci"] = int(auto.get("tygodnie_czesci", 0)) + 1
+	var czesci: Dictionary = auto.get("czesci", {}) if auto.get("czesci") is Dictionary else {}
+	var ubytek := float(star.get("pasek_na_rok", 8)) / 52.0 * (1.0 + float(wiek) * float(star.get("wspolczynnik_wieku_auta", 0.08)))
+	auto["zuzycie_pasek"] = float(auto.get("zuzycie_pasek", 0.0)) + ubytek
+	czesci["pasek_rozrzadu"] = maxi(0, int(round(100.0 - float(auto["zuzycie_pasek"]))))
+	auto["czesci"] = czesci
+	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
+	var guma := float(star.get("opony_guma_na_rok", 5)) / 52.0 * (1.0 + float(wiek) * 0.05)
+	auto["zuzycie_gumy"] = float(auto.get("zuzycie_gumy", 0.0)) + guma
+	kons["opony"] = maxi(0, int(round(float(kons.get("opony", 70)) - float(auto["zuzycie_gumy"]))))
+	auto["konserwacja"] = kons
+	var szansa := float(star.get("rdza_szansa_na_tydzien", 0.001)) + float(wiek) * float(star.get("rdza_szansa_na_rok_wieku", 0.012)) / 52.0
+	if rng.randf() < szansa:
+		out["rdza"] = true
+		kons["rdza"] = true
+		auto["konserwacja"] = kons
+	return out
+
+
+func losuj_przyczyne_awarii(rng: RandomNumberGenerator = null, auto: Dictionary = {}) -> String:
 	var mapa: Variant = _awaria_conf().get("przyczyny", {})
 	if not (mapa is Dictionary) or mapa.is_empty():
 		return "padniety_silnik"
@@ -4777,7 +4965,7 @@ func losuj_przyczyne_awarii(rng: RandomNumberGenerator = null) -> String:
 		var wpis: Variant = mapa[id]
 		if not (wpis is Dictionary):
 			continue
-		var waga := float(wpis.get("waga", 1.0))
+		var waga := _waga_przyczyny(str(id), wpis, auto)
 		if waga <= 0.0:
 			continue
 		ids.append(str(id))
@@ -4824,19 +5012,7 @@ func zastosuj_przyczyne_awarii(auto: Dictionary, przyczyna: String) -> void:
 	auto["do_naprawy"] = true
 	auto["przyczyna_awarii"] = przyczyna
 	auto["przyczyna_znana"] = false
-	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
-	if przyczyna == "zatarcie":
-		kons["zatarcie"] = true
-	elif przyczyna == "rdza":
-		kons["rdza"] = true
-	elif przyczyna == "padniety_silnik":
-		for klucz in ["usterki_rzeczywiste", "usterki_deklarowane"]:
-			var lista: Array = auto.get(klucz, []) if auto.get(klucz) is Array else []
-			if not lista.has("awaria_silnika"):
-				lista.append("awaria_silnika")
-			auto[klucz] = lista
-	if not kons.is_empty() or przyczyna == "zatarcie" or przyczyna == "rdza":
-		auto["konserwacja"] = kons
+	_spojna_karta_z_przyczyna(auto)
 
 
 func _wylecz_awarie(auto: Dictionary) -> void:
@@ -4926,7 +5102,11 @@ func diagnozuj_awarie(swiat: Dictionary, auto: Dictionary) -> Dictionary:
 		out["powod"] = "Za mało pieniędzy na diagnozę (%d zł)." % koszt
 		out["tekst"] = out["powod"]
 		return out
-	if str(auto.get("przyczyna_awarii", "")) == "":
+	var z_czesci := ustal_przyczyne_z_czesci(auto)
+	if z_czesci != "":
+		auto["przyczyna_awarii"] = z_czesci
+		_spojna_karta_z_przyczyna(auto)
+	elif str(auto.get("przyczyna_awarii", "")) == "":
 		auto["przyczyna_awarii"] = przyczyna_auta(auto)
 	auto["przyczyna_znana"] = true
 	out["ok"] = true

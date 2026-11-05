@@ -39,9 +39,7 @@ func efekt_tury(stan: Dictionary, zima: bool = false, rng: RandomNumberGenerator
 	var out := {"teksty": [], "olej_ostrzezenie": false, "zatarcie": false, "rdza": false}
 	var progi: Dictionary = dane.get("progi", {}) if dane.get("progi") is Dictionary else {}
 	var efekty: Dictionary = dane.get("efekty", {}) if dane.get("efekty") is Dictionary else {}
-	stan["olej"] = maxi(0, int(stan.get("olej", 80)) - int(round(float(progi.get("olej_zuzycie_tydzien", 1.5)))))
-	stan["filtry"] = maxi(0, int(stan.get("filtry", 75)) - int(round(float(progi.get("filtry_zuzycie_tydzien", 1.2)))))
-	stan["opony"] = maxi(0, int(stan.get("opony", 70)) - int(round(float(progi.get("opony_zuzycie_tydzien", 0.8)))))
+	# Zużycie punktów idzie z kilometrów (zuzyj_kilometry), nie z samego tygodnia.
 	var ostrz := int(progi.get("olej_ostrzezenie", 25))
 	var kryt := int(progi.get("olej_krytyczny", 8))
 	if int(stan["olej"]) <= ostrz:
@@ -61,6 +59,23 @@ func efekt_tury(stan: Dictionary, zima: bool = false, rng: RandomNumberGenerator
 			stan["rdza"] = true
 			out["teksty"].append("Pojawiła się rdza (zima%s)." % (" — mimo konserwacji" if konserw else ""))
 	return out
+
+
+func _blok_zuzycia() -> Dictionary:
+	wczytaj()
+	if dane.get("zuzycie_od_km") is Dictionary:
+		return dane["zuzycie_od_km"]
+	return {}
+
+
+func zuzyj_kilometry(stan: Dictionary, km: float, jedzie: bool) -> void:
+	wczytaj()
+	var blok := _blok_zuzycia()
+	var udzial := 1.0 if jedzie else float(blok.get("postoj_udzial", 0.2))
+	var tys := maxf(0.0, km) / 1000.0 * udzial
+	stan["olej"] = maxi(0, int(round(float(stan.get("olej", 80)) - tys * float(blok.get("olej_na_1000_km", 14)))))
+	stan["filtry"] = maxi(0, int(round(float(stan.get("filtry", 75)) - tys * float(blok.get("filtry_na_1000_km", 8)))))
+	stan["opony"] = maxi(0, int(round(float(stan.get("opony", 70)) - tys * float(blok.get("opony_na_1000_km", 6)))))
 
 
 func ustaw_konserwacje_zimowa(stan: Dictionary, wlacz: bool) -> void:
