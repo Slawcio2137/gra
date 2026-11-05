@@ -48,6 +48,12 @@ const STAN_KRAJOWY_ROWER_UZYWANY := 45000
 const STAN_KRAJOWY_SPRZET_UZYWANY := 3750
 ## Reguła gracza, nie cennik przewoźnika.
 const CENA_WYSYLKI_DROBNEJ_ZL := 15
+## Wspólne koło wag katalogu. Waga brakująca albo <= 0 spada do podłogi, nie wypada z losowania.
+const PODLOGA_WAGI_KATALOGU := 0.1
+## Kotwice tylko_uzywane przy puli używanych, tak samo dla aut i dóbr.
+const MNOZNIK_TYLKO_UZYWANE := 1.35
+## Ile razy dobrać rekord, zanim filtr ceny albo zasięgu uzna próbę za pustą.
+const PROBY_DOBORU_REKORDU := 12
 ## Część używanych drobiazgów jest uszkodzona. Reszta używanych nie dostaje usterek.
 const SZANSA_USZKODZENIA_UZYWANEGO := 0.55
 const PROG_DOCIAGANIA_PX := 960.0
@@ -336,9 +342,13 @@ func uzupelnij_okno_dobr(swiat: Dictionary, miasta: Array, filtry: Dictionary, i
 	var hero := _wzbogac_jedno_miasto(_miasto_po_id(miasta_wzb, zrodlo))
 	var poziom_puli := str(filtry.get("poziom", "miasto"))
 	var strona := str(filtry.get("stan", "uzywany"))
-	if strona != "nowy":
-		strona = "uzywany"
-	porcja = _przytnij_porcje_do_puli(swiat, stan, kat, poziom_puli, porcja, strona)
+	var mieszane := strona != "nowy" and strona != "uzywany"
+	if mieszane:
+		porcja = _przytnij_porcje_mieszana_dobr(swiat, stan, kat, poziom_puli, porcja)
+	else:
+		if strona != "nowy":
+			strona = "uzywany"
+		porcja = _przytnij_porcje_do_puli(swiat, stan, kat, poziom_puli, porcja, strona)
 	if porcja == 0:
 		swiat["rynek_zakupow"] = stan
 		return 0
@@ -353,14 +363,17 @@ func uzupelnij_okno_dobr(swiat: Dictionary, miasta: Array, filtry: Dictionary, i
 		stan["kursor_dobra"] = kursor
 		var rng := RandomNumberGenerator.new()
 		rng.seed = ziarno + kursor * 29 + absi(kat.hash())
-		var rekord := {}
-		if strona == "nowy":
-			rekord = _wolny_model_nowego(kat, oferty, rng)
-			if rekord.is_empty():
-				break
-		var oferta := _wylosuj_dobro_pod_filtr(hero, miasta_wzb, rng, filtry, rekord)
+		if not mieszane and strona == "nowy" and _wolne_modele_nowego(kat, oferty, filtry).is_empty():
+			break
+		if mieszane and _zostalo_w_puli_dobr(swiat, stan, kat, poziom_puli, "nowy") <= 0 and _zostalo_w_puli_dobr(swiat, stan, kat, poziom_puli, "uzywany") <= 0:
+			break
+		var oferta := _wylosuj_dobro_pod_filtr(hero, miasta_wzb, rng, filtry, {}, oferty)
 		if oferta.is_empty():
 			continue
+		if mieszane:
+			var strona_oferty := str(oferta.get("stan", ""))
+			if _zostalo_w_puli_dobr(swiat, stan, kat, poziom_puli, strona_oferty) <= 0:
+				continue
 		oferty.append(oferta)
 		dodane += 1
 	stan["oferty"] = oferty
@@ -373,7 +386,8 @@ func _wylosuj_dobro_pod_filtr(
 	miasta: Array,
 	rng: RandomNumberGenerator,
 	filtry: Dictionary,
-	rekord_wymuszony: Dictionary = {}
+	rekord_wymuszony: Dictionary = {},
+	oferty_istniejace: Array = []
 ) -> Dictionary:
 	var kat := str(filtry.get("kategoria", "telefon"))
 	if not kategoria_drobna(kat):
@@ -382,14 +396,34 @@ func _wylosuj_dobro_pod_filtr(
 	var pula := _miasta_poziomu(poziom, hero, miasta)
 	if pula.is_empty():
 		return {}
-	var cel: Dictionary = pula[rng.randi_range(0, pula.size() - 1)]
-	var strona := str(filtry.get("stan", "uzywany"))
-	if strona != "nowy":
-		strona = "uzywany"
-	var oferta := _losuj_dobro(kat, cel, rng, str(hero.get("id", "")), _nieruchomosci_conf(), hero, strona, rekord_wymuszony)
-	if oferta.is_empty() or not _oferta_miesci_sie_w_filtrze(oferta, filtry):
+	var strona_filtra := str(filtry.get("stan", "uzywany"))
+	var mieszane := strona_filtra != "nowy" and strona_filtra != "uzywany"
+	if not mieszane and strona_filtra != "nowy":
+		strona_filtra = "uzywany"
+	if not rekord_wymuszony.is_empty() and not _rekord_pasuje_do_filtra_dobra(rekord_wymuszony, filtry):
 		return {}
-	return oferta
+	for _proba in PROBY_DOBORU_REKORDU:
+		var strona := strona_filtra
+		if mieszane:
+			strona = "nowy" if rng.randf() < _udzial_nowych_dobr() else "uzywany"
+		var rekord: Dictionary = rekord_wymuszony
+		if rekord.is_empty():
+			if strona == "nowy":
+				rekord = _wolny_model_nowego(kat, oferty_istniejace, rng, filtry)
+			else:
+				rekord = _dobierz_uzywane_dobro(kat, rng, filtry)
+		if rekord.is_empty():
+			if strona == "nowy" and not mieszane:
+				return {}
+			continue
+		var cel: Dictionary = pula[rng.randi_range(0, pula.size() - 1)]
+		var oferta := _losuj_dobro(kat, cel, rng, str(hero.get("id", "")), _nieruchomosci_conf(), hero, strona, rekord)
+		if oferta.is_empty() or not _oferta_miesci_sie_w_filtrze(oferta, filtry):
+			continue
+		if not _rekord_pasuje_do_filtra_dobra(oferta, filtry):
+			continue
+		return oferta
+	return {}
 
 
 func _waznosc_ogloszenia_aut() -> int:
@@ -496,7 +530,9 @@ func _nowe_auto_w_filtrze(
 	var modele := _modele_marki(str(para.get("marka", "")), true, naped)
 	if modele.is_empty():
 		return {}
-	var rekord: Dictionary = modele[rng.randi_range(0, modele.size() - 1)]
+	var rekord: Dictionary = _losuj_rekord_wazony(modele, rng, false)
+	if rekord.is_empty():
+		return {}
 	var cel: Dictionary = para.get("miasto", {})
 	var oferta := _oferta_nowa_z_rekordu_katalogu(rekord, rng, cel, hero, mid)
 	if not _oferta_miesci_sie_w_filtrze(oferta, filtry):
@@ -2676,7 +2712,12 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 	if kat == "samolot" or kat == "smiglowiec_bojowy":
 		return _losuj_z_katalogu_pojazdu_specjalnego(kat, miasto, rng, miasto_gracza_id, conf, miasto_gracza)
 	var dane := wczytaj()
-	var z_kat := rekord_wymuszony if not rekord_wymuszony.is_empty() else _dobierz_z_katalogu_dobra(kat, rng)
+	var stan := "nowy" if rng.randf() < _udzial_nowych_dobr() else "uzywany"
+	if stan_wymuszony == "nowy" or stan_wymuszony == "uzywany":
+		stan = stan_wymuszony
+	var z_kat := rekord_wymuszony
+	if z_kat.is_empty():
+		z_kat = _dobierz_z_katalogu_dobra(kat, rng, stan == "uzywany")
 	var marki: Array = []
 	var modele: Array = []
 	if dane.get("pule_marek") is Dictionary and dane["pule_marek"].get(kat) is Array:
@@ -2689,9 +2730,6 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 		marka = str(marki[rng.randi_range(0, marki.size() - 1)]) if not marki.is_empty() else kat
 	if model == "":
 		model = str(modele[rng.randi_range(0, modele.size() - 1)]) if not modele.is_empty() else ""
-	var stan := "nowy" if rng.randf() < 0.4 else "uzywany"
-	if stan_wymuszony == "nowy" or stan_wymuszony == "uzywany":
-		stan = stan_wymuszony
 	var stany := _losuj_stany_jakosci(stan, rng)
 	var uzywa_lat := _kategoria_uzywa_lat(kat)
 	var lata := 0
@@ -2701,14 +2739,16 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 	else:
 		przebieg_km = _losuj_przebieg_km(kat, stan, rng)
 	var cena_dobra: Variant = null
+	var stan_dekl := int(stany.get("stan_deklarowany", 80))
 	if z_kat.get("cena_zl") is int or z_kat.get("cena_zl") is float:
-		cena_dobra = _cena_z_katalogu_wiekiem(float(z_kat["cena_zl"]), stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
-		cena_dobra = _cena_lub_null(zaokraglij_cene(kat, cena_dobra), cena_dobra)
+		cena_dobra = _cena_z_katalogu_wiekiem(float(z_kat["cena_zl"]), stan, lata, stan_dekl, rng, kat)
 	else:
-		cena_dobra = _cena_dobra(kat, stan, rng, int(stany.get("stan_deklarowany", 80)), przebieg_km)
+		cena_dobra = _cena_dobra(kat, stan, rng, stan_dekl, przebieg_km)
 		if uzywa_lat and (cena_dobra is int or cena_dobra is float):
-			cena_dobra = _cena_z_katalogu_wiekiem(float(cena_dobra), stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
-			cena_dobra = _cena_lub_null(zaokraglij_cene(kat, cena_dobra), cena_dobra)
+			cena_dobra = _cena_z_katalogu_wiekiem(float(cena_dobra), stan, lata, stan_dekl, rng, kat)
+	if cena_dobra is int or cena_dobra is float:
+		var obcieta := _ogranicz_pasmem_dobra(kat, stan, float(cena_dobra))
+		cena_dobra = _cena_lub_null(zaokraglij_cene(kat, obcieta), obcieta)
 	var mid := str(miasto.get("id", ""))
 	var to_gracz := mid != "" and mid == miasto_gracza_id
 	var hero_d := _bohater_do_odleglosci(miasto, miasto_gracza_id, miasto_gracza)
@@ -2720,7 +2760,8 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 		"nazwa": ("%s %s" % [marka, model]).strip_edges(),
 		"marka": marka,
 		"model": model,
-		"segment": str(z_kat.get("segment", z_kat.get("podkategoria", ""))),
+		"segment": _segment_oferty_dobra(kat, z_kat),
+		"segment_ceny": str(z_kat.get("segment", "")),
 		"stan": stan,
 		"stan_rzeczywisty": stany.get("stan_rzeczywisty"),
 		"stan_deklarowany": stany.get("stan_deklarowany"),
@@ -2762,7 +2803,7 @@ func _kategoria_uzywa_lat(kat: String) -> bool:
 	var dane := wczytaj()
 	if dane.get("katalogi_dobr") is Dictionary and dane["katalogi_dobr"].get("wiek_zamiast_przebiegu") is Array:
 		return kat in dane["katalogi_dobr"]["wiek_zamiast_przebiegu"]
-	return kat in ["telefon", "rower", "laptop", "komputer", "sprzet"]
+	return kat in ["telefon", "rower", "laptop", "komputer", "sprzet", "ksiazka"]
 
 
 func _losuj_lata_od_zakupu(stan: String, rng: RandomNumberGenerator) -> int:
@@ -2776,17 +2817,66 @@ func _losuj_lata_od_zakupu(stan: String, rng: RandomNumberGenerator) -> int:
 	return rng.randi_range(1, 8)
 
 
-func _cena_z_katalogu_wiekiem(baza: float, stan: String, lata: int, stan_dekl: int, rng: RandomNumberGenerator) -> float:
+func _cena_z_katalogu_wiekiem(baza: float, stan: String, lata: int, stan_dekl: int, rng: RandomNumberGenerator, kat: String = "") -> float:
 	var dane := wczytaj()
 	var conf: Dictionary = dane.get("lata_od_zakupu", {}) if dane.get("lata_od_zakupu") is Dictionary else {}
 	var v := baza
 	if stan == "uzywany":
-		var za_rok := float(conf.get("mnoznik_ceny_za_rok", 0.08))
-		var mn := float(conf.get("mnoznik_min", 0.35))
-		v *= maxf(mn, 1.0 - float(lata) * za_rok)
+		var kat_blok: Dictionary = {}
+		if conf.get("kategorie") is Dictionary and conf["kategorie"].get(kat) is Dictionary:
+			kat_blok = conf["kategorie"][kat]
+		if not kat_blok.is_empty():
+			var r1 := float(kat_blok.get("spadek_rok_1", 0.22))
+			var rk := float(kat_blok.get("spadek_kolejny", 0.06))
+			var mn := float(kat_blok.get("mnoznik_min", 0.35))
+			var retain := 1.0
+			var lata_n := maxi(lata, 0)
+			if lata_n >= 1:
+				retain *= maxf(0.0, 1.0 - r1)
+			if lata_n > 1:
+				retain *= pow(maxf(0.0, 1.0 - rk), float(lata_n - 1))
+			v *= maxf(mn, retain)
+		else:
+			var za_rok := float(conf.get("mnoznik_ceny_za_rok", 0.08))
+			var mn2 := float(conf.get("mnoznik_min", 0.35))
+			v *= maxf(mn2, 1.0 - float(lata) * za_rok)
 		v *= 0.85 + 0.15 * (float(clampi(stan_dekl, 0, 100)) / 100.0)
 		v *= rng.randf_range(0.92, 1.08)
 	return v
+
+
+## Sprzęt trzyma w segmencie oferty podkategorię (słuchawki, mysz), bo usterki filtrują po niej.
+## Drabinka budżet–flagowiec zostaje w polu segment katalogu i w segment_ceny oferty.
+func _segment_oferty_dobra(kat: String, z_kat: Dictionary) -> String:
+	var pod := str(z_kat.get("podkategoria", ""))
+	if kat == "sprzet" and pod != "":
+		return pod
+	var segment := str(z_kat.get("segment", ""))
+	if segment != "":
+		return segment
+	return pod
+
+
+## Pasmo dobra_cena_propozycja: klamra końcowej ceny katalogowej albo losowanie, gdy brak cena_zl.
+func _ogranicz_pasmem_dobra(kat: String, stan: String, cena: float) -> float:
+	var dane := wczytaj()
+	if not (dane.get("dobra_cena_propozycja") is Dictionary):
+		return cena
+	var blok: Variant = dane["dobra_cena_propozycja"].get(kat)
+	if not (blok is Dictionary):
+		return cena
+	var przedzial: Variant = blok.get(stan)
+	if not (przedzial is Array) or przedzial.size() < 2:
+		return cena
+	if not _liczba(przedzial[0]) or not _liczba(przedzial[1]):
+		return cena
+	var lo := float(przedzial[0])
+	var hi := float(przedzial[1])
+	if hi < lo:
+		var zamiana := lo
+		lo = hi
+		hi = zamiana
+	return clampf(cena, lo, hi)
 
 
 func _modele_katalogu_dobra(kat: String) -> Array:
@@ -2832,7 +2922,7 @@ func _id_modelu_katalogu(m: Dictionary, indeks: int) -> String:
 	return id
 
 
-func _wolny_model_nowego(kat: String, oferty: Array, rng: RandomNumberGenerator) -> Dictionary:
+func _wolne_modele_nowego(kat: String, oferty: Array, filtry: Dictionary = {}) -> Array:
 	## Jedna nowa oferta na model. Drugi zasięg nie dokłada kopii tego samego id.
 	var zajete := {}
 	for o in oferty:
@@ -2844,51 +2934,27 @@ func _wolny_model_nowego(kat: String, oferty: Array, rng: RandomNumberGenerator)
 		if kid != "":
 			zajete[kid] = true
 	var wolne: Array = []
-	var lista := _modele_katalogu_dobra(kat)
-	for i in lista.size():
-		var m: Variant = lista[i]
-		if not (m is Dictionary):
+	for m in _kandydaci_katalogu_dobra(kat, filtry, true):
+		var id := str(m.get("id", ""))
+		if id != "" and zajete.has(id):
 			continue
-		var id := _id_modelu_katalogu(m, i)
-		if zajete.has(id):
-			continue
-		var kopia: Dictionary = (m as Dictionary).duplicate()
-		kopia["id"] = id
-		wolne.append(kopia)
+		wolne.append(m)
+	return wolne
+
+
+func _wolny_model_nowego(kat: String, oferty: Array, rng: RandomNumberGenerator, filtry: Dictionary = {}) -> Dictionary:
+	var wolne := _wolne_modele_nowego(kat, oferty, filtry)
 	if wolne.is_empty():
 		return {}
-	return wolne[rng.randi_range(0, wolne.size() - 1)]
+	return _losuj_rekord_wazony(wolne, rng, false)
 
 
-func _dobierz_z_katalogu_dobra(kat: String, rng: RandomNumberGenerator) -> Dictionary:
-	var lista := _modele_katalogu_dobra(kat)
-	if lista.is_empty():
-		return {}
-	var wagi := {}
-	var po_id := {}
-	for i in lista.size():
-		var m: Variant = lista[i]
-		if not (m is Dictionary):
-			continue
-		var id := str(m.get("id", "i%d" % i))
-		var w := float(m.get("waga", 1))
-		if w <= 0.0:
-			continue
-		wagi[id] = w
-		po_id[id] = m
-	if wagi.is_empty():
-		return lista[rng.randi_range(0, lista.size() - 1)]
-	# Losowanie wagowe lokalne (bez Losowanie).
-	var suma := 0.0
-	for k in wagi.keys():
-		suma += float(wagi[k])
-	var r := rng.randf() * suma
-	var acc := 0.0
-	for k2 in wagi.keys():
-		acc += float(wagi[k2])
-		if r <= acc:
-			return po_id[k2]
-	return po_id[wagi.keys()[0]]
+func _dobierz_uzywane_dobro(kat: String, rng: RandomNumberGenerator, filtry: Dictionary = {}) -> Dictionary:
+	return _losuj_rekord_wazony(_kandydaci_katalogu_dobra(kat, filtry, false), rng, true)
+
+
+func _dobierz_z_katalogu_dobra(kat: String, rng: RandomNumberGenerator, preferuj_uzywane: bool = false) -> Dictionary:
+	return _losuj_rekord_wazony(_kandydaci_katalogu_dobra(kat, {}, not preferuj_uzywane), rng, preferuj_uzywane)
 
 
 func _losuj_z_katalogu_pojazdu_specjalnego(
@@ -2905,11 +2971,11 @@ func _losuj_z_katalogu_pojazdu_specjalnego(
 	var lata := 0 if stan == "nowy" else rng.randi_range(1, 15)
 	var cena: Variant = null
 	if rekord.get("cena_zl") is int or rekord.get("cena_zl") is float:
-		cena = _cena_z_katalogu_wiekiem(float(rekord["cena_zl"]), stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
+		cena = _cena_z_katalogu_wiekiem(float(rekord["cena_zl"]), stan, lata, int(stany.get("stan_deklarowany", 80)), rng, kat)
 		cena = _cena_lub_null(zaokraglij_cene(kat, cena), cena)
 	elif rekord.get("cena_usd") is int or rekord.get("cena_usd") is float:
 		# Szacunek PLN ≈ USD * 4 — tylko gdy katalog ma USD i brak PLN.
-		cena = _cena_z_katalogu_wiekiem(float(rekord["cena_usd"]) * 4.0, stan, lata, int(stany.get("stan_deklarowany", 80)), rng)
+		cena = _cena_z_katalogu_wiekiem(float(rekord["cena_usd"]) * 4.0, stan, lata, int(stany.get("stan_deklarowany", 80)), rng, kat)
 		cena = _cena_lub_null(zaokraglij_cene(kat, cena), cena)
 	else:
 		cena = _cena_dobra(kat, stan, rng, int(stany.get("stan_deklarowany", 80)), 0)
@@ -3108,36 +3174,103 @@ func _losuj_rekord_katalogu_aut(rng: RandomNumberGenerator, preferuj_uzywane: bo
 		modele = kat["modele"]
 	if modele.is_empty():
 		return {"marka": "Samochód", "model": "nieznany", "naped": "spalinowy", "spalanie": null, "cena_zl": null}
-	var wagi := {}
-	var po_id := {}
-	for i in modele.size():
-		var m: Variant = modele[i]
+	var rek := _losuj_rekord_wazony(modele, rng, preferuj_uzywane)
+	if not rek.is_empty():
+		return rek
+	var fallback: Variant = modele[rng.randi_range(0, modele.size() - 1)]
+	return fallback if fallback is Dictionary else {}
+
+
+## Jedno koło dla aut i dóbr. Waga <= 0 zostaje w puli z podłogą 0,1.
+## preferuj_uzywane dokłada ×1,35 rekordom tylko_uzywane.
+func _losuj_rekord_wazony(lista: Array, rng: RandomNumberGenerator, preferuj_uzywane: bool = false) -> Dictionary:
+	var rekordy: Array = []
+	var wagi: Array = []
+	for m in lista:
 		if not (m is Dictionary):
 			continue
-		var id := str(m.get("id", "m_%d" % i))
-		po_id[id] = m
-		var w := maxf(0.1, float(m.get("waga", 1)))
-		# Przy puli używanych lekko faworyzuj kotwice tylko_uzywane.
+		var w := maxf(PODLOGA_WAGI_KATALOGU, float(m.get("waga", 1)))
 		if preferuj_uzywane and bool(m.get("tylko_uzywane", false)):
-			w *= 1.35
-		wagi[id] = w
-	if wagi.is_empty():
-		var fallback: Variant = modele[rng.randi_range(0, modele.size() - 1)]
-		return fallback if fallback is Dictionary else {}
-	# Losowanie ważone — lokalne koło.
+			w *= MNOZNIK_TYLKO_UZYWANE
+		rekordy.append(m)
+		wagi.append(w)
+	if rekordy.is_empty():
+		return {}
 	var suma := 0.0
-	for k in wagi.keys():
-		suma += float(wagi[k])
+	for w in wagi:
+		suma += float(w)
+	if suma <= 0.0:
+		var awaryjny: Dictionary = rekordy[rng.randi_range(0, rekordy.size() - 1)]
+		return awaryjny
 	var r := rng.randf() * suma
-	var akum := 0.0
-	var wybrany := str(wagi.keys()[0])
-	for k in wagi.keys():
-		akum += float(wagi[k])
-		if r <= akum:
-			wybrany = str(k)
-			break
-	var rek: Variant = po_id.get(wybrany, {})
-	return rek if rek is Dictionary else {}
+	var acc := 0.0
+	for i in rekordy.size():
+		acc += float(wagi[i])
+		if r <= acc:
+			var wybrany: Dictionary = rekordy[i]
+			return wybrany
+	var ostatni: Dictionary = rekordy[rekordy.size() - 1]
+	return ostatni
+
+
+func _udzial_nowych_dobr() -> float:
+	var dane := wczytaj()
+	var blok: Variant = dane.get("udzial_ofert_dobr", {})
+	if blok is Dictionary and _liczba((blok as Dictionary).get("nowy")):
+		return clampf(float((blok as Dictionary).get("nowy")), 0.0, 1.0)
+	return 0.7
+
+
+func _rekord_pasuje_do_filtra_dobra(m: Dictionary, filtry: Dictionary) -> bool:
+	var marki := _normalizuj_filtr_marek(filtry.get("marki", []))
+	if not marki.is_empty() and not marki.has(str(m.get("marka", ""))):
+		return false
+	return true
+
+
+func _kandydaci_katalogu_dobra(kat: String, filtry: Dictionary, tylko_nowe: bool) -> Array:
+	var out: Array = []
+	var lista := _modele_katalogu_dobra(kat)
+	for i in lista.size():
+		var m: Variant = lista[i]
+		if not (m is Dictionary):
+			continue
+		if tylko_nowe and bool(m.get("tylko_uzywane", false)):
+			continue
+		var kopia: Dictionary = (m as Dictionary).duplicate()
+		kopia["id"] = _id_modelu_katalogu(m, i)
+		if not _rekord_pasuje_do_filtra_dobra(kopia, filtry):
+			continue
+		out.append(kopia)
+	return out
+
+
+func marki_katalogu_dobra(kat: String) -> Array:
+	var widziane := {}
+	var out: Array = []
+	for m in _modele_katalogu_dobra(kat):
+		if not (m is Dictionary):
+			continue
+		var marka := str(m.get("marka", "")).strip_edges()
+		if marka == "" or widziane.has(marka):
+			continue
+		widziane[marka] = true
+		out.append(marka)
+	out.sort()
+	return out
+
+
+func _zostalo_w_puli_dobr(swiat: Dictionary, stan: Dictionary, kat: String, poziom: String, strona: String) -> int:
+	var id := _id_ludnosci(stan, "")
+	var pula := pula_w_zasiegu(poziom, id, kat, strona)
+	if pula < 0:
+		return 1000000
+	return maxi(0, pula - ile_w_zasiegu(swiat, kat, poziom, strona))
+
+
+func _przytnij_porcje_mieszana_dobr(swiat: Dictionary, stan: Dictionary, kat: String, poziom: String, porcja: int) -> int:
+	var zostalo := _zostalo_w_puli_dobr(swiat, stan, kat, poziom, "nowy") + _zostalo_w_puli_dobr(swiat, stan, kat, poziom, "uzywany")
+	return mini(porcja, maxi(0, zostalo))
 
 
 ## Nowe: jeden wiersz na model i na miasto z listy salonów. Bez listy — brak salonu w Polsce.

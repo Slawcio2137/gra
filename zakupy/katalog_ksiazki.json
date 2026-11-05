@@ -1,14 +1,21 @@
 {
-	"opis": "Książki — przykładowa pula tytułów / gatunków do losowania ofert.",
+	"opis": "Książki na wzór katalog_aut_*.json. Tablica zostaje tytuly, bo tak czyta generator. marka to autor, model to tytuł. Segment to drabinka ceny (budżet → średnia → premium → flagowiec), gatunek jest obok, jak napęd przy aucie. Ceny to rząd okładki w PL, nie odczyt karty Empiku: szacunek true.",
 	"kategoria": "ksiazka",
 	"propozycja_do_poprawki": true,
+	"segmenty": ["budzet", "srednia", "premium", "flagowiec"],
 	"gatunki": ["beletrystyka", "popularnonaukowa", "podrecznik", "komiks", "biografia"],
 	"tytuly": [
-		{"id": "lektura_szkolna", "nazwa": "Lektura szkolna (używana)", "gatunek": "podrecznik", "cena_zl": 19, "szacunek": true, "waga": 12},
-		{"id": "powiesc_pl", "nazwa": "Powieść współczesna PL", "gatunek": "beletrystyka", "cena_zl": 42, "szacunek": true, "waga": 10},
-		{"id": "kosmos_pop", "nazwa": "Kosmos dla laika", "gatunek": "popularnonaukowa", "cena_zl": 49, "szacunek": true, "waga": 6},
-		{"id": "auta_historia", "nazwa": "Historia motoryzacji", "gatunek": "popularnonaukowa", "cena_zl": 59, "szacunek": true, "waga": 5},
-		{"id": "komiks_tom", "nazwa": "Komiks — tom 1", "gatunek": "komiks", "cena_zl": 35, "szacunek": true, "waga": 7},
-		{"id": "biografia_sport", "nazwa": "Biografia sportowca", "gatunek": "biografia", "cena_zl": 45, "szacunek": true, "waga": 4}
+		{"id": "sienkiewicz_quo_vadis", "marka": "Henryk Sienkiewicz", "model": "Quo vadis", "nazwa": "Quo vadis", "segment": "budzet", "gatunek": "beletrystyka", "cena_zl": 25, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Wydanie kieszonkowe lektury. 25 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 8},
+		{"id": "mroz_listy", "marka": "Remigiusz Mróz", "model": "Listy zza grobu", "nazwa": "Listy zza grobu", "segment": "budzet", "gatunek": "beletrystyka", "cena_zl": 40, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Kryminał kieszonkowy. 40 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 12},
+		{"id": "rowling_kamien", "marka": "J.K. Rowling", "model": "Harry Potter i Kamień Filozoficzny", "nazwa": "Harry Potter i Kamień Filozoficzny", "segment": "budzet", "gatunek": "beletrystyka", "cena_zl": 45, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Wydanie jednotomowe. 45 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 11},
+		{"id": "sapkowski_ostatnie", "marka": "Andrzej Sapkowski", "model": "Ostatnie życzenie", "nazwa": "Ostatnie życzenie", "segment": "budzet", "gatunek": "beletrystyka", "cena_zl": 45, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Wiedźmin, tom opowiadań. 45 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 12},
+		{"id": "twardoch_krol", "marka": "Szczepan Twardoch", "model": "Król", "nazwa": "Król", "segment": "srednia", "gatunek": "beletrystyka", "cena_zl": 50, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Powieść. 50 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 6},
+		{"id": "tokarczuk_empuzjon", "marka": "Olga Tokarczuk", "model": "Empuzjon", "nazwa": "Empuzjon", "segment": "srednia", "gatunek": "beletrystyka", "cena_zl": 55, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Powieść. 55 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 7},
+		{"id": "harari_sapiens", "marka": "Yuval Noah Harari", "model": "Sapiens", "nazwa": "Sapiens", "segment": "srednia", "gatunek": "popularnonaukowa", "cena_zl": 60, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Sapiens. Od zwierząt do bogów. 60 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 8},
+		{"id": "king_to", "marka": "Stephen King", "model": "To", "nazwa": "To", "segment": "premium", "gatunek": "beletrystyka", "cena_zl": 70, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Powieść gruby tom. 70 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 5},
+		{"id": "tolkien_wladca", "marka": "J.R.R. Tolkien", "model": "Władca Pierścieni", "nazwa": "Władca Pierścieni", "segment": "premium", "gatunek": "beletrystyka", "cena_zl": 90, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Wydanie jednotomowe. 90 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 6},
+		{"id": "sapkowski_kompendium", "marka": "Andrzej Sapkowski", "model": "Wiedźmin. Kompendium", "nazwa": "Wiedźmin. Kompendium", "segment": "premium", "gatunek": "popularnonaukowa", "cena_zl": 100, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Album / kompendium. 100 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 4},
+		{"id": "tolkien_komplet", "marka": "J.R.R. Tolkien", "model": "Władca Pierścieni. Komplet", "nazwa": "Władca Pierścieni. Komplet", "segment": "flagowiec", "gatunek": "beletrystyka", "cena_zl": 150, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Trzy tomy w etui. 150 zł to rząd cen kompletu, nie odczyt karty.", "rok_cennika": 2026, "waga": 3},
+		{"id": "gray_anatomia", "marka": "Henry Gray", "model": "Anatomia Gray", "nazwa": "Anatomia Gray", "segment": "flagowiec", "gatunek": "podrecznik", "cena_zl": 180, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Podręcznik medyczny, wydanie duże. 180 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 2}
 	]
 }

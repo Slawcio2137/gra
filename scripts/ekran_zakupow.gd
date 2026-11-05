@@ -430,6 +430,8 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 			_przerysuj_liste_zakupow(kat_id, h._zakupy_stan_filtr, etykiety, nieruchomosc)
 		)
 		panel_filtr.add_child(opcje_odbior)
+		if h._rynek_zakupow.kategoria_drobna(kat_id):
+			_dodaj_filtr_marek_dobr(panel_filtr, kat_id, etykiety, nieruchomosc)
 	# Samochód: przebieg min–max; multi-select marek (puste = wszystkie) + napęd dla nowych.
 	if kat_id == "samochod":
 		panel_filtr.add_child(h._ui._napis_ekranu("Sortuj cenę:", 17))
@@ -568,6 +570,8 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		marki_f = h._zakupy_filtr_marki.duplicate()
 		if stan_filtr == "nowy" or stan_filtr == "":
 			naped_f = h._zakupy_filtr_naped
+	elif h._rynek_zakupow.kategoria_drobna(kat_id):
+		marki_f = h._zakupy_filtr_marki.duplicate()
 	var stan_listy = stan_filtr if (not nieruchomosc or h._rynek_zakupow.kategoria_ma_nowe_lokum(kat_id)) else ""
 	var z_poziomem = kat_id == "samochod" or nieruchomosc or h._rynek_zakupow.kategoria_drobna(kat_id)
 	var oferty = h._rynek_zakupow.oferty_filtrowane(
@@ -1140,6 +1144,32 @@ func _on_zakupy_filtr_ceny(od: float, dokad: float) -> void:
 		h._zakupy_licznik_do.text = "max: %d" % int(dokad)
 
 
+func _dodaj_filtr_marek_dobr(panel_filtr: VBoxContainer, kat_id: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
+	panel_filtr.add_child(h._ui._napis_ekranu("Marki (kilka naraz; puste = wszystkie):", 17))
+	var marki: Array = h._rynek_zakupow.marki_katalogu_dobra(kat_id)
+	var szukaj_marek := LineEdit.new()
+	szukaj_marek.placeholder_text = "Szukaj marki…"
+	szukaj_marek.clear_button_enabled = true
+	szukaj_marek.custom_minimum_size = Vector2(0, 40)
+	szukaj_marek.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	szukaj_marek.add_theme_font_size_override("font_size", 17)
+	panel_filtr.add_child(szukaj_marek)
+	var scroll_marek := ScrollContainer.new()
+	scroll_marek.custom_minimum_size = Vector2(0, mini(180, 36 + marki.size() * 34))
+	scroll_marek.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var kol_marek := VBoxContainer.new()
+	kol_marek.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	kol_marek.add_theme_constant_override("separation", 4)
+	scroll_marek.add_child(kol_marek)
+	var odswiez_liste_marek := func(zapytanie: String) -> void:
+		_wypelnij_checkboxy_marek(kol_marek, marki, zapytanie, kat_id, etykiety, nieruchomosc)
+	szukaj_marek.text_changed.connect(func(t: String) -> void:
+		odswiez_liste_marek.call(t)
+	)
+	odswiez_liste_marek.call("")
+	panel_filtr.add_child(scroll_marek)
+
+
 ## Prefiks (begins_with) najpierw, potem contains; puste = cała lista. Bez zmiany wielkości liter.
 static func marki_pasujace_do_szukania(marki: Array, zapytanie: String) -> Array:
 	var q := zapytanie.strip_edges().to_lower()
@@ -1226,6 +1256,13 @@ func _odswiez_napis_puli_zakupow(kat_id: String) -> void:
 		h._zakupy_pula_lbl.visible = true
 		h._zakupy_pula_lbl.text = "Nowe auta: salony, bez puli z ludności."
 		return
+	if h._rynek_zakupow.kategoria_drobna(kat_id) and h._zakupy_stan_filtr == "":
+		var miejsce: String = h._stan._id_miejsca_pobytu()
+		var n_nowe: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, "nowy")
+		var n_uzywane: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, "uzywany")
+		h._zakupy_pula_lbl.visible = true
+		h._zakupy_pula_lbl.text = "Ogłoszeń w tym zasięgu: %d nowych i %d używanych. Wszystkie losuje udział nowych z ustawień." % [n_nowe, n_uzywane]
+		return
 	var strona := _strona_puli_zakupow(kat_id)
 	var n: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, h._stan._id_miejsca_pobytu(), kat_id, strona)
 	if n < 0:
@@ -1240,11 +1277,22 @@ func _odswiez_napis_puli_zakupow(kat_id: String) -> void:
 func _dodaj_przycisk_kolejnych_zakupow(tresc: Node, kat_id: String) -> void:
 	if not h._rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
 		return
-	var strona := _strona_puli_zakupow(kat_id)
-	var pula: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, h._stan._id_miejsca_pobytu(), kat_id, strona)
-	var jest: int = h._rynek_zakupow.ile_w_zasiegu(h._swiat, kat_id, h._zakupy_zasieg_poziom, strona)
-	if pula < 0 or jest >= pula:
-		return
+	var miejsce: String = h._stan._id_miejsca_pobytu()
+	if h._rynek_zakupow.kategoria_drobna(kat_id) and h._zakupy_stan_filtr == "":
+		var pula_n: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, "nowy")
+		var pula_u: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, "uzywany")
+		var jest_n: int = h._rynek_zakupow.ile_w_zasiegu(h._swiat, kat_id, h._zakupy_zasieg_poziom, "nowy")
+		var jest_u: int = h._rynek_zakupow.ile_w_zasiegu(h._swiat, kat_id, h._zakupy_zasieg_poziom, "uzywany")
+		var nowe_pelne := pula_n < 0 or jest_n >= pula_n
+		var uzywane_pelne := pula_u < 0 or jest_u >= pula_u
+		if nowe_pelne and uzywane_pelne:
+			return
+	else:
+		var strona := _strona_puli_zakupow(kat_id)
+		var pula: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, strona)
+		var jest: int = h._rynek_zakupow.ile_w_zasiegu(h._swiat, kat_id, h._zakupy_zasieg_poziom, strona)
+		if pula < 0 or jest >= pula:
+			return
 	var b := Button.new()
 	b.text = "Pokaż kolejne"
 	b.custom_minimum_size = Vector2(0, 44)
@@ -1385,13 +1433,16 @@ func _strona_generacji_lokum() -> String:
 
 
 func _strona_generacji_dobr() -> String:
-	if h._zakupy_stan_filtr == "nowy":
-		return "nowy"
-	return "uzywany"
+	if h._zakupy_stan_filtr == "nowy" or h._zakupy_stan_filtr == "uzywany":
+		return h._zakupy_stan_filtr
+	return ""
 
 
 func _filtry_dobra() -> Dictionary:
 	var filtr_c = h._zakupy_filtr_ceny_wlaczony and h._zakupy_filtr_do >= h._zakupy_filtr_od
+	var marki: Array = []
+	if h._rynek_zakupow.kategoria_drobna(h._zakupy_kat_id):
+		marki = h._zakupy_filtr_marki.duplicate()
 	return {
 		"poziom": h._zakupy_zasieg_poziom,
 		"km": h._zakupy_zasieg_km,
@@ -1400,6 +1451,7 @@ func _filtry_dobra() -> Dictionary:
 		"cena_od": h._zakupy_filtr_od,
 		"cena_do": h._zakupy_filtr_do if filtr_c else 1.0e12,
 		"filtruj_cene": filtr_c,
+		"marki": marki,
 		"tydzien": int(h._swiat.get("tydzien", 1)),
 	}
 
@@ -1418,9 +1470,9 @@ func _uzupelnij_dobra_do_okna() -> int:
 		0.0,
 		1.0e12,
 		false,
-		[],
+		filtry.get("marki", []),
 		"",
-		str(filtry["poziom"])
+		str(filtry["poziom"]),
 	)
 	var brak = h._rynek_zakupow.limit_okna_aut() - jest.size()
 	if brak <= 0:
@@ -1499,6 +1551,8 @@ func _oferty_na_liscie_zakupow() -> Array:
 		marki_f = h._zakupy_filtr_marki.duplicate()
 		if h._zakupy_stan_filtr == "nowy" or h._zakupy_stan_filtr == "":
 			naped_f = h._zakupy_filtr_naped
+	elif h._rynek_zakupow.kategoria_drobna(kat_id):
+		marki_f = h._zakupy_filtr_marki.duplicate()
 	return h._rynek_zakupow.oferty_filtrowane(
 		h._swiat,
 		kat_id,
@@ -1513,7 +1567,7 @@ func _oferty_na_liscie_zakupow() -> Array:
 		filtr_p,
 		marki_f,
 		naped_f,
-		h._zakupy_zasieg_poziom if kat_id == "samochod" or nieruchomosc or h._rynek_zakupow.kategoria_drobna(kat_id) else ""
+		h._zakupy_zasieg_poziom if kat_id == "samochod" or nieruchomosc or h._rynek_zakupow.kategoria_drobna(kat_id) else "",
 	)
 
 

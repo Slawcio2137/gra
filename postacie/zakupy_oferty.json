@@ -151,11 +151,11 @@
 		"smiglowiec_bojowy": ["Boeing", "Airbus Helicopters", "Mil", "Leonardo"]
 	},
 	"pule_modeli": {
-		"telefon": ["A15", "Redmi Note", "Galaxy A", "iPhone SE", "G84", "Pixel-like"],
-		"laptop": ["IdeaPad", "VivoBook", "Pavilion", "Inspiron", "MacBook Air", "Swift"],
-		"komputer": ["biurowy", "domowy", "mini-PC", "gaming"],
+		"telefon": ["Galaxy A16", "Redmi Note 14", "moto g85", "iPhone 16", "Pixel 9a", "Galaxy S25"],
+		"laptop": ["IdeaPad Slim 3", "VivoBook 15", "ThinkPad E14", "TUF Gaming A15", "MacBook Air", "Legion 5"],
+		"komputer": ["OptiPlex 7020", "ThinkCentre M70q", "ProDesk 400", "Legion T5", "ROG Strix"],
 		"samochod": ["(modele z katalog_aut_pl.json)"],
-		"rower": ["miejski", "trekking", "MTB"],
+		"rower": ["Hexagon", "Trans", "Wagant", "Crossway", "Aim"],
 		"sprzet": ["słuchawki", "klawiatura", "mysz", "mikrofon"],
 		"samolot": ["(katalog_samoloty.json)"],
 		"smiglowiec_bojowy": ["(katalog_smiglowce_bojowe.json)"]
@@ -169,7 +169,7 @@
 		"sprzet": "res://zakupy/katalog_sprzet.json",
 		"samolot": "res://pojazdy/katalog_samoloty.json",
 		"smiglowiec_bojowy": "res://pojazdy/katalog_smiglowce_bojowe.json",
-		"wiek_zamiast_przebiegu": ["telefon", "rower", "laptop", "komputer", "sprzet"],
+		"wiek_zamiast_przebiegu": ["telefon", "rower", "laptop", "komputer", "sprzet", "ksiazka"],
 		"uwaga": "Używane: lata_od_zakupu zamiast przebiegu_km. Nowe = 0."
 	},
 	"pule_drobne": {
@@ -435,27 +435,42 @@
 			}
 		}
 	},
+	"udzial_ofert_dobr": {
+		"propozycja_do_poprawki": true,
+		"opis": "Zakładka Wszystkie (pusty stan filtra) losuje ten udział nowych. Używany i Nowy wymuszają stan i udział wtedy nie wchodzi. Samochody mają własny los.",
+		"nowy": 0.7,
+		"uzywany": 0.3
+	},
 	"dobra_cena_propozycja": {
 		"propozycja_do_poprawki": true,
 		"to_nie_gus": true,
-		"telefon": {"nowy": [800, 4500], "uzywany": [200, 2200]},
-		"laptop": {"nowy": [1800, 7000], "uzywany": [500, 3500]},
-		"komputer": {"nowy": [1500, 6000], "uzywany": [400, 2800]},
-		"rower": {"nowy": [600, 3500], "uzywany": [150, 1500]},
+		"rola": "Gdy rekord katalogu ma cena_zl, pasmo jest klamrą końcowej ceny (nowej i używanej) po wieku, stanie i szumie, a przed zaokrągleniem. Gdy cena_zl brak, _cena_dobra losuje bazę z tego samego pasma. Pasmo nie zastępuje cennika.",
+		"telefon": {"nowy": [450, 9000], "uzywany": [180, 5500]},
+		"laptop": {"nowy": [1500, 14000], "uzywany": [400, 11000]},
+		"komputer": {"nowy": [1600, 18000], "uzywany": [500, 14000]},
+		"rower": {"nowy": [900, 16000], "uzywany": [350, 14000]},
 		"samochod": {"nowy": [60000, 180000], "uzywany": [2500, 90000]},
-		"ksiazka": {"nowy": [25, 89], "uzywany": [5, 40]},
-		"sprzet": {"nowy": [50, 600], "uzywany": [20, 350]},
+		"ksiazka": {"nowy": [15, 200], "uzywany": [8, 120]},
+		"sprzet": {"nowy": [40, 2800], "uzywany": [15, 2400]},
 		"samolot": {"nowy": [20000000, 140000000], "uzywany": [8000000, 90000000], "uwaga": "Szacunek z katalog_samoloty; militarne osobno często null."},
 		"smiglowiec_bojowy": {"nowy": null, "uzywany": null, "uwaga": "Ceny militarne — nie zmyślać; null gdy brak źródła."},
 		"uwaga_auta_tanie": "propozycja_do_poprawki. Pasmo 2500–90000 tylko gdy brak ceny katalogowej. Auto z katalogu nie spada do 2 tys. przez sufit."
 	},
 	"lata_od_zakupu": {
 		"propozycja_do_poprawki": true,
-		"opis": "Dla telefon/rower/PC/sprzęt: zamiast przebiegu. Nowe = 0.",
+		"opis": "Dla telefon/rower/PC/laptop/sprzęt/książka: zamiast przebiegu. Nowe = 0. Używane: mocniejszy spadek w pierwszym roku, potem łagodniejszy, z podłogą kategorii. mnoznik_ceny_za_rok i mnoznik_min zostają dla kategorii bez własnego bloku (samolot, śmigłowiec).",
 		"nowy": 0,
 		"uzywany": {"od": 1, "do": 8},
 		"mnoznik_ceny_za_rok": 0.08,
-		"mnoznik_min": 0.35
+		"mnoznik_min": 0.35,
+		"kategorie": {
+			"telefon": {"spadek_rok_1": 0.28, "spadek_kolejny": 0.06, "mnoznik_min": 0.42},
+			"laptop": {"spadek_rok_1": 0.22, "spadek_kolejny": 0.07, "mnoznik_min": 0.34},
+			"komputer": {"spadek_rok_1": 0.18, "spadek_kolejny": 0.05, "mnoznik_min": 0.40},
+			"rower": {"spadek_rok_1": 0.15, "spadek_kolejny": 0.045, "mnoznik_min": 0.55},
+			"sprzet": {"spadek_rok_1": 0.20, "spadek_kolejny": 0.06, "mnoznik_min": 0.35},
+			"ksiazka": {"spadek_rok_1": 0.40, "spadek_kolejny": 0.08, "mnoznik_min": 0.25}
+		}
 	},
 	"auta": {
 		"propozycja_do_poprawki": true,
