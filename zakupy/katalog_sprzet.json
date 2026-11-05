@@ -1,16 +1,26 @@
 {
-	"opis": "Sprzęt peryferyjny — osobna zakładka w Zakupach: słuchawki, klawiatura, mysz, mikrofon.",
+	"opis": "Sprzęt na wzór katalog_aut_*.json. Podkategoria (słuchawki, klawiatura, mysz, mikrofon) zostaje, bo usterki filtrują po niej. Segment to osobna drabinka ceny: budżet → średnia → premium → flagowiec. Oferta wpisuje podkategorię w pole segment (filtr usterek), a szczebel ceny w segment_ceny.",
 	"kategoria": "sprzet",
 	"propozycja_do_poprawki": true,
+	"segmenty": ["budzet", "srednia", "premium", "flagowiec"],
 	"podkategorie": ["sluchawki", "klawiatura", "mysz", "mikrofon"],
 	"modele": [
-		{"id": "sluch_budzet", "podkategoria": "sluchawki", "marka": "Sony-like", "model": "WH-budżet", "cena_zl": 199, "szacunek": true, "zrodlo": "https://www.x-kom.pl/", "waga": 10},
-		{"id": "sluch_gaming", "podkategoria": "sluchawki", "marka": "HyperX-like", "model": "Cloud", "cena_zl": 349, "szacunek": true, "zrodlo": "https://hyperx.com/", "waga": 7},
-		{"id": "klaw_membran", "podkategoria": "klawiatura", "marka": "Logitech-like", "model": "K120", "cena_zl": 79, "szacunek": true, "zrodlo": "https://www.logitech.com/", "waga": 11},
-		{"id": "klaw_mech", "podkategoria": "klawiatura", "marka": "Keychron-like", "model": "mech 75%", "cena_zl": 429, "szacunek": true, "zrodlo": "https://www.keychron.com/", "waga": 5},
-		{"id": "mysz_biuro", "podkategoria": "mysz", "marka": "Logitech-like", "model": "M185", "cena_zl": 69, "szacunek": true, "zrodlo": "https://www.logitech.com/", "waga": 12},
-		{"id": "mysz_gaming", "podkategoria": "mysz", "marka": "Razer-like", "model": "DeathAdder-like", "cena_zl": 249, "szacunek": true, "zrodlo": "https://www.razer.com/", "waga": 6},
-		{"id": "mikro_usb", "podkategoria": "mikrofon", "marka": "Fifine-like", "model": "USB desk", "cena_zl": 159, "szacunek": true, "zrodlo": "https://fifine.com/", "waga": 8},
-		{"id": "mikro_streamer", "podkategoria": "mikrofon", "marka": "Blue-like", "model": "Yeti-like", "cena_zl": 549, "szacunek": true, "zrodlo": "https://www.bluemic.com/", "waga": 4}
+		{"id": "logitech_m185", "podkategoria": "mysz", "marka": "Logitech", "model": "M185", "segment": "budzet", "cena_zl": 69, "szacunek": true, "zrodlo": "https://www.logitech.com/pl-pl", "zrodlo_opis": "M185. 69 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 14},
+		{"id": "logitech_k120", "podkategoria": "klawiatura", "marka": "Logitech", "model": "K120", "segment": "budzet", "cena_zl": 89, "szacunek": true, "zrodlo": "https://www.logitech.com/pl-pl", "zrodlo_opis": "K120. 89 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 14},
+		{"id": "fifine_k669b", "podkategoria": "mikrofon", "marka": "Fifine", "model": "K669B", "segment": "budzet", "cena_zl": 129, "szacunek": true, "zrodlo": "https://fifine.com/", "zrodlo_opis": "K669B. 129 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 8},
+		{"id": "sony_wh_ch520", "podkategoria": "sluchawki", "marka": "Sony", "model": "WH-CH520", "segment": "budzet", "cena_zl": 149, "szacunek": true, "zrodlo": "https://www.sony.pl/", "zrodlo_opis": "WH-CH520. 149 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 10},
+		{"id": "logitech_k380", "podkategoria": "klawiatura", "marka": "Logitech", "model": "K380", "segment": "srednia", "cena_zl": 179, "szacunek": true, "zrodlo": "https://www.logitech.com/pl-pl", "zrodlo_opis": "K380. 179 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 8},
+		{"id": "logitech_g305", "podkategoria": "mysz", "marka": "Logitech", "model": "G305", "segment": "srednia", "cena_zl": 199, "szacunek": true, "zrodlo": "https://www.logitechg.com/pl-pl", "zrodlo_opis": "G305. 199 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 7},
+		{"id": "fifine_am8", "podkategoria": "mikrofon", "marka": "Fifine", "model": "AM8", "segment": "srednia", "cena_zl": 249, "szacunek": true, "zrodlo": "https://fifine.com/", "zrodlo_opis": "AM8. 249 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 5},
+		{"id": "sony_wh_ch720n", "podkategoria": "sluchawki", "marka": "Sony", "model": "WH-CH720N", "segment": "srednia", "cena_zl": 349, "szacunek": true, "zrodlo": "https://www.sony.pl/", "zrodlo_opis": "WH-CH720N. 349 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 8},
+		{"id": "hyperx_cloud_3", "podkategoria": "sluchawki", "marka": "HyperX", "model": "Cloud III", "segment": "srednia", "cena_zl": 399, "szacunek": true, "zrodlo": "https://hyperx.com/", "zrodlo_opis": "Cloud III. 399 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 6},
+		{"id": "razer_deathadder_v3", "podkategoria": "mysz", "marka": "Razer", "model": "DeathAdder V3", "segment": "premium", "cena_zl": 349, "szacunek": true, "zrodlo": "https://www.razer.com/", "zrodlo_opis": "DeathAdder V3. 349 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 5},
+		{"id": "keychron_k2", "podkategoria": "klawiatura", "marka": "Keychron", "model": "K2", "segment": "premium", "cena_zl": 449, "szacunek": true, "zrodlo": "https://www.keychron.com/", "zrodlo_opis": "Keychron K2. 449 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 4},
+		{"id": "logitech_yeti", "podkategoria": "mikrofon", "marka": "Logitech", "model": "Blue Yeti", "segment": "premium", "cena_zl": 549, "szacunek": true, "zrodlo": "https://www.logitech.com/pl-pl", "zrodlo_opis": "Blue Yeti. 549 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 4},
+		{"id": "sony_wh_1000xm5", "podkategoria": "sluchawki", "marka": "Sony", "model": "WH-1000XM5", "segment": "premium", "cena_zl": 1299, "szacunek": true, "zrodlo": "https://www.sony.pl/", "zrodlo_opis": "WH-1000XM5. 1299 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 4},
+		{"id": "logitech_gpro_superlight_2", "podkategoria": "mysz", "marka": "Logitech", "model": "G Pro X Superlight 2", "segment": "flagowiec", "cena_zl": 649, "szacunek": true, "zrodlo": "https://www.logitechg.com/pl-pl", "zrodlo_opis": "G Pro X Superlight 2. 649 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 3},
+		{"id": "keychron_q1", "podkategoria": "klawiatura", "marka": "Keychron", "model": "Q1", "segment": "flagowiec", "cena_zl": 899, "szacunek": true, "zrodlo": "https://www.keychron.com/", "zrodlo_opis": "Keychron Q1. 899 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 2},
+		{"id": "shure_sm7b", "podkategoria": "mikrofon", "marka": "Shure", "model": "SM7B", "segment": "flagowiec", "cena_zl": 1799, "szacunek": true, "zrodlo": "https://www.shure.com/", "zrodlo_opis": "SM7B. 1799 zł to rząd cen PL, nie odczyt karty SKU.", "rok_cennika": 2026, "waga": 2},
+		{"id": "apple_airpods_max", "podkategoria": "sluchawki", "marka": "Apple", "model": "AirPods Max", "segment": "flagowiec", "cena_zl": 2499, "szacunek": true, "zrodlo": "https://www.apple.com/pl/airpods-max/", "zrodlo_opis": "AirPods Max. 2499 zł to rząd cen PL, nie odczyt apple.com dla aktualnej półki.", "rok_cennika": 2026, "waga": 2}
 	]
 }

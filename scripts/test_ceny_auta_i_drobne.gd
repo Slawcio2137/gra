@@ -182,12 +182,17 @@ func _uruchom() -> int:
 	if wysylka < 1:
 		printerr("FAIL: brak telefonu z wysyłką w oknie Polski")
 		return 1
-	var nowe_n: int = rynek.uzupelnij_okno_dobr(swiat, miasta, {
-		"poziom": "miasto",
-		"km": 9999.0,
-		"kategoria": "telefon",
-		"stan": "nowy",
-	}, 8)
+	var nowe_n := 0
+	for _krok_n in 6:
+		var porcja_n: int = rynek.uzupelnij_okno_dobr(swiat, miasta, {
+			"poziom": "miasto",
+			"km": 9999.0,
+			"kategoria": "telefon",
+			"stan": "nowy",
+		}, 16)
+		nowe_n += porcja_n
+		if porcja_n <= 0 or nowe_n >= modele_tel:
+			break
 	if nowe_n != modele_tel:
 		printerr("FAIL: nowe telefony w mieście ", nowe_n, " katalog ", modele_tel)
 		return 1
@@ -224,12 +229,17 @@ func _uruchom() -> int:
 			"oferty": [],
 		},
 	}
-	var nowe_pl: int = rynek.uzupelnij_okno_dobr(swiat_pl, miasta, {
-		"poziom": "polska",
-		"km": 9999.0,
-		"kategoria": "telefon",
-		"stan": "nowy",
-	}, 30)
+	var nowe_pl := 0
+	for _krok_pl in 6:
+		var porcja_pl: int = rynek.uzupelnij_okno_dobr(swiat_pl, miasta, {
+			"poziom": "polska",
+			"km": 9999.0,
+			"kategoria": "telefon",
+			"stan": "nowy",
+		}, 16)
+		nowe_pl += porcja_pl
+		if porcja_pl <= 0 or nowe_pl >= modele_tel:
+			break
 	if nowe_pl != modele_tel:
 		printerr("FAIL: Polska nowych telefonów ", nowe_pl, " katalog ", modele_tel)
 		return 1
