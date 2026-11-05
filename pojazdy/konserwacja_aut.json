@@ -8,6 +8,53 @@
 		"opony_zuzycie_tydzien": 0.8,
 		"olej_zuzycie_tydzien": 1.5
 	},
+	"zuzycie_od_km": {
+		"opis": "Stojące auto bierze postoj_udzial jazdy. Jednostki: punkty stanu na 1000 km.",
+		"km_na_dzien_jazdy": 35,
+		"postoj_km_na_tydzien": 8,
+		"postoj_udzial": 0.2,
+		"olej_na_1000_km": 14,
+		"filtry_na_1000_km": 8,
+		"opony_na_1000_km": 6
+	},
+	"starzenie": {
+		"rok_odniesienia": 2026,
+		"pasek_na_rok": 8,
+		"wspolczynnik_wieku_auta": 0.08,
+		"opony_guma_na_rok": 5,
+		"rdza_szansa_na_rok_wieku": 0.012,
+		"rdza_szansa_na_tydzien": 0.001
+	},
+	"awaria_od_stanu": {
+		"bazowa_szansa": 0.025,
+		"na_100000_km": 0.03,
+		"olej_ponizej": 25,
+		"bonus_olej": 0.05,
+		"filtry_ponizej": 30,
+		"bonus_filtry": 0.02,
+		"opony_ponizej": 30,
+		"bonus_opony": 0.015,
+		"mnoznik_tier_tani": 1.6,
+		"sufit": 0.85
+	},
+	"modyfikatory_wag": {
+		"olej_krytyczny_ponizej": 8,
+		"zatarcie_gdy_olej_krytyczny": 8.0,
+		"rdza_bez_konserwacji_zimowej": 4.0,
+		"przebieg_prog_km": 150000,
+		"przy_duzym_przebiegu": {
+			"pasek_rozrzadu": 3.0,
+			"sprezglo": 3.0,
+			"zawieszenie": 3.0
+		}
+	},
+	"diagnoza_czesci": {
+		"opis": "Stan 100 = nowe, 0 = pad. Diagnoza bierze najgorszą część poniżej progu.",
+		"prog_zle": 15,
+		"olej_jako": "zatarcie",
+		"opony_jako": "peknieta_opona",
+		"rdza_jako": "rdza"
+	},
 	"efekty": {
 		"brak_oleju_szansa_zatarcia": 0.08,
 		"zima_bez_konserwacji_szansa_rdzy": 0.05,

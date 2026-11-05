@@ -22,10 +22,18 @@ func _efekt_konserwacji_auta_tydzien() -> void:
 	else:
 		var k := KonserwacjaAuta.new()
 		stan_k = k.stan_startowy()
+	auto["konserwacja"] = stan_k
+	var kon := KonserwacjaAuta.new()
+	kon.wczytaj()
+	var zuzycie: Dictionary = kon.dane.get("zuzycie_od_km", {}) if kon.dane.get("zuzycie_od_km") is Dictionary else {}
+	var dni := int(h._swiat.get("dni_auta", 0))
+	var km := float(dni) * float(zuzycie.get("km_na_dzien_jazdy", 35)) if dni > 0 else float(zuzycie.get("postoj_km_na_tydzien", 8))
+	h._rynek_zakupow.nalicz_zuzycie_przejazdu(auto, km, dni > 0)
+	var starzenie: Dictionary = h._rynek_zakupow.starzej_auto_tydzien(auto)
+	stan_k = auto.get("konserwacja", stan_k)
 	var bylo_zatarcie := bool(stan_k.get("zatarcie", false))
 	var bylo_rdza := bool(stan_k.get("rdza", false))
 	var bylo_awaria := bool(auto.get("nie_jezdzi", false))
-	var kon := KonserwacjaAuta.new()
 	var tydzien := int(h._swiat.get("tydzien", 1))
 	var zima := tydzien <= 8 or tydzien >= 48
 	var efekt: Dictionary = kon.efekt_tury(stan_k, zima)
@@ -33,7 +41,7 @@ func _efekt_konserwacji_auta_tydzien() -> void:
 	h._swiat["auto"] = auto
 	if bool(efekt.get("zatarcie", false)) and not bylo_zatarcie:
 		h._rynek_zakupow.zastosuj_przyczyne_awarii(auto, "zatarcie")
-	elif bool(efekt.get("rdza", false)) and not bylo_rdza and not bylo_awaria:
+	elif (bool(efekt.get("rdza", false)) or bool(starzenie.get("rdza", false))) and not bylo_rdza and not bylo_awaria:
 		h._rynek_zakupow.zastosuj_przyczyne_awarii(auto, "rdza")
 	var teksty: Array = efekt.get("teksty", []) if efekt.get("teksty") is Array else []
 	var widoczne: PackedStringArray = PackedStringArray()
@@ -44,6 +52,12 @@ func _efekt_konserwacji_auta_tydzien() -> void:
 				continue
 		if linia != "":
 			widoczne.append(linia)
+	if not bool(auto.get("nie_jezdzi", false)):
+		var rng_aw := RandomNumberGenerator.new()
+		rng_aw.randomize()
+		if rng_aw.randf() < h._rynek_zakupow.szansa_awarii_auta(auto):
+			var przyczyna: String = h._rynek_zakupow.losuj_przyczyne_awarii(rng_aw, auto)
+			h._rynek_zakupow.zastosuj_przyczyne_awarii(auto, przyczyna)
 	if bool(auto.get("nie_jezdzi", false)) and not bylo_awaria:
 		widoczne.append("Awaria.")
 	if widoczne.size() > 0:

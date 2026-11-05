@@ -650,6 +650,8 @@ func _buduj_skrot_karty_oferty(
 		wiersz.add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
 		if kat_id == "samochod" and h._ui._jest_liczba(o.get("przebieg_km")):
 			wiersz.add_child(h._ui._napis_ekranu("Przebieg: %s km" % h._ui._tekst_z_odstepami(int(o["przebieg_km"])), 16))
+		if kat_id == "samochod" and h._ui._jest_liczba(o.get("rok_produkcji")):
+			wiersz.add_child(h._ui._napis_ekranu("Rocznik: %d" % int(o["rok_produkcji"]), 16))
 		elif h._ui._jest_liczba(o.get("lata_od_zakupu")):
 			wiersz.add_child(h._ui._napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
 		if str(o.get("segment", "")) != "":
@@ -762,6 +764,8 @@ func _buduj_pelna_karte_oferty(
 		if kat_id == "samochod":
 			if h._ui._jest_liczba(o.get("przebieg_km")):
 				wiersz.add_child(h._ui._napis_ekranu("Przebieg: %s km" % h._ui._tekst_z_odstepami(int(o["przebieg_km"])), 16))
+			if h._ui._jest_liczba(o.get("rok_produkcji")):
+				wiersz.add_child(h._ui._napis_ekranu("Rocznik: %d" % int(o["rok_produkcji"]), 16))
 			var naped_txt = h._rynek_zakupow.etykieta_napedu(str(o.get("naped", "")))
 			if naped_txt != "":
 				wiersz.add_child(h._ui._napis_ekranu("Napęd: %s" % naped_txt, 16))
