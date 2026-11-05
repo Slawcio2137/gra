@@ -45,29 +45,61 @@ func _uzupelnij_normy_bohatera(bohater: Dictionary) -> void:
 		bohater["zmeczenie_psychiczne"] = int(zmeczenie_p["norma"])
 
 
-func _zsynchronizuj_pieniadze_z_bohatera() -> void:
-	var stan = h._jedzenie.odczyt_statystyk()
-	if h._ui._jest_liczba(stan.get("pieniadze")):
-		return
+## Jedyna kasa gry: bohater.pieniadze. Jedzenie i pasek tylko to czytają.
+func _kasa() -> Variant:
 	var bohater := _bohater()
 	if h._ui._jest_liczba(bohater.get("pieniadze")):
-		h._jedzenie.zastosuj_statystyki({"pieniadze": int(bohater["pieniadze"])})
+		return maxi(int(bohater["pieniadze"]), 0)
+	return null
+
+
+func _ustaw_kase(wartosc: Variant) -> void:
+	var bohater := _bohater()
+	if h._ui._jest_liczba(wartosc):
+		bohater["pieniadze"] = maxi(int(wartosc), 0)
+	else:
+		bohater["pieniadze"] = null
+	h._swiat["bohater"] = bohater
+
+
+## false, gdy kwoty nie ma albo nie starcza. 0 zł nie rusza kasy.
+func _wydaj_pieniadze(kwota: int) -> bool:
+	if kwota < 0:
+		return false
+	if kwota == 0:
+		return true
+	var teraz: Variant = _kasa()
+	if not h._ui._jest_liczba(teraz) or int(teraz) < kwota:
+		return false
+	_ustaw_kase(int(teraz) - kwota)
+	return true
+
+
+func _zsynchronizuj_pieniadze_z_bohatera() -> void:
+	# Zakupy i wczytanie nadal wołają tę nazwę. Kasa już siedzi w bohaterze.
+	var teraz: Variant = _kasa()
+	if h._ui._jest_liczba(teraz) and int(teraz) < 0:
+		_ustaw_kase(0)
+
+
+## Stary zapis: jedzenie miało własną kwotę. Liczba w bohaterze wygrywa
+## (tam schodziły zakupy). Brak liczby u bohatera — bierzemy zrzut jedzenia.
+func _przejmij_kase_ze_zrzutu(zrzut: Variant) -> void:
+	if h._ui._jest_liczba(_bohater().get("pieniadze")):
+		return
+	if not (zrzut is Dictionary):
+		return
+	if bool(zrzut.get("pieniadze_znane", false)) and h._ui._jest_liczba(zrzut.get("pieniadze")):
+		_ustaw_kase(int(zrzut["pieniadze"]))
 
 
 func _dodaj_pieniadze(kwota: int) -> void:
 	if kwota <= 0:
 		return
-	var stan = h._jedzenie.odczyt_statystyk()
 	var teraz := 0
-	if h._ui._jest_liczba(stan.get("pieniadze")):
-		teraz = int(stan["pieniadze"])
-	elif h._ui._jest_liczba(_bohater().get("pieniadze")):
-		teraz = int(_bohater()["pieniadze"])
-	var nowe := teraz + kwota
-	h._jedzenie.zastosuj_statystyki({"pieniadze": nowe})
-	var bohater := _bohater()
-	bohater["pieniadze"] = nowe
-	h._swiat["bohater"] = bohater
+	if h._ui._jest_liczba(_kasa()):
+		teraz = int(_kasa())
+	_ustaw_kase(teraz + kwota)
 
 
 func _dodaj_wplyw(zrodlo: String, kwota: int, tekst: String = "") -> void:
@@ -119,11 +151,9 @@ func _opis_lokalizacji() -> String:
 
 
 func _pieniadze_tekst() -> String:
-	var stan = h._jedzenie.odczyt_statystyk()
-	if h._ui._jest_liczba(stan.get("pieniadze")):
-		return str(int(stan["pieniadze"]))
-	if h._ui._jest_liczba(_bohater().get("pieniadze")):
-		return str(int(_bohater()["pieniadze"]))
+	var kwota: Variant = _kasa()
+	if h._ui._jest_liczba(kwota):
+		return str(int(kwota))
 	return ""
 
 

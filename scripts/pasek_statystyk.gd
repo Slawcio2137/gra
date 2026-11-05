@@ -282,12 +282,7 @@ func _kolor_z_progow(blok: Variant, wartosc: int) -> String:
 
 
 func _ustaw_pieniadze(animuj: bool) -> void:
-	var kwota: Variant = null
-	var stan = h._jedzenie.odczyt_statystyk()
-	if h._ui._jest_liczba(stan.get("pieniadze")):
-		kwota = int(stan["pieniadze"])
-	elif h._ui._jest_liczba(h._stan._bohater().get("pieniadze")):
-		kwota = int(h._stan._bohater()["pieniadze"])
+	var kwota: Variant = h._stan._kasa()
 	var blok: Variant = h._emotikony.get("pieniadze", {})
 	if kwota == null:
 		h._pieniadze_znane_pokaz = false
