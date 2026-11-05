@@ -786,17 +786,17 @@ func _buduj_pelna_karte_oferty(
 			if vmax_ui != "":
 				wiersz.add_child(h._ui._napis_ekranu("Prędkość maksymalna: %s km/h" % vmax_ui, 16))
 			if bool(o.get("nie_jezdzi", false)) or bool(o.get("do_naprawy", false)):
-				wiersz.add_child(h._ui._napis_ekranu("Nie jeździ — do naprawy (laweta / mechanik / złom).", 16))
+				wiersz.add_child(h._ui._napis_ekranu("Awaria. Auto nie jeździ.", 16))
 		var dek_u: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
 		var wyk_u: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
 		var seg_u := str(o.get("segment", ""))
 		if not dek_u.is_empty():
-			var linia_dek = "Usterki (sprzedawca): %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek(dek_u, kat_id, seg_u))
+			var linia_dek = "Usterki (sprzedawca): %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek_dla_gracza(dek_u, o, kat_id, seg_u))
 			if bool(o.get("szacunek_usterek", false)):
 				linia_dek += " (szacunek)"
 			wiersz.add_child(h._ui._napis_ekranu(linia_dek, 16))
 		if not wyk_u.is_empty():
-			wiersz.add_child(h._ui._napis_ekranu("Usterki wykryte: %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek(wyk_u, kat_id, seg_u)), 16))
+			wiersz.add_child(h._ui._napis_ekranu("Usterki wykryte: %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek_dla_gracza(wyk_u, o, kat_id, seg_u)), 16))
 		if kat_id != "samochod" or str(o.get("stan", "")) != "nowy":
 			if h._ui._jest_liczba(o.get("stan_deklarowany")):
 				var dek := int(o["stan_deklarowany"])
@@ -833,7 +833,7 @@ func _buduj_pelna_karte_oferty(
 					msg += " — rozjazd względem deklaracji sprzedawcy."
 				var uw: Array = w.get("usterki_wykryte", []) if w.get("usterki_wykryte") is Array else []
 				if not uw.is_empty():
-					msg += " · wykryto: %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek(uw, kat_id, str(o.get("segment", ""))))
+					msg += " · wykryto: %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek_dla_gracza(uw, o, kat_id, str(o.get("segment", ""))))
 				_pokaz_komunikat_zakupu(msg, w)
 				h.SkryptZapisu.zapisz(h._swiat)
 				h._zaplanuj_stos()

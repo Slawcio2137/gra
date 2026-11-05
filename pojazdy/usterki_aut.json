@@ -36,14 +36,10 @@
 			"szansa_w_uzywanym": 0.025,
 			"szansa_ukrycia": 0.2,
 			"nie_jezdzi": true,
-			"opis": "Auto nie jeździ. Opcje: Laweta, Mechanik (koszt propozycja/kotwica), Złom (usunięcie + drobne złotówki).",
+			"opis": "Skutek: auto nie jeździ. Przyczyna (padnięty silnik, zatarcie, rdza) jest w polu awaria, nie w nazwie pokazywanej przed diagnozą.",
 			"naprawa": {
 				"propozycja_do_poprawki": true,
-				"mechanik_koszt_od_zl": 2500,
-				"mechanik_koszt_do_zl": 12000,
-				"laweta_koszt_zl": 450,
-				"zlom_wykup_od_zl": 200,
-				"zlom_wykup_do_zl": 900
+				"uwaga": "Cennik przyczyn jest w kluczu awaria. Ten blok zostaje jako ślad starej kotwicy."
 			}
 		}
 	],
@@ -59,5 +55,36 @@
 		"bonus_dobre_wyniki_szkoly": 0.12,
 		"pozalewowe_mnoznik_trudnosci": 0.65,
 		"cechy_szkoly_mechanik": ["szkola_branzowa_mechanik", "mechanik", "technik_pojazdów_samochodowych"]
+	},
+	"awaria": {
+		"propozycja_do_poprawki": true,
+		"opis": "Jeden stan auta: nie jeździ. Bez osobnej statystyki. Przyczyna jest ukryta, dopóki warsztat jej nie zdiagnozuje. Zatarcie, rdza i padnięty silnik to przyczyny, nie osobne „silnik padł”.",
+		"napis_przed_diagnoza": "Awaria",
+		"diagnoza_koszt_zl": 200,
+		"laweta_koszt_zl": 450,
+		"cena_gdy_brak_zl": 8000,
+		"zlom_mnoznik_ceny": 0.04,
+		"zlom_wykup_od_zl": 200,
+		"zlom_wykup_do_zl": 900,
+		"przyczyny": {
+			"zatarcie": {
+				"nazwa": "Zatarcie silnika",
+				"mechanik_mnoznik_ceny": 0.35,
+				"mechanik_koszt_od_zl": 4500,
+				"mechanik_koszt_do_zl": 18000
+			},
+			"rdza": {
+				"nazwa": "Rdza",
+				"mechanik_mnoznik_ceny": 0.22,
+				"mechanik_koszt_od_zl": 1800,
+				"mechanik_koszt_do_zl": 9000
+			},
+			"padniety_silnik": {
+				"nazwa": "Padnięty silnik",
+				"mechanik_mnoznik_ceny": 0.18,
+				"mechanik_koszt_od_zl": 2500,
+				"mechanik_koszt_do_zl": 12000
+			}
+		}
 	}
 }
