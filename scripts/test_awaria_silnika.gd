@@ -101,18 +101,15 @@ func _uruchom() -> int:
 		return 1
 	rynek.usterki_katalog()
 	var blok: Dictionary = rynek._usterki_aut["awaria"]["przyczyny"]["zatarcie"]
-	var stary_od := int(blok["mechanik_koszt_od_zl"])
-	var stary_do := int(blok["mechanik_koszt_do_zl"])
-	var stary_mnoz := float(blok["mechanik_mnoznik_ceny"])
-	blok["mechanik_koszt_od_zl"] = 7777
-	blok["mechanik_koszt_do_zl"] = 7777
-	blok["mechanik_mnoznik_ceny"] = 0.01
+	var stary_wsp := float(blok["wspolczynnik"])
+	var stary_min := int(blok["min_zl"])
+	blok["wspolczynnik"] = 0.01
+	blok["min_zl"] = 7777
 	if rynek.koszt_naprawy_awarii(auto) != 7777:
 		printerr("FAIL: cena nie jest czytana z JSON ", rynek.koszt_naprawy_awarii(auto))
 		return 1
-	blok["mechanik_koszt_od_zl"] = stary_od
-	blok["mechanik_koszt_do_zl"] = stary_do
-	blok["mechanik_mnoznik_ceny"] = stary_mnoz
+	blok["wspolczynnik"] = stary_wsp
+	blok["min_zl"] = stary_min
 	print("OK różne ceny przyczyn z JSON")
 
 	var surowe := _auto("", 8000)

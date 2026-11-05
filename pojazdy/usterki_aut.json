@@ -58,7 +58,7 @@
 	},
 	"awaria": {
 		"propozycja_do_poprawki": true,
-		"opis": "Jeden stan auta: nie jeździ. Bez osobnej statystyki. Przyczyna jest ukryta, dopóki warsztat jej nie zdiagnozuje. Zatarcie, rdza i padnięty silnik to przyczyny, nie osobne „silnik padł”.",
+		"opis": "Jeden stan auta: nie jeździ. Przyczyna ukryta do diagnozy. Koszt naprawy = max(min_zl, round(wartość auta × współczynnik)). Wartość to cena_zl, inaczej cena_katalog_zl, inaczej cena_gdy_brak_zl. Laweta zostaje stała, żeby nie zdradzać przyczyny. Zatarcie i rdza z konserwacji wskazują swoje id, reszta losuje się wagą.",
 		"napis_przed_diagnoza": "Awaria",
 		"diagnoza_koszt_zl": 200,
 		"laweta_koszt_zl": 450,
@@ -67,24 +67,42 @@
 		"zlom_wykup_od_zl": 200,
 		"zlom_wykup_do_zl": 900,
 		"przyczyny": {
-			"zatarcie": {
-				"nazwa": "Zatarcie silnika",
-				"mechanik_mnoznik_ceny": 0.35,
-				"mechanik_koszt_od_zl": 4500,
-				"mechanik_koszt_do_zl": 18000
-			},
-			"rdza": {
-				"nazwa": "Rdza",
-				"mechanik_mnoznik_ceny": 0.22,
-				"mechanik_koszt_od_zl": 1800,
-				"mechanik_koszt_do_zl": 9000
-			},
-			"padniety_silnik": {
-				"nazwa": "Padnięty silnik",
-				"mechanik_mnoznik_ceny": 0.18,
-				"mechanik_koszt_od_zl": 2500,
-				"mechanik_koszt_do_zl": 12000
-			}
+			"swiece": {"nazwa": "Padnięte świece", "wspolczynnik": 0.02, "min_zl": 150, "waga": 20},
+			"peknieta_opona": {"nazwa": "Pęknięta opona", "wspolczynnik": 0.03, "min_zl": 180, "waga": 22},
+			"cewka_zaplonowa": {"nazwa": "Cewka zapłonowa", "wspolczynnik": 0.035, "min_zl": 250, "waga": 12},
+			"akumulator": {"nazwa": "Akumulator", "wspolczynnik": 0.04, "min_zl": 280, "waga": 16},
+			"termostat": {"nazwa": "Termostat", "wspolczynnik": 0.03, "min_zl": 200, "waga": 8},
+			"przewody_hamulcowe": {"nazwa": "Przewody hamulcowe", "wspolczynnik": 0.04, "min_zl": 250, "waga": 6},
+			"wyciek_oleju": {"nazwa": "Wyciek oleju", "wspolczynnik": 0.045, "min_zl": 300, "waga": 14},
+			"lozysko_kola": {"nazwa": "Łożysko koła", "wspolczynnik": 0.045, "min_zl": 280, "waga": 9},
+			"hamulce": {"nazwa": "Hamulce", "wspolczynnik": 0.05, "min_zl": 350, "waga": 13},
+			"pompa_paliwa": {"nazwa": "Pompa paliwa", "wspolczynnik": 0.05, "min_zl": 300, "waga": 6},
+			"przeplywomierz": {"nazwa": "Przepływomierz", "wspolczynnik": 0.05, "min_zl": 300, "waga": 5},
+			"wentylator_chlodnicy": {"nazwa": "Wentylator chłodnicy", "wspolczynnik": 0.04, "min_zl": 280, "waga": 5},
+			"rozrusznik": {"nazwa": "Rozrusznik", "wspolczynnik": 0.06, "min_zl": 400, "waga": 8},
+			"pompa_wody": {"nazwa": "Pompa wody", "wspolczynnik": 0.06, "min_zl": 350, "waga": 7},
+			"amortyzatory": {"nazwa": "Amortyzatory", "wspolczynnik": 0.06, "min_zl": 350, "waga": 8},
+			"alternator": {"nazwa": "Alternator", "wspolczynnik": 0.07, "min_zl": 450, "waga": 8},
+			"zawieszenie": {"nazwa": "Zawieszenie", "wspolczynnik": 0.07, "min_zl": 400, "waga": 11},
+			"zawor_egr": {"nazwa": "Zawór EGR", "wspolczynnik": 0.07, "min_zl": 400, "waga": 4},
+			"przegub": {"nazwa": "Przegub napędowy", "wspolczynnik": 0.055, "min_zl": 320, "waga": 7},
+			"pasek_rozrzadu": {"nazwa": "Pasek rozrządu", "wspolczynnik": 0.08, "min_zl": 600, "waga": 7},
+			"chlodnica": {"nazwa": "Chłodnica", "wspolczynnik": 0.08, "min_zl": 450, "waga": 6},
+			"sprezglo": {"nazwa": "Sprzęgło", "wspolczynnik": 0.12, "min_zl": 800, "waga": 6},
+			"maglownica": {"nazwa": "Maglownica", "wspolczynnik": 0.12, "min_zl": 700, "waga": 3},
+			"rdza": {"nazwa": "Rdza", "wspolczynnik": 0.12, "min_zl": 800, "waga": 5},
+			"katalizator": {"nazwa": "Katalizator", "wspolczynnik": 0.13, "min_zl": 800, "waga": 3},
+			"dwumasa": {"nazwa": "Koło dwumasowe", "wspolczynnik": 0.14, "min_zl": 1000, "waga": 4},
+			"wtryskiwacze": {"nazwa": "Wtryskiwacze", "wspolczynnik": 0.15, "min_zl": 900, "waga": 4},
+			"lancuch_rozrzadu": {"nazwa": "Łańcuch rozrządu", "wspolczynnik": 0.16, "min_zl": 1200, "waga": 3},
+			"turbosprezarka": {"nazwa": "Turbosprężarka", "wspolczynnik": 0.2, "min_zl": 1500, "waga": 3},
+			"uszczelka_glowicy": {"nazwa": "Uszczelka pod głowicą", "wspolczynnik": 0.22, "min_zl": 1800, "waga": 3},
+			"padniety_silnik": {"nazwa": "Padnięty silnik", "wspolczynnik": 0.25, "min_zl": 2500, "waga": 2},
+			"skrzynia_biegow": {"nazwa": "Skrzynia biegów", "wspolczynnik": 0.28, "min_zl": 2000, "waga": 2},
+			"panewki": {"nazwa": "Panewki", "wspolczynnik": 0.3, "min_zl": 2200, "waga": 2},
+			"peknieta_glowica": {"nazwa": "Pęknięta głowica", "wspolczynnik": 0.32, "min_zl": 2500, "waga": 1},
+			"zatarcie": {"nazwa": "Zatarcie silnika", "wspolczynnik": 0.35, "min_zl": 4500, "waga": 2},
+			"wal_korbowy": {"nazwa": "Wał korbowy", "wspolczynnik": 0.45, "min_zl": 4000, "waga": 1}
 		}
 	}
 }
