@@ -102,6 +102,7 @@ var _zakupy_filtr_przebiegu_wlaczony := false
 var _zakupy_licznik_przebieg_od: Label
 var _zakupy_licznik_przebieg_do: Label
 var _zakupy_filtr_marki: Array = []  ## multi-wybór; puste = wszystkie
+var _zakupy_filtr_segment := ""  ## budzet / srednia / premium / flagowiec; puste = wszystkie
 var _zakupy_filtr_naped := ""
 var _zakupy_panel_nowe_auta: Control
 var _zakupy_sort_cena := "malejaco"  ## malejaco | rosnaco

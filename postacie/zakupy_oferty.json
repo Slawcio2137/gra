@@ -437,7 +437,7 @@
 	},
 	"udzial_ofert_dobr": {
 		"propozycja_do_poprawki": true,
-		"opis": "Gdy stan oferty drobnej nie jest wymuszony: udział nowych. Reszta to używane. Samochody mają własny los.",
+		"opis": "Zakładka Wszystkie (pusty stan filtra) losuje ten udział nowych. Używany i Nowy wymuszają stan i udział wtedy nie wchodzi. Samochody mają własny los.",
 		"nowy": 0.7,
 		"uzywany": 0.3
 	},
