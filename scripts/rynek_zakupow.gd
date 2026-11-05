@@ -4075,7 +4075,7 @@ func _naloz_efekty_vmax_na_oferte(oferta: Dictionary, usterki_ids: Array, vmax_m
 	if bool(oferta["nie_jezdzi"]):
 		oferta["do_naprawy"] = true
 		if str(oferta.get("przyczyna_awarii", "")) == "":
-			oferta["przyczyna_awarii"] = "padniety_silnik"
+			oferta["przyczyna_awarii"] = losuj_przyczyne_awarii()
 		oferta["przyczyna_znana"] = false
 
 
@@ -4752,10 +4752,49 @@ func koszt_diagnozy_awarii() -> int:
 
 func koszt_naprawy_awarii(auto: Dictionary) -> int:
 	var cennik := _cennik_przyczyny(przyczyna_auta(auto))
-	var mnoz := float(cennik.get("mechanik_mnoznik_ceny", 0.18))
-	var od := int(cennik.get("mechanik_koszt_od_zl", 2500))
-	var dok := int(cennik.get("mechanik_koszt_do_zl", 12000))
-	return clampi(int(round(float(_baza_ceny_auta(auto)) * mnoz)), od, dok)
+	var baza := _baza_ceny_auta(auto)
+	# Stare widełki z #5, jeśli ktoś je jeszcze wstawi do pozycji. Zwykły cennik to współczynnik.
+	if cennik.has("mechanik_mnoznik_ceny") and cennik.has("mechanik_koszt_od_zl") and cennik.has("mechanik_koszt_do_zl"):
+		var mnoz := float(cennik.get("mechanik_mnoznik_ceny", 0.18))
+		var od := int(cennik.get("mechanik_koszt_od_zl", 0))
+		var dok := int(cennik.get("mechanik_koszt_do_zl", 1000000))
+		return clampi(int(round(float(baza) * mnoz)), od, dok)
+	var wsp := float(cennik.get("wspolczynnik", 0.1))
+	var koszt := int(round(float(baza) * wsp))
+	if _liczba(cennik.get("min_zl")):
+		koszt = maxi(koszt, int(cennik["min_zl"]))
+	return koszt
+
+
+func losuj_przyczyne_awarii(rng: RandomNumberGenerator = null) -> String:
+	var mapa: Variant = _awaria_conf().get("przyczyny", {})
+	if not (mapa is Dictionary) or mapa.is_empty():
+		return "padniety_silnik"
+	var ids: Array = []
+	var wagi: Array = []
+	var suma := 0.0
+	for id in mapa.keys():
+		var wpis: Variant = mapa[id]
+		if not (wpis is Dictionary):
+			continue
+		var waga := float(wpis.get("waga", 1.0))
+		if waga <= 0.0:
+			continue
+		ids.append(str(id))
+		wagi.append(waga)
+		suma += waga
+	if ids.is_empty() or suma <= 0.0:
+		return "padniety_silnik"
+	if rng == null:
+		rng = RandomNumberGenerator.new()
+		rng.randomize()
+	var los := rng.randf() * suma
+	var akum := 0.0
+	for i in ids.size():
+		akum += float(wagi[i])
+		if los <= akum:
+			return str(ids[i])
+	return str(ids[ids.size() - 1])
 
 
 func koszt_zlomu_auta(auto: Dictionary) -> int:
