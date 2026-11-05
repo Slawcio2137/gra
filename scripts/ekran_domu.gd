@@ -94,7 +94,7 @@ func _ekran_majatek() -> void:
 				if vmax_m != "":
 					linia_a += " · vmax %s km/h" % vmax_m
 				if bool(d.get("nie_jezdzi", false)):
-					linia_a += " · NIE JEŹDZI"
+					linia_a += " · " + h._rynek_zakupow.tekst_awarii_dla_gracza(d)
 				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia_a, 14))
 				if bool(d.get("nie_jezdzi", false)) or bool(d.get("do_naprawy", false)):
 					h._ui._tresc_biala().add_child(h._mapa_ekran._panel_awarii_auta(i_d, d))

@@ -321,55 +321,66 @@ func _auto_z_zapisu() -> Variant:
 func _panel_awarii_auta(idx: int, auto: Dictionary) -> Control:
 	var kolumna := VBoxContainer.new()
 	kolumna.add_theme_constant_override("separation", 6)
-	var kot: Dictionary = h._rynek_zakupow.kotwica_naprawy_silnika(auto)
-	kolumna.add_child(h._ui._napis_ekranu(
-		"Awaria silnika — stub: Laweta ~%d zł · Mechanik ~%d zł · Złom +~%d zł (propozycja)." % [
-			int(kot.get("laweta_zl", 0)),
-			int(kot.get("mechanik_zl", 0)),
-			int(kot.get("zlom_zl", 0)),
-		],
-		13
-	))
+	var napis: String = h._rynek_zakupow.tekst_awarii_dla_gracza(auto)
+	if napis == "":
+		napis = "Awaria"
+	kolumna.add_child(h._ui._napis_ekranu(napis, 14))
+	if not bool(auto.get("laweta_zamowiona", false)):
+		kolumna.add_child(h._ui._napis_ekranu(
+			"Laweta %d zł dowozi auto do warsztatu." % h._rynek_zakupow.koszt_lawety_awarii(),
+			13
+		))
 	var rzad := HBoxContainer.new()
 	rzad.add_theme_constant_override("separation", 8)
-	var b_law := Button.new()
-	b_law.text = "Laweta"
-	b_law.custom_minimum_size = Vector2(0, 40)
-	b_law.pressed.connect(func() -> void:
-		var w: Dictionary = h._rynek_zakupow.laweta_auta(h._swiat, idx)
-		h._ekran_zakupow._pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
-		if bool(w.get("ok", false)):
-			h.SkryptZapisu.zapisz(h._swiat)
-			h._stan._zsynchronizuj_pieniadze_z_bohatera()
-			h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
-	)
-	var b_mech := Button.new()
-	b_mech.text = "Mechanik"
-	b_mech.custom_minimum_size = Vector2(0, 40)
-	b_mech.pressed.connect(func() -> void:
-		var w2: Dictionary = h._rynek_zakupow.mechanik_auta(h._swiat, idx)
-		h._ekran_zakupow._pokaz_komunikat_zakupu(str(w2.get("tekst", w2.get("powod", ""))), w2)
-		if bool(w2.get("ok", false)):
-			h.SkryptZapisu.zapisz(h._swiat)
-			h._stan._zsynchronizuj_pieniadze_z_bohatera()
-			h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
-	)
+	if not bool(auto.get("laweta_zamowiona", false)):
+		var b_law := Button.new()
+		b_law.text = "Laweta"
+		b_law.custom_minimum_size = Vector2(0, 40)
+		b_law.pressed.connect(func() -> void:
+			var w: Dictionary = h._rynek_zakupow.laweta_auta(h._swiat, idx)
+			_po_awarii(w)
+		)
+		rzad.add_child(b_law)
+	elif not h._rynek_zakupow.przyczyna_znana_auta(auto):
+		var b_diag := Button.new()
+		b_diag.text = "Diagnoza"
+		b_diag.custom_minimum_size = Vector2(0, 40)
+		b_diag.pressed.connect(func() -> void:
+			var auto_teraz: Variant = h._rynek_zakupow._auto_w_majatku(h._swiat, idx)
+			if not (auto_teraz is Dictionary):
+				return
+			var w: Dictionary = h._rynek_zakupow.diagnozuj_awarie(h._swiat, auto_teraz)
+			_po_awarii(w)
+		)
+		rzad.add_child(b_diag)
+	else:
+		var b_mech := Button.new()
+		b_mech.text = "Napraw"
+		b_mech.custom_minimum_size = Vector2(0, 40)
+		b_mech.pressed.connect(func() -> void:
+			var w2: Dictionary = h._rynek_zakupow.mechanik_auta(h._swiat, idx)
+			_po_awarii(w2)
+		)
+		rzad.add_child(b_mech)
 	var b_zlom := Button.new()
 	b_zlom.text = "Złom"
 	b_zlom.custom_minimum_size = Vector2(0, 40)
 	b_zlom.pressed.connect(func() -> void:
 		var w3: Dictionary = h._rynek_zakupow.zlom_auta(h._swiat, idx)
-		h._ekran_zakupow._pokaz_komunikat_zakupu(str(w3.get("tekst", w3.get("powod", ""))), w3)
-		if bool(w3.get("ok", false)):
-			h.SkryptZapisu.zapisz(h._swiat)
-			h._stan._zsynchronizuj_pieniadze_z_bohatera()
-			h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+		_po_awarii(w3)
 	)
-	rzad.add_child(b_law)
-	rzad.add_child(b_mech)
 	rzad.add_child(b_zlom)
 	kolumna.add_child(rzad)
 	return kolumna
+
+
+func _po_awarii(w: Dictionary) -> void:
+	h._ekran_zakupow._pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
+	if not bool(w.get("ok", false)):
+		return
+	h.SkryptZapisu.zapisz(h._swiat)
+	h._stan._przejmij_kase_bohatera()
+	h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 
 
 func _auto_jest(auto: Dictionary) -> bool:

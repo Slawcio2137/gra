@@ -118,6 +118,40 @@ func _opis_lokalizacji() -> String:
 	return "%s - %s" % [nazwa, gdzie]
 
 
+func _saldo() -> int:
+	var bohater := _bohater()
+	if h._ui._jest_liczba(bohater.get("pieniadze")):
+		return maxi(0, int(bohater["pieniadze"]))
+	var stan = h._jedzenie.odczyt_statystyk()
+	if h._ui._jest_liczba(stan.get("pieniadze")):
+		return maxi(0, int(stan["pieniadze"]))
+	return 0
+
+
+func _ustaw_saldo(wartosc: int) -> void:
+	var nowe := maxi(0, wartosc)
+	var bohater := _bohater()
+	bohater["pieniadze"] = nowe
+	h._swiat["bohater"] = bohater
+	h._jedzenie.zastosuj_statystyki({"pieniadze": nowe})
+
+
+func _wydaj_pieniadze(kwota: int) -> bool:
+	if kwota <= 0:
+		return true
+	var saldo := _saldo()
+	if saldo < kwota:
+		return false
+	_ustaw_saldo(saldo - kwota)
+	return true
+
+
+func _przejmij_kase_bohatera() -> void:
+	var bohater := _bohater()
+	if h._ui._jest_liczba(bohater.get("pieniadze")):
+		h._jedzenie.zastosuj_statystyki({"pieniadze": int(bohater["pieniadze"])})
+
+
 func _pieniadze_tekst() -> String:
 	var stan = h._jedzenie.odczyt_statystyk()
 	if h._ui._jest_liczba(stan.get("pieniadze")):

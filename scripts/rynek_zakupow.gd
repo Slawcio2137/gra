@@ -4074,6 +4074,9 @@ func _naloz_efekty_vmax_na_oferte(oferta: Dictionary, usterki_ids: Array, vmax_m
 		oferta["predkosc_max_kmh"] = null
 	if bool(oferta["nie_jezdzi"]):
 		oferta["do_naprawy"] = true
+		if str(oferta.get("przyczyna_awarii", "")) == "":
+			oferta["przyczyna_awarii"] = "padniety_silnik"
+		oferta["przyczyna_znana"] = false
 
 
 func _losuj_region_oferty_auta(rng: RandomNumberGenerator, conf: Dictionary, bez_miasta: bool = false) -> Dictionary:
@@ -4244,6 +4247,22 @@ func nazwa_usterki(uid: String, kategoria: String = "", segment: String = "") ->
 	var meta := _meta_usterki(uid, kategoria, segment)
 	var n := str(meta.get("nazwa", ""))
 	return n if n != "" else uid
+
+
+func nazwa_usterki_dla_gracza(uid: String, auto: Variant = null, kategoria: String = "", segment: String = "") -> String:
+	if uid == "awaria_silnika":
+		var napis := str(_awaria_conf().get("napis_przed_diagnoza", "Awaria"))
+		if not (auto is Dictionary) or not bool(auto.get("przyczyna_znana", false)):
+			return napis
+		return str(_cennik_przyczyny(przyczyna_auta(auto)).get("nazwa", napis))
+	return nazwa_usterki(uid, kategoria, segment)
+
+
+func nazwy_usterek_dla_gracza(ids: Array, auto: Variant = null, kategoria: String = "", segment: String = "") -> Array:
+	var out: Array = []
+	for uid_v in ids:
+		out.append(nazwa_usterki_dla_gracza(str(uid_v), auto, kategoria, segment))
+	return out
 
 
 func nazwy_usterek(ids: Array, kategoria: String = "", segment: String = "") -> Array:
@@ -4686,85 +4705,253 @@ func _meta_usterki(uid: String, kategoria: String = "", segment: String = "") ->
 	return {}
 
 
-func _kotwica_naprawy_silnika(auto: Dictionary) -> Dictionary:
-	var meta := _meta_usterki("awaria_silnika")
-	var nap: Dictionary = meta.get("naprawa", {}) if meta.get("naprawa") is Dictionary else {}
-	var od_m := int(nap.get("mechanik_koszt_od_zl", 2500))
-	var do_m := int(nap.get("mechanik_koszt_do_zl", 12000))
-	var laweta := int(nap.get("laweta_koszt_zl", 450))
-	var zlom_od := int(nap.get("zlom_wykup_od_zl", 200))
-	var zlom_do := int(nap.get("zlom_wykup_do_zl", 900))
-	# Kotwica zależna od ceny / stanu — propozycja.
-	var baza_ceny := 8000
+func _awaria_conf() -> Dictionary:
+	var kat := usterki_katalog()
+	if kat.get("awaria") is Dictionary:
+		return kat["awaria"]
+	return {}
+
+
+func _cennik_przyczyny(przyczyna: String) -> Dictionary:
+	var mapa: Variant = _awaria_conf().get("przyczyny", {})
+	if mapa is Dictionary and mapa.get(przyczyna) is Dictionary:
+		return mapa[przyczyna]
+	if mapa is Dictionary and mapa.get("padniety_silnik") is Dictionary:
+		return mapa["padniety_silnik"]
+	return {}
+
+
+func przyczyna_auta(auto: Dictionary) -> String:
+	var zapisana := str(auto.get("przyczyna_awarii", "")).strip_edges()
+	if zapisana != "":
+		return zapisana
+	if _lista_ma(auto.get("usterki_rzeczywiste", []), "awaria_silnika") or bool(auto.get("nie_jezdzi", false)):
+		return "padniety_silnik"
+	return ""
+
+
+func przyczyna_znana_auta(auto: Dictionary) -> bool:
+	return bool(auto.get("przyczyna_znana", false))
+
+
+func _baza_ceny_auta(auto: Dictionary) -> int:
 	if _liczba(auto.get("cena_zl")):
-		baza_ceny = int(auto["cena_zl"])
-	elif _liczba(auto.get("cena_katalog_zl")):
-		baza_ceny = int(auto["cena_katalog_zl"])
-	var mechanik := clampi(int(round(float(baza_ceny) * 0.18)), od_m, do_m)
-	var zlom := clampi(int(round(float(baza_ceny) * 0.04)), zlom_od, zlom_do)
+		return int(auto["cena_zl"])
+	if _liczba(auto.get("cena_katalog_zl")):
+		return int(auto["cena_katalog_zl"])
+	return int(_awaria_conf().get("cena_gdy_brak_zl", 8000))
+
+
+func koszt_lawety_awarii() -> int:
+	return int(_awaria_conf().get("laweta_koszt_zl", 450))
+
+
+func koszt_diagnozy_awarii() -> int:
+	return int(_awaria_conf().get("diagnoza_koszt_zl", 200))
+
+
+func koszt_naprawy_awarii(auto: Dictionary) -> int:
+	var cennik := _cennik_przyczyny(przyczyna_auta(auto))
+	var mnoz := float(cennik.get("mechanik_mnoznik_ceny", 0.18))
+	var od := int(cennik.get("mechanik_koszt_od_zl", 2500))
+	var dok := int(cennik.get("mechanik_koszt_do_zl", 12000))
+	return clampi(int(round(float(_baza_ceny_auta(auto)) * mnoz)), od, dok)
+
+
+func koszt_zlomu_auta(auto: Dictionary) -> int:
+	var conf := _awaria_conf()
+	var mnoz := float(conf.get("zlom_mnoznik_ceny", 0.04))
+	var od := int(conf.get("zlom_wykup_od_zl", 200))
+	var dok := int(conf.get("zlom_wykup_do_zl", 900))
+	return clampi(int(round(float(_baza_ceny_auta(auto)) * mnoz)), od, dok)
+
+
+func tekst_awarii_dla_gracza(auto: Dictionary) -> String:
+	if not bool(auto.get("nie_jezdzi", false)) and str(auto.get("przyczyna_awarii", "")) == "":
+		return ""
+	var napis := str(_awaria_conf().get("napis_przed_diagnoza", "Awaria"))
+	if not przyczyna_znana_auta(auto):
+		return napis
+	var cennik := _cennik_przyczyny(przyczyna_auta(auto))
+	var nazwa := str(cennik.get("nazwa", przyczyna_auta(auto)))
+	return "%s: %s. Naprawa: %d zł." % [napis, nazwa, koszt_naprawy_awarii(auto)]
+
+
+## Jedna awaria. Przyczyna nie jest osobnym „silnik padł” i nie jest widoczna przed diagnozą.
+func zastosuj_przyczyne_awarii(auto: Dictionary, przyczyna: String) -> void:
+	if bool(auto.get("nie_jezdzi", false)) and str(auto.get("przyczyna_awarii", "")) != "":
+		return
+	auto["nie_jezdzi"] = true
+	auto["do_naprawy"] = true
+	auto["przyczyna_awarii"] = przyczyna
+	auto["przyczyna_znana"] = false
+	var kons: Dictionary = auto.get("konserwacja", {}) if auto.get("konserwacja") is Dictionary else {}
+	if przyczyna == "zatarcie":
+		kons["zatarcie"] = true
+	elif przyczyna == "rdza":
+		kons["rdza"] = true
+	elif przyczyna == "padniety_silnik":
+		for klucz in ["usterki_rzeczywiste", "usterki_deklarowane"]:
+			var lista: Array = auto.get(klucz, []) if auto.get(klucz) is Array else []
+			if not lista.has("awaria_silnika"):
+				lista.append("awaria_silnika")
+			auto[klucz] = lista
+	if not kons.is_empty() or przyczyna == "zatarcie" or przyczyna == "rdza":
+		auto["konserwacja"] = kons
+
+
+func _wylecz_awarie(auto: Dictionary) -> void:
+	var przyczyna := przyczyna_auta(auto)
+	_usun_usterke_z_auta(auto, "awaria_silnika")
+	auto["nie_jezdzi"] = false
+	auto["do_naprawy"] = false
+	auto["laweta_zamowiona"] = false
+	auto["przyczyna_awarii"] = ""
+	auto["przyczyna_znana"] = false
+	if auto.get("konserwacja") is Dictionary:
+		var kons: Dictionary = auto["konserwacja"]
+		if przyczyna == "zatarcie":
+			kons["zatarcie"] = false
+			kons["olej"] = mini(100, int(kons.get("olej", 0)) + 50)
+		elif przyczyna == "rdza":
+			kons["rdza"] = false
+		auto["konserwacja"] = kons
+	var ids: Array = auto.get("usterki_rzeczywiste", []) if auto.get("usterki_rzeczywiste") is Array else []
+	var ef := efekty_usterek_vmax(ids)
+	auto["vmax_delta"] = int(ef.get("vmax_delta", 0))
+	auto["nie_jezdzi"] = bool(ef.get("nie_jezdzi", false))
+	if bool(auto["nie_jezdzi"]):
+		auto["do_naprawy"] = true
+	if _liczba(auto.get("vmax_katalog")):
+		auto["predkosc_max_kmh"] = clampi(int(auto["vmax_katalog"]) + int(auto["vmax_delta"]), 40, 350)
+
+
+func _kotwica_naprawy_silnika(auto: Dictionary) -> Dictionary:
 	return {
-		"laweta_zl": laweta,
-		"mechanik_zl": mechanik,
-		"zlom_zl": zlom,
+		"laweta_zl": koszt_lawety_awarii(),
+		"mechanik_zl": koszt_naprawy_awarii(auto),
+		"zlom_zl": koszt_zlomu_auta(auto),
 		"propozycja_do_poprawki": true,
 	}
 
 
-## Stub: laweta przy aucie które nie jeździ (koszt, flaga).
-func laweta_auta(swiat: Dictionary, auto_idx: int) -> Dictionary:
-	var out := {"ok": false, "powod": "", "koszt_zl": 0}
-	var auto: Variant = _auto_w_majatku(swiat, auto_idx)
-	if not (auto is Dictionary):
-		out["powod"] = "Brak auta w majątku."
-		return out
+## Laweta dowozi niejeżdżące auto do warsztatu. Bez niej nie ma diagnozy ani naprawy.
+func laweta_dla_auta(swiat: Dictionary, auto: Dictionary) -> Dictionary:
+	var out := {"ok": false, "powod": "", "koszt_zl": 0, "tekst": ""}
 	if not bool(auto.get("nie_jezdzi", false)):
 		out["powod"] = "Auto jeździ — laweta niepotrzebna."
+		out["tekst"] = out["powod"]
 		return out
-	var kot := _kotwica_naprawy_silnika(auto)
-	var koszt := int(kot["laweta_zl"])
+	if bool(auto.get("laweta_zamowiona", false)):
+		out["ok"] = true
+		out["tekst"] = "Auto jest już w warsztacie."
+		return out
+	var koszt := koszt_lawety_awarii()
 	if not _pobierz_pieniadze(swiat, koszt):
 		out["powod"] = "Za mało pieniędzy na lawetę (%d zł)." % koszt
+		out["tekst"] = out["powod"]
 		return out
 	auto["laweta_zamowiona"] = true
 	auto["laweta_koszt_zl"] = koszt
 	out["ok"] = true
 	out["koszt_zl"] = koszt
-	out["tekst"] = "Laweta zamówiona (stub): −%d zł." % koszt
-	out["propozycja_do_poprawki"] = true
+	out["tekst"] = "Laweta dowiozła auto do warsztatu (−%d zł)." % koszt
 	return out
 
 
-## Mechanik: usuwa awarię silnika / nie_jezdzi; auto znów jeździ.
-func mechanik_auta(swiat: Dictionary, auto_idx: int) -> Dictionary:
-	var out := {"ok": false, "powod": "", "koszt_zl": 0}
+func laweta_auta(swiat: Dictionary, auto_idx: int) -> Dictionary:
 	var auto: Variant = _auto_w_majatku(swiat, auto_idx)
 	if not (auto is Dictionary):
-		out["powod"] = "Brak auta w majątku."
+		return {"ok": false, "powod": "Brak auta w majątku.", "tekst": "Brak auta w majątku.", "koszt_zl": 0}
+	return laweta_dla_auta(swiat, auto)
+
+
+func diagnozuj_awarie(swiat: Dictionary, auto: Dictionary) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": "", "koszt_zl": 0, "przyczyna": ""}
+	if not bool(auto.get("nie_jezdzi", false)):
+		out["powod"] = "Auto nie ma awarii."
+		out["tekst"] = out["powod"]
 		return out
-	if not bool(auto.get("nie_jezdzi", false)) and not _lista_ma(auto.get("usterki_rzeczywiste", []), "awaria_silnika"):
-		out["powod"] = "Brak poważnej awarii silnika."
+	if not bool(auto.get("laweta_zamowiona", false)):
+		out["powod"] = "Najpierw laweta. Diagnoza jest w warsztacie."
+		out["tekst"] = out["powod"]
 		return out
-	var kot := _kotwica_naprawy_silnika(auto)
-	var koszt := int(kot["mechanik_zl"])
+	if przyczyna_znana_auta(auto):
+		out["ok"] = true
+		out["przyczyna"] = przyczyna_auta(auto)
+		out["koszt_naprawy"] = koszt_naprawy_awarii(auto)
+		out["tekst"] = tekst_awarii_dla_gracza(auto)
+		return out
+	var koszt := koszt_diagnozy_awarii()
 	if not _pobierz_pieniadze(swiat, koszt):
-		out["powod"] = "Za mało pieniędzy na mechanika (%d zł)." % koszt
-		out["koszt_propozycja_zl"] = koszt
+		out["powod"] = "Za mało pieniędzy na diagnozę (%d zł)." % koszt
+		out["tekst"] = out["powod"]
 		return out
-	_usun_usterke_z_auta(auto, "awaria_silnika")
-	auto["nie_jezdzi"] = false
-	auto["do_naprawy"] = false
-	auto["laweta_zamowiona"] = false
-	# Przelicz vmax po usunięciu awarii (inne usterki mocy mogą zostać).
-	var ids: Array = auto.get("usterki_rzeczywiste", []) if auto.get("usterki_rzeczywiste") is Array else []
-	var ef := efekty_usterek_vmax(ids)
-	auto["vmax_delta"] = int(ef.get("vmax_delta", 0))
-	if _liczba(auto.get("vmax_katalog")):
-		auto["predkosc_max_kmh"] = clampi(int(auto["vmax_katalog"]) + int(auto["vmax_delta"]), 40, 350)
+	if str(auto.get("przyczyna_awarii", "")) == "":
+		auto["przyczyna_awarii"] = przyczyna_auta(auto)
+	auto["przyczyna_znana"] = true
 	out["ok"] = true
 	out["koszt_zl"] = koszt
-	out["tekst"] = "Mechanik naprawił silnik (stub/propozycja): −%d zł. Auto znów jeździ." % koszt
-	out["propozycja_do_poprawki"] = true
+	out["przyczyna"] = przyczyna_auta(auto)
+	out["koszt_naprawy"] = koszt_naprawy_awarii(auto)
+	out["tekst"] = tekst_awarii_dla_gracza(auto)
 	return out
+
+
+func _napraw_awarie_obiektu(swiat: Dictionary, auto: Dictionary) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": "", "koszt_zl": 0}
+	if not bool(auto.get("nie_jezdzi", false)) and not _lista_ma(auto.get("usterki_rzeczywiste", []), "awaria_silnika"):
+		out["powod"] = "Brak awarii."
+		out["tekst"] = out["powod"]
+		return out
+	if bool(auto.get("nie_jezdzi", false)) and not bool(auto.get("laweta_zamowiona", false)):
+		out["powod"] = "Najpierw laweta — auto nie dojedzie do warsztatu."
+		out["tekst"] = out["powod"]
+		return out
+	var koszt := koszt_naprawy_awarii(auto)
+	if not _pobierz_pieniadze(swiat, koszt):
+		out["koszt_propozycja_zl"] = koszt
+		if przyczyna_znana_auta(auto):
+			out["powod"] = "Za mało pieniędzy na naprawę (%d zł)." % koszt
+		else:
+			out["powod"] = "Za mało pieniędzy na naprawę."
+		out["tekst"] = out["powod"]
+		return out
+	_wylecz_awarie(auto)
+	out["ok"] = true
+	out["koszt_zl"] = koszt
+	out["tekst"] = "Warsztat usunął awarię (−%d zł). Auto znów jeździ." % koszt
+	return out
+
+
+## Warsztat od zatarcia: dopiero po diagnozie, i dopiero wtedy przywraca jazdę.
+func warsztat_zatarcia(swiat: Dictionary, auto: Dictionary) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": "", "koszt_zl": 0}
+	if not bool(auto.get("nie_jezdzi", false)):
+		out["powod"] = "Auto nie ma awarii."
+		out["tekst"] = out["powod"]
+		return out
+	if not bool(auto.get("laweta_zamowiona", false)):
+		out["powod"] = "Najpierw laweta — auto nie dojedzie do warsztatu."
+		out["tekst"] = out["powod"]
+		return out
+	if not przyczyna_znana_auta(auto):
+		out["powod"] = "Najpierw diagnoza w warsztacie."
+		out["tekst"] = out["powod"]
+		return out
+	if przyczyna_auta(auto) != "zatarcie":
+		out["powod"] = "To nie jest zatarcie."
+		out["tekst"] = out["powod"]
+		return out
+	return _napraw_awarie_obiektu(swiat, auto)
+
+
+## Mechanik: po lawecie zdejmuje awarię. Diagnoza jest bramką UI, nie tego wywołania.
+func mechanik_auta(swiat: Dictionary, auto_idx: int) -> Dictionary:
+	var auto: Variant = _auto_w_majatku(swiat, auto_idx)
+	if not (auto is Dictionary):
+		return {"ok": false, "powod": "Brak auta w majątku.", "tekst": "Brak auta w majątku.", "koszt_zl": 0}
+	return _napraw_awarie_obiektu(swiat, auto)
 
 
 ## Złom: usunięcie auta z majątku + drobne złotówki.

@@ -13,8 +13,8 @@ func _init(host) -> void:
 
 
 func _efekt_konserwacji_auta_tydzien() -> void:
-	var auto: Variant = h._swiat.get("auto", null)
-	if not (auto is Dictionary):
+	var auto: Dictionary = _auto_do_konserwacji()
+	if auto.is_empty():
 		return
 	var stan_k: Dictionary = {}
 	if auto.get("konserwacja") is Dictionary:
@@ -22,16 +22,47 @@ func _efekt_konserwacji_auta_tydzien() -> void:
 	else:
 		var k := KonserwacjaAuta.new()
 		stan_k = k.stan_startowy()
+	var bylo_zatarcie := bool(stan_k.get("zatarcie", false))
+	var bylo_rdza := bool(stan_k.get("rdza", false))
+	var bylo_awaria := bool(auto.get("nie_jezdzi", false))
 	var kon := KonserwacjaAuta.new()
 	var tydzien := int(h._swiat.get("tydzien", 1))
 	var zima := tydzien <= 8 or tydzien >= 48
 	var efekt: Dictionary = kon.efekt_tury(stan_k, zima)
 	auto["konserwacja"] = stan_k
 	h._swiat["auto"] = auto
-	if efekt.get("teksty") is Array and not (efekt["teksty"] as Array).is_empty():
+	if bool(efekt.get("zatarcie", false)) and not bylo_zatarcie:
+		h._rynek_zakupow.zastosuj_przyczyne_awarii(auto, "zatarcie")
+	elif bool(efekt.get("rdza", false)) and not bylo_rdza and not bylo_awaria:
+		h._rynek_zakupow.zastosuj_przyczyne_awarii(auto, "rdza")
+	var teksty: Array = efekt.get("teksty", []) if efekt.get("teksty") is Array else []
+	var widoczne: PackedStringArray = PackedStringArray()
+	for t in teksty:
+		var linia := str(t)
+		if not bool(auto.get("przyczyna_znana", false)):
+			if linia.find("zatar") >= 0 or linia.find("Zatar") >= 0 or linia.find("rdza") >= 0 or linia.find("Rdza") >= 0:
+				continue
+		if linia != "":
+			widoczne.append(linia)
+	if bool(auto.get("nie_jezdzi", false)) and not bylo_awaria:
+		widoczne.append("Awaria.")
+	if widoczne.size() > 0:
 		var kom := str(h._swiat.get("komunikat_tury", ""))
-		var dop := " · ".join(PackedStringArray(efekt["teksty"]))
+		var dop := " · ".join(widoczne)
 		h._swiat["komunikat_tury"] = (kom + "\n" + dop).strip_edges() if kom != "" else dop
+
+
+func _auto_do_konserwacji() -> Dictionary:
+	var maj: Variant = h._swiat.get("majatek", {})
+	if maj is Dictionary and maj.get("dobra") is Array:
+		for d in maj["dobra"]:
+			if d is Dictionary and str(d.get("kategoria", "")) == "samochod":
+				h._swiat["auto"] = d
+				return d
+	var auto: Variant = h._swiat.get("auto", null)
+	if auto is Dictionary and not auto.is_empty():
+		return auto
+	return {}
 
 
 func _stub_przedszkole() -> void:
@@ -263,7 +294,7 @@ func _ekran_konserwacja_auta() -> void:
 		stan_k = kon.stan_startowy()
 		auto["konserwacja"] = stan_k
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(auto.get("nazwa", "Auto")), 16))
-	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(kon.tekst_stanu(stan_k), 15))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(kon.tekst_stanu_gracza(stan_k), 15))
 	for czesc in ["olej", "filtry", "opony"]:
 		h._ui._tresc_biala().add_child(_pasek_konserwacji(czesc, int(stan_k.get(czesc, 0))))
 	var zima_btn := CheckButton.new()
@@ -282,42 +313,53 @@ func _ekran_konserwacja_auta() -> void:
 			var cz := str(czesc2)
 			var sp := str(sposob)
 			b.pressed.connect(func() -> void:
-				var w: Dictionary = kon.serwis(stan_k, cz, sp)
-				var koszt := int(w.get("koszt_zl", 0))
-				if bool(w.get("ok", false)) and koszt > 0:
-					var boh = h._stan._bohater()
-					if int(boh.get("pieniadze", 0)) < koszt:
-						h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Brak kasy na serwis.", 13))
-						return
-					boh["pieniadze"] = int(boh["pieniadze"]) - koszt
-					h._swiat["bohater"] = boh
-				_zapisz_konserwacje_auta(auto, stan_k)
-				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w.get("tekst", "")), 13))
-				if bool(w.get("ok", false)):
-					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
-			)
-			h._ui._tresc_biala().add_child(b)
-	if bool(stan_k.get("rdza", false)) or bool(stan_k.get("zatarcie", false)):
-		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Poważne: rdza/zatarcie — warsztat.", 14))
-		for cz3 in ["rdza", "zatarcie"]:
-			if not bool(stan_k.get(cz3, false)):
-				continue
-			var bw := Button.new()
-			bw.text = "Napraw %s (warsztat)" % cz3
-			bw.custom_minimum_size = Vector2(0, 44)
-			var czb := str(cz3)
-			bw.pressed.connect(func() -> void:
-				var w3: Dictionary = kon.serwis(stan_k, czb, "warsztat")
-				var koszt3 := int(w3.get("koszt_zl", 0))
-				var boh3 = h._stan._bohater()
-				if bool(w3.get("ok", false)) and int(boh3.get("pieniadze", 0)) >= koszt3:
-					boh3["pieniadze"] = int(boh3["pieniadze"]) - koszt3
-					h._swiat["bohater"] = boh3
+				var w: Dictionary = kon.sprobuj_serwis(stan_k, cz, sp, h._stan._saldo())
+				if bool(w.get("zmieniono", false)):
+					h._stan._wydaj_pieniadze(int(w.get("koszt_zl", 0)))
 					_zapisz_konserwacje_auta(auto, stan_k)
 					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
-				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w3.get("tekst", "")), 13))
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w.get("tekst", "")), 13))
 			)
-			h._ui._tresc_biala().add_child(bw)
+			h._ui._tresc_biala().add_child(b)
+	if bool(auto.get("nie_jezdzi", false)):
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_awarii_dla_gracza(auto), 15))
+		if not bool(auto.get("laweta_zamowiona", false)):
+			var b_law := Button.new()
+			b_law.text = "Laweta do warsztatu"
+			b_law.custom_minimum_size = Vector2(0, 44)
+			b_law.pressed.connect(func() -> void:
+				var w_l: Dictionary = h._rynek_zakupow.laweta_dla_auta(h._swiat, auto)
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w_l.get("tekst", "")), 13))
+				if bool(w_l.get("ok", false)):
+					h._stan._przejmij_kase_bohatera()
+					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
+			)
+			h._ui._tresc_biala().add_child(b_law)
+		elif not h._rynek_zakupow.przyczyna_znana_auta(auto):
+			var b_diag := Button.new()
+			b_diag.text = "Diagnoza"
+			b_diag.custom_minimum_size = Vector2(0, 44)
+			b_diag.pressed.connect(func() -> void:
+				var w_d: Dictionary = h._rynek_zakupow.diagnozuj_awarie(h._swiat, auto)
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w_d.get("tekst", "")), 13))
+				if bool(w_d.get("ok", false)):
+					h._stan._przejmij_kase_bohatera()
+					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
+			)
+			h._ui._tresc_biala().add_child(b_diag)
+		elif h._rynek_zakupow.przyczyna_auta(auto) == "zatarcie":
+			var b_warsztat := Button.new()
+			b_warsztat.text = "Napraw w warsztacie"
+			b_warsztat.custom_minimum_size = Vector2(0, 44)
+			b_warsztat.pressed.connect(func() -> void:
+				var w_w: Dictionary = h._rynek_zakupow.warsztat_zatarcia(h._swiat, auto)
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w_w.get("tekst", "")), 13))
+				if bool(w_w.get("ok", false)):
+					h._stan._przejmij_kase_bohatera()
+					_zapisz_konserwacje_auta(auto, stan_k)
+					_odswiez_bohatera_i_ekran("konserwacja_auta", "Konserwacja auta")
+			)
+			h._ui._tresc_biala().add_child(b_warsztat)
 
 
 func _pasek_konserwacji(nazwa: String, wartosc: int) -> Control:

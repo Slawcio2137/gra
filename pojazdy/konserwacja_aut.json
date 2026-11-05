@@ -21,6 +21,13 @@
 		"warsztat": {"szansa_sukcesu": 0.95, "koszt_mnoznik": 1.0, "ryzyko_pogorszenia": 0.0},
 		"propozycja_do_poprawki": true
 	},
+	"cennik_czesci_zl": {
+		"olej": 120,
+		"filtry": 90,
+		"opony": 800,
+		"rdza": 1500,
+		"zatarcie": 4500
+	},
 	"start_stanu": {
 		"olej": 80,
 		"filtry": 75,

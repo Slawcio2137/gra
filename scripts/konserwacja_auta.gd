@@ -98,6 +98,8 @@ func serwis(stan: Dictionary, czesc: String, sposob: String, rng: RandomNumberGe
 		rng.randomize()
 	var out := {"ok": false, "tekst": "", "koszt_zl": 0, "propozycja_do_poprawki": true}
 	var baza := {"olej": 120, "filtry": 90, "opony": 800, "rdza": 1500, "zatarcie": 4500}
+	if dane.get("cennik_czesci_zl") is Dictionary:
+		baza = dane["cennik_czesci_zl"]
 	var koszt_bazy := int(baza.get(czesc, 100))
 	var naprawy: Dictionary = dane.get("naprawy", {}) if dane.get("naprawy") is Dictionary else {}
 	var conf: Dictionary = naprawy.get(sposob, {}) if naprawy.get(sposob) is Dictionary else {"szansa_sukcesu": 0.5, "koszt_mnoznik": 1.0}
@@ -128,6 +130,36 @@ func serwis(stan: Dictionary, czesc: String, sposob: String, rng: RandomNumberGe
 	out["ok"] = true
 	out["tekst"] = "Serwis %s przez %s OK (−%d zł stub)." % [czesc, sposob, koszt]
 	return out
+
+
+## Najpierw kopia, potem kasa. Za mało pieniędzy albo nieudany rzut nie ruszają stanu.
+func sprobuj_serwis(stan: Dictionary, czesc: String, sposob: String, kasa: int, rng: RandomNumberGenerator = null) -> Dictionary:
+	var kopia := stan.duplicate(true)
+	var w: Dictionary = serwis(kopia, czesc, sposob, rng)
+	w["zmieniono"] = false
+	if not bool(w.get("ok", false)):
+		return w
+	if kasa < int(w.get("koszt_zl", 0)):
+		return {
+			"ok": false,
+			"zmieniono": false,
+			"koszt_zl": int(w.get("koszt_zl", 0)),
+			"tekst": "Brak kasy na serwis.",
+			"powod": "brak_kasy",
+		}
+	for klucz in kopia.keys():
+		stan[klucz] = kopia[klucz]
+	w["zmieniono"] = true
+	return w
+
+
+func tekst_stanu_gracza(stan: Dictionary) -> String:
+	return "Olej %d · Filtry %d · Opony %d%s" % [
+		int(stan.get("olej", 0)),
+		int(stan.get("filtry", 0)),
+		int(stan.get("opony", 0)),
+		" · ZIMA OK" if bool(stan.get("konserwacja_zima", false)) else "",
+	]
 
 
 func tekst_stanu(stan: Dictionary) -> String:
