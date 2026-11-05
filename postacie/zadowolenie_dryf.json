@@ -31,12 +31,25 @@
 	},
 	"plusy_dobr": {
 		"propozycja_do_poprawki": true,
-		"opis": "Telefon, laptop, komputer, rower i sprzęt dają zadowolenie tylko plusami, od + do ++++. Przesuwają ukryte zadowolenie_docelowe o 1, 2, 3 albo 4. Na karcie same plusy, bez cyfry przesunięcia. W typie liczy się najlepszy posiadany egzemplarz, nie suma. Drugi taki sam nic nie dodaje. Lepszy dodaje tylko różnicę. Oddanie lepszego wraca do następnego, który jeszcze jest. Wygoda lokum zostaje.",
+		"opis": "Telefon, laptop, komputer, rower, sprzęt i samochód dają zadowolenie tylko plusami. Przesuwają ukryte zadowolenie_docelowe o wartość z mapy. Na karcie same plusy, bez cyfry. W typie liczy się najlepszy posiadany egzemplarz, nie suma. Drugi taki sam nic nie dodaje. Lepszy dodaje tylko różnicę. Oddanie lepszego wraca do następnego. Samochód zawsze jest w tym rachunku: dobry daje duży plus, nawalający (nie jeździ, do naprawy, zatarcie) daje 0 — to brak plusa, nie kara zapisana w celu. Usterka i awaria bolą raz, od razu, w psychice (bol_zdarzenia), i nie są odejmowane od celu co turę.",
+		"kategorie": ["telefon", "laptop", "komputer", "rower", "sprzet", "samochod"],
+		"progi": {
+			"stan_od_dla_3": 80,
+			"powaga_do_dla_2": 3,
+			"stan_od_dla_2": 50
+		},
 		"mapa": {
 			"nowy_bez_usterek": 4,
 			"nowy_z_usterka_albo_uzywany_bez_usterek_stan_od_80": 3,
 			"uzywany_powaga_do_3_i_stan_od_50": 2,
-			"reszta_uszkodzonych": 1
+			"reszta_uszkodzonych": 1,
+			"nawalajacy": 0
+		},
+		"bol_zdarzenia": {
+			"propozycja_do_poprawki": true,
+			"opis": "Jednorazowy spadek widocznej psychiki. Nie zapisuje kary w zadowolenie_docelowe.",
+			"minus_usterki": 4,
+			"minus_awaria": 8
 		}
 	},
 	"dryf_tury": {

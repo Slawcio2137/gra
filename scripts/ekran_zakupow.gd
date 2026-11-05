@@ -205,6 +205,9 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	h._ui._wyczysc(h._ui._dol_suwaka())
 	h._ui._dol_suwaka().hide()
 	h._ui._tytul_bialy().text = str(kat.get("nazwa", kat_id))
+	var zapowiedz := str(h._swiat.get("zapowiedz_zadowolenia", "")).strip_edges()
+	if zapowiedz != "":
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(zapowiedz, 15))
 	_odswiez_rynek_zakupow()
 	h._zakupy_wiersze = []
 	h._zakupy_kat_id = kat_id
@@ -787,6 +790,9 @@ func _buduj_pelna_karte_oferty(
 				wiersz.add_child(h._ui._napis_ekranu("Prędkość maksymalna: %s km/h" % vmax_ui, 16))
 			if bool(o.get("nie_jezdzi", false)) or bool(o.get("do_naprawy", false)):
 				wiersz.add_child(h._ui._napis_ekranu("Nie jeździ — do naprawy (laweta / mechanik / złom).", 16))
+			var plus_auto: String = h._rynek_zakupow.tekst_plusow(h._rynek_zakupow.plusy_oferty(o))
+			if plus_auto != "":
+				wiersz.add_child(h._ui._napis_ekranu(plus_auto, 16))
 		var dek_u: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
 		var wyk_u: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
 		var seg_u := str(o.get("segment", ""))

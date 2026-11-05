@@ -13,8 +13,8 @@ func _init(host) -> void:
 
 
 func _efekt_konserwacji_auta_tydzien() -> void:
-	var auto: Variant = h._swiat.get("auto", null)
-	if not (auto is Dictionary):
+	var auto: Dictionary = _slownik_auta_konserwacji()
+	if auto.is_empty():
 		return
 	var stan_k: Dictionary = {}
 	if auto.get("konserwacja") is Dictionary:
@@ -22,16 +22,58 @@ func _efekt_konserwacji_auta_tydzien() -> void:
 	else:
 		var k := KonserwacjaAuta.new()
 		stan_k = k.stan_startowy()
+	var bylo_zatarcie := bool(stan_k.get("zatarcie", false))
+	var bylo_rdza := bool(stan_k.get("rdza", false))
 	var kon := KonserwacjaAuta.new()
 	var tydzien := int(h._swiat.get("tydzien", 1))
 	var zima := tydzien <= 8 or tydzien >= 48
 	var efekt: Dictionary = kon.efekt_tury(stan_k, zima)
-	auto["konserwacja"] = stan_k
-	h._swiat["auto"] = auto
+	_zapisz_konserwacje_auta(auto, stan_k)
 	if efekt.get("teksty") is Array and not (efekt["teksty"] as Array).is_empty():
 		var kom := str(h._swiat.get("komunikat_tury", ""))
 		var dop := " · ".join(PackedStringArray(efekt["teksty"]))
 		h._swiat["komunikat_tury"] = (kom + "\n" + dop).strip_edges() if kom != "" else dop
+	if bool(efekt.get("zatarcie", false)) and not bylo_zatarcie:
+		_oznacz_awarie_posiadanego_auta()
+		var bol: Dictionary = h._rynek_zakupow.bol_zdarzenia(h._swiat, true)
+		_dopisz_tury(str(bol.get("tekst", "")))
+	elif bool(efekt.get("rdza", false)) and not bylo_rdza:
+		var bol_r: Dictionary = h._rynek_zakupow.bol_zdarzenia(h._swiat, false)
+		_dopisz_tury(str(bol_r.get("tekst", "")))
+
+
+func _slownik_auta_konserwacji() -> Dictionary:
+	var auto: Variant = h._swiat.get("auto", null)
+	if auto is Dictionary and not auto.is_empty():
+		return auto
+	var maj: Variant = h._swiat.get("majatek", {})
+	if maj is Dictionary and maj.get("dobra") is Array:
+		for d in maj["dobra"]:
+			if d is Dictionary and str(d.get("kategoria", "")) == "samochod":
+				h._swiat["auto"] = d
+				return d
+	return {}
+
+
+func _oznacz_awarie_posiadanego_auta() -> void:
+	if h._swiat.get("auto") is Dictionary:
+		h._swiat["auto"]["nie_jezdzi"] = true
+		h._swiat["auto"]["do_naprawy"] = true
+	var maj: Variant = h._swiat.get("majatek", {})
+	if not (maj is Dictionary) or not (maj.get("dobra") is Array):
+		return
+	for d in maj["dobra"]:
+		if d is Dictionary and str(d.get("kategoria", "")) == "samochod":
+			d["nie_jezdzi"] = true
+			d["do_naprawy"] = true
+			break
+
+
+func _dopisz_tury(txt: String) -> void:
+	if txt.strip_edges() == "":
+		return
+	var kom := str(h._swiat.get("komunikat_tury", ""))
+	h._swiat["komunikat_tury"] = (kom + "\n" + txt).strip_edges() if kom != "" else txt
 
 
 func _stub_przedszkole() -> void:

@@ -14,6 +14,7 @@ func _init(host) -> void:
 
 func _efekt_wygody_tydzien() -> void:
 	h._swiat["ostatni_efekt_wygody_tekst"] = ""
+	h._swiat["zapowiedz_zadowolenia"] = ""
 	if not (h._swiat.get("lokum_startowe") is Dictionary) or not _lokum_pelne(h._swiat.get("lokum_startowe")):
 		h._swiat["lokum_startowe"] = _zbuduj_lokum_dla_swiata()
 	var wynik: Dictionary = h._rynek_zakupow.efekt_wygody_tydzien(h._swiat)
