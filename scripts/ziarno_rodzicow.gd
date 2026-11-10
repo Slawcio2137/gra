@@ -72,6 +72,140 @@ func losuj(losowanie = null, miejsce: Variant = null) -> Dictionary:
 	return wynik
 
 
+func uzupelnij_wieki(swiat: Dictionary) -> bool:
+	## Uzupełnia brakujący wiek raz. Istniejąca liczba zostaje, ekran jej nie losuje od nowa.
+	var zmieniono := false
+	var ziarno := 1
+	if _jest_liczba(swiat.get("ziarno_wieku")):
+		ziarno = int(swiat["ziarno_wieku"])
+	else:
+		ziarno = absi(str(swiat.get("id_urodzenia", "rodzina")).hash())
+		if ziarno == 0:
+			ziarno = 1
+		swiat["ziarno_wieku"] = ziarno
+		zmieniono = true
+	var bohater: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
+	var wiek_h := 3
+	if _jest_liczba(bohater.get("wiek")):
+		wiek_h = int(bohater["wiek"])
+	var rodzina: Dictionary = swiat.get("rodzina", {}) if swiat.get("rodzina") is Dictionary else {}
+	var rodzenstwo: Array = swiat.get("rodzenstwo", []) if swiat.get("rodzenstwo") is Array else []
+	var najstarsze := wiek_h
+	for i in rodzenstwo.size():
+		if not (rodzenstwo[i] is Dictionary):
+			continue
+		var os: Dictionary = rodzenstwo[i]
+		if not _jest_liczba(os.get("wiek")):
+			var rng_i := RandomNumberGenerator.new()
+			rng_i.seed = ziarno + 17 * (i + 1)
+			var odstep := rng_i.randi_range(1, 4)
+			os["wiek"] = wiek_h + odstep if i % 2 == 0 else maxi(0, wiek_h - odstep)
+			os["kolejnosc_wstepna"] = i
+			rodzenstwo[i] = os
+			zmieniono = true
+		if int(os.get("wiek", 0)) > najstarsze:
+			najstarsze = int(os["wiek"])
+	swiat["rodzenstwo"] = rodzenstwo
+	var matka: Dictionary = rodzina.get("matka", {}) if rodzina.get("matka") is Dictionary else {}
+	if not matka.is_empty() and not _jest_liczba(matka.get("wiek")):
+		var rng_m := RandomNumberGenerator.new()
+		rng_m.seed = ziarno + 3
+		var przy := _wiek_przy_pierwszym_dziecku(rng_m)
+		matka["wiek_przy_najstarszym_dziecku"] = przy
+		matka["wiek"] = najstarsze + przy
+		rodzina["matka"] = matka
+		zmieniono = true
+	var wiek_matki := int(matka.get("wiek", najstarsze + 26))
+	var ojciec: Dictionary = rodzina.get("ojciec", {}) if rodzina.get("ojciec") is Dictionary else {}
+	if not ojciec.is_empty() and not _jest_liczba(ojciec.get("wiek")):
+		var rng_o := RandomNumberGenerator.new()
+		rng_o.seed = ziarno + 5
+		var przy_o := int(matka.get("wiek_przy_najstarszym_dziecku", 26)) + rng_o.randi_range(-2, 6)
+		if przy_o < 15:
+			przy_o = 15
+		ojciec["wiek_przy_najstarszym_dziecku"] = przy_o
+		ojciec["wiek"] = najstarsze + przy_o
+		rodzina["ojciec"] = ojciec
+		zmieniono = true
+	if rodzina.get("dziadkowie") is Dictionary:
+		var dzi: Dictionary = rodzina["dziadkowie"]
+		var lista: Array = dzi.get("lista", []) if dzi.get("lista") is Array else []
+		for j in lista.size():
+			if not (lista[j] is Dictionary):
+				continue
+			var g: Dictionary = lista[j]
+			if _jest_liczba(g.get("wiek")):
+				continue
+			var rng_g := RandomNumberGenerator.new()
+			rng_g.seed = ziarno + 11 * (j + 1)
+			var baza := wiek_matki if bool(g.get("linia_matki", true)) else int(ojciec.get("wiek", wiek_matki))
+			g["wiek"] = baza + rng_g.randi_range(18, 34)
+			lista[j] = g
+			zmieniono = true
+		dzi["lista"] = lista
+		rodzina["dziadkowie"] = dzi
+	swiat["rodzina"] = rodzina
+	for klucz in ["przyjaciele", "znajomi"]:
+		var osoby: Array = swiat.get(klucz, []) if swiat.get(klucz) is Array else []
+		for k in osoby.size():
+			if not (osoby[k] is Dictionary):
+				continue
+			var os2: Dictionary = osoby[k]
+			if _jest_liczba(os2.get("wiek")):
+				continue
+			var rng_f := RandomNumberGenerator.new()
+			rng_f.seed = ziarno + 80 + k + (0 if klucz == "przyjaciele" else 40)
+			os2["wiek"] = maxi(0, wiek_h + rng_f.randi_range(-3, 4))
+			osoby[k] = os2
+			zmieniono = true
+		swiat[klucz] = osoby
+	return zmieniono
+
+
+func _wiek_przy_pierwszym_dziecku(rng: RandomNumberGenerator) -> int:
+	var r := rng.randf()
+	if r < 0.008:
+		return 15
+	if r < 0.02:
+		return 16
+	if r < 0.05:
+		return 17
+	return rng.randi_range(20, 35)
+
+
+func postarz_otoczenie(swiat: Dictionary) -> void:
+	var rodzina: Dictionary = swiat.get("rodzina", {}) if swiat.get("rodzina") is Dictionary else {}
+	for rola in ["matka", "ojciec"]:
+		if rodzina.get(rola) is Dictionary:
+			var os: Dictionary = rodzina[rola]
+			if _jest_liczba(os.get("wiek")):
+				os["wiek"] = int(os["wiek"]) + 1
+				rodzina[rola] = os
+	if rodzina.get("dziadkowie") is Dictionary:
+		var dzi: Dictionary = rodzina["dziadkowie"]
+		var lista: Array = dzi.get("lista", []) if dzi.get("lista") is Array else []
+		for j in lista.size():
+			if lista[j] is Dictionary and _jest_liczba(lista[j].get("wiek")):
+				lista[j]["wiek"] = int(lista[j]["wiek"]) + 1
+		dzi["lista"] = lista
+		rodzina["dziadkowie"] = dzi
+	swiat["rodzina"] = rodzina
+	if swiat.get("rodzenstwo") is Array:
+		var rod: Array = swiat["rodzenstwo"]
+		for i in rod.size():
+			if rod[i] is Dictionary and _jest_liczba(rod[i].get("wiek")):
+				rod[i]["wiek"] = int(rod[i]["wiek"]) + 1
+		swiat["rodzenstwo"] = rod
+	for klucz in ["przyjaciele", "znajomi"]:
+		if not (swiat.get(klucz) is Array):
+			continue
+		var osoby: Array = swiat[klucz]
+		for k in osoby.size():
+			if osoby[k] is Dictionary and _jest_liczba(osoby[k].get("wiek")):
+				osoby[k]["wiek"] = int(osoby[k]["wiek"]) + 1
+		swiat[klucz] = osoby
+
+
 func _losuj_rodzica(los, kraj: String, rola: String, klucz_zawodu: String, klucz_imion: String) -> Dictionary:
 	var wynik := {
 		"rola": rola,

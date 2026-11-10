@@ -103,6 +103,8 @@ var _zakupy_licznik_przebieg_od: Label
 var _zakupy_licznik_przebieg_do: Label
 var _zakupy_filtr_marki: Array = []  ## multi-wybór; puste = wszystkie
 var _zakupy_filtr_naped := ""
+var _zakupy_szukaj_tekst := ""
+var _zakupy_dokladka_seria := 0
 var _zakupy_panel_nowe_auta: Control
 var _zakupy_sort_cena := "malejaco"  ## malejaco | rosnaco
 var _zakupy_dokladka := false
@@ -210,6 +212,8 @@ func _on_wczytaj_pressed() -> void:
 		_brak_zapisu()
 		return
 	_swiat = dane
+	if ZiarnoRodzicow.new().uzupelnij_wieki(_swiat):
+		SkryptZapisu.zapisz(_swiat)
 	if not (_swiat.get("przyjaciele") is Array):
 		_swiat["przyjaciele"] = []
 	if not (_swiat.get("znajomi") is Array):
@@ -278,8 +282,10 @@ func _on_nastepna_tura() -> void:
 		if _ui._jest_liczba(bohater.get("wiek")):
 			bohater["wiek"] = int(bohater["wiek"]) + 1
 			_swiat["bohater"] = bohater
+		ZiarnoRodzicow.new().postarz_otoczenie(_swiat)
 	_swiat["tydzien"] = tydzien
 	_swiat["rok"] = rok
+	_rynek_zakupow.tick_remonty(_swiat)
 	_swiat["komunikat_tury"] = ""
 	_swiat["eventy_tury"] = []
 	_swiat["event_odpowiedz_tekst"] = ""
@@ -442,6 +448,7 @@ func _nowa_gra() -> void:
 		"rynek_zakupow": {},
 		"id_miejsca_pobytu": id_miejsca,
 	}
+	ZiarnoRodzicow.new().uzupelnij_wieki(_swiat)
 	# Lokum musi istnieć jako pełny obiekt (nie sama wygoda) — po miejscu + zarobkach rodziców.
 	_swiat["lokum_startowe"] = _rynek_zakupow.zbuduj_lokum_startowe(rodzina, miejsce)
 	_swiat["rodzina"] = rodzina

@@ -196,6 +196,9 @@ func _ruch(lokal: Vector2) -> void:
 func _aktywuj(przycisk: BaseButton) -> void:
 	if przycisk.disabled or not przycisk.is_visible_in_tree():
 		return
+	if przycisk is OptionButton:
+		(przycisk as OptionButton).show_popup()
+		return
 	if przycisk.toggle_mode:
 		przycisk.button_pressed = not przycisk.button_pressed
 	else:
@@ -238,7 +241,7 @@ func _ustaw_filtr(wezel: Node) -> void:
 
 
 func _zostaw_natywny(kontrolka: Control) -> bool:
-	if kontrolka is OptionButton or kontrolka is LineEdit or kontrolka is TextEdit:
+	if kontrolka is LineEdit or kontrolka is TextEdit:
 		return true
 	# ProgressBar jest Range, ale nie łapie gestu — palec ma scrollować listę.
 	if kontrolka is ProgressBar:

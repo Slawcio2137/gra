@@ -19,6 +19,12 @@
 			"nazwa": "Elektronika",
 			"kategorie": ["telefon", "komputer", "laptop", "sprzet"],
 			"uwaga": "Sprzęt = istniejący katalog peryferiów (słuchawki, klawiatura, mysz, mikrofon), nie nowa lista SKU."
+		},
+		{
+			"id": "nieruchomosci",
+			"nazwa": "Nieruchomości",
+			"kategorie": ["mieszkanie", "apartament", "dom", "willa"],
+			"uwaga": "Jedna półka. Podtypy zostają: mieszkanie, apartament, dom, willa."
 		}
 	],
 	"kategorie": [
@@ -262,11 +268,11 @@
 		},
 		"rynek_wagi_typu": {
 			"propozycja_do_poprawki": true,
-			"mieszkanie": 0.64,
-			"dom": 0.28,
-			"apartament": 0.06,
-			"willa": 0.02,
-			"uwaga": "Willa rzadka na rynku; apartament rzadszy niż mieszkanie/dom."
+			"mieszkanie": 0.50,
+			"apartament": 0.27,
+			"dom": 0.17,
+			"willa": 0.06,
+			"uwaga": "Kolejność ofert: mieszkanie, potem apartament, potem dom, willa najrzadziej. Te same udziały skalują wielkość puli lokum."
 		},
 		"lokalizacja": {
 			"szansa_miasto_gracza": 0.55,
@@ -339,11 +345,28 @@
 		},
 		"remont": {
 			"propozycja_do_poprawki": true,
-			"opis": "W Majątku: koszt ≈ metraż * stawka; wygoda +delta (clamp 100).",
+			"opis": "Szacunek na ofercie to koszt materiałów (może być nietrafiony). Samemu płaci tylko materiały i trwa 4–20 tyg. Kumpel ~0,6 tego czasu, firma ~0,15 (minimum 1 tydzień). Stan surowy: materiały 3000 zł/m² i czas 3× analogicznego remontu do_remontu w tym samym trybie.",
+			"tygodnie": {
+				"do_odswiezenia": [4, 8],
+				"do_remontu": [8, 16]
+			},
+			"surowy_mnoznik_czasu": 3,
+			"surowy_baza_tygodni": "do_remontu",
+			"tryby": {
+				"sam": {"mnoznik_tygodni": 1.0, "mnoznik_kosztu": 1.0, "zmeczenie_fizyczne_tydzien": 22},
+				"kumpel": {"mnoznik_tygodni": 0.6, "mnoznik_kosztu": 1.0, "zmeczenie_fizyczne_tydzien": 10, "udzial_robocizny": 0.35, "min_przy_relacji_0": 1.15, "min_przy_relacji_100": 0.15},
+				"firma": {"mnoznik_tygodni": 0.15, "mnoznik_kosztu": 2.4, "zmeczenie_fizyczne_tydzien": 0}
+			},
+			"mnoznik_typu": {
+				"mieszkanie": 0.9,
+				"apartament": 1.1,
+				"dom": 1.0,
+				"willa": 1.2
+			},
 			"stawka_zl_za_m2": {
 				"do_remontu": 1200,
 				"do_odswiezenia": 450,
-				"surowy": 1800,
+				"surowy": 3000,
 				"po_remoncie": 0
 			},
 			"delta_wygody": {

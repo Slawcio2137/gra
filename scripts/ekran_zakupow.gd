@@ -219,6 +219,7 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 	h._zakupy_przebieg_do = 0.0
 	h._zakupy_filtr_marki = []
 	h._zakupy_filtr_naped = ""
+	h._zakupy_szukaj_tekst = ""
 	h._zakupy_panel_nowe_auta = null
 	h._zakupy_sort_cena = "malejaco"
 	if kat_id == "samochod":
@@ -590,6 +591,7 @@ func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dict
 		naped_f,
 		h._zakupy_zasieg_poziom if z_poziomem else "",
 	)
+	oferty = _filtruj_szukanie_ofert(oferty)
 	if not nieruchomosc and stan_filtr != "":
 		var tylko: Array = []
 		for o in oferty:
@@ -643,7 +645,8 @@ func _buduj_skrot_karty_oferty(
 	var stan_txt := str(etykiety.get(str(o.get("stan", "")), o.get("stan", "")))
 	var cena_txt = h._ui._tekst_ceny_oferty(o.get("cena_zl"), kat_id)
 	if nieruchomosc:
-		wiersz.add_child(h._ui._napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 17))
+		wiersz.add_child(h._ui._napis_ekranu("%s · %s" % [nazwa, cena_txt], 17))
+		wiersz.add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_szacunku_remontu(o), 16))
 		wiersz.add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_karty_miejsca(o), 16))
 	else:
 		var stan_karty := stan_txt
@@ -654,6 +657,21 @@ func _buduj_skrot_karty_oferty(
 		wiersz.add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_karty_miejsca(o, odbior_skrot), 16))
 		if kat_id == "samochod" and h._ui._jest_liczba(o.get("przebieg_km")):
 			wiersz.add_child(h._ui._napis_ekranu("Przebieg: %s km" % h._ui._tekst_z_odstepami(int(o["przebieg_km"])), 16))
+		if kat_id == "samochod":
+			var naped_s = h._rynek_zakupow.etykieta_napedu(str(o.get("naped", "")))
+			if naped_s != "":
+				wiersz.add_child(h._ui._napis_ekranu("Napęd: %s" % naped_s, 16))
+			wiersz.add_child(h._ui._napis_ekranu("Spalanie: %s" % h._rynek_zakupow.tekst_spalania(o), 16))
+			var dek_s: Array = o.get("usterki_deklarowane", []) if o.get("usterki_deklarowane") is Array else []
+			var wyk_s: Array = o.get("usterki_wykryte", []) if o.get("usterki_wykryte") is Array else []
+			if not dek_s.is_empty():
+				wiersz.add_child(h._ui._napis_ekranu("Usterki podane przez sprzedawcę: %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek(dek_s, kat_id, str(o.get("segment", "")))), 15))
+			elif str(o.get("stan", "")) == "uzywany":
+				wiersz.add_child(h._ui._napis_ekranu("Sprzedawca nie podaje usterek. Ukryte wyjdą dopiero przy ocenie.", 15))
+			if not wyk_s.is_empty():
+				wiersz.add_child(h._ui._napis_ekranu("Wykryte: %s" % h._ui._join_tekstow(h._rynek_zakupow.nazwy_usterek(wyk_s, kat_id, str(o.get("segment", "")))), 15))
+			if bool(o.get("nie_jezdzi", false)):
+				wiersz.add_child(h._ui._napis_ekranu("Nie jeździ. Przyczyna wyjdzie po diagnozie, nie z ogłoszenia.", 15))
 		elif h._ui._jest_liczba(o.get("lata_od_zakupu")):
 			wiersz.add_child(h._ui._napis_ekranu("Lata od zakupu: %d" % int(o["lata_od_zakupu"]), 16))
 		if str(o.get("segment", "")) != "":
@@ -744,8 +762,16 @@ func _buduj_pelna_karte_oferty(
 		for linia_d in h._rynek_zakupow.linie_karty_drobiazgu(o):
 			wiersz.add_child(h._ui._napis_ekranu(str(linia_d), 18))
 	elif nieruchomosc:
-		wiersz.add_child(h._ui._napis_ekranu("%s · %s · %s" % [nazwa, stan_txt, cena_txt], 18))
+		wiersz.add_child(h._ui._napis_ekranu("%s · %s" % [nazwa, cena_txt], 18))
 		wiersz.add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_karty_miejsca(o), 16))
+		wiersz.add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_szacunku_remontu(o), 16))
+		var b_pom_r := Button.new()
+		b_pom_r.text = "Poproś kogoś o dokładniejszy szacunek remontu"
+		b_pom_r.custom_minimum_size = Vector2(0, 40)
+		b_pom_r.pressed.connect(func() -> void:
+			_panel_pomocy_oceny(str(o.get("id", "")), kat_id, stan_filtr, etykiety, true)
+		)
+		wiersz.add_child(b_pom_r)
 	else:
 		var stan_karty := stan_txt
 		if kat_id == "samochod":
@@ -973,14 +999,42 @@ func _zakoncz_prosbe_oceny(
 	etykiety: Dictionary,
 	nieruchomosc: bool
 ) -> void:
-	var w: Dictionary = h._rynek_zakupow.popros_o_pomoc_oceny(h._swiat, oferta_id, ref, dojazd)
+	var w: Dictionary = {}
+	if nieruchomosc:
+		w = h._rynek_zakupow.popros_o_pomoc_remontu(h._swiat, oferta_id, ref)
+	else:
+		w = h._rynek_zakupow.popros_o_pomoc_oceny(h._swiat, oferta_id, ref, dojazd)
 	var tekst := str(w.get("tekst", w.get("powod", "")))
 	var dojazd_w: Variant = w.get("dojazd", {})
 	if dojazd_w is Dictionary and str(dojazd_w.get("tekst", "")) != "":
 		tekst = str(dojazd_w.get("tekst", "")) + " " + tekst
-	_pokaz_komunikat_zakupu(tekst, w)
+	_pokaz_wynik_pomocy(tekst, w, kat_id, stan_filtr, etykiety, nieruchomosc, oferta_id)
+
+
+func _pokaz_wynik_pomocy(
+	tekst: String,
+	w: Dictionary,
+	kat_id: String,
+	stan_filtr: String,
+	etykiety: Dictionary,
+	nieruchomosc: bool,
+	oferta_id: String
+) -> void:
 	if bool(w.get("ok", false)):
 		h.SkryptZapisu.zapisz(h._swiat)
+	var na_karcie := false
+	if not h._stos.is_empty() and h._stos[h._stos.size() - 1] is Dictionary:
+		na_karcie = str((h._stos[h._stos.size() - 1] as Dictionary).get("tresc", "")) == "zakupy_oferta"
+	if na_karcie:
+		var akcja: Dictionary = h._stos[h._stos.size() - 1]
+		h._ui._wyczysc(h._ui._tresc_biala())
+		_ekran_zakupy_karta_oferty(akcja)
+		var msg = h._ui._napis_ekranu(tekst if tekst != "" else "Brak wyniku pomocy.", 16)
+		h._ui._tresc_biala().add_child(msg)
+		h._ui._tresc_biala().move_child(msg, 0)
+		return
+	_pokaz_komunikat_zakupu(tekst, w)
+	if bool(w.get("ok", false)):
 		_przerysuj_liste_zakupow(kat_id, stan_filtr, etykiety, nieruchomosc)
 
 
@@ -1145,6 +1199,18 @@ func _on_zakupy_filtr_ceny(od: float, dokad: float) -> void:
 
 
 func _dodaj_filtr_marek_dobr(panel_filtr: VBoxContainer, kat_id: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
+	var szukaj := LineEdit.new()
+	szukaj.placeholder_text = "Szukaj marki, modelu lub rodzaju"
+	szukaj.text = h._zakupy_szukaj_tekst
+	szukaj.clear_button_enabled = true
+	szukaj.custom_minimum_size = Vector2(0, 40)
+	szukaj.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	szukaj.add_theme_font_size_override("font_size", 17)
+	szukaj.text_changed.connect(func(t: String) -> void:
+		h._zakupy_szukaj_tekst = t
+		_przerysuj_liste_zakupow(kat_id, h._zakupy_stan_filtr, etykiety, nieruchomosc)
+	)
+	panel_filtr.add_child(szukaj)
 	panel_filtr.add_child(h._ui._napis_ekranu("Marki (kilka naraz; puste = wszystkie):", 17))
 	var marki: Array = h._rynek_zakupow.marki_katalogu_dobra(kat_id)
 	var szukaj_marek := LineEdit.new()
@@ -1261,7 +1327,7 @@ func _odswiez_napis_puli_zakupow(kat_id: String) -> void:
 		var n_nowe: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, "nowy")
 		var n_uzywane: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, miejsce, kat_id, "uzywany")
 		h._zakupy_pula_lbl.visible = true
-		h._zakupy_pula_lbl.text = "Ogłoszeń w tym zasięgu: %d nowych i %d używanych. Wszystkie losuje udział nowych z ustawień." % [n_nowe, n_uzywane]
+		h._zakupy_pula_lbl.text = "Nowe: %d modeli katalogu (po jednej ofercie, nie sztuk w sklepach). Używane ogłoszenia w zasięgu: %d. Zakładka Wszystkie losuje około 70%% nowych, dopóki starcza modeli." % [n_nowe, n_uzywane]
 		return
 	var strona := _strona_puli_zakupow(kat_id)
 	var n: int = h._rynek_zakupow.pula_w_zasiegu(h._zakupy_zasieg_poziom, h._stan._id_miejsca_pobytu(), kat_id, strona)
@@ -1270,6 +1336,9 @@ func _odswiez_napis_puli_zakupow(kat_id: String) -> void:
 		h._zakupy_pula_lbl.text = ""
 		return
 	h._zakupy_pula_lbl.visible = true
+	if h._rynek_zakupow.kategoria_drobna(kat_id) and strona == "nowy":
+		h._zakupy_pula_lbl.text = "Nowych modeli w katalogu: %d. Licznik to jedna oferta na model, nie liczba sztuk." % n
+		return
 	var co := "nowych" if strona == "nowy" else "używanych"
 	h._zakupy_pula_lbl.text = "Ogłoszeń %s w tym zasięgu: %d" % [co, n]
 
@@ -1398,6 +1467,7 @@ func _na_scroll_aut(wartosc: float) -> void:
 	var zostalo := pasek.max_value - wartosc - sc.size.y
 	if not RynekZakupow.trzeba_dociagnac_przed_koncem(zostalo):
 		return
+	h._zakupy_dokladka_seria = 0
 	_dokladka_zakupow()
 
 
@@ -1491,15 +1561,20 @@ func _dokladka_zakupow() -> int:
 	var miasta: Array = h._losowanie.miasta_polski() if h._losowanie != null else []
 	var dodano := 0
 	if h._zakupy_kat_id == "samochod":
-		dodano = h._rynek_zakupow.uzupelnij_okno_aut(h._swiat, miasta, _filtry_aut(h._zakupy_stan_filtr), RynekZakupow.WYPRZEDZENIE_AUT)
+		dodano = h._rynek_zakupow.uzupelnij_okno_aut(h._swiat, miasta, _filtry_aut(h._zakupy_stan_filtr), 1)
 	elif h._rynek_zakupow.kategoria_drobna(h._zakupy_kat_id):
-		dodano = h._rynek_zakupow.uzupelnij_okno_dobr(h._swiat, miasta, _filtry_dobra(), RynekZakupow.WYPRZEDZENIE_AUT)
+		dodano = h._rynek_zakupow.uzupelnij_okno_dobr(h._swiat, miasta, _filtry_dobra(), 1)
 	else:
-		dodano = h._rynek_zakupow.uzupelnij_okno_lokum(h._swiat, miasta, _filtry_lokum(), RynekZakupow.WYPRZEDZENIE_AUT)
+		dodano = h._rynek_zakupow.uzupelnij_okno_lokum(h._swiat, miasta, _filtry_lokum(), 1)
 	if dodano > 0:
 		_dopisz_karty_zakupow(przed)
 		_odswiez_napis_puli_zakupow(h._zakupy_kat_id)
 	h._zakupy_dokladka = false
+	if dodano > 0 and h._zakupy_dokladka_seria < 3:
+		h._zakupy_dokladka_seria += 1
+		call_deferred("_dokladka_zakupow")
+	else:
+		h._zakupy_dokladka_seria = 0
 	return dodano
 
 
@@ -1553,7 +1628,7 @@ func _oferty_na_liscie_zakupow() -> Array:
 			naped_f = h._zakupy_filtr_naped
 	elif h._rynek_zakupow.kategoria_drobna(kat_id):
 		marki_f = h._zakupy_filtr_marki.duplicate()
-	return h._rynek_zakupow.oferty_filtrowane(
+	var wynik: Array = h._rynek_zakupow.oferty_filtrowane(
 		h._swiat,
 		kat_id,
 		stan_listy,
@@ -1569,6 +1644,22 @@ func _oferty_na_liscie_zakupow() -> Array:
 		naped_f,
 		h._zakupy_zasieg_poziom if kat_id == "samochod" or nieruchomosc or h._rynek_zakupow.kategoria_drobna(kat_id) else "",
 	)
+	return _filtruj_szukanie_ofert(wynik)
+
+
+func _filtruj_szukanie_ofert(oferty: Array) -> Array:
+	var q: String = str(h._zakupy_szukaj_tekst).strip_edges().to_lower()
+	if q == "":
+		return oferty
+	var out: Array = []
+	for o in oferty:
+		if not (o is Dictionary):
+			continue
+		var rodzaj: String = str(h._rynek_zakupow.nazwa_rodzaju_oferty(o)).to_lower()
+		var tekst := "%s %s %s %s" % [str(o.get("nazwa", "")), str(o.get("marka", "")), str(o.get("model", "")), rodzaj]
+		if tekst.to_lower().find(q) >= 0:
+			out.append(o)
+	return out
 
 
 func _aktywuj_zakladke_samochodow() -> void:

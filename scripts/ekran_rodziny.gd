@@ -93,6 +93,8 @@ func _ekran_postac() -> void:
 
 
 func _ekran_rodzina() -> void:
+	if ZiarnoRodzicow.new().uzupelnij_wieki(h._swiat):
+		h.SkryptZapisu.zapisz(h._swiat)
 	var rodzina: Variant = h._swiat.get("rodzina", {})
 	if not (rodzina is Dictionary) or rodzina.is_empty():
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Rodzina nie weszła do zapisu. Spróbuj Start jeszcze raz — jeśli dalej pusto, losowanie padło.", 16))
@@ -238,6 +240,10 @@ func _opis_rodzica(osoba: Variant) -> String:
 		czesci.append("imię: —")
 	var cechy := _cechy_listy(osoba.get("charakter"))
 	czesci.append("cechy: %s" % (cechy if cechy != "" else "—"))
+	if h._ui._jest_liczba(osoba.get("wiek")):
+		czesci.append("wiek: %d lat" % int(osoba["wiek"]))
+	else:
+		czesci.append("wiek: —")
 	var praca := ""
 	if osoba.get("praca") is Dictionary and bool(osoba["praca"].get("kolo", false)):
 		# UI: konkretny zawód (2-digit), nie sama grupa ISCO.
@@ -268,6 +274,8 @@ func _opis_rodzica(osoba: Variant) -> String:
 
 
 func _ekran_lista_osob(klucz: String, pusto: String) -> void:
+	if ZiarnoRodzicow.new().uzupelnij_wieki(h._swiat):
+		h.SkryptZapisu.zapisz(h._swiat)
 	var lista: Variant = h._swiat.get(klucz, [])
 	if not (lista is Array) or lista.is_empty():
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(pusto, 16))
@@ -279,6 +287,8 @@ func _ekran_lista_osob(klucz: String, pusto: String) -> void:
 		var cechy := _cechy_listy_z_karty(osoba)
 		var plec = h._ui._nazwa_pola(osoba.get("plec"))
 		var linia := "%d. %s" % [nr, plec if plec != "" else "osoba"]
+		if h._ui._jest_liczba(osoba.get("wiek")):
+			linia += ", %d lat" % int(osoba["wiek"])
 		if cechy != "":
 			linia += " — %s" % cechy
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia, 16))
@@ -299,9 +309,12 @@ func _opis_rodzenstwa(osoba: Dictionary, nr: int) -> String:
 		else:
 			etykieta = "Siostra %d" % nr if plec_id == "kobieta" else "Brat %d" % nr
 	var cechy := _cechy_listy_z_karty(osoba)
+	var wiek_txt := ""
+	if h._ui._jest_liczba(osoba.get("wiek")):
+		wiek_txt = ", %d lat" % int(osoba["wiek"])
 	if cechy != "":
-		return "%s — %s" % [etykieta, cechy]
-	return etykieta
+		return "%s%s — %s" % [etykieta, wiek_txt, cechy]
+	return "%s%s" % [etykieta, wiek_txt]
 
 
 func _cechy_listy(lista: Variant) -> String:

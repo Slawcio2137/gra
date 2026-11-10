@@ -721,6 +721,21 @@ func kategoria_lokum(kategoria: String) -> bool:
 	return kategoria == "mieszkanie" or kategoria == "dom" or kategoria == "apartament" or kategoria == "willa"
 
 
+## Udział puli względem mieszkania. Ta sama kolejność co rynek_wagi_typu.
+func _udzial_ofert_lokum(kategoria: String) -> float:
+	match kategoria:
+		"mieszkanie":
+			return 1.0
+		"apartament":
+			return 0.55
+		"dom":
+			return 0.34
+		"willa":
+			return 0.12
+		_:
+			return 1.0
+
+
 func kategoria_daje_plusy(kategoria: String) -> bool:
 	return kategoria_drobna(kategoria)
 
@@ -808,6 +823,7 @@ func pula_w_zasiegu(poziom: String, id_miejsca: String, kategoria: String, stron
 			n = baza_ogloszen_lokum_nowych(lud)
 		else:
 			n = baza_ogloszen_lokum(lud)
+		n = maxi(1, int(round(float(n) * _udzial_ofert_lokum(kategoria))))
 	_ostatnia_pula = n
 	return n
 
@@ -2015,6 +2031,32 @@ func plusy_oferty(oferta: Dictionary) -> int:
 	return 1
 
 
+func nazwa_rodzaju_oferty(oferta: Dictionary) -> String:
+	var pod := str(oferta.get("podkategoria", "")).strip_edges()
+	if pod == "" and str(oferta.get("kategoria", "")) == "sprzet":
+		pod = str(oferta.get("segment", ""))
+	match pod:
+		"sluchawki":
+			return "Słuchawki"
+		"klawiatura":
+			return "Klawiatura"
+		"mysz":
+			return "Mysz"
+		"mikrofon":
+			return "Mikrofon"
+	match str(oferta.get("kategoria", "")):
+		"telefon":
+			return "Telefon"
+		"laptop":
+			return "Laptop"
+		"komputer":
+			return "Komputer"
+		"rower":
+			return "Rower"
+		_:
+			return ""
+
+
 func tekst_plusow(ile: int) -> String:
 	var n := clampi(ile, 0, 4)
 	if n <= 0:
@@ -2089,10 +2131,13 @@ func linie_karty_drobiazgu(oferta: Dictionary) -> Array:
 	var stan_txt := "nowy" if str(oferta.get("stan", "")) == "nowy" else "używany"
 	var cena := formatuj_cene_auta(oferta.get("cena_zl")) if _liczba(oferta.get("cena_zl")) else "—"
 	var glowna := "%s · %s · %s" % [nazwa, stan_txt, cena]
+	var linie: Array = [glowna]
+	var rodzaj := nazwa_rodzaju_oferty(oferta)
+	if rodzaj != "":
+		linie.append("Rodzaj: %s" % rodzaj)
 	var plus := tekst_plusow(plusy_oferty(oferta))
 	if plus != "":
-		glowna += " · " + plus
-	var linie: Array = [glowna]
+		linie.append("Zadowolenie: %s" % plus)
 	var dek: Array = oferta.get("usterki_deklarowane", []) if oferta.get("usterki_deklarowane") is Array else []
 	if str(oferta.get("stan", "")) == "uzywany" and not dek.is_empty():
 		var nazwy: Array = nazwy_usterek(dek, kat, str(oferta.get("segment", "")))
@@ -2506,8 +2551,10 @@ func _licz_wygode_lokum_start(typ_kat: String, metraz: int, stan: String, poziom
 	return clampi(int(round(v)), lo, hi)
 
 
-func remont(swiat: Dictionary, indeks_nieruchomosci: int) -> Dictionary:
-	var out := {"ok": false, "powod": ""}
+func remont(swiat: Dictionary, indeks_nieruchomosci: int, tryb: String = "sam", kumpel: Dictionary = {}) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": ""}
+	if tryb != "sam" and tryb != "kumpel" and tryb != "firma":
+		tryb = "sam"
 	if not (swiat.get("majatek") is Dictionary):
 		out["powod"] = "Brak majątku."
 		return out
@@ -2520,40 +2567,392 @@ func remont(swiat: Dictionary, indeks_nieruchomosci: int) -> Dictionary:
 		out["powod"] = "Zły indeks."
 		return out
 	var n: Dictionary = lista[indeks_nieruchomosci]
-	var conf := _nieruchomosci_conf()
-	var rem: Dictionary = {}
-	if conf.get("remont") is Dictionary:
-		rem = conf["remont"]
-	var stan_id := str(n.get("stan", ""))
-	var stawki: Dictionary = rem.get("stawka_zl_za_m2", {}) if rem.get("stawka_zl_za_m2") is Dictionary else {}
-	var delty: Dictionary = rem.get("delta_wygody", {}) if rem.get("delta_wygody") is Dictionary else {}
-	if not stawki.has(stan_id) or int(stawki.get(stan_id, 0)) <= 0:
-		out["powod"] = "Ten stan nie wymaga remontu (albo już po)."
+	if n.get("remont_trwa") is Dictionary:
+		var trwa0: Dictionary = n["remont_trwa"]
+		out["powod"] = "Remont już trwa: tydzień %d z %d." % [int(trwa0.get("minelo", 0)), int(trwa0.get("tygodni", 0))]
 		return out
-	var metraz := float(n.get("metraz_m2", 40))
-	var koszt := int(round(metraz * float(stawki[stan_id])))
-	var bohater: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
-	var kasa := int(bohater.get("pieniadze", 0)) if _liczba(bohater.get("pieniadze")) else 0
-	if kasa < koszt:
-		out["powod"] = "Remont: za mało (%d < %d)." % [kasa, koszt]
+	var materialy := koszt_remontu_prawdziwy(n)
+	if materialy <= 0:
+		out["powod"] = "Ten stan nie wymaga remontu."
 		return out
-	bohater["pieniadze"] = kasa - koszt
-	swiat["bohater"] = bohater
-	n["stan"] = "po_remoncie"
-	var wyg := int(n.get("wygoda", 50))
-	wyg += int(delty.get(stan_id, 10))
-	var typ_rem := str(n.get("kategoria", n.get("typ", "mieszkanie")))
-	wyg = clampi(wyg, 0, _sufit_wygody_typu(typ_rem, conf))
-	n["wygoda"] = wyg
-	n["ostatni_remont_koszt"] = koszt
+	var do_zaplaty := koszt_startu_remontu(n, tryb)
+	var stawka_tygodniowa := 0
+	if tryb == "kumpel":
+		if bool(kumpel.get("laczna", false)):
+			do_zaplaty += int(kumpel.get("kwota_laczna", 0))
+		else:
+			stawka_tygodniowa = int(kumpel.get("stawka_tygodniowa", 0))
+	var kasa := _kasa_bohatera(swiat)
+	if kasa < do_zaplaty:
+		out["powod"] = "Remont: za mało (%d < %d)." % [kasa, do_zaplaty]
+		return out
+	_ustaw_kase(swiat, kasa - do_zaplaty)
+	var tygodni := tygodnie_remontu_trybu(n, tryb)
+	var zmecz := zmeczenie_remontu_tydzien(tryb)
+	n["remont_trwa"] = {
+		"tygodni": tygodni,
+		"minelo": 0,
+		"koszt": do_zaplaty,
+		"stan_przed": str(n.get("stan", "")),
+		"tryb": tryb,
+		"zmeczenie_tydzien": zmecz,
+		"stawka_tygodniowa": stawka_tygodniowa,
+		"kumpel_ref": str(kumpel.get("ref", "")),
+		"kumpel_nazwa": str(kumpel.get("nazwa", "")),
+	}
 	lista[indeks_nieruchomosci] = n
 	maj["nieruchomosci"] = lista
 	swiat["majatek"] = maj
-	przelicz_zadowolenie_docelowe(swiat)
 	out["ok"] = true
-	out["koszt"] = koszt
-	out["wygoda"] = wyg
-	out["propozycja_do_poprawki"] = true
+	out["koszt"] = do_zaplaty
+	out["tygodni"] = tygodni
+	out["tryb"] = tryb
+	out["tekst"] = "Remont (%s) ruszył. Zapłacone %d zł, koniec za %d tyg." % [nazwa_trybu_remontu(tryb), do_zaplaty, tygodni]
+	if zmecz > 0:
+		out["tekst"] = str(out["tekst"]) + " Zmęczenie fizyczne +%d na tydzień." % zmecz
+	return out
+
+
+func tick_remonty(swiat: Dictionary) -> void:
+	if not (swiat.get("majatek") is Dictionary):
+		return
+	var maj: Dictionary = swiat["majatek"]
+	if not (maj.get("nieruchomosci") is Array):
+		return
+	var lista: Array = maj["nieruchomosci"]
+	var zmieniono := false
+	for i in lista.size():
+		if not (lista[i] is Dictionary):
+			continue
+		var n: Dictionary = lista[i]
+		if not (n.get("remont_trwa") is Dictionary):
+			continue
+		var trwa: Dictionary = n["remont_trwa"]
+		var stawka := int(trwa.get("stawka_tygodniowa", 0))
+		if stawka > 0:
+			var kasa := _kasa_bohatera(swiat)
+			if kasa < stawka:
+				trwa["blokada"] = "Brak %d zł na stawkę kumpla. Ten tydzień się nie liczy." % stawka
+				n["remont_trwa"] = trwa
+				lista[i] = n
+				zmieniono = true
+				continue
+			_ustaw_kase(swiat, kasa - stawka)
+			trwa["koszt"] = int(trwa.get("koszt", 0)) + stawka
+			trwa.erase("blokada")
+		var zmecz := int(trwa.get("zmeczenie_tydzien", 0))
+		if not _liczba(trwa.get("zmeczenie_tydzien")):
+			zmecz = zmeczenie_remontu_tydzien(str(trwa.get("tryb", "sam")))
+			trwa["zmeczenie_tydzien"] = zmecz
+		_dodaj_zmeczenie_fizyczne(swiat, zmecz)
+		trwa["minelo"] = int(trwa.get("minelo", 0)) + 1
+		if int(trwa["minelo"]) < int(trwa.get("tygodni", 1)):
+			n["remont_trwa"] = trwa
+			lista[i] = n
+			zmieniono = true
+			continue
+		var conf := _nieruchomosci_conf()
+		var rem: Dictionary = conf.get("remont", {}) if conf.get("remont") is Dictionary else {}
+		var delty: Dictionary = rem.get("delta_wygody", {}) if rem.get("delta_wygody") is Dictionary else {}
+		var stan_przed := str(trwa.get("stan_przed", n.get("stan", "")))
+		n["stan"] = "po_remoncie"
+		var wyg := int(n.get("wygoda", 50)) + int(delty.get(stan_przed, 10))
+		var typ_rem := str(n.get("kategoria", n.get("typ", "mieszkanie")))
+		n["wygoda"] = clampi(wyg, 0, _sufit_wygody_typu(typ_rem, conf))
+		if _liczba(n.get("cena_zl")):
+			n["cena_zl"] = int(n["cena_zl"]) + int(round(float(trwa.get("koszt", 0)) * 0.3))
+		n["ostatni_remont_koszt"] = int(trwa.get("koszt", 0))
+		n.erase("remont_trwa")
+		n["koszt_remontu_zl"] = 0
+		n["szacunek_remontu_zl"] = 0
+		lista[i] = n
+		zmieniono = true
+	if zmieniono:
+		maj["nieruchomosci"] = lista
+		swiat["majatek"] = maj
+		przelicz_zadowolenie_docelowe(swiat)
+
+
+func koszt_remontu_prawdziwy(n: Dictionary) -> int:
+	var conf := _nieruchomosci_conf()
+	var rem: Dictionary = conf.get("remont", {}) if conf.get("remont") is Dictionary else {}
+	var stawki: Dictionary = rem.get("stawka_zl_za_m2", {}) if rem.get("stawka_zl_za_m2") is Dictionary else {}
+	var mnozniki: Dictionary = rem.get("mnoznik_typu", {}) if rem.get("mnoznik_typu") is Dictionary else {}
+	var stan_id := str(n.get("stan", ""))
+	var stawka := float(stawki.get(stan_id, 0))
+	if stawka <= 0.0:
+		return 0
+	var metraz := float(n.get("metraz_m2", 40))
+	var typ := str(n.get("kategoria", n.get("typ", "mieszkanie")))
+	if typ == "dom_jednorodzinny":
+		typ = "dom"
+	var mnoz := float(mnozniki.get(typ, 1.0))
+	return maxi(0, int(round(metraz * stawka * mnoz)))
+
+
+func tygodnie_remontu(n: Dictionary) -> int:
+	## Czas samemu. Zwykły remont: 4–20 tyg. Stan surowy: 3× analogicznego do_remontu.
+	var stan := str(n.get("stan", ""))
+	var klucz := stan
+	var mnoz := 1
+	if stan == "surowy":
+		klucz = str(_blok_remontu().get("surowy_baza_tygodni", "do_remontu"))
+		mnoz = _mnoznik_czasu_surowego()
+	var baza := _losuj_tygodnie_zakresu(n, klucz)
+	return maxi(1, baza * mnoz)
+
+
+func tygodnie_remontu_trybu(n: Dictionary, tryb: String) -> int:
+	var solo := tygodnie_remontu(n)
+	if tryb == "" or tryb == "sam":
+		return solo
+	var tyg := int(round(float(solo) * mnoznik_tygodni_trybu(tryb)))
+	return maxi(1, tyg)
+
+
+func _losuj_tygodnie_zakresu(n: Dictionary, klucz: String) -> int:
+	var rem := _blok_remontu()
+	var mapa: Dictionary = rem.get("tygodnie", {}) if rem.get("tygodnie") is Dictionary else {}
+	var para: Variant = mapa.get(klucz, [8, 16])
+	var od := 8
+	var dok := 16
+	if para is Array and para.size() >= 2:
+		od = int(para[0])
+		dok = int(para[1])
+	od = clampi(od, 4, 20)
+	dok = clampi(dok, od, 20)
+	var rng := RandomNumberGenerator.new()
+	var sol := absi(str(n.get("id", "remont")).hash())
+	rng.seed = sol if sol != 0 else 1
+	return rng.randi_range(od, dok)
+
+
+func _mnoznik_czasu_surowego() -> int:
+	var v: Variant = _blok_remontu().get("surowy_mnoznik_czasu", 3)
+	if _liczba(v):
+		return maxi(1, int(v))
+	return 3
+
+
+func _blok_remontu() -> Dictionary:
+	var conf := _nieruchomosci_conf()
+	var rem: Variant = conf.get("remont", {})
+	if rem is Dictionary:
+		return rem
+	return {}
+
+
+func _tryb_remontu(tryb: String) -> Dictionary:
+	var tryby: Variant = _blok_remontu().get("tryby", {})
+	if tryby is Dictionary and tryby.get(tryb) is Dictionary:
+		return tryby[tryb]
+	return {}
+
+
+func mnoznik_tygodni_trybu(tryb: String) -> float:
+	var domyslne := {"sam": 1.0, "kumpel": 0.6, "firma": 0.15}
+	var blok := _tryb_remontu(tryb)
+	if _liczba(blok.get("mnoznik_tygodni")):
+		return float(blok["mnoznik_tygodni"])
+	return float(domyslne.get(tryb, 1.0))
+
+
+func mnoznik_kosztu_trybu(tryb: String) -> float:
+	var domyslne := {"sam": 1.0, "kumpel": 1.0, "firma": 2.4}
+	var blok := _tryb_remontu(tryb)
+	if _liczba(blok.get("mnoznik_kosztu")):
+		return float(blok["mnoznik_kosztu"])
+	return float(domyslne.get(tryb, 1.0))
+
+
+func zmeczenie_remontu_tydzien(tryb: String) -> int:
+	var domyslne := {"sam": 22, "kumpel": 10, "firma": 0}
+	var blok := _tryb_remontu(tryb)
+	if _liczba(blok.get("zmeczenie_fizyczne_tydzien")):
+		return int(blok["zmeczenie_fizyczne_tydzien"])
+	return int(domyslne.get(tryb, 0))
+
+
+func nazwa_trybu_remontu(tryb: String) -> String:
+	match tryb:
+		"kumpel":
+			return "z kumplem"
+		"firma":
+			return "firma"
+		_:
+			return "samemu"
+
+
+func koszt_startu_remontu(n: Dictionary, tryb: String) -> int:
+	var mat := koszt_remontu_prawdziwy(n)
+	if mat <= 0:
+		return 0
+	return maxi(0, int(round(float(mat) * mnoznik_kosztu_trybu(tryb))))
+
+
+func sugerowana_stawka_tygodniowa(n: Dictionary) -> int:
+	var mat := koszt_remontu_prawdziwy(n)
+	var tyg := tygodnie_remontu_trybu(n, "kumpel")
+	if tyg <= 0:
+		tyg = 1
+	var udzial := 0.35
+	var blok := _tryb_remontu("kumpel")
+	if _liczba(blok.get("udzial_robocizny")):
+		udzial = float(blok["udzial_robocizny"])
+	return maxi(50, int(round(float(mat) * udzial / float(tyg))))
+
+
+func min_stawka_tygodniowa(n: Dictionary, relacja: int) -> int:
+	var sug := sugerowana_stawka_tygodniowa(n)
+	var rel := clampi(relacja, 0, 100)
+	var przy0 := 1.15
+	var przy100 := 0.15
+	var blok := _tryb_remontu("kumpel")
+	if _liczba(blok.get("min_przy_relacji_0")):
+		przy0 = float(blok["min_przy_relacji_0"])
+	if _liczba(blok.get("min_przy_relacji_100")):
+		przy100 = float(blok["min_przy_relacji_100"])
+	var wsp := przy0 + (przy100 - przy0) * (float(rel) / 100.0)
+	return maxi(0, int(round(float(sug) * wsp)))
+
+
+func zaproponuj_pomoc_remontu(swiat: Dictionary, indeks: int, ref: String, kwota: int, laczna: bool) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": ""}
+	var kand := _kandydat_po_ref(swiat, ref)
+	if kand.is_empty():
+		out["powod"] = "Nie ma tej osoby."
+		out["tekst"] = out["powod"]
+		return out
+	if not (swiat.get("majatek") is Dictionary):
+		out["powod"] = "Brak majątku."
+		out["tekst"] = out["powod"]
+		return out
+	var maj: Dictionary = swiat["majatek"]
+	var lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []
+	if indeks < 0 or indeks >= lista.size() or not (lista[indeks] is Dictionary):
+		out["powod"] = "Zły indeks."
+		out["tekst"] = out["powod"]
+		return out
+	var n: Dictionary = lista[indeks]
+	var osoba: Dictionary = kand.get("osoba", {}) if kand.get("osoba") is Dictionary else {}
+	var relacja := _relacja_osoby(osoba)
+	var tyg := tygodnie_remontu_trybu(n, "kumpel")
+	var min_tyg := min_stawka_tygodniowa(n, relacja)
+	var sug := sugerowana_stawka_tygodniowa(n)
+	var oferowana := kwota
+	var lacznie := kwota
+	if laczna:
+		oferowana = int(floor(float(kwota) / float(maxi(1, tyg))))
+	else:
+		lacznie = kwota * tyg
+	var imie := str(kand.get("nazwa", ref))
+	if oferowana < min_tyg:
+		out["powod"] = "%s odrzuca. Relacja %d: od %d zł/tydz. (sugerowane %d)." % [imie, relacja, min_tyg, sug]
+		out["tekst"] = out["powod"]
+		out["min_tydzien"] = min_tyg
+		out["sugerowana"] = sug
+		return out
+	var pakiet := {
+		"ref": ref,
+		"nazwa": imie,
+		"laczna": laczna,
+		"stawka_tygodniowa": 0 if laczna else kwota,
+		"kwota_laczna": lacznie if laczna else 0,
+	}
+	var start: Dictionary = remont(swiat, indeks, "kumpel", pakiet)
+	if not bool(start.get("ok", false)):
+		out["powod"] = str(start.get("powod", "Nie udało się zacząć."))
+		out["tekst"] = out["powod"]
+		return out
+	start["tekst"] = "%s zgadza się. " % imie + str(start.get("tekst", ""))
+	return start
+
+
+func _kandydat_po_ref(swiat: Dictionary, ref: String) -> Dictionary:
+	for k in kandydaci_pomocy_oceny(swiat):
+		if k is Dictionary and str(k.get("ref", "")) == ref:
+			return k
+	return {}
+
+
+func _kasa_bohatera(swiat: Dictionary) -> int:
+	var b: Variant = swiat.get("bohater", {})
+	if b is Dictionary and _liczba(b.get("pieniadze")):
+		return int(b["pieniadze"])
+	return 0
+
+
+func _ustaw_kase(swiat: Dictionary, kasa: int) -> void:
+	var b: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
+	b["pieniadze"] = kasa
+	swiat["bohater"] = b
+
+
+func _dodaj_zmeczenie_fizyczne(swiat: Dictionary, ile: int) -> void:
+	if ile <= 0:
+		return
+	var b: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
+	var z := 0
+	if _liczba(b.get("zmeczenie_fizyczne")):
+		z = int(b["zmeczenie_fizyczne"])
+	elif _liczba(b.get("zmeczenie")):
+		z = int(b["zmeczenie"])
+	b["zmeczenie_fizyczne"] = clampi(z + ile, 0, 100)
+	b["zmeczenie"] = int(b["zmeczenie_fizyczne"])
+	swiat["bohater"] = b
+
+
+func tekst_szacunku_remontu(n: Dictionary) -> String:
+	var prawda := koszt_remontu_prawdziwy(n)
+	if prawda <= 0:
+		return "Remont: przy tym stanie nie wygląda na potrzebny."
+	var kwota := prawda
+	if bool(n.get("szacunek_remontu_dokladny", false)) and _liczba(n.get("szacunek_remontu_zl")):
+		kwota = int(n["szacunek_remontu_zl"])
+		return "Szacunek remontu po pomocy: %s zł (bliżej rzeczywistego kosztu)." % formatuj_cene_auta(kwota)
+	if _liczba(n.get("szacunek_remontu_zl")):
+		kwota = int(n["szacunek_remontu_zl"])
+	else:
+		var szum := 75 + (absi(str(n.get("id", "x")).hash()) % 51)
+		kwota = int(round(float(prawda) * (float(szum) / 100.0)))
+	return "Szacowany koszt remontu: %s zł. To szacunek gracza, może być nietrafiony." % formatuj_cene_auta(kwota)
+
+
+func _wpisz_szacunek_remontu(oferta: Dictionary, rng: RandomNumberGenerator) -> void:
+	var prawda := koszt_remontu_prawdziwy(oferta)
+	oferta["koszt_remontu_zl"] = prawda
+	if prawda <= 0:
+		oferta["szacunek_remontu_zl"] = 0
+		return
+	oferta["szacunek_remontu_zl"] = int(round(float(prawda) * rng.randf_range(0.72, 1.35)))
+
+
+func popros_o_pomoc_remontu(swiat: Dictionary, oferta_id: String, kandydat_ref: String) -> Dictionary:
+	var out := {"ok": false, "tekst": "", "powod": ""}
+	var oferta: Dictionary = _znajdz_oferte(swiat, oferta_id)
+	if oferta.is_empty():
+		out["powod"] = "Nie ma tej oferty."
+		return out
+	var prawda := koszt_remontu_prawdziwy(oferta)
+	if prawda <= 0:
+		out["ok"] = true
+		out["tekst"] = "Pomoc: remont raczej nie jest potrzebny."
+		return out
+	var rng := RandomNumberGenerator.new()
+	rng.seed = absi((oferta_id + kandydat_ref).hash())
+	if rng.seed == 0:
+		rng.seed = 1
+	var dokladny := int(round(float(prawda) * rng.randf_range(0.92, 1.08)))
+	oferta["szacunek_remontu_zl"] = dokladny
+	oferta["szacunek_remontu_dokladny"] = true
+	_zapisz_oferte(swiat, oferta)
+	var imie := kandydat_ref
+	for k in kandydaci_pomocy_oceny(swiat):
+		if k is Dictionary and str(k.get("ref", "")) == kandydat_ref:
+			imie = str(k.get("nazwa", kandydat_ref))
+			break
+	out["ok"] = true
+	out["tekst"] = "%s ocenia remont na około %s zł." % [imie, formatuj_cene_auta(dokladny)]
 	return out
 
 
@@ -2702,6 +3101,7 @@ func _losuj_nieruchomosc(kat: String, miasto: Dictionary, miasto_gracza_id: Stri
 		"zrodlo_ceny": "istniejacy_wzor_lokalu_nie_gus" if rynek_stan == "nowy" else "istniejacy_wzor_lokalu",
 		"obrazek": placeholder_sciezka(kat),
 	}
+	_wpisz_szacunek_remontu(oferta, rng)
 	_wpisz_miejsce_oferty(oferta, miasto, hero)
 	return oferta
 
