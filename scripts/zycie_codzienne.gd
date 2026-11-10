@@ -17,29 +17,78 @@ static func kradziez_dostepna(_swiat: Dictionary, _kontekst: String) -> bool:
 	return _kontekst == "sklep"
 
 
-static func sprobuj_krasc(swiat: Dictionary, oferta: Dictionary) -> Dictionary:
+static func cele_kradziezy() -> Array:
+	return [
+		{"id": "siec", "nazwa": "Duża sieć", "czujnosc": 0.72, "relacja": false},
+		{"id": "lokalny", "nazwa": "Mały sklep", "czujnosc": 0.48, "relacja": false},
+		{"id": "nieznajomy", "nazwa": "Nieznajomy", "czujnosc": 0.55, "relacja": false},
+		{"id": "kolega", "nazwa": "Kolega z klasy", "czujnosc": 0.34, "relacja": true},
+		{"id": "rodzina", "nazwa": "Ktoś z rodziny", "czujnosc": 0.28, "relacja": true},
+	]
+
+
+static func szansa_kradziezy(swiat: Dictionary, oferta: Dictionary, cel_id: String) -> float:
+	var cel := _cel_kradziezy(cel_id)
+	var wartosc := 40.0
+	if _liczba(oferta.get("cena_zl")):
+		wartosc = float(oferta["cena_zl"])
+	var rozmiar := float(oferta.get("rozmiar_kradziezy", _rozmiar_kategorii(str(oferta.get("kategoria", "")))))
+	var boh := _bohater(swiat)
+	var zrecznosc := 40.0
+	if _liczba(boh.get("zwinnosc")):
+		zrecznosc = float(boh["zwinnosc"])
+	var intel := 40.0
+	if _liczba(boh.get("inteligencja_logiczna")):
+		intel = float(boh["inteligencja_logiczna"])
+	elif _liczba(boh.get("wiedza_pkt")):
+		intel = clampf(float(boh["wiedza_pkt"]) * 5.0, 0.0, 100.0)
+	var zmeczenie := 0.0
+	if _liczba(boh.get("zmeczenie_fizyczne")):
+		zmeczenie = float(boh["zmeczenie_fizyczne"])
+	var nastroj := 50.0
+	if _liczba(boh.get("psychika")):
+		nastroj = clampf(float(boh["psychika"]), 0.0, 100.0)
+	var wykroczenia := int(swiat.get("wykroczenia_kradziezy", 0))
+	var szansa := 0.55
+	szansa -= clampf(wartosc / 8000.0, 0.0, 0.28)
+	szansa -= clampf(rozmiar, 0.0, 1.0) * 0.22
+	szansa -= float(cel.get("czujnosc", 0.4)) * 0.35
+	szansa += (zrecznosc / 100.0) * 0.18
+	szansa += (intel / 100.0) * 0.1
+	szansa -= (zmeczenie / 100.0) * 0.12
+	szansa += (nastroj - 50.0) / 250.0
+	szansa -= float(wykroczenia) * 0.05
+	return clampf(szansa, 0.05, 0.85)
+
+
+static func sprobuj_krasc(swiat: Dictionary, oferta: Dictionary, cel_id: String = "lokalny") -> Dictionary:
 	var out := {"ok": false, "tekst": ""}
 	if not kradziez_dostepna(swiat, "sklep"):
 		out["tekst"] = "Tu się nie da kraść."
 		return out
-	var boh: Dictionary = _bohater(swiat)
-	var wiedza := 0
-	if _liczba(boh.get("wiedza_pkt")):
-		wiedza = int(boh["wiedza_pkt"])
-	var ryzyko := clampf(0.4 - float(wiedza) / 80.0, 0.12, 0.55)
+	var cel := _cel_kradziezy(cel_id)
+	var szansa := szansa_kradziezy(swiat, oferta, cel_id)
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
-	if rng.randf() < ryzyko:
+	swiat["wykroczenia_kradziezy"] = int(swiat.get("wykroczenia_kradziezy", 0)) + 1
+	var boh := _bohater(swiat)
+	if rng.randf() > szansa:
 		_dodaj_liczbe(boh, "psychika", -6, -50, 100)
 		_dodaj_liczbe(boh, "zmeczenie_fizyczne", 8, 0, 100)
 		boh["zmeczenie"] = int(boh.get("zmeczenie_fizyczne", 0))
-		_obniz_relacje_rodzicow(swiat, 8)
 		var kasa := int(boh.get("pieniadze", 0)) if _liczba(boh.get("pieniadze")) else 0
 		var mandat := mini(80, kasa)
-		boh["pieniadze"] = kasa - mandat
+		if not bool(cel.get("relacja", false)):
+			boh["pieniadze"] = kasa - mandat
 		swiat["bohater"] = boh
+		var rel := ""
+		if bool(cel.get("relacja", false)):
+			_obniz_relacje_rodzicow(swiat, 12 if cel_id == "rodzina" else 8)
+			rel = " Relacja spada."
 		out["zlapany"] = true
-		out["tekst"] = "Złapali cię. Mandat %d zł, relacja z rodzicami spada." % mandat
+		out["tekst"] = "Złapali cię (%s).%s" % [str(cel.get("nazwa", cel_id)), rel]
+		if mandat > 0 and not bool(cel.get("relacja", false)):
+			out["tekst"] = str(out["tekst"]) + " Mandat %d zł." % mandat
 		return out
 	var kopia: Dictionary = oferta.duplicate(true)
 	kopia["cena_zl"] = 0
@@ -53,13 +102,36 @@ static func sprobuj_krasc(swiat: Dictionary, oferta: Dictionary) -> Dictionary:
 	swiat["majatek"] = maj
 	swiat["bohater"] = boh
 	out["ok"] = true
-	out["tekst"] = "Udało się zabrać: %s." % str(oferta.get("nazwa", "rzecz"))
+	out["szansa"] = szansa
+	out["tekst"] = "Udało się zabrać: %s (%s)." % [str(oferta.get("nazwa", "rzecz")), str(cel.get("nazwa", ""))]
 	return out
+
+
+static func _cel_kradziezy(cel_id: String) -> Dictionary:
+	for c in cele_kradziezy():
+		if c is Dictionary and str(c.get("id", "")) == cel_id:
+			return c
+	return {"id": "lokalny", "nazwa": "Mały sklep", "czujnosc": 0.48, "relacja": false}
+
+
+static func _rozmiar_kategorii(kat: String) -> float:
+	match kat:
+		"telefon", "ksiazka", "sprzet":
+			return 0.25
+		"laptop":
+			return 0.55
+		"rower":
+			return 0.85
+		"komputer":
+			return 0.7
+		_:
+			return 0.35
 
 
 static func tick(swiat: Dictionary) -> String:
 	var linie: PackedStringArray = []
 	linie.append(_tick_nauki(swiat))
+	linie.append(_tick_klotni(swiat))
 	linie.append(_tick_sprzedazy(swiat))
 	linie.append(_tick_pozyczki(swiat))
 	linie.append(_tick_lokum(swiat))
@@ -234,6 +306,9 @@ static func _tick_nauki(swiat: Dictionary) -> String:
 		swiat["srednia_ocen"] = snappedf(srednia, 0.1)
 		boh["srednia_ocen"] = swiat["srednia_ocen"]
 	swiat["bohater"] = boh
+	if wysilek > 0:
+		_dodaj_liczbe(boh, "zmeczenie_psychiczne", int(round(float(wysilek) * 0.12)), 0, 100)
+		swiat["bohater"] = boh
 	if wysilek <= 0:
 		return ""
 	var ocena := "słaba"
@@ -241,7 +316,68 @@ static func _tick_nauki(swiat: Dictionary) -> String:
 		ocena = "dobra"
 	elif srednia >= 3.0:
 		ocena = "przeciętna"
-	return "Nauka: średnia %.1f (%s). Inteligencja %d." % [srednia, ocena, int(round(intel))]
+	return "Nauka: średnia %.1f (%s). Inteligencja %d. Zmęczenie psychiczne +%d." % [srednia, ocena, int(round(intel)), int(round(float(wysilek) * 0.12))]
+
+
+static func szansa_klotni(swiat: Dictionary) -> float:
+	var dochod := _dochod_rodzicow(swiat)
+	if dochod < 4500:
+		return 0.18
+	if dochod < 8000:
+		return 0.1
+	return 0.05
+
+
+static func _tick_klotni(swiat: Dictionary) -> String:
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	if rng.randf() >= szansa_klotni(swiat):
+		return ""
+	var boh := _bohater(swiat)
+	_dodaj_liczbe(boh, "psychika", -5, -50, 100)
+	swiat["bohater"] = boh
+	return "Rodzice się kłócą. Nastrój spada."
+
+
+static func dopisz_oskarzenie(swiat: Dictionary) -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	if rng.randf() >= 0.08:
+		return
+	if not (swiat.get("eventy_tury") is Array):
+		swiat["eventy_tury"] = []
+	(swiat["eventy_tury"] as Array).append({
+		"id": "niesprawiedliwe_oskarzenie",
+		"pytanie": true,
+		"tekst": "Ktoś oskarża cię o coś, czego nie zrobiłeś.",
+		"opcje": [
+			{"id": "tlumacz", "nazwa": "Tłumacz się"},
+			{"id": "milcz", "nazwa": "Milcz"},
+		],
+	})
+
+
+static func rozlicz_oskarzenie(swiat: Dictionary, opcja: String) -> Dictionary:
+	var boh := _bohater(swiat)
+	var intel := 40.0
+	if _liczba(boh.get("inteligencja_logiczna")):
+		intel = float(boh["inteligencja_logiczna"])
+	var relacja := 55.0
+	var rodzina: Dictionary = swiat.get("rodzina", {}) if swiat.get("rodzina") is Dictionary else {}
+	if rodzina.get("matka") is Dictionary and _liczba(rodzina["matka"].get("relacja")):
+		relacja = float(rodzina["matka"]["relacja"])
+	var szansa := clampf(intel / 100.0 * 0.5 + relacja / 100.0 * 0.35, 0.05, 0.85)
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	var oczyszczony := opcja == "tlumacz" and rng.randf() < szansa
+	var spadek := -3 if oczyszczony else -8
+	_dodaj_liczbe(boh, "psychika", spadek, -50, 100)
+	swiat["bohater"] = boh
+	if oczyszczony:
+		return {"ok": true, "tekst": "Udało się wybronić. Nastrój i tak lekko spada."}
+	if opcja == "milcz":
+		return {"ok": true, "tekst": "Milczysz. Oskarżenie zostaje, nastrój spada mocniej."}
+	return {"ok": true, "tekst": "Tłumaczenie nie przeszło. Nastrój spada mocniej."}
 
 
 static func _tick_sprzedazy(swiat: Dictionary) -> String:

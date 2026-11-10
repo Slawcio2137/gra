@@ -257,5 +257,40 @@ func _uruchom() -> int:
 	if kon_i <= start_i + 10.0 or kon_i > 100.0:
 		printerr("FAIL: inteligencja ", start_i, " ", kon_i)
 		return 1
-	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen, książka, fps, admin, życie")
+	if int(nauka["bohater"].get("zmeczenie_psychiczne", 0)) < 10:
+		printerr("FAIL: nauka bez zmęczenia psychicznego")
+		return 1
+	var tania := {"cena_zl": 40, "kategoria": "telefon"}
+	var droga := {"cena_zl": 6000, "kategoria": "rower"}
+	var sw_krad := {"bohater": {"zwinnosc": 50, "inteligencja_logiczna": 50, "psychika": 50, "zmeczenie_fizyczne": 0}, "wykroczenia_kradziezy": 0}
+	if Zycie.szansa_kradziezy(sw_krad, tania, "siec") >= Zycie.szansa_kradziezy(sw_krad, tania, "rodzina"):
+		printerr("FAIL: sieć nie czujniejsza od rodziny")
+		return 1
+	if Zycie.szansa_kradziezy(sw_krad, droga, "lokalny") >= Zycie.szansa_kradziezy(sw_krad, tania, "lokalny"):
+		printerr("FAIL: drogi rower nie trudniejszy")
+		return 1
+	if Zycie.szansa_klotni({"rodzina": {"zarobki": {"mediana_zl": 2000}}}) <= Zycie.szansa_klotni({"rodzina": {"zarobki": {"mediana_zl": 12000}}}):
+		printerr("FAIL: kłótnie")
+		return 1
+	if absf(rynek.mnoznik_nastroju_zmeczenia({"psychika": 0}) - 0.35) > 0.001:
+		printerr("FAIL: m przy nastroju 0")
+		return 1
+	if absf(rynek.mnoznik_nastroju_zmeczenia({"psychika": 100}) - 1.35) > 0.001:
+		printerr("FAIL: m przy nastroju 100")
+		return 1
+	var tura := {"bohater": {"zmeczenie_fizyczne": 0, "zmeczenie_psychiczne": 0, "psychika": 100, "kondycja": 100}}
+	rynek.zapamietaj_zmeczenie_tury(tura)
+	tura["bohater"]["zmeczenie_fizyczne"] = 22
+	rynek.rozlicz_zmeczenie_tury(tura)
+	if int(tura["bohater"]["zmeczenie_fizyczne"]) != 16:
+		printerr("FAIL: zysk / m ", tura["bohater"]["zmeczenie_fizyczne"])
+		return 1
+	var tura0 := {"bohater": {"zmeczenie_fizyczne": 0, "psychika": 0, "kondycja": 100}}
+	rynek.zapamietaj_zmeczenie_tury(tura0)
+	tura0["bohater"]["zmeczenie_fizyczne"] = 22
+	rynek.rozlicz_zmeczenie_tury(tura0)
+	if int(tura0["bohater"]["zmeczenie_fizyczne"]) <= 22:
+		printerr("FAIL: zły nastrój nie zwiększył zmęczenia ", tura0["bohater"]["zmeczenie_fizyczne"])
+		return 1
+	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen, książka, fps, admin, życie, nastrój")
 	return 0

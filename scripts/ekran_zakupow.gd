@@ -916,12 +916,7 @@ func _buduj_pelna_karte_oferty(
 		kradnij.text = "Spróbuj ukraść"
 		kradnij.custom_minimum_size = Vector2(0, 40)
 		kradnij.pressed.connect(func() -> void:
-			var w: Dictionary = Zycie.sprobuj_krasc(h._swiat, o)
-			h.SkryptZapisu.zapisz(h._swiat)
-			h._pasek._odswiez_pasek_statystyk(false)
-			_pokaz_komunikat_zakupu(str(w.get("tekst", "")), w)
-			if bool(w.get("ok", false)):
-				h._cofnij_poziom()
+			_panel_kradziezy(o)
 		)
 		wiersz.add_child(kradnij)
 	return wiersz
@@ -1061,6 +1056,34 @@ func _pokaz_wynik_pomocy(
 	_pokaz_komunikat_zakupu(tekst, w)
 	if bool(w.get("ok", false)):
 		_przerysuj_liste_zakupow(kat_id, stan_filtr, etykiety, nieruchomosc)
+
+
+func _panel_kradziezy(oferta: Dictionary) -> void:
+	var panel := VBoxContainer.new()
+	panel.set_meta("zakupy_oferta", true)
+	var wartosc := str(oferta.get("cena_zl", "?"))
+	panel.add_child(h._ui._napis_ekranu("Kraść: %s (wartość %s zł). Wybierz cel." % [str(oferta.get("nazwa", "rzecz")), wartosc], 15))
+	for cel in Zycie.cele_kradziezy():
+		if not (cel is Dictionary):
+			continue
+		var cel_id := str(cel.get("id", ""))
+		var b := Button.new()
+		var szansa := int(round(Zycie.szansa_kradziezy(h._swiat, oferta, cel_id) * 100.0))
+		b.text = "%s (szansa około %d%%)" % [str(cel.get("nazwa", cel_id)), szansa]
+		b.custom_minimum_size = Vector2(0, 40)
+		var id_cel := cel_id
+		b.pressed.connect(_wykonaj_kradziez.bind(oferta, id_cel))
+		panel.add_child(b)
+	h._ui._tresc_biala().add_child(panel)
+
+
+func _wykonaj_kradziez(oferta: Dictionary, cel_id: String) -> void:
+	var w: Dictionary = Zycie.sprobuj_krasc(h._swiat, oferta, cel_id)
+	h.SkryptZapisu.zapisz(h._swiat)
+	h._pasek._odswiez_pasek_statystyk(false)
+	_pokaz_komunikat_zakupu(str(w.get("tekst", "")), w)
+	if bool(w.get("ok", false)):
+		h._cofnij_poziom()
 
 
 func _panel_odbioru_drobnego(oferta_id: String, kat_id: String, stan_filtr: String, etykiety: Dictionary, nieruchomosc: bool) -> void:

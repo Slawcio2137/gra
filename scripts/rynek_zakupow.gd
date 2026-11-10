@@ -3097,6 +3097,77 @@ func udzial_regeneracji_zmeczenia(bohater: Dictionary) -> float:
 	return clampf(0.50 + 0.30 * (srednia / 100.0), 0.50, 0.80)
 
 
+func mnoznik_nastroju_zmeczenia(bohater: Dictionary) -> float:
+	## Nastrój 0 → 0,35; nastrój 100 → 1,35. Psychika poza 0–100 jest obcinana.
+	var nastroj := 50.0
+	if _liczba(bohater.get("psychika")):
+		nastroj = float(bohater["psychika"])
+	nastroj = clampf(nastroj, 0.0, 100.0)
+	return nastroj / 100.0 + 0.35
+
+
+func zapamietaj_zmeczenie_tury(swiat: Dictionary) -> void:
+	var b := _bohater_zmeczenia(swiat)
+	swiat["_zmeczenie_start_fiz"] = _odczyt_zmeczenia(b, "zmeczenie_fizyczne")
+	swiat["_zmeczenie_start_psych"] = _odczyt_zmeczenia(b, "zmeczenie_psychiczne")
+
+
+func rozlicz_zmeczenie_tury(swiat: Dictionary) -> void:
+	## Jedno miejsce mnożnika nastroju. W trakcie tury źródła dopisują surowe punkty.
+	## Na końcu: regeneracja × m (sufit 0,95), potem zysk tury / m, potem clamp 0–100.
+	var b := _bohater_zmeczenia(swiat)
+	var m := mnoznik_nastroju_zmeczenia(b)
+	var regen := clampf(udzial_regeneracji_zmeczenia(b) * m, 0.0, 0.95)
+	_rozlicz_jedno_zmeczenie(swiat, b, "zmeczenie_fizyczne", regen, m)
+	_rozlicz_jedno_zmeczenie(swiat, b, "zmeczenie_psychiczne", regen, m)
+	if _liczba(b.get("zmeczenie_fizyczne")):
+		b["zmeczenie"] = int(b["zmeczenie_fizyczne"])
+	swiat["bohater"] = b
+	swiat.erase("_zmeczenie_start_fiz")
+	swiat.erase("_zmeczenie_start_psych")
+
+
+func dodaj_zmeczenie_tury(swiat: Dictionary, fizyczne: int, psychiczne: int) -> void:
+	## Surowe punkty tury. Mnożnik nastroju dochodzi w rozlicz_zmeczenie_tury.
+	if fizyczne > 0:
+		_dodaj_zmeczenie_fizyczne(swiat, fizyczne)
+	if psychiczne > 0:
+		var b := _bohater_zmeczenia(swiat)
+		var z := _odczyt_zmeczenia(b, "zmeczenie_psychiczne")
+		b["zmeczenie_psychiczne"] = clampi(z + psychiczne, 0, 100)
+		swiat["bohater"] = b
+
+
+func _rozlicz_jedno_zmeczenie(swiat: Dictionary, bohater: Dictionary, klucz: String, regen: float, m: float) -> void:
+	var start := 0
+	var pole_startu := "_zmeczenie_start_fiz" if klucz == "zmeczenie_fizyczne" else "_zmeczenie_start_psych"
+	if _liczba(swiat.get(pole_startu)):
+		start = int(swiat[pole_startu])
+	else:
+		start = _odczyt_zmeczenia(bohater, klucz)
+	var teraz := _odczyt_zmeczenia(bohater, klucz)
+	var delta := teraz - start
+	var zysk := maxi(0, delta)
+	var spadek := mini(0, delta)
+	var po_regen := float(start) * (1.0 - regen)
+	var koniec := int(round(po_regen + float(spadek) + float(zysk) / maxf(m, 0.35)))
+	bohater[klucz] = clampi(koniec, 0, 100)
+
+
+func _bohater_zmeczenia(swiat: Dictionary) -> Dictionary:
+	if swiat.get("bohater") is Dictionary:
+		return swiat["bohater"]
+	return {}
+
+
+func _odczyt_zmeczenia(bohater: Dictionary, klucz: String) -> int:
+	if _liczba(bohater.get(klucz)):
+		return int(bohater[klucz])
+	if klucz == "zmeczenie_fizyczne" and _liczba(bohater.get("zmeczenie")):
+		return int(bohater["zmeczenie"])
+	return 0
+
+
 func regeneruj_zmeczenie_tydzien(swiat: Dictionary) -> void:
 	var b: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
 	var udzial := udzial_regeneracji_zmeczenia(b)

@@ -293,7 +293,7 @@ func _on_nastepna_tura() -> void:
 		ZiarnoRodzicow.new().postarz_otoczenie(_swiat)
 	_swiat["tydzien"] = tydzien
 	_swiat["rok"] = rok
-	_rynek_zakupow.regeneruj_zmeczenie_tydzien(_swiat)
+	_rynek_zakupow.zapamietaj_zmeczenie_tury(_swiat)
 	_rynek_zakupow.tick_remonty(_swiat)
 	_rynek_zakupow.tick_dostawy(_swiat)
 	_swiat["komunikat_tury"] = ""
@@ -325,6 +325,7 @@ func _on_nastepna_tura() -> void:
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	_swiat["dni_auta"] = int(_swiat.get("dni_auta", 0))
 	_ekran_zakupow._odswiez_rynek_zakupow()
+	_rynek_zakupow.rozlicz_zmeczenie_tury(_swiat)
 	SkryptZapisu.zapisz(_swiat)
 	_pasek._odswiez_pasek_statystyk(true)
 	_pasek._ukryj_zielony_komunikat_tury()
