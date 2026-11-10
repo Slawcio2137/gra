@@ -150,5 +150,27 @@ func _uruchom() -> int:
 	if rynek.nazwa_rodzaju_oferty(sprzet) != "Słuchawki":
 		printerr("FAIL: rodzaj")
 		return 1
-	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m)
+	var zdrowy := {"bohater": {"zmeczenie_fizyczne": 100, "zmeczenie_psychiczne": 40, "kondycja": 100, "psychika": 100}}
+	var boh_z: Dictionary = zdrowy["bohater"]
+	if absf(rynek.udzial_regeneracji_zmeczenia(boh_z) - 0.80) > 0.001:
+		printerr("FAIL: udział przy pełnym zdrowiu")
+		return 1
+	rynek.regeneruj_zmeczenie_tydzien(zdrowy)
+	if int(zdrowy["bohater"]["zmeczenie_fizyczne"]) != 20 or int(zdrowy["bohater"]["zmeczenie_psychiczne"]) != 8:
+		printerr("FAIL: regeneracja 80% ", zdrowy["bohater"])
+		return 1
+	rynek._dodaj_zmeczenie_fizyczne(zdrowy, 22)
+	if int(zdrowy["bohater"]["zmeczenie_fizyczne"]) != 42:
+		printerr("FAIL: kolejność regen potem +22 ", zdrowy["bohater"]["zmeczenie_fizyczne"])
+		return 1
+	var chory := {"bohater": {"zmeczenie_fizyczne": 100, "kondycja": 0, "psychika": 0}}
+	var boh_c: Dictionary = chory["bohater"]
+	if absf(rynek.udzial_regeneracji_zmeczenia(boh_c) - 0.50) > 0.001:
+		printerr("FAIL: udział przy złym zdrowiu")
+		return 1
+	rynek.regeneruj_zmeczenie_tydzien(chory)
+	if int(chory["bohater"]["zmeczenie_fizyczne"]) != 50:
+		printerr("FAIL: regeneracja 50% ", chory["bohater"])
+		return 1
+	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen 50–80%")
 	return 0

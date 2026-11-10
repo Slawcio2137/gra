@@ -285,6 +285,7 @@ func _on_nastepna_tura() -> void:
 		ZiarnoRodzicow.new().postarz_otoczenie(_swiat)
 	_swiat["tydzien"] = tydzien
 	_swiat["rok"] = rok
+	_rynek_zakupow.regeneruj_zmeczenie_tydzien(_swiat)
 	_rynek_zakupow.tick_remonty(_swiat)
 	_swiat["komunikat_tury"] = ""
 	_swiat["eventy_tury"] = []

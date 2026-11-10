@@ -2888,6 +2888,42 @@ func _ustaw_kase(swiat: Dictionary, kasa: int) -> void:
 	swiat["bohater"] = b
 
 
+func udzial_regeneracji_zmeczenia(bohater: Dictionary) -> float:
+	## 50% przy zdrowiu 0, 80% przy zdrowiu 100. Średnia kondycji (albo zdrowie) i psychiki.
+	var fiz := _poziom_zdrowia_0_100(bohater, "kondycja", "zdrowie")
+	var psy := _poziom_zdrowia_0_100(bohater, "psychika", "")
+	var srednia := (fiz + psy) / 2.0
+	return clampf(0.50 + 0.30 * (srednia / 100.0), 0.50, 0.80)
+
+
+func regeneruj_zmeczenie_tydzien(swiat: Dictionary) -> void:
+	var b: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
+	var udzial := udzial_regeneracji_zmeczenia(b)
+	_obniz_zmeczenie_pole(b, "zmeczenie_fizyczne", udzial)
+	_obniz_zmeczenie_pole(b, "zmeczenie_psychiczne", udzial)
+	if _liczba(b.get("zmeczenie_fizyczne")):
+		b["zmeczenie"] = int(b["zmeczenie_fizyczne"])
+	elif _liczba(b.get("zmeczenie")):
+		_obniz_zmeczenie_pole(b, "zmeczenie", udzial)
+	swiat["bohater"] = b
+
+
+func _poziom_zdrowia_0_100(bohater: Dictionary, pole: String, zapas: String) -> float:
+	var v := 50.0
+	if _liczba(bohater.get(pole)):
+		v = float(bohater[pole])
+	elif zapas != "" and _liczba(bohater.get(zapas)):
+		v = float(bohater[zapas])
+	return clampf(v, 0.0, 100.0)
+
+
+func _obniz_zmeczenie_pole(bohater: Dictionary, klucz: String, udzial: float) -> void:
+	if not _liczba(bohater.get(klucz)):
+		return
+	var zostaje := int(round(float(int(bohater[klucz])) * (1.0 - udzial)))
+	bohater[klucz] = clampi(zostaje, 0, 100)
+
+
 func _dodaj_zmeczenie_fizyczne(swiat: Dictionary, ile: int) -> void:
 	if ile <= 0:
 		return
