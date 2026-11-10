@@ -41,6 +41,7 @@ var _wersja_stukniecia := 0
 var _wersja_czeka_na_pin := false
 const SkryptAdmina = preload("res://scripts/ekran_admina.gd")
 const SkryptDostepu = preload("res://scripts/dostep_admina.gd")
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
 var _admin
 var _cisza_ustawien := false
 var _swiat: Dictionary = {}
@@ -296,6 +297,9 @@ func _on_nastepna_tura() -> void:
 	_rynek_zakupow.tick_remonty(_swiat)
 	_rynek_zakupow.tick_dostawy(_swiat)
 	_swiat["komunikat_tury"] = ""
+	var zycie_txt := str(Zycie.tick(_swiat))
+	if zycie_txt != "":
+		_swiat["komunikat_tury"] = zycie_txt
 	_swiat["eventy_tury"] = []
 	_swiat["event_odpowiedz_tekst"] = ""
 	_ekran_jedzenia._odswiez_flage_jedzenia_sam()
@@ -891,6 +895,29 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 		_fala2._ekran_lotnictwo()
 	elif tresc == "szkola":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Nauka — Fala 2: korepetycje, zajęcia, szachy w podmenu.", 16))
+		var srednia := str(_swiat.get("srednia_ocen", "—"))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Średnia: %s. Wysiłek nauki: %d." % [srednia, int(_swiat.get("wysilek_nauki", 0))], 16))
+		var wysilek := HSlider.new()
+		wysilek.min_value = 0
+		wysilek.max_value = 100
+		wysilek.step = 5
+		wysilek.custom_minimum_size = Vector2(0, 28)
+		wysilek.set_value_no_signal(int(_swiat.get("wysilek_nauki", 0)))
+		wysilek.value_changed.connect(func(v: float) -> void:
+			Zycie.ucz_sie(_swiat, int(v))
+			SkryptZapisu.zapisz(_swiat)
+		)
+		_ui._tresc_biala().add_child(wysilek)
+		var b_bojka := Button.new()
+		b_bojka.text = "Bójka"
+		b_bojka.custom_minimum_size = Vector2(0, 44)
+		b_bojka.pressed.connect(func() -> void:
+			var w: Dictionary = Zycie.bojka(_swiat)
+			SkryptZapisu.zapisz(_swiat)
+			_pasek._odswiez_pasek_statystyk(false)
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
+		)
+		_ui._tresc_biala().add_child(b_bojka)
 		var leg := "Legitymacja działa (ulgowy bilet)." if _rynek_zakupow.ma_legitymacje(_swiat) else "Legitymacja nie działa — nie ma zapisu, że się uczysz."
 		_ui._tresc_biala().add_child(_ui._napis_ekranu(leg, 16))
 		_fala2._stub_przedszkole()

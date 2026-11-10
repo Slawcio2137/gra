@@ -1,6 +1,8 @@
 extends RefCounted
 class_name EkranZakupow
 
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
+
 ## Ekran zakupów: grupy, oferty, filtry, targowanie.
 
 var h
@@ -909,6 +911,19 @@ func _buduj_pelna_karte_oferty(
 			_pokaz_komunikat_zakupu(str(wynik.get("powod", "Nie kupiono.")), wynik)
 	)
 	wiersz.add_child(b)
+	if Zycie.kradziez_dostepna(h._swiat, "sklep") and h._rynek_zakupow.kategoria_drobna(kat_id):
+		var kradnij := Button.new()
+		kradnij.text = "Spróbuj ukraść"
+		kradnij.custom_minimum_size = Vector2(0, 40)
+		kradnij.pressed.connect(func() -> void:
+			var w: Dictionary = Zycie.sprobuj_krasc(h._swiat, o)
+			h.SkryptZapisu.zapisz(h._swiat)
+			h._pasek._odswiez_pasek_statystyk(false)
+			_pokaz_komunikat_zakupu(str(w.get("tekst", "")), w)
+			if bool(w.get("ok", false)):
+				h._cofnij_poziom()
+		)
+		wiersz.add_child(kradnij)
 	return wiersz
 
 

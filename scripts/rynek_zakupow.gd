@@ -1650,6 +1650,7 @@ func kup(swiat: Dictionary, oferta_id: String) -> Dictionary:
 		if not (maj.get("nieruchomosci") is Array):
 			maj["nieruchomosci"] = []
 		maj["nieruchomosci"].append(kopia)
+		swiat["mieszka_sam"] = true
 		# Przeprowadzka gdy inne miasto.
 		var mid := str(oferta.get("miasto_id", ""))
 		var mnaz := str(oferta.get("miasto_nazwa", ""))

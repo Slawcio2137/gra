@@ -11,6 +11,7 @@ const Scroll = preload("res://scripts/scroll_dotyk.gd")
 const EkranRodziny = preload("res://scripts/ekran_rodziny.gd")
 const Main = preload("res://scripts/main.gd")
 const Bramka = preload("res://scripts/dostep_admina.gd")
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
 
 
 func _init() -> void:
@@ -226,5 +227,35 @@ func _uruchom() -> int:
 	if not klucze.has("psychika") or not klucze.has("wiedza_pkt") or not klucze.has("uczy_sie"):
 		printerr("FAIL: pola admina ", klucze.keys())
 		return 1
-	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen, książka, fps i admin")
+	if not Zycie.kradziez_dostepna({}, "sklep") or Zycie.kradziez_dostepna({}, "ulica"):
+		printerr("FAIL: haczyk kradzieży")
+		return 1
+	var mieszkanie := {"kategoria": "mieszkanie", "metraz_m2": 80}
+	var dom := {"kategoria": "dom", "metraz_m2": 80}
+	if Zycie.koszt_lokum_tydzien(mieszkanie) <= Zycie.koszt_lokum_tydzien(dom):
+		printerr("FAIL: mieszkanie nie droższe w utrzymaniu")
+		return 1
+	var mlody := {"bohater": {"wiek": 16, "pieniadze": 0}, "rodzina": {}}
+	if bool(Zycie.wez_pozyczke(mlody, 1000, false).get("ok", false)):
+		printerr("FAIL: bank dał kredyt nieletniemu")
+		return 1
+	var dorosly := {"bohater": {"wiek": 20, "pieniadze": 0}, "praca": {"placa_zl": 4000}, "rodzina": {}}
+	if not bool(Zycie.wez_pozyczke(dorosly, 1000, false).get("ok", false)):
+		printerr("FAIL: bank odmówił dorosłemu z pensją")
+		return 1
+	var targ := {"bohater": {"pieniadze": 0}, "majatek": {"dobra": [{"nazwa": "Rzecz", "cena_zl": 100}], "nieruchomosci": []}}
+	var sprzedaz: Dictionary = Zycie.wystaw_na_sprzedaz(targ, 0, 10)
+	if not bool(sprzedaz.get("ok", false)) or (targ["majatek"]["dobra"] as Array).size() != 0:
+		printerr("FAIL: tania sprzedaż ", sprzedaz)
+		return 1
+	var nauka := {"bohater": {}, "wysilek_nauki": 100, "tydzien": 1}
+	Zycie.tick(nauka)
+	var start_i := float(nauka["bohater"]["inteligencja_postep"])
+	for _i in 300:
+		Zycie.tick(nauka)
+	var kon_i := float(nauka["bohater"]["inteligencja_postep"])
+	if kon_i <= start_i + 10.0 or kon_i > 100.0:
+		printerr("FAIL: inteligencja ", start_i, " ", kon_i)
+		return 1
+	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen, książka, fps, admin, życie")
 	return 0

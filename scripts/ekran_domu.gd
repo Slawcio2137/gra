@@ -1,6 +1,8 @@
 extends RefCounted
 class_name EkranDomu
 
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
+
 ## Ekrany domu, zdrowia i majątku.
 
 var h
@@ -28,6 +30,7 @@ func _ekran_zdrowie() -> void:
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(skrot, 18))
 	else:
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Zdrowie ilościowe pojawi się, gdy będzie w zapisie. Chorób na starcie nie wypisuję.", 16))
+	_panel_lekarza()
 	var zdrowie = h._ui._tekst_pusty(bohater.get("zdrowie"))
 	if zdrowie != "":
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Zdrowie: %s" % zdrowie, 16))
@@ -54,6 +57,36 @@ func _ekran_majatek() -> void:
 					"%s · jeszcze %d tyg." % [str(d.get("nazwa", "Paczka")), int(d.get("dostawa_zostalo", 0))],
 					14
 				))
+	if bool(h._swiat.get("mieszka_sam", false)):
+		var maj_k: Dictionary = h._swiat.get("majatek", {}) if h._swiat.get("majatek") is Dictionary else {}
+		var lista_k: Array = maj_k.get("nieruchomosci", []) if maj_k.get("nieruchomosci") is Array else []
+		if lista_k.size() > 0 and lista_k[0] is Dictionary:
+			h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+				"Utrzymanie własnego lokum: %d zł / tydzień." % Zycie.koszt_lokum_tydzien(lista_k[0]),
+				14
+			))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Pożyczki", 18))
+	var kwota_p := LineEdit.new()
+	kwota_p.placeholder_text = "kwota"
+	kwota_p.text = "1000"
+	kwota_p.custom_minimum_size = Vector2(0, 36)
+	h._ui._tresc_biala().add_child(kwota_p)
+	var b_bank := Button.new()
+	b_bank.text = "Kredyt w banku"
+	b_bank.custom_minimum_size = Vector2(0, 40)
+	b_bank.pressed.connect(func() -> void:
+		var w: Dictionary = Zycie.wez_pozyczke(h._swiat, int(kwota_p.text), false)
+		_po_zyciu(w)
+	)
+	h._ui._tresc_biala().add_child(b_bank)
+	var b_rodz := Button.new()
+	b_rodz.text = "Pożyczka od rodziny"
+	b_rodz.custom_minimum_size = Vector2(0, 40)
+	b_rodz.pressed.connect(func() -> void:
+		var w2: Dictionary = Zycie.wez_pozyczke(h._swiat, int(kwota_p.text), true)
+		_po_zyciu(w2)
+	)
+	h._ui._tresc_biala().add_child(b_rodz)
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Nieruchomości", 18))
 	var maj: Dictionary = h._swiat.get("majatek", {}) if h._swiat.get("majatek") is Dictionary else {}
 	var n_lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []
@@ -114,6 +147,29 @@ func _ekran_majatek() -> void:
 							h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 					)
 					h._ui._tresc_biala().add_child(b_oddaj)
+				var cena_s := LineEdit.new()
+				cena_s.placeholder_text = "cena sprzedaży"
+				cena_s.text = str(int(d.get("cena_zl", 20))) if h._ui._jest_liczba(d.get("cena_zl")) else "20"
+				cena_s.custom_minimum_size = Vector2(0, 36)
+				h._ui._tresc_biala().add_child(cena_s)
+				var b_spr := Button.new()
+				b_spr.text = "Wystaw na sprzedaż" if not bool(d.get("wystawione", false)) else "Zmień cenę"
+				b_spr.custom_minimum_size = Vector2(0, 40)
+				var idx_s := i_d
+				b_spr.pressed.connect(func() -> void:
+					var w: Dictionary = Zycie.wystaw_na_sprzedaz(h._swiat, idx_s, int(cena_s.text))
+					_po_zyciu(w)
+				)
+				h._ui._tresc_biala().add_child(b_spr)
+				if bool(d.get("wystawione", false)):
+					var b_zdejmij := Button.new()
+					b_zdejmij.text = "Zdejmij z wystawienia"
+					b_zdejmij.custom_minimum_size = Vector2(0, 40)
+					b_zdejmij.pressed.connect(func() -> void:
+						Zycie.zdejmij_ze_sprzedazy(h._swiat, idx_s)
+						_po_zyciu({"ok": true, "tekst": "Zdjęte."})
+					)
+					h._ui._tresc_biala().add_child(b_zdejmij)
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Wpływy", 18))
 	var lista: Variant = h._swiat.get("wplywy", [])
 	if not (lista is Array) or lista.is_empty():
@@ -152,6 +208,41 @@ func _opis_mieszkacie_w() -> String:
 			if rodzina is Dictionary and rodzina.get("lokum") is Dictionary:
 				lokum = rodzina["lokum"]
 	return h._rynek_zakupow.opis_lokum_ui(lokum)
+
+
+func _po_zyciu(w: Dictionary) -> void:
+	if bool(w.get("ok", false)):
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._stan._zsynchronizuj_pieniadze_z_bohatera()
+		h._pasek._odswiez_pasek_statystyk(false)
+		h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+		return
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w.get("tekst", "")), 14))
+
+
+func _panel_lekarza() -> void:
+	var box: Control = h._ui._tresc_biala()
+	box.add_child(h._ui._napis_ekranu("Lekarz. Najpierw ścieżka, potem specjalizacja.", 16))
+	for problem in ["cialo", "zeby", "psychika", "oczy"]:
+		var nazwa := str(Zycie.SPECJALIZACJE[problem]["nazwa"])
+		box.add_child(h._ui._napis_ekranu(nazwa, 16))
+		_przycisk_lekarza(box, "Rodzice: NFZ", "rodzice", problem, "nfz")
+		_przycisk_lekarza(box, "Rodzice: prywatnie", "rodzice", problem, "prywatnie")
+		_przycisk_lekarza(box, "Sam NFZ", "nfz", problem, "")
+		_przycisk_lekarza(box, "Sam prywatnie", "prywatnie", problem, "")
+
+
+func _przycisk_lekarza(box: Control, tekst: String, sciezka: String, problem: String, wybor: String) -> void:
+	var b := Button.new()
+	b.text = tekst
+	b.custom_minimum_size = Vector2(0, 36)
+	b.pressed.connect(func() -> void:
+		var w: Dictionary = Zycie.idz_do_lekarza(h._swiat, sciezka, problem, wybor)
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._pasek._odswiez_pasek_statystyk(false)
+		box.add_child(h._ui._napis_ekranu(str(w.get("tekst", "")), 14))
+	)
+	box.add_child(b)
 
 
 func _dopisz_postep_remontu(trwa: Dictionary) -> void:

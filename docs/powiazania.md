@@ -15,3 +15,8 @@ Krótka mapa: co rusza które pole. Nowe funkcje niech wołają te wejścia, zam
 | Stan rzeczy | `stan_rzeczywisty`, `stan_oceniony`; książka: `stan_ksiazki` | Generacja `_losuj_dobro`. Ocena `ocen_stan`. Książka używana: skala świetny / dobry / zaczytany / rozpadający się, bez listy usterek. |
 | Limit klatek | `max_fps` w `user://ustawienia_gracza.cfg`, `Engine.max_fps` | Ustawienia, `DostepAdmina.zastosuj_fps`. 0 = bez limitu. |
 | Panel admina | `DostepAdmina.admin_dostepny` | Debug albo 7 stuknięć w „Wersja” i PIN. `WLACZ_ADMINA` wyłącza całość. Edycja idzie w `bohater` i zapis. |
+| Kradzież | `ZycieCodzienne.kradziez_dostepna` | Jedyny haczyk widoczności. Skutek: `sprobuj_krasc` (mandat, relacja rodziców, psychika, zmęczenie albo rzecz w majątku). |
+| Nauka i oceny | `wysilek_nauki`, `srednia_ocen`, `inteligencja_logiczna` | Tura `ZycieCodzienne.tick`. Wysiłek ze szkoły. Bójka: `bojka` raz na tydzień (zmęczenie, nastrój, czasem zdrowie). |
+| Lekarz | `idz_do_lekarza` | Rodzice / NFZ (kolejka) / prywatnie. Pudło nie mówi o błędzie, tylko „brak problemów”. |
+| Sprzedaż i pożyczka | `wystawione` na dobru, `pozyczki` | Majątek. Rata w turze. Bank od 18 lat i przy `praca.placa_zl`. |
+| Koszty po wyprowadzce | `mieszka_sam` po kupnie nieruchomości | Czynsz+media albo ogrzewanie, plus `budzet_jedzenia_zl` (ekran jedzenia). Dom rodzinny (`lokum_startowe`) bez tego. |
