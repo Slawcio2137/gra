@@ -1,6 +1,8 @@
 extends RefCounted
 class_name UiWspolne
 
+const SkryptDostepu = preload("res://scripts/dostep_admina.gd")
+
 ## Wspólne helpery UI, formatowanie tekstu i ustawienia wyglądu. Stan gry jest na hoście (h).
 
 var h
@@ -20,12 +22,7 @@ func _wczytaj_emotikony() -> void:
 
 
 func _ekran_ustawienia_w_bialym() -> void:
-	_tresc_biala().add_child(_napis_ekranu("Otwiera panel wyglądu (przejrzystość, kolory). Podział poziomy 8:5 usunięty.", 15))
-	var przycisk := Button.new()
-	przycisk.text = "Otwórz ustawienia wyglądu"
-	przycisk.custom_minimum_size = Vector2(0, 48)
-	przycisk.pressed.connect(h._on_ustawienia_pressed)
-	_tresc_biala().add_child(przycisk)
+	_zbuduj_ustawienia(_tresc_biala())
 
 
 func _kropki_dni(wybrane: int, cel: Callable) -> Control:
@@ -243,29 +240,95 @@ func _zastosuj_wyglad() -> void:
 
 
 func _podlacz_ustawienia() -> void:
-	h._cisza_ustawien = true
 	var kolumna: Node = h.get_node(h.KOLUMNA_USTAWIEN)
-	for i in [1, 2, 3]:
-		var przycisk := kolumna.get_node("Szerokosc%d" % i) as Button
-		przycisk.visible = false
-	var opis: Label = kolumna.get_node("SzerokoscOpis")
-	opis.visible = false
-	var proporcje: Label = kolumna.get_node("Proporcje")
-	proporcje.text = "Ekran pionowy (telefon). Stary podział 8:5 usunięty."
-	_ustaw_suwak_alpha(kolumna, "PanelAlpha", "PanelAlphaOpis", "Przejrzystość panelu", "alpha_panelu")
-	_ustaw_suwak_alpha(kolumna, "PrzyciskiAlpha", "PrzyciskiAlphaOpis", "Przejrzystość przycisków", "alpha_przyciskow")
-	_ustaw_suwak_alpha(kolumna, "NapisyAlpha", "NapisyAlphaOpis", "Przejrzystość napisów", "alpha_napisow")
-	var napisy := kolumna.get_node("KolorNapisow") as ColorPickerButton
-	napisy.edit_alpha = false
-	napisy.color = h._wyglad.get("kolor_napisow", Color.WHITE)
-	if not napisy.color_changed.is_connected(_on_kolor_napisow):
-		napisy.color_changed.connect(_on_kolor_napisow)
-	var tlo := kolumna.get_node("KolorTla") as ColorPickerButton
-	tlo.edit_alpha = false
-	tlo.color = h._wyglad.get("kolor_tla", Color(0.45, 0.45, 0.48))
-	if not tlo.color_changed.is_connected(_on_kolor_tla):
-		tlo.color_changed.connect(_on_kolor_tla)
-	h._cisza_ustawien = false
+	for dziecko in kolumna.get_children():
+		var nazwa := str(dziecko.name)
+		if nazwa == "Tytul" or nazwa == "ZamknijUstawienia":
+			continue
+		if dziecko is CanvasItem:
+			(dziecko as CanvasItem).visible = false
+	if kolumna.get_node_or_null("LimitKlatekBox") == null:
+		var box := VBoxContainer.new()
+		box.name = "LimitKlatekBox"
+		kolumna.add_child(box)
+		kolumna.move_child(box, 1)
+		_zbuduj_ustawienia(box)
+
+
+func _zbuduj_ustawienia(box: Node) -> void:
+	box.add_child(_napis_ekranu("Limit klatek", 18))
+	var rzad := HBoxContainer.new()
+	rzad.add_theme_constant_override("separation", 8)
+	var aktualny := SkryptDostepu.normalizuj_fps(int(h._wyglad.get("max_fps", 0)))
+	for opcja in SkryptDostepu.FPS_OPCJE:
+		var fps := int(opcja)
+		var b := Button.new()
+		b.text = "Bez limitu" if fps == 0 else str(fps)
+		b.custom_minimum_size = Vector2(0, 44)
+		b.disabled = fps == aktualny
+		b.pressed.connect(_ustaw_fps.bind(fps))
+		rzad.add_child(b)
+	box.add_child(rzad)
+	var wersja := Button.new()
+	wersja.text = "Wersja %s" % SkryptDostepu.WERSJA_WIDOCZNA
+	wersja.flat = true
+	wersja.pressed.connect(_on_stukniecie_wersji)
+	box.add_child(wersja)
+	if h._wersja_czeka_na_pin:
+		var pin := LineEdit.new()
+		pin.placeholder_text = "Kod"
+		pin.secret = true
+		pin.custom_minimum_size = Vector2(0, 40)
+		box.add_child(pin)
+		var zatwierdz := Button.new()
+		zatwierdz.text = "Odblokuj"
+		zatwierdz.custom_minimum_size = Vector2(0, 40)
+		zatwierdz.pressed.connect(func() -> void:
+			if SkryptDostepu.pin_pasuje(pin.text):
+				h._wyglad["admin_odblokowany"] = true
+				WygladGracza.zapisz(h._wyglad)
+				h._wersja_czeka_na_pin = false
+			_odswiez_ekran_ustawien(box)
+		)
+		box.add_child(zatwierdz)
+	if SkryptDostepu.admin_dostepny(bool(h._wyglad.get("admin_odblokowany", false))):
+		var admin := Button.new()
+		admin.text = "Panel admina"
+		admin.custom_minimum_size = Vector2(0, 48)
+		admin.pressed.connect(func() -> void:
+			h._on_zamknij_ustawienia()
+			h._otworz_akcje({"id": "admin", "nazwa": "Admin", "tryb": "ekran", "tresc": "admin"})
+		)
+		box.add_child(admin)
+
+
+func _on_stukniecie_wersji() -> void:
+	h._wersja_stukniecia += 1
+	if h._wersja_stukniecia >= SkryptDostepu.STUKNIECIA_WERSJI:
+		h._wersja_stukniecia = 0
+		h._wersja_czeka_na_pin = true
+		_odswiez_ekran_ustawien(null)
+
+
+func _odswiez_ekran_ustawien(box: Node) -> void:
+	if not h._stos.is_empty():
+		var g: Variant = h._stos[h._stos.size() - 1]
+		if g is Dictionary and str(g.get("tresc", "")) == "ustawienia_gry":
+			h._zaplanuj_stos()
+			return
+	var kolumna: Node = h.get_node(h.KOLUMNA_USTAWIEN)
+	var istniejacy := kolumna.get_node_or_null("LimitKlatekBox")
+	if istniejacy != null:
+		for dziecko in istniejacy.get_children():
+			istniejacy.remove_child(dziecko)
+			dziecko.free()
+		_zbuduj_ustawienia(istniejacy)
+
+
+func _ustaw_fps(fps: int) -> void:
+	h._wyglad["max_fps"] = SkryptDostepu.zastosuj_fps(fps)
+	WygladGracza.zapisz(h._wyglad)
+	_odswiez_ekran_ustawien(null)
 
 
 func _ustaw_suwak_alpha(kolumna: Node, suwak_nazwa: String, opis_nazwa: String, tytul: String, klucz: String) -> void:

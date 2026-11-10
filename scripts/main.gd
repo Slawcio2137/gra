@@ -37,6 +37,11 @@ const SkryptEkranuFali2 = preload("res://scripts/ekran_fali2.gd")
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
 var _wyglad: Dictionary = {}
+var _wersja_stukniecia := 0
+var _wersja_czeka_na_pin := false
+const SkryptAdmina = preload("res://scripts/ekran_admina.gd")
+const SkryptDostepu = preload("res://scripts/dostep_admina.gd")
+var _admin
 var _cisza_ustawien := false
 var _swiat: Dictionary = {}
 var _akcje: Array = []
@@ -161,6 +166,7 @@ func _init() -> void:
 	_ekran_zakupow = SkryptEkranuZakupow.new(self)
 	_modul_pracy = SkryptEkranuPracy.new(self)
 	_fala2 = SkryptEkranuFali2.new(self)
+	_admin = SkryptAdmina.new(self)
 
 
 
@@ -182,6 +188,7 @@ func _ready() -> void:
 	_jedzenie.visible = false
 	add_child(_jedzenie)
 	_wyglad = WygladGracza.wczytaj()
+	SkryptDostepu.zastosuj_fps(int(_wyglad.get("max_fps", 0)))
 	_ui._wczytaj_emotikony()
 	_ui._zastosuj_wyglad()
 	_ui._podlacz_ustawienia()
@@ -922,6 +929,8 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 		_rodzina._ekran_lista_osob("znajomi", "Nikogo jeszcze.")
 	elif tresc == "ustawienia_gry":
 		_ui._ekran_ustawienia_w_bialym()
+	elif tresc == "admin":
+		_admin._ekran()
 	elif tresc == "statystyki_ilosciowe":
 		_pasek._wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
 	if akcja.get("dzieci") is Array and tresc != "jedzenie" and tresc != "majatek" and tresc != "osoby":

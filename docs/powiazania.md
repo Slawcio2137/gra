@@ -13,3 +13,5 @@ Krótka mapa: co rusza które pole. Nowe funkcje niech wołają te wejścia, zam
 | Paliwo | spalanie auta + `cena_nosnika_dojazdu` (benzyna / gaz / energia) | Własny odbiór: `koszt_paliwa_wlasnego_auta` (w obie strony). Podwózka do auta: `koszt_dojazdu`. |
 | Szkoła / legitymacja | `uczy_sie`, `studiuje` albo wpis `edukacja` z `trwa` / `aktualna` / `uczy_sie` | `ma_legitymacje`. Bilet komunikacji powyżej 5 km: 2–5 zł, z legitymacją połowa (minimum 1 zł). Do 5 km: 0 zł. |
 | Stan rzeczy | `stan_rzeczywisty`, `stan_oceniony`; książka: `stan_ksiazki` | Generacja `_losuj_dobro`. Ocena `ocen_stan`. Książka używana: skala świetny / dobry / zaczytany / rozpadający się, bez listy usterek. |
+| Limit klatek | `max_fps` w `user://ustawienia_gracza.cfg`, `Engine.max_fps` | Ustawienia, `DostepAdmina.zastosuj_fps`. 0 = bez limitu. |
+| Panel admina | `DostepAdmina.admin_dostepny` | Debug albo 7 stuknięć w „Wersja” i PIN. `WLACZ_ADMINA` wyłącza całość. Edycja idzie w `bohater` i zapis. |

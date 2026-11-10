@@ -10,6 +10,7 @@ const EkranDomu = preload("res://scripts/ekran_domu.gd")
 const Scroll = preload("res://scripts/scroll_dotyk.gd")
 const EkranRodziny = preload("res://scripts/ekran_rodziny.gd")
 const Main = preload("res://scripts/main.gd")
+const Bramka = preload("res://scripts/dostep_admina.gd")
 
 
 func _init() -> void:
@@ -208,5 +209,22 @@ func _uruchom() -> int:
 	if bilet < 2 or bilet > 5 or bilet_u >= bilet:
 		printerr("FAIL: bilet ", bilet, " ", bilet_u)
 		return 1
-	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen 50–80%, książka i odbiór")
+	if Bramka.normalizuj_fps(0) != 0 or Bramka.normalizuj_fps(90) != 90 or Bramka.normalizuj_fps(45) != 60:
+		printerr("FAIL: fps")
+		return 1
+	if not Bramka.pin_pasuje(Bramka.PIN_ADMINA) or Bramka.pin_pasuje("0000"):
+		printerr("FAIL: pin")
+		return 1
+	if not Bramka.WLACZ_ADMINA:
+		printerr("FAIL: bramka admina wyłączona w tym buildzie testowym")
+		return 1
+	var pola: Array = Bramka.pola_bohatera({"wiedza_pkt": 4, "pieniadze": 10, "uczy_sie": true}, {"psychika": {"min": 0, "max": 100, "norma": 50}})
+	var klucze := {}
+	for p in pola:
+		if p is Dictionary:
+			klucze[str(p.get("klucz", ""))] = true
+	if not klucze.has("psychika") or not klucze.has("wiedza_pkt") or not klucze.has("uczy_sie"):
+		printerr("FAIL: pola admina ", klucze.keys())
+		return 1
+	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen, książka, fps i admin")
 	return 0

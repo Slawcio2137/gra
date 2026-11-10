@@ -1,6 +1,8 @@
 extends RefCounted
 class_name WygladGracza
 
+const SkryptDostepu = preload("res://scripts/dostep_admina.gd")
+
 ## Jedno miejsce na przejrzystość i kolory. Zapis w user://, nie w wielu scenach.
 
 const PLIK := "user://ustawienia_gracza.cfg"
@@ -16,6 +18,8 @@ static func domyslne() -> Dictionary:
 		"kolor_napisow": Color(1, 1, 1, 1),
 		"kolor_tla": Color(0.45, 0.45, 0.48, 1),
 		"wersja_ukladu": WERSJA_UKLADU,
+		"max_fps": 0,
+		"admin_odblokowany": false,
 	}
 
 
@@ -39,6 +43,8 @@ static func wczytaj() -> Dictionary:
 	if tlo is Color:
 		wynik["kolor_tla"] = tlo
 	wynik["wersja_ukladu"] = WERSJA_UKLADU
+	wynik["max_fps"] = SkryptDostepu.normalizuj_fps(int(cfg.get_value("wyglad", "max_fps", 0)))
+	wynik["admin_odblokowany"] = bool(cfg.get_value("wyglad", "admin_odblokowany", false))
 	return wynik
 
 
@@ -51,6 +57,8 @@ static func zapisz(dane: Dictionary) -> void:
 	cfg.set_value("wyglad", "alpha_napisow", float(dane.get("alpha_napisow", 1.0)))
 	cfg.set_value("wyglad", "kolor_napisow", dane.get("kolor_napisow", Color.WHITE))
 	cfg.set_value("wyglad", "kolor_tla", dane.get("kolor_tla", Color(0.45, 0.45, 0.48)))
+	cfg.set_value("wyglad", "max_fps", SkryptDostepu.normalizuj_fps(int(dane.get("max_fps", 0))))
+	cfg.set_value("wyglad", "admin_odblokowany", bool(dane.get("admin_odblokowany", false)))
 	cfg.save(PLIK)
 
 
