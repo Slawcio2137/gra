@@ -45,6 +45,15 @@ func _ekran_majatek() -> void:
 	var opis_lokum := _opis_mieszkacie_w()
 	if opis_lokum != "":
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(opis_lokum, 16))
+	var dostawy: Array = h._swiat.get("dostawy", []) if h._swiat.get("dostawy") is Array else []
+	if not dostawy.is_empty():
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("W drodze", 18))
+		for d in dostawy:
+			if d is Dictionary:
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+					"%s · jeszcze %d tyg." % [str(d.get("nazwa", "Paczka")), int(d.get("dostawa_zostalo", 0))],
+					14
+				))
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Nieruchomości", 18))
 	var maj: Dictionary = h._swiat.get("majatek", {}) if h._swiat.get("majatek") is Dictionary else {}
 	var n_lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []

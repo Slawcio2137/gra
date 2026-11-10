@@ -287,6 +287,7 @@ func _on_nastepna_tura() -> void:
 	_swiat["rok"] = rok
 	_rynek_zakupow.regeneruj_zmeczenie_tydzien(_swiat)
 	_rynek_zakupow.tick_remonty(_swiat)
+	_rynek_zakupow.tick_dostawy(_swiat)
 	_swiat["komunikat_tury"] = ""
 	_swiat["eventy_tury"] = []
 	_swiat["event_odpowiedz_tekst"] = ""
@@ -883,6 +884,8 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 		_fala2._ekran_lotnictwo()
 	elif tresc == "szkola":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Nauka — Fala 2: korepetycje, zajęcia, szachy w podmenu.", 16))
+		var leg := "Legitymacja działa (ulgowy bilet)." if _rynek_zakupow.ma_legitymacje(_swiat) else "Legitymacja nie działa — nie ma zapisu, że się uczysz."
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(leg, 16))
 		_fala2._stub_przedszkole()
 	elif tresc == "korepetycje":
 		_fala2._ekran_korepetycje()

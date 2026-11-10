@@ -172,5 +172,41 @@ func _uruchom() -> int:
 	if int(chory["bohater"]["zmeczenie_fizyczne"]) != 50:
 		printerr("FAIL: regeneracja 50% ", chory["bohater"])
 		return 1
-	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen 50–80%")
+	var rng_k := RandomNumberGenerator.new()
+	rng_k.seed = 3
+	var miasto_k := {"id": "t", "nazwa": "Testowo"}
+	var ks: Dictionary = rynek._losuj_dobro("ksiazka", miasto_k, rng_k, "t", {}, miasto_k, "uzywany")
+	var skala_ok := ["swietny", "dobry", "zaczytany", "rozpadajacy"]
+	if str(ks.get("rodzaj_nazwa", "")) == "" or not skala_ok.has(str(ks.get("stan_ksiazki", ""))):
+		printerr("FAIL: książka ", ks.get("nazwa"), " ", ks.get("stan_ksiazki"))
+		return 1
+	if int(ks.get("ilosc", 0)) != 1 or not rynek._liczba(ks.get("odleglosc_km")):
+		printerr("FAIL: ilość/odległość książki")
+		return 1
+	var cena_k := int(ks.get("cena_zl", 0))
+	if cena_k < 8 or cena_k > 120:
+		printerr("FAIL: cena używanej książki ", cena_k)
+		return 1
+	var sw_o := {"bohater": {"wiedza_pkt": 0}, "rynek_zakupow": {"oferty": [{"id": "o1", "kategoria": "ksiazka", "stan_rzeczywisty": 50, "sposob_odbioru": "osobisty"}]}}
+	var oc0: Dictionary = rynek.ocen_stan(sw_o, "o1", false)
+	if not bool(oc0.get("nieznany", false)):
+		printerr("FAIL: niska wiedza oceniła")
+		return 1
+	sw_o["bohater"]["wiedza_pkt"] = 20
+	var oc1: Dictionary = rynek.ocen_stan(sw_o, "o1", false)
+	if bool(oc1.get("nieznany", false)) or absi(int(oc1.get("stan_oceniony", 0)) - 50) > 2:
+		printerr("FAIL: wysoka wiedza ", oc1)
+		return 1
+	if rynek.ma_legitymacje({"bohater": {}}) or not rynek.ma_legitymacje({"bohater": {"uczy_sie": true}}):
+		printerr("FAIL: legitymacja")
+		return 1
+	if rynek.koszt_komunikacji_drobnej(3.0, false) != 0:
+		printerr("FAIL: bilet do 5 km")
+		return 1
+	var bilet: int = rynek.koszt_komunikacji_drobnej(45.0, false)
+	var bilet_u: int = rynek.koszt_komunikacji_drobnej(45.0, true)
+	if bilet < 2 or bilet > 5 or bilet_u >= bilet:
+		printerr("FAIL: bilet ", bilet, " ", bilet_u)
+		return 1
+	print("OK partia: udziały lokum, remont ", tyg, " tyg., surowy x3, wiek matki ", wiek_m, ", regen 50–80%, książka i odbiór")
 	return 0

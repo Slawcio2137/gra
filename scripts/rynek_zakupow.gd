@@ -1291,9 +1291,21 @@ func ocen_stan(swiat: Dictionary, oferta_id: String, z_pomoca: bool = false) -> 
 		# Po oględzinach / dostawie — nieco większy szum bez eksperta.
 		szum_od -= 2
 		szum_do += 2
+	var poz := poziom_wiedzy_oceny(swiat, str(oferta.get("kategoria", "")))
+	out["poziom_wiedzy"] = poz
+	if not z_pomoca and poz < 0.2:
+		out["ok"] = true
+		out["nieznany"] = true
+		out["tekst"] = "Za mało wiedzy, żeby ocenić stan."
+		return out
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	var rzeczywisty := clampi(int(oferta["stan_rzeczywisty"]), 0, 100)
+	if not z_pomoca:
+		var t := clampf((poz - 0.2) / 0.8, 0.0, 1.0)
+		var polowa := int(round(lerpf(24.0, 2.0, t)))
+		szum_od = -polowa
+		szum_do = polowa
 	var oceniony := clampi(rzeczywisty + rng.randi_range(szum_od, szum_do), 0, 100)
 	oferta["stan_ujawniony"] = true
 	oferta["stan_oceniony"] = oceniony
@@ -1308,7 +1320,31 @@ func ocen_stan(swiat: Dictionary, oferta_id: String, z_pomoca: bool = false) -> 
 	out["rozjazd"] = _liczba(oferta.get("stan_deklarowany")) and int(oferta["stan_deklarowany"]) != rzeczywisty
 	out["etykieta"] = etykieta_stanu_jakosci(oceniony)
 	out["usterki_wykryte"] = wykryj_usterki(swiat, oferta, z_pomoca)
+	out["tekst"] = "Ocena stanu: %d (%s)." % [oceniony, str(out.get("etykieta", ""))]
 	return out
+
+
+## 0–1. Wiedza 20 albo znajomość aut 100 = pewna ocena. Poniżej 0,2 gracz nie ocenia sam.
+func poziom_wiedzy_oceny(swiat: Dictionary, kat: String) -> float:
+	var boh: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
+	var w := 0.0
+	if _liczba(boh.get("wiedza_pkt")):
+		w = clampf(float(boh["wiedza_pkt"]) / 20.0, 0.0, 1.0)
+	if kat == "samochod":
+		w = maxf(w, clampf(_poziom_znajomosci_pojazdow(swiat) / 100.0, 0.0, 1.0))
+	return w
+
+
+func ma_legitymacje(swiat: Dictionary) -> bool:
+	var boh: Dictionary = swiat.get("bohater", {}) if swiat.get("bohater") is Dictionary else {}
+	if bool(boh.get("uczy_sie", false)) or bool(boh.get("studiuje", false)):
+		return true
+	var edukacja: Variant = boh.get("edukacja", [])
+	if edukacja is Array:
+		for e in edukacja:
+			if e is Dictionary and (bool(e.get("trwa", false)) or bool(e.get("aktualna", false)) or bool(e.get("uczy_sie", false))):
+				return true
+	return false
 
 
 ## "" = nie; "przed_zakupem" = odbiór osobisty; "po_dostawie" = sama wysyłka.
@@ -1590,8 +1626,9 @@ func kup(swiat: Dictionary, oferta_id: String) -> Dictionary:
 	if _liczba(bohater.get("pieniadze")):
 		kasa = int(bohater["pieniadze"])
 	var wysylka := 0
-	if str(oferta.get("sposob_odbioru", "")) == "wysylka" and _liczba(oferta.get("cena_dostawy_zl")):
-		wysylka = int(oferta["cena_dostawy_zl"])
+	var odbior_wybrany := str(oferta.get("odbior_wybrany", ""))
+	if odbior_wybrany == "wysylka" or (odbior_wybrany == "" and str(oferta.get("sposob_odbioru", "")) == "wysylka"):
+		wysylka = koszt_wysylki_zl(oferta)
 	var do_zaplaty := wysylka
 	if _liczba(cena):
 		do_zaplaty += int(cena)
@@ -1627,9 +1664,16 @@ func kup(swiat: Dictionary, oferta_id: String) -> Dictionary:
 			stan["miasto_gracza_id"] = mid
 			out["przeprowadzka"] = true
 	else:
-		if not (maj.get("dobra") is Array):
-			maj["dobra"] = []
-		maj["dobra"].append(kopia)
+		if odbior_wybrany == "wysylka" and kategoria_drobna(str(kopia.get("kategoria", ""))):
+			kopia["dostawa_zostalo"] = tygodnie_wysylki(kopia)
+			if not (swiat.get("dostawy") is Array):
+				swiat["dostawy"] = []
+			(swiat["dostawy"] as Array).append(kopia)
+			out["dostawa_tygodnie"] = int(kopia["dostawa_zostalo"])
+		else:
+			if not (maj.get("dobra") is Array):
+				maj["dobra"] = []
+			maj["dobra"].append(kopia)
 	swiat["majatek"] = maj
 	stan["oferty"].remove_at(idx)
 	swiat["rynek_zakupow"] = stan
@@ -1665,6 +1709,152 @@ func kierowca_prosi_o_paliwo(osoba: Dictionary) -> bool:
 	if skapy:
 		return relacja < 80
 	return relacja < 60
+
+
+func koszt_wysylki_zl(oferta: Dictionary) -> int:
+	if _liczba(oferta.get("cena_dostawy_zl")):
+		return maxi(0, int(oferta["cena_dostawy_zl"]))
+	return CENA_WYSYLKI_DROBNEJ_ZL
+
+
+func tygodnie_wysylki(oferta: Dictionary) -> int:
+	var km := 0.0
+	if _liczba(oferta.get("odleglosc_km")):
+		km = float(oferta["odleglosc_km"])
+	return clampi(1 + int(km / 200.0), 1, 4)
+
+
+func koszt_komunikacji_drobnej(km: float, legitymacja: bool) -> int:
+	if km <= 5.0:
+		return 0
+	var t := clampf((km - 5.0) / 40.0, 0.0, 1.0)
+	var cena := int(round(lerpf(2.0, 5.0, t)))
+	if legitymacja:
+		cena = maxi(1, int(round(float(cena) * 0.5)))
+	return cena
+
+
+func zmeczenie_komunikacji(km: float) -> int:
+	return clampi(4 + int(km / 15.0), 4, 18)
+
+
+func koszt_paliwa_wlasnego_auta(swiat: Dictionary, km: float) -> Dictionary:
+	var out := {"ok": false, "tekst": "Nie masz auta.", "koszt_zl": 0}
+	var auto := _auto_bohatera(swiat)
+	if auto.is_empty():
+		return out
+	var spalanie: Variant = auto.get("spalanie")
+	if not _liczba(spalanie):
+		spalanie = 7.0
+	var cena: Variant = cena_nosnika_dojazdu(auto)
+	if not _liczba(cena):
+		out["tekst"] = "Auto jest, ale ten nośnik nie ma ceny."
+		out["ok"] = true
+		out["koszt_zl"] = 0
+		return out
+	var litry := snappedf(2.0 * km * float(spalanie) / 100.0, 0.1)
+	var koszt := int(round(litry * float(cena)))
+	out["ok"] = true
+	out["koszt_zl"] = koszt
+	out["tekst"] = "Własne auto: %.1f l w obie strony, %d zł." % [litry, koszt]
+	return out
+
+
+func _auto_bohatera(swiat: Dictionary) -> Dictionary:
+	if swiat.get("auto") is Dictionary and not (swiat["auto"] as Dictionary).is_empty():
+		return swiat["auto"]
+	var maj: Dictionary = swiat.get("majatek", {}) if swiat.get("majatek") is Dictionary else {}
+	var dobra: Array = maj.get("dobra", []) if maj.get("dobra") is Array else []
+	for d in dobra:
+		if d is Dictionary and str(d.get("kategoria", "")) == "samochod":
+			return d
+	return {}
+
+
+func wykonaj_odbior_drobny(swiat: Dictionary, oferta_id: String, wybor: Dictionary) -> Dictionary:
+	var out := {"ok": false, "powod": "", "tekst": ""}
+	var oferta := _znajdz_oferte(swiat, oferta_id)
+	if oferta.is_empty():
+		out["powod"] = "Brak oferty."
+		return out
+	var km := float(oferta.get("odleglosc_km", 0.0)) if _liczba(oferta.get("odleglosc_km")) else 0.0
+	var sposob := str(wybor.get("sposob", ""))
+	var koszt := 0
+	var tekst := ""
+	if sposob == "wysylka":
+		koszt = koszt_wysylki_zl(oferta)
+		tekst = "Wysyłka %d zł, dojazd za %d tyg." % [koszt, tygodnie_wysylki(oferta)]
+	elif sposob == "auto":
+		var paliwo := koszt_paliwa_wlasnego_auta(swiat, km)
+		if not bool(paliwo.get("ok", false)):
+			out["powod"] = str(paliwo.get("tekst", "Nie masz auta."))
+			out["tekst"] = out["powod"]
+			return out
+		koszt = int(paliwo.get("koszt_zl", 0))
+		tekst = str(paliwo.get("tekst", ""))
+	elif sposob == "komunikacja":
+		koszt = koszt_komunikacji_drobnej(km, ma_legitymacje(swiat))
+		var zm := zmeczenie_komunikacji(km)
+		_dodaj_zmeczenie_fizyczne(swiat, zm)
+		tekst = "Komunikacja: %d zł, zmęczenie fiz. +%d." % [koszt, zm]
+		if ma_legitymacje(swiat) and km > 5.0:
+			tekst += " Legitymacja obniża bilet."
+	elif sposob == "osoba":
+		var ref := str(wybor.get("osoba_ref", ""))
+		var kandydat := _kandydat_po_ref(swiat, ref)
+		if kandydat.is_empty():
+			out["powod"] = "Nie ma takiej osoby."
+			return out
+		var osoba: Dictionary = kandydat.get("osoba", {}) if kandydat.get("osoba") is Dictionary else {}
+		var nazwa := str(kandydat.get("nazwa", "Ktoś"))
+		if kierowca_prosi_o_paliwo(osoba):
+			var paliwo_o := koszt_paliwa_wlasnego_auta({"auto": {"spalanie": 7.0, "naped": "benzyna"}}, km)
+			koszt = int(paliwo_o.get("koszt_zl", 0))
+			tekst = "%s (relacja %d) prosi o %d zł na paliwo." % [nazwa, _relacja_osoby(osoba), koszt]
+		else:
+			tekst = "%s (relacja %d) podwozi cię bez opłaty." % [nazwa, _relacja_osoby(osoba)]
+	else:
+		out["powod"] = "Wybierz odbiór."
+		return out
+	if koszt > 0:
+		var kasa := _kasa_bohatera(swiat)
+		if kasa < koszt:
+			out["powod"] = "Za mało na odbiór (%d < %d)." % [kasa, koszt]
+			out["tekst"] = out["powod"]
+			return out
+		_ustaw_kase(swiat, kasa - koszt)
+	oferta["odbior_wybrany"] = sposob
+	_zapisz_oferte(swiat, oferta)
+	out["ok"] = true
+	out["tekst"] = tekst
+	out["koszt_zl"] = koszt
+	return out
+
+
+func tick_dostawy(swiat: Dictionary) -> void:
+	if not (swiat.get("dostawy") is Array):
+		return
+	var zostaje: Array = []
+	var przyszlo: Array = []
+	for d in swiat["dostawy"]:
+		if not (d is Dictionary):
+			continue
+		d["dostawa_zostalo"] = int(d.get("dostawa_zostalo", 1)) - 1
+		if int(d["dostawa_zostalo"]) > 0:
+			zostaje.append(d)
+		else:
+			przyszlo.append(d)
+	swiat["dostawy"] = zostaje
+	if przyszlo.is_empty():
+		return
+	if not (swiat.get("majatek") is Dictionary):
+		swiat["majatek"] = {"nieruchomosci": [], "dobra": []}
+	var maj: Dictionary = swiat["majatek"]
+	if not (maj.get("dobra") is Array):
+		maj["dobra"] = []
+	for d2 in przyszlo:
+		maj["dobra"].append(d2)
+	swiat["majatek"] = maj
 
 
 func koszt_dojazdu(swiat: Dictionary, oferta: Dictionary, cena_paliwa_zl_l: Variant = null, bilet_nadpisany: Variant = null) -> Dictionary:
@@ -2032,6 +2222,12 @@ func plusy_oferty(oferta: Dictionary) -> int:
 
 
 func nazwa_rodzaju_oferty(oferta: Dictionary) -> String:
+	var rodzaj_nazwa := str(oferta.get("rodzaj_nazwa", "")).strip_edges()
+	if rodzaj_nazwa != "":
+		var pod_nazwa := str(oferta.get("podrodzaj_nazwa", "")).strip_edges()
+		if pod_nazwa != "":
+			return "%s · %s" % [rodzaj_nazwa, pod_nazwa]
+		return rodzaj_nazwa
 	var pod := str(oferta.get("podkategoria", "")).strip_edges()
 	if pod == "" and str(oferta.get("kategoria", "")) == "sprzet":
 		pod = str(oferta.get("segment", ""))
@@ -2135,6 +2331,10 @@ func linie_karty_drobiazgu(oferta: Dictionary) -> Array:
 	var rodzaj := nazwa_rodzaju_oferty(oferta)
 	if rodzaj != "":
 		linie.append("Rodzaj: %s" % rodzaj)
+	if str(oferta.get("stan_ksiazki_nazwa", "")) != "":
+		linie.append("Stan egzemplarza: %s" % str(oferta.get("stan_ksiazki_nazwa")))
+	if _liczba(oferta.get("ilosc")):
+		linie.append("Ilość: %d" % int(oferta["ilosc"]))
 	var plus := tekst_plusow(plusy_oferty(oferta))
 	if plus != "":
 		linie.append("Zadowolenie: %s" % plus)
@@ -3182,6 +3382,14 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 		cena_dobra = _cena_dobra(kat, stan, rng, stan_dekl, przebieg_km)
 		if uzywa_lat and (cena_dobra is int or cena_dobra is float):
 			cena_dobra = _cena_z_katalogu_wiekiem(float(cena_dobra), stan, lata, stan_dekl, rng, kat)
+	var skala_ksiazki: Dictionary = {}
+	if kat == "ksiazka" and stan == "uzywany":
+		skala_ksiazki = _skala_uzywanej_ksiazki(rng)
+		stany["stan_rzeczywisty"] = int(skala_ksiazki.get("stan", 70))
+		stany["stan_deklarowany"] = int(skala_ksiazki.get("stan", 70))
+		stany["stan_klamstwo"] = false
+		if cena_dobra is int or cena_dobra is float:
+			cena_dobra = float(cena_dobra) * float(skala_ksiazki.get("mnoznik", 1.0))
 	if cena_dobra is int or cena_dobra is float:
 		var obcieta := _ogranicz_pasmem_dobra(kat, stan, float(cena_dobra))
 		cena_dobra = _cena_lub_null(zaokraglij_cene(kat, obcieta), obcieta)
@@ -3231,8 +3439,27 @@ func _losuj_dobro(kat: String, miasto: Dictionary, rng: RandomNumberGenerator, m
 	oferta["usterki_wykryte"] = []
 	if bool(usterki.get("ma_szacunek", false)):
 		oferta["szacunek_usterek"] = true
+	if kat == "ksiazka":
+		oferta["usterki_rzeczywiste"] = []
+		oferta["usterki_deklarowane"] = []
+		oferta["usterki_ukryte"] = []
+		oferta["rodzaj_nazwa"] = str(z_kat.get("rodzaj_nazwa", ""))
+		oferta["podrodzaj_nazwa"] = str(z_kat.get("podrodzaj_nazwa", ""))
+		if not skala_ksiazki.is_empty():
+			oferta["stan_ksiazki"] = str(skala_ksiazki.get("id", ""))
+			oferta["stan_ksiazki_nazwa"] = str(skala_ksiazki.get("nazwa", ""))
 	_naloz_rabat_usterek_na_cene(oferta)
 	return oferta
+
+
+func _skala_uzywanej_ksiazki(rng: RandomNumberGenerator) -> Dictionary:
+	var opcje: Array = [
+		{"id": "swietny", "nazwa": "Świetny", "stan": 92, "mnoznik": 0.9, "waga": 2},
+		{"id": "dobry", "nazwa": "Dobry", "stan": 74, "mnoznik": 0.7, "waga": 4},
+		{"id": "zaczytany", "nazwa": "Zaczytany", "stan": 48, "mnoznik": 0.45, "waga": 3},
+		{"id": "rozpadajacy", "nazwa": "Rozpadający się", "stan": 22, "mnoznik": 0.25, "waga": 1},
+	]
+	return _losuj_rekord_wazony(opcje, rng, false)
 
 
 func _kategoria_uzywa_lat(kat: String) -> bool:
@@ -3336,6 +3563,25 @@ func _modele_katalogu_dobra(kat: String) -> Array:
 		return kat_d["komputer"]
 	if kat == "laptop" and kat_d.get("laptop") is Array:
 		return kat_d["laptop"]
+	if kat == "ksiazka" and kat_d.get("rodzaje") is Array:
+		var plasko: Array = []
+		for r in kat_d["rodzaje"]:
+			if not (r is Dictionary):
+				continue
+			var pod: Array = r.get("podrodzaje", []) if r.get("podrodzaje") is Array else []
+			for p in pod:
+				if not (p is Dictionary):
+					continue
+				var kopia: Dictionary = p.duplicate()
+				kopia["rodzaj_id"] = str(r.get("id", ""))
+				kopia["rodzaj_nazwa"] = str(r.get("nazwa", ""))
+				kopia["podrodzaj_nazwa"] = str(p.get("nazwa", ""))
+				kopia["marka"] = str(r.get("nazwa", ""))
+				kopia["model"] = str(p.get("nazwa", ""))
+				kopia["nazwa"] = "%s · %s" % [str(r.get("nazwa", "")), str(p.get("nazwa", ""))]
+				plasko.append(kopia)
+		if not plasko.is_empty():
+			return plasko
 	if kat == "ksiazka" and kat_d.get("tytuly") is Array:
 		return kat_d["tytuly"]
 	if kat_d.get("modele") is Array:
@@ -4005,6 +4251,8 @@ func _wpisz_miejsce_oferty(oferta: Dictionary, miasto: Dictionary, hero: Diction
 	oferta["kraj"] = kraj
 	var skad := hero if not hero.is_empty() else miasto
 	oferta["region_szukania"] = _region_miedzy_miejscami(skad, miasto)
+	if not _liczba(oferta.get("ilosc")):
+		oferta["ilosc"] = 1
 	oferta["odleglosc_szacunek"] = true
 	oferta["odleglosc_metoda"] = "pasmo_administracyjne_bez_gis"
 	oferta["propozycja_do_poprawki_odleglosci"] = true

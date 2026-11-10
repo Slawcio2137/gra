@@ -546,12 +546,16 @@ func _ekran_zakupy_oferty(kat_id: String, stan_filtr: String, kat: Dictionary) -
 
 func _przerysuj_liste_zakupow(kat_id: String, stan_filtr: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
 	if not h._zakupy_dokladka:
+		var t0 := Time.get_ticks_msec()
 		if kat_id == "samochod":
-			_uzupelnij_aut_do_okna(stan_filtr)
+			_uzupelnij_aut_do_okna(stan_filtr, 4)
 		elif h._rynek_zakupow.kategoria_drobna(kat_id):
-			_uzupelnij_dobra_do_okna()
+			_uzupelnij_dobra_do_okna(4)
 		elif h._rynek_zakupow.kategoria_ma_pule_ludnosci(kat_id):
-			_uzupelnij_lokum_do_okna()
+			_uzupelnij_lokum_do_okna(4)
+		print("zakupy_pierwsza_partia_ms ", Time.get_ticks_msec() - t0, " ", kat_id)
+		h._zakupy_dokladka_seria = 0
+		call_deferred("_dociagnij_okno_budzet")
 	_odswiez_napis_puli_zakupow(kat_id)
 	var tresc = h._ui._tresc_biala()
 	var do_usun: Array = []
@@ -854,6 +858,9 @@ func _buduj_pelna_karte_oferty(
 				_panel_dojazdu(oid, "ocena", kat_id, stan_filtr, etykiety, nieruchomosc)
 				return
 			var w: Dictionary = h._rynek_zakupow.ocen_stan(h._swiat, oid, false)
+			if bool(w.get("nieznany", false)):
+				_pokaz_komunikat_zakupu(str(w.get("tekst", "Za mało wiedzy, żeby ocenić stan.")), w)
+				return
 			_pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
 			if bool(w.get("ok", false)):
 				var msg := "Ocena stanu: %d (%s)" % [int(w.get("stan_oceniony", 0)), str(w.get("etykieta", ""))]
@@ -888,6 +895,9 @@ func _buduj_pelna_karte_oferty(
 	b.pressed.connect(func() -> void:
 		if kat_id == "samochod" and not h._rynek_zakupow.auto_na_miejscu(h._swiat, o):
 			_panel_dojazdu(oid, "kup", kat_id, stan_filtr, etykiety, nieruchomosc)
+			return
+		if h._rynek_zakupow.kategoria_drobna(kat_id):
+			_panel_odbioru_drobnego(oid, kat_id, stan_filtr, etykiety, nieruchomosc)
 			return
 		var wynik: Dictionary = h._rynek_zakupow.kup(h._swiat, oid)
 		if bool(wynik.get("ok", false)):
@@ -1036,6 +1046,91 @@ func _pokaz_wynik_pomocy(
 	_pokaz_komunikat_zakupu(tekst, w)
 	if bool(w.get("ok", false)):
 		_przerysuj_liste_zakupow(kat_id, stan_filtr, etykiety, nieruchomosc)
+
+
+func _panel_odbioru_drobnego(oferta_id: String, kat_id: String, stan_filtr: String, etykiety: Dictionary, nieruchomosc: bool) -> void:
+	var oferta: Dictionary = h._rynek_zakupow._znajdz_oferte(h._swiat, oferta_id)
+	var km := 0.0
+	if h._ui._jest_liczba(oferta.get("odleglosc_km")):
+		km = float(oferta["odleglosc_km"])
+	var panel := VBoxContainer.new()
+	panel.set_meta("zakupy_oferta", true)
+	panel.add_child(h._ui._napis_ekranu("Odbiór. Odległość %.1f km, ilość %s." % [km, str(oferta.get("ilosc", 1))], 16))
+	var b_wys := Button.new()
+	b_wys.text = "Wysyłka (%d zł, %d tyg.)" % [h._rynek_zakupow.koszt_wysylki_zl(oferta), h._rynek_zakupow.tygodnie_wysylki(oferta)]
+	b_wys.custom_minimum_size = Vector2(0, 40)
+	b_wys.pressed.connect(func() -> void:
+		_dokoncz_odbior_drobny(oferta_id, {"sposob": "wysylka"})
+	)
+	panel.add_child(b_wys)
+	var b_os := Button.new()
+	b_os.text = "Odbiór osobisty"
+	b_os.custom_minimum_size = Vector2(0, 40)
+	var pod := VBoxContainer.new()
+	pod.visible = false
+	b_os.pressed.connect(func() -> void:
+		pod.visible = true
+	)
+	panel.add_child(b_os)
+	var b_auto := Button.new()
+	b_auto.text = "Własne auto (paliwo za km i spalanie)"
+	b_auto.custom_minimum_size = Vector2(0, 36)
+	b_auto.pressed.connect(func() -> void:
+		_dokoncz_odbior_drobny(oferta_id, {"sposob": "auto"})
+	)
+	pod.add_child(b_auto)
+	var b_kom := Button.new()
+	var bilet: int = h._rynek_zakupow.koszt_komunikacji_drobnej(km, h._rynek_zakupow.ma_legitymacje(h._swiat))
+	b_kom.text = "Komunikacja (%d zł, męczy)" % bilet
+	b_kom.custom_minimum_size = Vector2(0, 36)
+	b_kom.pressed.connect(func() -> void:
+		_dokoncz_odbior_drobny(oferta_id, {"sposob": "komunikacja"})
+	)
+	pod.add_child(b_kom)
+	var b_kto := Button.new()
+	b_kto.text = "Poproś kogoś"
+	b_kto.custom_minimum_size = Vector2(0, 36)
+	var lista := VBoxContainer.new()
+	lista.visible = false
+	b_kto.pressed.connect(func() -> void:
+		lista.visible = true
+	)
+	pod.add_child(b_kto)
+	for k in h._rynek_zakupow.kandydaci_pomocy_oceny(h._swiat):
+		if not (k is Dictionary):
+			continue
+		var ref := str(k.get("ref", ""))
+		var b_osoba := Button.new()
+		b_osoba.text = str(k.get("nazwa", ref))
+		b_osoba.custom_minimum_size = Vector2(0, 36)
+		b_osoba.pressed.connect(func() -> void:
+			_dokoncz_odbior_drobny(oferta_id, {"sposob": "osoba", "osoba_ref": ref})
+		)
+		lista.add_child(b_osoba)
+	if lista.get_child_count() == 0:
+		lista.add_child(h._ui._napis_ekranu("Nie masz kogo poprosić.", 14))
+	pod.add_child(lista)
+	panel.add_child(pod)
+	h._ui._tresc_biala().add_child(panel)
+
+
+func _dokoncz_odbior_drobny(oferta_id: String, wybor: Dictionary) -> void:
+	var w: Dictionary = h._rynek_zakupow.wykonaj_odbior_drobny(h._swiat, oferta_id, wybor)
+	if not bool(w.get("ok", false)):
+		_pokaz_komunikat_zakupu(str(w.get("tekst", w.get("powod", ""))), w)
+		return
+	var wynik: Dictionary = h._rynek_zakupow.kup(h._swiat, oferta_id)
+	var tekst := str(w.get("tekst", ""))
+	if bool(wynik.get("ok", false)):
+		if int(wynik.get("dostawa_tygodnie", 0)) > 0:
+			tekst += " Paczka w drodze."
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._stan._zsynchronizuj_pieniadze_z_bohatera()
+		h._pasek._odswiez_pasek_statystyk(false)
+		_pokaz_komunikat_zakupu(tekst, wynik)
+		h._cofnij_poziom()
+		return
+	_pokaz_komunikat_zakupu(str(wynik.get("powod", tekst)), wynik)
 
 
 func _panel_dojazdu(
@@ -1385,7 +1480,7 @@ func _filtry_lokum() -> Dictionary:
 	}
 
 
-func _uzupelnij_lokum_do_okna() -> int:
+func _uzupelnij_lokum_do_okna(sufit: int = -1) -> int:
 	var filtry := _filtry_lokum()
 	var jest: Array = h._rynek_zakupow.oferty_filtrowane(
 		h._swiat,
@@ -1403,14 +1498,16 @@ func _uzupelnij_lokum_do_okna() -> int:
 		"",
 		str(filtry["poziom"])
 	)
-	var brak = h._rynek_zakupow.limit_okna_aut() - jest.size()
+	var brak: int = h._rynek_zakupow.limit_okna_aut() - jest.size()
+	if sufit > 0:
+		brak = mini(brak, sufit)
 	if brak <= 0:
 		return 0
 	var miasta: Array = h._losowanie.miasta_polski() if h._losowanie != null else []
 	return h._rynek_zakupow.uzupelnij_okno_lokum(h._swiat, miasta, filtry, brak)
 
 
-func _uzupelnij_aut_do_okna(stan_filtr: String) -> int:
+func _uzupelnij_aut_do_okna(stan_filtr: String, sufit: int = -1) -> int:
 	var filtry := _filtry_aut(stan_filtr)
 	var jest: Array = h._rynek_zakupow.oferty_filtrowane(
 		h._swiat,
@@ -1428,7 +1525,9 @@ func _uzupelnij_aut_do_okna(stan_filtr: String) -> int:
 		str(filtry["naped"]),
 		str(filtry["poziom"])
 	)
-	var brak = h._rynek_zakupow.limit_okna_aut() - jest.size()
+	var brak: int = h._rynek_zakupow.limit_okna_aut() - jest.size()
+	if sufit > 0:
+		brak = mini(brak, sufit)
 	if brak <= 0:
 		return 0
 	var miasta: Array = h._losowanie.miasta_polski() if h._losowanie != null else []
@@ -1468,7 +1567,7 @@ func _na_scroll_aut(wartosc: float) -> void:
 	if not RynekZakupow.trzeba_dociagnac_przed_koncem(zostalo):
 		return
 	h._zakupy_dokladka_seria = 0
-	_dokladka_zakupow()
+	_dociagnij_okno_budzet()
 
 
 func _prefetch_zakupy_jesli_blisko() -> void:
@@ -1486,8 +1585,7 @@ func _prefetch_zakupy_jesli_blisko() -> void:
 	if not RynekZakupow.trzeba_dociagnac_przed_koncem(zostalo):
 		return
 	h._zakupy_prefetch_kroki += 1
-	if _dokladka_zakupow() > 0:
-		call_deferred("_prefetch_zakupy_jesli_blisko")
+	_dociagnij_okno_budzet()
 
 
 func _strona_puli_zakupow(kat_id: String) -> String:
@@ -1526,7 +1624,7 @@ func _filtry_dobra() -> Dictionary:
 	}
 
 
-func _uzupelnij_dobra_do_okna() -> int:
+func _uzupelnij_dobra_do_okna(sufit: int = -1) -> int:
 	var filtry := _filtry_dobra()
 	var jest: Array = h._rynek_zakupow.oferty_filtrowane(
 		h._swiat,
@@ -1544,7 +1642,9 @@ func _uzupelnij_dobra_do_okna() -> int:
 		"",
 		str(filtry["poziom"]),
 	)
-	var brak = h._rynek_zakupow.limit_okna_aut() - jest.size()
+	var brak: int = h._rynek_zakupow.limit_okna_aut() - jest.size()
+	if sufit > 0:
+		brak = mini(brak, sufit)
 	if brak <= 0:
 		return 0
 	var miasta: Array = h._losowanie.miasta_polski() if h._losowanie != null else []
@@ -1570,12 +1670,31 @@ func _dokladka_zakupow() -> int:
 		_dopisz_karty_zakupow(przed)
 		_odswiez_napis_puli_zakupow(h._zakupy_kat_id)
 	h._zakupy_dokladka = false
-	if dodano > 0 and h._zakupy_dokladka_seria < 3:
-		h._zakupy_dokladka_seria += 1
-		call_deferred("_dokladka_zakupow")
-	else:
-		h._zakupy_dokladka_seria = 0
 	return dodano
+
+
+func _lista_zakupow_na_wierzchu() -> bool:
+	if h._stos.is_empty():
+		return false
+	var g: Variant = h._stos[h._stos.size() - 1]
+	return g is Dictionary and str(g.get("tresc", "")) == "zakupy_kategoria"
+
+
+func _dociagnij_okno_budzet() -> void:
+	if not _lista_zakupow_na_wierzchu() or h._zakupy_dokladka:
+		return
+	if h._zakupy_dokladka_seria >= 24:
+		return
+	var start := Time.get_ticks_usec()
+	var dodano := 0
+	while Time.get_ticks_usec() - start < 8000 and dodano < 6:
+		var n := _dokladka_zakupow()
+		if n <= 0:
+			return
+		dodano += n
+	h._zakupy_dokladka_seria += dodano
+	if dodano > 0:
+		call_deferred("_dociagnij_okno_budzet")
 
 
 func _dopisz_karty_zakupow(przed: int) -> void:
