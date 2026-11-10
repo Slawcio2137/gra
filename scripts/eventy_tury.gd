@@ -1,6 +1,8 @@
 extends RefCounted
 class_name EventyTury
 
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
+
 ## Losowanie i UI eventów tygodnia.
 
 var h
@@ -29,6 +31,7 @@ func _losuj_eventy_tury() -> void:
 			var kom := str(h._swiat.get("komunikat_tury", "")).strip_edges()
 			h._swiat["komunikat_tury"] = t if kom == "" else kom + "\n" + t
 	h._swiat["eventy_tury"] = karty_pytan
+	Zycie.dopisz_oskarzenie(h._swiat)
 
 
 func _kontekst_eventow() -> Dictionary:
@@ -102,17 +105,17 @@ func _pokaz_eventy_tury_ui() -> void:
 
 
 func _on_odpowiedz_eventu(ev: Dictionary, opcja_id: String) -> void:
+	if str(ev.get("id", "")) == "niesprawiedliwe_oskarzenie":
+		var wynik_o: Dictionary = Zycie.rozlicz_oskarzenie(h._swiat, opcja_id)
+		_usun_event_tury(ev)
+		h._swiat["event_odpowiedz_tekst"] = str(wynik_o.get("tekst", ""))
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._pasek._odswiez_pasek_statystyk(false)
+		h._pokaz_napisy_tygodnia()
+		return
 	var wynik: Dictionary = h._eventy.zastosuj_wybor(ev, opcja_id, _kontekst_eventow())
 	_zastosuj_wynik_eventu(wynik)
-	# Usuń ten event z listy oczekujących pytań.
-	var zostalo: Array = []
-	var lista: Variant = h._swiat.get("eventy_tury", [])
-	if lista is Array:
-		for e in lista:
-			if e is Dictionary and str(e.get("id", "")) == str(ev.get("id", "")):
-				continue
-			zostalo.append(e)
-	h._swiat["eventy_tury"] = zostalo
+	_usun_event_tury(ev)
 	h._swiat["event_odpowiedz_tekst"] = str(wynik.get("tekst", ""))
 	if str(wynik.get("skutek", "")) == "kieszonkowe_argument_ok":
 		# Lekkie otwarcie drogi do kieszonkowego — bez automatycznej wypłaty.
@@ -125,6 +128,17 @@ func _on_odpowiedz_eventu(ev: Dictionary, opcja_id: String) -> void:
 		_dodaj_znajomego_dziecka()
 	h.SkryptZapisu.zapisz(h._swiat)
 	h._pokaz_napisy_tygodnia()
+
+
+func _usun_event_tury(ev: Dictionary) -> void:
+	var zostalo: Array = []
+	var lista: Variant = h._swiat.get("eventy_tury", [])
+	if lista is Array:
+		for e in lista:
+			if e is Dictionary and str(e.get("id", "")) == str(ev.get("id", "")):
+				continue
+			zostalo.append(e)
+	h._swiat["eventy_tury"] = zostalo
 
 
 func _zastosuj_wynik_eventu(wynik: Dictionary) -> void:

@@ -37,6 +37,12 @@ const SkryptEkranuFali2 = preload("res://scripts/ekran_fali2.gd")
 var _losowanie: Losowanie
 var _jedzenie: JedzenieUstawienia
 var _wyglad: Dictionary = {}
+var _wersja_stukniecia := 0
+var _wersja_czeka_na_pin := false
+const SkryptAdmina = preload("res://scripts/ekran_admina.gd")
+const SkryptDostepu = preload("res://scripts/dostep_admina.gd")
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
+var _admin
 var _cisza_ustawien := false
 var _swiat: Dictionary = {}
 var _akcje: Array = []
@@ -103,6 +109,8 @@ var _zakupy_licznik_przebieg_od: Label
 var _zakupy_licznik_przebieg_do: Label
 var _zakupy_filtr_marki: Array = []  ## multi-wybór; puste = wszystkie
 var _zakupy_filtr_naped := ""
+var _zakupy_szukaj_tekst := ""
+var _zakupy_dokladka_seria := 0
 var _zakupy_panel_nowe_auta: Control
 var _zakupy_sort_cena := "malejaco"  ## malejaco | rosnaco
 var _zakupy_dokladka := false
@@ -159,6 +167,7 @@ func _init() -> void:
 	_ekran_zakupow = SkryptEkranuZakupow.new(self)
 	_modul_pracy = SkryptEkranuPracy.new(self)
 	_fala2 = SkryptEkranuFali2.new(self)
+	_admin = SkryptAdmina.new(self)
 
 
 
@@ -180,6 +189,7 @@ func _ready() -> void:
 	_jedzenie.visible = false
 	add_child(_jedzenie)
 	_wyglad = WygladGracza.wczytaj()
+	SkryptDostepu.zastosuj_fps(int(_wyglad.get("max_fps", 0)))
 	_ui._wczytaj_emotikony()
 	_ui._zastosuj_wyglad()
 	_ui._podlacz_ustawienia()
@@ -210,6 +220,8 @@ func _on_wczytaj_pressed() -> void:
 		_brak_zapisu()
 		return
 	_swiat = dane
+	if ZiarnoRodzicow.new().uzupelnij_wieki(_swiat):
+		SkryptZapisu.zapisz(_swiat)
 	if not (_swiat.get("przyjaciele") is Array):
 		_swiat["przyjaciele"] = []
 	if not (_swiat.get("znajomi") is Array):
@@ -278,9 +290,16 @@ func _on_nastepna_tura() -> void:
 		if _ui._jest_liczba(bohater.get("wiek")):
 			bohater["wiek"] = int(bohater["wiek"]) + 1
 			_swiat["bohater"] = bohater
+		ZiarnoRodzicow.new().postarz_otoczenie(_swiat)
 	_swiat["tydzien"] = tydzien
 	_swiat["rok"] = rok
+	_rynek_zakupow.zapamietaj_zmeczenie_tury(_swiat)
+	_rynek_zakupow.tick_remonty(_swiat)
+	_rynek_zakupow.tick_dostawy(_swiat)
 	_swiat["komunikat_tury"] = ""
+	var zycie_txt := str(Zycie.tick(_swiat))
+	if zycie_txt != "":
+		_swiat["komunikat_tury"] = zycie_txt
 	_swiat["eventy_tury"] = []
 	_swiat["event_odpowiedz_tekst"] = ""
 	_ekran_jedzenia._odswiez_flage_jedzenia_sam()
@@ -306,6 +325,7 @@ func _on_nastepna_tura() -> void:
 	_swiat["jedzenie"] = _jedzenie.zrzut_zapisu()
 	_swiat["dni_auta"] = int(_swiat.get("dni_auta", 0))
 	_ekran_zakupow._odswiez_rynek_zakupow()
+	_rynek_zakupow.rozlicz_zmeczenie_tury(_swiat)
 	SkryptZapisu.zapisz(_swiat)
 	_pasek._odswiez_pasek_statystyk(true)
 	_pasek._ukryj_zielony_komunikat_tury()
@@ -442,6 +462,7 @@ func _nowa_gra() -> void:
 		"rynek_zakupow": {},
 		"id_miejsca_pobytu": id_miejsca,
 	}
+	ZiarnoRodzicow.new().uzupelnij_wieki(_swiat)
 	# Lokum musi istnieć jako pełny obiekt (nie sama wygoda) — po miejscu + zarobkach rodziców.
 	_swiat["lokum_startowe"] = _rynek_zakupow.zbuduj_lokum_startowe(rodzina, miejsce)
 	_swiat["rodzina"] = rodzina
@@ -875,6 +896,31 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 		_fala2._ekran_lotnictwo()
 	elif tresc == "szkola":
 		_ui._tresc_biala().add_child(_ui._napis_ekranu("Nauka — Fala 2: korepetycje, zajęcia, szachy w podmenu.", 16))
+		var srednia := str(_swiat.get("srednia_ocen", "—"))
+		_ui._tresc_biala().add_child(_ui._napis_ekranu("Średnia: %s. Wysiłek nauki: %d." % [srednia, int(_swiat.get("wysilek_nauki", 0))], 16))
+		var wysilek := HSlider.new()
+		wysilek.min_value = 0
+		wysilek.max_value = 100
+		wysilek.step = 5
+		wysilek.custom_minimum_size = Vector2(0, 28)
+		wysilek.set_value_no_signal(int(_swiat.get("wysilek_nauki", 0)))
+		wysilek.value_changed.connect(func(v: float) -> void:
+			Zycie.ucz_sie(_swiat, int(v))
+			SkryptZapisu.zapisz(_swiat)
+		)
+		_ui._tresc_biala().add_child(wysilek)
+		var b_bojka := Button.new()
+		b_bojka.text = "Bójka"
+		b_bojka.custom_minimum_size = Vector2(0, 44)
+		b_bojka.pressed.connect(func() -> void:
+			var w: Dictionary = Zycie.bojka(_swiat)
+			SkryptZapisu.zapisz(_swiat)
+			_pasek._odswiez_pasek_statystyk(false)
+			_ui._tresc_biala().add_child(_ui._napis_ekranu(str(w.get("tekst", "")), 14))
+		)
+		_ui._tresc_biala().add_child(b_bojka)
+		var leg := "Legitymacja działa (ulgowy bilet)." if _rynek_zakupow.ma_legitymacje(_swiat) else "Legitymacja nie działa — nie ma zapisu, że się uczysz."
+		_ui._tresc_biala().add_child(_ui._napis_ekranu(leg, 16))
 		_fala2._stub_przedszkole()
 	elif tresc == "korepetycje":
 		_fala2._ekran_korepetycje()
@@ -911,6 +957,8 @@ func _wypelnij_ekran(akcja: Dictionary) -> void:
 		_rodzina._ekran_lista_osob("znajomi", "Nikogo jeszcze.")
 	elif tresc == "ustawienia_gry":
 		_ui._ekran_ustawienia_w_bialym()
+	elif tresc == "admin":
+		_admin._ekran()
 	elif tresc == "statystyki_ilosciowe":
 		_pasek._wypelnij_statystyki_ilosciowe(_ui._tresc_biala())
 	if akcja.get("dzieci") is Array and tresc != "jedzenie" and tresc != "majatek" and tresc != "osoby":

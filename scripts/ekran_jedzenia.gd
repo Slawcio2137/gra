@@ -1,6 +1,8 @@
 extends RefCounted
 class_name EkranJedzenia
 
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
+
 ## Ekrany jedzenia w domu i samemu.
 
 var h
@@ -41,6 +43,7 @@ func _odswiez_flage_jedzenia_sam() -> void:
 
 
 func _ekran_jedzenie_dom(kolor: Color) -> void:
+	_wiersz_budzetu_jedzenia()
 	h._zdanie = h._ui._napis_ekranu("", 18)
 	h._zdanie.add_theme_color_override("font_color", Color(h.KRWISTY))
 	h._ui._tresc_biala().add_child(h._zdanie)
@@ -89,7 +92,44 @@ func _ekran_jedzenie_dom(kolor: Color) -> void:
 	_odswiez_napisy_domu()
 
 
+func _wiersz_budzetu_jedzenia() -> void:
+	if not bool(h._swiat.get("mieszka_sam", false)):
+		return
+	var rzad := HBoxContainer.new()
+	rzad.add_theme_constant_override("separation", 8)
+	var pole := LineEdit.new()
+	pole.text = str(int(h._swiat.get("budzet_jedzenia_zl", 80)))
+	pole.custom_minimum_size = Vector2(80, 40)
+	var minus := Button.new()
+	minus.text = "−"
+	minus.custom_minimum_size = Vector2(48, 40)
+	var plus := Button.new()
+	plus.text = "+"
+	plus.custom_minimum_size = Vector2(48, 40)
+	minus.pressed.connect(func() -> void:
+		_ustaw_budzet_jedzenia(int(pole.text) - 10, pole)
+	)
+	plus.pressed.connect(func() -> void:
+		_ustaw_budzet_jedzenia(int(pole.text) + 10, pole)
+	)
+	pole.text_submitted.connect(func(t: String) -> void:
+		_ustaw_budzet_jedzenia(int(t), pole)
+	)
+	rzad.add_child(minus)
+	rzad.add_child(pole)
+	rzad.add_child(plus)
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Budżet jedzenia na tydzień (po wyprowadzce)", 16))
+	h._ui._tresc_biala().add_child(rzad)
+
+
+func _ustaw_budzet_jedzenia(kwota: int, pole: LineEdit) -> void:
+	Zycie.ustaw_budzet_jedzenia(h._swiat, kwota)
+	pole.text = str(int(h._swiat.get("budzet_jedzenia_zl", 0)))
+	h.SkryptZapisu.zapisz(h._swiat)
+
+
 func _ekran_jedzenie_sam(_kolor: Color) -> void:
+	_wiersz_budzetu_jedzenia()
 	_odswiez_flage_jedzenia_sam()
 	if not bool(h._swiat.get("odblokowane_jedzenie_samemu", false)):
 		var tekst_blok := "Jeszcze nie jesz samemu poza domem."

@@ -4,6 +4,24 @@
 	"propozycja_do_poprawki": true,
 	"segmenty": ["budzet", "srednia", "premium", "flagowiec"],
 	"gatunki": ["beletrystyka", "popularnonaukowa", "podrecznik", "komiks", "biografia"],
+	"rodzaje": [
+		{"id": "beletrystyka", "nazwa": "Beletrystyka", "podrodzaje": [
+			{"id": "kryminal", "nazwa": "Kryminał", "cena_zl": 40, "waga": 8, "segment": "budzet"},
+			{"id": "powiesc", "nazwa": "Powieść", "cena_zl": 55, "waga": 6, "segment": "srednia"}
+		]},
+		{"id": "fakt", "nazwa": "Literatura faktu", "podrodzaje": [
+			{"id": "reportaz", "nazwa": "Reportaż", "cena_zl": 48, "waga": 3, "segment": "srednia"},
+			{"id": "popularnonaukowa", "nazwa": "Popularnonaukowa", "cena_zl": 52, "waga": 3, "segment": "srednia"}
+		]},
+		{"id": "podrecznik", "nazwa": "Podręcznik", "podrodzaje": [
+			{"id": "szkolny", "nazwa": "Szkolny", "cena_zl": 35, "waga": 2, "segment": "budzet"},
+			{"id": "akademicki", "nazwa": "Akademicki", "cena_zl": 160, "waga": 1, "segment": "flagowiec"}
+		]},
+		{"id": "komiks", "nazwa": "Komiks", "podrodzaje": [
+			{"id": "zeszyt", "nazwa": "Zeszyt", "cena_zl": 25, "waga": 5, "segment": "budzet"},
+			{"id": "album", "nazwa": "Album", "cena_zl": 80, "waga": 2, "segment": "premium"}
+		]}
+	],
 	"tytuly": [
 		{"id": "sienkiewicz_quo_vadis", "marka": "Henryk Sienkiewicz", "model": "Quo vadis", "nazwa": "Quo vadis", "segment": "budzet", "gatunek": "beletrystyka", "cena_zl": 25, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Wydanie kieszonkowe lektury. 25 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 8},
 		{"id": "mroz_listy", "marka": "Remigiusz Mróz", "model": "Listy zza grobu", "nazwa": "Listy zza grobu", "segment": "budzet", "gatunek": "beletrystyka", "cena_zl": 40, "szacunek": true, "zrodlo": "https://www.empik.com/", "zrodlo_opis": "Kryminał kieszonkowy. 40 zł to rząd cen okładki, nie odczyt karty.", "rok_cennika": 2026, "waga": 12},

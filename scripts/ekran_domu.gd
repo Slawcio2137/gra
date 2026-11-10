@@ -1,6 +1,8 @@
 extends RefCounted
 class_name EkranDomu
 
+const Zycie = preload("res://scripts/zycie_codzienne.gd")
+
 ## Ekrany domu, zdrowia i majątku.
 
 var h
@@ -28,6 +30,7 @@ func _ekran_zdrowie() -> void:
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(skrot, 18))
 	else:
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Zdrowie ilościowe pojawi się, gdy będzie w zapisie. Chorób na starcie nie wypisuję.", 16))
+	_panel_lekarza()
 	var zdrowie = h._ui._tekst_pusty(bohater.get("zdrowie"))
 	if zdrowie != "":
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Zdrowie: %s" % zdrowie, 16))
@@ -45,6 +48,45 @@ func _ekran_majatek() -> void:
 	var opis_lokum := _opis_mieszkacie_w()
 	if opis_lokum != "":
 		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(opis_lokum, 16))
+	var dostawy: Array = h._swiat.get("dostawy", []) if h._swiat.get("dostawy") is Array else []
+	if not dostawy.is_empty():
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu("W drodze", 18))
+		for d in dostawy:
+			if d is Dictionary:
+				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+					"%s · jeszcze %d tyg." % [str(d.get("nazwa", "Paczka")), int(d.get("dostawa_zostalo", 0))],
+					14
+				))
+	if bool(h._swiat.get("mieszka_sam", false)):
+		var maj_k: Dictionary = h._swiat.get("majatek", {}) if h._swiat.get("majatek") is Dictionary else {}
+		var lista_k: Array = maj_k.get("nieruchomosci", []) if maj_k.get("nieruchomosci") is Array else []
+		if lista_k.size() > 0 and lista_k[0] is Dictionary:
+			h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+				"Utrzymanie własnego lokum: %d zł / tydzień." % Zycie.koszt_lokum_tydzien(lista_k[0]),
+				14
+			))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Pożyczki", 18))
+	var kwota_p := LineEdit.new()
+	kwota_p.placeholder_text = "kwota"
+	kwota_p.text = "1000"
+	kwota_p.custom_minimum_size = Vector2(0, 36)
+	h._ui._tresc_biala().add_child(kwota_p)
+	var b_bank := Button.new()
+	b_bank.text = "Kredyt w banku"
+	b_bank.custom_minimum_size = Vector2(0, 40)
+	b_bank.pressed.connect(func() -> void:
+		var w: Dictionary = Zycie.wez_pozyczke(h._swiat, int(kwota_p.text), false)
+		_po_zyciu(w)
+	)
+	h._ui._tresc_biala().add_child(b_bank)
+	var b_rodz := Button.new()
+	b_rodz.text = "Pożyczka od rodziny"
+	b_rodz.custom_minimum_size = Vector2(0, 40)
+	b_rodz.pressed.connect(func() -> void:
+		var w2: Dictionary = Zycie.wez_pozyczke(h._swiat, int(kwota_p.text), true)
+		_po_zyciu(w2)
+	)
+	h._ui._tresc_biala().add_child(b_rodz)
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Nieruchomości", 18))
 	var maj: Dictionary = h._swiat.get("majatek", {}) if h._swiat.get("majatek") is Dictionary else {}
 	var n_lista: Array = maj.get("nieruchomosci", []) if maj.get("nieruchomosci") is Array else []
@@ -55,29 +97,17 @@ func _ekran_majatek() -> void:
 			var n: Variant = n_lista[i]
 			if not (n is Dictionary):
 				continue
-			var linia := "%s · %s · wygoda %s · %s" % [
+			var linia := "%s · wygoda %s · %s" % [
 				str(n.get("nazwa", "?")),
-				h._ekran_zakupow._etykieta_stanu_zakupu(str(n.get("stan", ""))),
 				str(n.get("wygoda", "—")),
 				str(n.get("miasto_nazwa", "")),
 			]
 			h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia, 14))
-			var idx_bind := i
-			var b_rem := Button.new()
-			b_rem.text = "Remont (propozycja koszt/wygoda)"
-			b_rem.custom_minimum_size = Vector2(0, 40)
-			b_rem.pressed.connect(func() -> void:
-				var wynik: Dictionary = h._rynek_zakupow.remont(h._swiat, idx_bind)
-				if bool(wynik.get("ok", false)):
-					h._rynek_zakupow.przelicz_zadowolenie_docelowe(h._swiat)
-					h.SkryptZapisu.zapisz(h._swiat)
-					h._stan._zsynchronizuj_pieniadze_z_bohatera()
-					h._pasek._odswiez_pasek_statystyk(false)
-					h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
-				else:
-					h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(wynik.get("powod", "Remont nieudany.")), 13))
-			)
-			h._ui._tresc_biala().add_child(b_rem)
+			if n.get("remont_trwa") is Dictionary:
+				_dopisz_postep_remontu(n["remont_trwa"])
+				continue
+			h._ui._tresc_biala().add_child(h._ui._napis_ekranu(h._rynek_zakupow.tekst_szacunku_remontu(n), 14))
+			_dodaj_tryby_remontu(i, n)
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Dobra", 18))
 	var d_lista: Array = maj.get("dobra", []) if maj.get("dobra") is Array else []
 	if d_lista.is_empty():
@@ -103,7 +133,7 @@ func _ekran_majatek() -> void:
 				if h._rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
 					var plus_d = h._rynek_zakupow.tekst_plusow(h._rynek_zakupow.plusy_oferty(d))
 					if plus_d != "":
-						linia_d += " · " + plus_d
+						h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Zadowolenie: %s" % plus_d, 14))
 				h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia_d, 14))
 				if h._rynek_zakupow.kategoria_daje_plusy(str(d.get("kategoria", ""))):
 					var b_oddaj := Button.new()
@@ -117,6 +147,29 @@ func _ekran_majatek() -> void:
 							h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
 					)
 					h._ui._tresc_biala().add_child(b_oddaj)
+				var cena_s := LineEdit.new()
+				cena_s.placeholder_text = "cena sprzedaży"
+				cena_s.text = str(int(d.get("cena_zl", 20))) if h._ui._jest_liczba(d.get("cena_zl")) else "20"
+				cena_s.custom_minimum_size = Vector2(0, 36)
+				h._ui._tresc_biala().add_child(cena_s)
+				var b_spr := Button.new()
+				b_spr.text = "Wystaw na sprzedaż" if not bool(d.get("wystawione", false)) else "Zmień cenę"
+				b_spr.custom_minimum_size = Vector2(0, 40)
+				var idx_s := i_d
+				b_spr.pressed.connect(func() -> void:
+					var w: Dictionary = Zycie.wystaw_na_sprzedaz(h._swiat, idx_s, int(cena_s.text))
+					_po_zyciu(w)
+				)
+				h._ui._tresc_biala().add_child(b_spr)
+				if bool(d.get("wystawione", false)):
+					var b_zdejmij := Button.new()
+					b_zdejmij.text = "Zdejmij z wystawienia"
+					b_zdejmij.custom_minimum_size = Vector2(0, 40)
+					b_zdejmij.pressed.connect(func() -> void:
+						Zycie.zdejmij_ze_sprzedazy(h._swiat, idx_s)
+						_po_zyciu({"ok": true, "tekst": "Zdjęte."})
+					)
+					h._ui._tresc_biala().add_child(b_zdejmij)
 	h._ui._tresc_biala().add_child(h._ui._napis_ekranu("Wpływy", 18))
 	var lista: Variant = h._swiat.get("wplywy", [])
 	if not (lista is Array) or lista.is_empty():
@@ -155,3 +208,170 @@ func _opis_mieszkacie_w() -> String:
 			if rodzina is Dictionary and rodzina.get("lokum") is Dictionary:
 				lokum = rodzina["lokum"]
 	return h._rynek_zakupow.opis_lokum_ui(lokum)
+
+
+func _po_zyciu(w: Dictionary) -> void:
+	if bool(w.get("ok", false)):
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._stan._zsynchronizuj_pieniadze_z_bohatera()
+		h._pasek._odswiez_pasek_statystyk(false)
+		h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+		return
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(w.get("tekst", "")), 14))
+
+
+func _panel_lekarza() -> void:
+	var box: Control = h._ui._tresc_biala()
+	box.add_child(h._ui._napis_ekranu("Lekarz. Najpierw ścieżka, potem specjalizacja.", 16))
+	for problem in ["cialo", "zeby", "psychika", "oczy"]:
+		var nazwa := str(Zycie.SPECJALIZACJE[problem]["nazwa"])
+		box.add_child(h._ui._napis_ekranu(nazwa, 16))
+		_przycisk_lekarza(box, "Rodzice: NFZ", "rodzice", problem, "nfz")
+		_przycisk_lekarza(box, "Rodzice: prywatnie", "rodzice", problem, "prywatnie")
+		_przycisk_lekarza(box, "Sam NFZ", "nfz", problem, "")
+		_przycisk_lekarza(box, "Sam prywatnie", "prywatnie", problem, "")
+
+
+func _przycisk_lekarza(box: Control, tekst: String, sciezka: String, problem: String, wybor: String) -> void:
+	var b := Button.new()
+	b.text = tekst
+	b.custom_minimum_size = Vector2(0, 36)
+	b.pressed.connect(func() -> void:
+		var w: Dictionary = Zycie.idz_do_lekarza(h._swiat, sciezka, problem, wybor)
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._pasek._odswiez_pasek_statystyk(false)
+		box.add_child(h._ui._napis_ekranu(str(w.get("tekst", "")), 14))
+	)
+	box.add_child(b)
+
+
+func _dopisz_postep_remontu(trwa: Dictionary) -> void:
+	var zostalo := maxi(0, int(trwa.get("tygodni", 0)) - int(trwa.get("minelo", 0)))
+	var tryb := str(trwa.get("tryb", "sam"))
+	var linia := "Remont (%s): tydzień %d/%d, koniec za %d tyg." % [
+		h._rynek_zakupow.nazwa_trybu_remontu(tryb),
+		int(trwa.get("minelo", 0)),
+		int(trwa.get("tygodni", 0)),
+		zostalo,
+	]
+	var zm := int(trwa.get("zmeczenie_tydzien", 0))
+	if zm > 0:
+		linia += " Zmęczenie fiz. +%d/tydz." % zm
+	if str(trwa.get("kumpel_nazwa", "")) != "":
+		linia += " Pomaga %s." % str(trwa.get("kumpel_nazwa"))
+	if int(trwa.get("stawka_tygodniowa", 0)) > 0:
+		linia += " Stawka %d zł/tydz." % int(trwa.get("stawka_tygodniowa"))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(linia, 14))
+	if str(trwa.get("blokada", "")) != "":
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(str(trwa.get("blokada")), 14))
+
+
+func _dodaj_tryby_remontu(indeks: int, n: Dictionary) -> void:
+	var rynek = h._rynek_zakupow
+	var mat: int = rynek.koszt_remontu_prawdziwy(n)
+	if mat <= 0:
+		return
+	if str(n.get("stan", "")) == "surowy":
+		h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+			"Stan surowy: wykończenie droższe i 3× dłuższe niż zwykły remont w tym samym trybie.",
+			14
+		))
+	var t_sam: int = rynek.tygodnie_remontu_trybu(n, "sam")
+	var t_k: int = rynek.tygodnie_remontu_trybu(n, "kumpel")
+	var t_f: int = rynek.tygodnie_remontu_trybu(n, "firma")
+	var c_sam: int = rynek.koszt_startu_remontu(n, "sam")
+	var c_f: int = rynek.koszt_startu_remontu(n, "firma")
+	var z_sam: int = rynek.zmeczenie_remontu_tydzien("sam")
+	var z_k: int = rynek.zmeczenie_remontu_tydzien("kumpel")
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+		"Samemu: %d zł materiałów, %d tyg., zmęczenie fiz. +%d/tydz." % [c_sam, t_sam, z_sam],
+		14
+	))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+		"Z kumplem: materiały %d zł + jego stawka, %d tyg., zmęczenie +%d/tydz." % [c_sam, t_k, z_k],
+		14
+	))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(
+		"Firma: %d zł (robocizna i materiały), %d tyg., bez zmęczenia." % [c_f, t_f],
+		14
+	))
+	var idx := indeks
+	var b_sam := Button.new()
+	b_sam.text = "Rób samemu"
+	b_sam.custom_minimum_size = Vector2(0, 40)
+	b_sam.pressed.connect(func() -> void:
+		_po_starcie_remontu(rynek.remont(h._swiat, idx, "sam"))
+	)
+	h._ui._tresc_biala().add_child(b_sam)
+	var b_firma := Button.new()
+	b_firma.text = "Zleć firmie"
+	b_firma.custom_minimum_size = Vector2(0, 40)
+	b_firma.pressed.connect(func() -> void:
+		_po_starcie_remontu(rynek.remont(h._swiat, idx, "firma"))
+	)
+	h._ui._tresc_biala().add_child(b_firma)
+	var b_k := Button.new()
+	b_k.text = "Poproś kumpla (stawka)"
+	b_k.custom_minimum_size = Vector2(0, 40)
+	b_k.pressed.connect(func() -> void:
+		_pokaz_oferte_kumpla(idx, n)
+	)
+	h._ui._tresc_biala().add_child(b_k)
+
+
+func _pokaz_oferte_kumpla(indeks: int, n: Dictionary) -> void:
+	var rynek = h._rynek_zakupow
+	var kandydaci: Array = rynek.kandydaci_pomocy_oceny(h._swiat)
+	var box: Control = h._ui._tresc_biala()
+	if kandydaci.is_empty():
+		box.add_child(h._ui._napis_ekranu("Nie masz kogo poprosić o pomoc przy remoncie.", 14))
+		return
+	var sug: int = rynek.sugerowana_stawka_tygodniowa(n)
+	var tyg: int = rynek.tygodnie_remontu_trybu(n, "kumpel")
+	box.add_child(h._ui._napis_ekranu(
+		"Sugerowana stawka: %d zł/tydz. przez %d tyg. (łącznie około %d zł). Lepsza relacja obniża próg zgody, przy bardzo dobrej wystarczy symboliczna kwota." % [sug, tyg, sug * tyg],
+		14
+	))
+	for k in kandydaci:
+		if not (k is Dictionary):
+			continue
+		var osoba: Dictionary = k.get("osoba", {}) if k.get("osoba") is Dictionary else {}
+		var relacja: int = rynek._relacja_osoby(osoba)
+		var min_tyg: int = rynek.min_stawka_tygodniowa(n, relacja)
+		var ref := str(k.get("ref", ""))
+		box.add_child(h._ui._napis_ekranu(
+			"%s — relacja %d, zgodzi się od %d zł/tydz." % [str(k.get("nazwa", ref)), relacja, min_tyg],
+			14
+		))
+		var pole := LineEdit.new()
+		pole.text = str(sug)
+		pole.placeholder_text = "zł"
+		pole.custom_minimum_size = Vector2(0, 40)
+		box.add_child(pole)
+		var b_tyg := Button.new()
+		b_tyg.text = "Zaproponuj stawkę tygodniową"
+		b_tyg.custom_minimum_size = Vector2(0, 40)
+		var b_raz := Button.new()
+		b_raz.text = "Zaproponuj kwotę łączną"
+		b_raz.custom_minimum_size = Vector2(0, 40)
+		var idx := indeks
+		var ref_b := ref
+		b_tyg.pressed.connect(func() -> void:
+			_po_starcie_remontu(rynek.zaproponuj_pomoc_remontu(h._swiat, idx, ref_b, int(pole.text), false))
+		)
+		b_raz.pressed.connect(func() -> void:
+			_po_starcie_remontu(rynek.zaproponuj_pomoc_remontu(h._swiat, idx, ref_b, int(pole.text), true))
+		)
+		box.add_child(b_tyg)
+		box.add_child(b_raz)
+
+
+func _po_starcie_remontu(wynik: Dictionary) -> void:
+	if bool(wynik.get("ok", false)):
+		h.SkryptZapisu.zapisz(h._swiat)
+		h._stan._zsynchronizuj_pieniadze_z_bohatera()
+		h._pasek._odswiez_pasek_statystyk(false)
+		h._otworz_akcje({"id": "majatek", "nazwa": "Majątek", "tryb": "ekran", "tresc": "majatek"})
+		return
+	var tekst := str(wynik.get("tekst", wynik.get("powod", "Remont nieudany.")))
+	h._ui._tresc_biala().add_child(h._ui._napis_ekranu(tekst, 14))
